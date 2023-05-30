@@ -8,38 +8,75 @@
 </head>
 <body>
     <IMG SRC="https://media.tenor.com/BFTKJDgOwP0AAAAC/bitcoin-cheers.gif">
-  /**
- * Requires curl enabled in php.ini
- **/
+/** 
+ * This example uses the Apache HTTPComponents library. 
+ */
 
-<?php
-$url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
-$parameters = [
-  'start' => '1',
-  'limit' => '5000',
-  'convert' => 'USD'
-];
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpHeaders;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 
-$headers = [
-  'Accepts: application/json',
-  'X-CMC_PRO_API_KEY: 35370406-8f8b-4652-9c05-7cb67a068e70'
-];
-$qs = http_build_query($parameters); // query string encode the parameters
-$request = "{$url}?{$qs}"; // create the request URL
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
+public class JavaExample {
 
-$curl = curl_init(); // Get cURL resource
-// Set cURL options
-curl_setopt_array($curl, array(
-  CURLOPT_URL => $request,            // set the request URL
-  CURLOPT_HTTPHEADER => $headers,     // set the headers 
-  CURLOPT_RETURNTRANSFER => 1         // ask for raw response instead of bool
-));
+  private static String apiKey = "35370406-8f8b-4652-9c05-7cb67a068e70
+";
 
-$response = curl_exec($curl); // Send the request, save the response
-print_r(json_decode($response)); // print json decoded response
-curl_close($curl); // Close request
-?>      
-        
+  public static void main(String[] args) {
+    String uri = "https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
+    List<NameValuePair> paratmers = new ArrayList<NameValuePair>();
+    paratmers.add(new BasicNameValuePair("start","1"));
+    paratmers.add(new BasicNameValuePair("limit","5000"));
+    paratmers.add(new BasicNameValuePair("convert","USD"));
+
+    try {
+      String result = makeAPICall(uri, paratmers);
+      System.out.println(result);
+    } catch (IOException e) {
+      System.out.println("Error: cannont access content - " + e.toString());
+    } catch (URISyntaxException e) {
+      System.out.println("Error: Invalid URL " + e.toString());
+    }
+  }
+
+  public static String makeAPICall(String uri, List<NameValuePair> parameters)
+      throws URISyntaxException, IOException {
+    String response_content = "";
+
+    URIBuilder query = new URIBuilder(uri);
+    query.addParameters(parameters);
+
+    CloseableHttpClient client = HttpClients.createDefault();
+    HttpGet request = new HttpGet(query.build());
+
+    request.setHeader(HttpHeaders.ACCEPT, "application/json");
+    request.addHeader("X-CMC_PRO_API_KEY", apiKey);
+
+    CloseableHttpResponse response = client.execute(request);
+
+    try {
+      System.out.println(response.getStatusLine());
+      HttpEntity entity = response.getEntity();
+      response_content = EntityUtils.toString(entity);
+      EntityUtils.consume(entity);
+    } finally {
+      response.close();
+    }
+
+    return response_content;
+  }
+
+}
 </body>
 </html>
