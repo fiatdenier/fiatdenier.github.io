@@ -1,0 +1,43 @@
+name: Fetch Bitcoin News
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # every 30 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: data/scripts
+    steps:
+      # 1️⃣ Checkout repo
+      - uses: actions/checkout@v4
+
+      # 2️⃣ Set up Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3️⃣ Install dependencies
+      - run: npm install
+
+      # 4️⃣ Set NewsAPI secret
+      - name: Set NEWSAPI_KEY
+        run: echo "NEWSAPI_KEY=${{ secrets.NEWSAPI_KEY }}" >> $GITHUB_ENV
+
+      # 5️⃣ Run fetch script
+      - run: node fetch_news.mjs
+
+      # 6️⃣ Commit and push generated HTML pages
+      - name: Commit and push HTML pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ../../index.html ../../page*.html
+          git commit -m "chore: update news pages" || echo "No changes"
+          git push
