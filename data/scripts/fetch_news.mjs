@@ -16,6 +16,9 @@ const sources = [
   { name: "BTCManager", url: "https://btcmanager.com/feed/" },
   { name: "Bitcoin.com", url: "https://news.bitcoin.com/feed/" },
   { name: "CryptoPotato", url: "https://cryptopotato.com/feed/" },
+  { name: "Bitcoinnews", url: "https://bitcoinnews.com/feed/news" },
+  { name: "Coindesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml" },
+  { name: "NewsBTC", url: "https://www.newsbtc.com/feed/" },
 ];
 
 // Fetch and parse RSS feed
