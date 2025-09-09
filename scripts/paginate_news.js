@@ -14,20 +14,15 @@ export function paginateNews({
   const articlesPerPage = articlesPerSection * sections;
   const MS_21_DAYS = 21 * 24 * 60 * 60 * 1000;
 
-  // -------- Fetch and initialize --------
   async function init() {
     try {
       const res = await fetch(jsonPath);
       const data = await res.json();
 
-      // Filter out articles older than 21 days
       const now = new Date();
-      articles = data.articles.filter(
-        a => now - new Date(a.published_at) <= MS_21_DAYS
-      );
-
-      // Sort by recency
-      articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+      articles = data.articles
+        .filter(a => now - new Date(a.published_at) <= MS_21_DAYS)
+        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
       renderPage(currentPage);
       updateTimestamp();
@@ -37,19 +32,10 @@ export function paginateNews({
     }
   }
 
-  // -------- Render page --------
   function renderPage(page) {
     const startIdx = (page - 1) * articlesPerPage;
     const endIdx = startIdx + articlesPerPage;
     let pageArticles = articles.slice(startIdx, endIdx);
-
-    // Separate recent (<24h) and older
-    if (page === 1) {
-      const recentCutoff = new Date(new Date() - 24 * 60 * 60 * 1000);
-      const recent = pageArticles.filter(a => new Date(a.published_at) > recentCutoff);
-      const older = pageArticles.filter(a => new Date(a.published_at) <= recentCutoff);
-      pageArticles = [...recent, ...older];
-    }
 
     // Deduplicate by URL
     const seen = new Set();
@@ -59,16 +45,26 @@ export function paginateNews({
       return true;
     });
 
-    // Shuffle to mix sources
-    pageArticles = shuffleArray(pageArticles);
-
-    // Distribute into columns
-    const cols = Array.from({ length: sections }, () => []);
-    pageArticles.forEach((a, i) => {
-      cols[i % sections].push(a);
+    // Group by source
+    const bySource = {};
+    pageArticles.forEach(a => {
+      if (!bySource[a.source]) bySource[a.source] = [];
+      bySource[a.source].push(a);
     });
 
-    // Render columns
+    // Distribute round-robin to columns
+    const cols = Array.from({ length: sections }, () => []);
+    let i = 0;
+    while (Object.keys(bySource).some(k => bySource[k].length)) {
+      for (const src of Object.keys(bySource)) {
+        if (bySource[src].length) {
+          cols[i % sections].push(bySource[src].shift());
+          i++;
+        }
+      }
+    }
+
+    // Render
     const app = document.getElementById(appElemId);
     app.innerHTML = "";
     ["left", "center", "right"].forEach((id, idx) => {
@@ -90,16 +86,6 @@ export function paginateNews({
     });
 
     updatePagination();
-  }
-
-  // -------- Helpers --------
-  function shuffleArray(arr) {
-    const copy = [...arr];
-    for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
   }
 
   function timeAgo(dateStr) {
@@ -131,7 +117,6 @@ export function paginateNews({
     updatedEl.textContent = `Updated ${estStr} EST`;
   }
 
-  // -------- Pagination --------
   function updatePagination() {
     const totalPages = Math.ceil(articles.length / articlesPerPage);
     document.getElementById(prevBtnId).disabled = currentPage === 1;
@@ -154,10 +139,8 @@ export function paginateNews({
     }
   }
 
-  // Expose functions for HTML buttons
   window.nextPage = nextPage;
   window.prevPage = prevPage;
 
-  // Initialize
   init();
 }
