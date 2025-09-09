@@ -1,7 +1,7 @@
-// /scripts/paginate_news.js
+// paginate_news.js
 export function paginateNews(config) {
   const {
-    jsonPath, // will point to './scripts/news.json'
+    jsonPath = "scripts/news.json",
     articlesPerSection = 10,
     sections = 3,
     updatedElemId,
@@ -15,39 +15,20 @@ export function paginateNews(config) {
   let currentPage = 1;
 
   function updateTimestamp() {
-    const updatedEl = document.getElementById(updatedElemId);
+    const el = document.getElementById(updatedElemId);
     const now = new Date();
-    const estDate = new Date(
-      now.toLocaleString("en-US", { timeZone: "America/New_York" })
-    );
-
-    const estStr = estDate.toLocaleString("en-US", {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    });
-
-    updatedEl.textContent = `Updated ${estStr} EST`;
+    const est = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+    el.textContent = `Updated ${est.toLocaleString("en-US")}`;
   }
 
   function timeAgo(dateStr) {
     const now = new Date();
     const then = new Date(dateStr);
-    const diffMs = now - then;
-
-    const diffMins = Math.floor(diffMs / 60000);
+    const diffMins = Math.floor((now - then) / 60000);
     if (diffMins < 60) return `${diffMins} mins ago`;
-
     const hours = Math.floor(diffMins / 60);
     const mins = diffMins % 60;
-
-    if (hours < 24) {
-      return mins === 0 ? `${hours} hours ago` : `${hours} hours ${mins} mins ago`;
-    }
-
+    if (hours < 24) return mins === 0 ? `${hours} hours ago` : `${hours} hours ${mins} mins ago`;
     const days = Math.floor(hours / 24);
     return `${days} days ago`;
   }
@@ -63,51 +44,45 @@ export function paginateNews(config) {
   }
 
   function renderPage(page) {
-    const startIdx = (page - 1) * articlesPerSection * sections;
-    const endIdx = startIdx + articlesPerSection * sections;
-    const pageArticles = articles.slice(startIdx, endIdx);
+    const start = (page - 1) * articlesPerSection * sections;
+    const end = start + articlesPerSection * sections;
+    const pageArticles = articles.slice(start, end);
 
     const cols = Array.from({ length: sections }, () => []);
     let colIndex = 0;
     const usedSources = new Set();
 
-    pageArticles.forEach(article => {
-      if (!usedSources.has(article.source)) {
-        cols[colIndex % sections].push(article);
-        usedSources.add(article.source);
+    pageArticles.forEach(a => {
+      if (!usedSources.has(a.source)) {
+        cols[colIndex % sections].push(a);
+        usedSources.add(a.source);
         colIndex++;
       }
     });
-
-    pageArticles.forEach(article => {
-      const alreadyIn = cols.some(col => col.includes(article));
+    pageArticles.forEach(a => {
+      const alreadyIn = cols.some(c => c.includes(a));
       if (!alreadyIn) {
-        cols[colIndex % sections].push(article);
+        cols[colIndex % sections].push(a);
         colIndex++;
       }
     });
 
     const app = document.getElementById(appElemId);
     app.innerHTML = "";
-
     ["left", "center", "right"].slice(0, sections).forEach((id, idx) => {
       const section = document.createElement("section");
       section.className = "col";
       section.id = id;
-
       cols[idx].forEach(a => {
         const link = document.createElement("a");
         link.href = a.url;
         link.target = "_blank";
         link.rel = "noopener";
-        link.className = a.title.length > 60 ? "big" : "";
         link.innerHTML = `${a.title}<span class="meta">${a.source} • ${timeAgo(a.published_at)}</span>`;
         section.appendChild(link);
       });
-
       app.appendChild(section);
     });
-
     updatePagination();
   }
 
@@ -138,12 +113,11 @@ export function paginateNews(config) {
       const res = await fetch(jsonPath);
       const data = await res.json();
       articles = removeDuplicates(data.articles)
-        .filter(a => (new Date() - new Date(a.published_at)) / (1000 * 60 * 60 * 24) <= 21)
-        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
-
+        .filter(a => (new Date() - new Date(a.published_at)) / (1000*60*60*24) <= 21)
+        .sort((a,b) => new Date(b.published_at)-new Date(a.published_at));
       renderPage(currentPage);
       updateTimestamp();
-    } catch (e) {
+    } catch(e) {
       console.error("Failed to load news.json", e);
       document.getElementById(appElemId).textContent = "Failed to load news.";
     }
