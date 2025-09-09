@@ -55,12 +55,32 @@ export async function paginateNews({
     const endIdx = startIdx + articlesPerPage;
     let pageArticles = articles.slice(startIdx, endIdx);
 
-    // Shuffle within page to mix sources
-    pageArticles = shuffleArray(pageArticles);
-
+    // --------- Arrange columns with recency and variety ---------
     const cols = Array.from({ length: sections }, () => []);
-    pageArticles.forEach((a, i) => cols[i % sections].push(a));
 
+    // Step 1: Sort all page articles by recency (newest first)
+    pageArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+
+    // Step 2: Distribute articles to columns round-robin by source variety
+    const sourceTracker = Array.from({ length: sections }, () => new Set());
+    pageArticles.forEach((a) => {
+      // Find column with least number of this source
+      let minCount = Infinity;
+      let targetCol = 0;
+      for (let i = 0; i < sections; i++) {
+        const count = cols[i].filter(c => c.source === a.source).length;
+        if (count < minCount) {
+          minCount = count;
+          targetCol = i;
+        }
+      }
+      cols[targetCol].push(a);
+    });
+
+    // Step 3: Sort each column by recency
+    cols.forEach(col => col.sort((a, b) => new Date(b.published_at) - new Date(a.published_at)));
+
+    // --------- Render Columns ---------
     const app = document.getElementById(appElemId);
     app.innerHTML = "";
 
@@ -75,7 +95,6 @@ export async function paginateNews({
         link.target = "_blank";
         link.rel = "noopener";
         link.className = a.title.length > 60 ? "big" : "";
-
         link.innerHTML = `${a.title}<span class="meta">${a.source} • ${timeAgo(a.published_at)}</span>`;
         section.appendChild(link);
       });
@@ -115,26 +134,21 @@ export async function paginateNews({
     const data = await res.json();
     let allArticles = data.articles || [];
 
-    // Separate recent (<24h) and older
-    const now = new Date();
-    const recent = allArticles.filter(a => (now - new Date(a.published_at)) < 24 * 60 * 60 * 1000);
-    const older = allArticles.filter(a => (now - new Date(a.published_at)) >= 24 * 60 * 60 * 1000);
+    // Filter only articles with valid published_at
+    allArticles = allArticles.filter(a => a.published_at);
 
-    // Page 1: recent first, shuffled
-    const shuffledRecent = shuffleArray(recent);
-    const shuffledOlder = shuffleArray(older);
+    // Sort by recency globally
+    allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
-    articles = [...shuffledRecent, ...shuffledOlder];
-
+    articles = allArticles;
     renderPage(currentPage);
     updateTimestamp();
-
   } catch (e) {
     console.error("Failed to load articles:", e);
     document.getElementById(appElemId).textContent = "Failed to load news.";
   }
 
-  // Expose pagination functions to global
+  // Expose pagination functions globally
   window.nextPage = nextPage;
   window.prevPage = prevPage;
 }
