@@ -30,4 +30,3 @@ jobs:
           git add data/news.json
           git diff --quiet && git commit --allow-empty -m "No changes (workflow ran) [skip ci]" || git commit -m "Update news.json [skip ci]"
           git push
-
