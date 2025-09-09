@@ -1,78 +1,108 @@
 // /scripts/paginate_news.js
-export function paginateNews({
-  jsonPath = "./data/news.json",
-  articlesPerSection = 10,
-  sections = 3,
-  updatedElemId = "updated",
-  appElemId = "app",
-  prevBtnId = "prev-btn",
-  nextBtnId = "next-btn",
-  pageInfoId = "page-info",
-}) {
+export function paginateNews(config) {
+  const {
+    jsonPath,
+    articlesPerSection = 10,
+    sections = 3,
+    updatedElemId,
+    appElemId,
+    prevBtnId,
+    nextBtnId,
+    pageInfoId,
+  } = config;
+
   let articles = [];
   let currentPage = 1;
-  const articlesPerPage = articlesPerSection * sections;
-  const MS_21_DAYS = 21 * 24 * 60 * 60 * 1000;
 
-  async function init() {
-    try {
-      const res = await fetch(jsonPath);
-      const data = await res.json();
+  // -------- Helper Functions --------
+  function updateTimestamp() {
+    const updatedEl = document.getElementById(updatedElemId);
+    const now = new Date();
+    const estDate = new Date(
+      now.toLocaleString("en-US", { timeZone: "America/New_York" })
+    );
 
-      const now = new Date();
-      articles = data.articles
-        .filter(a => now - new Date(a.published_at) <= MS_21_DAYS)
-        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+    const estStr = estDate.toLocaleString("en-US", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
 
-      renderPage(currentPage);
-      updateTimestamp();
-    } catch (e) {
-      console.error("Failed to load news.json", e);
-      document.getElementById(appElemId).textContent = "Failed to load news.";
+    updatedEl.textContent = `Updated ${estStr} EST`;
+  }
+
+  function timeAgo(dateStr) {
+    const now = new Date();
+    const then = new Date(dateStr);
+    const diffMs = now - then;
+
+    const diffMins = Math.floor(diffMs / 60000);
+    if (diffMins < 60) return `${diffMins} mins ago`;
+
+    const hours = Math.floor(diffMins / 60);
+    const mins = diffMins % 60;
+
+    if (hours < 24) {
+      return mins === 0 ? `${hours} hours ago` : `${hours} hours ${mins} mins ago`;
     }
+
+    const days = Math.floor(hours / 24);
+    return `${days} days ago`;
+  }
+
+  function removeDuplicates(arr) {
+    const seen = new Set();
+    return arr.filter(a => {
+      const key = a.url;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
   }
 
   function renderPage(page) {
-    const startIdx = (page - 1) * articlesPerPage;
-    const endIdx = startIdx + articlesPerPage;
-    let pageArticles = articles.slice(startIdx, endIdx);
+    const startIdx = (page - 1) * articlesPerSection * sections;
+    const endIdx = startIdx + articlesPerSection * sections;
+    const pageArticles = articles.slice(startIdx, endIdx);
 
-    // Deduplicate by URL
-    const seen = new Set();
-    pageArticles = pageArticles.filter(a => {
-      if (seen.has(a.url)) return false;
-      seen.add(a.url);
-      return true;
-    });
-
-    // Group by source
-    const bySource = {};
-    pageArticles.forEach(a => {
-      if (!bySource[a.source]) bySource[a.source] = [];
-      bySource[a.source].push(a);
-    });
-
-    // Distribute round-robin to columns
+    // Distribute articles by variety across columns
     const cols = Array.from({ length: sections }, () => []);
-    let i = 0;
-    while (Object.keys(bySource).some(k => bySource[k].length)) {
-      for (const src of Object.keys(bySource)) {
-        if (bySource[src].length) {
-          cols[i % sections].push(bySource[src].shift());
-          i++;
-        }
-      }
-    }
+    let colIndex = 0;
+    const usedSources = new Set();
 
-    // Render
+    pageArticles.forEach(article => {
+      // Prioritize variety: try not to repeat source in a row
+      if (usedSources.has(article.source)) {
+        // push later
+      } else {
+        cols[colIndex % sections].push(article);
+        usedSources.add(article.source);
+        colIndex++;
+      }
+    });
+
+    // Append remaining articles (source repeats)
+    pageArticles.forEach(article => {
+      const alreadyIn = cols.some(col => col.includes(article));
+      if (!alreadyIn) {
+        cols[colIndex % sections].push(article);
+        colIndex++;
+      }
+    });
+
+    // Render columns
     const app = document.getElementById(appElemId);
     app.innerHTML = "";
-    ["left", "center", "right"].forEach((id, idx) => {
+
+    ["left", "center", "right"].slice(0, sections).forEach((id, idx) => {
       const section = document.createElement("section");
       section.className = "col";
       section.id = id;
 
-      cols[idx]?.forEach(a => {
+      cols[idx].forEach(a => {
         const link = document.createElement("a");
         link.href = a.url;
         link.target = "_blank";
@@ -88,44 +118,16 @@ export function paginateNews({
     updatePagination();
   }
 
-  function timeAgo(dateStr) {
-    const now = new Date();
-    const then = new Date(dateStr);
-    const diffMs = now - then;
-    const diffMins = Math.floor(diffMs / 60000);
-    if (diffMins < 60) return `${diffMins} mins ago`;
-    const diffHours = Math.floor(diffMins / 60);
-    if (diffHours < 24) return `${diffHours} hours ago`;
-    const diffDays = Math.floor(diffHours / 24);
-    return `${diffDays} days ago`;
-  }
-
-  function updateTimestamp() {
-    const updatedEl = document.getElementById(updatedElemId);
-    const now = new Date();
-    const estDate = new Date(
-      now.toLocaleString("en-US", { timeZone: "America/New_York" })
-    );
-    const estStr = estDate.toLocaleString("en-US", {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    });
-    updatedEl.textContent = `Updated ${estStr} EST`;
-  }
-
+  // -------- Pagination --------
   function updatePagination() {
-    const totalPages = Math.ceil(articles.length / articlesPerPage);
+    const totalPages = Math.ceil(articles.length / (articlesPerSection * sections));
     document.getElementById(prevBtnId).disabled = currentPage === 1;
     document.getElementById(nextBtnId).disabled = currentPage === totalPages;
     document.getElementById(pageInfoId).textContent = `Page ${currentPage} of ${totalPages}`;
   }
 
   function nextPage() {
-    const totalPages = Math.ceil(articles.length / articlesPerPage);
+    const totalPages = Math.ceil(articles.length / (articlesPerSection * sections));
     if (currentPage < totalPages) {
       currentPage++;
       renderPage(currentPage);
@@ -139,6 +141,29 @@ export function paginateNews({
     }
   }
 
+  // -------- Initialize --------
+  async function init() {
+    try {
+      const res = await fetch(jsonPath);
+      const data = await res.json();
+      articles = removeDuplicates(data.articles)
+        .filter(a => {
+          // Only include articles from the last 21 days
+          const now = new Date();
+          const pub = new Date(a.published_at);
+          return (now - pub) / (1000 * 60 * 60 * 24) <= 21;
+        })
+        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at)); // newest first
+
+      renderPage(currentPage);
+      updateTimestamp();
+    } catch (e) {
+      console.error("Failed to load news.json", e);
+      document.getElementById(appElemId).textContent = "Failed to load news.";
+    }
+  }
+
+  // Expose functions for buttons
   window.nextPage = nextPage;
   window.prevPage = prevPage;
 
