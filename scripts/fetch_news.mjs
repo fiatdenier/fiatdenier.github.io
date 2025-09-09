@@ -1,20 +1,19 @@
-// fetch_news.mjs
+// /scripts/fetch_news.mjs
 import fs from "fs";
 import fetch from "node-fetch";
 import xml2js from "xml2js";
 
-const NEWS_JSON = "./scripts/news.json";
+const NEWS_JSON = "./news.json";  // save in current folder
 const MAX_AGE_DAYS = 21;
 const TIMEOUT_MS = 10000; // 10 seconds
 
-// RSS sources
 const sources = [
   { name: "Cointelegraph", url: "https://cointelegraph.com/rss" },
   { name: "Bitcoin Magazine", url: "https://bitcoinmagazine.com/feed" },
   { name: "Decrypt", url: "https://decrypt.co/feed" },
   { name: "NewsBTC", url: "https://www.newsbtc.com/feed/" },
   { name: "Bitcoinist", url: "https://bitcoinist.com/feed/" },
-  { name: "BTCManager", url: "https://btcmanager.com/feed" },
+  { name: "BTCManager", url: "https://btcmanager.com/feed/" },
   { name: "Bitcoin.com", url: "https://news.bitcoin.com/feed/" },
   { name: "CryptoPotato", url: "https://cryptopotato.com/feed/" },
   { name: "Bitcoinnews", url: "https://bitcoinnews.com/feed/news" },
@@ -22,14 +21,16 @@ const sources = [
 ];
 
 async function fetchRSS(source) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
-
   try {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
     const res = await fetch(source.url, {
-      signal: controller.signal,
       headers: { "User-Agent": "Mozilla/5.0" },
+      signal: controller.signal,
     });
+
+    clearTimeout(id);
 
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
@@ -40,7 +41,7 @@ async function fetchRSS(source) {
     const now = new Date();
 
     return items
-      .map(item => {
+      .map((item) => {
         const pubDate = item.pubDate?.[0] || new Date().toISOString();
         return {
           title: item.title?.[0] || "No title",
@@ -49,13 +50,12 @@ async function fetchRSS(source) {
           published_at: pubDate,
         };
       })
-      .filter(a => now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000);
-
+      .filter(
+        (a) => now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000
+      );
   } catch (e) {
-    console.error(`❌ Failed to fetch ${source.name}: ${e.message}`);
-    return [];
-  } finally {
-    clearTimeout(timeout);
+    console.error(`❌ Failed to fetch ${source.name}:`, e.message);
+    return []; // continue with next source
   }
 }
 
@@ -67,12 +67,9 @@ async function main() {
     allArticles = allArticles.concat(articles);
   }
 
-  // Sort newest first
   allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
-  // Save to JSON
   fs.writeFileSync(NEWS_JSON, JSON.stringify({ articles: allArticles }, null, 2));
-
   console.log(`✅ Saved ${allArticles.length} articles to ${NEWS_JSON}`);
 }
 
