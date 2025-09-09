@@ -1,114 +1,87 @@
 // data/scripts/fetch_news.mjs
 import fs from "fs";
 import fetch from "node-fetch";
-import { parseStringPromise } from "xml2js";
+import xml2js from "xml2js";
 
-const NEWS_JSON = "../news.json";
+// ---------- Config ----------
+const OUTPUT_JSON = "./data/news.json";
+const RSS_FEEDS = [
+  { name: "Cointelegraph", url: "https://cointelegraph.com/rss" },
+  { name: "Bitcoin Magazine", url: "https://bitcoinmagazine.com/.rss/full/" },
+  { name: "Decrypt", url: "https://decrypt.co/feed" },
+  { name: "CryptoSlate", url: "https://cryptoslate.com/feed/" },
+  { name: "CoinDesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/" },
+  { name: "Ambcrypto", url: "https://ambcrypto.com/feed/" },
+  { name: "Bitcoinist", url: "https://bitcoinist.com/feed/" },
+  { name: "NewsBTC", url: "https://www.newsbtc.com/feed/" },
+  { name: "The Block", url: "https://www.theblock.co/rss" },
+  { name: "CryptoBriefing", url: "https://cryptobriefing.com/feed/" }
+];
 
-// -------- Helpers -------- //
-async function fetchWithRetry(url, tries = 3, delay = 2000) {
-  for (let i = 0; i < tries; i++) {
-    try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return await res.text();
-    } catch (e) {
-      console.error(`Fetch failed (${i + 1}/${tries}): ${url}`, e.message);
-      if (i < tries - 1) {
-        await new Promise((r) => setTimeout(r, delay * (i + 1))); // exponential backoff
-      }
-    }
-  }
-  return null;
+const parser = new xml2js.Parser();
+const now = new Date();
+
+// ---------- Helper ----------
+function parseDate(dateStr) {
+  const d = new Date(dateStr);
+  return isNaN(d) ? now : d;
 }
 
-// -------- RSS Parsers -------- //
-async function parseRSS(url, sourceName) {
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// ---------- Fetch & Parse ----------
+async function fetchFeed(feed) {
   try {
-    const xml = await fetchWithRetry(url);
-    if (!xml) return [];
-    const data = await parseStringPromise(xml);
-    const items = data.rss?.channel?.[0]?.item || [];
-    return items.map((a) => ({
-      title: a.title?.[0] || "",
-      url: a.link?.[0] || "",
-      published_at: a.pubDate?.[0] || "",
-      source: sourceName,
-    }));
+    const res = await fetch(feed.url);
+    const xml = await res.text();
+    const parsed = await parser.parseStringPromise(xml);
+    const items = parsed.rss?.channel?.[0]?.item || parsed.feed?.entry || [];
+    
+    return items.map((item) => {
+      const title = item.title?.[0] || "No title";
+      const url = item.link?.[0]?.$.href || item.link?.[0] || "#";
+      const pubDate = item.pubDate?.[0] || item.updated?.[0] || new Date().toISOString();
+      return { title, url, source: feed.name, published_at: parseDate(pubDate).toISOString() };
+    });
   } catch (e) {
-    console.error(`${sourceName} fetch failed`, e.message);
+    console.error(`Failed to fetch ${feed.name}:`, e.message);
     return [];
   }
 }
 
-// -------- Sources -------- //
-async function fetchNewsApi() {
-  const apiKey = process.env.NEWSAPI_KEY;
-  if (!apiKey) return [];
-  const url = `https://newsapi.org/v2/everything?q=bitcoin&language=en&sortBy=publishedAt&pageSize=50&apiKey=${apiKey}`;
-  try {
-    const res = await fetchWithRetry(url);
-    if (!res) return [];
-    const data = JSON.parse(res);
-    if (!data.articles) return [];
-    return data.articles.map((a) => ({
-      title: a.title,
-      url: a.url,
-      published_at: a.publishedAt,
-      source: a.source?.name || "NewsAPI",
-    }));
-  } catch (e) {
-    console.error("NewsAPI fetch failed", e.message);
-    return [];
-  }
-}
-
-async function fetchCointelegraph() {
-  return await parseRSS("https://cointelegraph.com/rss", "cointelegraph.com");
-}
-
-async function fetchBitcoinMagazine() {
-  return await parseRSS("https://bitcoinmagazine.com/feed/", "bitcoinmagazine.com");
-}
-
-async function fetchDecrypt() {
-  return await parseRSS("https://decrypt.co/feed", "decrypt.co");
-}
-
-// -------- Main -------- //
+// ---------- Main ----------
 async function main() {
-  let articles = [];
+  let allArticles = [];
 
-  const [newsapi, cointelegraph, bitcoinmag, decrypt] = await Promise.all([
-    fetchNewsApi(),
-    fetchCointelegraph(),
-    fetchBitcoinMagazine(),
-    fetchDecrypt(),
-  ]);
+  for (const feed of RSS_FEEDS) {
+    const articles = await fetchFeed(feed);
+    allArticles = allArticles.concat(articles);
+  }
 
-  articles = [...newsapi, ...cointelegraph, ...bitcoinmag, ...decrypt];
+  // Filter recent (<24h)
+  const recentArticles = allArticles.filter(a => {
+    const diff = now - new Date(a.published_at);
+    return diff < 24 * 60 * 60 * 1000;
+  });
 
-  // Sort newest first
-  articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+  // Sort recent first, then shuffle within same day
+  const sorted = recentArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+  const shuffled = shuffleArray(sorted);
 
-  // Save with EST timestamp
-  const now = new Date();
-  const estDate = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+  // Save
+  const output = { articles: shuffled };
+  fs.writeFileSync(OUTPUT_JSON, JSON.stringify(output, null, 2));
 
-  const data = {
-    updated_at: estDate.toISOString(),
-    articles,
-  };
-
-  fs.writeFileSync(NEWS_JSON, JSON.stringify(data, null, 2));
-
-  // Log counts per source
-  const counts = articles.reduce((acc, a) => {
-    acc[a.source] = (acc[a.source] || 0) + 1;
-    return acc;
-  }, {});
-  console.log(`✅ Saved ${articles.length} articles at ${estDate.toLocaleString("en-US", { timeZone: "America/New_York" })} EST`);
-  console.log("Articles per source:", counts);
+  // Log
+  console.log(`✅ Saved ${shuffled.length} recent articles at ${now.toLocaleString("en-US", { timeZone: "America/New_York" })} EST`);
+  const sources = [...new Set(shuffled.map(a => a.source))];
+  console.log("Sources:", sources);
 }
 
 main();

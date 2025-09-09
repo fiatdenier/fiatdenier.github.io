@@ -1,17 +1,33 @@
-// /scripts/paginate_news.js
-export function paginateNews({
-  jsonPath = './data/news.json',
+// scripts/paginate_news.js
+export async function paginateNews({
+  jsonPath = "./data/news.json",
   articlesPerSection = 10,
   sections = 3,
-  updatedElemId = 'updated',
-  appElemId = 'app',
-  prevBtnId = 'prev-btn',
-  nextBtnId = 'next-btn',
-  pageInfoId = 'page-info'
+  updatedElemId = "updated",
+  appElemId = "app",
+  prevBtnId = "prev-btn",
+  nextBtnId = "next-btn",
+  pageInfoId = "page-info"
 } = {}) {
+  const articlesPerPage = articlesPerSection * sections;
   let articles = [];
   let currentPage = 1;
-  const articlesPerPage = articlesPerSection * sections;
+
+  // -------- Helper Functions --------
+  function updateTimestamp() {
+    const updatedEl = document.getElementById(updatedElemId);
+    const now = new Date();
+    const estDate = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+    const estStr = estDate.toLocaleString("en-US", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true
+    });
+    updatedEl.textContent = `Updated ${estStr} EST`;
+  }
 
   function timeAgo(dateStr) {
     const now = new Date();
@@ -25,68 +41,41 @@ export function paginateNews({
     return `${diffDays} days ago`;
   }
 
-  function updateTimestamp() {
-    const updatedEl = document.getElementById(updatedElemId);
-    const now = new Date();
-    const estDate = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
-    const estStr = estDate.toLocaleString("en-US", {
-      year: "numeric", month: "numeric", day: "numeric",
-      hour: "numeric", minute: "2-digit", hour12: true
-    });
-    if (updatedEl) updatedEl.textContent = `Updated ${estStr} EST`;
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 
-  // -------- Column-balanced rendering --------
+  // -------- Render Functions --------
   function renderPage(page) {
     const startIdx = (page - 1) * articlesPerPage;
     const endIdx = startIdx + articlesPerPage;
+    let pageArticles = articles.slice(startIdx, endIdx);
 
-    // Prioritize recent articles <24h
-    const recentThreshold = new Date(Date.now() - 24 * 60 * 60 * 1000);
-    const recentArticles = articles.filter(a => new Date(a.published_at) >= recentThreshold);
-    const olderArticles = articles.filter(a => new Date(a.published_at) < recentThreshold);
+    // Shuffle within page to mix sources
+    pageArticles = shuffleArray(pageArticles);
 
-    // Concatenate, recent first
-    const pageArticles = [...recentArticles, ...olderArticles].slice(startIdx, endIdx);
-
-    // Group by source
-    const sourceMap = {};
-    pageArticles.forEach(a => {
-      if (!sourceMap[a.source]) sourceMap[a.source] = [];
-      sourceMap[a.source].push(a);
-    });
-
-    // Column-balanced distribution
     const cols = Array.from({ length: sections }, () => []);
-    let added = 0;
-    const sourceKeys = Object.keys(sourceMap);
-    while (added < pageArticles.length) {
-      for (let s = 0; s < sourceKeys.length; s++) {
-        const src = sourceKeys[s];
-        if (sourceMap[src].length === 0) continue;
-        const colIdx = added % sections;
-        cols[colIdx].push(sourceMap[src].shift());
-        added++;
-        if (added >= pageArticles.length) break;
-      }
-    }
+    pageArticles.forEach((a, i) => cols[i % sections].push(a));
 
-    // Render columns
     const app = document.getElementById(appElemId);
-    if (!app) return;
-    app.innerHTML = '';
+    app.innerHTML = "";
 
-    ['left', 'center', 'right'].slice(0, sections).forEach((id, idx) => {
-      const section = document.createElement('section');
-      section.className = 'col';
+    ["left", "center", "right"].slice(0, sections).forEach((id, idx) => {
+      const section = document.createElement("section");
+      section.className = "col";
       section.id = id;
 
-      cols[idx].forEach(a => {
-        const link = document.createElement('a');
+      cols[idx].forEach((a) => {
+        const link = document.createElement("a");
         link.href = a.url;
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.className = a.title.length > 60 ? 'big' : '';
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.className = a.title.length > 60 ? "big" : "";
+
         link.innerHTML = `${a.title}<span class="meta">${a.source} • ${timeAgo(a.published_at)}</span>`;
         section.appendChild(link);
       });
@@ -97,12 +86,12 @@ export function paginateNews({
     updatePagination();
   }
 
+  // -------- Pagination --------
   function updatePagination() {
     const totalPages = Math.ceil(articles.length / articlesPerPage);
     document.getElementById(prevBtnId).disabled = currentPage === 1;
     document.getElementById(nextBtnId).disabled = currentPage === totalPages;
-    const pageInfo = document.getElementById(pageInfoId);
-    if (pageInfo) pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+    document.getElementById(pageInfoId).textContent = `Page ${currentPage} of ${totalPages}`;
   }
 
   function nextPage() {
@@ -120,25 +109,32 @@ export function paginateNews({
     }
   }
 
-  // -------- Fetch & Initialize --------
-  async function init() {
-    try {
-      const res = await fetch(jsonPath);
-      const data = await res.json();
+  // -------- Fetch Articles and Initialize --------
+  try {
+    const res = await fetch(jsonPath);
+    const data = await res.json();
+    let allArticles = data.articles || [];
 
-      // Sort descending by published date
-      articles = data.articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
-      renderPage(currentPage);
-      updateTimestamp();
-    } catch (e) {
-      console.error("Failed to load news.json", e);
-      const app = document.getElementById(appElemId);
-      if (app) app.textContent = "Failed to load news.";
-    }
+    // Separate recent (<24h) and older
+    const now = new Date();
+    const recent = allArticles.filter(a => (now - new Date(a.published_at)) < 24 * 60 * 60 * 1000);
+    const older = allArticles.filter(a => (now - new Date(a.published_at)) >= 24 * 60 * 60 * 1000);
+
+    // Page 1: recent first, shuffled
+    const shuffledRecent = shuffleArray(recent);
+    const shuffledOlder = shuffleArray(older);
+
+    articles = [...shuffledRecent, ...shuffledOlder];
+
+    renderPage(currentPage);
+    updateTimestamp();
+
+  } catch (e) {
+    console.error("Failed to load articles:", e);
+    document.getElementById(appElemId).textContent = "Failed to load news.";
   }
 
-  init();
-
+  // Expose pagination functions to global
   window.nextPage = nextPage;
   window.prevPage = prevPage;
 }
