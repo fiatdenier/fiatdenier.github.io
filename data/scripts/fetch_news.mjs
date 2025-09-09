@@ -4,6 +4,7 @@ import fetch from "node-fetch";
 import xml2js from "xml2js";
 
 const NEWS_JSON = "./data/news.json";
+const MAX_AGE_DAYS = 21;
 
 // List of sources with RSS URLs
 const sources = [
@@ -30,12 +31,21 @@ async function fetchRSS(source) {
     const parsed = await xml2js.parseStringPromise(text, { trim: true });
 
     const items = parsed.rss?.channel?.[0]?.item || [];
-    return items.map((item) => ({
-      title: item.title?.[0] || "No title",
-      url: item.link?.[0] || "#",
-      source: source.name,
-      published_at: item.pubDate?.[0] || new Date().toISOString(),
-    }));
+    const now = new Date();
+
+    return items
+      .map((item) => {
+        const pubDate = item.pubDate?.[0] || new Date().toISOString();
+        return {
+          title: item.title?.[0] || "No title",
+          url: item.link?.[0] || "#",
+          source: source.name,
+          published_at: pubDate,
+        };
+      })
+      .filter(
+        (a) => now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000
+      ); // filter articles older than MAX_AGE_DAYS
   } catch (e) {
     console.error(`Failed to fetch ${source.name}:`, e.message);
     return [];
@@ -53,13 +63,21 @@ async function main() {
   allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
   // Save to JSON
+  fs.mkdirSync("./data", { recursive: true });
   fs.writeFileSync(NEWS_JSON, JSON.stringify({ articles: allArticles }, null, 2));
 
-  console.log(`✅ Saved ${allArticles.length} articles at ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} EST`);
-  console.log("Articles per source:", allArticles.reduce((acc, a) => {
-    acc[a.source] = (acc[a.source] || 0) + 1;
-    return acc;
-  }, {}));
+  console.log(
+    `✅ Saved ${allArticles.length} articles at ${new Date().toLocaleString("en-US", {
+      timeZone: "America/New_York",
+    })} EST`
+  );
+  console.log(
+    "Articles per source:",
+    allArticles.reduce((acc, a) => {
+      acc[a.source] = (acc[a.source] || 0) + 1;
+      return acc;
+    }, {})
+  );
 }
 
 main();
