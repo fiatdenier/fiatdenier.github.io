@@ -3,10 +3,10 @@ import fs from "fs";
 import fetch from "node-fetch";
 import xml2js from "xml2js";
 
-const NEWS_JSON = "./scripts/news.json"; // write to /scripts
+const NEWS_JSON = "./scripts/news.json"; // save inside /scripts
 const MAX_AGE_DAYS = 21;
+const TIMEOUT_MS = 10000; // 10 seconds
 
-// List of sources with RSS URLs
 const sources = [
   { name: "Cointelegraph", url: "https://cointelegraph.com/rss" },
   { name: "Bitcoin Magazine", url: "https://bitcoinmagazine.com/feed" },
@@ -20,23 +20,23 @@ const sources = [
   { name: "Coindesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml" },
 ];
 
-// Helper: sanitize invalid XML chars for Bitcoinnews
-function sanitizeXml(str) {
-  return str.replace(/&(?!(amp|lt|gt|quot|apos);)/g, "&amp;");
-}
-
-// Fetch and parse RSS feed
 async function fetchRSS(source) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
   try {
     const res = await fetch(source.url, {
       headers: { "User-Agent": "Mozilla/5.0" },
-      timeout: 10000, // 10s timeout
+      signal: controller.signal,
     });
 
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
     let text = await res.text();
 
-    if (source.name === "Bitcoinnews") text = sanitizeXml(text);
+    // sanitize Bitcoinnews feed
+    if (source.name === "Bitcoinnews") {
+      text = text.replace(/&(?!(amp|lt|gt|quot|apos);)/g, "&amp;");
+    }
 
     const parsed = await xml2js.parseStringPromise(text, { trim: true });
     const items = parsed.rss?.channel?.[0]?.item || [];
@@ -50,9 +50,12 @@ async function fetchRSS(source) {
         published_at: item.pubDate?.[0] || new Date().toISOString(),
       }))
       .filter((a) => now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000);
+
   } catch (e) {
-    console.error(`❌ Failed to fetch ${source.name}:`, e.message);
+    console.error(`❌ Failed to fetch ${source.name}: ${e.message}`);
     return [];
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
@@ -60,8 +63,8 @@ async function main() {
   let allArticles = [];
   for (const src of sources) {
     const articles = await fetchRSS(src);
-    console.log(`📡 ${src.name}: ${articles.length} articles fetched`);
     allArticles = allArticles.concat(articles);
+    console.log(`📡 ${src.name}: ${articles.length} articles fetched`);
   }
 
   allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
@@ -69,7 +72,11 @@ async function main() {
   fs.mkdirSync("./scripts", { recursive: true });
   fs.writeFileSync(NEWS_JSON, JSON.stringify({ articles: allArticles }, null, 2));
 
-  console.log(`✅ Saved ${allArticles.length} articles to ${NEWS_JSON}`);
+  console.log(`✅ Saved ${allArticles.length} articles at ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} EST`);
+  console.log("Articles per source:", allArticles.reduce((acc, a) => {
+    acc[a.source] = (acc[a.source] || 0) + 1;
+    return acc;
+  }, {}));
 }
 
 main();
