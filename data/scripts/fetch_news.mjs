@@ -1,8 +1,45 @@
 // data/scripts/fetch_news.mjs
 import fs from "fs";
 import fetch from "node-fetch";
+import { parseStringPromise } from "xml2js";
 
 const NEWS_JSON = "../news.json";
+
+// -------- Helpers -------- //
+async function fetchWithRetry(url, tries = 3, delay = 2000) {
+  for (let i = 0; i < tries; i++) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.text();
+    } catch (e) {
+      console.error(`Fetch failed (${i + 1}/${tries}): ${url}`, e.message);
+      if (i < tries - 1) {
+        await new Promise((r) => setTimeout(r, delay * (i + 1))); // exponential backoff
+      }
+    }
+  }
+  return null;
+}
+
+// -------- RSS Parsers -------- //
+async function parseRSS(url, sourceName) {
+  try {
+    const xml = await fetchWithRetry(url);
+    if (!xml) return [];
+    const data = await parseStringPromise(xml);
+    const items = data.rss?.channel?.[0]?.item || [];
+    return items.map((a) => ({
+      title: a.title?.[0] || "",
+      url: a.link?.[0] || "",
+      published_at: a.pubDate?.[0] || "",
+      source: sourceName,
+    }));
+  } catch (e) {
+    console.error(`${sourceName} fetch failed`, e.message);
+    return [];
+  }
+}
 
 // -------- Sources -------- //
 async function fetchNewsApi() {
@@ -10,66 +47,46 @@ async function fetchNewsApi() {
   if (!apiKey) return [];
   const url = `https://newsapi.org/v2/everything?q=bitcoin&language=en&sortBy=publishedAt&pageSize=50&apiKey=${apiKey}`;
   try {
-    const res = await fetch(url);
-    const data = await res.json();
+    const res = await fetchWithRetry(url);
+    if (!res) return [];
+    const data = JSON.parse(res);
     if (!data.articles) return [];
     return data.articles.map((a) => ({
       title: a.title,
       url: a.url,
       published_at: a.publishedAt,
-      source: a.source.name || "NewsAPI",
+      source: a.source?.name || "NewsAPI",
     }));
   } catch (e) {
-    console.error("NewsAPI fetch failed", e);
+    console.error("NewsAPI fetch failed", e.message);
     return [];
   }
 }
 
-// Example: Cointelegraph
 async function fetchCointelegraph() {
-  try {
-    const res = await fetch("https://api.rss2json.com/v1/api.json?rss_url=https://cointelegraph.com/rss");
-    const data = await res.json();
-    return data.items.map((a) => ({
-      title: a.title,
-      url: a.link,
-      published_at: a.pubDate,
-      source: "cointelegraph.com",
-    }));
-  } catch (e) {
-    console.error("Cointelegraph fetch failed", e);
-    return [];
-  }
+  return await parseRSS("https://cointelegraph.com/rss", "cointelegraph.com");
 }
 
-// Example: Bitcoin Magazine
 async function fetchBitcoinMagazine() {
-  try {
-    const res = await fetch("https://api.rss2json.com/v1/api.json?rss_url=https://bitcoinmagazine.com/.rss/full/");
-    const data = await res.json();
-    return data.items.map((a) => ({
-      title: a.title,
-      url: a.link,
-      published_at: a.pubDate,
-      source: "bitcoinmagazine.com",
-    }));
-  } catch (e) {
-    console.error("Bitcoin Magazine fetch failed", e);
-    return [];
-  }
+  return await parseRSS("https://bitcoinmagazine.com/feed/", "bitcoinmagazine.com");
+}
+
+async function fetchDecrypt() {
+  return await parseRSS("https://decrypt.co/feed", "decrypt.co");
 }
 
 // -------- Main -------- //
 async function main() {
   let articles = [];
 
-  const [newsapi, cointelegraph, bitcoinmag] = await Promise.all([
+  const [newsapi, cointelegraph, bitcoinmag, decrypt] = await Promise.all([
     fetchNewsApi(),
     fetchCointelegraph(),
     fetchBitcoinMagazine(),
+    fetchDecrypt(),
   ]);
 
-  articles = [...newsapi, ...cointelegraph, ...bitcoinmag];
+  articles = [...newsapi, ...cointelegraph, ...bitcoinmag, ...decrypt];
 
   // Sort newest first
   articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
@@ -84,7 +101,14 @@ async function main() {
   };
 
   fs.writeFileSync(NEWS_JSON, JSON.stringify(data, null, 2));
+
+  // Log counts per source
+  const counts = articles.reduce((acc, a) => {
+    acc[a.source] = (acc[a.source] || 0) + 1;
+    return acc;
+  }, {});
   console.log(`✅ Saved ${articles.length} articles at ${estDate.toLocaleString("en-US", { timeZone: "America/New_York" })} EST`);
+  console.log("Articles per source:", counts);
 }
 
 main();
