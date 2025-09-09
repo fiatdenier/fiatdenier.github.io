@@ -1,4 +1,6 @@
 // scripts/paginate_news.js
+// ES module for paginated Bitcoin news display
+
 export async function paginateNews({
   jsonPath = './data/news.json',
   articlesPerSection = 10,
@@ -9,90 +11,118 @@ export async function paginateNews({
   nextBtnId = 'next-btn',
   pageInfoId = 'page-info'
 }) {
-  const app = document.getElementById(appElemId);
-  const updatedElem = document.getElementById(updatedElemId);
-  const prevBtn = document.getElementById(prevBtnId);
-  const nextBtn = document.getElementById(nextBtnId);
-  const pageInfo = document.getElementById(pageInfoId);
-
-  let articles = [];
   let currentPage = 1;
-  const articlesPerPage = articlesPerSection * sections;
-  let totalPages = 1;
+  let articles = [];
 
-  // Fetch JSON
+  // --- Time display ---
+  function updateTimestamp() {
+    const updatedEl = document.getElementById(updatedElemId);
+    const now = new Date();
+    const estDate = new Date(
+      now.toLocaleString('en-US', { timeZone: 'America/New_York' })
+    );
+
+    const estStr = estDate.toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    });
+
+    updatedEl.textContent = `Updated ${estStr} EST`;
+  }
+
+  // --- Format published time ---
+  function timeAgo(dateStr) {
+    const now = new Date();
+    const then = new Date(dateStr);
+    const diffMs = now - then;
+    const diffMins = Math.floor(diffMs / 60000);
+
+    if (diffMins < 60) return `${diffMins} mins ago`;
+    const diffHours = Math.floor(diffMins / 60);
+    if (diffHours < 24) return `${diffHours} hours ago`;
+    const diffDays = Math.floor(diffHours / 24);
+    return `${diffDays} days ago`;
+  }
+
+  // --- Render current page ---
+  function renderPage(page) {
+    const articlesPerPage = articlesPerSection * sections;
+    const startIdx = (page - 1) * articlesPerPage;
+    const endIdx = startIdx + articlesPerPage;
+    const pageArticles = articles.slice(startIdx, endIdx);
+
+    const cols = Array.from({ length: sections }, () => []);
+
+    pageArticles.forEach((a, i) => {
+      const col = i % sections;
+      cols[col].push(a);
+    });
+
+    const app = document.getElementById(appElemId);
+    app.innerHTML = '';
+
+    ['left', 'center', 'right'].slice(0, sections).forEach((id, idx) => {
+      const section = document.createElement('section');
+      section.className = 'col';
+      section.id = id;
+
+      cols[idx].forEach(a => {
+        const link = document.createElement('a');
+        link.href = a.url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.className = a.title.length > 60 ? 'big' : '';
+
+        link.innerHTML = `${a.title}<span class="meta">${a.source} • ${timeAgo(a.published_at)}</span>`;
+        section.appendChild(link);
+      });
+
+      app.appendChild(section);
+    });
+
+    updatePagination();
+  }
+
+  // --- Pagination buttons ---
+  function updatePagination() {
+    const totalPages = Math.ceil(articles.length / (articlesPerSection * sections));
+    document.getElementById(prevBtnId).disabled = currentPage === 1;
+    document.getElementById(nextBtnId).disabled = currentPage === totalPages;
+    document.getElementById(pageInfoId).textContent = `Page ${currentPage} of ${totalPages}`;
+  }
+
+  function nextPage() {
+    const totalPages = Math.ceil(articles.length / (articlesPerSection * sections));
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPage(currentPage);
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPage(currentPage);
+    }
+  }
+
+  // Attach buttons to window so inline onclick works
+  window.nextPage = nextPage;
+  window.prevPage = prevPage;
+
+  // --- Fetch news and initialize ---
   try {
     const res = await fetch(jsonPath);
     const data = await res.json();
     articles = data.articles || [];
-    totalPages = Math.ceil(articles.length / articlesPerPage);
-
-    // Set updated timestamp
-    if (data.updated_at) {
-      const dt = new Date(data.updated_at);
-      updatedElem.textContent = `Updated ${dt.toLocaleString('en-US', { timeZone: 'America/New_York' })} EST`;
-    }
-
-    renderPage();
+    renderPage(currentPage);
+    updateTimestamp();
   } catch (e) {
     console.error('Failed to load news.json', e);
-    app.innerHTML = '<p>Error loading articles.</p>';
+    document.getElementById(appElemId).textContent = 'Failed to load news.';
   }
-
-  function renderPage() {
-    app.innerHTML = ''; // clear previous content
-
-    const startIdx = (currentPage - 1) * articlesPerPage;
-    const pageArticles = articles.slice(startIdx, startIdx + articlesPerPage);
-
-    // Create columns
-    const cols = [];
-    for (let i = 0; i < sections; i++) {
-      const col = document.createElement('section');
-      col.classList.add('col');
-      app.appendChild(col);
-      cols.push(col);
-    }
-
-    // Distribute articles into columns
-    pageArticles.forEach((article, i) => {
-      const col = cols[i % sections];
-      const a = document.createElement('a');
-      a.href = article.url;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.className = article.title.length > 60 ? 'big' : ''; // optional styling
-      a.innerHTML = `${article.title} <span class="meta">${article.source} • ${timeAgo(article.published_at)}</span>`;
-      col.appendChild(a);
-    });
-
-    // Update buttons and page info
-    prevBtn.disabled = currentPage === 1;
-    nextBtn.disabled = currentPage === totalPages || totalPages === 0;
-    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-  }
-
-  function timeAgo(dateStr) {
-    const date = new Date(dateStr);
-    const diff = Math.floor((Date.now() - date) / 1000); // seconds
-    if (diff < 60) return `${diff} sec${diff !== 1 ? 's' : ''} ago`;
-    if (diff < 3600) return `${Math.floor(diff / 60)} min${Math.floor(diff / 60) !== 1 ? 's' : ''} ago`;
-    if (diff < 86400) return `${Math.floor(diff / 3600)} hour${Math.floor(diff / 3600) !== 1 ? 's' : ''} ago`;
-    return `${Math.floor(diff / 86400)} day${Math.floor(diff / 86400) !== 1 ? 's' : ''} ago`;
-  }
-
-  // Pagination controls
-  window.prevPage = () => {
-    if (currentPage > 1) {
-      currentPage--;
-      renderPage();
-    }
-  };
-
-  window.nextPage = () => {
-    if (currentPage < totalPages) {
-      currentPage++;
-      renderPage();
-    }
-  };
 }
