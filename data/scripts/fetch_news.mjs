@@ -3,28 +3,27 @@ import fs from "fs";
 import fetch from "node-fetch";
 import xml2js from "xml2js";
 
-// ---------- Config ----------
-const OUTPUT_JSON = "./data/news.json";
-const RSS_FEEDS = [
+const DATA_PATH = "./data/news.json";
+const sources = [
   { name: "Cointelegraph", url: "https://cointelegraph.com/rss" },
-  { name: "Bitcoin Magazine", url: "https://bitcoinmagazine.com/.rss/full/" },
   { name: "Decrypt", url: "https://decrypt.co/feed" },
+  { name: "Bitcoin Magazine", url: "https://bitcoinmagazine.com/.rss/full/" },
   { name: "CryptoSlate", url: "https://cryptoslate.com/feed/" },
-  { name: "CoinDesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/" },
+  { name: "CoinDesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml" },
   { name: "Ambcrypto", url: "https://ambcrypto.com/feed/" },
   { name: "Bitcoinist", url: "https://bitcoinist.com/feed/" },
   { name: "NewsBTC", url: "https://www.newsbtc.com/feed/" },
-  { name: "The Block", url: "https://www.theblock.co/rss" },
-  { name: "CryptoBriefing", url: "https://cryptobriefing.com/feed/" }
+  { name: "The Block", url: "https://www.theblock.co/feed" },
+  { name: "CryptoBriefing", url: "https://cryptobriefing.com/feed/" },
+  // NewsAPI optional, replace YOUR_KEY with your key
+  // { name: "NewsAPI", url: "https://newsapi.org/v2/top-headlines?category=business&apiKey=YOUR_KEY" }
 ];
 
-const parser = new xml2js.Parser();
-const now = new Date();
-
-// ---------- Helper ----------
-function parseDate(dateStr) {
-  const d = new Date(dateStr);
-  return isNaN(d) ? now : d;
+function parseDate(item) {
+  // Try multiple RSS/Atom fields for date
+  return (
+    new Date(item.pubDate?.[0] || item.published?.[0] || item.updated?.[0] || item["dc:date"]?.[0])
+  );
 }
 
 function shuffleArray(array) {
@@ -32,56 +31,58 @@ function shuffleArray(array) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
-  return array;
 }
 
-// ---------- Fetch & Parse ----------
-async function fetchFeed(feed) {
+async function fetchRSS(source) {
   try {
-    const res = await fetch(feed.url);
-    const xml = await res.text();
-    const parsed = await parser.parseStringPromise(xml);
-    const items = parsed.rss?.channel?.[0]?.item || parsed.feed?.entry || [];
-    
-    return items.map((item) => {
+    const res = await fetch(source.url);
+    const text = await res.text();
+    const parsed = await xml2js.parseStringPromise(text, { mergeAttrs: true, explicitArray: true });
+
+    const items = parsed.rss?.[0]?.channel?.[0]?.item || parsed.feed?.[0]?.entry || [];
+    const articles = items.map((item) => {
       const title = item.title?.[0] || "No title";
-      const url = item.link?.[0]?.$.href || item.link?.[0] || "#";
-      const pubDate = item.pubDate?.[0] || item.updated?.[0] || new Date().toISOString();
-      return { title, url, source: feed.name, published_at: parseDate(pubDate).toISOString() };
+      const url = item.link?.[0]?.href || item.link?.[0] || "#";
+      const published_at = parseDate(item)?.toISOString() || new Date().toISOString();
+      return { title, url, source: source.name, published_at };
     });
+
+    return articles;
   } catch (e) {
-    console.error(`Failed to fetch ${feed.name}:`, e.message);
+    console.error(`Failed to fetch ${source.name}:`, e.message);
     return [];
   }
 }
 
-// ---------- Main ----------
-async function main() {
+async function fetchAll() {
   let allArticles = [];
-
-  for (const feed of RSS_FEEDS) {
-    const articles = await fetchFeed(feed);
+  for (const src of sources) {
+    const articles = await fetchRSS(src);
     allArticles = allArticles.concat(articles);
   }
 
-  // Filter recent (<24h)
-  const recentArticles = allArticles.filter(a => {
-    const diff = now - new Date(a.published_at);
-    return diff < 24 * 60 * 60 * 1000;
+  // Sort by recency (newest first)
+  allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+
+  // Optional: move last 24h articles to the front
+  const now = new Date();
+  const last24h = [];
+  const older = [];
+  allArticles.forEach((a) => {
+    const diffMs = now - new Date(a.published_at);
+    if (diffMs <= 24 * 60 * 60 * 1000) last24h.push(a);
+    else older.push(a);
   });
 
-  // Sort recent first, then shuffle within same day
-  const sorted = recentArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
-  const shuffled = shuffleArray(sorted);
+  // Shuffle to mix sources for variety
+  shuffleArray(last24h);
+  shuffleArray(older);
 
-  // Save
-  const output = { articles: shuffled };
-  fs.writeFileSync(OUTPUT_JSON, JSON.stringify(output, null, 2));
+  allArticles = last24h.concat(older);
 
-  // Log
-  console.log(`✅ Saved ${shuffled.length} recent articles at ${now.toLocaleString("en-US", { timeZone: "America/New_York" })} EST`);
-  const sources = [...new Set(shuffled.map(a => a.source))];
-  console.log("Sources:", sources);
+  // Save JSON
+  fs.writeFileSync(DATA_PATH, JSON.stringify({ articles: allArticles }, null, 2));
+  console.log(`✅ Saved ${allArticles.length} articles at ${now.toLocaleString("en-US", { timeZone: "America/New_York" })}`);
 }
 
-main();
+fetchAll();
