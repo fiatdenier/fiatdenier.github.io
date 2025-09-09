@@ -2,43 +2,42 @@ name: Fetch Bitcoin News
 
 on:
   schedule:
-    - cron: '*/30 * * * *'   # every 30 minutes (runs in UTC)
+    # Every 10 minutes
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  build:
+  fetch:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: data/scripts
     steps:
-      # 1️⃣ Checkout repo
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      # 2️⃣ Set up Node
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      # 3️⃣ Install dependencies
-      - run: npm install
+      - name: Install dependencies
+        run: npm install xml2js node-fetch
 
-      # 4️⃣ Set NewsAPI secret
-      - name: Set NEWSAPI_KEY
-        run: echo "NEWSAPI_KEY=${{ secrets.NEWSAPI_KEY }}" >> $GITHUB_ENV
+      - name: Fetch news
+        run: node data/scripts/fetch_news.mjs
 
-      # 5️⃣ Run fetch script
-      - run: node fetch_news.mjs
-
-      # 6️⃣ Commit and push generated files
-      - name: Commit and push HTML + JSON
+      - name: Check for changes
+        id: git-check
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ../../index.html ../../page*.html ../../data/news.json
-          git commit -m "chore: update news pages" || echo "No changes"
-          git push
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add data/news.json
+          if git diff --cached --quiet; then
+            echo "no-changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "no-changes=false" >> $GITHUB_OUTPUT
+          fi
 
+      - name: Commit and push only if new articles
+        if: steps.git-check.outputs.no-changes == 'false'
+        run: |
+          git commit -m "Update news.json with latest articles [skip ci]"
+          git push
