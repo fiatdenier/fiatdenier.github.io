@@ -1,7 +1,7 @@
 // /scripts/paginate_news.js
 export function paginateNews(config) {
   const {
-    jsonPath,
+    jsonPath, // will point to './scripts/news.json'
     articlesPerSection = 10,
     sections = 3,
     updatedElemId,
@@ -14,7 +14,6 @@ export function paginateNews(config) {
   let articles = [];
   let currentPage = 1;
 
-  // -------- Helper Functions --------
   function updateTimestamp() {
     const updatedEl = document.getElementById(updatedElemId);
     const now = new Date();
@@ -68,23 +67,18 @@ export function paginateNews(config) {
     const endIdx = startIdx + articlesPerSection * sections;
     const pageArticles = articles.slice(startIdx, endIdx);
 
-    // Distribute articles by variety across columns
     const cols = Array.from({ length: sections }, () => []);
     let colIndex = 0;
     const usedSources = new Set();
 
     pageArticles.forEach(article => {
-      // Prioritize variety: try not to repeat source in a row
-      if (usedSources.has(article.source)) {
-        // push later
-      } else {
+      if (!usedSources.has(article.source)) {
         cols[colIndex % sections].push(article);
         usedSources.add(article.source);
         colIndex++;
       }
     });
 
-    // Append remaining articles (source repeats)
     pageArticles.forEach(article => {
       const alreadyIn = cols.some(col => col.includes(article));
       if (!alreadyIn) {
@@ -93,7 +87,6 @@ export function paginateNews(config) {
       }
     });
 
-    // Render columns
     const app = document.getElementById(appElemId);
     app.innerHTML = "";
 
@@ -118,7 +111,6 @@ export function paginateNews(config) {
     updatePagination();
   }
 
-  // -------- Pagination --------
   function updatePagination() {
     const totalPages = Math.ceil(articles.length / (articlesPerSection * sections));
     document.getElementById(prevBtnId).disabled = currentPage === 1;
@@ -141,19 +133,13 @@ export function paginateNews(config) {
     }
   }
 
-  // -------- Initialize --------
   async function init() {
     try {
       const res = await fetch(jsonPath);
       const data = await res.json();
       articles = removeDuplicates(data.articles)
-        .filter(a => {
-          // Only include articles from the last 21 days
-          const now = new Date();
-          const pub = new Date(a.published_at);
-          return (now - pub) / (1000 * 60 * 60 * 24) <= 21;
-        })
-        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at)); // newest first
+        .filter(a => (new Date() - new Date(a.published_at)) / (1000 * 60 * 60 * 24) <= 21)
+        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
       renderPage(currentPage);
       updateTimestamp();
@@ -163,7 +149,6 @@ export function paginateNews(config) {
     }
   }
 
-  // Expose functions for buttons
   window.nextPage = nextPage;
   window.prevPage = prevPage;
 
