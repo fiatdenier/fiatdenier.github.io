@@ -2,7 +2,7 @@ name: Fetch Bitcoin News
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # every 30 minutes
+    - cron: '*/30 * * * *'   # every 30 minutes
   workflow_dispatch:
 
 permissions:
@@ -30,11 +30,11 @@ jobs:
       - name: Fetch news
         run: node fetch_news.mjs
 
-      # 5️⃣ Commit and push generated files
-      - name: Commit and push updated pages
+      # 5️⃣ Commit and push updated files
+      - name: Commit and push updated news.json
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ../scripts/news.json ../index.html ../page*.html
+          git add ../data/news.json ../index.html ../page*.html
           git commit -m "chore: update news pages" || echo "No changes"
           git push
