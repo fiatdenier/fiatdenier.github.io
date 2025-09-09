@@ -1,4 +1,4 @@
-// data/scripts/fetch_news.mjs
+// scripts/fetch_news.mjs
 import fs from "fs";
 import fetch from "node-fetch";
 import xml2js from "xml2js";
@@ -18,10 +18,8 @@ const sources = [
   { name: "CryptoPotato", url: "https://cryptopotato.com/feed/" },
   { name: "Bitcoinnews", url: "https://bitcoinnews.com/feed/news" },
   { name: "Coindesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml" },
-  { name: "NewsBTC", url: "https://www.newsbtc.com/feed/" },
 ];
 
-// Fetch and parse RSS feed
 async function fetchRSS(source) {
   try {
     const res = await fetch(source.url, {
@@ -36,7 +34,7 @@ async function fetchRSS(source) {
     const items = parsed.rss?.channel?.[0]?.item || [];
     const now = new Date();
 
-    return items
+    const articles = items
       .map((item) => {
         const pubDate = item.pubDate?.[0] || new Date().toISOString();
         return {
@@ -48,21 +46,25 @@ async function fetchRSS(source) {
       })
       .filter(
         (a) => now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000
-      ); // filter articles older than MAX_AGE_DAYS
+      );
+
+    console.log(`📡 ${source.name}: ${articles.length} articles fetched`);
+    return articles;
   } catch (e) {
-    console.error(`Failed to fetch ${source.name}:`, e.message);
+    console.error(`❌ Failed to fetch ${source.name}:`, e.message);
     return [];
   }
 }
 
 async function main() {
   let allArticles = [];
+
   for (const src of sources) {
     const articles = await fetchRSS(src);
     allArticles = allArticles.concat(articles);
   }
 
-  // Sort by recency (newest first)
+  // Sort by recency
   allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
   // Save to JSON
@@ -74,13 +76,13 @@ async function main() {
       timeZone: "America/New_York",
     })} EST`
   );
-  console.log(
-    "Articles per source:",
-    allArticles.reduce((acc, a) => {
-      acc[a.source] = (acc[a.source] || 0) + 1;
-      return acc;
-    }, {})
-  );
+
+  // Per-source counts
+  const counts = allArticles.reduce((acc, a) => {
+    acc[a.source] = (acc[a.source] || 0) + 1;
+    return acc;
+  }, {});
+  console.log("📝 Articles per source:", counts);
 }
 
 main();
