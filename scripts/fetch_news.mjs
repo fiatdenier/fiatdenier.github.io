@@ -3,10 +3,10 @@ import fs from "fs";
 import fetch from "node-fetch";
 import xml2js from "xml2js";
 
-const NEWS_JSON = "./scripts/news.json"; // news.json now in same folder
+const NEWS_JSON = "./scripts/news.json"; // write to /scripts
 const MAX_AGE_DAYS = 21;
-const FETCH_TIMEOUT_MS = 10000; // 10s per source
 
+// List of sources with RSS URLs
 const sources = [
   { name: "Cointelegraph", url: "https://cointelegraph.com/rss" },
   { name: "Bitcoin Magazine", url: "https://bitcoinmagazine.com/feed" },
@@ -20,26 +20,25 @@ const sources = [
   { name: "Coindesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml" },
 ];
 
+// Helper: sanitize invalid XML chars for Bitcoinnews
+function sanitizeXml(str) {
+  return str.replace(/&(?!(amp|lt|gt|quot|apos);)/g, "&amp;");
+}
+
+// Fetch and parse RSS feed
 async function fetchRSS(source) {
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
-
     const res = await fetch(source.url, {
       headers: { "User-Agent": "Mozilla/5.0" },
-      signal: controller.signal,
+      timeout: 10000, // 10s timeout
     });
 
-    clearTimeout(timeout);
-
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    let text = await res.text();
 
-    const text = await res.text();
+    if (source.name === "Bitcoinnews") text = sanitizeXml(text);
 
-    // sanitize invalid XML
-    const sanitized = text.replace(/&(?!(?:amp|lt|gt|quot|apos);)/g, "&amp;");
-
-    const parsed = await xml2js.parseStringPromise(sanitized, { trim: true });
+    const parsed = await xml2js.parseStringPromise(text, { trim: true });
     const items = parsed.rss?.channel?.[0]?.item || [];
     const now = new Date();
 
@@ -50,11 +49,9 @@ async function fetchRSS(source) {
         source: source.name,
         published_at: item.pubDate?.[0] || new Date().toISOString(),
       }))
-      .filter(
-        (a) => now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000
-      );
+      .filter((a) => now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000);
   } catch (e) {
-    console.error(`❌ Failed to fetch ${source.name}: ${e.message}`);
+    console.error(`❌ Failed to fetch ${source.name}:`, e.message);
     return [];
   }
 }
