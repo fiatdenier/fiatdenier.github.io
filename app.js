@@ -1,61 +1,71 @@
-async function load() {
-try {
-const res = await fetch('data/news.json', { cache: 'no-store' });
-const data = await res.json();
+// app.js
+async function loadNews(page = 1) {
+  try {
+    const res = await fetch("data/news.json");
+    const data = await res.json();
 
+    // Update header with EST time
+    const updated = new Date(data.updated_at);
+    document.getElementById("updated-time").textContent =
+      updated.toLocaleString("en-US", { timeZone: "America/New_York" }) + " EST";
 
-const items = (data.items || []).slice(0, 90); // safety cap
-const updated = data.updated_at ? new Date(data.updated_at) : new Date();
-document.getElementById('updated').textContent = `Updated ${timeAgo(updated)} — ${updated.toLocaleString()}`;
+    // Split into <24h and older
+    const now = new Date();
+    const cutoff = now.getTime() - 24 * 60 * 60 * 1000;
 
+    const recent = data.articles.filter(
+      (a) => new Date(a.published_at).getTime() >= cutoff
+    );
+    const older = data.articles.filter(
+      (a) => new Date(a.published_at).getTime() < cutoff
+    );
 
-// split into 3 columns
-const cols = [[], [], []];
-items.forEach((item, i) => cols[i % 3].push(item));
+    let articles = [];
 
+    if (page === 1) {
+      // Page 1 = all <24h
+      articles = recent;
+    } else {
+      // Pages 2+ = older articles, paginated
+      const perPage = 20;
+      const start = (page - 2) * perPage;
+      const end = start + perPage;
+      articles = older.slice(start, end);
+    }
 
-renderColumn('left', cols[0]);
-renderColumn('center', cols[1]);
-renderColumn('right', cols[2]);
-} catch (e) {
-document.getElementById('updated').textContent = 'Failed to load.';
-console.error(e);
+    const container = document.getElementById("news-container");
+    container.innerHTML = "";
+
+    articles.forEach((a) => {
+      const pub = new Date(a.published_at);
+      const div = document.createElement("div");
+      div.className = "article";
+      div.innerHTML = `
+        <a href="${a.url}" target="_blank">${a.title}</a>
+        <div class="meta">${a.source} • ${pub.toLocaleString("en-US", {
+        timeZone: "America/New_York",
+      })} EST</div>
+      `;
+      container.appendChild(div);
+    });
+
+    // Pagination buttons
+    const perPage = 20;
+    const totalPages = 1 + Math.ceil(older.length / perPage);
+    const pagination = document.getElementById("pagination");
+    pagination.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      if (i === page) btn.classList.add("active");
+      btn.onclick = () => loadNews(i);
+      pagination.appendChild(btn);
+    }
+  } catch (err) {
+    console.error("Failed to load news:", err);
+  }
 }
-}
 
-
-function renderColumn(id, items) {
-const el = document.getElementById(id);
-el.innerHTML = items.map((it, idx) => {
-const cls = idx < 5 ? 'big' : '';
-const host = hostFromUrl(it.url);
-const when = it.published_at ? timeAgo(new Date(it.published_at)) : '';
-return `<a class="${cls}" href="${it.url}" target="_blank" rel="noopener">
-${escapeHtml(it.title)}
-<span class="meta">${host}${when ? ' • ' + when : ''}</span>
-</a>`;
-}).join('');
-}
-
-
-function hostFromUrl(u) {
-try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; }
-}
-
-
-function timeAgo(date) {
-const s = Math.floor((Date.now() - date.getTime()) / 1000);
-const r = (n, w) => `${n} ${w}${n !== 1 ? 's' : ''} ago`;
-if (s < 60) return r(s, 'sec');
-const m = Math.floor(s / 60); if (m < 60) return r(m, 'min');
-const h = Math.floor(m / 60); if (h < 24) return r(h, 'hour');
-const d = Math.floor(h / 24); return r(d, 'day');
-}
-
-
-function escapeHtml(str) {
-return str.replace(/[&<>"] /g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[s] || s));
-}
-
-
-load();
+// Load first page on startup
+document.addEventListener("DOMContentLoaded", () => loadNews(1));
