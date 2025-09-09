@@ -6,6 +6,9 @@ on:
     - cron: '*/10 * * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -24,20 +27,16 @@ jobs:
       - name: Fetch news
         run: node data/scripts/fetch_news.mjs
 
-      - name: Check for changes
-        id: git-check
+      - name: Commit and push if changes
         run: |
           git config user.name "GitHub Action"
           git config user.email "actions@github.com"
           git add data/news.json
           if git diff --cached --quiet; then
-            echo "no-changes=true" >> $GITHUB_OUTPUT
+            echo "✅ No new articles — nothing to commit."
           else
-            echo "no-changes=false" >> $GITHUB_OUTPUT
+            git pull --rebase origin main
+            git commit -m "Update news.json with latest articles [skip ci]"
+            git push
+            echo "📰 New articles committed and pushed."
           fi
-
-      - name: Commit and push only if new articles
-        if: steps.git-check.outputs.no-changes == 'false'
-        run: |
-          git commit -m "Update news.json with latest articles [skip ci]"
-          git push
