@@ -1,32 +1,41 @@
-name: Fetch News
+name: Fetch Bitcoin News
 
 on:
   schedule:
-    - cron: "15 * * * *" # every hour
+    - cron: '*/30 * * * *'   # every 30 minutes
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # 1️⃣ Checkout repo
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      # 2️⃣ Setup Node
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install node-fetch@2 xml2js
+      # 3️⃣ Install dependencies
+      - run: npm install xml2js node-fetch
 
-      - name: Run fetch script
-        run: node scripts/fetch_news.mjs
+      # 4️⃣ Run fetch script from repo root
+      - run: node ./scripts/fetch_news.mjs
 
-      - name: Commit and push
+      # 5️⃣ Commit only if news.json changed
+      - name: Commit news.json if updated
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/news.json
-          git diff --quiet && git commit --allow-empty -m "No changes (workflow ran) [skip ci]" || git commit -m "Update news.json [skip ci]"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "Update news.json with latest articles [skip ci]"
+            git push
+            echo "📰 news.json updated and pushed"
+          else
+            echo "✅ No new articles — nothing to commit"
+          fi
