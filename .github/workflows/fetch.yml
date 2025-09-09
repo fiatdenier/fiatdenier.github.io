@@ -3,7 +3,7 @@ name: Fetch Bitcoin News
 on:
   schedule:
     # Every 10 minutes
-    - cron: '*/10 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -58,3 +58,4 @@ jobs:
         run: |
           git commit -m "Update news.json with latest articles [skip ci]"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+
