@@ -13,7 +13,6 @@ export function paginateNews({
   let currentPage = 1;
   const articlesPerPage = articlesPerSection * sections;
 
-  // -------- Helper: Time ago --------
   function timeAgo(dateStr) {
     const now = new Date();
     const then = new Date(dateStr);
@@ -26,38 +25,38 @@ export function paginateNews({
     return `${diffDays} days ago`;
   }
 
-  // -------- Helper: Update timestamp --------
   function updateTimestamp() {
     const updatedEl = document.getElementById(updatedElemId);
     const now = new Date();
-    const estDate = new Date(
-      now.toLocaleString("en-US", { timeZone: "America/New_York" })
-    );
+    const estDate = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
     const estStr = estDate.toLocaleString("en-US", {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true
+      year: "numeric", month: "numeric", day: "numeric",
+      hour: "numeric", minute: "2-digit", hour12: true
     });
     if (updatedEl) updatedEl.textContent = `Updated ${estStr} EST`;
   }
 
-  // -------- Render a page with column balance --------
+  // -------- Column-balanced rendering --------
   function renderPage(page) {
     const startIdx = (page - 1) * articlesPerPage;
     const endIdx = startIdx + articlesPerPage;
-    const pageArticles = articles.slice(startIdx, endIdx);
 
-    // Group articles by source
+    // Prioritize recent articles <24h
+    const recentThreshold = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    const recentArticles = articles.filter(a => new Date(a.published_at) >= recentThreshold);
+    const olderArticles = articles.filter(a => new Date(a.published_at) < recentThreshold);
+
+    // Concatenate, recent first
+    const pageArticles = [...recentArticles, ...olderArticles].slice(startIdx, endIdx);
+
+    // Group by source
     const sourceMap = {};
     pageArticles.forEach(a => {
       if (!sourceMap[a.source]) sourceMap[a.source] = [];
       sourceMap[a.source].push(a);
     });
 
-    // Prepare columns: take one from each source in round-robin
+    // Column-balanced distribution
     const cols = Array.from({ length: sections }, () => []);
     let added = 0;
     const sourceKeys = Object.keys(sourceMap);
@@ -72,6 +71,7 @@ export function paginateNews({
       }
     }
 
+    // Render columns
     const app = document.getElementById(appElemId);
     if (!app) return;
     app.innerHTML = '';
@@ -97,7 +97,6 @@ export function paginateNews({
     updatePagination();
   }
 
-  // -------- Pagination Controls --------
   function updatePagination() {
     const totalPages = Math.ceil(articles.length / articlesPerPage);
     document.getElementById(prevBtnId).disabled = currentPage === 1;
@@ -121,13 +120,14 @@ export function paginateNews({
     }
   }
 
-  // -------- Fetch News & Initialize --------
+  // -------- Fetch & Initialize --------
   async function init() {
     try {
       const res = await fetch(jsonPath);
       const data = await res.json();
-      // Shuffle articles first for variety
-      articles = data.articles.sort(() => Math.random() - 0.5);
+
+      // Sort descending by published date
+      articles = data.articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
       renderPage(currentPage);
       updateTimestamp();
     } catch (e) {
@@ -139,7 +139,6 @@ export function paginateNews({
 
   init();
 
-  // Expose pagination functions globally
   window.nextPage = nextPage;
   window.prevPage = prevPage;
 }
