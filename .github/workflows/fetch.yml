@@ -2,22 +2,21 @@ name: Fetch Bitcoin News
 
 on:
   schedule:
-    # Every 15 minutes
-    - cron: '*/15 * * * *'
+    - cron: '*/15 * * * *'   # every 30 minutes
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  fetch:
+  build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: data/scripts
     steps:
-      # 1️⃣ Checkout the repo
+      # 1️⃣ Checkout repo
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # full history so we can push
 
       # 2️⃣ Set up Node.js
       - uses: actions/setup-node@v4
@@ -25,43 +24,16 @@ jobs:
           node-version: 20
 
       # 3️⃣ Install dependencies
-      - name: Install dependencies
-        run: npm install xml2js node-fetch
+      - run: npm install
 
-      # 4️⃣ Set NEWSAPI_KEY (if used in script)
-      - name: Set NEWSAPI_KEY
-        if: ${{ secrets.NEWSAPI_KEY }}
-        run: echo "NEWSAPI_KEY=${{ secrets.NEWSAPI_KEY }}" >> $GITHUB_ENV
+      # 4️⃣ Run fetch script
+      - run: node fetch_news.mjs
 
-      # 5️⃣ Fetch news
-      - name: Fetch news
-        run: node data/scripts/fetch_news.mjs
-
-      # 6️⃣ Check if news.json changed
-      - name: Check for changes
-        id: git-check
+      # 5️⃣ Commit and push generated HTML pages
+      - name: Commit and push HTML pages
         run: |
-          git config user.name "GitHub Action"
-          git config user.email "actions@github.com"
-          git add data/news.json
-          if git diff --cached --quiet; then
-            echo "no-changes=true" >> $GITHUB_OUTPUT
-          else
-            echo "no-changes=false" >> $GITHUB_OUTPUT
-          fi
-
-      # 7️⃣ Log result
-      - name: Log result
-        run: |
-          if [ "${{ steps.git-check.outputs.no-changes }}" = "true" ]; then
-            echo "✅ No new articles — nothing to commit."
-          else
-            echo "📰 New articles found — will commit and push."
-          fi
-
-      # 8️⃣ Commit and push only if new articles
-      - name: Commit and push
-        if: steps.git-check.outputs.no-changes == 'false'
-        run: |
-          git commit -m "Update news.json with latest articles [skip ci]"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ../../index.html ../../page*.html
+          git commit -m "chore: update news pages" || echo "No changes"
+          git push
