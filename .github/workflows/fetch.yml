@@ -2,7 +2,7 @@ name: Fetch Bitcoin News
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # every 30 minutes
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -15,21 +15,12 @@ jobs:
       run:
         working-directory: data/scripts
     steps:
-      # 1️⃣ Checkout repo
       - uses: actions/checkout@v4
-
-      # 2️⃣ Set up Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      # 3️⃣ Install dependencies
       - run: npm install
-
-      # 4️⃣ Run fetch script
       - run: node fetch_news.mjs
-
-      # 5️⃣ Commit and push generated HTML pages
       - name: Commit and push HTML pages
         run: |
           git config --global user.name "github-actions[bot]"
