@@ -16,25 +16,38 @@ const sources = [
   { name: "BTCManager", url: "https://btcmanager.com/feed/" },
   { name: "Bitcoin.com", url: "https://news.bitcoin.com/feed/" },
   { name: "CryptoPotato", url: "https://cryptopotato.com/feed/" },
-  { name: "Bitcoinnews", url: "https://bitcoinnews.com/feed/news" },
+  { name: "Bitcoinnews", url: "https://bitcoinnews.com/feed/news" }, // sanitized
   { name: "Coindesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml" },
 ];
 
+// Fetch and parse RSS feed
 async function fetchRSS(source) {
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
     const res = await fetch(source.url, {
       headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" },
+      signal: controller.signal,
     });
+
+    clearTimeout(timeout);
 
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
-    const text = await res.text();
+    let text = await res.text();
+
+    // Sanitize Bitcoinnews feed
+    if (source.name === "Bitcoinnews") {
+      text = text.replace(/&(?!(amp|lt|gt|quot|apos);)/g, "&amp;");
+    }
+
     const parsed = await xml2js.parseStringPromise(text, { trim: true });
 
     const items = parsed.rss?.channel?.[0]?.item || [];
     const now = new Date();
 
-    const articles = items
+    return items
       .map((item) => {
         const pubDate = item.pubDate?.[0] || new Date().toISOString();
         return {
@@ -47,9 +60,6 @@ async function fetchRSS(source) {
       .filter(
         (a) => now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000
       );
-
-    console.log(`📡 ${source.name}: ${articles.length} articles fetched`);
-    return articles;
   } catch (e) {
     console.error(`❌ Failed to fetch ${source.name}:`, e.message);
     return [];
@@ -58,13 +68,13 @@ async function fetchRSS(source) {
 
 async function main() {
   let allArticles = [];
-
   for (const src of sources) {
     const articles = await fetchRSS(src);
     allArticles = allArticles.concat(articles);
+    console.log(`📡 ${src.name}: ${articles.length} articles fetched`);
   }
 
-  // Sort by recency
+  // Sort by recency (newest first)
   allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
   // Save to JSON
@@ -76,13 +86,13 @@ async function main() {
       timeZone: "America/New_York",
     })} EST`
   );
-
-  // Per-source counts
-  const counts = allArticles.reduce((acc, a) => {
-    acc[a.source] = (acc[a.source] || 0) + 1;
-    return acc;
-  }, {});
-  console.log("📝 Articles per source:", counts);
+  console.log(
+    "Articles per source:",
+    allArticles.reduce((acc, a) => {
+      acc[a.source] = (acc[a.source] || 0) + 1;
+      return acc;
+    }, {})
+  );
 }
 
 main();
