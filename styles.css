@@ -70,7 +70,6 @@ main.grid .col:not(:first-child) {
   padding-left: 1rem;
 }
 
-
 /* ---------- Article Links ---------- */
 #app a {
   display: block;
@@ -112,6 +111,33 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* ---------- Pagination ---------- */
+#pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#pagination button {
+  background-color: var(--bitcoin-orange);
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  margin: 0 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+#pagination button:hover:not(:disabled) {
+  background-color: #e07b12;
+}
+
+#pagination button:disabled {
+  background-color: #aaa;
+  cursor: default;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   main.grid {
@@ -120,5 +146,10 @@ footer a:hover {
   main.grid .col {
     border-left: none;
     padding-left: 0;
+  }
+  /* Make pagination buttons slightly smaller on mobile */
+  #pagination button {
+    padding: 4px 8px;
+    font-size: 0.8rem;
   }
 }
