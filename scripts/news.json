@@ -1,6 +1,12 @@
 {
   "articles": [
     {
+      "title": "Trump's CFTC Hopeful Quintenz Takes His Dispute With Tyler Winklevoss (Very) Public",
+      "url": "https://www.coindesk.com/policy/2025/09/10/trump-s-cftc-hopeful-quintenz-takes-his-dispute-with-tyler-winklevoss-very-public",
+      "source": "Coindesk",
+      "published_at": "Wed, 10 Sep 2025 23:09:09 +0000"
+    },
+    {
       "title": "Solana breaks $220 – Could a 10% SOL pullback be next?",
       "url": "https://ambcrypto.com/solana-breaks-220-could-a-10-sol-pullback-be-next/",
       "source": "Ambcrypto",
@@ -19,6 +25,12 @@
       "published_at": "Wed, 10 Sep 2025 23:00:04 +0000"
     },
     {
+      "title": "WLFI Slides Toward $0.16 All-Time Low as Market Pressure Mounts",
+      "url": "https://beincrypto.com/wlfi-price-slides-toward-0-16-all-time-low/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 10 Sep 2025 23:00:00 +0000"
+    },
+    {
       "title": "Here’s what happened in crypto today",
       "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -29,6 +41,12 @@
       "url": "https://decrypt.co/338904/bitcoin-giant-strategy-dodges-lawsuit-alleging-accounting-wrongs",
       "source": "Decrypt",
       "published_at": "Wed, 10 Sep 2025 22:46:03 +0000"
+    },
+    {
+      "title": "Polygon Quickly Fixes Delay Bug Amidst Blockchain Upgrades",
+      "url": "https://beincrypto.com/polygon-delay-bug-blockchain-upgrades-hard-fork/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 10 Sep 2025 22:45:15 +0000"
     },
     {
       "title": "Prospective CFTC chair releases private texts with Winklevoss twins, hours before IPO",
@@ -757,12 +775,6 @@
       "published_at": "Wed, 10 Sep 2025 15:00:07 +0000"
     },
     {
-      "title": "XRP BTC ETF Countdown: Quid Miner 2.0 Green Cloud Mining Expands Globally",
-      "url": "https://beincrypto.com/quid-miner-2-0-global-launch/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 10 Sep 2025 15:00:00 +0000"
-    },
-    {
       "title": "Bitcoin breaks $114K as cooling US PPI data boosts Fed rate cut bets",
       "url": "https://cointelegraph.com/news/bitcoin-breaks-dollar114k-as-cooling-us-ppi-data-boosts-rate-cut-bets?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -907,12 +919,6 @@
       "published_at": "Wed, 10 Sep 2025 14:00:59 +0000"
     },
     {
-      "title": "Worldcoin’s 110% Rally Faces Cooldown as Market Shows Signs of Exhaustion",
-      "url": "https://beincrypto.com/wld-price-rockets-but-heat-may-soon-cool/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 10 Sep 2025 14:00:00 +0000"
-    },
-    {
       "title": "Binance and Franklin Templeton join forces on tokenization ventures",
       "url": "https://cointelegraph.com/news/binance-franklin-templeton-tokenization-projects?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1055,12 +1061,6 @@
       "url": "https://www.coindesk.com/markets/2025/09/10/chainlink-s-link-stalls-after-nasdaq-listed-firm-s-treasury-purchase-grayscale-etf-plans",
       "source": "Coindesk",
       "published_at": "Wed, 10 Sep 2025 11:46:41 +0000"
-    },
-    {
-      "title": "Polygon PoS Sees Transaction Finality Lag, Patch in Progress",
-      "url": "https://www.coindesk.com/markets/2025/09/10/polygon-pos-sees-transaction-finality-lag-patch-in-progress",
-      "source": "Coindesk",
-      "published_at": "Wed, 10 Sep 2025 11:45:05 +0000"
     },
     {
       "title": "Polygon transaction finality faces 10-15 minute delays",
@@ -1480,16 +1480,22 @@
   "columns": [
     [
       {
-        "title": "Solana breaks $220 – Could a 10% SOL pullback be next?",
-        "url": "https://ambcrypto.com/solana-breaks-220-could-a-10-sol-pullback-be-next/",
-        "source": "Ambcrypto",
-        "published_at": "Wed, 10 Sep 2025 23:00:44 +0000"
+        "title": "Trump's CFTC Hopeful Quintenz Takes His Dispute With Tyler Winklevoss (Very) Public",
+        "url": "https://www.coindesk.com/policy/2025/09/10/trump-s-cftc-hopeful-quintenz-takes-his-dispute-with-tyler-winklevoss-very-public",
+        "source": "Coindesk",
+        "published_at": "Wed, 10 Sep 2025 23:09:09 +0000"
       },
       {
-        "title": "Here’s what happened in crypto today",
-        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 23:54:02 +0100"
+        "title": "Solana Perp OI Breaks $7 Billion, But Funding Remains Sideways",
+        "url": "https://bitcoinist.com/solana-perp-oi-breaks-7-billion-funding-sideways/",
+        "source": "Bitcoinist",
+        "published_at": "Wed, 10 Sep 2025 23:00:04 +0000"
+      },
+      {
+        "title": "Bitcoin Giant Strategy Dodges Another Lawsuit Alleging Accounting Wrongs",
+        "url": "https://decrypt.co/338904/bitcoin-giant-strategy-dodges-lawsuit-alleging-accounting-wrongs",
+        "source": "Decrypt",
+        "published_at": "Wed, 10 Sep 2025 22:46:03 +0000"
       },
       {
         "title": "XRP Ecosystem Boosted as Chainalysis Adds Support for 260K XRPL Tokens",
@@ -1732,106 +1738,100 @@
         "published_at": "Wed, 10 Sep 2025 15:00:51 +0000"
       },
       {
-        "title": "XRP BTC ETF Countdown: Quid Miner 2.0 Green Cloud Mining Expands Globally",
-        "url": "https://beincrypto.com/quid-miner-2-0-global-launch/",
-        "source": "BeinCrypto",
-        "published_at": "Wed, 10 Sep 2025 15:00:00 +0000"
-      },
-      {
-        "title": "Earn cryptocurrency without hardware: Top 5 Bitcoin cloud mining sites in 2025",
-        "url": "https://ambcrypto.com/earn-cryptocurrency-without-hardware-top-5-bitcoin-cloud-mining-sites-in-2025/",
-        "source": "Ambcrypto",
-        "published_at": "Wed, 10 Sep 2025 14:50:22 +0000"
-      },
-      {
-        "title": "$1.5B BTC Treasury Company Coming as Asset Entities Approves Merger With Vivek Ramaswamy's Strive",
-        "url": "https://www.coindesk.com/markets/2025/09/10/usd1-5b-btc-treasury-company-coming-as-asset-entities-approves-merger-with-strive",
-        "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 14:48:02 +0000"
-      },
-      {
-        "title": "Ripple (XRP) News Today September 10th",
-        "url": "https://cryptopotato.com/ripple-xrp-news-today-september-10th/",
-        "source": "CryptoPotato",
-        "published_at": "Wed, 10 Sep 2025 14:38:44 +0000"
-      },
-      {
-        "title": "Why did the S&P 500 include Robinhood but reject Strategy?",
-        "url": "https://crypto.news/why-sp-500-include-robinhood-but-reject-strategy/",
-        "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 14:32:56 +0000"
-      },
-      {
-        "title": "EU Chat Control hinges on Germany’s decision",
-        "url": "https://cointelegraph.com/news/eu-chat-control-hinges-germany-decision?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "Bitcoin breaks $114K as cooling US PPI data boosts Fed rate cut bets",
+        "url": "https://cointelegraph.com/news/bitcoin-breaks-dollar114k-as-cooling-us-ppi-data-boosts-rate-cut-bets?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 15:29:22 +0100"
+        "published_at": "Wed, 10 Sep 2025 15:56:24 +0100"
       },
       {
-        "title": "Ransomware kits built with AI are behind a 70% surge in attacks",
-        "url": "https://crypto.news/ransomware-kits-built-with-ai-are-behind-a-70-surge-in-attacks/",
+        "title": "Here’s why Bitcoin and the crypto market is going up today (Sep. 10)",
+        "url": "https://crypto.news/heres-why-bitcoin-and-the-crypto-market-is-going-up-today-sep-10/",
         "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 14:21:01 +0000"
+        "published_at": "Wed, 10 Sep 2025 14:48:57 +0000"
       },
       {
-        "title": "Pi Network price shows accumulation, is a reversal possible?",
-        "url": "https://crypto.news/pi-network-price-shows-accumulation-is-a-reversal-possible/",
-        "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 14:10:54 +0000"
-      },
-      {
-        "title": "SUI At A Crossroads, Can It Break $3.52 And Ignite The Next Surge?",
-        "url": "https://www.newsbtc.com/news/sui-at-a-crossroads/",
+        "title": "Asset Entities Merges with Strive to Form $1.5B Bitcoin Treasury – Why Bitcoin Hyper Could Soar Next",
+        "url": "https://www.newsbtc.com/news/bitcoin-treasury-coming-bitcoin-hyper-smart-investment/",
         "source": "NewsBTC",
-        "published_at": "Wed, 10 Sep 2025 14:00:59 +0000"
+        "published_at": "Wed, 10 Sep 2025 14:46:39 +0000"
       },
       {
-        "title": "Dogecoin ETF pushes crypto industry to embrace speculation",
-        "url": "https://cointelegraph.com/news/dogecoin-etf-crypto-embrace-speculation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "Solana Holders Turn To Layer Brett As The Next 100x Crypto After Being Voted The Best Meme This Year",
+        "url": "https://ambcrypto.com/solana-holders-turn-to-layer-brett-as-the-next-100x-crypto-after-being-voted-the-best-meme-this-year/",
+        "source": "Ambcrypto",
+        "published_at": "Wed, 10 Sep 2025 14:35:22 +0000"
+      },
+      {
+        "title": "Top U.S. Banking Regulator Gould Says Crypto Debanking 'Is Real'",
+        "url": "https://www.coindesk.com/policy/2025/09/10/top-u-s-banking-regulator-gould-says-crypto-debanking-is-real",
+        "source": "Coindesk",
+        "published_at": "Wed, 10 Sep 2025 14:31:51 +0000"
+      },
+      {
+        "title": "Bitcoin Price Gets a Boost From Producer Price Index Print",
+        "url": "https://decrypt.co/338796/bitcoin-price-gets-a-boost-from-producer-price-index-print",
+        "source": "Decrypt",
+        "published_at": "Wed, 10 Sep 2025 14:25:29 +0000"
+      },
+      {
+        "title": "Bitcoin’s Tech Stock Correlation Risks ‘Deeper Drawdowns’",
+        "url": "https://decrypt.co/338795/bitcoins-tech-stock-correlation-risks-deeper-drawdowns",
+        "source": "Decrypt",
+        "published_at": "Wed, 10 Sep 2025 14:20:16 +0000"
+      },
+      {
+        "title": "Reserve Bank of India says crypto rules risk legitimizing sector: Report",
+        "url": "https://cointelegraph.com/news/india-avoids-comprehensively-regulating-crypto-due-to-systemic-risk-fears?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 14:35:00 +0100"
+        "published_at": "Wed, 10 Sep 2025 15:08:07 +0100"
       },
       {
-        "title": "Crypto Prices Buoyed by Soft PPI Data; Bitcoin Tops $113K",
-        "url": "https://www.coindesk.com/markets/2025/09/10/crypto-prices-buoyed-by-soft-ppi-data-bitcoin-tops-usd113k",
-        "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 13:24:54 +0000"
+        "title": "Binance and Franklin Templeton join forces on tokenization ventures",
+        "url": "https://cointelegraph.com/news/binance-franklin-templeton-tokenization-projects?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Wed, 10 Sep 2025 14:49:47 +0100"
       },
       {
-        "title": "Binance, Franklin Templeton Join Forces to Expand Digital Asset Products",
-        "url": "https://www.coindesk.com/business/2025/09/10/binance-franklin-templeton-join-forces-to-expand-digital-asset-products",
-        "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 13:00:00 +0000"
+        "title": "Crypto’s crosschain future depends on regulatory readiness",
+        "url": "https://cointelegraph.com/news/crypto-crosschain-regulation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Wed, 10 Sep 2025 14:30:00 +0100"
       },
       {
-        "title": "DeFi platform Salus brings critical minerals to IOTA chain",
-        "url": "https://crypto.news/defi-platform-salus-brings-critical-minerals-to-iota-chain/",
+        "title": "Bubblemaps alleges largest Sybil attack in crypto history on MYX airdrop",
+        "url": "https://cointelegraph.com/news/bubblemaps-flags-170m-myx-sybil-attack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Wed, 10 Sep 2025 14:06:22 +0100"
+      },
+      {
+        "title": "MYX Finance price prediction: Will the 1500% surge continue?",
+        "url": "https://crypto.news/myx-finance-price-prediction-will-surge-continue/",
         "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 12:55:59 +0000"
+        "published_at": "Wed, 10 Sep 2025 12:57:05 +0000"
       },
       {
-        "title": "KindlyMD’s Nakamoto backs Metaplanet with $30m to boost Bitcoin treasury",
-        "url": "https://crypto.news/kindlymds-nakamoto-backs-metaplanet-with-30m-to-boost-bitcoin-treasury/",
+        "title": "Chainlink Co-Founder Teases Future Collabs with Trump Admin",
+        "url": "https://decrypt.co/videos/interviews/E6oeklLk/chainlink-co-founder-teases-future-collabs-with-trump-admin",
+        "source": "Decrypt",
+        "published_at": "Wed, 10 Sep 2025 12:41:11 +0000"
+      },
+      {
+        "title": "India holds back on full crypto regulation over financial stability concerns",
+        "url": "https://crypto.news/india-holds-back-on-full-crypto-regulation-over-financial-stability-concerns/",
         "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 12:31:42 +0000"
+        "published_at": "Wed, 10 Sep 2025 12:28:51 +0000"
       },
       {
-        "title": "Spanish bank BBVA to use Ripple tech for retail digital asset custody under MiCA",
-        "url": "https://crypto.news/spanish-bank-bbva-to-use-ripple-tech-for-retail-digital-asset-custody-under-mica/",
-        "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 12:27:13 +0000"
-      },
-      {
-        "title": "SEC chair says most tokens are not securities, backs ‘super-app’ platforms",
-        "url": "https://cointelegraph.com/news/sec-chair-says-most-tokens-are-not-securities-backs-super-app-platforms?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "New Ethereum standard aims to set baseline for real-world asset tokenization",
+        "url": "https://cointelegraph.com/news/ethereum-standard-rwa-tokenization-erc7943?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "Cointelegraph",
         "published_at": "Wed, 10 Sep 2025 13:00:00 +0100"
       },
       {
-        "title": "Pump.fun's PUMP Token Up Double Digits Following Binance.US Listing",
-        "url": "https://decrypt.co/338776/pump-funs-pump-token-up-double-digits-following-binance-us-listing",
-        "source": "Decrypt",
-        "published_at": "Wed, 10 Sep 2025 11:48:38 +0000"
+        "title": "Kyrgyzstan introduces state crypto reserve concept in new bill",
+        "url": "https://cointelegraph.com/news/kyrgyzstan-state-crypto-reserve-new-bill?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Wed, 10 Sep 2025 12:59:05 +0100"
       },
       {
         "title": "Polygon transaction finality faces 10-15 minute delays",
@@ -1974,16 +1974,22 @@
     ],
     [
       {
-        "title": "Ripple Quietly Shifts 15M XRP Post-SEC Win: Whales React as Price Slips",
-        "url": "https://www.newsbtc.com/news/ripple/ripple-quietly-shifts-15m-xrp-post-sec-win-whales-react-as-price-slips/",
-        "source": "NewsBTC",
-        "published_at": "Wed, 10 Sep 2025 23:00:10 +0000"
+        "title": "Solana breaks $220 – Could a 10% SOL pullback be next?",
+        "url": "https://ambcrypto.com/solana-breaks-220-could-a-10-sol-pullback-be-next/",
+        "source": "Ambcrypto",
+        "published_at": "Wed, 10 Sep 2025 23:00:44 +0000"
       },
       {
-        "title": "Bitcoin Giant Strategy Dodges Another Lawsuit Alleging Accounting Wrongs",
-        "url": "https://decrypt.co/338904/bitcoin-giant-strategy-dodges-lawsuit-alleging-accounting-wrongs",
-        "source": "Decrypt",
-        "published_at": "Wed, 10 Sep 2025 22:46:03 +0000"
+        "title": "WLFI Slides Toward $0.16 All-Time Low as Market Pressure Mounts",
+        "url": "https://beincrypto.com/wlfi-price-slides-toward-0-16-all-time-low/",
+        "source": "BeinCrypto",
+        "published_at": "Wed, 10 Sep 2025 23:00:00 +0000"
+      },
+      {
+        "title": "Polygon Quickly Fixes Delay Bug Amidst Blockchain Upgrades",
+        "url": "https://beincrypto.com/polygon-delay-bug-blockchain-upgrades-hard-fork/",
+        "source": "BeinCrypto",
+        "published_at": "Wed, 10 Sep 2025 22:45:15 +0000"
       },
       {
         "title": "SEC Punts on BlackRock Ethereum ETF Staking, Franklin XRP and Solana Fund Decisions",
@@ -2226,106 +2232,100 @@
         "published_at": "Wed, 10 Sep 2025 15:00:18 +0000"
       },
       {
-        "title": "Bitcoin breaks $114K as cooling US PPI data boosts Fed rate cut bets",
-        "url": "https://cointelegraph.com/news/bitcoin-breaks-dollar114k-as-cooling-us-ppi-data-boosts-rate-cut-bets?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 15:56:24 +0100"
+        "title": "Digital Gold: A Story Still Being Written",
+        "url": "https://www.coindesk.com/coindesk-indices/2025/09/10/digital-gold-a-story-still-being-written",
+        "source": "Coindesk",
+        "published_at": "Wed, 10 Sep 2025 14:53:55 +0000"
       },
       {
-        "title": "Here’s why Bitcoin and the crypto market is going up today (Sep. 10)",
-        "url": "https://crypto.news/heres-why-bitcoin-and-the-crypto-market-is-going-up-today-sep-10/",
-        "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 14:48:57 +0000"
+        "title": "US DOJ Moves to Recover $12M in USDT Tied to Crypto Scam",
+        "url": "https://decrypt.co/338806/us-doj-moves-to-recover-12m-in-usdt-tied-to-crypto-scam",
+        "source": "Decrypt",
+        "published_at": "Wed, 10 Sep 2025 14:48:14 +0000"
       },
       {
-        "title": "Asset Entities Merges with Strive to Form $1.5B Bitcoin Treasury – Why Bitcoin Hyper Could Soar Next",
-        "url": "https://www.newsbtc.com/news/bitcoin-treasury-coming-bitcoin-hyper-smart-investment/",
-        "source": "NewsBTC",
-        "published_at": "Wed, 10 Sep 2025 14:46:39 +0000"
-      },
-      {
-        "title": "Solana Holders Turn To Layer Brett As The Next 100x Crypto After Being Voted The Best Meme This Year",
-        "url": "https://ambcrypto.com/solana-holders-turn-to-layer-brett-as-the-next-100x-crypto-after-being-voted-the-best-meme-this-year/",
+        "title": "XRP Price and Ethereum Correlate Unevenly As Remittix Gains Momentum Toward A 20x Scenario This Month",
+        "url": "https://ambcrypto.com/xrp-price-and-ethereum-correlate-unevenly-as-remittix-gains-momentum-toward-a-20x-scenario-this-month/",
         "source": "Ambcrypto",
-        "published_at": "Wed, 10 Sep 2025 14:35:22 +0000"
+        "published_at": "Wed, 10 Sep 2025 14:45:15 +0000"
       },
       {
-        "title": "Top U.S. Banking Regulator Gould Says Crypto Debanking 'Is Real'",
-        "url": "https://www.coindesk.com/policy/2025/09/10/top-u-s-banking-regulator-gould-says-crypto-debanking-is-real",
-        "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 14:31:51 +0000"
-      },
-      {
-        "title": "Bitcoin Price Gets a Boost From Producer Price Index Print",
-        "url": "https://decrypt.co/338796/bitcoin-price-gets-a-boost-from-producer-price-index-print",
-        "source": "Decrypt",
-        "published_at": "Wed, 10 Sep 2025 14:25:29 +0000"
-      },
-      {
-        "title": "Bitcoin’s Tech Stock Correlation Risks ‘Deeper Drawdowns’",
-        "url": "https://decrypt.co/338795/bitcoins-tech-stock-correlation-risks-deeper-drawdowns",
-        "source": "Decrypt",
-        "published_at": "Wed, 10 Sep 2025 14:20:16 +0000"
-      },
-      {
-        "title": "Reserve Bank of India says crypto rules risk legitimizing sector: Report",
-        "url": "https://cointelegraph.com/news/india-avoids-comprehensively-regulating-crypto-due-to-systemic-risk-fears?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 15:08:07 +0100"
-      },
-      {
-        "title": "Worldcoin’s 110% Rally Faces Cooldown as Market Shows Signs of Exhaustion",
-        "url": "https://beincrypto.com/wld-price-rockets-but-heat-may-soon-cool/",
-        "source": "BeinCrypto",
-        "published_at": "Wed, 10 Sep 2025 14:00:00 +0000"
-      },
-      {
-        "title": "Falcon Finance Announced $FF and Community Sale on Buidlpad",
-        "url": "https://cryptopotato.com/falcon-finance-announced-ff-and-community-sale-on-buidlpad/",
+        "title": "Bitcoin Price Analysis: BTC Battles Key Resistance on Path to New ATH",
+        "url": "https://cryptopotato.com/bitcoin-price-analysis-btc-battles-key-resistance-on-path-to-new-ath/",
         "source": "CryptoPotato",
-        "published_at": "Wed, 10 Sep 2025 13:30:30 +0000"
+        "published_at": "Wed, 10 Sep 2025 14:35:08 +0000"
       },
       {
-        "title": "CoinDesk 20 Performance Update: Avalanche (AVAX) Rises 6.6% as Index Climbs Higher",
-        "url": "https://www.coindesk.com/coindesk-indices/2025/09/10/coindesk-20-performance-update-avalanche-avax-rises-6-6-as-index-climbs-higher",
+        "title": "Tokenized Pokémon Cards Are Hot. Lending Them for Crypto Is a Different Story",
+        "url": "https://decrypt.co/338694/tokenized-pokemon-cards-hot-lending-crypto-different-story",
+        "source": "Decrypt",
+        "published_at": "Wed, 10 Sep 2025 14:29:59 +0000"
+      },
+      {
+        "title": "Solana And Shiba Inu Investors Bet Big On Layer Brett After Being Predicted As Top Memecoins In 2025",
+        "url": "https://ambcrypto.com/solana-and-shiba-inu-investors-bet-big-on-layer-brett-after-being-predicted-as-top-memecoins-in-2025/",
+        "source": "Ambcrypto",
+        "published_at": "Wed, 10 Sep 2025 14:25:14 +0000"
+      },
+      {
+        "title": "California vs. MAGA memecoins: Why Gavin Newsom is fighting Trump",
+        "url": "https://cointelegraph.com/explained/california-vs-maga-memecoins-why-gavin-newsom-is-fighting-trump?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Wed, 10 Sep 2025 15:19:00 +0100"
+      },
+      {
+        "title": "Bitcoin Triggers Bullish Head and Shoulders Pattern. What Next?",
+        "url": "https://www.coindesk.com/markets/2025/09/10/bitcoin-triggers-bullish-head-and-shoulders-pattern-what-next",
         "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 13:16:57 +0000"
+        "published_at": "Wed, 10 Sep 2025 14:02:36 +0000"
       },
       {
-        "title": "The GENIUS Act Won't Save the Dollar",
-        "url": "https://www.coindesk.com/opinion/2025/09/09/the-genius-act-won-t-save-the-dollar",
+        "title": "Dogecoin ETF pushes crypto industry to embrace speculation",
+        "url": "https://cointelegraph.com/news/dogecoin-etf-crypto-embrace-speculation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Wed, 10 Sep 2025 14:35:00 +0100"
+      },
+      {
+        "title": "Crypto Prices Buoyed by Soft PPI Data; Bitcoin Tops $113K",
+        "url": "https://www.coindesk.com/markets/2025/09/10/crypto-prices-buoyed-by-soft-ppi-data-bitcoin-tops-usd113k",
+        "source": "Coindesk",
+        "published_at": "Wed, 10 Sep 2025 13:24:54 +0000"
+      },
+      {
+        "title": "Binance, Franklin Templeton Join Forces to Expand Digital Asset Products",
+        "url": "https://www.coindesk.com/business/2025/09/10/binance-franklin-templeton-join-forces-to-expand-digital-asset-products",
         "source": "Coindesk",
         "published_at": "Wed, 10 Sep 2025 13:00:00 +0000"
       },
       {
-        "title": "Bakkt Rated Buy With 44% Upside on Stablecoin Growth Potential: Clear Street",
-        "url": "https://www.coindesk.com/markets/2025/09/10/bakkt-rated-buy-with-44-upside-on-stablecoin-growth-potential-clear-street",
-        "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 12:54:39 +0000"
-      },
-      {
-        "title": "Binance sees record $6.2b stablecoin inflow ahead of next FOMC",
-        "url": "https://crypto.news/binance-sees-record-6-2b-stablecoin-inflow-ahead-of-next-fomc/",
+        "title": "DeFi platform Salus brings critical minerals to IOTA chain",
+        "url": "https://crypto.news/defi-platform-salus-brings-critical-minerals-to-iota-chain/",
         "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 12:30:13 +0000"
+        "published_at": "Wed, 10 Sep 2025 12:55:59 +0000"
       },
       {
-        "title": "Morning Minute: Democrats Want A Seat at the Crypto Table",
-        "url": "https://decrypt.co/338778/morning-minute-democrats-want-a-seat-at-the-crypto-table",
+        "title": "KindlyMD’s Nakamoto backs Metaplanet with $30m to boost Bitcoin treasury",
+        "url": "https://crypto.news/kindlymds-nakamoto-backs-metaplanet-with-30m-to-boost-bitcoin-treasury/",
+        "source": "BTCManager",
+        "published_at": "Wed, 10 Sep 2025 12:31:42 +0000"
+      },
+      {
+        "title": "Spanish bank BBVA to use Ripple tech for retail digital asset custody under MiCA",
+        "url": "https://crypto.news/spanish-bank-bbva-to-use-ripple-tech-for-retail-digital-asset-custody-under-mica/",
+        "source": "BTCManager",
+        "published_at": "Wed, 10 Sep 2025 12:27:13 +0000"
+      },
+      {
+        "title": "SEC chair says most tokens are not securities, backs ‘super-app’ platforms",
+        "url": "https://cointelegraph.com/news/sec-chair-says-most-tokens-are-not-securities-backs-super-app-platforms?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Wed, 10 Sep 2025 13:00:00 +0100"
+      },
+      {
+        "title": "Pump.fun's PUMP Token Up Double Digits Following Binance.US Listing",
+        "url": "https://decrypt.co/338776/pump-funs-pump-token-up-double-digits-following-binance-us-listing",
         "source": "Decrypt",
-        "published_at": "Wed, 10 Sep 2025 12:04:33 +0000"
-      },
-      {
-        "title": "Crypto Markets Today: IP Token Surges on Corporate Treasury Adoption",
-        "url": "https://www.coindesk.com/markets/2025/09/10/crypto-markets-today-ip-token-surges-on-corporate-treasury-adoption",
-        "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 12:00:00 +0000"
-      },
-      {
-        "title": "Chainlink's LINK Stalls After Nasdaq-Listed Firm's Treasury Purchase, Grayscale ETF Plans",
-        "url": "https://www.coindesk.com/markets/2025/09/10/chainlink-s-link-stalls-after-nasdaq-listed-firm-s-treasury-purchase-grayscale-etf-plans",
-        "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 11:46:41 +0000"
+        "published_at": "Wed, 10 Sep 2025 11:48:38 +0000"
       },
       {
         "title": "ETH price to $3.5K first? Why Ether bears are growing louder",
@@ -2468,10 +2468,16 @@
     ],
     [
       {
-        "title": "Solana Perp OI Breaks $7 Billion, But Funding Remains Sideways",
-        "url": "https://bitcoinist.com/solana-perp-oi-breaks-7-billion-funding-sideways/",
-        "source": "Bitcoinist",
-        "published_at": "Wed, 10 Sep 2025 23:00:04 +0000"
+        "title": "Ripple Quietly Shifts 15M XRP Post-SEC Win: Whales React as Price Slips",
+        "url": "https://www.newsbtc.com/news/ripple/ripple-quietly-shifts-15m-xrp-post-sec-win-whales-react-as-price-slips/",
+        "source": "NewsBTC",
+        "published_at": "Wed, 10 Sep 2025 23:00:10 +0000"
+      },
+      {
+        "title": "Here’s what happened in crypto today",
+        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Wed, 10 Sep 2025 23:54:02 +0100"
       },
       {
         "title": "Prospective CFTC chair releases private texts with Winklevoss twins, hours before IPO",
@@ -2720,106 +2726,100 @@
         "published_at": "Wed, 10 Sep 2025 15:00:07 +0000"
       },
       {
-        "title": "Digital Gold: A Story Still Being Written",
-        "url": "https://www.coindesk.com/coindesk-indices/2025/09/10/digital-gold-a-story-still-being-written",
-        "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 14:53:55 +0000"
-      },
-      {
-        "title": "US DOJ Moves to Recover $12M in USDT Tied to Crypto Scam",
-        "url": "https://decrypt.co/338806/us-doj-moves-to-recover-12m-in-usdt-tied-to-crypto-scam",
-        "source": "Decrypt",
-        "published_at": "Wed, 10 Sep 2025 14:48:14 +0000"
-      },
-      {
-        "title": "XRP Price and Ethereum Correlate Unevenly As Remittix Gains Momentum Toward A 20x Scenario This Month",
-        "url": "https://ambcrypto.com/xrp-price-and-ethereum-correlate-unevenly-as-remittix-gains-momentum-toward-a-20x-scenario-this-month/",
+        "title": "Earn cryptocurrency without hardware: Top 5 Bitcoin cloud mining sites in 2025",
+        "url": "https://ambcrypto.com/earn-cryptocurrency-without-hardware-top-5-bitcoin-cloud-mining-sites-in-2025/",
         "source": "Ambcrypto",
-        "published_at": "Wed, 10 Sep 2025 14:45:15 +0000"
+        "published_at": "Wed, 10 Sep 2025 14:50:22 +0000"
       },
       {
-        "title": "Bitcoin Price Analysis: BTC Battles Key Resistance on Path to New ATH",
-        "url": "https://cryptopotato.com/bitcoin-price-analysis-btc-battles-key-resistance-on-path-to-new-ath/",
+        "title": "$1.5B BTC Treasury Company Coming as Asset Entities Approves Merger With Vivek Ramaswamy's Strive",
+        "url": "https://www.coindesk.com/markets/2025/09/10/usd1-5b-btc-treasury-company-coming-as-asset-entities-approves-merger-with-strive",
+        "source": "Coindesk",
+        "published_at": "Wed, 10 Sep 2025 14:48:02 +0000"
+      },
+      {
+        "title": "Ripple (XRP) News Today September 10th",
+        "url": "https://cryptopotato.com/ripple-xrp-news-today-september-10th/",
         "source": "CryptoPotato",
-        "published_at": "Wed, 10 Sep 2025 14:35:08 +0000"
+        "published_at": "Wed, 10 Sep 2025 14:38:44 +0000"
       },
       {
-        "title": "Tokenized Pokémon Cards Are Hot. Lending Them for Crypto Is a Different Story",
-        "url": "https://decrypt.co/338694/tokenized-pokemon-cards-hot-lending-crypto-different-story",
-        "source": "Decrypt",
-        "published_at": "Wed, 10 Sep 2025 14:29:59 +0000"
-      },
-      {
-        "title": "Solana And Shiba Inu Investors Bet Big On Layer Brett After Being Predicted As Top Memecoins In 2025",
-        "url": "https://ambcrypto.com/solana-and-shiba-inu-investors-bet-big-on-layer-brett-after-being-predicted-as-top-memecoins-in-2025/",
-        "source": "Ambcrypto",
-        "published_at": "Wed, 10 Sep 2025 14:25:14 +0000"
-      },
-      {
-        "title": "California vs. MAGA memecoins: Why Gavin Newsom is fighting Trump",
-        "url": "https://cointelegraph.com/explained/california-vs-maga-memecoins-why-gavin-newsom-is-fighting-trump?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 15:19:00 +0100"
-      },
-      {
-        "title": "Bitcoin Triggers Bullish Head and Shoulders Pattern. What Next?",
-        "url": "https://www.coindesk.com/markets/2025/09/10/bitcoin-triggers-bullish-head-and-shoulders-pattern-what-next",
-        "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 14:02:36 +0000"
-      },
-      {
-        "title": "Binance and Franklin Templeton join forces on tokenization ventures",
-        "url": "https://cointelegraph.com/news/binance-franklin-templeton-tokenization-projects?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 14:49:47 +0100"
-      },
-      {
-        "title": "Crypto’s crosschain future depends on regulatory readiness",
-        "url": "https://cointelegraph.com/news/crypto-crosschain-regulation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 14:30:00 +0100"
-      },
-      {
-        "title": "Bubblemaps alleges largest Sybil attack in crypto history on MYX airdrop",
-        "url": "https://cointelegraph.com/news/bubblemaps-flags-170m-myx-sybil-attack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 14:06:22 +0100"
-      },
-      {
-        "title": "MYX Finance price prediction: Will the 1500% surge continue?",
-        "url": "https://crypto.news/myx-finance-price-prediction-will-surge-continue/",
+        "title": "Why did the S&P 500 include Robinhood but reject Strategy?",
+        "url": "https://crypto.news/why-sp-500-include-robinhood-but-reject-strategy/",
         "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 12:57:05 +0000"
+        "published_at": "Wed, 10 Sep 2025 14:32:56 +0000"
       },
       {
-        "title": "Chainlink Co-Founder Teases Future Collabs with Trump Admin",
-        "url": "https://decrypt.co/videos/interviews/E6oeklLk/chainlink-co-founder-teases-future-collabs-with-trump-admin",
-        "source": "Decrypt",
-        "published_at": "Wed, 10 Sep 2025 12:41:11 +0000"
+        "title": "EU Chat Control hinges on Germany’s decision",
+        "url": "https://cointelegraph.com/news/eu-chat-control-hinges-germany-decision?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Wed, 10 Sep 2025 15:29:22 +0100"
       },
       {
-        "title": "India holds back on full crypto regulation over financial stability concerns",
-        "url": "https://crypto.news/india-holds-back-on-full-crypto-regulation-over-financial-stability-concerns/",
+        "title": "Ransomware kits built with AI are behind a 70% surge in attacks",
+        "url": "https://crypto.news/ransomware-kits-built-with-ai-are-behind-a-70-surge-in-attacks/",
         "source": "BTCManager",
-        "published_at": "Wed, 10 Sep 2025 12:28:51 +0000"
+        "published_at": "Wed, 10 Sep 2025 14:21:01 +0000"
       },
       {
-        "title": "New Ethereum standard aims to set baseline for real-world asset tokenization",
-        "url": "https://cointelegraph.com/news/ethereum-standard-rwa-tokenization-erc7943?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 13:00:00 +0100"
+        "title": "Pi Network price shows accumulation, is a reversal possible?",
+        "url": "https://crypto.news/pi-network-price-shows-accumulation-is-a-reversal-possible/",
+        "source": "BTCManager",
+        "published_at": "Wed, 10 Sep 2025 14:10:54 +0000"
       },
       {
-        "title": "Kyrgyzstan introduces state crypto reserve concept in new bill",
-        "url": "https://cointelegraph.com/news/kyrgyzstan-state-crypto-reserve-new-bill?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Wed, 10 Sep 2025 12:59:05 +0100"
+        "title": "SUI At A Crossroads, Can It Break $3.52 And Ignite The Next Surge?",
+        "url": "https://www.newsbtc.com/news/sui-at-a-crossroads/",
+        "source": "NewsBTC",
+        "published_at": "Wed, 10 Sep 2025 14:00:59 +0000"
       },
       {
-        "title": "Polygon PoS Sees Transaction Finality Lag, Patch in Progress",
-        "url": "https://www.coindesk.com/markets/2025/09/10/polygon-pos-sees-transaction-finality-lag-patch-in-progress",
+        "title": "Falcon Finance Announced $FF and Community Sale on Buidlpad",
+        "url": "https://cryptopotato.com/falcon-finance-announced-ff-and-community-sale-on-buidlpad/",
+        "source": "CryptoPotato",
+        "published_at": "Wed, 10 Sep 2025 13:30:30 +0000"
+      },
+      {
+        "title": "CoinDesk 20 Performance Update: Avalanche (AVAX) Rises 6.6% as Index Climbs Higher",
+        "url": "https://www.coindesk.com/coindesk-indices/2025/09/10/coindesk-20-performance-update-avalanche-avax-rises-6-6-as-index-climbs-higher",
         "source": "Coindesk",
-        "published_at": "Wed, 10 Sep 2025 11:45:05 +0000"
+        "published_at": "Wed, 10 Sep 2025 13:16:57 +0000"
+      },
+      {
+        "title": "The GENIUS Act Won't Save the Dollar",
+        "url": "https://www.coindesk.com/opinion/2025/09/09/the-genius-act-won-t-save-the-dollar",
+        "source": "Coindesk",
+        "published_at": "Wed, 10 Sep 2025 13:00:00 +0000"
+      },
+      {
+        "title": "Bakkt Rated Buy With 44% Upside on Stablecoin Growth Potential: Clear Street",
+        "url": "https://www.coindesk.com/markets/2025/09/10/bakkt-rated-buy-with-44-upside-on-stablecoin-growth-potential-clear-street",
+        "source": "Coindesk",
+        "published_at": "Wed, 10 Sep 2025 12:54:39 +0000"
+      },
+      {
+        "title": "Binance sees record $6.2b stablecoin inflow ahead of next FOMC",
+        "url": "https://crypto.news/binance-sees-record-6-2b-stablecoin-inflow-ahead-of-next-fomc/",
+        "source": "BTCManager",
+        "published_at": "Wed, 10 Sep 2025 12:30:13 +0000"
+      },
+      {
+        "title": "Morning Minute: Democrats Want A Seat at the Crypto Table",
+        "url": "https://decrypt.co/338778/morning-minute-democrats-want-a-seat-at-the-crypto-table",
+        "source": "Decrypt",
+        "published_at": "Wed, 10 Sep 2025 12:04:33 +0000"
+      },
+      {
+        "title": "Crypto Markets Today: IP Token Surges on Corporate Treasury Adoption",
+        "url": "https://www.coindesk.com/markets/2025/09/10/crypto-markets-today-ip-token-surges-on-corporate-treasury-adoption",
+        "source": "Coindesk",
+        "published_at": "Wed, 10 Sep 2025 12:00:00 +0000"
+      },
+      {
+        "title": "Chainlink's LINK Stalls After Nasdaq-Listed Firm's Treasury Purchase, Grayscale ETF Plans",
+        "url": "https://www.coindesk.com/markets/2025/09/10/chainlink-s-link-stalls-after-nasdaq-listed-firm-s-treasury-purchase-grayscale-etf-plans",
+        "source": "Coindesk",
+        "published_at": "Wed, 10 Sep 2025 11:46:41 +0000"
       },
       {
         "title": "IP price hits new ATH cruising to $11.75 amid Heritage Distilling’s treasury expansion",
