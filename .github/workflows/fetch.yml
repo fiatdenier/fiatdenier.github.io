@@ -2,7 +2,7 @@ name: Fetch Bitcoin News
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/5 * * * *'   # check every 5 minutes
   workflow_dispatch:
 
 permissions:
@@ -11,11 +11,33 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: scripts
     steps:
       - uses: actions/checkout@v4
+
+      - name: Check if 30 minutes have passed since last run
+        id: timecheck
+        run: |
+          # Get last successful run time in ISO format
+          LAST_RUN=$(gh run list --workflow "Fetch Bitcoin News" \
+            --json status,conclusion,createdAt \
+            -q '.[] | select(.status=="completed" and .conclusion=="success") | .createdAt' \
+            | head -n 1)
+
+          if [ -z "$LAST_RUN" ]; then
+            echo "No previous successful run, continuing."
+            exit 0
+          fi
+
+          # Convert to Unix timestamps
+          LAST_RUN_TS=$(date -d "$LAST_RUN" +%s)
+          NOW_TS=$(date -u +%s)
+          DIFF=$(( (NOW_TS - LAST_RUN_TS) / 60 ))
+
+          echo "Minutes since last run: $DIFF"
+          if [ "$DIFF" -lt 30 ]; then
+            echo "Less than 30 minutes since last run, exiting."
+            exit 1
+          fi
 
       - uses: actions/setup-node@v4
         with:
@@ -32,3 +54,4 @@ jobs:
           git add news.json
           git commit -m "Update news.json" || echo "No changes"
           git push
+
