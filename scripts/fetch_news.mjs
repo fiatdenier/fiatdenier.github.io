@@ -6,6 +6,7 @@ import xml2js from "xml2js";
 const NEWS_JSON = "./news.json";  // save in current folder
 const MAX_AGE_DAYS = 21;
 const TIMEOUT_MS = 10000; // 10 seconds
+const NUM_COLUMNS = 3;
 
 const sources = [
   { name: "Cointelegraph", url: "https://cointelegraph.com/rss" },
@@ -55,11 +56,12 @@ async function fetchRSS(source) {
         };
       })
       .filter(
-        (a) => now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000
+        (a) =>
+          now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000
       );
   } catch (e) {
     console.error(`❌ Failed to fetch ${source.name}:`, e.message);
-    return []; // continue with next source
+    return [];
   }
 }
 
@@ -71,10 +73,25 @@ async function main() {
     allArticles = allArticles.concat(articles);
   }
 
+  // Sort all articles globally (newest → oldest)
   allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
-  fs.writeFileSync(NEWS_JSON, JSON.stringify({ articles: allArticles }, null, 2));
-  console.log(`✅ Saved ${allArticles.length} articles to ${NEWS_JSON}`);
+  // Distribute into columns (round-robin)
+  let columns = Array.from({ length: NUM_COLUMNS }, () => []);
+  allArticles.forEach((article, i) => {
+    const colIndex = i % NUM_COLUMNS;
+    columns[colIndex].push(article);
+  });
+
+  // Save both flat + columns
+  fs.writeFileSync(
+    NEWS_JSON,
+    JSON.stringify({ articles: allArticles, columns }, null, 2)
+  );
+
+  console.log(
+    `✅ Saved ${allArticles.length} articles into ${NUM_COLUMNS} columns in ${NEWS_JSON}`
+  );
 }
 
 main();
