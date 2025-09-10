@@ -18,6 +18,10 @@ const sources = [
   { name: "CryptoPotato", url: "https://cryptopotato.com/feed/" },
   { name: "Bitcoinnews", url: "https://bitcoinnews.com/feed/news" },
   { name: "Coindesk", url: "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml" },
+  { name: "CCN", url: "https://www.ccn.com/news/crypto-news/feeds/" },
+  { name: "Ambcrypto", url: "https://ambcrypto.com/feed/" },
+  { name: "BeinCrypto", url: "https://beincrypto.com/feed/" },
+  { name: "DailyHODL", url: "https://dailyhodl.com/feed/" },
 ];
 
 async function fetchRSS(source) {
