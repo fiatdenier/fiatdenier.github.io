@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "title": "Dogecoin ETF delayed – Yet, bulls aren’t backing down – Why?",
+      "url": "https://ambcrypto.com/dogecoin-etf-delayed-yet-bulls-arent-backing-down-why/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 12 Sep 2025 23:00:45 +0000"
+    },
+    {
+      "title": "New Evidence Could Prevent Fed Governor Firing Before FOMC Meeting",
+      "url": "https://beincrypto.com/fed-governor-lisa-cook-fomc-meeting-evidence/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 12 Sep 2025 22:47:17 +0000"
+    },
+    {
       "title": "Bitcoin Price Flashes ‘Rarest Signal’ Ever, Is A 100% Rally Possible?",
       "url": "https://www.newsbtc.com/news/bitcoin/bitcoin-rarest-signal-ever/",
       "source": "NewsBTC",
@@ -11,6 +23,12 @@
       "url": "https://cryptopotato.com/cleancores-dogecoin-treasury-rockets-500-million-doge-bought-1-billion-target-in-sight/",
       "source": "CryptoPotato",
       "published_at": "Fri, 12 Sep 2025 22:14:38 +0000"
+    },
+    {
+      "title": "Tether And Circle Inject $12.75B To The Market In 30 Days – Details",
+      "url": "https://bitcoinist.com/tether-and-circle-inject-12-75b-to-market-30-days/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 12 Sep 2025 22:00:50 +0000"
     },
     {
       "title": "Here’s what happened in crypto today",
@@ -739,12 +757,6 @@
       "published_at": "Fri, 12 Sep 2025 14:00:00 +0000"
     },
     {
-      "title": "PUMP Price Now Eyes Fresh All-Time High but Could Pause for a Quick Break First",
-      "url": "https://beincrypto.com/pump-price-cooldown-before-all-time-high/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 12 Sep 2025 14:00:00 +0000"
-    },
-    {
       "title": "Bitcoin Hits $115K After CPI Data and Ahead of FOMC as BNB, HYPE Break Records: Your Weekly Recap",
       "url": "https://cryptopotato.com/bitcoin-hits-115k-after-cpi-data-and-ahead-of-fomc-as-bnb-hype-break-records-your-weekly-recap/",
       "source": "CryptoPotato",
@@ -761,12 +773,6 @@
       "url": "https://www.coindesk.com/markets/2025/09/12/traders-load-up-on-nine-figure-bitcoin-bets-raising-liquidation-risks",
       "source": "Coindesk",
       "published_at": "Fri, 12 Sep 2025 13:45:36 +0000"
-    },
-    {
-      "title": "Ezek az altcoinok meredeken emelkednek, miközben a Bitcoin (BTC) ismét teszteli a 113 000 USD szintet: Piaci áttekintés",
-      "url": "https://bitcoinist.com/altcoins-surge-as-bitcoin-btc-retakes-113k-market-update-hu/",
-      "source": "Bitcoinist",
-      "published_at": "Fri, 12 Sep 2025 13:44:20 +0000"
     },
     {
       "title": "Spot Bitcoin ETFs see strong demand as crypto market tops $4T again",
@@ -845,12 +851,6 @@
       "url": "https://news.bitcoin.com/bitcoin-price-watch-btc-presses-resistance-daily-structure-favors-strength-above-116k/",
       "source": "Bitcoin.com",
       "published_at": "Fri, 12 Sep 2025 13:05:53 +0000"
-    },
-    {
-      "title": "Analyzing Bitcoin’s surge as CPI data fuels rate cut speculation",
-      "url": "https://ambcrypto.com/analyzing-bitcoins-surge-as-cpi-data-fuels-rate-cut-speculation/",
-      "source": "Ambcrypto",
-      "published_at": "Fri, 12 Sep 2025 13:00:59 +0000"
     },
     {
       "title": "In the AI Economy, Universal Basic Income Can’t Wait",
@@ -1462,10 +1462,16 @@
   "columns": [
     [
       {
-        "title": "Bitcoin Price Flashes ‘Rarest Signal’ Ever, Is A 100% Rally Possible?",
-        "url": "https://www.newsbtc.com/news/bitcoin/bitcoin-rarest-signal-ever/",
-        "source": "NewsBTC",
-        "published_at": "Fri, 12 Sep 2025 22:30:15 +0000"
+        "title": "Dogecoin ETF delayed – Yet, bulls aren’t backing down – Why?",
+        "url": "https://ambcrypto.com/dogecoin-etf-delayed-yet-bulls-arent-backing-down-why/",
+        "source": "Ambcrypto",
+        "published_at": "Fri, 12 Sep 2025 23:00:45 +0000"
+      },
+      {
+        "title": "CleanCore’s Dogecoin Treasury Rockets: 500 Million DOGE Bought, 1 Billion Target in Sight",
+        "url": "https://cryptopotato.com/cleancores-dogecoin-treasury-rockets-500-million-doge-bought-1-billion-target-in-sight/",
+        "source": "CryptoPotato",
+        "published_at": "Fri, 12 Sep 2025 22:14:38 +0000"
       },
       {
         "title": "Tron’s gas fee reduction cuts daily revenue by 64% in 10 days",
@@ -1708,46 +1714,40 @@
         "published_at": "Fri, 12 Sep 2025 14:00:21 +0000"
       },
       {
-        "title": "PUMP Price Now Eyes Fresh All-Time High but Could Pause for a Quick Break First",
-        "url": "https://beincrypto.com/pump-price-cooldown-before-all-time-high/",
-        "source": "BeinCrypto",
-        "published_at": "Fri, 12 Sep 2025 14:00:00 +0000"
+        "title": "Bitcoin Hits $115K After CPI Data and Ahead of FOMC as BNB, HYPE Break Records: Your Weekly Recap",
+        "url": "https://cryptopotato.com/bitcoin-hits-115k-after-cpi-data-and-ahead-of-fomc-as-bnb-hype-break-records-your-weekly-recap/",
+        "source": "CryptoPotato",
+        "published_at": "Fri, 12 Sep 2025 13:58:49 +0000"
       },
       {
-        "title": "Traders Load Up on Nine-Figure Bullish Bitcoin Bets, Raising Liquidation Risks",
-        "url": "https://www.coindesk.com/markets/2025/09/12/traders-load-up-on-nine-figure-bitcoin-bets-raising-liquidation-risks",
-        "source": "Coindesk",
-        "published_at": "Fri, 12 Sep 2025 13:45:36 +0000"
+        "title": "Spot Bitcoin ETFs see strong demand as crypto market tops $4T again",
+        "url": "https://cointelegraph.com/news/spot-bitcoin-etf-crypto-4-1-trillion-market-cap?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 12 Sep 2025 14:40:51 +0100"
       },
       {
-        "title": "ENA becomes Mega Matrix’s opening move in $2b DeFi treasury plan",
-        "url": "https://crypto.news/ena-becomes-mega-matrixs-opening-move-in-2b-defi-treasury-plan/",
-        "source": "BTCManager",
-        "published_at": "Fri, 12 Sep 2025 13:32:55 +0000"
-      },
-      {
-        "title": "Gen Alpha will buy Bitcoin over gold",
-        "url": "https://cointelegraph.com/news/gen-alpha-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "Exclusive: Half of PancakeSwap’s ‘random’ prize winners appear connected",
+        "url": "https://cointelegraph.com/news/half-pancakeswap-random-prize-winners-connected?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "Cointelegraph",
         "published_at": "Fri, 12 Sep 2025 14:30:00 +0100"
       },
       {
-        "title": "CoinDesk 20 Performance Update: Solana (SOL) Jumps 5.5% as Index Moves Higher",
-        "url": "https://www.coindesk.com/coindesk-indices/2025/09/12/coindesk-20-performance-update-solana-sol-jumps-5-5-as-index-moves-higher",
+        "title": "Solana Surges as Galaxy Scoops Up Over $700M Tokens From Exchanges",
+        "url": "https://www.coindesk.com/markets/2025/09/12/solana-surges-as-galaxy-scoops-up-over-usd700m-tokens-from-exchanges",
         "source": "Coindesk",
-        "published_at": "Fri, 12 Sep 2025 13:18:16 +0000"
+        "published_at": "Fri, 12 Sep 2025 13:23:09 +0000"
       },
       {
-        "title": "AI’s life-or-death inconsistency shows why we need decentralization | Opinion",
-        "url": "https://crypto.news/ais-life-or-death-inconsistency-shows-why-we-need-decentralization-opinion/",
-        "source": "BTCManager",
-        "published_at": "Fri, 12 Sep 2025 13:13:06 +0000"
+        "title": "CleanCore Solutions' DOGE Holdings Top 500M; Shares Rise 13%",
+        "url": "https://www.coindesk.com/markets/2025/09/12/cleancore-surges-11-after-doubling-dogecoin-holdings-to-500m",
+        "source": "Coindesk",
+        "published_at": "Fri, 12 Sep 2025 13:13:16 +0000"
       },
       {
-        "title": "Analyzing Bitcoin’s surge as CPI data fuels rate cut speculation",
-        "url": "https://ambcrypto.com/analyzing-bitcoins-surge-as-cpi-data-fuels-rate-cut-speculation/",
-        "source": "Ambcrypto",
-        "published_at": "Fri, 12 Sep 2025 13:00:59 +0000"
+        "title": "Bitcoin Price Watch: BTC Presses Resistance; Daily Structure Favors Strength Above $116K",
+        "url": "https://news.bitcoin.com/bitcoin-price-watch-btc-presses-resistance-daily-structure-favors-strength-above-116k/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 12 Sep 2025 13:05:53 +0000"
       },
       {
         "title": "UK crypto groups push to add blockchain in ‘Tech Bridge’ with U.S.",
@@ -1950,10 +1950,16 @@
     ],
     [
       {
-        "title": "CleanCore’s Dogecoin Treasury Rockets: 500 Million DOGE Bought, 1 Billion Target in Sight",
-        "url": "https://cryptopotato.com/cleancores-dogecoin-treasury-rockets-500-million-doge-bought-1-billion-target-in-sight/",
-        "source": "CryptoPotato",
-        "published_at": "Fri, 12 Sep 2025 22:14:38 +0000"
+        "title": "New Evidence Could Prevent Fed Governor Firing Before FOMC Meeting",
+        "url": "https://beincrypto.com/fed-governor-lisa-cook-fomc-meeting-evidence/",
+        "source": "BeinCrypto",
+        "published_at": "Fri, 12 Sep 2025 22:47:17 +0000"
+      },
+      {
+        "title": "Tether And Circle Inject $12.75B To The Market In 30 Days – Details",
+        "url": "https://bitcoinist.com/tether-and-circle-inject-12-75b-to-market-30-days/",
+        "source": "Bitcoinist",
+        "published_at": "Fri, 12 Sep 2025 22:00:50 +0000"
       },
       {
         "title": "Charlie Kirk Killer Tyler Robinson Gets Memecoin Minted, And its Up 336%",
@@ -2196,40 +2202,34 @@
         "published_at": "Fri, 12 Sep 2025 15:00:00 +0100"
       },
       {
-        "title": "Bitcoin Hits $115K After CPI Data and Ahead of FOMC as BNB, HYPE Break Records: Your Weekly Recap",
-        "url": "https://cryptopotato.com/bitcoin-hits-115k-after-cpi-data-and-ahead-of-fomc-as-bnb-hype-break-records-your-weekly-recap/",
-        "source": "CryptoPotato",
-        "published_at": "Fri, 12 Sep 2025 13:58:49 +0000"
+        "title": "Father of Crypto Bills, French Hill, Says Market Structure Effort Should Tweak GENIUS",
+        "url": "https://www.coindesk.com/news-analysis/2025/09/12/f",
+        "source": "Coindesk",
+        "published_at": "Fri, 12 Sep 2025 13:58:25 +0000"
       },
       {
-        "title": "Ezek az altcoinok meredeken emelkednek, miközben a Bitcoin (BTC) ismét teszteli a 113 000 USD szintet: Piaci áttekintés",
-        "url": "https://bitcoinist.com/altcoins-surge-as-bitcoin-btc-retakes-113k-market-update-hu/",
-        "source": "Bitcoinist",
-        "published_at": "Fri, 12 Sep 2025 13:44:20 +0000"
-      },
-      {
-        "title": "XRP Exchange Reserves Balloon 1.2 Billion In One Day, Why This Is Bearish For Price",
-        "url": "https://www.newsbtc.com/xrp-news/xrp-exchange-reserves-balloon/",
-        "source": "NewsBTC",
-        "published_at": "Fri, 12 Sep 2025 13:30:13 +0000"
-      },
-      {
-        "title": "Dogecoin price rises despite latest delay of US DOGE ETF launch",
-        "url": "https://cointelegraph.com/news/dogecoin-price-rises-despite-us-etf-delay?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 12 Sep 2025 14:25:18 +0100"
-      },
-      {
-        "title": "PEPE price confirms rare patten as futures open interest sky-rockets",
-        "url": "https://crypto.news/pepe-price-confirms-rare-patten-as-futures-open-interest-sky-rockets/",
+        "title": "ENA becomes Mega Matrix’s opening move in $2b DeFi treasury plan",
+        "url": "https://crypto.news/ena-becomes-mega-matrixs-opening-move-in-2b-defi-treasury-plan/",
         "source": "BTCManager",
-        "published_at": "Fri, 12 Sep 2025 13:14:50 +0000"
+        "published_at": "Fri, 12 Sep 2025 13:32:55 +0000"
       },
       {
-        "title": "Stablecoins hit $300B on CoinMarketCap — Are we there yet?",
-        "url": "https://cointelegraph.com/news/stablecoins-hit-300b-on-coinmarketcap-are-we-there-yet?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "Gen Alpha will buy Bitcoin over gold",
+        "url": "https://cointelegraph.com/news/gen-alpha-buy-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "Cointelegraph",
-        "published_at": "Fri, 12 Sep 2025 14:12:05 +0100"
+        "published_at": "Fri, 12 Sep 2025 14:30:00 +0100"
+      },
+      {
+        "title": "CoinDesk 20 Performance Update: Solana (SOL) Jumps 5.5% as Index Moves Higher",
+        "url": "https://www.coindesk.com/coindesk-indices/2025/09/12/coindesk-20-performance-update-solana-sol-jumps-5-5-as-index-moves-higher",
+        "source": "Coindesk",
+        "published_at": "Fri, 12 Sep 2025 13:18:16 +0000"
+      },
+      {
+        "title": "AI’s life-or-death inconsistency shows why we need decentralization | Opinion",
+        "url": "https://crypto.news/ais-life-or-death-inconsistency-shows-why-we-need-decentralization-opinion/",
+        "source": "BTCManager",
+        "published_at": "Fri, 12 Sep 2025 13:13:06 +0000"
       },
       {
         "title": "In the AI Economy, Universal Basic Income Can’t Wait",
@@ -2437,6 +2437,12 @@
       }
     ],
     [
+      {
+        "title": "Bitcoin Price Flashes ‘Rarest Signal’ Ever, Is A 100% Rally Possible?",
+        "url": "https://www.newsbtc.com/news/bitcoin/bitcoin-rarest-signal-ever/",
+        "source": "NewsBTC",
+        "published_at": "Fri, 12 Sep 2025 22:30:15 +0000"
+      },
       {
         "title": "Here’s what happened in crypto today",
         "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
@@ -2684,40 +2690,34 @@
         "published_at": "Fri, 12 Sep 2025 14:00:00 +0000"
       },
       {
-        "title": "Father of Crypto Bills, French Hill, Says Market Structure Effort Should Tweak GENIUS",
-        "url": "https://www.coindesk.com/news-analysis/2025/09/12/f",
+        "title": "Traders Load Up on Nine-Figure Bullish Bitcoin Bets, Raising Liquidation Risks",
+        "url": "https://www.coindesk.com/markets/2025/09/12/traders-load-up-on-nine-figure-bitcoin-bets-raising-liquidation-risks",
         "source": "Coindesk",
-        "published_at": "Fri, 12 Sep 2025 13:58:25 +0000"
+        "published_at": "Fri, 12 Sep 2025 13:45:36 +0000"
       },
       {
-        "title": "Spot Bitcoin ETFs see strong demand as crypto market tops $4T again",
-        "url": "https://cointelegraph.com/news/spot-bitcoin-etf-crypto-4-1-trillion-market-cap?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "XRP Exchange Reserves Balloon 1.2 Billion In One Day, Why This Is Bearish For Price",
+        "url": "https://www.newsbtc.com/xrp-news/xrp-exchange-reserves-balloon/",
+        "source": "NewsBTC",
+        "published_at": "Fri, 12 Sep 2025 13:30:13 +0000"
+      },
+      {
+        "title": "Dogecoin price rises despite latest delay of US DOGE ETF launch",
+        "url": "https://cointelegraph.com/news/dogecoin-price-rises-despite-us-etf-delay?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "Cointelegraph",
-        "published_at": "Fri, 12 Sep 2025 14:40:51 +0100"
+        "published_at": "Fri, 12 Sep 2025 14:25:18 +0100"
       },
       {
-        "title": "Exclusive: Half of PancakeSwap’s ‘random’ prize winners appear connected",
-        "url": "https://cointelegraph.com/news/half-pancakeswap-random-prize-winners-connected?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "PEPE price confirms rare patten as futures open interest sky-rockets",
+        "url": "https://crypto.news/pepe-price-confirms-rare-patten-as-futures-open-interest-sky-rockets/",
+        "source": "BTCManager",
+        "published_at": "Fri, 12 Sep 2025 13:14:50 +0000"
+      },
+      {
+        "title": "Stablecoins hit $300B on CoinMarketCap — Are we there yet?",
+        "url": "https://cointelegraph.com/news/stablecoins-hit-300b-on-coinmarketcap-are-we-there-yet?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "Cointelegraph",
-        "published_at": "Fri, 12 Sep 2025 14:30:00 +0100"
-      },
-      {
-        "title": "Solana Surges as Galaxy Scoops Up Over $700M Tokens From Exchanges",
-        "url": "https://www.coindesk.com/markets/2025/09/12/solana-surges-as-galaxy-scoops-up-over-usd700m-tokens-from-exchanges",
-        "source": "Coindesk",
-        "published_at": "Fri, 12 Sep 2025 13:23:09 +0000"
-      },
-      {
-        "title": "CleanCore Solutions' DOGE Holdings Top 500M; Shares Rise 13%",
-        "url": "https://www.coindesk.com/markets/2025/09/12/cleancore-surges-11-after-doubling-dogecoin-holdings-to-500m",
-        "source": "Coindesk",
-        "published_at": "Fri, 12 Sep 2025 13:13:16 +0000"
-      },
-      {
-        "title": "Bitcoin Price Watch: BTC Presses Resistance; Daily Structure Favors Strength Above $116K",
-        "url": "https://news.bitcoin.com/bitcoin-price-watch-btc-presses-resistance-daily-structure-favors-strength-above-116k/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 12 Sep 2025 13:05:53 +0000"
+        "published_at": "Fri, 12 Sep 2025 14:12:05 +0100"
       },
       {
         "title": "Rich Miner expands cloud mining offerings for investors",
