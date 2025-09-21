@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "title": "Crypto can’t afford to wait for perfect regulation",
+      "url": "https://cointelegraph.com/news/crypto-perfect-regulation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Sun, 21 Sep 2025 14:30:00 +0100"
+    },
+    {
+      "title": "BitGo IPO, Dogecoin ETF debut, FTX distributes $1.6b to creditors | Weekly Recap",
+      "url": "https://crypto.news/bitgo-ipo-dogecoin-etf-ftx-creditors-weekly-recap/",
+      "source": "BTCManager",
+      "published_at": "Sun, 21 Sep 2025 13:26:24 +0000"
+    },
+    {
       "title": "Institutional Adoption Drives Solana to New ATH, as Snorter Token’s $4M Presale Soars",
       "url": "https://bitcoinist.com/institutional-adoption-drives-solana-to-new-ath-snorter-token-soars/",
       "source": "Bitcoinist",
@@ -23,6 +35,12 @@
       "url": "https://bitcoinist.com/crypto-custodian-bitgo-declares-90b-us-ipo-filing/",
       "source": "Bitcoinist",
       "published_at": "Sun, 21 Sep 2025 13:00:37 +0000"
+    },
+    {
+      "title": "CZ's Family Office Deepens Stake in Ethena Labs as USDe Stablecoin Supply Tops $13B",
+      "url": "https://www.coindesk.com/business/2025/09/21/cz-s-family-office-deepens-stake-in-ethena-labs-as-usde-stablecoin-supply-tops-usd13b",
+      "source": "Coindesk",
+      "published_at": "Sun, 21 Sep 2025 12:56:15 +0000"
     },
     {
       "title": "BNB quietly climbs 10% despite weekend lull: How high can the price go?",
@@ -1069,12 +1087,6 @@
       "published_at": "Fri, 19 Sep 2025 14:09:51 +0000"
     },
     {
-      "title": "EU finance ministers agree on path to limit digital euro holdings",
-      "url": "https://cointelegraph.com/news/eu-finance-ministers-agree-to-limit-digital-euro-holdings?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Fri, 19 Sep 2025 15:06:19 +0100"
-    },
-    {
       "title": "Will Bitcoin Price Defy Diminishing Returns This Cycle?",
       "url": "https://bitcoinmagazine.com/markets/bitcoin-price-defy-diminishing-returns",
       "source": "Bitcoin Magazine",
@@ -1177,12 +1189,6 @@
       "published_at": "Fri, 19 Sep 2025 09:42:52 +0000"
     },
     {
-      "title": "LTC Cloud Mining aims to make mining simple and accessible",
-      "url": "https://crypto.news/ltc-cloud-mining-aims-to-make-mining-simple-and-accessible/",
-      "source": "BTCManager",
-      "published_at": "Fri, 19 Sep 2025 09:31:57 +0000"
-    },
-    {
       "title": "ARK Doubles Down on Solmate, Buys $162M of Shares After Funding SOL Treasury Purchase",
       "url": "https://www.coindesk.com/markets/2025/09/19/ark-buys-usd162m-of-shares-in-sol-treasury-company-solmate-formerly-brera-holdings",
       "source": "Coindesk",
@@ -1199,12 +1205,6 @@
       "url": "https://www.coindesk.com/policy/2025/09/19/michigan-s-stalled-bitcoin-reserve-bill-advances-after-7-months",
       "source": "Coindesk",
       "published_at": "Fri, 19 Sep 2025 07:49:44 +0000"
-    },
-    {
-      "title": "Bitcoin Traders Buy More Downside Protection After Fed Rate Cut: Deribit",
-      "url": "https://www.coindesk.com/markets/2025/09/19/bitcoin-traders-continue-to-buy-downside-protection-after-fed-rate-cut-deribit",
-      "source": "Coindesk",
-      "published_at": "Fri, 19 Sep 2025 07:34:02 +0000"
     },
     {
       "title": "Immutable Token Leads Gains Amid Broader Altcoin Rally",
@@ -1462,16 +1462,22 @@
   "columns": [
     [
       {
-        "title": "Institutional Adoption Drives Solana to New ATH, as Snorter Token’s $4M Presale Soars",
-        "url": "https://bitcoinist.com/institutional-adoption-drives-solana-to-new-ath-snorter-token-soars/",
-        "source": "Bitcoinist",
-        "published_at": "Sun, 21 Sep 2025 13:12:56 +0000"
+        "title": "Crypto can’t afford to wait for perfect regulation",
+        "url": "https://cointelegraph.com/news/crypto-perfect-regulation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Sun, 21 Sep 2025 14:30:00 +0100"
       },
       {
-        "title": "Crypto Custodian BitGo Reports $90 Billion In US IPO Filing – Details",
-        "url": "https://bitcoinist.com/crypto-custodian-bitgo-declares-90b-us-ipo-filing/",
-        "source": "Bitcoinist",
-        "published_at": "Sun, 21 Sep 2025 13:00:37 +0000"
+        "title": "$7 Billion Bitcoin Fraud Trial to Begin in London—What You Need to Know",
+        "url": "https://decrypt.co/339934/7-billion-bitcoin-fraud-trial-begin-london-need-know",
+        "source": "Decrypt",
+        "published_at": "Sun, 21 Sep 2025 13:01:03 +0000"
+      },
+      {
+        "title": "CZ's Family Office Deepens Stake in Ethena Labs as USDe Stablecoin Supply Tops $13B",
+        "url": "https://www.coindesk.com/business/2025/09/21/cz-s-family-office-deepens-stake-in-ethena-labs-as-usde-stablecoin-supply-tops-usd13b",
+        "source": "Coindesk",
+        "published_at": "Sun, 21 Sep 2025 12:56:15 +0000"
       },
       {
         "title": "Vitalik Buterin Compares Ethereum Low-Risk DeFi to Google’s Role in Internet Growth",
@@ -1822,46 +1828,40 @@
         "published_at": "Fri, 19 Sep 2025 14:09:51 +0000"
       },
       {
-        "title": "CoinDesk 20 Performance Update: Index Drops 2% as Nearly All Constituents Trade Lower",
-        "url": "https://www.coindesk.com/coindesk-indices/2025/09/19/coindesk-20-performance-update-index-drops-2-as-nearly-all-constituents-trade-lower",
-        "source": "Coindesk",
-        "published_at": "Fri, 19 Sep 2025 13:14:19 +0000"
-      },
-      {
-        "title": "Ethereum details launch of Fusaka upgrade",
-        "url": "https://crypto.news/ethereum-details-launch-of-fusaka-upgrade/",
+        "title": "XRP price holds $3 support as funding rate remains neutral",
+        "url": "https://crypto.news/xrp-price-holds-3-support-as-funding-rate-remains-neutral/",
         "source": "BTCManager",
-        "published_at": "Fri, 19 Sep 2025 13:02:32 +0000"
+        "published_at": "Fri, 19 Sep 2025 13:05:17 +0000"
       },
       {
-        "title": "Interview | Crypto demand is rising, but institutions are still behind, Franklin Templeton’s Max Gokhman says",
-        "url": "https://crypto.news/interview-crypto-demand-is-rising-but-institutions-are-still-behind-franklin-templetons-max-gokhman-says/",
+        "title": "0G prepares for Kraken token listing",
+        "url": "https://crypto.news/0g-prepares-for-kraken-token-listing/",
         "source": "BTCManager",
-        "published_at": "Fri, 19 Sep 2025 12:47:30 +0000"
+        "published_at": "Fri, 19 Sep 2025 12:58:25 +0000"
       },
       {
-        "title": "Crypto Markets Today: Treading Cautiously, With Smaller Tokens Showing Froth",
-        "url": "https://www.coindesk.com/markets/2025/09/19/crypto-markets-today-treading-cautiously-with-smaller-tokens-showing-froth",
-        "source": "Coindesk",
-        "published_at": "Fri, 19 Sep 2025 12:00:00 +0000"
-      },
-      {
-        "title": "IMX price up 28% as signs of bullish reversal emerge, how high can it go?",
-        "url": "https://crypto.news/imx-price-up-28-as-signs-of-bullish-reversal-emerge-how-high-can-it-go/",
-        "source": "BTCManager",
-        "published_at": "Fri, 19 Sep 2025 10:29:36 +0000"
-      },
-      {
-        "title": "Bank of Canada Calls for Guardrails as Stablecoins Go Mainstream",
-        "url": "https://decrypt.co/340345/bank-of-canada-calls-for-guardrails-as-stablecoins-go-mainstream",
+        "title": "Pump.fun's PUMP Slumps as Meme Coin Market Stumbles",
+        "url": "https://decrypt.co/340367/pump-funs-pump-slumps-as-meme-coin-market-stumbles",
         "source": "Decrypt",
-        "published_at": "Fri, 19 Sep 2025 09:42:52 +0000"
+        "published_at": "Fri, 19 Sep 2025 12:44:25 +0000"
       },
       {
-        "title": "IG Group Buys Majority Stake in Australian Crypto Exchange Independent Reserve for $72M",
-        "url": "https://www.coindesk.com/business/2025/09/19/ig-group-buys-majority-stake-in-australian-crypto-exchange-independent-reserve-for-usd72m",
+        "title": "LILPEPE emerges as a rising memecoin to watch in 2025",
+        "url": "https://crypto.news/lilpepe-emerges-as-a-rising-memecoin-to-watch-in-2025/",
+        "source": "BTCManager",
+        "published_at": "Fri, 19 Sep 2025 11:29:35 +0000"
+      },
+      {
+        "title": "Trust Wallet token surges 49% after roadmap reveal",
+        "url": "https://crypto.news/trust-wallet-token-surges-49-after-roadmap-reveal/",
+        "source": "BTCManager",
+        "published_at": "Fri, 19 Sep 2025 10:26:32 +0000"
+      },
+      {
+        "title": "ARK Doubles Down on Solmate, Buys $162M of Shares After Funding SOL Treasury Purchase",
+        "url": "https://www.coindesk.com/markets/2025/09/19/ark-buys-usd162m-of-shares-in-sol-treasury-company-solmate-formerly-brera-holdings",
         "source": "Coindesk",
-        "published_at": "Fri, 19 Sep 2025 08:01:23 +0000"
+        "published_at": "Fri, 19 Sep 2025 08:47:01 +0000"
       },
       {
         "title": "Immutable Token Leads Gains Amid Broader Altcoin Rally",
@@ -1950,10 +1950,16 @@
     ],
     [
       {
-        "title": "$7 Billion Bitcoin Fraud Trial to Begin in London—What You Need to Know",
-        "url": "https://decrypt.co/339934/7-billion-bitcoin-fraud-trial-begin-london-need-know",
-        "source": "Decrypt",
-        "published_at": "Sun, 21 Sep 2025 13:01:03 +0000"
+        "title": "BitGo IPO, Dogecoin ETF debut, FTX distributes $1.6b to creditors | Weekly Recap",
+        "url": "https://crypto.news/bitgo-ipo-dogecoin-etf-ftx-creditors-weekly-recap/",
+        "source": "BTCManager",
+        "published_at": "Sun, 21 Sep 2025 13:26:24 +0000"
+      },
+      {
+        "title": "Is PancakeSwap’s uptrend real, or just another short-term pump?",
+        "url": "https://ambcrypto.com/is-pancakeswaps-uptrend-real-or-just-another-short-term-pump/",
+        "source": "Ambcrypto",
+        "published_at": "Sun, 21 Sep 2025 13:00:39 +0000"
       },
       {
         "title": "BNB quietly climbs 10% despite weekend lull: How high can the price go?",
@@ -2304,52 +2310,46 @@
         "published_at": "Fri, 19 Sep 2025 14:23:33 +0000"
       },
       {
-        "title": "EU finance ministers agree on path to limit digital euro holdings",
-        "url": "https://cointelegraph.com/news/eu-finance-ministers-agree-to-limit-digital-euro-holdings?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 19 Sep 2025 15:06:19 +0100"
+        "title": "Will Bitcoin Price Defy Diminishing Returns This Cycle?",
+        "url": "https://bitcoinmagazine.com/markets/bitcoin-price-defy-diminishing-returns",
+        "source": "Bitcoin Magazine",
+        "published_at": "Fri, 19 Sep 2025 13:42:00 +0000"
       },
       {
-        "title": "XRP price holds $3 support as funding rate remains neutral",
-        "url": "https://crypto.news/xrp-price-holds-3-support-as-funding-rate-remains-neutral/",
+        "title": "IG Group buys Australian crypto exchange Independent Reserve",
+        "url": "https://crypto.news/ig-group-buys-australian-crypto-exchange-independent-reserve/",
         "source": "BTCManager",
-        "published_at": "Fri, 19 Sep 2025 13:05:17 +0000"
+        "published_at": "Fri, 19 Sep 2025 13:04:43 +0000"
       },
       {
-        "title": "0G prepares for Kraken token listing",
-        "url": "https://crypto.news/0g-prepares-for-kraken-token-listing/",
-        "source": "BTCManager",
-        "published_at": "Fri, 19 Sep 2025 12:58:25 +0000"
-      },
-      {
-        "title": "Pump.fun's PUMP Slumps as Meme Coin Market Stumbles",
-        "url": "https://decrypt.co/340367/pump-funs-pump-slumps-as-meme-coin-market-stumbles",
+        "title": "Morning Minute: MetaMask Confirms Token, Airdrop SZN Incoming",
+        "url": "https://decrypt.co/340360/morning-minute-metamask-confirms-token-airdrop-szn-incoming",
         "source": "Decrypt",
-        "published_at": "Fri, 19 Sep 2025 12:44:25 +0000"
+        "published_at": "Fri, 19 Sep 2025 12:48:01 +0000"
       },
       {
-        "title": "LILPEPE emerges as a rising memecoin to watch in 2025",
-        "url": "https://crypto.news/lilpepe-emerges-as-a-rising-memecoin-to-watch-in-2025/",
-        "source": "BTCManager",
-        "published_at": "Fri, 19 Sep 2025 11:29:35 +0000"
-      },
-      {
-        "title": "Trust Wallet token surges 49% after roadmap reveal",
-        "url": "https://crypto.news/trust-wallet-token-surges-49-after-roadmap-reveal/",
-        "source": "BTCManager",
-        "published_at": "Fri, 19 Sep 2025 10:26:32 +0000"
-      },
-      {
-        "title": "LTC Cloud Mining aims to make mining simple and accessible",
-        "url": "https://crypto.news/ltc-cloud-mining-aims-to-make-mining-simple-and-accessible/",
-        "source": "BTCManager",
-        "published_at": "Fri, 19 Sep 2025 09:31:57 +0000"
-      },
-      {
-        "title": "Michigan's Stalled Bitcoin Reserve Bill Advances After 7 Months",
-        "url": "https://www.coindesk.com/policy/2025/09/19/michigan-s-stalled-bitcoin-reserve-bill-advances-after-7-months",
+        "title": "Ethereum Developers Set Fusaka Upgrade for December, Ahead of  Blob Capacity Boosts",
+        "url": "https://www.coindesk.com/business/2025/09/19/ethereum-developers-set-fusaka-upgrade-for-december-ahead-of-blob-capacity-boosts",
         "source": "Coindesk",
-        "published_at": "Fri, 19 Sep 2025 07:49:44 +0000"
+        "published_at": "Fri, 19 Sep 2025 12:44:08 +0000"
+      },
+      {
+        "title": "DOGE, XRP Get ETFs. Token Traders Say ‘Meh:’ Crypto Daybook Americas",
+        "url": "https://www.coindesk.com/daybook-us/2025/09/19/doge-xrp-get-etfs-traders-say-meh-crypto-daybook-americas",
+        "source": "Coindesk",
+        "published_at": "Fri, 19 Sep 2025 11:15:00 +0000"
+      },
+      {
+        "title": "Grvt Raises $19M to Bring Privacy and Scale to On-Chain Finance",
+        "url": "https://www.coindesk.com/business/2025/09/19/grvt-raises-usd19m-to-bring-privacy-and-scale-to-on-chain-finance",
+        "source": "Coindesk",
+        "published_at": "Fri, 19 Sep 2025 09:50:41 +0000"
+      },
+      {
+        "title": "IG Group Buys Majority Stake in Australian Crypto Exchange Independent Reserve for $72M",
+        "url": "https://www.coindesk.com/business/2025/09/19/ig-group-buys-majority-stake-in-australian-crypto-exchange-independent-reserve-for-usd72m",
+        "source": "Coindesk",
+        "published_at": "Fri, 19 Sep 2025 08:01:23 +0000"
       },
       {
         "title": "Michigan Bitcoin Reserve Bill Moves Forward After Months of Delay",
@@ -2438,10 +2438,16 @@
     ],
     [
       {
-        "title": "Is PancakeSwap’s uptrend real, or just another short-term pump?",
-        "url": "https://ambcrypto.com/is-pancakeswaps-uptrend-real-or-just-another-short-term-pump/",
-        "source": "Ambcrypto",
-        "published_at": "Sun, 21 Sep 2025 13:00:39 +0000"
+        "title": "Institutional Adoption Drives Solana to New ATH, as Snorter Token’s $4M Presale Soars",
+        "url": "https://bitcoinist.com/institutional-adoption-drives-solana-to-new-ath-snorter-token-soars/",
+        "source": "Bitcoinist",
+        "published_at": "Sun, 21 Sep 2025 13:12:56 +0000"
+      },
+      {
+        "title": "Crypto Custodian BitGo Reports $90 Billion In US IPO Filing – Details",
+        "url": "https://bitcoinist.com/crypto-custodian-bitgo-declares-90b-us-ipo-filing/",
+        "source": "Bitcoinist",
+        "published_at": "Sun, 21 Sep 2025 13:00:37 +0000"
       },
       {
         "title": "Bitcoin Price Watch: Tight Range Signals Imminent Breakout or Breakdown",
@@ -2792,52 +2798,46 @@
         "published_at": "Fri, 19 Sep 2025 14:19:28 +0000"
       },
       {
-        "title": "Will Bitcoin Price Defy Diminishing Returns This Cycle?",
-        "url": "https://bitcoinmagazine.com/markets/bitcoin-price-defy-diminishing-returns",
-        "source": "Bitcoin Magazine",
-        "published_at": "Fri, 19 Sep 2025 13:42:00 +0000"
+        "title": "CoinDesk 20 Performance Update: Index Drops 2% as Nearly All Constituents Trade Lower",
+        "url": "https://www.coindesk.com/coindesk-indices/2025/09/19/coindesk-20-performance-update-index-drops-2-as-nearly-all-constituents-trade-lower",
+        "source": "Coindesk",
+        "published_at": "Fri, 19 Sep 2025 13:14:19 +0000"
       },
       {
-        "title": "IG Group buys Australian crypto exchange Independent Reserve",
-        "url": "https://crypto.news/ig-group-buys-australian-crypto-exchange-independent-reserve/",
+        "title": "Ethereum details launch of Fusaka upgrade",
+        "url": "https://crypto.news/ethereum-details-launch-of-fusaka-upgrade/",
         "source": "BTCManager",
-        "published_at": "Fri, 19 Sep 2025 13:04:43 +0000"
+        "published_at": "Fri, 19 Sep 2025 13:02:32 +0000"
       },
       {
-        "title": "Morning Minute: MetaMask Confirms Token, Airdrop SZN Incoming",
-        "url": "https://decrypt.co/340360/morning-minute-metamask-confirms-token-airdrop-szn-incoming",
+        "title": "Interview | Crypto demand is rising, but institutions are still behind, Franklin Templeton’s Max Gokhman says",
+        "url": "https://crypto.news/interview-crypto-demand-is-rising-but-institutions-are-still-behind-franklin-templetons-max-gokhman-says/",
+        "source": "BTCManager",
+        "published_at": "Fri, 19 Sep 2025 12:47:30 +0000"
+      },
+      {
+        "title": "Crypto Markets Today: Treading Cautiously, With Smaller Tokens Showing Froth",
+        "url": "https://www.coindesk.com/markets/2025/09/19/crypto-markets-today-treading-cautiously-with-smaller-tokens-showing-froth",
+        "source": "Coindesk",
+        "published_at": "Fri, 19 Sep 2025 12:00:00 +0000"
+      },
+      {
+        "title": "IMX price up 28% as signs of bullish reversal emerge, how high can it go?",
+        "url": "https://crypto.news/imx-price-up-28-as-signs-of-bullish-reversal-emerge-how-high-can-it-go/",
+        "source": "BTCManager",
+        "published_at": "Fri, 19 Sep 2025 10:29:36 +0000"
+      },
+      {
+        "title": "Bank of Canada Calls for Guardrails as Stablecoins Go Mainstream",
+        "url": "https://decrypt.co/340345/bank-of-canada-calls-for-guardrails-as-stablecoins-go-mainstream",
         "source": "Decrypt",
-        "published_at": "Fri, 19 Sep 2025 12:48:01 +0000"
+        "published_at": "Fri, 19 Sep 2025 09:42:52 +0000"
       },
       {
-        "title": "Ethereum Developers Set Fusaka Upgrade for December, Ahead of  Blob Capacity Boosts",
-        "url": "https://www.coindesk.com/business/2025/09/19/ethereum-developers-set-fusaka-upgrade-for-december-ahead-of-blob-capacity-boosts",
+        "title": "Michigan's Stalled Bitcoin Reserve Bill Advances After 7 Months",
+        "url": "https://www.coindesk.com/policy/2025/09/19/michigan-s-stalled-bitcoin-reserve-bill-advances-after-7-months",
         "source": "Coindesk",
-        "published_at": "Fri, 19 Sep 2025 12:44:08 +0000"
-      },
-      {
-        "title": "DOGE, XRP Get ETFs. Token Traders Say ‘Meh:’ Crypto Daybook Americas",
-        "url": "https://www.coindesk.com/daybook-us/2025/09/19/doge-xrp-get-etfs-traders-say-meh-crypto-daybook-americas",
-        "source": "Coindesk",
-        "published_at": "Fri, 19 Sep 2025 11:15:00 +0000"
-      },
-      {
-        "title": "Grvt Raises $19M to Bring Privacy and Scale to On-Chain Finance",
-        "url": "https://www.coindesk.com/business/2025/09/19/grvt-raises-usd19m-to-bring-privacy-and-scale-to-on-chain-finance",
-        "source": "Coindesk",
-        "published_at": "Fri, 19 Sep 2025 09:50:41 +0000"
-      },
-      {
-        "title": "ARK Doubles Down on Solmate, Buys $162M of Shares After Funding SOL Treasury Purchase",
-        "url": "https://www.coindesk.com/markets/2025/09/19/ark-buys-usd162m-of-shares-in-sol-treasury-company-solmate-formerly-brera-holdings",
-        "source": "Coindesk",
-        "published_at": "Fri, 19 Sep 2025 08:47:01 +0000"
-      },
-      {
-        "title": "Bitcoin Traders Buy More Downside Protection After Fed Rate Cut: Deribit",
-        "url": "https://www.coindesk.com/markets/2025/09/19/bitcoin-traders-continue-to-buy-downside-protection-after-fed-rate-cut-deribit",
-        "source": "Coindesk",
-        "published_at": "Fri, 19 Sep 2025 07:34:02 +0000"
+        "published_at": "Fri, 19 Sep 2025 07:49:44 +0000"
       },
       {
         "title": "EU Eyes Boost to Pensions, Crypto Oversight Before 2026",
