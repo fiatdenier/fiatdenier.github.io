@@ -2,7 +2,7 @@ name: Fetch Bitcoin News
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/30 * * * *'  # Every 30 minutes
   workflow_dispatch:
 
 permissions:
@@ -14,8 +14,12 @@ jobs:
     defaults:
       run:
         working-directory: scripts
+
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -23,12 +27,23 @@ jobs:
 
       - run: npm install xml2js node-fetch
 
+      # 1️⃣ Fetch latest news and update news.json
       - run: node fetch_news.mjs
 
-      - name: Commit news.json
+      # 2️⃣ Create the RSS feed (from updated news.json)
+      - name: Create RSS feed
+        run: node create_rss.mjs
+
+      # 3️⃣ (Optional) Copy rss.xml to project root for public access
+      #     ⚠️ Only include this if your GitHub Pages serves from `/` (main branch root)
+      - name: Copy RSS feed to root
+        run: cp rss.xml ../rss.xml
+
+      # 4️⃣ Commit both files if there are changes
+      - name: Commit updates
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add news.json
-          git commit -m "Update news.json" || echo "No changes"
+          git add news.json ../rss.xml
+          git commit -m "Update news.json and RSS feed" || echo "No changes"
           git push
