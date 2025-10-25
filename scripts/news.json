@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "title": "Blockchain.com Secures MiCA License, Expands Crypto Services Across 27 EEA Nations",
+      "url": "https://news.bitcoin.com/blockchain-com-secures-mica-license-expands-crypto-services-across-27-eea-nations/",
+      "source": "Bitcoin.com",
+      "published_at": "Sat, 25 Oct 2025 08:30:25 +0000"
+    },
+    {
+      "title": "XLM Price Struggles Despite Steller’s On-Chain Growth – What’s Next?",
+      "url": "https://beincrypto.com/steller-xlm-price-near-turning-point-break-pattern/",
+      "source": "BeinCrypto",
+      "published_at": "Sat, 25 Oct 2025 08:10:02 +0000"
+    },
+    {
       "title": "JPMorgan To Allow Bitcoin And Ether As Collateral For Institutional Clients – Report",
       "url": "https://bitcoinist.com/jpmorgan-bitcoin-ether-collateral-clients-report/",
       "source": "Bitcoinist",
@@ -17,6 +29,12 @@
       "url": "https://www.newsbtc.com/bitcoin-news/bitcoin-liquidity-seven-year-low-373700-btc-month/",
       "source": "NewsBTC",
       "published_at": "Sat, 25 Oct 2025 08:00:17 +0000"
+    },
+    {
+      "title": "Rumble Challenges YouTube with Bitcoin Tipping",
+      "url": "https://beincrypto.com/rumble-challenges-youtube-with-bitcoin-tipping/",
+      "source": "BeinCrypto",
+      "published_at": "Sat, 25 Oct 2025 07:49:27 +0000"
     },
     {
       "title": "Trump nominates Michael Selig as new CFTC chair – Details here!",
@@ -487,12 +505,6 @@
       "published_at": "Fri, 24 Oct 2025 18:32:11 +0000"
     },
     {
-      "title": "Stablecoin Adoption Rises in Brazil to Leverage Tax Limbo",
-      "url": "https://news.bitcoin.com/stablecoin-adoption-rises-in-brazil-to-leverage-tax-limbo/",
-      "source": "Bitcoin.com",
-      "published_at": "Fri, 24 Oct 2025 18:30:59 +0000"
-    },
-    {
       "title": "Ripple Seals $1.25 Billion Hidden Road Deal Amid Acquisition Streak",
       "url": "https://beincrypto.com/hidden-road-ripple-prime-acquisition-streak/",
       "source": "BeinCrypto",
@@ -721,12 +733,6 @@
       "published_at": "Fri, 24 Oct 2025 15:23:10 +0000"
     },
     {
-      "title": "Crypto.com Files Application for US Bank Charter",
-      "url": "https://beincrypto.com/crypto-com-us-bank-charter-application/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 24 Oct 2025 15:22:28 +0000"
-    },
-    {
       "title": "Fetch.ai and Ocean Protocol move toward resolving $120M FET dispute",
       "url": "https://ambcrypto.com/fetch-ai-and-ocean-protocol-move-toward-resolving-120m-fet-dispute/",
       "source": "Ambcrypto",
@@ -749,12 +755,6 @@
       "url": "https://crypto.news/the-centralization-drift-web3-risks-losing-its-soul/",
       "source": "BTCManager",
       "published_at": "Fri, 24 Oct 2025 14:59:04 +0000"
-    },
-    {
-      "title": "Avantis (AVNT) Price Recovers 25%, But Are Whales Supporting The Altcoin?",
-      "url": "https://beincrypto.com/avantis-price-whale-activity-analysis/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 24 Oct 2025 14:56:03 +0000"
     },
     {
       "title": "Polymarket Exec Confirms Token, Airdrop—After Prediction Market Returns to US",
@@ -1558,10 +1558,16 @@
   "columns": [
     [
       {
-        "title": "JPMorgan To Allow Bitcoin And Ether As Collateral For Institutional Clients – Report",
-        "url": "https://bitcoinist.com/jpmorgan-bitcoin-ether-collateral-clients-report/",
-        "source": "Bitcoinist",
-        "published_at": "Sat, 25 Oct 2025 08:00:32 +0000"
+        "title": "Blockchain.com Secures MiCA License, Expands Crypto Services Across 27 EEA Nations",
+        "url": "https://news.bitcoin.com/blockchain-com-secures-mica-license-expands-crypto-services-across-27-eea-nations/",
+        "source": "Bitcoin.com",
+        "published_at": "Sat, 25 Oct 2025 08:30:25 +0000"
+      },
+      {
+        "title": "Decoding MYX’s rebound  – Can bulls clear $3.2 barrier next?",
+        "url": "https://ambcrypto.com/decoding-myxs-rebound-can-bulls-clear-3-2-barrier-next/",
+        "source": "Ambcrypto",
+        "published_at": "Sat, 25 Oct 2025 08:00:22 +0000"
       },
       {
         "title": "Trump nominates Michael Selig as new CFTC chair – Details here!",
@@ -1720,94 +1726,88 @@
         "published_at": "Fri, 24 Oct 2025 18:45:43 +0000"
       },
       {
-        "title": "Stablecoin Adoption Rises in Brazil to Leverage Tax Limbo",
-        "url": "https://news.bitcoin.com/stablecoin-adoption-rises-in-brazil-to-leverage-tax-limbo/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 24 Oct 2025 18:30:59 +0000"
+        "title": "Ripple Seals $1.25 Billion Hidden Road Deal Amid Acquisition Streak",
+        "url": "https://beincrypto.com/hidden-road-ripple-prime-acquisition-streak/",
+        "source": "BeinCrypto",
+        "published_at": "Fri, 24 Oct 2025 18:25:35 +0000"
       },
       {
-        "title": "Bitcoin’s bull market is intact, but key levels signal risk, says Galaxy Digital analyst",
-        "url": "https://cointelegraph.com/news/alex-thorn-the-bull-market-is-structurally-intact-but-it-s-at-risk?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 24 Oct 2025 19:20:00 +0100"
-      },
-      {
-        "title": "Blockchain.com Gains Malta MiCA License as Company Eyes European Expansion",
-        "url": "https://decrypt.co/345892/blockchain-com-gains-malta-mica-license-company-eyes-european-expansion",
+        "title": "Payments Processor Zelle to Use Stablecoins for International Transactions",
+        "url": "https://decrypt.co/345885/zelle-use-stablecoins-international-payments",
         "source": "Decrypt",
-        "published_at": "Fri, 24 Oct 2025 18:10:59 +0000"
+        "published_at": "Fri, 24 Oct 2025 18:18:54 +0000"
       },
       {
-        "title": "How release of U.S. CPI data will affect Bitcoin, crypto market",
-        "url": "https://ambcrypto.com/how-release-of-u-s-cpi-data-will-affect-bitcoin-crypto-market/",
+        "title": "DOGE and SOL Stall Amid Market Fluctuation, Digitap’s Crypto Card Token Tops Charts As Next Altcoin For 100x Pump",
+        "url": "https://ambcrypto.com/doge-and-sol-stall-amid-market-fluctuation-digitaps-crypto-card-token-tops-charts-as-next-altcoin-for-100x-pump/",
         "source": "Ambcrypto",
-        "published_at": "Fri, 24 Oct 2025 18:00:48 +0000"
+        "published_at": "Fri, 24 Oct 2025 18:05:15 +0000"
       },
       {
-        "title": "Wallet in Telegram now offers USDT DeFi yield with Affluent",
-        "url": "https://crypto.news/telegram-wallet-now-offers-usdt-defi-yield-with-affluent/",
+        "title": "$19B crypto crash opens door to $200K Bitcoin in 2025: Finance Redefined",
+        "url": "https://cointelegraph.com/news/19b-crypto-crash-200k-bitcoin-2025-finance-redefined?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 24 Oct 2025 19:00:00 +0100"
+      },
+      {
+        "title": "Zelle fires up stablecoins to fuel faster cross-border payments",
+        "url": "https://cointelegraph.com/news/zelle-stablecoins-cross-border-payments?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 24 Oct 2025 18:33:47 +0100"
+      },
+      {
+        "title": "Tether’s stablecoin business set for another record year of profitability",
+        "url": "https://cointelegraph.com/news/tether-2025-profit-forecast-stablecoin-growth?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 24 Oct 2025 18:15:01 +0100"
+      },
+      {
+        "title": "Trump’s pardon of CZ branded “disgusting” amid Binance-linked deals",
+        "url": "https://crypto.news/trump-cz-pardon-binance-controversy/",
         "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 17:51:18 +0000"
+        "published_at": "Fri, 24 Oct 2025 17:11:59 +0000"
       },
       {
-        "title": "Pi Network price eyes rebound as divergence, wedge forms",
-        "url": "https://crypto.news/pi-network-price-eyes-rebound-as-divergence-wedge-forms/",
+        "title": "Counter-Strike 2 skins market takes a violent $1.7 billion hit overnight due to a game update",
+        "url": "https://crypto.news/counter-strike-2-skins-market-takes-a-violent-1-7b/",
         "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 17:22:56 +0000"
+        "published_at": "Fri, 24 Oct 2025 16:55:14 +0000"
       },
       {
-        "title": "How to buy Little Pepe, how LILPEPE could perform in the next 12 months",
-        "url": "https://crypto.news/how-to-buy-little-pepe-how-lilpepe-could-perform-in-the-next-12-months/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 17:12:24 +0000"
+        "title": "Tether Eyes $15 Billion in 2025 Profits as IPO Buzz Heats Up",
+        "url": "https://beincrypto.com/tether-profit-15-billion-ipo-rumors/",
+        "source": "BeinCrypto",
+        "published_at": "Fri, 24 Oct 2025 16:30:00 +0000"
       },
       {
-        "title": "Tether Eyes Fresh Investments to Push USAT Stablecoin to 100M Americans at December Launch",
-        "url": "https://www.coindesk.com/business/2025/10/24/tether-eyes-fresh-investments-to-push-usat-stablecoin-to-100m-americans-at-december-launch",
+        "title": "Stellar’s XLM Consolidates After Breakout as Volume Surge Hints at Institutional Activity",
+        "url": "https://www.coindesk.com/markets/2025/10/24/stellar-s-xlm-consolidates-after-breakout-as-volume-surge-hints-at-institutional-activity",
         "source": "Coindesk",
-        "published_at": "Fri, 24 Oct 2025 17:08:15 +0000"
+        "published_at": "Fri, 24 Oct 2025 16:08:21 +0000"
       },
       {
-        "title": "Analyst Predicts $300K Bitcoin Peak Despite Bearish Mood",
-        "url": "https://cryptopotato.com/analyst-predicts-300k-bitcoin-peak-despite-bearish-mood/",
-        "source": "CryptoPotato",
-        "published_at": "Fri, 24 Oct 2025 16:41:38 +0000"
-      },
-      {
-        "title": "Polymarket: Token will come, but US launch comes first",
-        "url": "https://cointelegraph.com/news/polymarket-token-us-launch-cmo-app?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 24 Oct 2025 17:13:13 +0100"
-      },
-      {
-        "title": "Analysts Set $200,000 Bitcoin Price Target – Is It Realistic By Christmas?",
-        "url": "https://beincrypto.com/analysts-bitcoin-price-target-accumulation-trend/",
-        "source": "BeinCrypto",
-        "published_at": "Fri, 24 Oct 2025 16:00:00 +0000"
-      },
-      {
-        "title": "Pump.fun expands with Padre acquisition as memecoin market cools",
-        "url": "https://cointelegraph.com/news/pumpfun-acquires-padre-trading-terminal-solana-memecoins?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 24 Oct 2025 16:49:40 +0100"
-      },
-      {
-        "title": "TRUMP PARDONS CZ, BTC BACK OVER $110K, A16Z’s STATE OF CRYPTO 2025",
-        "url": "https://decrypt.co/videos/interviews/9YKUk9do/trump-pardons-cz-btc-back-over-110k-a16zs-state-of-crypto-2025",
+        "title": "Crypto.com Files for National Bank Charter Following Circle, Stripe and Coinbase",
+        "url": "https://decrypt.co/345863/crypto-com-files-national-bank-charter-following-circle-stripe-coinbase",
         "source": "Decrypt",
-        "published_at": "Fri, 24 Oct 2025 15:31:02 +0000"
+        "published_at": "Fri, 24 Oct 2025 15:54:51 +0000"
       },
       {
-        "title": "Crypto.com Files Application for US Bank Charter",
-        "url": "https://beincrypto.com/crypto-com-us-bank-charter-application/",
+        "title": "Polymarket Prepares POLY Token as $2 Billion Backing Fuels Airdrop Frenzy",
+        "url": "https://beincrypto.com/polymarket-poly-token-airdrop-launch/",
         "source": "BeinCrypto",
-        "published_at": "Fri, 24 Oct 2025 15:22:28 +0000"
+        "published_at": "Fri, 24 Oct 2025 15:46:55 +0000"
       },
       {
-        "title": "Swiss Bitcoin-Only App Relai Secures MiCA License in France",
-        "url": "https://bitcoinmagazine.com/business/relai-secures-mica-license-in-france",
-        "source": "Bitcoin Magazine",
-        "published_at": "Fri, 24 Oct 2025 15:00:06 +0000"
+        "title": "Critical Ethereum Investors Begin Selling As Price Struggles Under $4,000",
+        "url": "https://beincrypto.com/ethereum-selling-causes-price-struggles/",
+        "source": "BeinCrypto",
+        "published_at": "Fri, 24 Oct 2025 15:30:00 +0000"
+      },
+      {
+        "title": "Is Bitcoin Ready to Break Out? Key Level to Watch Now",
+        "url": "https://cryptopotato.com/is-bitcoin-ready-to-break-out-key-level-to-watch-now/",
+        "source": "CryptoPotato",
+        "published_at": "Fri, 24 Oct 2025 15:03:01 +0000"
       },
       {
         "title": "Polymarket Exec Confirms Token, Airdrop—After Prediction Market Returns to US",
@@ -2082,10 +2082,16 @@
     ],
     [
       {
-        "title": "Decoding MYX’s rebound  – Can bulls clear $3.2 barrier next?",
-        "url": "https://ambcrypto.com/decoding-myxs-rebound-can-bulls-clear-3-2-barrier-next/",
-        "source": "Ambcrypto",
-        "published_at": "Sat, 25 Oct 2025 08:00:22 +0000"
+        "title": "XLM Price Struggles Despite Steller’s On-Chain Growth – What’s Next?",
+        "url": "https://beincrypto.com/steller-xlm-price-near-turning-point-break-pattern/",
+        "source": "BeinCrypto",
+        "published_at": "Sat, 25 Oct 2025 08:10:02 +0000"
+      },
+      {
+        "title": "Bitcoin Liquidity Hits Seven-Year Low As Accumulators Stack 373,700 BTC In A Month",
+        "url": "https://www.newsbtc.com/bitcoin-news/bitcoin-liquidity-seven-year-low-373700-btc-month/",
+        "source": "NewsBTC",
+        "published_at": "Sat, 25 Oct 2025 08:00:17 +0000"
       },
       {
         "title": "Spot Ether ETFs see outflows for second consecutive week amid ‘cooling demand’",
@@ -2244,94 +2250,88 @@
         "published_at": "Fri, 24 Oct 2025 19:32:21 +0100"
       },
       {
-        "title": "Ripple Seals $1.25 Billion Hidden Road Deal Amid Acquisition Streak",
-        "url": "https://beincrypto.com/hidden-road-ripple-prime-acquisition-streak/",
-        "source": "BeinCrypto",
-        "published_at": "Fri, 24 Oct 2025 18:25:35 +0000"
+        "title": "Ripple unveils Ripple Prime after finalizing Hidden Road acquisition",
+        "url": "https://crypto.news/ripple-unveils-ripple-prime-after-finalizing-hidden-road-acquisition/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 18:21:52 +0000"
       },
       {
-        "title": "Payments Processor Zelle to Use Stablecoins for International Transactions",
-        "url": "https://decrypt.co/345885/zelle-use-stablecoins-international-payments",
-        "source": "Decrypt",
-        "published_at": "Fri, 24 Oct 2025 18:18:54 +0000"
+        "title": "Crypto.com pushes for full federal banking status",
+        "url": "https://crypto.news/crypto-com-pushes-for-full-federal-banking-status/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 18:12:37 +0000"
       },
       {
-        "title": "DOGE and SOL Stall Amid Market Fluctuation, Digitap’s Crypto Card Token Tops Charts As Next Altcoin For 100x Pump",
-        "url": "https://ambcrypto.com/doge-and-sol-stall-amid-market-fluctuation-digitaps-crypto-card-token-tops-charts-as-next-altcoin-for-100x-pump/",
+        "title": "Pump token price coils at $0.00379, is a volatile breakout on the horizon?",
+        "url": "https://crypto.news/pump-token-price-coils-at-0-00379-is-volatile-breakout/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 18:01:13 +0000"
+      },
+      {
+        "title": "Crypto.com pushes for federal footing with US trust bank charter application",
+        "url": "https://cointelegraph.com/news/crypto-com-federal-us-trust-bank-charter-application?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 24 Oct 2025 18:56:52 +0100"
+      },
+      {
+        "title": "Tether releases 41 billion-token dataset to democratize AI training",
+        "url": "https://crypto.news/tether-releases-41-billion-token-dataset-to-democratize-ai-training/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 17:30:00 +0000"
+      },
+      {
+        "title": "Crypto market eyes rally as CPI, Fed decision, and Trump-Xi talks converge",
+        "url": "https://crypto.news/crypto-market-eyes-rally-as-cpi-fed-decision-and-trump-xi-talks-converge/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 17:13:53 +0000"
+      },
+      {
+        "title": "Why XRP price holding above $2.30 could ignite the next major rally",
+        "url": "https://crypto.news/why-xrp-price-holding-above-2-30-could-ignite-the-next-major-rally/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 17:11:38 +0000"
+      },
+      {
+        "title": "Bitcoin holds firm despite CPI uptick: Market signals a hedge rotation",
+        "url": "https://ambcrypto.com/bitcoin-holds-firm-despite-cpi-uptick-market-signals-a-hedge-rotation/",
         "source": "Ambcrypto",
-        "published_at": "Fri, 24 Oct 2025 18:05:15 +0000"
+        "published_at": "Fri, 24 Oct 2025 16:45:30 +0000"
       },
       {
-        "title": "$19B crypto crash opens door to $200K Bitcoin in 2025: Finance Redefined",
-        "url": "https://cointelegraph.com/news/19b-crypto-crash-200k-bitcoin-2025-finance-redefined?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 24 Oct 2025 19:00:00 +0100"
-      },
-      {
-        "title": "Zelle fires up stablecoins to fuel faster cross-border payments",
-        "url": "https://cointelegraph.com/news/zelle-stablecoins-cross-border-payments?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 24 Oct 2025 18:33:47 +0100"
-      },
-      {
-        "title": "Tether’s stablecoin business set for another record year of profitability",
-        "url": "https://cointelegraph.com/news/tether-2025-profit-forecast-stablecoin-growth?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 24 Oct 2025 18:15:01 +0100"
-      },
-      {
-        "title": "Trump’s pardon of CZ branded “disgusting” amid Binance-linked deals",
-        "url": "https://crypto.news/trump-cz-pardon-binance-controversy/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 17:11:59 +0000"
-      },
-      {
-        "title": "Counter-Strike 2 skins market takes a violent $1.7 billion hit overnight due to a game update",
-        "url": "https://crypto.news/counter-strike-2-skins-market-takes-a-violent-1-7b/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 16:55:14 +0000"
-      },
-      {
-        "title": "Tether Eyes $15 Billion in 2025 Profits as IPO Buzz Heats Up",
-        "url": "https://beincrypto.com/tether-profit-15-billion-ipo-rumors/",
-        "source": "BeinCrypto",
-        "published_at": "Fri, 24 Oct 2025 16:30:00 +0000"
-      },
-      {
-        "title": "Stellar’s XLM Consolidates After Breakout as Volume Surge Hints at Institutional Activity",
-        "url": "https://www.coindesk.com/markets/2025/10/24/stellar-s-xlm-consolidates-after-breakout-as-volume-surge-hints-at-institutional-activity",
+        "title": "Polymarket Will Launch Token and Airdrop After U.S. Relaunch, CMO Says",
+        "url": "https://www.coindesk.com/markets/2025/10/24/polymarket-will-launch-token-and-airdrop-after-u-s-relaunch-cmo-says",
         "source": "Coindesk",
-        "published_at": "Fri, 24 Oct 2025 16:08:21 +0000"
+        "published_at": "Fri, 24 Oct 2025 16:21:00 +0000"
       },
       {
-        "title": "Crypto.com Files for National Bank Charter Following Circle, Stripe and Coinbase",
-        "url": "https://decrypt.co/345863/crypto-com-files-national-bank-charter-following-circle-stripe-coinbase",
+        "title": "WazirX shutdown ends, UK watchdog targets HTX: Global Express",
+        "url": "https://cointelegraph.com/news/wazirx-shutdown-ends-uk-targets-htx-global-express?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 24 Oct 2025 17:00:00 +0100"
+      },
+      {
+        "title": "HBAR Slides 1.7% to $0.170 as Channel Support Crumbles",
+        "url": "https://www.coindesk.com/markets/2025/10/24/hbar-slides-1-7-to-usd0-170-as-channel-support-crumbles",
+        "source": "Coindesk",
+        "published_at": "Fri, 24 Oct 2025 15:54:11 +0000"
+      },
+      {
+        "title": "Tether Launches Decentralized AI App, Dataset to Challenge Big Tech Dominance",
+        "url": "https://decrypt.co/345859/tether-decentralized-ai-app-dataset-challenge-big-tech-dominance",
         "source": "Decrypt",
-        "published_at": "Fri, 24 Oct 2025 15:54:51 +0000"
+        "published_at": "Fri, 24 Oct 2025 15:45:00 +0000"
       },
       {
-        "title": "Polymarket Prepares POLY Token as $2 Billion Backing Fuels Airdrop Frenzy",
-        "url": "https://beincrypto.com/polymarket-poly-token-airdrop-launch/",
+        "title": "HELLO Labs Launches ‘Killer Whales: Live’ and Opens Submissions for Crypto Projects to Pitch for a TV Spot",
+        "url": "https://beincrypto.com/hello-labs-launches-killer-whales/",
         "source": "BeinCrypto",
-        "published_at": "Fri, 24 Oct 2025 15:46:55 +0000"
+        "published_at": "Fri, 24 Oct 2025 15:23:10 +0000"
       },
       {
-        "title": "Critical Ethereum Investors Begin Selling As Price Struggles Under $4,000",
-        "url": "https://beincrypto.com/ethereum-selling-causes-price-struggles/",
-        "source": "BeinCrypto",
-        "published_at": "Fri, 24 Oct 2025 15:30:00 +0000"
-      },
-      {
-        "title": "Fetch.ai and Ocean Protocol move toward resolving $120M FET dispute",
-        "url": "https://ambcrypto.com/fetch-ai-and-ocean-protocol-move-toward-resolving-120m-fet-dispute/",
-        "source": "Ambcrypto",
-        "published_at": "Fri, 24 Oct 2025 15:20:50 +0000"
-      },
-      {
-        "title": "The centralization drift: Web3 risks losing its soul | Opinion",
-        "url": "https://crypto.news/the-centralization-drift-web3-risks-losing-its-soul/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 14:59:04 +0000"
+        "title": "Swiss Bitcoin-Only App Relai Secures MiCA License in France",
+        "url": "https://bitcoinmagazine.com/business/relai-secures-mica-license-in-france",
+        "source": "Bitcoin Magazine",
+        "published_at": "Fri, 24 Oct 2025 15:00:06 +0000"
       },
       {
         "title": "WSPN brings stablecoin settlement to ecommerce checkout",
@@ -2600,10 +2600,16 @@
     ],
     [
       {
-        "title": "Bitcoin Liquidity Hits Seven-Year Low As Accumulators Stack 373,700 BTC In A Month",
-        "url": "https://www.newsbtc.com/bitcoin-news/bitcoin-liquidity-seven-year-low-373700-btc-month/",
-        "source": "NewsBTC",
-        "published_at": "Sat, 25 Oct 2025 08:00:17 +0000"
+        "title": "JPMorgan To Allow Bitcoin And Ether As Collateral For Institutional Clients – Report",
+        "url": "https://bitcoinist.com/jpmorgan-bitcoin-ether-collateral-clients-report/",
+        "source": "Bitcoinist",
+        "published_at": "Sat, 25 Oct 2025 08:00:32 +0000"
+      },
+      {
+        "title": "Rumble Challenges YouTube with Bitcoin Tipping",
+        "url": "https://beincrypto.com/rumble-challenges-youtube-with-bitcoin-tipping/",
+        "source": "BeinCrypto",
+        "published_at": "Sat, 25 Oct 2025 07:49:27 +0000"
       },
       {
         "title": "Crypto.com Seeks Federal Charter to Strengthen Institutional Crypto Services",
@@ -2762,94 +2768,88 @@
         "published_at": "Fri, 24 Oct 2025 18:32:11 +0000"
       },
       {
-        "title": "Ripple unveils Ripple Prime after finalizing Hidden Road acquisition",
-        "url": "https://crypto.news/ripple-unveils-ripple-prime-after-finalizing-hidden-road-acquisition/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 18:21:52 +0000"
-      },
-      {
-        "title": "Crypto.com pushes for full federal banking status",
-        "url": "https://crypto.news/crypto-com-pushes-for-full-federal-banking-status/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 18:12:37 +0000"
-      },
-      {
-        "title": "Pump token price coils at $0.00379, is a volatile breakout on the horizon?",
-        "url": "https://crypto.news/pump-token-price-coils-at-0-00379-is-volatile-breakout/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 18:01:13 +0000"
-      },
-      {
-        "title": "Crypto.com pushes for federal footing with US trust bank charter application",
-        "url": "https://cointelegraph.com/news/crypto-com-federal-us-trust-bank-charter-application?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "Bitcoin’s bull market is intact, but key levels signal risk, says Galaxy Digital analyst",
+        "url": "https://cointelegraph.com/news/alex-thorn-the-bull-market-is-structurally-intact-but-it-s-at-risk?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "Cointelegraph",
-        "published_at": "Fri, 24 Oct 2025 18:56:52 +0100"
+        "published_at": "Fri, 24 Oct 2025 19:20:00 +0100"
       },
       {
-        "title": "Tether releases 41 billion-token dataset to democratize AI training",
-        "url": "https://crypto.news/tether-releases-41-billion-token-dataset-to-democratize-ai-training/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 17:30:00 +0000"
-      },
-      {
-        "title": "Crypto market eyes rally as CPI, Fed decision, and Trump-Xi talks converge",
-        "url": "https://crypto.news/crypto-market-eyes-rally-as-cpi-fed-decision-and-trump-xi-talks-converge/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 17:13:53 +0000"
-      },
-      {
-        "title": "Why XRP price holding above $2.30 could ignite the next major rally",
-        "url": "https://crypto.news/why-xrp-price-holding-above-2-30-could-ignite-the-next-major-rally/",
-        "source": "BTCManager",
-        "published_at": "Fri, 24 Oct 2025 17:11:38 +0000"
-      },
-      {
-        "title": "Bitcoin holds firm despite CPI uptick: Market signals a hedge rotation",
-        "url": "https://ambcrypto.com/bitcoin-holds-firm-despite-cpi-uptick-market-signals-a-hedge-rotation/",
-        "source": "Ambcrypto",
-        "published_at": "Fri, 24 Oct 2025 16:45:30 +0000"
-      },
-      {
-        "title": "Polymarket Will Launch Token and Airdrop After U.S. Relaunch, CMO Says",
-        "url": "https://www.coindesk.com/markets/2025/10/24/polymarket-will-launch-token-and-airdrop-after-u-s-relaunch-cmo-says",
-        "source": "Coindesk",
-        "published_at": "Fri, 24 Oct 2025 16:21:00 +0000"
-      },
-      {
-        "title": "WazirX shutdown ends, UK watchdog targets HTX: Global Express",
-        "url": "https://cointelegraph.com/news/wazirx-shutdown-ends-uk-targets-htx-global-express?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 24 Oct 2025 17:00:00 +0100"
-      },
-      {
-        "title": "HBAR Slides 1.7% to $0.170 as Channel Support Crumbles",
-        "url": "https://www.coindesk.com/markets/2025/10/24/hbar-slides-1-7-to-usd0-170-as-channel-support-crumbles",
-        "source": "Coindesk",
-        "published_at": "Fri, 24 Oct 2025 15:54:11 +0000"
-      },
-      {
-        "title": "Tether Launches Decentralized AI App, Dataset to Challenge Big Tech Dominance",
-        "url": "https://decrypt.co/345859/tether-decentralized-ai-app-dataset-challenge-big-tech-dominance",
+        "title": "Blockchain.com Gains Malta MiCA License as Company Eyes European Expansion",
+        "url": "https://decrypt.co/345892/blockchain-com-gains-malta-mica-license-company-eyes-european-expansion",
         "source": "Decrypt",
-        "published_at": "Fri, 24 Oct 2025 15:45:00 +0000"
+        "published_at": "Fri, 24 Oct 2025 18:10:59 +0000"
       },
       {
-        "title": "HELLO Labs Launches ‘Killer Whales: Live’ and Opens Submissions for Crypto Projects to Pitch for a TV Spot",
-        "url": "https://beincrypto.com/hello-labs-launches-killer-whales/",
-        "source": "BeinCrypto",
-        "published_at": "Fri, 24 Oct 2025 15:23:10 +0000"
+        "title": "How release of U.S. CPI data will affect Bitcoin, crypto market",
+        "url": "https://ambcrypto.com/how-release-of-u-s-cpi-data-will-affect-bitcoin-crypto-market/",
+        "source": "Ambcrypto",
+        "published_at": "Fri, 24 Oct 2025 18:00:48 +0000"
       },
       {
-        "title": "Is Bitcoin Ready to Break Out? Key Level to Watch Now",
-        "url": "https://cryptopotato.com/is-bitcoin-ready-to-break-out-key-level-to-watch-now/",
+        "title": "Wallet in Telegram now offers USDT DeFi yield with Affluent",
+        "url": "https://crypto.news/telegram-wallet-now-offers-usdt-defi-yield-with-affluent/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 17:51:18 +0000"
+      },
+      {
+        "title": "Pi Network price eyes rebound as divergence, wedge forms",
+        "url": "https://crypto.news/pi-network-price-eyes-rebound-as-divergence-wedge-forms/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 17:22:56 +0000"
+      },
+      {
+        "title": "How to buy Little Pepe, how LILPEPE could perform in the next 12 months",
+        "url": "https://crypto.news/how-to-buy-little-pepe-how-lilpepe-could-perform-in-the-next-12-months/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 17:12:24 +0000"
+      },
+      {
+        "title": "Tether Eyes Fresh Investments to Push USAT Stablecoin to 100M Americans at December Launch",
+        "url": "https://www.coindesk.com/business/2025/10/24/tether-eyes-fresh-investments-to-push-usat-stablecoin-to-100m-americans-at-december-launch",
+        "source": "Coindesk",
+        "published_at": "Fri, 24 Oct 2025 17:08:15 +0000"
+      },
+      {
+        "title": "Analyst Predicts $300K Bitcoin Peak Despite Bearish Mood",
+        "url": "https://cryptopotato.com/analyst-predicts-300k-bitcoin-peak-despite-bearish-mood/",
         "source": "CryptoPotato",
-        "published_at": "Fri, 24 Oct 2025 15:03:01 +0000"
+        "published_at": "Fri, 24 Oct 2025 16:41:38 +0000"
       },
       {
-        "title": "Avantis (AVNT) Price Recovers 25%, But Are Whales Supporting The Altcoin?",
-        "url": "https://beincrypto.com/avantis-price-whale-activity-analysis/",
+        "title": "Polymarket: Token will come, but US launch comes first",
+        "url": "https://cointelegraph.com/news/polymarket-token-us-launch-cmo-app?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 24 Oct 2025 17:13:13 +0100"
+      },
+      {
+        "title": "Analysts Set $200,000 Bitcoin Price Target – Is It Realistic By Christmas?",
+        "url": "https://beincrypto.com/analysts-bitcoin-price-target-accumulation-trend/",
         "source": "BeinCrypto",
-        "published_at": "Fri, 24 Oct 2025 14:56:03 +0000"
+        "published_at": "Fri, 24 Oct 2025 16:00:00 +0000"
+      },
+      {
+        "title": "Pump.fun expands with Padre acquisition as memecoin market cools",
+        "url": "https://cointelegraph.com/news/pumpfun-acquires-padre-trading-terminal-solana-memecoins?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 24 Oct 2025 16:49:40 +0100"
+      },
+      {
+        "title": "TRUMP PARDONS CZ, BTC BACK OVER $110K, A16Z’s STATE OF CRYPTO 2025",
+        "url": "https://decrypt.co/videos/interviews/9YKUk9do/trump-pardons-cz-btc-back-over-110k-a16zs-state-of-crypto-2025",
+        "source": "Decrypt",
+        "published_at": "Fri, 24 Oct 2025 15:31:02 +0000"
+      },
+      {
+        "title": "Fetch.ai and Ocean Protocol move toward resolving $120M FET dispute",
+        "url": "https://ambcrypto.com/fetch-ai-and-ocean-protocol-move-toward-resolving-120m-fet-dispute/",
+        "source": "Ambcrypto",
+        "published_at": "Fri, 24 Oct 2025 15:20:50 +0000"
+      },
+      {
+        "title": "The centralization drift: Web3 risks losing its soul | Opinion",
+        "url": "https://crypto.news/the-centralization-drift-web3-risks-losing-its-soul/",
+        "source": "BTCManager",
+        "published_at": "Fri, 24 Oct 2025 14:59:04 +0000"
       },
       {
         "title": "Gaming Giants Electronic Arts and Krafton Are Going Big on Generative AI",
