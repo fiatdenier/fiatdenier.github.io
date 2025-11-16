@@ -1,6 +1,24 @@
 {
   "articles": [
     {
+      "title": "Why Stablecoin Privacy Matters for Institutional On-chain Security, According to Aleo",
+      "url": "https://cryptopotato.com/why-stablecoin-privacy-matters-for-institutional-on-chain-security-according-to-aleo/",
+      "source": "CryptoPotato",
+      "published_at": "Sun, 16 Nov 2025 18:05:00 +0000"
+    },
+    {
+      "title": "Bitcoin Approaches 'Death Cross' as Market Tests Major Historical Pattern",
+      "url": "https://www.coindesk.com/markets/2025/11/16/bitcoin-approaches-death-cross-as-market-tests-major-historical-pattern",
+      "source": "Coindesk",
+      "published_at": "Sun, 16 Nov 2025 17:39:04 +0000"
+    },
+    {
+      "title": "ADA, XRP Bleed Again as Whale Sell-Off Intensifies",
+      "url": "https://cryptopotato.com/ada-xrp-bleed-again-as-whale-sell-off-intensifies/",
+      "source": "CryptoPotato",
+      "published_at": "Sun, 16 Nov 2025 17:36:14 +0000"
+    },
+    {
       "title": "Dead Internet Theory Gains Traction as AI Content Surges Online",
       "url": "https://decrypt.co/348837/dead-internet-theory-gains-traction-ai-content-surges-online",
       "source": "Decrypt",
@@ -1105,12 +1123,6 @@
       "published_at": "Fri, 14 Nov 2025 14:52:23 +0000"
     },
     {
-      "title": "Crypto Prop Trading With Real Capital: Inside HyroTrader’s Funding Model",
-      "url": "https://cryptopotato.com/crypto-prop-trading-with-real-capital-inside-hyrotraders-funding-model/",
-      "source": "CryptoPotato",
-      "published_at": "Fri, 14 Nov 2025 14:34:48 +0000"
-    },
-    {
       "title": "Aster price sluggish at $1.00 as bullish volume fades",
       "url": "https://crypto.news/aster-price-sluggish-one-dollar-bullish-volume-fades/",
       "source": "BTCManager",
@@ -1127,12 +1139,6 @@
       "url": "https://www.coindesk.com/business/2025/11/14/tom-lee-s-ethereum-treasury-firm-bitmine-immersion-appoints-chi-tsang-as-ceo",
       "source": "Coindesk",
       "published_at": "Fri, 14 Nov 2025 14:11:35 +0000"
-    },
-    {
-      "title": "$335M in XRP Vanish From Exchanges Overnight: What’s Next for Ripple’s Price?",
-      "url": "https://cryptopotato.com/335m-in-xrp-vanish-from-exchanges-overnight-whats-next-for-ripples-price/",
-      "source": "CryptoPotato",
-      "published_at": "Fri, 14 Nov 2025 13:59:58 +0000"
     },
     {
       "title": "Trump Family-Linked American Bitcoin Posts Q3 Profit, Doubles Revenue",
@@ -1301,12 +1307,6 @@
       "url": "https://www.ccn.com/news/crypto/xrp-etf-tops-2025-launches-record-58m-day-one-volume/",
       "source": "CCN",
       "published_at": "Fri, 14 Nov 2025 07:27:03 +0000"
-    },
-    {
-      "title": "Bitcoin Spot ETFs See $869M Outflow, Second-Largest on Record",
-      "url": "https://www.coindesk.com/markets/2025/11/14/bitcoin-spot-etfs-see-usd869m-outflow-second-largest-on-record",
-      "source": "Coindesk",
-      "published_at": "Fri, 14 Nov 2025 06:04:06 +0000"
     },
     {
       "title": "Canary Capital’s XRP ETF records $58M in launch day volume, topping all 2025 launches",
@@ -1641,6 +1641,12 @@
   ],
   "columns": [
     [
+      {
+        "title": "Why Stablecoin Privacy Matters for Institutional On-chain Security, According to Aleo",
+        "url": "https://cryptopotato.com/why-stablecoin-privacy-matters-for-institutional-on-chain-security-according-to-aleo/",
+        "source": "CryptoPotato",
+        "published_at": "Sun, 16 Nov 2025 18:05:00 +0000"
+      },
       {
         "title": "Dead Internet Theory Gains Traction as AI Content Surges Online",
         "url": "https://decrypt.co/348837/dead-internet-theory-gains-traction-ai-content-surges-online",
@@ -2014,70 +2020,64 @@
         "published_at": "Fri, 14 Nov 2025 14:52:23 +0000"
       },
       {
-        "title": "CoinDesk 20 Performance Update: AAVE Falls 7.8%, Leading Index Lower",
-        "url": "https://www.coindesk.com/coindesk-indices/2025/11/14/coindesk-20-performance-update-aave-falls-7-8-leading-index-lower",
+        "title": "Tom Lee's Ethereum Treasury Firm BitMine Immersion Appoints Chi Tsang as CEO",
+        "url": "https://www.coindesk.com/business/2025/11/14/tom-lee-s-ethereum-treasury-firm-bitmine-immersion-appoints-chi-tsang-as-ceo",
         "source": "Coindesk",
-        "published_at": "Fri, 14 Nov 2025 14:21:37 +0000"
+        "published_at": "Fri, 14 Nov 2025 14:11:35 +0000"
       },
       {
-        "title": "Trump Family-Linked American Bitcoin Posts Q3 Profit, Doubles Revenue",
-        "url": "https://www.coindesk.com/business/2025/11/14/trump-family-linked-american-bitcoin-posts-q3-profit",
-        "source": "Coindesk",
-        "published_at": "Fri, 14 Nov 2025 13:31:16 +0000"
+        "title": "Coinbase Deepens India Push With Plan To Buy Into Its Largest Exchange, CoinDCX",
+        "url": "https://www.ccn.com/news/crypto/coinbase-india-crypto-exhange-coindcx-2025/",
+        "source": "CCN",
+        "published_at": "Fri, 14 Nov 2025 13:26:55 +0000"
       },
       {
-        "title": "Morning Minute: Bitcoin Breaks Below $95K",
-        "url": "https://decrypt.co/348671/morning-minute-bitcoin-breaks-below-95k",
+        "title": "As Bitcoin Plunges Below $95K, Is Crypto in a Bear Market?",
+        "url": "https://decrypt.co/348667/as-bitcoin-plunges-below-95k-is-crypto-in-a-bear-market",
         "source": "Decrypt",
-        "published_at": "Fri, 14 Nov 2025 13:21:01 +0000"
+        "published_at": "Fri, 14 Nov 2025 12:45:33 +0000"
       },
       {
-        "title": "XRP price forms a death cross, how low can it go?",
-        "url": "https://crypto.news/xrp-price-forms-a-death-cross-how-low-can-it-go/",
-        "source": "BTCManager",
-        "published_at": "Fri, 14 Nov 2025 12:28:50 +0000"
-      },
-      {
-        "title": "Centralized technology is shrinking the internet | Opinion",
-        "url": "https://crypto.news/centralized-technology-is-shrinking-the-internet/",
-        "source": "BTCManager",
-        "published_at": "Fri, 14 Nov 2025 12:06:37 +0000"
-      },
-      {
-        "title": "China says the U.S. stole LuBian’s 127,000 Bitcoin — who does the stash actually belong to?",
-        "url": "https://crypto.news/china-says-the-u-s-stole-lubians-127000-bitcoin-who-does-the-stash-actually-belong-to/",
-        "source": "BTCManager",
-        "published_at": "Fri, 14 Nov 2025 10:56:29 +0000"
-      },
-      {
-        "title": "Bitcoin ETFs Log Second-Largest Outflows on Record While Altcoin ETFs Hold Firm, Post Inflows",
-        "url": "https://www.ccn.com/news/crypto/bitcoin-etf-outflows-second-largest-altcoins-hold-firm/",
+        "title": "Gold-Backed Stablecoins Hit the Market—a Blow to Donald Trump’s GENIUS Plan?",
+        "url": "https://www.ccn.com/news/crypto/gold-backed-stablecoins-a-blow-to-trumps-genius-plan/",
         "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 10:17:15 +0000"
+        "published_at": "Fri, 14 Nov 2025 12:08:32 +0000"
       },
       {
-        "title": "Bitfarms Dumps Bitcoin To Go All-In on AI as Crypto Mining Profitability Drops",
-        "url": "https://www.ccn.com/news/crypto/bitfarms-dumps-bitcoin-mining-all-in-ai-as-profitability-drops/",
-        "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 09:17:15 +0000"
+        "title": "Crypto Markets Today: Bitcoin Breaches $98K as Liquidations Top $1.1B",
+        "url": "https://www.coindesk.com/markets/2025/11/14/crypto-markets-today-bitcoin-breaches-usd98k-as-liquidations-top-usd1-1b",
+        "source": "Coindesk",
+        "published_at": "Fri, 14 Nov 2025 11:05:01 +0000"
       },
       {
-        "title": "Bitcoin Falls Below $98,000 — Will It Continue To Drop? We Asked ChatGPT",
-        "url": "https://www.ccn.com/news/crypto/bitcoin-falls-below-98000-will-it-continue-to-drop-we-asked-chatgpt/",
-        "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 08:47:15 +0000"
+        "title": "Community Bankers Ask OCC to Block Sony's Crypto Bank Ambitions",
+        "url": "https://decrypt.co/348659/community-bankers-ask-occ-to-block-sonys-crypto-bank-ambitions",
+        "source": "Decrypt",
+        "published_at": "Fri, 14 Nov 2025 10:41:27 +0000"
       },
       {
-        "title": "Why is the crypto market going down? (Nov. 14)",
-        "url": "https://crypto.news/why-is-the-crypto-market-going-down-nov-14/",
+        "title": "Ethereum price analysis: Bearish trend persists as long-term holders sell 45K ETH daily",
+        "url": "https://crypto.news/ethereum-price-analysis-bearish-eth-holders-sell-2025/",
         "source": "BTCManager",
-        "published_at": "Fri, 14 Nov 2025 08:15:17 +0000"
+        "published_at": "Fri, 14 Nov 2025 09:38:35 +0000"
       },
       {
-        "title": "XRP ETF Tops All 2025 Launches With Record $58M Day-One Volume",
-        "url": "https://www.ccn.com/news/crypto/xrp-etf-tops-2025-launches-record-58m-day-one-volume/",
+        "title": "Bitcoin price slips toward $97K as spot BTC ETFs record second-largest outflow of $867M",
+        "url": "https://crypto.news/bitcoin-price-spot-btc-etfs-record-outflows-2025/",
+        "source": "BTCManager",
+        "published_at": "Fri, 14 Nov 2025 08:47:16 +0000"
+      },
+      {
+        "title": "Fanatics mulls predictions market entry in partnership with Crypto.com",
+        "url": "https://crypto.news/fanatics-mulls-predictions-market-entry-in-partnership-with-crypto-com/",
+        "source": "BTCManager",
+        "published_at": "Fri, 14 Nov 2025 08:16:36 +0000"
+      },
+      {
+        "title": "Bitcoin Dumps Below $97K—Dragonfly Calls It the ‘Easiest Bear Market’",
+        "url": "https://www.ccn.com/news/crypto/bitcoin-below-97-dragonfly-easiest-bear-market/",
         "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 07:27:03 +0000"
+        "published_at": "Fri, 14 Nov 2025 07:50:06 +0000"
       },
       {
         "title": "Judge Denies Apple, OpenAI Bid to Dismiss Elon Musk’s Antitrust Lawsuit",
@@ -2189,6 +2189,12 @@
       }
     ],
     [
+      {
+        "title": "Bitcoin Approaches 'Death Cross' as Market Tests Major Historical Pattern",
+        "url": "https://www.coindesk.com/markets/2025/11/16/bitcoin-approaches-death-cross-as-market-tests-major-historical-pattern",
+        "source": "Coindesk",
+        "published_at": "Sun, 16 Nov 2025 17:39:04 +0000"
+      },
       {
         "title": "Tom Lee Says Ether Is Entering a Bitcoin-Like 'Supercycle'; Critics Push Back",
         "url": "https://www.coindesk.com/markets/2025/11/16/tom-lee-says-ether-is-entering-a-bitcoin-like-supercycle-critics-push-back",
@@ -2556,76 +2562,70 @@
         "published_at": "Fri, 14 Nov 2025 15:10:16 +0000"
       },
       {
-        "title": "Crypto Prop Trading With Real Capital: Inside HyroTrader’s Funding Model",
-        "url": "https://cryptopotato.com/crypto-prop-trading-with-real-capital-inside-hyrotraders-funding-model/",
-        "source": "CryptoPotato",
-        "published_at": "Fri, 14 Nov 2025 14:34:48 +0000"
-      },
-      {
-        "title": "Tom Lee's Ethereum Treasury Firm BitMine Immersion Appoints Chi Tsang as CEO",
-        "url": "https://www.coindesk.com/business/2025/11/14/tom-lee-s-ethereum-treasury-firm-bitmine-immersion-appoints-chi-tsang-as-ceo",
-        "source": "Coindesk",
-        "published_at": "Fri, 14 Nov 2025 14:11:35 +0000"
-      },
-      {
-        "title": "Bitcoin Price Crashes to $94,000 and New Six-Month Lows",
-        "url": "https://bitcoinmagazine.com/markets/bitcoin-price-crashes-to-94000",
-        "source": "Bitcoin Magazine",
-        "published_at": "Fri, 14 Nov 2025 13:27:22 +0000"
-      },
-      {
-        "title": "Analysts Say Bitcoin Facing ‘Worst Q4 Ever’ as Options Market Turns Red",
-        "url": "https://www.ccn.com/news/crypto/analysts-say-bitcoin-facing-worst-q4-ever-as-options-market-turns-red/",
-        "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 13:02:15 +0000"
-      },
-      {
-        "title": "Running for the Exits: Crypto Daybook Americas",
-        "url": "https://www.coindesk.com/daybook-us/2025/11/14/running-for-the-exits-crypto-daybook-americas",
-        "source": "Coindesk",
-        "published_at": "Fri, 14 Nov 2025 12:15:00 +0000"
-      },
-      {
-        "title": "Alibaba Taps JPMorgan To Build Stablecoin-Like Payments System for Its $35B Commerce Network",
-        "url": "https://www.ccn.com/news/crypto/alibaba-taps-jpmorgan-to-build-stablecoin-like-payments-system-for-its-35b-commerce-network/",
-        "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 11:17:15 +0000"
-      },
-      {
-        "title": "Kraken CEO Says Bitcoin’s Price Decline Doesn’t Phase Firm, Claims Crypto Is ‘For Safety’",
-        "url": "https://www.ccn.com/news/crypto/kraken-ceo-bitcoins-price-decline-claims-crypto/",
-        "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 10:46:00 +0000"
-      },
-      {
-        "title": "Bitcoin, Ethereum ETFs Shed Over $1 Billion in Assets as XRP Fund Soars",
-        "url": "https://decrypt.co/348651/bitcoin-ethereum-etfs-shed-1-billion-assets-xrp-fund-soars",
-        "source": "Decrypt",
-        "published_at": "Fri, 14 Nov 2025 09:39:56 +0000"
-      },
-      {
-        "title": "Lendasat Unveils Lendaswap: Non-Custodial Cross Blockchain Exchange for Bitcoin and Stablecoins",
-        "url": "https://bitcoinmagazine.com/business/lendaswap-non-custodial-btc-stablecoin-swap-exchange-built-on-arkade",
-        "source": "Bitcoin Magazine",
-        "published_at": "Fri, 14 Nov 2025 09:00:00 +0000"
-      },
-      {
-        "title": "3 Key Charts to Track as Ether Strengthens Against Bitcoin",
-        "url": "https://www.coindesk.com/markets/2025/11/14/3-key-charts-to-track-as-ether-strengthens-against-bitcoin",
-        "source": "Coindesk",
-        "published_at": "Fri, 14 Nov 2025 08:29:32 +0000"
-      },
-      {
-        "title": "Bitfarms to exit Bitcoin mining and go all-in on AI by 2027",
-        "url": "https://crypto.news/bitfarms-to-exit-bitcoin-mining-and-go-all-in-on-ai-by-2027/",
+        "title": "Aster price sluggish at $1.00 as bullish volume fades",
+        "url": "https://crypto.news/aster-price-sluggish-one-dollar-bullish-volume-fades/",
         "source": "BTCManager",
-        "published_at": "Fri, 14 Nov 2025 08:12:58 +0000"
+        "published_at": "Fri, 14 Nov 2025 14:29:30 +0000"
       },
       {
-        "title": "Bitcoin Spot ETFs See $869M Outflow, Second-Largest on Record",
-        "url": "https://www.coindesk.com/markets/2025/11/14/bitcoin-spot-etfs-see-usd869m-outflow-second-largest-on-record",
+        "title": "Trump Family-Linked American Bitcoin Posts Q3 Profit, Doubles Revenue",
+        "url": "https://www.coindesk.com/business/2025/11/14/trump-family-linked-american-bitcoin-posts-q3-profit",
         "source": "Coindesk",
-        "published_at": "Fri, 14 Nov 2025 06:04:06 +0000"
+        "published_at": "Fri, 14 Nov 2025 13:31:16 +0000"
+      },
+      {
+        "title": "Morning Minute: Bitcoin Breaks Below $95K",
+        "url": "https://decrypt.co/348671/morning-minute-bitcoin-breaks-below-95k",
+        "source": "Decrypt",
+        "published_at": "Fri, 14 Nov 2025 13:21:01 +0000"
+      },
+      {
+        "title": "XRP price forms a death cross, how low can it go?",
+        "url": "https://crypto.news/xrp-price-forms-a-death-cross-how-low-can-it-go/",
+        "source": "BTCManager",
+        "published_at": "Fri, 14 Nov 2025 12:28:50 +0000"
+      },
+      {
+        "title": "Centralized technology is shrinking the internet | Opinion",
+        "url": "https://crypto.news/centralized-technology-is-shrinking-the-internet/",
+        "source": "BTCManager",
+        "published_at": "Fri, 14 Nov 2025 12:06:37 +0000"
+      },
+      {
+        "title": "China says the U.S. stole LuBian’s 127,000 Bitcoin — who does the stash actually belong to?",
+        "url": "https://crypto.news/china-says-the-u-s-stole-lubians-127000-bitcoin-who-does-the-stash-actually-belong-to/",
+        "source": "BTCManager",
+        "published_at": "Fri, 14 Nov 2025 10:56:29 +0000"
+      },
+      {
+        "title": "Bitcoin ETFs Log Second-Largest Outflows on Record While Altcoin ETFs Hold Firm, Post Inflows",
+        "url": "https://www.ccn.com/news/crypto/bitcoin-etf-outflows-second-largest-altcoins-hold-firm/",
+        "source": "CCN",
+        "published_at": "Fri, 14 Nov 2025 10:17:15 +0000"
+      },
+      {
+        "title": "Bitfarms Dumps Bitcoin To Go All-In on AI as Crypto Mining Profitability Drops",
+        "url": "https://www.ccn.com/news/crypto/bitfarms-dumps-bitcoin-mining-all-in-ai-as-profitability-drops/",
+        "source": "CCN",
+        "published_at": "Fri, 14 Nov 2025 09:17:15 +0000"
+      },
+      {
+        "title": "Bitcoin Falls Below $98,000 — Will It Continue To Drop? We Asked ChatGPT",
+        "url": "https://www.ccn.com/news/crypto/bitcoin-falls-below-98000-will-it-continue-to-drop-we-asked-chatgpt/",
+        "source": "CCN",
+        "published_at": "Fri, 14 Nov 2025 08:47:15 +0000"
+      },
+      {
+        "title": "Why is the crypto market going down? (Nov. 14)",
+        "url": "https://crypto.news/why-is-the-crypto-market-going-down-nov-14/",
+        "source": "BTCManager",
+        "published_at": "Fri, 14 Nov 2025 08:15:17 +0000"
+      },
+      {
+        "title": "XRP ETF Tops All 2025 Launches With Record $58M Day-One Volume",
+        "url": "https://www.ccn.com/news/crypto/xrp-etf-tops-2025-launches-record-58m-day-one-volume/",
+        "source": "CCN",
+        "published_at": "Fri, 14 Nov 2025 07:27:03 +0000"
       },
       {
         "title": "Interview | The global race for tokenization is on: Sign CEO",
@@ -2737,6 +2737,12 @@
       }
     ],
     [
+      {
+        "title": "ADA, XRP Bleed Again as Whale Sell-Off Intensifies",
+        "url": "https://cryptopotato.com/ada-xrp-bleed-again-as-whale-sell-off-intensifies/",
+        "source": "CryptoPotato",
+        "published_at": "Sun, 16 Nov 2025 17:36:14 +0000"
+      },
       {
         "title": "Harvard SEC Filing Shows Blackrock’s Bitcoin ETF Now Leads Its Public Portfolio",
         "url": "https://news.bitcoin.com/harvard-sec-filing-shows-blackrocks-bitcoin-etf-now-leads-its-public-portfolio/",
@@ -3104,70 +3110,64 @@
         "published_at": "Fri, 14 Nov 2025 14:59:53 +0000"
       },
       {
-        "title": "Aster price sluggish at $1.00 as bullish volume fades",
-        "url": "https://crypto.news/aster-price-sluggish-one-dollar-bullish-volume-fades/",
-        "source": "BTCManager",
-        "published_at": "Fri, 14 Nov 2025 14:29:30 +0000"
-      },
-      {
-        "title": "$335M in XRP Vanish From Exchanges Overnight: What’s Next for Ripple’s Price?",
-        "url": "https://cryptopotato.com/335m-in-xrp-vanish-from-exchanges-overnight-whats-next-for-ripples-price/",
-        "source": "CryptoPotato",
-        "published_at": "Fri, 14 Nov 2025 13:59:58 +0000"
-      },
-      {
-        "title": "Coinbase Deepens India Push With Plan To Buy Into Its Largest Exchange, CoinDCX",
-        "url": "https://www.ccn.com/news/crypto/coinbase-india-crypto-exhange-coindcx-2025/",
-        "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 13:26:55 +0000"
-      },
-      {
-        "title": "As Bitcoin Plunges Below $95K, Is Crypto in a Bear Market?",
-        "url": "https://decrypt.co/348667/as-bitcoin-plunges-below-95k-is-crypto-in-a-bear-market",
-        "source": "Decrypt",
-        "published_at": "Fri, 14 Nov 2025 12:45:33 +0000"
-      },
-      {
-        "title": "Gold-Backed Stablecoins Hit the Market—a Blow to Donald Trump’s GENIUS Plan?",
-        "url": "https://www.ccn.com/news/crypto/gold-backed-stablecoins-a-blow-to-trumps-genius-plan/",
-        "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 12:08:32 +0000"
-      },
-      {
-        "title": "Crypto Markets Today: Bitcoin Breaches $98K as Liquidations Top $1.1B",
-        "url": "https://www.coindesk.com/markets/2025/11/14/crypto-markets-today-bitcoin-breaches-usd98k-as-liquidations-top-usd1-1b",
+        "title": "CoinDesk 20 Performance Update: AAVE Falls 7.8%, Leading Index Lower",
+        "url": "https://www.coindesk.com/coindesk-indices/2025/11/14/coindesk-20-performance-update-aave-falls-7-8-leading-index-lower",
         "source": "Coindesk",
-        "published_at": "Fri, 14 Nov 2025 11:05:01 +0000"
+        "published_at": "Fri, 14 Nov 2025 14:21:37 +0000"
       },
       {
-        "title": "Community Bankers Ask OCC to Block Sony's Crypto Bank Ambitions",
-        "url": "https://decrypt.co/348659/community-bankers-ask-occ-to-block-sonys-crypto-bank-ambitions",
-        "source": "Decrypt",
-        "published_at": "Fri, 14 Nov 2025 10:41:27 +0000"
+        "title": "Bitcoin Price Crashes to $94,000 and New Six-Month Lows",
+        "url": "https://bitcoinmagazine.com/markets/bitcoin-price-crashes-to-94000",
+        "source": "Bitcoin Magazine",
+        "published_at": "Fri, 14 Nov 2025 13:27:22 +0000"
       },
       {
-        "title": "Ethereum price analysis: Bearish trend persists as long-term holders sell 45K ETH daily",
-        "url": "https://crypto.news/ethereum-price-analysis-bearish-eth-holders-sell-2025/",
-        "source": "BTCManager",
-        "published_at": "Fri, 14 Nov 2025 09:38:35 +0000"
-      },
-      {
-        "title": "Bitcoin price slips toward $97K as spot BTC ETFs record second-largest outflow of $867M",
-        "url": "https://crypto.news/bitcoin-price-spot-btc-etfs-record-outflows-2025/",
-        "source": "BTCManager",
-        "published_at": "Fri, 14 Nov 2025 08:47:16 +0000"
-      },
-      {
-        "title": "Fanatics mulls predictions market entry in partnership with Crypto.com",
-        "url": "https://crypto.news/fanatics-mulls-predictions-market-entry-in-partnership-with-crypto-com/",
-        "source": "BTCManager",
-        "published_at": "Fri, 14 Nov 2025 08:16:36 +0000"
-      },
-      {
-        "title": "Bitcoin Dumps Below $97K—Dragonfly Calls It the ‘Easiest Bear Market’",
-        "url": "https://www.ccn.com/news/crypto/bitcoin-below-97-dragonfly-easiest-bear-market/",
+        "title": "Analysts Say Bitcoin Facing ‘Worst Q4 Ever’ as Options Market Turns Red",
+        "url": "https://www.ccn.com/news/crypto/analysts-say-bitcoin-facing-worst-q4-ever-as-options-market-turns-red/",
         "source": "CCN",
-        "published_at": "Fri, 14 Nov 2025 07:50:06 +0000"
+        "published_at": "Fri, 14 Nov 2025 13:02:15 +0000"
+      },
+      {
+        "title": "Running for the Exits: Crypto Daybook Americas",
+        "url": "https://www.coindesk.com/daybook-us/2025/11/14/running-for-the-exits-crypto-daybook-americas",
+        "source": "Coindesk",
+        "published_at": "Fri, 14 Nov 2025 12:15:00 +0000"
+      },
+      {
+        "title": "Alibaba Taps JPMorgan To Build Stablecoin-Like Payments System for Its $35B Commerce Network",
+        "url": "https://www.ccn.com/news/crypto/alibaba-taps-jpmorgan-to-build-stablecoin-like-payments-system-for-its-35b-commerce-network/",
+        "source": "CCN",
+        "published_at": "Fri, 14 Nov 2025 11:17:15 +0000"
+      },
+      {
+        "title": "Kraken CEO Says Bitcoin’s Price Decline Doesn’t Phase Firm, Claims Crypto Is ‘For Safety’",
+        "url": "https://www.ccn.com/news/crypto/kraken-ceo-bitcoins-price-decline-claims-crypto/",
+        "source": "CCN",
+        "published_at": "Fri, 14 Nov 2025 10:46:00 +0000"
+      },
+      {
+        "title": "Bitcoin, Ethereum ETFs Shed Over $1 Billion in Assets as XRP Fund Soars",
+        "url": "https://decrypt.co/348651/bitcoin-ethereum-etfs-shed-1-billion-assets-xrp-fund-soars",
+        "source": "Decrypt",
+        "published_at": "Fri, 14 Nov 2025 09:39:56 +0000"
+      },
+      {
+        "title": "Lendasat Unveils Lendaswap: Non-Custodial Cross Blockchain Exchange for Bitcoin and Stablecoins",
+        "url": "https://bitcoinmagazine.com/business/lendaswap-non-custodial-btc-stablecoin-swap-exchange-built-on-arkade",
+        "source": "Bitcoin Magazine",
+        "published_at": "Fri, 14 Nov 2025 09:00:00 +0000"
+      },
+      {
+        "title": "3 Key Charts to Track as Ether Strengthens Against Bitcoin",
+        "url": "https://www.coindesk.com/markets/2025/11/14/3-key-charts-to-track-as-ether-strengthens-against-bitcoin",
+        "source": "Coindesk",
+        "published_at": "Fri, 14 Nov 2025 08:29:32 +0000"
+      },
+      {
+        "title": "Bitfarms to exit Bitcoin mining and go all-in on AI by 2027",
+        "url": "https://crypto.news/bitfarms-to-exit-bitcoin-mining-and-go-all-in-on-ai-by-2027/",
+        "source": "BTCManager",
+        "published_at": "Fri, 14 Nov 2025 08:12:58 +0000"
       },
       {
         "title": "Canary Capital’s XRP ETF records $58M in launch day volume, topping all 2025 launches",
