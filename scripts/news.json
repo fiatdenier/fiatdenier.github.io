@@ -1,6 +1,30 @@
 {
   "articles": [
     {
+      "title": "Tom Lee: Ethereum could hit $20K as tokenization booms",
+      "url": "https://crypto.news/tom-lee-ethereum-could-hit-20k-as-tokenization-booms/",
+      "source": "BTCManager",
+      "published_at": "Fri, 05 Dec 2025 09:37:58 +0000"
+    },
+    {
+      "title": "Moneygram and Fireblocks Forge Stablecoin Infrastructure Partnership",
+      "url": "https://news.bitcoin.com/moneygram-and-fireblocks-forge-stablecoin-infrastructure-partnership/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 05 Dec 2025 09:30:06 +0000"
+    },
+    {
+      "title": "DeepNode raises $5M to build decentralized AI on Base",
+      "url": "https://crypto.news/deepnode-raises-5m-to-build-decentralized-ai-on-base/",
+      "source": "BTCManager",
+      "published_at": "Fri, 05 Dec 2025 09:24:12 +0000"
+    },
+    {
+      "title": "Ripple CEO Predicts a $180K Bitcoin in 2026 as Bitcoin Hyper’s $29M Presale Soars",
+      "url": "https://bitcoinist.com/ripple-ceo-predicts-bitcoin-180k-boosts-bitcoin-hyper-presale/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 05 Dec 2025 09:23:37 +0000"
+    },
+    {
       "title": "Crypto-TradFi Link Deepens: Kraken & Deutsche Börse Partner Up",
       "url": "https://bitcoinist.com/crypto-tradfi-link-kraken-deutsche-borse-partner/",
       "source": "Bitcoinist",
@@ -17,6 +41,12 @@
       "url": "https://ambcrypto.com/9-15b-tvl-base-integrates-solana-heres-what-it-unlocks/",
       "source": "Ambcrypto",
       "published_at": "Fri, 05 Dec 2025 09:00:05 +0000"
+    },
+    {
+      "title": "Polymarket Trader Makes $1 Million on Google Search Bets, Sparking Insider Trading Fears",
+      "url": "https://beincrypto.com/alleged-google-insider-trade-polymarket/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 05 Dec 2025 09:00:01 +0000"
     },
     {
       "title": "Woori Bank adds Bitcoin price to Seoul trading room",
@@ -343,12 +373,6 @@
       "published_at": "Fri, 05 Dec 2025 04:00:22 +0000"
     },
     {
-      "title": "Bitcoin Inflows Now At $732 Billion This Cycle, Report Reveals",
-      "url": "https://bitcoinist.com/bitcoin-inflows-now-732-billion-this-cycle-report/",
-      "source": "Bitcoinist",
-      "published_at": "Fri, 05 Dec 2025 04:00:16 +0000"
-    },
-    {
       "title": "Here's How Much Bitcoin, XRP, Ether, Solana May Move on Friday's Inflation Report",
       "url": "https://www.coindesk.com/markets/2025/12/05/here-s-how-much-btc-eth-sol-xrp-may-move-on-friday-s-inflation-report",
       "source": "Coindesk",
@@ -493,12 +517,6 @@
       "published_at": "Thu, 04 Dec 2025 23:45:00 +0000"
     },
     {
-      "title": "IMF Economists Call for Unified Stablecoin Oversight as Risks Escalate",
-      "url": "https://news.bitcoin.com/imf-economists-call-for-unified-stablecoin-oversight-as-risks-escalate/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 04 Dec 2025 23:30:05 +0000"
-    },
-    {
       "title": "CFTC Approves Spot Cryptocurrency Trading on Regulated U.S. Exchanges",
       "url": "https://crypto.news/cftc-approves-spot-cryptocurrency-trading-us-exchanges/",
       "source": "BTCManager",
@@ -521,12 +539,6 @@
       "url": "https://crypto.news/21shares-launches-first-leveraged-sui-etf-on-nasdaq/",
       "source": "BTCManager",
       "published_at": "Thu, 04 Dec 2025 22:34:11 +0000"
-    },
-    {
-      "title": "What Actually Changed with the Ethereum Fusaka Upgrade",
-      "url": "https://beincrypto.com/ethereum-fusaka-upgrade-changes-explained/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 04 Dec 2025 22:33:25 +0000"
     },
     {
       "title": "Ripple CEO Brad Garlinghouse Expects Bitcoin to Hit $180K Next Year",
@@ -1333,18 +1345,6 @@
       "published_at": "Wed, 03 Dec 2025 22:56:57 +0000"
     },
     {
-      "title": "Gensler calls out crypto hype—again: Bitcoin aside, ‘it’s a risk asset’",
-      "url": "https://crypto.news/tk/",
-      "source": "BTCManager",
-      "published_at": "Wed, 03 Dec 2025 22:15:00 +0000"
-    },
-    {
-      "title": "SEC pulls plug on super-leveraged ETFs—5x crypto not allowed",
-      "url": "https://crypto.news/sec-pulls-plug-on-super-leveraged-etfs-5x-crypto-not-allowed/",
-      "source": "BTCManager",
-      "published_at": "Wed, 03 Dec 2025 22:08:36 +0000"
-    },
-    {
       "title": "Coinbase Institutional Sees December Reversal Despite Bitcoin’s Brutal November",
       "url": "https://cryptopotato.com/coinbase-institutional-sees-december-reversal-despite-bitcoins-brutal-november/",
       "source": "CryptoPotato",
@@ -1618,552 +1618,22 @@
   "columns": [
     [
       {
-        "title": "Crypto-TradFi Link Deepens: Kraken & Deutsche Börse Partner Up",
-        "url": "https://bitcoinist.com/crypto-tradfi-link-kraken-deutsche-borse-partner/",
+        "title": "Tom Lee: Ethereum could hit $20K as tokenization booms",
+        "url": "https://crypto.news/tom-lee-ethereum-could-hit-20k-as-tokenization-booms/",
+        "source": "BTCManager",
+        "published_at": "Fri, 05 Dec 2025 09:37:58 +0000"
+      },
+      {
+        "title": "Ripple CEO Predicts a $180K Bitcoin in 2026 as Bitcoin Hyper’s $29M Presale Soars",
+        "url": "https://bitcoinist.com/ripple-ceo-predicts-bitcoin-180k-boosts-bitcoin-hyper-presale/",
         "source": "Bitcoinist",
-        "published_at": "Fri, 05 Dec 2025 09:00:41 +0000"
+        "published_at": "Fri, 05 Dec 2025 09:23:37 +0000"
       },
       {
-        "title": "Woori Bank adds Bitcoin price to Seoul trading room",
-        "url": "https://crypto.news/woori-bank-adds-bitcoin-price-to-seoul-trading-room/",
-        "source": "BTCManager",
-        "published_at": "Fri, 05 Dec 2025 08:47:10 +0000"
-      },
-      {
-        "title": "Bitget Hints at ‘Wall Street’ Expansion, Moving Beyond Cryptocurrency Roots",
-        "url": "https://news.bitcoin.com/bitget-hints-at-wall-street-expansion-moving-beyond-cryptocurrency-roots/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 05 Dec 2025 08:30:19 +0000"
-      },
-      {
-        "title": "Strategy Won’t Sell Bitcoin, Fueling Bitcoin Hyper’s $29M Presale",
-        "url": "https://bitcoinist.com/strategy-wont-sell-btc-bitcoin-hyper-presale-reaches-29m/",
-        "source": "Bitcoinist",
-        "published_at": "Fri, 05 Dec 2025 08:10:54 +0000"
-      },
-      {
-        "title": "Why Bitcoin Traders Fear A Repeat Of July 2024’s Crash Next Week",
-        "url": "https://www.newsbtc.com/bitcoin-news/why-bitcoin-traders-fear-a-repeat-of-july-2024s-crash-next-week/",
-        "source": "NewsBTC",
-        "published_at": "Fri, 05 Dec 2025 08:00:06 +0000"
-      },
-      {
-        "title": "Changpeng Zhao doubles down on making US crypto capital post-pardon",
-        "url": "https://crypto.news/changpeng-zhao-doubles-down-on-making-us-crypto-capital-post-pardon/",
-        "source": "BTCManager",
-        "published_at": "Fri, 05 Dec 2025 07:56:35 +0000"
-      },
-      {
-        "title": "Bitcoin price market now mirrors early 2022: Glassnode",
-        "url": "https://crypto.news/bitcoin-price-market-now-mirrors-early-2022-glassnode/",
-        "source": "BTCManager",
-        "published_at": "Fri, 05 Dec 2025 07:38:41 +0000"
-      },
-      {
-        "title": "Decentralized stablecoin protocol USPD hit by $1M exploit",
-        "url": "https://crypto.news/uspd-stablecoin-protocol-exploited-proxy-breach-2025/",
-        "source": "BTCManager",
-        "published_at": "Fri, 05 Dec 2025 07:14:59 +0000"
-      },
-      {
-        "title": "JPMorgan sees little chance stablecoins will lift U.S Treasury bill demand – Here’s why",
-        "url": "https://ambcrypto.com/jpmorgan-sees-little-chance-stablecoins-will-lift-u-s-treasury-bill-demand-heres-why/",
+        "title": "Base–Solana bridge goes live: How it reshapes a $9.15B on-chain economy",
+        "url": "https://ambcrypto.com/9-15b-tvl-base-integrates-solana-heres-what-it-unlocks/",
         "source": "Ambcrypto",
-        "published_at": "Fri, 05 Dec 2025 07:00:28 +0000"
-      },
-      {
-        "title": "Will Today’s $3.4B Bitcoin Options Expiry Move Markets?",
-        "url": "https://cryptopotato.com/will-todays-3-4b-bitcoin-options-expiry-move-markets/",
-        "source": "CryptoPotato",
-        "published_at": "Fri, 05 Dec 2025 06:36:20 +0000"
-      },
-      {
-        "title": "Kremlin Aide: Crypto Mining is a ‘Hidden Export’ Skewing Ruble Forecasts",
-        "url": "https://news.bitcoin.com/kremlin-aide-crypto-mining-is-a-hidden-export-skewing-ruble-forecasts/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 05 Dec 2025 06:30:25 +0000"
-      },
-      {
-        "title": "American Bitcoin buys the dip hard, DESPITE ABTC’s",
-        "url": "https://ambcrypto.com/american-bitcoin-buys-the-dip-hard-despite-abtcs-50-fall-details/",
-        "source": "Ambcrypto",
-        "published_at": "Fri, 05 Dec 2025 06:00:49 +0000"
-      },
-      {
-        "title": "Bitcoin unlikely to replicate January’s surge to new high: 21Shares founder",
-        "url": "https://cointelegraph.com/news/bitcoin-price-all-time-high-january-repeat-uncertainty-analyst?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 05 Dec 2025 05:46:43 +0000"
-      },
-      {
-        "title": "Crypto Investor Gives Nigel Farage’s Reform UK Record-Shattering $12 Million Donation",
-        "url": "https://news.bitcoin.com/crypto-investor-gives-nigel-farages-reform-uk-record-shattering-12-million-donation/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 05 Dec 2025 05:30:01 +0000"
-      },
-      {
-        "title": "Solana (SOL) Starts to Retreat From Highs as Momentum Shows Early Fatigue",
-        "url": "https://www.newsbtc.com/analysis/solana-sol-starts-retreat-145/",
-        "source": "NewsBTC",
-        "published_at": "Fri, 05 Dec 2025 05:08:04 +0000"
-      },
-      {
-        "title": "100 Million TRX Leaves Binance — Justin Sun Behind The Move",
-        "url": "https://bitcoinist.com/100-million-trx-leaves-binance-justin-sun-behind-the-move/",
-        "source": "Bitcoinist",
-        "published_at": "Fri, 05 Dec 2025 05:00:19 +0000"
-      },
-      {
-        "title": "Ex-Signature Bank execs launch blockchain-powered bank N3XT",
-        "url": "https://cointelegraph.com/news/n3xt-wyoming-blockchain-crypto-bank?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 05 Dec 2025 04:43:01 +0000"
-      },
-      {
-        "title": "Massive 700M Euro Crypto Operation Unravels With International Raids",
-        "url": "https://news.bitcoin.com/massive-700m-euro-crypto-operation-unravels-with-international-raids/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 05 Dec 2025 04:30:03 +0000"
-      },
-      {
-        "title": "Solana and Coinbase’s Base connect together using Chainlink",
-        "url": "https://cointelegraph.com/news/coinbase-base-solana-connect-together-using-chainlink?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 05 Dec 2025 04:00:50 +0000"
-      },
-      {
-        "title": "Bitcoin Inflows Now At $732 Billion This Cycle, Report Reveals",
-        "url": "https://bitcoinist.com/bitcoin-inflows-now-732-billion-this-cycle-report/",
-        "source": "Bitcoinist",
-        "published_at": "Fri, 05 Dec 2025 04:00:16 +0000"
-      },
-      {
-        "title": "OpenAI Ordered to Hand Over 20M ChatGPT Logs in NYT Copyright Case",
-        "url": "https://decrypt.co/351000/openai-ordered-20m-chatgpt-logs-nyt-copyright-case",
-        "source": "Decrypt",
-        "published_at": "Fri, 05 Dec 2025 03:57:48 +0000"
-      },
-      {
-        "title": "$15.79M BTC whale move sparks buzz – Can Bitcoin finally target $100K?",
-        "url": "https://ambcrypto.com/15-79m-btc-whale-move-sparks-buzz-can-bitcoin-finally-target-100k/",
-        "source": "Ambcrypto",
-        "published_at": "Fri, 05 Dec 2025 03:00:34 +0000"
-      },
-      {
-        "title": "Cease and Desist Hits Robinhood, Crypto.com, Kalshi in Connecticut",
-        "url": "https://news.bitcoin.com/cease-and-desist-hits-robinhood-crypto-com-kalshi-in-connecticut/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 05 Dec 2025 02:30:22 +0000"
-      },
-      {
-        "title": "SOL price capped at $140 as altcoin ETF rivals reshape crypto demand",
-        "url": "https://cointelegraph.com/news/sol-price-capped-at-140-as-altcoin-etf-rivals-reshape-crypto-demand?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 05 Dec 2025 02:14:08 +0000"
-      },
-      {
-        "title": "Meta shares climb on report of possible 30% metaverse budget cut",
-        "url": "https://cointelegraph.com/news/meta-shares-climb-30-percent-metaverse-budget-cut-bloomberg?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Fri, 05 Dec 2025 01:46:05 +0000"
-      },
-      {
-        "title": "Crypto bounces as the macro market remains uncertain: Will it sustain?",
-        "url": "https://ambcrypto.com/crypto-bounces-as-the-macro-market-remains-uncertain-will-it-sustain/",
-        "source": "Ambcrypto",
-        "published_at": "Fri, 05 Dec 2025 01:00:30 +0000"
-      },
-      {
-        "title": "‘Real product market fit’ – Can Chainlink’s ETF moment finally unlock $20?",
-        "url": "https://ambcrypto.com/real-product-market-fit-can-chainlinks-etf-moment-finally-unlock-20/",
-        "source": "Ambcrypto",
-        "published_at": "Fri, 05 Dec 2025 00:00:20 +0000"
-      },
-      {
-        "title": "Aster unveils 2026 roadmap, plans launch of layer-1 blockchain",
-        "url": "https://crypto.news/aster-unveils-2026-roadmap-plans-launch-of-layer-1-blockchain/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 23:45:00 +0000"
-      },
-      {
-        "title": "What Challenges Are Hindering XRP’s Early December Recovery?",
-        "url": "https://beincrypto.com/what-challenges-are-hindering-xrps-december-recovery/",
-        "source": "BeinCrypto",
-        "published_at": "Thu, 04 Dec 2025 23:00:00 +0000"
-      },
-      {
-        "title": "What Actually Changed with the Ethereum Fusaka Upgrade",
-        "url": "https://beincrypto.com/ethereum-fusaka-upgrade-changes-explained/",
-        "source": "BeinCrypto",
-        "published_at": "Thu, 04 Dec 2025 22:33:25 +0000"
-      },
-      {
-        "title": "4,730,000 LINK Grabbed by Whales in Just 2 Days: Is a Big Chainlink Rally Coming?",
-        "url": "https://cryptopotato.com/4730000-link-grabbed-by-whales-in-just-2-days-is-a-big-chainlink-rally-coming/",
-        "source": "CryptoPotato",
-        "published_at": "Thu, 04 Dec 2025 21:56:06 +0000"
-      },
-      {
-        "title": "Bitcoin critic Peter Schiff admits blockchain superior to physical metal",
-        "url": "https://ambcrypto.com/bitcoin-critic-peter-schiff-admits-blockchain-superior-to-physical-metal/",
-        "source": "Ambcrypto",
-        "published_at": "Thu, 04 Dec 2025 21:45:22 +0000"
-      },
-      {
-        "title": "Hua Xia state-linked Chinese bank tokenizes $600M in yuan bonds",
-        "url": "https://cointelegraph.com/news/hua-xia-china-bank-tokenizes-600m-yuan-bonds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Thu, 04 Dec 2025 21:35:08 +0000"
-      },
-      {
-        "title": "CNBC taps Kalshi to bring real-time prediction data into financial coverage",
-        "url": "https://cointelegraph.com/news/kalshi-prediction-markets-partnership-cnbc?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Thu, 04 Dec 2025 21:22:47 +0000"
-      },
-      {
-        "title": "BNB price prediction – Will it conquer $1000 again in December?",
-        "url": "https://ambcrypto.com/bnb-price-prediction-will-it-conquer-1000-again-in-december/",
-        "source": "Ambcrypto",
-        "published_at": "Thu, 04 Dec 2025 21:00:46 +0000"
-      },
-      {
-        "title": "Kraken Partners With Deutsche Börse as Europe Looks to Rival Wall Street in Crypto",
-        "url": "https://www.coindesk.com/business/2025/12/04/kraken-partners-with-deutsche-boerse-as-europe-looks-to-rival-wall-street-in-crypto",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 20:38:59 +0000"
-      },
-      {
-        "title": "Privacy-First 'Alien' Identity System Aims to Prove Users Are Human in the Age of AI",
-        "url": "https://decrypt.co/350974/privacy-first-alien-identity-system-prove-users-human-age-ai",
-        "source": "Decrypt",
-        "published_at": "Thu, 04 Dec 2025 20:29:25 +0000"
-      },
-      {
-        "title": "Bitcoin Could Continue Chopping Below $95K Into Year-End and Altcoins Could Benefit, Analyst Says",
-        "url": "https://www.coindesk.com/daybook-us/2025/12/04/bitcoin-could-continue-chopping-below-usd95k-into-year-end-as-altcoins-may-outperform-analyst-says",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 20:20:03 +0000"
-      },
-      {
-        "title": "Cathie Wood’s Tokyo meetup unites two of Ethereum’s biggest bulls",
-        "url": "https://crypto.news/cathie-wood-tokyo-meetup-unites-two-ethereum-bulls/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 19:56:23 +0000"
-      },
-      {
-        "title": "CFTC Gives Green Light to Spot Crypto Trading as Bitnomial Exchange Readies for Launch",
-        "url": "https://decrypt.co/350957/cftc-gives-green-light-spot-crypto-trading-bitnomial-exchange",
-        "source": "Decrypt",
-        "published_at": "Thu, 04 Dec 2025 19:19:40 +0000"
-      },
-      {
-        "title": "XRP’s 2025 recap – Trump’s re-election, SEC lawsuit, and more…",
-        "url": "https://ambcrypto.com/xrps-2025-recap-trumps-re-election-sec-lawsuit-and-more/",
-        "source": "Ambcrypto",
-        "published_at": "Thu, 04 Dec 2025 19:00:30 +0000"
-      },
-      {
-        "title": "XRP price rally stalls as Ripple closes the $1 billion GTreasury buyout",
-        "url": "https://crypto.news/xrp-price-rally-ripple-1-billion-gtreasury-buyout/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 18:47:49 +0000"
-      },
-      {
-        "title": "Twenty One Capital eyes Tuesday debut following Cantor Equity Partners merger",
-        "url": "https://cointelegraph.com/news/twenty-one-capital-dec-9-listing-cantor-equity-partners-merger?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Thu, 04 Dec 2025 18:30:44 +0000"
-      },
-      {
-        "title": "Solmate looks beyond SOL treasury model with RockawayX acquisition",
-        "url": "https://cointelegraph.com/news/solmate-rockawayx-solana-infrastructure-treasury-abu-dhabi?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Thu, 04 Dec 2025 18:03:51 +0000"
-      },
-      {
-        "title": "TD Cowen Grows Bearish on $60 Billion Bitcoin Giant Strategy—Here's Why",
-        "url": "https://decrypt.co/350944/td-cowen-grows-bearish-60-billion-bitcoin-giant-strategy",
-        "source": "Decrypt",
-        "published_at": "Thu, 04 Dec 2025 17:47:13 +0000"
-      },
-      {
-        "title": "Bitcoin data shows over 25% of supply now underwater",
-        "url": "https://ambcrypto.com/bitcoin-data-shows-over-25-of-supply-now-underwater/",
-        "source": "Ambcrypto",
-        "published_at": "Thu, 04 Dec 2025 17:30:56 +0000"
-      },
-      {
-        "title": "BNB Nears $910 as Volume Jumps 68%, Signaling Growing Interest Near Resistance Zone",
-        "url": "https://www.coindesk.com/markets/2025/12/04/bnb-nears-usd910-as-volume-jumps-68-signaling-growing-interest-near-resistance-zone",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 17:00:25 +0000"
-      },
-      {
-        "title": "Malaysia Cracks Down on Bitcoin Miners Behind $1.1B Electricity Theft",
-        "url": "https://decrypt.co/350941/malaysia-cracks-down-on-bitcoin-miners-behind-1-1b-electricity-theft",
-        "source": "Decrypt",
-        "published_at": "Thu, 04 Dec 2025 16:55:22 +0000"
-      },
-      {
-        "title": "Ethereum Price Analysis: Can ETH Maintain the Bullish Momentum After Surging to $3.2K?",
-        "url": "https://cryptopotato.com/ethereum-price-analysis-can-eth-maintain-the-bullish-momentum-after-surging-to-3-2k/",
-        "source": "CryptoPotato",
-        "published_at": "Thu, 04 Dec 2025 16:40:47 +0000"
-      },
-      {
-        "title": "Meta Plans 30% Cut to Metaverse Budget as Reality Becomes Less Virtual: Bloomberg",
-        "url": "https://www.coindesk.com/markets/2025/12/04/meta-plans-30-cut-to-metaverse-budget-as-reality-becomes-less-virtual-bloomberg",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 16:32:57 +0000"
-      },
-      {
-        "title": "What Triggered Recent $4B Bitcoin ETF Outflows?",
-        "url": "https://www.coindesk.com/markets/2025/12/04/usd4b-bitcoin-etf-outflows-in-oct-nov-reflect-basis-trade-unwind-not-capitulation-research-analyst",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 16:28:01 +0000"
-      },
-      {
-        "title": "ICP Rises as Cross-Chain Narratives Gain Attention",
-        "url": "https://www.coindesk.com/markets/2025/12/04/icp-rises-as-cross-chain-narratives-gain-attention",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 16:20:11 +0000"
-      },
-      {
-        "title": "Blockdaemon, VerifiedX Join Forces to Deliver Mass-Market, Self-Custodial DeFi",
-        "url": "https://www.coindesk.com/business/2025/12/04/blockdaemon-and-verifiedx-join-forces-to-deliver-mass-market-self-custodial-defi",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 16:00:00 +0000"
-      },
-      {
-        "title": "U.S. CFTC-Driven Spot Crypto Trading Going Live With Bitnomial, Opening Up New Arena",
-        "url": "https://www.coindesk.com/policy/2025/12/04/u-s-cftc-driven-spot-crypto-trading-going-live-opening-up-new-regulated-arena",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 15:47:27 +0000"
-      },
-      {
-        "title": "MoneyGram Taps Fireblocks to Expand Stablecoin Use in Global Payments and Treasury Ops",
-        "url": "https://www.coindesk.com/business/2025/12/04/moneygram-taps-fireblocks-to-expand-stablecoin-use-in-global-payments-and-treasury-ops",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 15:15:44 +0000"
-      },
-      {
-        "title": "After a major sell-off, Solana rebounds above $140, with Remittix still the market’s new favourite",
-        "url": "https://crypto.news/after-a-major-sell-off-solana-rebounds-above-140-with-remittix-still-the-markets-new-favourite/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 14:54:50 +0000"
-      },
-      {
-        "title": "EU plan would boost ESMA powers over crypto and capital markets",
-        "url": "https://cointelegraph.com/news/eu-proposal-centralize-crypto-financial-markets-esma?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-        "source": "Cointelegraph",
-        "published_at": "Thu, 04 Dec 2025 14:33:30 +0000"
-      },
-      {
-        "title": "CoinDesk 20 Performance Update: Hedera (HBAR) Falls 3.9% as Index Declines",
-        "url": "https://www.coindesk.com/coindesk-indices/2025/12/04/coindesk-20-performance-update-hedera-hbar-falls-3-9-as-index-declines",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 14:13:52 +0000"
-      },
-      {
-        "title": "XRP ETFs Extend Record Inflow Streak to 13 Days, Closing in on $1B Milestone",
-        "url": "https://www.coindesk.com/markets/2025/12/04/xrp-etfs-extend-record-inflow-streak-to-13-days-closing-in-on-usd1b-milestone",
-        "source": "Coindesk",
-        "published_at": "Thu, 04 Dec 2025 14:09:51 +0000"
-      },
-      {
-        "title": "Thailand Busts $8.6M Bitcoin Mining Operations Funding 'Chinese Scam Networks'",
-        "url": "https://decrypt.co/350913/thailand-busts-8-6m-bitcoin-mining-operations-funding-chinese-scam-networks",
-        "source": "Decrypt",
-        "published_at": "Thu, 04 Dec 2025 14:01:02 +0000"
-      },
-      {
-        "title": "Ripple’s (XRP) Impressive ETF Streak Continues as Total Inflows Near $900M",
-        "url": "https://cryptopotato.com/ripples-xrp-impressive-etf-streak-continues-as-total-inflows-near-900m/",
-        "source": "CryptoPotato",
-        "published_at": "Thu, 04 Dec 2025 13:22:31 +0000"
-      },
-      {
-        "title": "Making hashrate commoditized: The next financial frontier in Bitcoin mining | Opinion",
-        "url": "https://crypto.news/hashrate-commoditized-next-frontier-in-bitcoin-mining/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 13:11:15 +0000"
-      },
-      {
-        "title": "1&1 to buy Versatel for €1.3b, tightening grip on German fiber",
-        "url": "https://crypto.news/11-to-buy-versatel-for-e1-3b-tightening-grip-on-german-fiber/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 12:24:43 +0000"
-      },
-      {
-        "title": "Incubator MEETLabs Officially Launches the Web3 P2E 3D-Fishing Game “DeFishing”",
-        "url": "https://cryptopotato.com/incubator-meetlabs-officially-launches-the-web3-p2e-3d-fishing-game-defishing/",
-        "source": "CryptoPotato",
-        "published_at": "Thu, 04 Dec 2025 11:11:40 +0000"
-      },
-      {
-        "title": "Ex-Citadel quants raise $17M for Fin, a global stablecoin payments app",
-        "url": "https://crypto.news/ex-citadel-quants-raise-17m-for-fin-a-global-stablecoin-payments-app/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 10:20:09 +0000"
-      },
-      {
-        "title": "Connecticut hits Kalshi, Robinhood, Crypto.com over sports event contracts",
-        "url": "https://crypto.news/connecticut-hits-kalshi-robinhood-crypto-com-over-sports-event-contracts/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 09:46:58 +0000"
-      },
-      {
-        "title": "From Negative to Bullish: Coinbase Premium Signals Big Money Returning to Bitcoin",
-        "url": "https://cryptopotato.com/from-negative-to-bullish-coinbase-premium-signals-big-money-returning-to-bitcoin/",
-        "source": "CryptoPotato",
-        "published_at": "Thu, 04 Dec 2025 09:39:13 +0000"
-      },
-      {
-        "title": "XRP price slides back towards key support — will rising short interest force a retest of $1.90?",
-        "url": "https://crypto.news/xrp-price-slides-key-support-short-interest-rises-2025/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 07:52:58 +0000"
-      },
-      {
-        "title": "Moonbet Crypto Casino Launches Five Original Games With Up To 99% RTP and Full Blockchain Verification",
-        "url": "https://cryptopotato.com/moonbet-crypto-casino-launches-five-original-games-with-up-to-99-rtp-and-full-blockchain-verification/",
-        "source": "CryptoPotato",
-        "published_at": "Thu, 04 Dec 2025 07:07:01 +0000"
-      },
-      {
-        "title": "Dogecoin price compresses into symmetrical triangle — will bulls finally reclaim trend control?",
-        "url": "https://crypto.news/dogecoin-price-symmetrical-triangle-pattern-2025/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 06:26:30 +0000"
-      },
-      {
-        "title": "Florida appeal court reopens $80M lawsuit against Binance over BTC theft",
-        "url": "https://crypto.news/florida-court-80m-lawsuit-binance-btc-theft-2025/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 04:50:38 +0000"
-      },
-      {
-        "title": "Crypto Is Edging Further Into Mainstream Finance, BlackRock and Coinbase Chiefs Say",
-        "url": "https://decrypt.co/350878/crypto-further-mainstream-finance-blackrock-coinbase-chiefs",
-        "source": "Decrypt",
-        "published_at": "Thu, 04 Dec 2025 03:35:18 +0000"
-      },
-      {
-        "title": "Ledger Finds Popular Smartphone Chip Vulnerable to Unpatchable Attacks",
-        "url": "https://decrypt.co/350867/ledger-smartphone-chip-vulnerable-unpatchable-attacks",
-        "source": "Decrypt",
-        "published_at": "Thu, 04 Dec 2025 00:24:08 +0000"
-      },
-      {
-        "title": "Interview | Bastion powers up, CEO talks becoming Sony Bank’s stablecoin engine",
-        "url": "https://crypto.news/bastion-sony-ceo-interview-stablecoin-partnership/",
-        "source": "BTCManager",
-        "published_at": "Wed, 03 Dec 2025 23:00:00 +0000"
-      },
-      {
-        "title": "Gensler calls out crypto hype—again: Bitcoin aside, ‘it’s a risk asset’",
-        "url": "https://crypto.news/tk/",
-        "source": "BTCManager",
-        "published_at": "Wed, 03 Dec 2025 22:15:00 +0000"
-      },
-      {
-        "title": "Binance Unveils New Crypto Savings Account for Kids",
-        "url": "https://decrypt.co/350792/binance-new-crypto-savings-account-kids",
-        "source": "Decrypt",
-        "published_at": "Wed, 03 Dec 2025 21:15:26 +0000"
-      },
-      {
-        "title": "Is Bitcoin Treasury Giant Strategy 'Too Big To Fail'?",
-        "url": "https://decrypt.co/350793/strategy-too-big-fail-no",
-        "source": "Decrypt",
-        "published_at": "Wed, 03 Dec 2025 20:48:22 +0000"
-      },
-      {
-        "title": "Crypto UP 7-10%, Bank of America recommends crypto, Kalshi raise $11B",
-        "url": "https://decrypt.co/videos/interviews/kLKB13oZ/crypto-up-7-10-bank-of-america-recommends-crypto-kalshi-raise-11b",
-        "source": "Decrypt",
-        "published_at": "Wed, 03 Dec 2025 18:32:48 +0000"
-      },
-      {
-        "title": "Binance BTC Reserves Drop, Signaling Bullish Market Setup",
-        "url": "https://cryptopotato.com/binance-btc-reserves-drop-signaling-bullish-market-setup/",
-        "source": "CryptoPotato",
-        "published_at": "Wed, 03 Dec 2025 17:56:05 +0000"
-      },
-      {
-        "title": "Chainlink (LINK) Soars by 20% Daily: Further Gains on the Way?",
-        "url": "https://cryptopotato.com/chainlink-link-soars-by-20-daily-further-gains-on-the-way/",
-        "source": "CryptoPotato",
-        "published_at": "Wed, 03 Dec 2025 16:45:26 +0000"
-      },
-      {
-        "title": "Supra Unveils Hydrangea++, Challenging the Physical Ceiling on Blockchain Speed",
-        "url": "https://cryptopotato.com/supra-unveils-hydrangea-challenging-the-physical-ceiling-on-blockchain-speed/",
-        "source": "CryptoPotato",
-        "published_at": "Wed, 03 Dec 2025 16:07:33 +0000"
-      },
-      {
-        "title": "Vanguard Crypto ETFs, Coinbase Lawsuit & Strategy's $1.44B Reserve - Daily Crypto Recap",
-        "url": "https://decrypt.co/videos/interviews/DBFV5WgA/vanguard-crypto-etfs-coinbase-lawsuit-strategys-144b-reserve-daily-crypto-recap",
-        "source": "Decrypt",
-        "published_at": "Tue, 02 Dec 2025 19:48:34 +0000"
-      },
-      {
-        "title": "Trust Wallet Launches First In-Wallet Prediction Markets With Myriad",
-        "url": "https://decrypt.co/videos/interviews/0bzRT1D1/trust-wallet-launches-first-in-wallet-prediction-markets-with-myriad",
-        "source": "Decrypt",
-        "published_at": "Mon, 01 Dec 2025 16:55:55 +0000"
-      },
-      {
-        "title": "Peter Schiff Slams Bitcoin As ‘Fake Asset’ Amid Price Drop, Accuses CNBC of ‘Hosting Bitcoin Shills’",
-        "url": "https://www.ccn.com/news/crypto/peter-schiff-slams-bitcoin-as-fake-asset-amid-price-drop-accuses-cnbc-of-hosting-bitcoin-shills/",
-        "source": "CCN",
-        "published_at": "Mon, 01 Dec 2025 14:32:15 +0000"
-      },
-      {
-        "title": "Bitcoin’s Massive Drop Sparks Suspected ‘Manipulation’ Among Traders — What Actually Happened?",
-        "url": "https://www.ccn.com/news/crypto/bitcoins-massive-drop-sparks-suspected-manipulation-among-traders-what-actually-happened/",
-        "source": "CCN",
-        "published_at": "Mon, 01 Dec 2025 12:17:15 +0000"
-      },
-      {
-        "title": "Seven Biggest VC Crypto Raises Over The Past Few Months — Who Landed the Most Cash?",
-        "url": "https://www.ccn.com/news/crypto/seven-biggest-vc-crypto-raises-past-few-months-landed-most-cash/",
-        "source": "CCN",
-        "published_at": "Sat, 29 Nov 2025 12:02:15 +0000"
-      },
-      {
-        "title": "Polymarket can now operate in US! Texas buys $5M BTC! MON up another 24%!",
-        "url": "https://decrypt.co/videos/interviews/TYv5hOIq/polymarket-can-now-operate-in-us-texas-buys-5m-btc-mon-up-another-24",
-        "source": "Decrypt",
-        "published_at": "Wed, 26 Nov 2025 16:15:37 +0000"
-      },
-      {
-        "title": "BTC @ $86K! Monad presale Oversubscribed! Coinbase acquires Vector Dot Fun",
-        "url": "https://decrypt.co/videos/interviews/p0hnnDle/btc-86k-monad-presale-oversubscribed-coinbase-acquires-vector-dot-fun",
-        "source": "Decrypt",
-        "published_at": "Mon, 24 Nov 2025 16:15:30 +0000"
-      },
-      {
-        "title": "Borrowing Against Your Tesla Stock to Buy a Car Is the Future of DeFi: Superstate CEO Robert Leshner",
-        "url": "https://decrypt.co/videos/interviews/t3mo8oyn/borrowing-against-your-tesla-stock-to-buy-a-car-is-the-future-of-defi-superstate-ceo-robert-leshner",
-        "source": "Decrypt",
-        "published_at": "Fri, 21 Nov 2025 10:56:37 +0000"
-      },
-      {
-        "title": "Crypto Majors Chop ahead of NVDA earnings! Kraken raises $800M! Fidelity launch SOL ETF!",
-        "url": "https://decrypt.co/videos/interviews/h4Jk7hvq/crypto-majors-chop-ahead-of-nvda-earnings-kraken-raises-800m-fidelity-launch-sol-etf",
-        "source": "Decrypt",
-        "published_at": "Wed, 19 Nov 2025 16:50:40 +0000"
-      }
-    ],
-    [
-      {
-        "title": "A New Era Begins: CFTC Approves Spot Bitcoin On Regulated US Markets",
-        "url": "https://www.newsbtc.com/news/bitcoin/a-new-era-begins-cftc-approves-spot-bitcoin-on-regulated-us-markets/",
-        "source": "NewsBTC",
-        "published_at": "Fri, 05 Dec 2025 09:00:40 +0000"
+        "published_at": "Fri, 05 Dec 2025 09:00:05 +0000"
       },
       {
         "title": "BDACS brings KRW stablecoin KRW1 to Polygon",
@@ -2274,64 +1744,58 @@
         "published_at": "Fri, 05 Dec 2025 04:00:33 +0000"
       },
       {
-        "title": "Here's How Much Bitcoin, XRP, Ether, Solana May Move on Friday's Inflation Report",
-        "url": "https://www.coindesk.com/markets/2025/12/05/here-s-how-much-btc-eth-sol-xrp-may-move-on-friday-s-inflation-report",
-        "source": "Coindesk",
-        "published_at": "Fri, 05 Dec 2025 04:00:15 +0000"
-      },
-      {
-        "title": "Kraken and Deutsche Börse Set Bold Framework Syncing Legacy and Digital",
-        "url": "https://news.bitcoin.com/kraken-and-deutsche-borse-set-bold-framework-syncing-legacy-and-digital/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 05 Dec 2025 03:30:07 +0000"
-      },
-      {
-        "title": "Ethereum Coils For A Breakout As IH&S + Heavy Accumulation Emerges",
-        "url": "https://www.newsbtc.com/news/ethereum/ethereum-coils-for-a-breakout/",
-        "source": "NewsBTC",
-        "published_at": "Fri, 05 Dec 2025 03:00:19 +0000"
-      },
-      {
-        "title": "Asia Morning Briefing: Crypto’s Next Breakout Will Come From Infrastructure, Not Narratives, Hashed Says",
-        "url": "https://www.coindesk.com/markets/2025/12/05/asia-morning-briefing-crypto-s-next-breakout-will-come-from-infrastructure-not-narratives-hashed-says",
-        "source": "Coindesk",
-        "published_at": "Fri, 05 Dec 2025 02:29:59 +0000"
-      },
-      {
-        "title": "Franklin Templeton joins Solana ETF race with SOEZ – Details here!",
-        "url": "https://ambcrypto.com/franklin-templeton-joins-solana-etf-race-with-soez-details-here/",
-        "source": "Ambcrypto",
-        "published_at": "Fri, 05 Dec 2025 02:00:36 +0000"
-      },
-      {
-        "title": "Bitcoin May Have Already Bottomed as Grayscale Projects New Highs",
-        "url": "https://news.bitcoin.com/bitcoin-may-have-already-bottomed-as-grayscale-projects-new-highs/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 05 Dec 2025 01:30:40 +0000"
-      },
-      {
-        "title": "Ripple Fuses 4 Core Acquisitions to Build One-Stop Finance Grid",
-        "url": "https://news.bitcoin.com/ripple-fuses-4-core-acquisitions-to-build-one-stop-finance-grid/",
-        "source": "Bitcoin.com",
-        "published_at": "Fri, 05 Dec 2025 00:30:09 +0000"
-      },
-      {
-        "title": "Robinhood shares rise despite Connecticut cease-and-desist order",
-        "url": "https://crypto.news/robinhood-shares-connecticut-cease-and-desist-order/",
+        "title": "MetaMask adds Polymarket prediction markets to mobile app",
+        "url": "https://crypto.news/metamask-polymarket-integration-mobile-app-2025/",
         "source": "BTCManager",
-        "published_at": "Fri, 05 Dec 2025 00:00:00 +0000"
+        "published_at": "Fri, 05 Dec 2025 04:00:04 +0000"
       },
       {
-        "title": "IMF Economists Call for Unified Stablecoin Oversight as Risks Escalate",
-        "url": "https://news.bitcoin.com/imf-economists-call-for-unified-stablecoin-oversight-as-risks-escalate/",
-        "source": "Bitcoin.com",
-        "published_at": "Thu, 04 Dec 2025 23:30:05 +0000"
+        "title": "Ethereum Tightens Uptrend Structure as Market Eyes Another Wave of Gains",
+        "url": "https://www.newsbtc.com/analysis/eth/ethereum-tightens-uptrend-3250/",
+        "source": "NewsBTC",
+        "published_at": "Fri, 05 Dec 2025 03:08:36 +0000"
       },
       {
-        "title": "Stablecoin Adoption Could Stifle Central Bank Control, IMF Warns",
-        "url": "https://decrypt.co/350996/stablecoin-adoption-could-stifle-central-bank-control-imf-warns",
-        "source": "Decrypt",
-        "published_at": "Thu, 04 Dec 2025 22:58:18 +0000"
+        "title": "Strategy won’t be forced to sell Bitcoin if stock drops, Bitwise CIO says",
+        "url": "https://cointelegraph.com/news/strategy-wont-sell-bitcoin-if-stock-drops-bitwise-cio?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 05 Dec 2025 02:37:30 +0000"
+      },
+      {
+        "title": "Bitcoin Coils Near Highs as Bulls Defend Gains Ahead of Resistance",
+        "url": "https://www.newsbtc.com/analysis/btc/bitcoin-coils-near-highs-94k/",
+        "source": "NewsBTC",
+        "published_at": "Fri, 05 Dec 2025 02:25:26 +0000"
+      },
+      {
+        "title": "US Opens Door to Leveraged Spot Crypto Trading, a First Under Federal Regulation",
+        "url": "https://beincrypto.com/cftc-leveraged-spot-crypto-us-launch/",
+        "source": "BeinCrypto",
+        "published_at": "Fri, 05 Dec 2025 02:00:00 +0000"
+      },
+      {
+        "title": "November Profit Crisis: 70% of Top Miners Pivot to $20B AI Market",
+        "url": "https://beincrypto.com/bitcoin-mining-ai-industry-shift/",
+        "source": "BeinCrypto",
+        "published_at": "Fri, 05 Dec 2025 01:15:14 +0000"
+      },
+      {
+        "title": "Central Banks Are Stockpiling Gold: Bitcoin Could Be Next",
+        "url": "https://beincrypto.com/central-banks-gold-bitcoin-reserves-2025/",
+        "source": "BeinCrypto",
+        "published_at": "Fri, 05 Dec 2025 00:05:47 +0000"
+      },
+      {
+        "title": "Peter Schiff’s Bitcoin Comment at CZ Debate Is Logically Flawed",
+        "url": "https://beincrypto.com/peter-schiff-bitcoin-comment-cz-debate-flaws/",
+        "source": "BeinCrypto",
+        "published_at": "Thu, 04 Dec 2025 23:51:48 +0000"
+      },
+      {
+        "title": "What Challenges Are Hindering XRP’s Early December Recovery?",
+        "url": "https://beincrypto.com/what-challenges-are-hindering-xrps-december-recovery/",
+        "source": "BeinCrypto",
+        "published_at": "Thu, 04 Dec 2025 23:00:00 +0000"
       },
       {
         "title": "Ripple CEO Brad Garlinghouse Expects Bitcoin to Hit $180K Next Year",
@@ -2604,108 +2068,114 @@
         "published_at": "Wed, 03 Dec 2025 23:00:00 +0000"
       },
       {
-        "title": "SEC pulls plug on super-leveraged ETFs—5x crypto not allowed",
-        "url": "https://crypto.news/sec-pulls-plug-on-super-leveraged-etfs-5x-crypto-not-allowed/",
-        "source": "BTCManager",
-        "published_at": "Wed, 03 Dec 2025 22:08:36 +0000"
-      },
-      {
-        "title": "Mistral Roars Back With Frontier AI Family That Goes Head to Head With DeepSeek",
-        "url": "https://decrypt.co/350796/mistral-frontier-ai-family-deepseek",
+        "title": "Binance Unveils New Crypto Savings Account for Kids",
+        "url": "https://decrypt.co/350792/binance-new-crypto-savings-account-kids",
         "source": "Decrypt",
-        "published_at": "Wed, 03 Dec 2025 21:06:43 +0000"
+        "published_at": "Wed, 03 Dec 2025 21:15:26 +0000"
       },
       {
-        "title": "Was the Bitcoin Jump a 'Fake Breakout'?",
-        "url": "https://decrypt.co/350787/was-bitcoin-jump-fake-breakout",
+        "title": "Is Bitcoin Treasury Giant Strategy 'Too Big To Fail'?",
+        "url": "https://decrypt.co/350793/strategy-too-big-fail-no",
         "source": "Decrypt",
-        "published_at": "Wed, 03 Dec 2025 19:23:40 +0000"
+        "published_at": "Wed, 03 Dec 2025 20:48:22 +0000"
       },
       {
-        "title": "BlackRock CEO Larry Fink Says He Was Wrong About Bitcoin, Reveals a ‘Big Shift’ in His View",
-        "url": "https://bitcoinmagazine.com/news/blackrock-ceo-says-he-was-wrong-about-btc",
-        "source": "Bitcoin Magazine",
-        "published_at": "Wed, 03 Dec 2025 18:30:08 +0000"
+        "title": "Crypto UP 7-10%, Bank of America recommends crypto, Kalshi raise $11B",
+        "url": "https://decrypt.co/videos/interviews/kLKB13oZ/crypto-up-7-10-bank-of-america-recommends-crypto-kalshi-raise-11b",
+        "source": "Decrypt",
+        "published_at": "Wed, 03 Dec 2025 18:32:48 +0000"
       },
       {
-        "title": "Neopool Reports Record $15+ Million in Bitcoin Payouts to Miners in November 2025",
-        "url": "https://bitcoinmagazine.com/press-releases/neopool-15-million-bitcoin-payouts-to-miners",
-        "source": "Bitcoin Magazine",
-        "published_at": "Wed, 03 Dec 2025 17:47:55 +0000"
-      },
-      {
-        "title": "XRP Holders Gain New Yield Opportunities as Firelight Protocol Debuts",
-        "url": "https://cryptopotato.com/xrp-holders-gain-new-yield-opportunities-as-firelight-protocol-debuts/",
+        "title": "Binance BTC Reserves Drop, Signaling Bullish Market Setup",
+        "url": "https://cryptopotato.com/binance-btc-reserves-drop-signaling-bullish-market-setup/",
         "source": "CryptoPotato",
-        "published_at": "Wed, 03 Dec 2025 16:14:33 +0000"
+        "published_at": "Wed, 03 Dec 2025 17:56:05 +0000"
       },
       {
-        "title": "150,000,000 XRP Sold in 48 Hours: Panic or Opportunity?",
-        "url": "https://cryptopotato.com/150000000-xrp-sold-in-48-hours-panic-or-opportunity/",
+        "title": "Chainlink (LINK) Soars by 20% Daily: Further Gains on the Way?",
+        "url": "https://cryptopotato.com/chainlink-link-soars-by-20-daily-further-gains-on-the-way/",
         "source": "CryptoPotato",
-        "published_at": "Wed, 03 Dec 2025 15:18:17 +0000"
+        "published_at": "Wed, 03 Dec 2025 16:45:26 +0000"
       },
       {
-        "title": "The BIG Crypto Fake-Out! Saylor & Tether FUD! Vanguard Crypto ETFs!",
-        "url": "https://decrypt.co/videos/interviews/KenRTGb5/the-big-crypto-fake-out-saylor-tether-fud-vanguard-crypto-etfs",
+        "title": "Supra Unveils Hydrangea++, Challenging the Physical Ceiling on Blockchain Speed",
+        "url": "https://cryptopotato.com/supra-unveils-hydrangea-challenging-the-physical-ceiling-on-blockchain-speed/",
+        "source": "CryptoPotato",
+        "published_at": "Wed, 03 Dec 2025 16:07:33 +0000"
+      },
+      {
+        "title": "Vanguard Crypto ETFs, Coinbase Lawsuit & Strategy's $1.44B Reserve - Daily Crypto Recap",
+        "url": "https://decrypt.co/videos/interviews/DBFV5WgA/vanguard-crypto-etfs-coinbase-lawsuit-strategys-144b-reserve-daily-crypto-recap",
         "source": "Decrypt",
-        "published_at": "Tue, 02 Dec 2025 18:07:27 +0000"
+        "published_at": "Tue, 02 Dec 2025 19:48:34 +0000"
       },
       {
-        "title": "Over $650M Liquidated! China confirms Crypto Illegal! Infinex Interview!",
-        "url": "https://decrypt.co/videos/interviews/BcHTc0O2/over-650m-liquidated-china-confirms-crypto-illegal-infinex-interview",
+        "title": "Trust Wallet Launches First In-Wallet Prediction Markets With Myriad",
+        "url": "https://decrypt.co/videos/interviews/0bzRT1D1/trust-wallet-launches-first-in-wallet-prediction-markets-with-myriad",
         "source": "Decrypt",
-        "published_at": "Mon, 01 Dec 2025 16:31:57 +0000"
+        "published_at": "Mon, 01 Dec 2025 16:55:55 +0000"
       },
       {
-        "title": "Crypto Traders Say Strategy May Start Selling Bitcoin Soon — Should They Be Worried?",
-        "url": "https://www.ccn.com/news/crypto/crypto-traders-strategy-start-selling-bitcoin-soon-should-they-be-worried/",
+        "title": "Peter Schiff Slams Bitcoin As ‘Fake Asset’ Amid Price Drop, Accuses CNBC of ‘Hosting Bitcoin Shills’",
+        "url": "https://www.ccn.com/news/crypto/peter-schiff-slams-bitcoin-as-fake-asset-amid-price-drop-accuses-cnbc-of-hosting-bitcoin-shills/",
         "source": "CCN",
-        "published_at": "Mon, 01 Dec 2025 13:32:15 +0000"
+        "published_at": "Mon, 01 Dec 2025 14:32:15 +0000"
       },
       {
-        "title": "Hong Kong’s Stablecoin Momentum Takes a Hit as China’s Anti-Crypto Hammer Falls Again",
-        "url": "https://www.ccn.com/news/crypto/hong-kong-stablecoins-threatened-by-crypto-ban/",
+        "title": "Bitcoin’s Massive Drop Sparks Suspected ‘Manipulation’ Among Traders — What Actually Happened?",
+        "url": "https://www.ccn.com/news/crypto/bitcoins-massive-drop-sparks-suspected-manipulation-among-traders-what-actually-happened/",
         "source": "CCN",
-        "published_at": "Mon, 01 Dec 2025 11:32:15 +0000"
+        "published_at": "Mon, 01 Dec 2025 12:17:15 +0000"
       },
       {
-        "title": "Democrats Claim President Trump Turned White House Into ‘$800M Crypto Cash Machine’",
-        "url": "https://www.ccn.com/news/crypto/democrats-trump-turned-white-house-800m-crypto-cash-machine/",
+        "title": "Seven Biggest VC Crypto Raises Over The Past Few Months — Who Landed the Most Cash?",
+        "url": "https://www.ccn.com/news/crypto/seven-biggest-vc-crypto-raises-past-few-months-landed-most-cash/",
         "source": "CCN",
-        "published_at": "Sat, 29 Nov 2025 09:02:15 +0000"
+        "published_at": "Sat, 29 Nov 2025 12:02:15 +0000"
       },
       {
-        "title": "Is the Bull Market over? The AI Manhattan Project! Monad Launch Reaction!",
-        "url": "https://decrypt.co/videos/interviews/fw2vHNRd/is-the-bull-market-over-the-ai-manhattan-project-monad-launch-reaction",
+        "title": "Polymarket can now operate in US! Texas buys $5M BTC! MON up another 24%!",
+        "url": "https://decrypt.co/videos/interviews/TYv5hOIq/polymarket-can-now-operate-in-us-texas-buys-5m-btc-mon-up-another-24",
         "source": "Decrypt",
-        "published_at": "Tue, 25 Nov 2025 18:17:10 +0000"
+        "published_at": "Wed, 26 Nov 2025 16:15:37 +0000"
       },
       {
-        "title": "Bitcoin Plummets 11%! Crypto in Free-Fall! Guests: OSF & Wizard Of SoHo",
-        "url": "https://decrypt.co/videos/interviews/feVCIfte/bitcoin-plummets-11-crypto-in-free-fall-guests-osf-wizard-of-soho",
+        "title": "BTC @ $86K! Monad presale Oversubscribed! Coinbase acquires Vector Dot Fun",
+        "url": "https://decrypt.co/videos/interviews/p0hnnDle/btc-86k-monad-presale-oversubscribed-coinbase-acquires-vector-dot-fun",
         "source": "Decrypt",
-        "published_at": "Fri, 21 Nov 2025 16:23:07 +0000"
+        "published_at": "Mon, 24 Nov 2025 16:15:30 +0000"
       },
       {
-        "title": "#1 Mentions Market Trader @0xTyrael shares his Prediction Market strategies!",
-        "url": "https://decrypt.co/videos/interviews/S03jFnRg/1-mentions-market-trader-0xtyrael-shares-his-prediction-market-strategies",
+        "title": "Borrowing Against Your Tesla Stock to Buy a Car Is the Future of DeFi: Superstate CEO Robert Leshner",
+        "url": "https://decrypt.co/videos/interviews/t3mo8oyn/borrowing-against-your-tesla-stock-to-buy-a-car-is-the-future-of-defi-superstate-ceo-robert-leshner",
         "source": "Decrypt",
-        "published_at": "Thu, 20 Nov 2025 18:17:31 +0000"
+        "published_at": "Fri, 21 Nov 2025 10:56:37 +0000"
       },
       {
-        "title": "Crypto Selloff, REKT Dip, Monad Launch, & DAT trades!",
-        "url": "https://decrypt.co/videos/interviews/70TjZb3m/crypto-selloff-rekt-dip-monad-launch-dat-trades",
+        "title": "Crypto Majors Chop ahead of NVDA earnings! Kraken raises $800M! Fidelity launch SOL ETF!",
+        "url": "https://decrypt.co/videos/interviews/h4Jk7hvq/crypto-majors-chop-ahead-of-nvda-earnings-kraken-raises-800m-fidelity-launch-sol-etf",
         "source": "Decrypt",
-        "published_at": "Tue, 18 Nov 2025 18:30:01 +0000"
+        "published_at": "Wed, 19 Nov 2025 16:50:40 +0000"
       }
     ],
     [
       {
-        "title": "Base–Solana bridge goes live: How it reshapes a $9.15B on-chain economy",
-        "url": "https://ambcrypto.com/9-15b-tvl-base-integrates-solana-heres-what-it-unlocks/",
-        "source": "Ambcrypto",
-        "published_at": "Fri, 05 Dec 2025 09:00:05 +0000"
+        "title": "Moneygram and Fireblocks Forge Stablecoin Infrastructure Partnership",
+        "url": "https://news.bitcoin.com/moneygram-and-fireblocks-forge-stablecoin-infrastructure-partnership/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 05 Dec 2025 09:30:06 +0000"
+      },
+      {
+        "title": "Crypto-TradFi Link Deepens: Kraken & Deutsche Börse Partner Up",
+        "url": "https://bitcoinist.com/crypto-tradfi-link-kraken-deutsche-borse-partner/",
+        "source": "Bitcoinist",
+        "published_at": "Fri, 05 Dec 2025 09:00:41 +0000"
+      },
+      {
+        "title": "Polymarket Trader Makes $1 Million on Google Search Bets, Sparking Insider Trading Fears",
+        "url": "https://beincrypto.com/alleged-google-insider-trade-polymarket/",
+        "source": "BeinCrypto",
+        "published_at": "Fri, 05 Dec 2025 09:00:01 +0000"
       },
       {
         "title": "Ethereum sees 25% validation drop post-Fusaka as Prysm bug nears finality loss",
@@ -2816,64 +2286,58 @@
         "published_at": "Fri, 05 Dec 2025 04:00:22 +0000"
       },
       {
-        "title": "MetaMask adds Polymarket prediction markets to mobile app",
-        "url": "https://crypto.news/metamask-polymarket-integration-mobile-app-2025/",
-        "source": "BTCManager",
-        "published_at": "Fri, 05 Dec 2025 04:00:04 +0000"
+        "title": "OpenAI Ordered to Hand Over 20M ChatGPT Logs in NYT Copyright Case",
+        "url": "https://decrypt.co/351000/openai-ordered-20m-chatgpt-logs-nyt-copyright-case",
+        "source": "Decrypt",
+        "published_at": "Fri, 05 Dec 2025 03:57:48 +0000"
       },
       {
-        "title": "Ethereum Tightens Uptrend Structure as Market Eyes Another Wave of Gains",
-        "url": "https://www.newsbtc.com/analysis/eth/ethereum-tightens-uptrend-3250/",
-        "source": "NewsBTC",
-        "published_at": "Fri, 05 Dec 2025 03:08:36 +0000"
+        "title": "$15.79M BTC whale move sparks buzz – Can Bitcoin finally target $100K?",
+        "url": "https://ambcrypto.com/15-79m-btc-whale-move-sparks-buzz-can-bitcoin-finally-target-100k/",
+        "source": "Ambcrypto",
+        "published_at": "Fri, 05 Dec 2025 03:00:34 +0000"
       },
       {
-        "title": "Strategy won’t be forced to sell Bitcoin if stock drops, Bitwise CIO says",
-        "url": "https://cointelegraph.com/news/strategy-wont-sell-bitcoin-if-stock-drops-bitwise-cio?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "title": "Cease and Desist Hits Robinhood, Crypto.com, Kalshi in Connecticut",
+        "url": "https://news.bitcoin.com/cease-and-desist-hits-robinhood-crypto-com-kalshi-in-connecticut/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 05 Dec 2025 02:30:22 +0000"
+      },
+      {
+        "title": "SOL price capped at $140 as altcoin ETF rivals reshape crypto demand",
+        "url": "https://cointelegraph.com/news/sol-price-capped-at-140-as-altcoin-etf-rivals-reshape-crypto-demand?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
         "source": "Cointelegraph",
-        "published_at": "Fri, 05 Dec 2025 02:37:30 +0000"
+        "published_at": "Fri, 05 Dec 2025 02:14:08 +0000"
       },
       {
-        "title": "Bitcoin Coils Near Highs as Bulls Defend Gains Ahead of Resistance",
-        "url": "https://www.newsbtc.com/analysis/btc/bitcoin-coils-near-highs-94k/",
-        "source": "NewsBTC",
-        "published_at": "Fri, 05 Dec 2025 02:25:26 +0000"
+        "title": "Meta shares climb on report of possible 30% metaverse budget cut",
+        "url": "https://cointelegraph.com/news/meta-shares-climb-30-percent-metaverse-budget-cut-bloomberg?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 05 Dec 2025 01:46:05 +0000"
       },
       {
-        "title": "US Opens Door to Leveraged Spot Crypto Trading, a First Under Federal Regulation",
-        "url": "https://beincrypto.com/cftc-leveraged-spot-crypto-us-launch/",
-        "source": "BeinCrypto",
-        "published_at": "Fri, 05 Dec 2025 02:00:00 +0000"
+        "title": "Crypto bounces as the macro market remains uncertain: Will it sustain?",
+        "url": "https://ambcrypto.com/crypto-bounces-as-the-macro-market-remains-uncertain-will-it-sustain/",
+        "source": "Ambcrypto",
+        "published_at": "Fri, 05 Dec 2025 01:00:30 +0000"
       },
       {
-        "title": "November Profit Crisis: 70% of Top Miners Pivot to $20B AI Market",
-        "url": "https://beincrypto.com/bitcoin-mining-ai-industry-shift/",
-        "source": "BeinCrypto",
-        "published_at": "Fri, 05 Dec 2025 01:15:14 +0000"
+        "title": "‘Real product market fit’ – Can Chainlink’s ETF moment finally unlock $20?",
+        "url": "https://ambcrypto.com/real-product-market-fit-can-chainlinks-etf-moment-finally-unlock-20/",
+        "source": "Ambcrypto",
+        "published_at": "Fri, 05 Dec 2025 00:00:20 +0000"
       },
       {
-        "title": "Central Banks Are Stockpiling Gold: Bitcoin Could Be Next",
-        "url": "https://beincrypto.com/central-banks-gold-bitcoin-reserves-2025/",
-        "source": "BeinCrypto",
-        "published_at": "Fri, 05 Dec 2025 00:05:47 +0000"
-      },
-      {
-        "title": "Peter Schiff’s Bitcoin Comment at CZ Debate Is Logically Flawed",
-        "url": "https://beincrypto.com/peter-schiff-bitcoin-comment-cz-debate-flaws/",
-        "source": "BeinCrypto",
-        "published_at": "Thu, 04 Dec 2025 23:51:48 +0000"
-      },
-      {
-        "title": "CFTC Approves Spot Cryptocurrency Trading on Regulated U.S. Exchanges",
-        "url": "https://crypto.news/cftc-approves-spot-cryptocurrency-trading-us-exchanges/",
+        "title": "Aster unveils 2026 roadmap, plans launch of layer-1 blockchain",
+        "url": "https://crypto.news/aster-unveils-2026-roadmap-plans-launch-of-layer-1-blockchain/",
         "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 23:00:00 +0000"
+        "published_at": "Thu, 04 Dec 2025 23:45:00 +0000"
       },
       {
-        "title": "21Shares launches first leveraged SUI ETF on Nasdaq following SEC approval",
-        "url": "https://crypto.news/21shares-launches-first-leveraged-sui-etf-on-nasdaq/",
-        "source": "BTCManager",
-        "published_at": "Thu, 04 Dec 2025 22:34:11 +0000"
+        "title": "Stablecoin Adoption Could Stifle Central Bank Control, IMF Warns",
+        "url": "https://decrypt.co/350996/stablecoin-adoption-could-stifle-central-bank-control-imf-warns",
+        "source": "Decrypt",
+        "published_at": "Thu, 04 Dec 2025 22:58:18 +0000"
       },
       {
         "title": "Scaling on-chain: Can Solana and Revolut beat Ethereum in 2026?",
@@ -3144,6 +2608,542 @@
         "url": "https://decrypt.co/350853/blackrock-risk-on-mega-forces-ai-stablecoins-transform-markets",
         "source": "Decrypt",
         "published_at": "Wed, 03 Dec 2025 22:56:57 +0000"
+      },
+      {
+        "title": "Mistral Roars Back With Frontier AI Family That Goes Head to Head With DeepSeek",
+        "url": "https://decrypt.co/350796/mistral-frontier-ai-family-deepseek",
+        "source": "Decrypt",
+        "published_at": "Wed, 03 Dec 2025 21:06:43 +0000"
+      },
+      {
+        "title": "Was the Bitcoin Jump a 'Fake Breakout'?",
+        "url": "https://decrypt.co/350787/was-bitcoin-jump-fake-breakout",
+        "source": "Decrypt",
+        "published_at": "Wed, 03 Dec 2025 19:23:40 +0000"
+      },
+      {
+        "title": "BlackRock CEO Larry Fink Says He Was Wrong About Bitcoin, Reveals a ‘Big Shift’ in His View",
+        "url": "https://bitcoinmagazine.com/news/blackrock-ceo-says-he-was-wrong-about-btc",
+        "source": "Bitcoin Magazine",
+        "published_at": "Wed, 03 Dec 2025 18:30:08 +0000"
+      },
+      {
+        "title": "Neopool Reports Record $15+ Million in Bitcoin Payouts to Miners in November 2025",
+        "url": "https://bitcoinmagazine.com/press-releases/neopool-15-million-bitcoin-payouts-to-miners",
+        "source": "Bitcoin Magazine",
+        "published_at": "Wed, 03 Dec 2025 17:47:55 +0000"
+      },
+      {
+        "title": "XRP Holders Gain New Yield Opportunities as Firelight Protocol Debuts",
+        "url": "https://cryptopotato.com/xrp-holders-gain-new-yield-opportunities-as-firelight-protocol-debuts/",
+        "source": "CryptoPotato",
+        "published_at": "Wed, 03 Dec 2025 16:14:33 +0000"
+      },
+      {
+        "title": "150,000,000 XRP Sold in 48 Hours: Panic or Opportunity?",
+        "url": "https://cryptopotato.com/150000000-xrp-sold-in-48-hours-panic-or-opportunity/",
+        "source": "CryptoPotato",
+        "published_at": "Wed, 03 Dec 2025 15:18:17 +0000"
+      },
+      {
+        "title": "The BIG Crypto Fake-Out! Saylor & Tether FUD! Vanguard Crypto ETFs!",
+        "url": "https://decrypt.co/videos/interviews/KenRTGb5/the-big-crypto-fake-out-saylor-tether-fud-vanguard-crypto-etfs",
+        "source": "Decrypt",
+        "published_at": "Tue, 02 Dec 2025 18:07:27 +0000"
+      },
+      {
+        "title": "Over $650M Liquidated! China confirms Crypto Illegal! Infinex Interview!",
+        "url": "https://decrypt.co/videos/interviews/BcHTc0O2/over-650m-liquidated-china-confirms-crypto-illegal-infinex-interview",
+        "source": "Decrypt",
+        "published_at": "Mon, 01 Dec 2025 16:31:57 +0000"
+      },
+      {
+        "title": "Crypto Traders Say Strategy May Start Selling Bitcoin Soon — Should They Be Worried?",
+        "url": "https://www.ccn.com/news/crypto/crypto-traders-strategy-start-selling-bitcoin-soon-should-they-be-worried/",
+        "source": "CCN",
+        "published_at": "Mon, 01 Dec 2025 13:32:15 +0000"
+      },
+      {
+        "title": "Hong Kong’s Stablecoin Momentum Takes a Hit as China’s Anti-Crypto Hammer Falls Again",
+        "url": "https://www.ccn.com/news/crypto/hong-kong-stablecoins-threatened-by-crypto-ban/",
+        "source": "CCN",
+        "published_at": "Mon, 01 Dec 2025 11:32:15 +0000"
+      },
+      {
+        "title": "Democrats Claim President Trump Turned White House Into ‘$800M Crypto Cash Machine’",
+        "url": "https://www.ccn.com/news/crypto/democrats-trump-turned-white-house-800m-crypto-cash-machine/",
+        "source": "CCN",
+        "published_at": "Sat, 29 Nov 2025 09:02:15 +0000"
+      },
+      {
+        "title": "Is the Bull Market over? The AI Manhattan Project! Monad Launch Reaction!",
+        "url": "https://decrypt.co/videos/interviews/fw2vHNRd/is-the-bull-market-over-the-ai-manhattan-project-monad-launch-reaction",
+        "source": "Decrypt",
+        "published_at": "Tue, 25 Nov 2025 18:17:10 +0000"
+      },
+      {
+        "title": "Bitcoin Plummets 11%! Crypto in Free-Fall! Guests: OSF & Wizard Of SoHo",
+        "url": "https://decrypt.co/videos/interviews/feVCIfte/bitcoin-plummets-11-crypto-in-free-fall-guests-osf-wizard-of-soho",
+        "source": "Decrypt",
+        "published_at": "Fri, 21 Nov 2025 16:23:07 +0000"
+      },
+      {
+        "title": "#1 Mentions Market Trader @0xTyrael shares his Prediction Market strategies!",
+        "url": "https://decrypt.co/videos/interviews/S03jFnRg/1-mentions-market-trader-0xtyrael-shares-his-prediction-market-strategies",
+        "source": "Decrypt",
+        "published_at": "Thu, 20 Nov 2025 18:17:31 +0000"
+      },
+      {
+        "title": "Crypto Selloff, REKT Dip, Monad Launch, & DAT trades!",
+        "url": "https://decrypt.co/videos/interviews/70TjZb3m/crypto-selloff-rekt-dip-monad-launch-dat-trades",
+        "source": "Decrypt",
+        "published_at": "Tue, 18 Nov 2025 18:30:01 +0000"
+      }
+    ],
+    [
+      {
+        "title": "DeepNode raises $5M to build decentralized AI on Base",
+        "url": "https://crypto.news/deepnode-raises-5m-to-build-decentralized-ai-on-base/",
+        "source": "BTCManager",
+        "published_at": "Fri, 05 Dec 2025 09:24:12 +0000"
+      },
+      {
+        "title": "A New Era Begins: CFTC Approves Spot Bitcoin On Regulated US Markets",
+        "url": "https://www.newsbtc.com/news/bitcoin/a-new-era-begins-cftc-approves-spot-bitcoin-on-regulated-us-markets/",
+        "source": "NewsBTC",
+        "published_at": "Fri, 05 Dec 2025 09:00:40 +0000"
+      },
+      {
+        "title": "Woori Bank adds Bitcoin price to Seoul trading room",
+        "url": "https://crypto.news/woori-bank-adds-bitcoin-price-to-seoul-trading-room/",
+        "source": "BTCManager",
+        "published_at": "Fri, 05 Dec 2025 08:47:10 +0000"
+      },
+      {
+        "title": "Bitget Hints at ‘Wall Street’ Expansion, Moving Beyond Cryptocurrency Roots",
+        "url": "https://news.bitcoin.com/bitget-hints-at-wall-street-expansion-moving-beyond-cryptocurrency-roots/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 05 Dec 2025 08:30:19 +0000"
+      },
+      {
+        "title": "Strategy Won’t Sell Bitcoin, Fueling Bitcoin Hyper’s $29M Presale",
+        "url": "https://bitcoinist.com/strategy-wont-sell-btc-bitcoin-hyper-presale-reaches-29m/",
+        "source": "Bitcoinist",
+        "published_at": "Fri, 05 Dec 2025 08:10:54 +0000"
+      },
+      {
+        "title": "Why Bitcoin Traders Fear A Repeat Of July 2024’s Crash Next Week",
+        "url": "https://www.newsbtc.com/bitcoin-news/why-bitcoin-traders-fear-a-repeat-of-july-2024s-crash-next-week/",
+        "source": "NewsBTC",
+        "published_at": "Fri, 05 Dec 2025 08:00:06 +0000"
+      },
+      {
+        "title": "Changpeng Zhao doubles down on making US crypto capital post-pardon",
+        "url": "https://crypto.news/changpeng-zhao-doubles-down-on-making-us-crypto-capital-post-pardon/",
+        "source": "BTCManager",
+        "published_at": "Fri, 05 Dec 2025 07:56:35 +0000"
+      },
+      {
+        "title": "Bitcoin price market now mirrors early 2022: Glassnode",
+        "url": "https://crypto.news/bitcoin-price-market-now-mirrors-early-2022-glassnode/",
+        "source": "BTCManager",
+        "published_at": "Fri, 05 Dec 2025 07:38:41 +0000"
+      },
+      {
+        "title": "Decentralized stablecoin protocol USPD hit by $1M exploit",
+        "url": "https://crypto.news/uspd-stablecoin-protocol-exploited-proxy-breach-2025/",
+        "source": "BTCManager",
+        "published_at": "Fri, 05 Dec 2025 07:14:59 +0000"
+      },
+      {
+        "title": "JPMorgan sees little chance stablecoins will lift U.S Treasury bill demand – Here’s why",
+        "url": "https://ambcrypto.com/jpmorgan-sees-little-chance-stablecoins-will-lift-u-s-treasury-bill-demand-heres-why/",
+        "source": "Ambcrypto",
+        "published_at": "Fri, 05 Dec 2025 07:00:28 +0000"
+      },
+      {
+        "title": "Will Today’s $3.4B Bitcoin Options Expiry Move Markets?",
+        "url": "https://cryptopotato.com/will-todays-3-4b-bitcoin-options-expiry-move-markets/",
+        "source": "CryptoPotato",
+        "published_at": "Fri, 05 Dec 2025 06:36:20 +0000"
+      },
+      {
+        "title": "Kremlin Aide: Crypto Mining is a ‘Hidden Export’ Skewing Ruble Forecasts",
+        "url": "https://news.bitcoin.com/kremlin-aide-crypto-mining-is-a-hidden-export-skewing-ruble-forecasts/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 05 Dec 2025 06:30:25 +0000"
+      },
+      {
+        "title": "American Bitcoin buys the dip hard, DESPITE ABTC’s",
+        "url": "https://ambcrypto.com/american-bitcoin-buys-the-dip-hard-despite-abtcs-50-fall-details/",
+        "source": "Ambcrypto",
+        "published_at": "Fri, 05 Dec 2025 06:00:49 +0000"
+      },
+      {
+        "title": "Bitcoin unlikely to replicate January’s surge to new high: 21Shares founder",
+        "url": "https://cointelegraph.com/news/bitcoin-price-all-time-high-january-repeat-uncertainty-analyst?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 05 Dec 2025 05:46:43 +0000"
+      },
+      {
+        "title": "Crypto Investor Gives Nigel Farage’s Reform UK Record-Shattering $12 Million Donation",
+        "url": "https://news.bitcoin.com/crypto-investor-gives-nigel-farages-reform-uk-record-shattering-12-million-donation/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 05 Dec 2025 05:30:01 +0000"
+      },
+      {
+        "title": "Solana (SOL) Starts to Retreat From Highs as Momentum Shows Early Fatigue",
+        "url": "https://www.newsbtc.com/analysis/solana-sol-starts-retreat-145/",
+        "source": "NewsBTC",
+        "published_at": "Fri, 05 Dec 2025 05:08:04 +0000"
+      },
+      {
+        "title": "100 Million TRX Leaves Binance — Justin Sun Behind The Move",
+        "url": "https://bitcoinist.com/100-million-trx-leaves-binance-justin-sun-behind-the-move/",
+        "source": "Bitcoinist",
+        "published_at": "Fri, 05 Dec 2025 05:00:19 +0000"
+      },
+      {
+        "title": "Ex-Signature Bank execs launch blockchain-powered bank N3XT",
+        "url": "https://cointelegraph.com/news/n3xt-wyoming-blockchain-crypto-bank?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 05 Dec 2025 04:43:01 +0000"
+      },
+      {
+        "title": "Massive 700M Euro Crypto Operation Unravels With International Raids",
+        "url": "https://news.bitcoin.com/massive-700m-euro-crypto-operation-unravels-with-international-raids/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 05 Dec 2025 04:30:03 +0000"
+      },
+      {
+        "title": "Solana and Coinbase’s Base connect together using Chainlink",
+        "url": "https://cointelegraph.com/news/coinbase-base-solana-connect-together-using-chainlink?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Fri, 05 Dec 2025 04:00:50 +0000"
+      },
+      {
+        "title": "Here's How Much Bitcoin, XRP, Ether, Solana May Move on Friday's Inflation Report",
+        "url": "https://www.coindesk.com/markets/2025/12/05/here-s-how-much-btc-eth-sol-xrp-may-move-on-friday-s-inflation-report",
+        "source": "Coindesk",
+        "published_at": "Fri, 05 Dec 2025 04:00:15 +0000"
+      },
+      {
+        "title": "Kraken and Deutsche Börse Set Bold Framework Syncing Legacy and Digital",
+        "url": "https://news.bitcoin.com/kraken-and-deutsche-borse-set-bold-framework-syncing-legacy-and-digital/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 05 Dec 2025 03:30:07 +0000"
+      },
+      {
+        "title": "Ethereum Coils For A Breakout As IH&S + Heavy Accumulation Emerges",
+        "url": "https://www.newsbtc.com/news/ethereum/ethereum-coils-for-a-breakout/",
+        "source": "NewsBTC",
+        "published_at": "Fri, 05 Dec 2025 03:00:19 +0000"
+      },
+      {
+        "title": "Asia Morning Briefing: Crypto’s Next Breakout Will Come From Infrastructure, Not Narratives, Hashed Says",
+        "url": "https://www.coindesk.com/markets/2025/12/05/asia-morning-briefing-crypto-s-next-breakout-will-come-from-infrastructure-not-narratives-hashed-says",
+        "source": "Coindesk",
+        "published_at": "Fri, 05 Dec 2025 02:29:59 +0000"
+      },
+      {
+        "title": "Franklin Templeton joins Solana ETF race with SOEZ – Details here!",
+        "url": "https://ambcrypto.com/franklin-templeton-joins-solana-etf-race-with-soez-details-here/",
+        "source": "Ambcrypto",
+        "published_at": "Fri, 05 Dec 2025 02:00:36 +0000"
+      },
+      {
+        "title": "Bitcoin May Have Already Bottomed as Grayscale Projects New Highs",
+        "url": "https://news.bitcoin.com/bitcoin-may-have-already-bottomed-as-grayscale-projects-new-highs/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 05 Dec 2025 01:30:40 +0000"
+      },
+      {
+        "title": "Ripple Fuses 4 Core Acquisitions to Build One-Stop Finance Grid",
+        "url": "https://news.bitcoin.com/ripple-fuses-4-core-acquisitions-to-build-one-stop-finance-grid/",
+        "source": "Bitcoin.com",
+        "published_at": "Fri, 05 Dec 2025 00:30:09 +0000"
+      },
+      {
+        "title": "Robinhood shares rise despite Connecticut cease-and-desist order",
+        "url": "https://crypto.news/robinhood-shares-connecticut-cease-and-desist-order/",
+        "source": "BTCManager",
+        "published_at": "Fri, 05 Dec 2025 00:00:00 +0000"
+      },
+      {
+        "title": "CFTC Approves Spot Cryptocurrency Trading on Regulated U.S. Exchanges",
+        "url": "https://crypto.news/cftc-approves-spot-cryptocurrency-trading-us-exchanges/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 23:00:00 +0000"
+      },
+      {
+        "title": "21Shares launches first leveraged SUI ETF on Nasdaq following SEC approval",
+        "url": "https://crypto.news/21shares-launches-first-leveraged-sui-etf-on-nasdaq/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 22:34:11 +0000"
+      },
+      {
+        "title": "4,730,000 LINK Grabbed by Whales in Just 2 Days: Is a Big Chainlink Rally Coming?",
+        "url": "https://cryptopotato.com/4730000-link-grabbed-by-whales-in-just-2-days-is-a-big-chainlink-rally-coming/",
+        "source": "CryptoPotato",
+        "published_at": "Thu, 04 Dec 2025 21:56:06 +0000"
+      },
+      {
+        "title": "Bitcoin critic Peter Schiff admits blockchain superior to physical metal",
+        "url": "https://ambcrypto.com/bitcoin-critic-peter-schiff-admits-blockchain-superior-to-physical-metal/",
+        "source": "Ambcrypto",
+        "published_at": "Thu, 04 Dec 2025 21:45:22 +0000"
+      },
+      {
+        "title": "Hua Xia state-linked Chinese bank tokenizes $600M in yuan bonds",
+        "url": "https://cointelegraph.com/news/hua-xia-china-bank-tokenizes-600m-yuan-bonds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Thu, 04 Dec 2025 21:35:08 +0000"
+      },
+      {
+        "title": "CNBC taps Kalshi to bring real-time prediction data into financial coverage",
+        "url": "https://cointelegraph.com/news/kalshi-prediction-markets-partnership-cnbc?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Thu, 04 Dec 2025 21:22:47 +0000"
+      },
+      {
+        "title": "BNB price prediction – Will it conquer $1000 again in December?",
+        "url": "https://ambcrypto.com/bnb-price-prediction-will-it-conquer-1000-again-in-december/",
+        "source": "Ambcrypto",
+        "published_at": "Thu, 04 Dec 2025 21:00:46 +0000"
+      },
+      {
+        "title": "Kraken Partners With Deutsche Börse as Europe Looks to Rival Wall Street in Crypto",
+        "url": "https://www.coindesk.com/business/2025/12/04/kraken-partners-with-deutsche-boerse-as-europe-looks-to-rival-wall-street-in-crypto",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 20:38:59 +0000"
+      },
+      {
+        "title": "Privacy-First 'Alien' Identity System Aims to Prove Users Are Human in the Age of AI",
+        "url": "https://decrypt.co/350974/privacy-first-alien-identity-system-prove-users-human-age-ai",
+        "source": "Decrypt",
+        "published_at": "Thu, 04 Dec 2025 20:29:25 +0000"
+      },
+      {
+        "title": "Bitcoin Could Continue Chopping Below $95K Into Year-End and Altcoins Could Benefit, Analyst Says",
+        "url": "https://www.coindesk.com/daybook-us/2025/12/04/bitcoin-could-continue-chopping-below-usd95k-into-year-end-as-altcoins-may-outperform-analyst-says",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 20:20:03 +0000"
+      },
+      {
+        "title": "Cathie Wood’s Tokyo meetup unites two of Ethereum’s biggest bulls",
+        "url": "https://crypto.news/cathie-wood-tokyo-meetup-unites-two-ethereum-bulls/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 19:56:23 +0000"
+      },
+      {
+        "title": "CFTC Gives Green Light to Spot Crypto Trading as Bitnomial Exchange Readies for Launch",
+        "url": "https://decrypt.co/350957/cftc-gives-green-light-spot-crypto-trading-bitnomial-exchange",
+        "source": "Decrypt",
+        "published_at": "Thu, 04 Dec 2025 19:19:40 +0000"
+      },
+      {
+        "title": "XRP’s 2025 recap – Trump’s re-election, SEC lawsuit, and more…",
+        "url": "https://ambcrypto.com/xrps-2025-recap-trumps-re-election-sec-lawsuit-and-more/",
+        "source": "Ambcrypto",
+        "published_at": "Thu, 04 Dec 2025 19:00:30 +0000"
+      },
+      {
+        "title": "XRP price rally stalls as Ripple closes the $1 billion GTreasury buyout",
+        "url": "https://crypto.news/xrp-price-rally-ripple-1-billion-gtreasury-buyout/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 18:47:49 +0000"
+      },
+      {
+        "title": "Twenty One Capital eyes Tuesday debut following Cantor Equity Partners merger",
+        "url": "https://cointelegraph.com/news/twenty-one-capital-dec-9-listing-cantor-equity-partners-merger?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Thu, 04 Dec 2025 18:30:44 +0000"
+      },
+      {
+        "title": "Solmate looks beyond SOL treasury model with RockawayX acquisition",
+        "url": "https://cointelegraph.com/news/solmate-rockawayx-solana-infrastructure-treasury-abu-dhabi?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Thu, 04 Dec 2025 18:03:51 +0000"
+      },
+      {
+        "title": "TD Cowen Grows Bearish on $60 Billion Bitcoin Giant Strategy—Here's Why",
+        "url": "https://decrypt.co/350944/td-cowen-grows-bearish-60-billion-bitcoin-giant-strategy",
+        "source": "Decrypt",
+        "published_at": "Thu, 04 Dec 2025 17:47:13 +0000"
+      },
+      {
+        "title": "Bitcoin data shows over 25% of supply now underwater",
+        "url": "https://ambcrypto.com/bitcoin-data-shows-over-25-of-supply-now-underwater/",
+        "source": "Ambcrypto",
+        "published_at": "Thu, 04 Dec 2025 17:30:56 +0000"
+      },
+      {
+        "title": "BNB Nears $910 as Volume Jumps 68%, Signaling Growing Interest Near Resistance Zone",
+        "url": "https://www.coindesk.com/markets/2025/12/04/bnb-nears-usd910-as-volume-jumps-68-signaling-growing-interest-near-resistance-zone",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 17:00:25 +0000"
+      },
+      {
+        "title": "Malaysia Cracks Down on Bitcoin Miners Behind $1.1B Electricity Theft",
+        "url": "https://decrypt.co/350941/malaysia-cracks-down-on-bitcoin-miners-behind-1-1b-electricity-theft",
+        "source": "Decrypt",
+        "published_at": "Thu, 04 Dec 2025 16:55:22 +0000"
+      },
+      {
+        "title": "Ethereum Price Analysis: Can ETH Maintain the Bullish Momentum After Surging to $3.2K?",
+        "url": "https://cryptopotato.com/ethereum-price-analysis-can-eth-maintain-the-bullish-momentum-after-surging-to-3-2k/",
+        "source": "CryptoPotato",
+        "published_at": "Thu, 04 Dec 2025 16:40:47 +0000"
+      },
+      {
+        "title": "Meta Plans 30% Cut to Metaverse Budget as Reality Becomes Less Virtual: Bloomberg",
+        "url": "https://www.coindesk.com/markets/2025/12/04/meta-plans-30-cut-to-metaverse-budget-as-reality-becomes-less-virtual-bloomberg",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 16:32:57 +0000"
+      },
+      {
+        "title": "What Triggered Recent $4B Bitcoin ETF Outflows?",
+        "url": "https://www.coindesk.com/markets/2025/12/04/usd4b-bitcoin-etf-outflows-in-oct-nov-reflect-basis-trade-unwind-not-capitulation-research-analyst",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 16:28:01 +0000"
+      },
+      {
+        "title": "ICP Rises as Cross-Chain Narratives Gain Attention",
+        "url": "https://www.coindesk.com/markets/2025/12/04/icp-rises-as-cross-chain-narratives-gain-attention",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 16:20:11 +0000"
+      },
+      {
+        "title": "Blockdaemon, VerifiedX Join Forces to Deliver Mass-Market, Self-Custodial DeFi",
+        "url": "https://www.coindesk.com/business/2025/12/04/blockdaemon-and-verifiedx-join-forces-to-deliver-mass-market-self-custodial-defi",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 16:00:00 +0000"
+      },
+      {
+        "title": "U.S. CFTC-Driven Spot Crypto Trading Going Live With Bitnomial, Opening Up New Arena",
+        "url": "https://www.coindesk.com/policy/2025/12/04/u-s-cftc-driven-spot-crypto-trading-going-live-opening-up-new-regulated-arena",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 15:47:27 +0000"
+      },
+      {
+        "title": "MoneyGram Taps Fireblocks to Expand Stablecoin Use in Global Payments and Treasury Ops",
+        "url": "https://www.coindesk.com/business/2025/12/04/moneygram-taps-fireblocks-to-expand-stablecoin-use-in-global-payments-and-treasury-ops",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 15:15:44 +0000"
+      },
+      {
+        "title": "After a major sell-off, Solana rebounds above $140, with Remittix still the market’s new favourite",
+        "url": "https://crypto.news/after-a-major-sell-off-solana-rebounds-above-140-with-remittix-still-the-markets-new-favourite/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 14:54:50 +0000"
+      },
+      {
+        "title": "EU plan would boost ESMA powers over crypto and capital markets",
+        "url": "https://cointelegraph.com/news/eu-proposal-centralize-crypto-financial-markets-esma?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "source": "Cointelegraph",
+        "published_at": "Thu, 04 Dec 2025 14:33:30 +0000"
+      },
+      {
+        "title": "CoinDesk 20 Performance Update: Hedera (HBAR) Falls 3.9% as Index Declines",
+        "url": "https://www.coindesk.com/coindesk-indices/2025/12/04/coindesk-20-performance-update-hedera-hbar-falls-3-9-as-index-declines",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 14:13:52 +0000"
+      },
+      {
+        "title": "XRP ETFs Extend Record Inflow Streak to 13 Days, Closing in on $1B Milestone",
+        "url": "https://www.coindesk.com/markets/2025/12/04/xrp-etfs-extend-record-inflow-streak-to-13-days-closing-in-on-usd1b-milestone",
+        "source": "Coindesk",
+        "published_at": "Thu, 04 Dec 2025 14:09:51 +0000"
+      },
+      {
+        "title": "Thailand Busts $8.6M Bitcoin Mining Operations Funding 'Chinese Scam Networks'",
+        "url": "https://decrypt.co/350913/thailand-busts-8-6m-bitcoin-mining-operations-funding-chinese-scam-networks",
+        "source": "Decrypt",
+        "published_at": "Thu, 04 Dec 2025 14:01:02 +0000"
+      },
+      {
+        "title": "Ripple’s (XRP) Impressive ETF Streak Continues as Total Inflows Near $900M",
+        "url": "https://cryptopotato.com/ripples-xrp-impressive-etf-streak-continues-as-total-inflows-near-900m/",
+        "source": "CryptoPotato",
+        "published_at": "Thu, 04 Dec 2025 13:22:31 +0000"
+      },
+      {
+        "title": "Making hashrate commoditized: The next financial frontier in Bitcoin mining | Opinion",
+        "url": "https://crypto.news/hashrate-commoditized-next-frontier-in-bitcoin-mining/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 13:11:15 +0000"
+      },
+      {
+        "title": "1&1 to buy Versatel for €1.3b, tightening grip on German fiber",
+        "url": "https://crypto.news/11-to-buy-versatel-for-e1-3b-tightening-grip-on-german-fiber/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 12:24:43 +0000"
+      },
+      {
+        "title": "Incubator MEETLabs Officially Launches the Web3 P2E 3D-Fishing Game “DeFishing”",
+        "url": "https://cryptopotato.com/incubator-meetlabs-officially-launches-the-web3-p2e-3d-fishing-game-defishing/",
+        "source": "CryptoPotato",
+        "published_at": "Thu, 04 Dec 2025 11:11:40 +0000"
+      },
+      {
+        "title": "Ex-Citadel quants raise $17M for Fin, a global stablecoin payments app",
+        "url": "https://crypto.news/ex-citadel-quants-raise-17m-for-fin-a-global-stablecoin-payments-app/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 10:20:09 +0000"
+      },
+      {
+        "title": "Connecticut hits Kalshi, Robinhood, Crypto.com over sports event contracts",
+        "url": "https://crypto.news/connecticut-hits-kalshi-robinhood-crypto-com-over-sports-event-contracts/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 09:46:58 +0000"
+      },
+      {
+        "title": "From Negative to Bullish: Coinbase Premium Signals Big Money Returning to Bitcoin",
+        "url": "https://cryptopotato.com/from-negative-to-bullish-coinbase-premium-signals-big-money-returning-to-bitcoin/",
+        "source": "CryptoPotato",
+        "published_at": "Thu, 04 Dec 2025 09:39:13 +0000"
+      },
+      {
+        "title": "XRP price slides back towards key support — will rising short interest force a retest of $1.90?",
+        "url": "https://crypto.news/xrp-price-slides-key-support-short-interest-rises-2025/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 07:52:58 +0000"
+      },
+      {
+        "title": "Moonbet Crypto Casino Launches Five Original Games With Up To 99% RTP and Full Blockchain Verification",
+        "url": "https://cryptopotato.com/moonbet-crypto-casino-launches-five-original-games-with-up-to-99-rtp-and-full-blockchain-verification/",
+        "source": "CryptoPotato",
+        "published_at": "Thu, 04 Dec 2025 07:07:01 +0000"
+      },
+      {
+        "title": "Dogecoin price compresses into symmetrical triangle — will bulls finally reclaim trend control?",
+        "url": "https://crypto.news/dogecoin-price-symmetrical-triangle-pattern-2025/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 06:26:30 +0000"
+      },
+      {
+        "title": "Florida appeal court reopens $80M lawsuit against Binance over BTC theft",
+        "url": "https://crypto.news/florida-court-80m-lawsuit-binance-btc-theft-2025/",
+        "source": "BTCManager",
+        "published_at": "Thu, 04 Dec 2025 04:50:38 +0000"
+      },
+      {
+        "title": "Crypto Is Edging Further Into Mainstream Finance, BlackRock and Coinbase Chiefs Say",
+        "url": "https://decrypt.co/350878/crypto-further-mainstream-finance-blackrock-coinbase-chiefs",
+        "source": "Decrypt",
+        "published_at": "Thu, 04 Dec 2025 03:35:18 +0000"
+      },
+      {
+        "title": "Ledger Finds Popular Smartphone Chip Vulnerable to Unpatchable Attacks",
+        "url": "https://decrypt.co/350867/ledger-smartphone-chip-vulnerable-unpatchable-attacks",
+        "source": "Decrypt",
+        "published_at": "Thu, 04 Dec 2025 00:24:08 +0000"
+      },
+      {
+        "title": "Interview | Bastion powers up, CEO talks becoming Sony Bank’s stablecoin engine",
+        "url": "https://crypto.news/bastion-sony-ceo-interview-stablecoin-partnership/",
+        "source": "BTCManager",
+        "published_at": "Wed, 03 Dec 2025 23:00:00 +0000"
       },
       {
         "title": "Coinbase Institutional Sees December Reversal Despite Bitcoin’s Brutal November",
