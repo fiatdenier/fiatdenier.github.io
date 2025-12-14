@@ -151,7 +151,7 @@ export function paginateNews(config) {
 
   async function init() {
     try {
-      const res = await fetch("./scripts/news.json");
+      const res = await fetch("./scripts/news.json?ts=${Date.now()}");
       const data = await res.json();
 
       if (data.columns) {
