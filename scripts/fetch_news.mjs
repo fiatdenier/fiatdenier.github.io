@@ -22,6 +22,14 @@ const sources = [
   { name: "CCN", url: "https://www.ccn.com/news/crypto-news/feeds/" },
   { name: "Ambcrypto", url: "https://ambcrypto.com/feed/" },
   { name: "BeinCrypto", url: "https://beincrypto.com/feed/" },
+  { name: "CryptoCoinNews", url: "https://cryptocoin.news/category/news/bitcoin/feed/" }
+  { name: "Blockonomi", url: "https://blockonomi.com/bitcoin/feed/" }
+  { name: "CryptoEconomy", url: "https://crypto-economy.com/cryptocurrencies/bitcoin-news/feed/" }
+  { name: "CryptoBasic" , url: "https://thecryptobasic.com/tag/bitcoin/feed/" } 
+  { name: "InsideBitcoin" , url: "https://insidebitcoins.com/feed" }
+  { name: "CoinGeek" , url: "https://coingeek.com/feed/" } 
+  { name: "CryptoNews" , url: "https://crypto.news/tag/bitcoin/" }
+  { name: "CryptoSlate" , url: "https://cryptoslate.com/news/bitcoin/" }    
 ];
 
 async function fetchRSS(source) {
