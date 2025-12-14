@@ -1,4 +1,59 @@
-function renderPage(page) {
+// /scripts/paginate_news.js
+export function paginateNews(config) {
+  const {
+    articlesPerSection = 10,
+    sections = 3,
+    updatedElemId,
+    appElemId,
+    prevBtnId,
+    nextBtnId,
+    pageInfoId,
+  } = config;
+
+  let articles = [];
+  let currentPage = 1;
+
+  function updateTimestamp() {
+    const updatedEl = document.getElementById(updatedElemId);
+    const now = new Date();
+    const estDate = new Date(
+      now.toLocaleString("en-US", { timeZone: "America/New_York" })
+    );
+    const estStr = estDate.toLocaleString("en-US", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+    updatedEl.textContent = `Updated ${estStr} EST`;
+  }
+
+  function timeAgo(dateStr) {
+    const now = new Date();
+    const then = new Date(dateStr);
+    const diffMs = now - then;
+    const diffMins = Math.floor(diffMs / 60000);
+    if (diffMins < 60) return `${diffMins} mins ago`;
+    const hours = Math.floor(diffMins / 60);
+    const mins = diffMins % 60;
+    if (hours < 24) return mins === 0 ? `${hours} hours ago` : `${hours} hours ${mins} mins ago`;
+    const days = Math.floor(hours / 24);
+    return `${days} days ago`;
+  }
+
+  function removeDuplicates(arr) {
+    const seen = new Set();
+    return arr.filter(a => {
+      const key = a.url;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function renderPage(page) {
     const totalArticlesPerPage = articlesPerSection * sections;
     const startIdx = (page - 1) * totalArticlesPerPage;
     const endIdx = startIdx + totalArticlesPerPage;
@@ -6,24 +61,18 @@ function renderPage(page) {
 
     const cols = Array.from({ length: sections }, () => []);
     let colIndex = 0;
-    
-    // --- START: MODIFIED DISTRIBUTION LOGIC ---
-    // This simple sequential distribution preserves the global time sort (newest first).
-    // The newest article (index 0) goes to Column 0.
-    // The second newest (index 1) goes to Column 1.
-    // The fourth newest (index 3) goes back to Column 0, appearing immediately after the newest article in that column.
-    
+
+    // MODIFIED: Sequential distribution for strict time sorting within columns.
+    // Since articles are already sorted (newest first), cycling through columns
+    // places newer articles above older ones in each column.
     pageArticles.forEach(article => {
-      // Use the modulo operator to cycle articles through columns (0, 1, 2, 0, 1, 2, ...)
       cols[colIndex % sections].push(article);
       colIndex++;
     });
-    // --- END: MODIFIED DISTRIBUTION LOGIC ---
 
     const app = document.getElementById(appElemId);
     app.innerHTML = "";
 
-    // The rendering loop remains the same
     ["left", "center", "right"].slice(0, sections).forEach((id, idx) => {
       const section = document.createElement("section");
       section.className = "col";
@@ -42,3 +91,52 @@ function renderPage(page) {
 
     updatePagination();
   }
+
+  function updatePagination() {
+    const totalPages = Math.ceil(articles.length / (articlesPerSection * sections));
+    document.getElementById(prevBtnId).disabled = currentPage === 1;
+    document.getElementById(nextBtnId).disabled = currentPage === totalPages;
+    document.getElementById(pageInfoId).textContent = `Page ${currentPage} of ${totalPages}`;
+  }
+
+  function nextPage() {
+    const totalPages = Math.ceil(articles.length / (articlesPerSection * sections));
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPage(currentPage);
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPage(currentPage);
+    }
+  }
+
+  async function init() {
+    try {
+      // CORRECTED: Load news.json from the scripts folder.
+      const res = await fetch("./scripts/news.json");
+      const data = await res.json();
+      articles = removeDuplicates(data.articles)
+        .filter(a => {
+          const now = new Date();
+          const pub = new Date(a.published_at);
+          return (now - pub) / (1000 * 60 * 60 * 24) <= 21;
+        })
+        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+
+      renderPage(currentPage);
+      updateTimestamp();
+    } catch (e) {
+      console.error("Failed to load news.json", e);
+      document.getElementById(appElemId).textContent = "Failed to load news.";
+    }
+  }
+
+  window.nextPage = nextPage;
+  window.prevPage = prevPage;
+
+  init();
+}
