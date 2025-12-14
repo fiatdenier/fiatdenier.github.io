@@ -1,12 +1,17 @@
-// /scripts/fetch_news.mjs
+// scripts/fetch_news.mjs
 import fs from "fs";
 import fetch from "node-fetch";
 import xml2js from "xml2js";
 
-const NEWS_JSON = "./news.json";  // save in current folder
+const NEWS_JSON = "./scripts/news.json"; // path relative to repo root
 const MAX_AGE_DAYS = 21;
 const TIMEOUT_MS = 10000; // 10 seconds
 const NUM_COLUMNS = 3;
+
+// Keywords to filter Bitcoin articles
+const BTC_KEYWORDS = ["bitcoin", "btc", "satoshi", "lightning", "halving"];
+// Optional: block unwanted altcoin articles
+const BLOCKLIST = ["ethereum", "eth", "solana", "altcoin", "defi"];
 
 const sources = [
   { name: "Cointelegraph", url: "https://cointelegraph.com/rss" },
@@ -22,14 +27,14 @@ const sources = [
   { name: "CCN", url: "https://www.ccn.com/news/crypto-news/feeds/" },
   { name: "Ambcrypto", url: "https://ambcrypto.com/feed/" },
   { name: "BeinCrypto", url: "https://beincrypto.com/feed/" },
-  { name: "CryptoCoinNews", url: "https://cryptocoin.news/category/news/bitcoin/feed/" }
-  { name: "Blockonomi", url: "https://blockonomi.com/bitcoin/feed/" }
-  { name: "CryptoEconomy", url: "https://crypto-economy.com/cryptocurrencies/bitcoin-news/feed/" }
-  { name: "CryptoBasic", url: "https://thecryptobasic.com/tag/bitcoin/feed/" } 
-  { name: "InsideBitcoin", url: "https://insidebitcoins.com/feed" }
-  { name: "CoinGeek", url: "https://coingeek.com/feed/" } 
-  { name: "CryptoNews", url: "https://crypto.news/feed/" }
-  { name: "CryptoSlate", url: "https://cryptoslate.com/feed/" }    
+  { name: "CryptoCoinNews", url: "https://cryptocoin.news/category/news/bitcoin/feed/" },
+  { name: "Blockonomi", url: "https://blockonomi.com/bitcoin/feed/" },
+  { name: "CryptoEconomy", url: "https://crypto-economy.com/cryptocurrencies/bitcoin-news/feed/" },
+  { name: "CryptoBasic", url: "https://thecryptobasic.com/tag/bitcoin/feed/" },
+  { name: "InsideBitcoin", url: "https://insidebitcoins.com/feed" },
+  { name: "CoinGeek", url: "https://coingeek.com/feed/" },
+  { name: "CryptoNews", url: "https://crypto.news/feed/" },
+  { name: "CryptoSlate", url: "https://cryptoslate.com/feed/" }
 ];
 
 async function fetchRSS(source) {
@@ -62,10 +67,17 @@ async function fetchRSS(source) {
           published_at: pubDate,
         };
       })
+      // Keep recent articles only
       .filter(
         (a) =>
           now - new Date(a.published_at) <= MAX_AGE_DAYS * 24 * 60 * 60 * 1000
-      );
+      )
+      // Bitcoin-only filter
+      .filter((a) => {
+        const text = a.title.toLowerCase();
+        return BTC_KEYWORDS.some((k) => text.includes(k)) &&
+               !BLOCKLIST.some((b) => text.includes(b));
+      });
   } catch (e) {
     console.error(`❌ Failed to fetch ${source.name}:`, e.message);
     return [];
@@ -80,24 +92,24 @@ async function main() {
     allArticles = allArticles.concat(articles);
   }
 
-  // Sort all articles globally (newest → oldest)
+  // Sort globally (newest first)
   allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
-  // Distribute into columns (round-robin)
+  // Round-robin into columns
   let columns = Array.from({ length: NUM_COLUMNS }, () => []);
   allArticles.forEach((article, i) => {
     const colIndex = i % NUM_COLUMNS;
     columns[colIndex].push(article);
   });
 
-  // Save both flat + columns
+  // Save JSON
   fs.writeFileSync(
     NEWS_JSON,
     JSON.stringify({ articles: allArticles, columns }, null, 2)
   );
 
   console.log(
-    `✅ Saved ${allArticles.length} articles into ${NUM_COLUMNS} columns in ${NEWS_JSON}`
+    `✅ Saved ${allArticles.length} Bitcoin articles into ${NUM_COLUMNS} columns in ${NEWS_JSON}`
   );
 }
 
