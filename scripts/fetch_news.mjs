@@ -11,7 +11,7 @@ const NUM_COLUMNS = 3;
 // Keywords to filter Bitcoin articles
 const BTC_KEYWORDS = ["bitcoin", "btc", "satoshi", "lightning", "halving"];
 // Optional: block unwanted altcoin articles
-const BLOCKLIST = ["ethereum", "eth", "solana", "altcoin", "defi"];
+//const BLOCKLIST = ["ethereum", "eth", "solana", "altcoin", "defi"];
 
 const sources = [
   { name: "Cointelegraph", url: "https://cointelegraph.com/rss" },
