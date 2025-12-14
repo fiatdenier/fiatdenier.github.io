@@ -3,7 +3,7 @@ import fs from "fs";
 import fetch from "node-fetch";
 import xml2js from "xml2js";
 
-const NEWS_JSON = "./scripts/news.json"; // path relative to repo root
+const NEWS_JSON = "./news.json"; // path relative to repo root
 const MAX_AGE_DAYS = 21;
 const TIMEOUT_MS = 10000; // 10 seconds
 const NUM_COLUMNS = 3;
