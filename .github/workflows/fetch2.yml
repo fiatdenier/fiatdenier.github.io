@@ -1,8 +1,9 @@
+# fetch2.yml
 name: Fetch Bitcoin News V2
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/30 * * * *'   # every 30 minutes
   workflow_dispatch:
 
 permissions:
@@ -11,7 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./scripts
     steps:
       # 1️⃣ Checkout repo
       - uses: actions/checkout@v4
@@ -21,31 +24,28 @@ jobs:
         with:
           node-version: 20
 
-      # 3️⃣ Install dependencies (inside scripts/)
-      - name: Install dependencies
-        working-directory: scripts
-        run: npm install
+      # 3️⃣ Install dependencies
+      - run: npm install
 
-      # 4️⃣ Set NEWSAPI_KEY secret
+      # 4️⃣ Set NewsAPI secret (This step is unused in fetch_news.mjs but kept for completeness)
       - name: Set NEWSAPI_KEY
         run: echo "NEWSAPI_KEY=${{ secrets.NEWSAPI_KEY }}" >> $GITHUB_ENV
 
-      # 5️⃣ Fetch & build news.json
-      - name: Fetch Bitcoin news
-        working-directory: scripts
-        run: node fetch_news.mjs
+      # 5️⃣ Run fetch script (This generates ./scripts/news.json)
+      - run: node fetch_news.mjs
 
-      # 6️⃣ Generate RSS feed (writes ../rss.xml)
-      - name: Generate RSS feed
-        working-directory: scripts
-        run: node create_rss.mjs
-
-      # 7️⃣ Commit and push generated files (from repo root)
-      - name: Commit and push generated files
+      # 6️⃣ Commit and push generated files (FIXED)
+      - name: Commit and push news and pages
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add news.json 
-          git add index.html page*.html rss.xml scripts/news.json
-          git commit -m "chore: update Bitcoin news + RSS" || echo "No changes to commit"
+          
+          # Add news.json (in the current ./scripts folder)
+          git add news.json
+          # Add index.html and rss.xml (one level up in the repository root)
+          # Note: The original request mentioned page*.html, so they are kept here
+          git add ../index.html ../rss.xml ../page*.html
+          
+          # Commit and push only if there were actual changes to commit
+          git commit -m "chore: update news and rss" || echo "No changes to commit"
           git push
