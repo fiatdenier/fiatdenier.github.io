@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 
 // --- ⚙️ CONFIGURATION: CUSTOMIZE THESE DETAILS ⚙️ ---
 const NEWS_JSON_PATH = './news.json';
-const RSS_XML_PATH = './rss.xml'; // The file name your users will subscribe to
+const RSS_XML_PATH = '../rss.xml'; // The file name your users will subscribe to
 const CHANNEL_TITLE = "Your Website News Aggregator";
 const CHANNEL_LINK = "https://yourwebsite.com/"; 
 const CHANNEL_DESCRIPTION = "The latest aggregated news from your curated sources.";
