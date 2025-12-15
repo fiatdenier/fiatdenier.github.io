@@ -25,6 +25,9 @@ jobs:
 
       - run: node fetch_news.mjs
 
+      - name: Create RSS Feed
+        run: node create_rss.mjs
+        
       - name: Commit news.json
         run: |
           git config --global user.name "github-actions[bot]"
