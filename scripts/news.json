@@ -1,6 +1,102 @@
 {
   "articles": [
     {
+      "title": "BTC Tops $90K, Retreats Fast — Futures Traders Stay Bold",
+      "url": "https://news.bitcoin.com/btc-tops-90k-retreats-fast-futures-traders-stay-bold/",
+      "source": "Bitcoin.com",
+      "published_at": "Mon, 29 Dec 2025 13:30:34 +0000"
+    },
+    {
+      "title": "Bitcoin Supports The US Dollar’s Reserve Status, Says Coinbase CEO",
+      "url": "https://bitcoinist.com/bitcoin-us-dollars-reserve-status-coinbase-ceo/",
+      "source": "Bitcoinist",
+      "published_at": "Mon, 29 Dec 2025 13:30:19 +0000"
+    },
+    {
+      "title": "The ‘IQ 276’ prediction sparks heated debate: Can XRP surge tenfold in two weeks?",
+      "url": "https://crypto.news/the-iq-276-prediction-sparks-heated-debate-can-xrp-surge-tenfold-in-two-weeks/",
+      "source": "BTCManager",
+      "published_at": "Mon, 29 Dec 2025 13:23:16 +0000"
+    },
+    {
+      "title": "The ‘IQ 276’ prediction sparks heated debate: Can XRP surge tenfold in two weeks?",
+      "url": "https://crypto.news/the-iq-276-prediction-sparks-heated-debate-can-xrp-surge-tenfold-in-two-weeks/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 29 Dec 2025 13:23:16 +0000"
+    },
+    {
+      "title": "We Asked 4 AIs if Binance Will List Pi Network (PI) in 2026",
+      "url": "https://cryptopotato.com/we-asked-4-ais-if-binance-will-list-pi-network-pi-in-2026/",
+      "source": "CryptoPotato",
+      "published_at": "Mon, 29 Dec 2025 13:18:31 +0000"
+    },
+    {
+      "title": "Strategy reloads on bitcoin, acquires a further 1,229 BTC for $109 million",
+      "url": "https://www.coindesk.com/markets/2025/12/29/strategy-reloads-on-bitcoin-acquires-a-further-1-229-btc-for-usd109-million",
+      "source": "Coindesk",
+      "published_at": "Mon, 29 Dec 2025 13:13:42 +0000"
+    },
+    {
+      "title": "Trust Wallet hack shifts to verification amid surge in false claims",
+      "url": "https://cointelegraph.com/news/trust-wallet-verification-phase-false-claims-hack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Mon, 29 Dec 2025 13:12:24 +0000"
+    },
+    {
+      "title": "Saylor’s Strategy Ends Historic 2025 With Another 1,229 BTC Purchase",
+      "url": "https://cryptopotato.com/saylors-strategy-ends-historic-2025-with-another-1229-btc-purchase/",
+      "source": "CryptoPotato",
+      "published_at": "Mon, 29 Dec 2025 13:11:30 +0000"
+    },
+    {
+      "title": "Could Bitcoin Replay Silver’s Rally… Backward? CEO Issues Warning",
+      "url": "https://www.newsbtc.com/news/bitcoin/could-bitcoin-replay-silvers-rally-backward-ceo-issues-warning/",
+      "source": "NewsBTC",
+      "published_at": "Mon, 29 Dec 2025 13:00:52 +0000"
+    },
+    {
+      "title": "Assessing SUI’s price bounce as a $82.8mln token unlock looms",
+      "url": "https://ambcrypto.com/assessing-suis-price-bounce-as-a-82-8mln-token-unlock-looms/",
+      "source": "Ambcrypto",
+      "published_at": "Mon, 29 Dec 2025 13:00:19 +0000"
+    },
+    {
+      "title": "3 Altcoins That Could Hit All-Time Highs In The New Year 2026 Week",
+      "url": "https://beincrypto.com/altcoins-all-time-highs-new-year-2026-week/",
+      "source": "BeinCrypto",
+      "published_at": "Mon, 29 Dec 2025 13:00:00 +0000"
+    },
+    {
+      "title": "Crypto wallets must feel as easy as Instagram | Opinion",
+      "url": "https://crypto.news/crypto-wallets-must-feel-as-easy-as-instagram-opinion/",
+      "source": "BTCManager",
+      "published_at": "Mon, 29 Dec 2025 12:56:42 +0000"
+    },
+    {
+      "title": "Crypto wallets must feel as easy as Instagram | Opinion",
+      "url": "https://crypto.news/crypto-wallets-must-feel-as-easy-as-instagram-opinion/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 29 Dec 2025 12:56:42 +0000"
+    },
+    {
+      "title": "China to let banks pay interest on digital yuan wallets from January 2026",
+      "url": "https://cointelegraph.com/news/china-digital-yuan-interest-wallets-2026?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Mon, 29 Dec 2025 12:50:21 +0000"
+    },
+    {
+      "title": "The real problems token launches are meant to solve",
+      "url": "https://crypto.news/the-real-problems-token-launches-are-meant-to-solve/",
+      "source": "BTCManager",
+      "published_at": "Mon, 29 Dec 2025 12:40:44 +0000"
+    },
+    {
+      "title": "The real problems token launches are meant to solve",
+      "url": "https://crypto.news/the-real-problems-token-launches-are-meant-to-solve/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 29 Dec 2025 12:40:44 +0000"
+    },
+    {
       "title": "Bitwise CIO Signals New Era: Bitcoin’s Next Decade Will Be a Grind, Not a Cycle",
       "url": "https://crypto-economy.com/bitwise-cio-signals-new-era-bitcoins-next-decade-will-be-a-grind-not-a-cycle/",
       "source": "CryptoEconomy",
@@ -29,6 +125,12 @@
       "url": "https://cryptopotato.com/bitcoin-btc-at-risk-break-below-100-week-ma-signals-trouble/",
       "source": "CryptoPotato",
       "published_at": "Mon, 29 Dec 2025 12:22:41 +0000"
+    },
+    {
+      "title": "XRP Price Looks Broken—but Investors Are Quietly Doing the Opposite",
+      "url": "https://beincrypto.com/xrp-coinshares-crypto-outflows/",
+      "source": "BeinCrypto",
+      "published_at": "Mon, 29 Dec 2025 12:20:00 +0000"
     },
     {
       "title": "Spartan Arena Opens Jan 1, 2026, for Live Trading Bot Contest Requiring No Coding Skills",
@@ -721,12 +823,6 @@
       "published_at": "Mon, 29 Dec 2025 00:16:31 +0000"
     },
     {
-      "title": "Inflation and Long-Term Crypto Investment Strategies: Takeaways From the EMCD Webinar",
-      "url": "https://beincrypto.com/emcd-webiner-crypto-inflation-investment-strategy/",
-      "source": "BeinCrypto",
-      "published_at": "Mon, 29 Dec 2025 00:10:40 +0000"
-    },
-    {
       "title": "Trump-backed WLFI falls 56% as scrutiny grows – What’s next?",
       "url": "https://ambcrypto.com/trump-backed-wlfi-falls-56-as-scrutiny-grows-whats-next/",
       "source": "Ambcrypto",
@@ -749,12 +845,6 @@
       "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Sun, 28 Dec 2025 22:09:15 +0000"
-    },
-    {
-      "title": "CME’s Latest Move Has Traders on Edge: Why Monday Is Critical for Silver Price",
-      "url": "https://beincrypto.com/cme-silver-margin-hike-market-supply-analysis/",
-      "source": "BeinCrypto",
-      "published_at": "Sun, 28 Dec 2025 22:00:00 +0000"
     },
     {
       "title": "Bitcoin needs a 6.24% rally to close 2025 in the green: Analyst",
@@ -797,12 +887,6 @@
       "url": "https://decrypt.co/351518/cant-miss-indie-games-you-should-play-2025",
       "source": "Decrypt",
       "published_at": "Sun, 28 Dec 2025 20:01:02 +0000"
-    },
-    {
-      "title": "Bitcoin drops 32% as ETF money exits – Yet THIS group isn’t backing off",
-      "url": "https://ambcrypto.com/bitcoin-drops-32-as-etf-money-exits-yet-this-group-isnt-backing-off/",
-      "source": "Ambcrypto",
-      "published_at": "Sun, 28 Dec 2025 20:00:24 +0000"
     },
     {
       "title": "BTC mining difficulty records last adjustment in 2025, forecast to rise in Jan",
@@ -949,22 +1033,10 @@
       "published_at": "Sun, 28 Dec 2025 14:01:03 +0000"
     },
     {
-      "title": "Santa Didn’t Come For Bitcoin ETFs: $782 Million Walks Out The Door",
-      "url": "https://bitcoinist.com/santa-didnt-come-for-bitcoin-etfs-782-million-walks-out-the-door/",
-      "source": "Bitcoinist",
-      "published_at": "Sun, 28 Dec 2025 14:00:28 +0000"
-    },
-    {
       "title": "Ethereum’s 2026 roadmap includes this validator risk that’s bigger than you think",
       "url": "https://cryptoslate.com/ethereums-2026-roadmap-includes-a-validator-risk-that-is-bigger-than-you-think-to-deliver-the-massive-throughput-gains/",
       "source": "CryptoSlate",
       "published_at": "Sun, 28 Dec 2025 13:53:41 +0000"
-    },
-    {
-      "title": "Bitcoin’s Big Squeeze: Bulls and Bears Brace for a Breakout Brawl",
-      "url": "https://news.bitcoin.com/bitcoins-big-squeeze-bulls-and-bears-brace-for-a-breakout-brawl/",
-      "source": "Bitcoin.com",
-      "published_at": "Sun, 28 Dec 2025 13:45:01 +0000"
     },
     {
       "title": "Bitcoin Price Has Gone 1,079 Days Without Strong Selling Pressure — What’s The Current Record?",
@@ -1049,12 +1121,6 @@
       "url": "https://cryptopotato.com/ripple-price-analysis-xrp-structure-will-remain-bearish-until-this-key-level-is-reclaimed/",
       "source": "CryptoPotato",
       "published_at": "Sun, 28 Dec 2025 10:25:22 +0000"
-    },
-    {
-      "title": "Here’s When Bitcoin Super Cycle Will Kick In  — Analyst",
-      "url": "https://www.newsbtc.com/news/bitcoin/heres-when-bitcoin-super-cycle-will-kick-in-analyst/",
-      "source": "NewsBTC",
-      "published_at": "Sun, 28 Dec 2025 09:00:06 +0000"
     },
     {
       "title": "Spot Bitcoin ETFs bleed $782M during Christmas week amid ‘holiday positioning’",
@@ -1357,18 +1423,6 @@
       "published_at": "Sat, 27 Dec 2025 13:01:23 +0000"
     },
     {
-      "title": "Coinbase CEO says reopening GENIUS Act is ‘red line,’ slams bank lobbying",
-      "url": "https://cointelegraph.com/news/coinbase-ceo-genius-act-red-line-bank-lobbying-stablecoins?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Sat, 27 Dec 2025 12:24:30 +0000"
-    },
-    {
-      "title": "No $90K Bitcoin till next year: BTC futures open interest hits 8-month low",
-      "url": "https://cointelegraph.com/news/no-90k-bitcoin-futures-open-interest-8-month-low?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Sat, 27 Dec 2025 12:15:00 +0000"
-    },
-    {
       "title": "Bitcoin Mining Firms Pivot To AI Computing For Massive Profits",
       "url": "https://crypto-economy.com/bitcoin-mining-firms-pivot-to-ai-computing-for-massive-profits/",
       "source": "CryptoEconomy",
@@ -1549,12 +1603,6 @@
       "published_at": "Fri, 26 Dec 2025 20:16:13 +0000"
     },
     {
-      "title": "Solana Stablecoin USX Plummets to $0.10 in Depeg Amid Liquidity Crunch",
-      "url": "https://cryptopotato.com/solana-stablecoin-usx-plummets-to-0-10-in-depeg-amid-liquidity-crunch/",
-      "source": "CryptoPotato",
-      "published_at": "Fri, 26 Dec 2025 20:01:58 +0000"
-    },
-    {
       "title": "Bitcoin, silver price ratio signals shifting market risk appetite",
       "url": "https://crypto.news/bitcoin-silver-price-ratio-signals-shift-risk-appetite/",
       "source": "BTCManager",
@@ -1631,12 +1679,6 @@
       "url": "https://crypto.news/bitcoin-price-remains-range-bound-as-liquidity-builds/",
       "source": "CryptoNews",
       "published_at": "Fri, 26 Dec 2025 18:00:00 +0000"
-    },
-    {
-      "title": "Ethereum Network Activity Hits All-Time High as Price Lags Far Behind",
-      "url": "https://cryptopotato.com/ethereum-network-activity-hits-all-time-high-as-price-lags-far-behind/",
-      "source": "CryptoPotato",
-      "published_at": "Fri, 26 Dec 2025 17:55:03 +0000"
     },
     {
       "title": "MSTR stock forms a death cross pattern as enterprise mNAV turns negative",
@@ -1717,18 +1759,6 @@
       "published_at": "Fri, 26 Dec 2025 15:52:45 +0000"
     },
     {
-      "title": "XRP could surge by up to 350% in the short term following the launch of its ETF, potentially allowing XRP holders to earn up to $10,000 per day",
-      "url": "https://crypto.news/xrp-could-surge-by-up-to-350-in-the-short-term-following-the-launch-of-its-etf-potentially-allowing-xrp-holders-to-earn-up-to-10000-per-day/",
-      "source": "BTCManager",
-      "published_at": "Fri, 26 Dec 2025 15:36:56 +0000"
-    },
-    {
-      "title": "XRP could surge by up to 350% in the short term following the launch of its ETF, potentially allowing XRP holders to earn up to $10,000 per day",
-      "url": "https://crypto.news/xrp-could-surge-by-up-to-350-in-the-short-term-following-the-launch-of-its-etf-potentially-allowing-xrp-holders-to-earn-up-to-10000-per-day/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 26 Dec 2025 15:36:56 +0000"
-    },
-    {
       "title": "Coinbase named a top three 2026 fintech pick at Clear Street",
       "url": "https://www.coindesk.com/markets/2025/12/26/coinbase-named-a-top-three-2026-fintech-pick-at-clear-street",
       "source": "Coindesk",
@@ -1745,30 +1775,6 @@
       "url": "https://decrypt.co/351545/year-xrp-2025-new-highs-7-years-ripple-sec-case-ends",
       "source": "Decrypt",
       "published_at": "Fri, 26 Dec 2025 14:01:03 +0000"
-    },
-    {
-      "title": "WPA Hash optimizes long-term returns for BTC, XRP, and SOL",
-      "url": "https://crypto.news/wpa-hash-optimizes-long-term-returns-for-btc-xrp-and-sol/",
-      "source": "BTCManager",
-      "published_at": "Fri, 26 Dec 2025 13:40:59 +0000"
-    },
-    {
-      "title": "WPA Hash optimizes long-term returns for BTC, XRP, and SOL",
-      "url": "https://crypto.news/wpa-hash-optimizes-long-term-returns-for-btc-xrp-and-sol/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 26 Dec 2025 13:40:59 +0000"
-    },
-    {
-      "title": "AMT DeFi builds a more robust XRP crypto contract yield scheme based on renewable energy",
-      "url": "https://crypto.news/amt-defi-builds-a-more-robust-xrp-crypto-contract-yield-scheme-based-on-renewable-energy/",
-      "source": "BTCManager",
-      "published_at": "Fri, 26 Dec 2025 13:01:13 +0000"
-    },
-    {
-      "title": "AMT DeFi builds a more robust XRP crypto contract yield scheme based on renewable energy",
-      "url": "https://crypto.news/amt-defi-builds-a-more-robust-xrp-crypto-contract-yield-scheme-based-on-renewable-energy/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 26 Dec 2025 13:01:13 +0000"
     },
     {
       "title": "Uniswap's token burn, protocol fee proposal backed overwhelmingly by voters",
@@ -1907,12 +1913,6 @@
       "url": "https://decrypt.co/348234/best-co-op-games-2025-play-pals",
       "source": "Decrypt",
       "published_at": "Wed, 24 Dec 2025 19:01:02 +0000"
-    },
-    {
-      "title": "Circle platform promising tokenized gold, silver swaps is 'fake,' company says",
-      "url": "https://www.coindesk.com/web3/2025/12/24/circle-platform-promising-tokenized-gold-silver-swaps-is-fake-company-says",
-      "source": "Coindesk",
-      "published_at": "Wed, 24 Dec 2025 18:54:33 +0000"
     },
     {
       "title": "How Pudgy Penguins Landed the Las Vegas Sphere—After Dogwifhat Couldn't",
