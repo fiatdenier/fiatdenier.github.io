@@ -1,92 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky Roll - Fiat Denier</title>
-    <style>
-        :root { --btc-orange: #f7931a; --dark-bg: #0a0a0a; }
-        body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-        .card { background: #111; padding: 30px; border-radius: 12px; border: 2px solid var(--btc-orange); text-align: center; width: 90%; max-width: 400px; box-shadow: 0 0 30px rgba(247,147,26,0.1); }
-        #number-display { font-size: 5.5rem; font-weight: bold; color: var(--btc-orange); margin: 20px 0; }
-        .winner-glow { animation: glow 1s infinite alternate; color: #4CAF50 !important; }
-        @keyframes glow { from { text-shadow: 0 0 10px #4CAF50; } to { text-shadow: 0 0 30px #4CAF50; } }
-        button { background: var(--btc-orange); border: none; padding: 15px; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; }
-        button:disabled { background: #333; color: #666; cursor: not-allowed; }
-        .proof { background: #000; padding: 15px; margin-top: 25px; font-size: 0.7rem; text-align: left; border: 1px dashed #444; word-break: break-all; color: #888; }
-        .back { display: block; margin-bottom: 20px; color: #555; text-decoration: none; font-size: 0.8rem; }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bitcoin Wire - Last 24 Hours</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* Base styles from your backup */
+  .game-link { display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #f7931a; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; }
+  
+  /* MODAL STYLES */
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; }
+  .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid #f7931a; border-radius: 10px; overflow: hidden; }
+  .modal-header { background: #111; padding: 10px; display: flex; justify-content: space-between; border-bottom: 1px solid #444; }
+  .modal-btn { background: #f7931a; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+</style>
 </head>
 <body>
-    <div class="card">
-        <a href="index.html" class="back">← EXIT GAME</a>
-        <h2 style="margin:0;">LUCKY ROLL</h2>
-        <div id="number-display">----</div>
-        <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
-        <div id="timer" style="margin-top:10px; color:#555; font-size:0.8rem;"></div>
+<header>
+  <h1><a href="/">BITCOIN WIRE</a></h1>
+  <p id="updated">Updated</p>
+  <a href="roll.html" class="game-link">🎰 PLAY LUCKY ROLL</a>
+</header>
 
-        <div id="result-area" style="display:none;">
-            <div id="status-msg"></div>
-            <div class="proof">
-                <strong>SIG:</strong> <span id="res-sig"></span><br>
-                <strong>NUM:</strong> <span id="res-num"></span>
-            </div>
+<main id="app" class="grid"></main>
+
+<div id="articleModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="modal-btn" onclick="postToNostr()">POST TO NOSTR</button>
+            <button class="modal-btn" onclick="closeArticle()" style="background:#555; color:white;">CLOSE [X]</button>
         </div>
+        <iframe id="articleFrame" src="" style="width:100%; height:calc(100% - 50px); border:none; background:white;"></iframe>
     </div>
+</div>
 
-    <script>
-        async function handleRoll() {
-            const btn = document.getElementById('roll-btn');
-            btn.disabled = true;
-            btn.innerText = "VERIFYING...";
+<div id="pagination">
+  <button id="prev-btn" onclick="prevPage()" disabled>Previous</button>
+  <span id="page-info"></span>
+  <button id="next-btn" onclick="nextPage()" disabled>Next</button>
+</div>
 
-            try {
-                const res = await fetch("https://api.fiatdenier.com/get-roll");
-                const data = await res.json();
-                
-                document.getElementById('number-display').innerText = data.num;
-                document.getElementById('res-sig').innerText = data.signature;
-                document.getElementById('res-num').innerText = data.num;
-                document.getElementById('result-area').style.display = 'block';
+<script type="module">
+import { paginateNews } from './scripts/paginate_news.js';
+paginateNews({
+  jsonPath: './data/news.json',
+  articlesPerSection: 10,
+  sections: 3,
+  updatedElemId: 'updated',
+  appElemId: 'app',
+  prevBtnId: 'prev-btn',
+  nextBtnId: 'next-btn',
+  pageInfoId: 'page-info'
+});
 
-                const sig = String(data.signature);
-                const status = document.getElementById('status-msg');
-                const disp = document.getElementById('number-display');
-
-                disp.classList.remove('winner-glow');
-
-                if (sig.startsWith("21") && sig.endsWith("21")) {
-                    status.innerHTML = "<h3 class='winner-glow'>🍀 RARE SIG WINNER!</h3>";
-                    disp.classList.add('winner-glow');
-                } else if (data.num == 2121) {
-                    status.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ LUCKY WINNER!</h3>";
-                } else {
-                    status.innerHTML = "<h3 style='color:#444'>NO WIN. TRY AGAIN.</h3>";
-                }
-
-                startTimer(600); // 10 minute cooldown
-            } catch (e) {
-                alert("Connection Error. Please refresh.");
-                btn.disabled = false;
-                btn.innerText = "RETRY ROLL";
-            }
-        }
-
-        function startTimer(duration) {
-            const btn = document.getElementById('roll-btn');
-            let timer = duration;
-            const interval = setInterval(() => {
-                let mins = Math.floor(timer / 60);
-                let secs = timer % 60;
-                document.getElementById('timer').innerText = `COOLDOWN: ${mins}:${secs < 10 ? '0' : ''}${secs}`;
-                if (--timer < 0) {
-                    clearInterval(interval);
-                    document.getElementById('timer').innerText = "";
-                    btn.disabled = false;
-                    btn.innerText = "ROLL FOR SATS";
-                }
-            }, 1000);
-        }
-    </script>
+// MODAL CONTROLS
+window.openArticle = function(url) {
+    document.getElementById('articleFrame').src = url;
+    document.getElementById('articleModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+window.closeArticle = function() {
+    document.getElementById('articleModal').style.display = 'none';
+    document.getElementById('articleFrame').src = '';
+    document.body.style.overflow = 'auto';
+}
+window.postToNostr = function() {
+    const url = document.getElementById('articleFrame').src;
+    window.open(`https://nostr.social/post?content=${encodeURIComponent("Read this on Fiat Denier: " + url)}`, '_blank');
+}
+</script>
 </body>
 </html>
