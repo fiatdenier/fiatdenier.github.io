@@ -4,21 +4,21 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bitcoin Wire - Last 24 Hours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <style>
-  /* Base Styles from Backup */
+  /* DESIGN PRESERVATION */
   .game-link { display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #f7931a; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9rem; }
-  
+  .game-link:hover { background-color: #e17e0a; }
+
   /* MODAL STYLES */
   .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; }
   .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid #f7931a; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
   .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; border-bottom: 1px solid #444; align-items: center; }
-  .modal-btn { background: #f7931a; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; color: white; margin-right: 8px; }
-  
-  /* BRIDGE MESSAGE STYLE */
-  #bridge-msg { display: none; padding: 40px; text-align: center; color: #ccc; font-family: 'Roboto', sans-serif; }
-  #bridge-msg h2 { color: #f7931a; }
-  
+  .modal-btn { background: #f7931a; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; color: white; margin-right: 8px; font-family: 'Roboto', sans-serif; }
+  #load-status { color: #888; font-size: 0.8rem; font-family: 'Roboto', sans-serif; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; }
 </style>
 </head>
@@ -34,20 +34,13 @@
 <div id="articleModal" class="modal-overlay">
     <div class="modal-content">
         <div class="modal-header">
-            <div id="modal-controls">
+            <div>
                 <button class="modal-btn" onclick="postToNostr()">POST TO NOSTR</button>
                 <button class="modal-btn" style="background:#444;" onclick="openExternal()">OPEN IN NEW TAB ↗</button>
+                <span id="load-status">Checking Reader...</span>
             </div>
             <button class="modal-btn" onclick="closeArticle()" style="background:#555;">CLOSE [X]</button>
         </div>
-
-        <div id="bridge-msg">
-            <h2>External Publisher Detected</h2>
-            <p>This site blocks secure reader mode. We are opening it in a new tab for you.</p>
-            <p style="font-size: 0.8rem; color: #666;">Keep this tab open to return to the Wire when finished.</p>
-            <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">CLICK TO OPEN NOW</button>
-        </div>
-
         <iframe id="articleFrame" src=""></iframe>
     </div>
 </div>
@@ -65,64 +58,86 @@ paginateNews({
   jsonPath: './data/news.json',
   articlesPerSection: 10,
   sections: 3,
+  updatedElemId: 'updated',
   appElemId: 'app',
   prevBtnId: 'prev-btn',
   nextBtnId: 'next-btn',
   pageInfoId: 'page-info'
 });
 
-window.openArticle = function(url) {
-    const frameBreakers = ['cointelegraph.com', 'bloomberg.com', 'reuters.com', 'wsj.com', 'coindesk.com', 'bitcoinmagazine.com'];
-    const isBreaker = frameBreakers.some(domain => url.toLowerCase().includes(domain));
-    
-    const modal = document.getElementById('articleModal');
-    const bridge = document.getElementById('bridge-msg');
-    const frame = document.getElementById('articleFrame');
-    const controls = document.getElementById('modal-controls');
+let loadTimer;
 
+window.openArticle = function(url) {
+    // 1. UPDATED BLACKLIST based on your sources
+    const frameBreakers = [
+        'cointelegraph.com', 
+        'bitcoinmagazine.com',
+		'btcmanager',
+        'bitcoin.com',
+		'crypto.news',
+		'coindesk.com',
+        'beincrypto.com',  		
+        'decrypt.co', 
+        'coindesk.com', 
+        'cryptoslate.com', 
+        'ccn.com', 
+        'theblock.co',
+        'bloomberg.com',
+        'wsj.com'
+    ];
+    
+    const isKnownBreaker = frameBreakers.some(domain => url.toLowerCase().includes(domain));
+
+    // If it's a known breaker, skip modal and go straight to tab
+    if (isKnownBreaker) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+        return;
+    }
+
+    // 2. MODAL LOGIC (for sites likely to allow frames)
+    const frame = document.getElementById('articleFrame');
+    const status = document.getElementById('load-status');
+    const modal = document.getElementById('articleModal');
+
+    clearTimeout(loadTimer);
+    status.innerText = "Connecting...";
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    frame.src = url;
 
-    if (isBreaker) {
-        // Show Bridge Message, Hide Frame
-        bridge.style.display = 'block';
-        frame.style.display = 'none';
-        controls.style.visibility = 'hidden';
-        
-        // Auto-open in 2 seconds
-        setTimeout(() => {
-            window.open(url, '_blank', 'noopener,noreferrer');
-        }, 2000);
-    } else {
-        // Show Frame, Hide Bridge
-        bridge.style.display = 'none';
-        frame.style.display = 'block';
-        controls.style.visibility = 'visible';
-        frame.src = url;
-    }
+    // 3. SILENT BACKUP TIMER (3 Seconds)
+    // If a site not on the blacklist still blocks us, this catches it
+    loadTimer = setTimeout(() => {
+        closeArticle();
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }, 3000);
+
+    frame.onload = function() {
+        clearTimeout(loadTimer);
+        status.innerText = "Reader Ready";
+    };
 };
 
 window.closeArticle = function() {
+    clearTimeout(loadTimer);
     document.getElementById('articleModal').style.display = 'none';
     document.getElementById('articleFrame').src = '';
     document.body.style.overflow = 'auto';
 };
 
 window.openExternal = function() {
-    const frame = document.getElementById('articleFrame');
-    // If frame is hidden, we use the last attempted URL (stored in memory or logic)
-    const url = frame.src || window.lastAttemptedUrl; 
-    window.open(url, '_blank', 'noopener,noreferrer');
+    const url = document.getElementById('articleFrame').src;
+    if(url) window.open(url, '_blank', 'noopener,noreferrer');
 };
 
 window.postToNostr = function() {
     const url = document.getElementById('articleFrame').src;
-    window.open(`https://nostr.social/post?content=${encodeURIComponent("Read this: " + url)}`, '_blank');
+    if(url) window.open(`https://nostr.social/post?content=${encodeURIComponent("Read this on Fiat Denier: " + url)}`, '_blank');
 };
 
 document.getElementById('app').addEventListener('click', function(e) {
     const link = e.target.closest('a');
-    if (link && link.href && !link.href.includes('roll.html')) {
+    if (link && link.href && !link.href.includes('roll.html') && !link.href.includes('github.com')) {
         e.preventDefault();
         window.openArticle(link.href);
     }
