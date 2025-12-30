@@ -1,52 +1,134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bitcoin Wire - Last 24 Hours</title>
-<meta name="description" content="Bitcoin headlines, updated automatically." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Strategy - Lucky Roll</title>
+    <style>
+        :root { --btc-orange: #f7931a; --dark-bg: #1a1a1a; }
+        body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; }
+        #number-display { font-size: 5rem; font-weight: bold; color: var(--btc-orange); margin: 1rem 0; text-shadow: 0 0 10px rgba(247, 147, 26, 0.5); }
+        .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.8rem; text-align: left; margin-top: 1rem; word-break: break-all; border: 1px dashed #555; }
+        button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; transition: transform 0.1s, opacity 0.3s; width: 100%; }
+        button:disabled { background: #555; cursor: not-allowed; }
+        button:active { transform: scale(0.98); }
+        .winner-glow { animation: glow 1s ease-in-out infinite alternate; color: #00ff00 !important; }
+        @keyframes glow { from { text-shadow: 0 0 10px #00ff00; } to { text-shadow: 0 0 30px #00ff00; } }
+        #timer { font-size: 0.9rem; color: #888; margin-top: 0.5rem; }
+    </style>
 </head>
 <body>
-<header>
-  <h1><a href="/">BITCOIN WIRE</a></h1>
-  <p id="updated">Updated</p>
-</header>
 
-<main id="app" class="grid">
-  <!-- JS will render 3 columns here -->
-</main>
+    <div class="card">
+        <h2>LUCKY ROLL</h2>
+        <div id="number-display">----</div>
+        <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
+        <div id="timer"></div>
 
-<div id="pagination">
-  <button id="prev-btn" onclick="prevPage()" disabled>Previous</button>
-  <span id="page-info"></span>
-  <button id="next-btn" onclick="nextPage()" disabled>Next</button>
-</div>
+        <div id="result-area" style="display: none;">
+            <div id="status-message"></div>
+            <div class="proof-box">
+                <strong>Number:</strong> <span id="res-num"></span><br>
+                <strong>Time:</strong> <span id="res-ts"></span><br>
+                <strong>Sig:</strong> <span id="res-sig"></span>
+            </div>
+            <p style="font-size: 0.7rem; color: #888; margin-top: 10px;">Copy the block above and post to Nostr to claim prizes.</p>
+        </div>
+    </div>
 
-<footer>
-<small>
-Pure links. No tracking. Source on <a href="https://github.com/fiatdenier/BitcoinReport/" target="_blank" rel="noopener">GitHub</a>.
-</small>
-</footer>
+    <script>
+        // --- CONFIGURATION ---
+        const OCI_IP = "150.136.240.203"; // Replace with your OCI IP
+        const COOLDOWN_MINUTES = 5;
 
-<script type="module">
-import { paginateNews } from './scripts/paginate_news.js';
+        async function handleRoll() {
+            const btn = document.getElementById('roll-btn');
+            const resultArea = document.getElementById('result-area');
+            const numDisp = document.getElementById('number-display');
+            
+            btn.disabled = true;
+            btn.innerText = "ROLLING...";
 
-// Initialize pagination
-paginateNews({
-  jsonPath: './data/news.json',   // path to news.json
-  articlesPerSection: 10,         // 10 articles per section
-  sections: 3,                    // 3 columns
-  updatedElemId: 'updated',       // element to show last updated
-  appElemId: 'app',               // container for articles
-  prevBtnId: 'prev-btn',          // Previous button
-  nextBtnId: 'next-btn',          // Next button
-  pageInfoId: 'page-info'         // page info span
-});
-</script>
+            try {
+                // Request signed roll from your OCI backend
+                const response = await fetch(`http://${OCI_IP}:5000/get-roll`);
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const data = await response.json();
 
+                // 1. Update Display
+                numDisp.innerText = data.num;
+                document.getElementById('res-num').innerText = data.num;
+                document.getElementById('res-ts').innerText = data.ts;
+                document.getElementById('res-sig').innerText = data.signature;
+                resultArea.style.display = 'block';
+
+                // 2. Check for Wins
+                checkWin(data);
+
+                // 3. Start Cooldown
+                const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                localStorage.setItem('rollCooldown', expiry);
+                startTimer(expiry);
+
+            } catch (error) {
+                console.error(error);
+                alert("Connection failed! Make sure you are using 'http' and not 'https' if your OCI doesn't have SSL yet.");
+                btn.disabled = false;
+                btn.innerText = "RETRY ROLL";
+            }
+        }
+
+        function checkWin(data) {
+            const statusMsg = document.getElementById('status-message');
+            const numDisp = document.getElementById('number-display');
+            
+            // Logic A: Specific Number Win
+            if (data.num === "2121" || data.num === "0021") {
+                statusMsg.innerHTML = "<h3 class='winner-glow'>🏆 JACKPOT WINNER!</h3>";
+                numDisp.classList.add('winner-glow');
+            } 
+            // Logic B: Rare Signature Win (starts with 00)
+            else if (data.signature.startsWith("00")) {
+                statusMsg.innerHTML = "<h3 class='winner-glow'>🍀 RARE SIG WINNER!</h3>";
+            } else {
+                statusMsg.innerHTML = "<h3 style='color: #888;'>Better luck next time!</h3>";
+                numDisp.classList.remove('winner-glow');
+            }
+        }
+
+        function startTimer(expiry) {
+            const timerDiv = document.getElementById('timer');
+            const btn = document.getElementById('roll-btn');
+
+            const interval = setInterval(() => {
+                const now = Date.now();
+                const diff = expiry - now;
+
+                if (diff <= 0) {
+                    clearInterval(interval);
+                    timerDiv.innerText = "";
+                    btn.disabled = false;
+                    btn.innerText = "ROLL FOR SATS";
+                    localStorage.removeItem('rollCooldown');
+                } else {
+                    const mins = Math.floor(diff / 60000);
+                    const secs = Math.floor((diff % 60000) / 1000);
+                    timerDiv.innerText = `Next roll in: ${mins}:${secs.toString().padStart(2, '0')}`;
+                    btn.disabled = true;
+                    btn.innerText = "WAITING...";
+                }
+            }, 1000);
+        }
+
+        // Check for existing cooldown on page load
+        window.onload = () => {
+            const savedExpiry = localStorage.getItem('rollCooldown');
+            if (savedExpiry && Date.now() < savedExpiry) {
+                startTimer(parseInt(savedExpiry));
+            }
+        };
+    </script>
 </body>
 </html>
