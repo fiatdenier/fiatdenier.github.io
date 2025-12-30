@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <style>
-  /* Original style preservation */
+  /* DESIGN PRESERVATION */
   .game-link { display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #f7931a; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9rem; }
   .game-link:hover { background-color: #e17e0a; }
 
@@ -37,7 +37,7 @@
             <div>
                 <button class="modal-btn" onclick="postToNostr()">POST TO NOSTR</button>
                 <button class="modal-btn" style="background:#444;" onclick="openExternal()">OPEN IN NEW TAB ↗</button>
-                <span id="load-status">Checking security...</span>
+                <span id="load-status">Checking Reader...</span>
             </div>
             <button class="modal-btn" onclick="closeArticle()" style="background:#555;">CLOSE [X]</button>
         </div>
@@ -68,25 +68,53 @@ paginateNews({
 let loadTimer;
 
 window.openArticle = function(url) {
+    // 1. UPDATED BLACKLIST based on your sources
+    const frameBreakers = [
+        'cointelegraph.com', 
+        'bitcoinmagazine.com',
+		'btcmanager
+        'bitcoin.com',
+		'crypto.news',
+		'coindesk.com',
+        'beincrypto.com',  		
+        'decrypt.co', 
+        'coindesk.com', 
+        'cryptoslate.com', 
+        'ccn.com', 
+        'theblock.co',
+        'bloomberg.com',
+        'wsj.com'
+    ];
+    
+    const isKnownBreaker = frameBreakers.some(domain => url.toLowerCase().includes(domain));
+
+    // If it's a known breaker, skip modal and go straight to tab
+    if (isKnownBreaker) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+        return;
+    }
+
+    // 2. MODAL LOGIC (for sites likely to allow frames)
     const frame = document.getElementById('articleFrame');
     const status = document.getElementById('load-status');
     const modal = document.getElementById('articleModal');
 
     clearTimeout(loadTimer);
-    status.innerText = "Checking compatibility...";
+    status.innerText = "Connecting...";
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
     frame.src = url;
 
-    // Elegant Check: If the site doesn't load in 2.5s, it's likely a frame-breaker
+    // 3. SILENT BACKUP TIMER (3 Seconds)
+    // If a site not on the blacklist still blocks us, this catches it
     loadTimer = setTimeout(() => {
         closeArticle();
         window.open(url, '_blank', 'noopener,noreferrer');
-    }, 2500);
+    }, 3000);
 
     frame.onload = function() {
         clearTimeout(loadTimer);
-        status.innerText = "Secure Reader Active";
+        status.innerText = "Reader Ready";
     };
 };
 
