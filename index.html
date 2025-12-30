@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <style>
-  /* Design preservation */
+  /* Design from original backup */
   .game-link { display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #f7931a; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9rem; }
   .game-link:hover { background-color: #e17e0a; }
 
@@ -19,7 +19,7 @@
   .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; border-bottom: 1px solid #444; align-items: center; }
   .modal-btn { background: #f7931a; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; color: white; margin-right: 8px; font-family: 'Roboto', sans-serif; }
   
-  #bridge-msg { display: none; padding: 60px 20px; text-align: center; color: #ccc; flex-grow: 1; }
+  #bridge-msg { display: none; padding: 60px 20px; text-align: center; color: #ccc; flex-grow: 1; font-family: 'Roboto', sans-serif; }
   #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: none; }
 </style>
@@ -57,11 +57,15 @@
   <button id="next-btn">Next</button>
 </div>
 
+<footer>
+<small>Pure links. No tracking. Source on <a href="https://github.com/fiatdenier/BitcoinReport/" target="_blank" rel="noopener">GitHub</a>.</small>
+</footer>
+
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
 
 // 1. Core Initialization
-const config = {
+paginateNews({
   jsonPath: './data/news.json',
   articlesPerSection: 10,
   sections: 3,
@@ -70,16 +74,17 @@ const config = {
   prevBtnId: 'prev-btn',
   nextBtnId: 'next-btn',
   pageInfoId: 'page-info'
-};
+});
 
-paginateNews(config);
-
-// 2. Reader Logic
 let bridgeTimer;
+let currentUrl = '';
 
 window.openArticle = function(url) {
+    // FIX: Ensure absolute URL so it doesn't open on fiatdenier.com
+    currentUrl = url.startsWith('http') ? url : 'https://' + url;
+
     const frameBreakers = ['cointelegraph.com', 'bloomberg.com', 'coindesk.com', 'bitcoinmagazine.com', 'decrypt.co', 'cryptoslate.com'];
-    const isBreaker = frameBreakers.some(domain => url.toLowerCase().includes(domain));
+    const isBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
     
     const modal = document.getElementById('articleModal');
     const bridge = document.getElementById('bridge-msg');
@@ -93,12 +98,12 @@ window.openArticle = function(url) {
         bridge.style.display = 'block';
         frame.style.display = 'none';
         controls.style.visibility = 'hidden';
-        bridgeTimer = setTimeout(() => window.open(url, '_blank'), 2000);
+        bridgeTimer = setTimeout(() => window.open(currentUrl, '_blank', 'noopener,noreferrer'), 2000);
     } else {
         bridge.style.display = 'none';
         frame.style.display = 'block';
         controls.style.visibility = 'visible';
-        frame.src = url;
+        frame.src = currentUrl;
     }
 };
 
@@ -110,19 +115,17 @@ window.closeArticle = function() {
 };
 
 window.openExternal = function() {
-    const url = document.getElementById('articleFrame').src || "";
-    if (url) window.open(url, '_blank');
+    if (currentUrl) window.open(currentUrl, '_blank', 'noopener,noreferrer');
 };
 
 window.postToNostr = function() {
-    const url = document.getElementById('articleFrame').src;
-    if (url) window.open(`https://nostr.social/post?content=${encodeURIComponent(url)}`, '_blank');
+    if (currentUrl) window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
 };
 
-// 3. Link Click Hijacker (The most important part)
+// 3. Link Click Hijacker (CAPTURES DYNAMIC LINKS)
 document.getElementById('app').addEventListener('click', function(e) {
     const link = e.target.closest('a');
-    if (link && link.href && !link.href.includes('roll.html')) {
+    if (link && link.href && !link.href.includes('roll.html') && !link.href.includes('github.com')) {
         e.preventDefault();
         window.openArticle(link.href);
     }
