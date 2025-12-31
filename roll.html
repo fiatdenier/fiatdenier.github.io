@@ -5,21 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiat Denier - Lucky Roll</title>
     <style>
-        :root { --btc-orange: #f7931a; --dark-bg: #1a1a1a; }
+        :root { --btc-orange: #f7931a; --dark-bg: #1a1a1a; --win-green: #4CAF50; }
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; }
         #number-display { font-size: 5rem; font-weight: bold; color: var(--btc-orange); margin: 1rem 0; text-shadow: 0 0 10px rgba(247, 147, 26, 0.5); transition: 0.3s; }
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
         button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; }
         button:disabled { background: #444; cursor: not-allowed; color: #888; }
-        .winner-glow { animation: glow 1.5s ease-in-out infinite alternate; color: #4CAF50 !important; }
-        @keyframes glow { from { text-shadow: 0 0 10px #4CAF50; } to { text-shadow: 0 0 30px #4CAF50; } }
+        
+        /* Original Winner Glow */
+        .winner-glow { animation: glow 1.5s ease-in-out infinite alternate; color: var(--win-green) !important; }
+        @keyframes glow { from { text-shadow: 0 0 10px var(--win-green); } to { text-shadow: 0 0 30px var(--win-green); } }
+        
+        /* New Blinking Winner Style for Copy Button */
+        .winner-blink { 
+            background: var(--win-green) !important; 
+            color: white !important; 
+            animation: blinker 1s linear infinite;
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 0.9rem;
+            box-shadow: 0 0 15px var(--win-green);
+        }
+        @keyframes blinker { 50% { opacity: 0.5; } }
+
         #timer { font-size: 0.85rem; color: #888; margin-top: 10px; height: 20px; }
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
-        
-        /* Minimal style for the copy button to match your theme */
-        .copy-btn { background: #444; color: #fff; border: 1px solid #666; padding: 8px; font-size: 0.7rem; border-radius: 4px; cursor: pointer; margin-top: 10px; width: auto; font-weight: normal; }
-        .copy-btn:hover { background: #555; }
     </style>
 </head>
 <body>
@@ -33,12 +44,15 @@
 
         <div id="result-area" style="display: none;">
             <div id="status-message" style="margin-top: 15px;"></div>
+            
             <div class="proof-box" id="proof-content">
                 <strong>Result:</strong> <span id="res-num"></span><br>
                 <strong>Timestamp:</strong> <span id="res-ts"></span><br>
                 <strong>Signature:</strong> <span id="res-sig" style="color: #666;"></span>
             </div>
-            <button class="copy-btn" id="copy-btn" onclick="copyProof()">📋 COPY PROOF</button>
+
+            <button id="copy-btn" onclick="copyProof()" style="display: none;">📋 COPY PROOF</button>
+            
             <p style="font-size: 0.65rem; color: #555; margin-top: 10px;">Provably fair signature generated on OCI.</p>
         </div>
     </div>
@@ -47,7 +61,6 @@
         const COOLDOWN_MINUTES = 10;
         const API_BASE = "https://api.fiatdenier.com";
 
-        // Monitoring Function: Sends alerts to your OCI app.py
         async function sendAlert(event, details) {
             try {
                 await fetch(`${API_BASE}/lucky-roll-alert`, {
@@ -63,10 +76,13 @@
             const resultArea = document.getElementById('result-area');
             const numDisp = document.getElementById('number-display');
             const statusMsg = document.getElementById('status-message');
+            const copyBtn = document.getElementById('copy-btn');
             
             btn.disabled = true;
             btn.innerText = "VERIFYING...";
             numDisp.classList.remove('winner-glow');
+            copyBtn.style.display = "none"; // Hide copy button on new roll
+            copyBtn.classList.remove('winner-blink');
 
             try {
                 const response = await fetch(`${API_BASE}/get-roll`);
@@ -74,59 +90,61 @@
                 
                 const data = await response.json();
 
-                // 1. Update Display
+                // Update Display
                 numDisp.innerText = data.num;
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
                 resultArea.style.display = 'block';
 
-                // 2. Logic: Win Condition & Alerts
+                // Check Winners
                 const sig = String(data.signature);
                 const starts21 = sig.startsWith("21");
                 const ends21 = sig.endsWith("21");
-                const is2121 = (data.num === 2121 || String(data.num) === "2121");
+                const is2121 = (String(data.num) === "2121");
 
-                if (starts21 && ends21) {
-                    statusMsg.innerHTML = "<h3 class='winner-glow'>🍀 RARE SIG WINNER!</h3>";
+                if ((starts21 && ends21) || is2121) {
+                    // It's a winner! Stylize everything green
                     numDisp.classList.add('winner-glow');
-                    sendAlert("WINNER: 2000 SATS", `Rare Sig detected: ${sig}`);
-                } else if (is2121) {
-                    statusMsg.innerHTML = "<h3 style='color: var(--btc-orange);'>✨ Lucky Winner!</h3>";
-                    sendAlert("WINNER: 500 SATS", `Roll result: 2121`);
+                    copyBtn.style.display = "block"; // Show button only for winners
+                    copyBtn.classList.add('winner-blink'); // Make it blink
+                    
+                    if (starts21 && ends21) {
+                        statusMsg.innerHTML = "<h3 class='winner-glow'>🍀 RARE SIG WINNER (2000 SATS)!</h3>";
+                        sendAlert("WINNER: 2000 SATS", `Sig: ${sig}`);
+                    } else {
+                        statusMsg.innerHTML = "<h3 class='winner-glow'>✨ LUCKY 2121 WINNER (500 SATS)!</h3>";
+                        sendAlert("WINNER: 500 SATS", `Roll: 2121`);
+                    }
                 } else {
                     statusMsg.innerHTML = "<h3 style='color: #666;'>Better luck next time!</h3>";
                 }
 
-                // 3. Set Cooldown
+                // Cooldown logic
                 const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                 localStorage.setItem('rollCooldown', expiry);
                 startTimer(expiry);
 
             } catch (error) {
                 console.error(error);
-                alert("Connection failed. Check your connection to api.fiatdenier.com.");
                 btn.disabled = false;
                 btn.innerText = "RETRY ROLL";
             }
         }
 
-        // Copy functionality with User feedback and OCI Alert
         async function copyProof() {
             const text = document.getElementById('proof-content').innerText;
             const btn = document.getElementById('copy-btn');
-
             try {
                 await navigator.clipboard.writeText(text);
                 btn.innerText = "✅ COPIED!";
-                
-                // Notify OCI that someone is copying code (likely to claim a prize)
-                sendAlert("COPY BUTTON CLICKED", "User copied proof data.");
-
-                setTimeout(() => { btn.innerText = "📋 COPY PROOF"; }, 2000);
-            } catch (err) {
-                console.error('Failed to copy: ', err);
-            }
+                btn.classList.remove('winner-blink'); // Stop blinking once copied
+                sendAlert("COPY BUTTON CLICKED", "Winner is claiming their sats.");
+                setTimeout(() => { 
+                    btn.innerText = "📋 COPY PROOF";
+                    btn.classList.add('winner-blink'); 
+                }, 2000);
+            } catch (err) { console.error(err); }
         }
 
         function startTimer(expiry) {
