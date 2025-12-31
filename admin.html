@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Roll Admin</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: #e0e0e0; padding: 20px; text-align: center; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 10px; border: 1px solid #333; margin: 0 auto 20px; max-width: 600px; text-align: left; }
+        h1 { color: #f2a900; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .stat-box { background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; }
+        .stat-num { display: block; font-size: 24px; font-weight: bold; color: #fff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #333; font-size: 14px; }
+        input { padding: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: white; width: 80%; margin-bottom: 10px; }
+        button { background: #f2a900; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .danger { background: #d32f2f; color: white; margin-top: 20px; }
+        #admin-content { display: none; } /* Hidden until login */
+    </style>
+</head>
+<body>
+
+    <div id="login-box" class="card" style="text-align: center;">
+        <h1>🔒 Admin Login</h1>
+        <input type="password" id="key-input" placeholder="Enter Admin Password">
+        <br>
+        <button onclick="saveAndLogin()">Login</button>
+    </div>
+
+    <div id="admin-content">
+        <h1>🎰 Admin Dashboard</h1>
+        <div class="card">
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <span class="stat-num" id="total-players">0</span>
+                    Total Unique Players
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num" id="active-locks">0</span>
+                    Locked IPs
+                </div>
+            </div>
+        </div>
+
+        <button onclick="loadStats()">🔄 Refresh</button>
+        
+        <div class="card">
+            <h3>Active Cooldowns</h3>
+            <table>
+                <thead><tr><th>IP Address</th><th>Time Left</th></tr></thead>
+                <tbody id="locks-table"></tbody>
+            </table>
+        </div>
+
+        <button class="danger" onclick="resetLocks()">💀 Clear All Locks</button>
+        <button class="danger" style="background: #444;" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        const API_URL = "https://api.fiatdenier.com";
+
+        function saveAndLogin() {
+            const key = document.getElementById('key-input').value;
+            localStorage.setItem('adminKey', key);
+            checkAuth();
+        }
+
+        function logout() {
+            localStorage.removeItem('adminKey');
+            location.reload();
+        }
+
+        async function checkAuth() {
+            const key = localStorage.getItem('adminKey');
+            if (!key) return;
+
+            try {
+                const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
+                if (response.status === 200) {
+                    const data = await response.json();
+                    if (data.error) {
+                        alert("Invalid Key!");
+                        logout();
+                    } else {
+                        document.getElementById('login-box').style.display = 'none';
+                        document.getElementById('admin-content').style.display = 'block';
+                        displayData(data);
+                    }
+                }
+            } catch (err) { console.error(err); }
+        }
+
+        async function loadStats() {
+            const key = localStorage.getItem('adminKey');
+            const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
+            const data = await response.json();
+            displayData(data);
+        }
+
+        function displayData(data) {
+            document.getElementById('total-players').innerText = data.total_unique_players;
+            document.getElementById('active-locks').innerText = data.currently_locked_ips;
+            const tableBody = document.getElementById('locks-table');
+            tableBody.innerHTML = data.locks.map(l => `<tr><td>${l.ip}</td><td>${l.remaining}</td></tr>`).join('');
+        }
+
+        async function resetLocks() {
+            const key = localStorage.getItem('adminKey');
+            if (confirm("Clear all locks?")) {
+                await fetch(`${API_URL}/admin-reset?key=${key}`);
+                loadStats();
+            }
+        }
+
+        // Auto-login if key exists
+        checkAuth();
+    </script>
+</body>
+</html>
