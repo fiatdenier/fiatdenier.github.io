@@ -16,6 +16,10 @@
         @keyframes glow { from { text-shadow: 0 0 10px #4CAF50; } to { text-shadow: 0 0 30px #4CAF50; } }
         #timer { font-size: 0.85rem; color: #888; margin-top: 10px; height: 20px; }
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
+        
+        /* Minimal style for the copy button to match your theme */
+        .copy-btn { background: #444; color: #fff; border: 1px solid #666; padding: 8px; font-size: 0.7rem; border-radius: 4px; cursor: pointer; margin-top: 10px; width: auto; font-weight: normal; }
+        .copy-btn:hover { background: #555; }
     </style>
 </head>
 <body>
@@ -29,17 +33,30 @@
 
         <div id="result-area" style="display: none;">
             <div id="status-message" style="margin-top: 15px;"></div>
-            <div class="proof-box">
+            <div class="proof-box" id="proof-content">
                 <strong>Result:</strong> <span id="res-num"></span><br>
                 <strong>Timestamp:</strong> <span id="res-ts"></span><br>
                 <strong>Signature:</strong> <span id="res-sig" style="color: #666;"></span>
             </div>
+            <button class="copy-btn" id="copy-btn" onclick="copyProof()">📋 COPY PROOF</button>
             <p style="font-size: 0.65rem; color: #555; margin-top: 10px;">Provably fair signature generated on OCI.</p>
         </div>
     </div>
 
     <script>
         const COOLDOWN_MINUTES = 10;
+        const API_BASE = "https://api.fiatdenier.com";
+
+        // Monitoring Function: Sends alerts to your OCI app.py
+        async function sendAlert(event, details) {
+            try {
+                await fetch(`${API_BASE}/lucky-roll-alert`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ event, details })
+                });
+            } catch (e) { console.error("Alert failed"); }
+        }
 
         async function handleRoll() {
             const btn = document.getElementById('roll-btn');
@@ -52,8 +69,7 @@
             numDisp.classList.remove('winner-glow');
 
             try {
-                // Fetch from your secure Cloudflare-proxied API
-                const response = await fetch("https://api.fiatdenier.com/get-roll");
+                const response = await fetch(`${API_BASE}/get-roll`);
                 if (!response.ok) throw new Error('API unreachable');
                 
                 const data = await response.json();
@@ -65,16 +81,19 @@
                 document.getElementById('res-sig').innerText = data.signature;
                 resultArea.style.display = 'block';
 
-                // 2. Logic: Win Condition
+                // 2. Logic: Win Condition & Alerts
                 const sig = String(data.signature);
                 const starts21 = sig.startsWith("21");
                 const ends21 = sig.endsWith("21");
+                const is2121 = (data.num === 2121 || String(data.num) === "2121");
 
                 if (starts21 && ends21) {
                     statusMsg.innerHTML = "<h3 class='winner-glow'>🍀 RARE SIG WINNER!</h3>";
                     numDisp.classList.add('winner-glow');
-                } else if (data.num === 2121 || String(data.num) === "2121") {
+                    sendAlert("WINNER: 2000 SATS", `Rare Sig detected: ${sig}`);
+                } else if (is2121) {
                     statusMsg.innerHTML = "<h3 style='color: var(--btc-orange);'>✨ Lucky Winner!</h3>";
+                    sendAlert("WINNER: 500 SATS", `Roll result: 2121`);
                 } else {
                     statusMsg.innerHTML = "<h3 style='color: #666;'>Better luck next time!</h3>";
                 }
@@ -89,6 +108,24 @@
                 alert("Connection failed. Check your connection to api.fiatdenier.com.");
                 btn.disabled = false;
                 btn.innerText = "RETRY ROLL";
+            }
+        }
+
+        // Copy functionality with User feedback and OCI Alert
+        async function copyProof() {
+            const text = document.getElementById('proof-content').innerText;
+            const btn = document.getElementById('copy-btn');
+
+            try {
+                await navigator.clipboard.writeText(text);
+                btn.innerText = "✅ COPIED!";
+                
+                // Notify OCI that someone is copying code (likely to claim a prize)
+                sendAlert("COPY BUTTON CLICKED", "User copied proof data.");
+
+                setTimeout(() => { btn.innerText = "📋 COPY PROOF"; }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
             }
         }
 
