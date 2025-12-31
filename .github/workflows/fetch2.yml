@@ -32,7 +32,18 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add news.json
-          git add ../index.html ../rss.xml
+          
+          # 1. Create the data directory in the root (one level up from /scripts)
+          mkdir -p ../data
+          
+          # 2. Move the generated news.json to the correct location
+          # Your script currently leaves it in /scripts/news.json
+          mv news.json ../data/news.json
+          
+          # 3. Add the files using their relative paths from the /scripts directory
+          # index.html and rss.xml are in the root (../)
+          # news.json is now in the data folder (../data/)
+          git add ../data/news.json ../index.html ../rss.xml
+          
           git commit -m "chore: automated news and RSS update" || echo "No changes"
           git push
