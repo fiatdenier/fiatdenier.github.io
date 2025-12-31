@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiat Denier - Lucky Roll</title>
     <style>
-        :root { --btc-orange: #f7931a; --dark-bg: #1a1a1a; --win-green: #4CAF50; }
+        :root { --btc-orange: #f7931a; --dark-bg: #1a1a1a; --win-green: #4CAF50; --error-red: #ff4444; }
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; }
         #number-display { font-size: 5rem; font-weight: bold; color: var(--btc-orange); margin: 1rem 0; text-shadow: 0 0 10px rgba(247, 147, 26, 0.5); transition: 0.3s; }
@@ -29,6 +29,7 @@
 
         #timer { font-size: 0.85rem; color: #888; margin-top: 10px; height: 20px; }
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
+        .error-text { color: var(--error-red); font-weight: bold; }
     </style>
 </head>
 <body>
@@ -76,8 +77,6 @@
 
         async function handleRoll() {
             const btn = document.getElementById('roll-btn');
-            
-            // Double-guard: check both attribute and text
             if (btn.disabled || btn.innerText === "LOCKED") return;
 
             const resultArea = document.getElementById('result-area');
@@ -89,9 +88,27 @@
             btn.innerText = "VERIFYING...";
             numDisp.classList.remove('winner-glow');
             copyBtn.style.display = "none";
+            resultArea.style.display = 'none';
 
             try {
                 const response = await fetch(`${API_BASE}/get-roll`);
+                
+                // --- IP LOCK HANDLING ---
+                if (response.status === 429) {
+                    const errorData = await response.json();
+                    statusMsg.innerHTML = `<h3 class="error-text">🚫 IP LOCKED</h3><p style="font-size:0.7rem; color:#888;">${errorData.message}</p>`;
+                    numDisp.innerText = "----";
+                    resultArea.style.display = 'block';
+                    
+                    // Force start local timer to match server lock
+                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                    localStorage.setItem('rollCooldown', expiry);
+                    startTimer(expiry);
+                    return;
+                }
+
+                if (!response.ok) throw new Error('Server Error');
+
                 const data = await response.json();
 
                 numDisp.innerText = data.num;
@@ -118,8 +135,11 @@
                 startTimer(expiry);
 
             } catch (error) {
+                console.error(error);
                 btn.disabled = false;
                 btn.innerText = "ROLL FOR SATS";
+                statusMsg.innerHTML = "<h3 class='error-text'>Connection Error</h3>";
+                resultArea.style.display = 'block';
             }
         }
 
