@@ -13,11 +13,6 @@
 <meta property="og:description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
 <meta property="og:image" content="https://fiatdenier.com/preview.png">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lucky Roll - Deny Fiat, Win Sats">
-<meta name="twitter:description" content="Roll the dice and stack some sats.">
-<meta name="twitter:image" content="https://fiatdenier.com/preview.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -36,6 +31,12 @@
   #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
   #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
+
+  /* PAGINATION STYLING */
+  #pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 40px 0; background: #1a1a1a; }
+  #pagination button { background: #333; border: 1px solid #444; color: white; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-family: 'Roboto', sans-serif; }
+  #pagination button:disabled { opacity: 0.3; cursor: not-allowed; }
+  #page-info { color: #888; font-family: 'Roboto', sans-serif; }
 </style>
 </head>
 <body>
@@ -77,6 +78,7 @@
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
 
+// Initialize pagination
 paginateNews({
   jsonPath: './data/news.json',
   articlesPerSection: 10,
@@ -95,23 +97,12 @@ window.openArticle = function(url) {
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
 
     const frameBreakers = [
-        'cointelegraph.com', 
-        'bitcoinmagazine.com',
-        'btcmanager.com',
-        'bitcoin.com',
-        'crypto.news',
-        'coindesk.com',
-        'beincrypto.com',
-        'decrypt.co',
-        'cryptoslate.com',
-        'ccn.com',
-        'theblock.co',
-        'bloomberg.com',
-        'wsj.com'
+        'cointelegraph.com', 'bitcoinmagazine.com', 'btcmanager.com', 'bitcoin.com',
+        'crypto.news', 'coindesk.com', 'beincrypto.com', 'decrypt.co',
+        'cryptoslate.com', 'ccn.com', 'theblock.co', 'bloomberg.com', 'wsj.com'
     ];
     
     const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
-    
     const modal = document.getElementById('articleModal');
     const bridge = document.getElementById('bridge-msg');
     const frame = document.getElementById('articleFrame');
@@ -119,7 +110,6 @@ window.openArticle = function(url) {
 
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    
     clearTimeout(bridgeTimer);
     status.innerText = "";
 
@@ -146,7 +136,6 @@ function showWarning() {
     const bridge = document.getElementById('bridge-msg');
     const frame = document.getElementById('articleFrame');
     const status = document.getElementById('load-status');
-    
     bridge.style.display = 'block';
     frame.style.display = 'none';
     frame.src = ''; 
@@ -176,6 +165,7 @@ document.getElementById('app').addEventListener('click', function(e) {
     }
 });
 </script>
+
 <script>
     function syncRollCooldown() {
         const rollLink = document.querySelector('.game-link[href="roll.html"]');
@@ -202,11 +192,9 @@ document.getElementById('app').addEventListener('click', function(e) {
             rollLink.style.cursor = "pointer";
             rollLink.style.pointerEvents = "auto";
             rollLink.innerText = "🎰 PLAY LUCKY ROLL";
-            
             if (savedExpiry) localStorage.removeItem('rollCooldown');
         }
     }
-
     window.addEventListener('load', syncRollCooldown);
     window.addEventListener('focus', syncRollCooldown);
 </script>
