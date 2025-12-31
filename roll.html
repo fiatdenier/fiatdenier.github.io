@@ -13,11 +13,10 @@
         button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; }
         button:disabled { background: #444; cursor: not-allowed; color: #888; }
         
-        /* Original Winner Glow */
+        /* Winner Styles */
         .winner-glow { animation: glow 1.5s ease-in-out infinite alternate; color: var(--win-green) !important; }
         @keyframes glow { from { text-shadow: 0 0 10px var(--win-green); } to { text-shadow: 0 0 30px var(--win-green); } }
         
-        /* New Blinking Winner Style for Copy Button */
         .winner-blink { 
             background: var(--win-green) !important; 
             color: white !important; 
@@ -61,12 +60,18 @@
         const COOLDOWN_MINUTES = 10;
         const API_BASE = "https://api.fiatdenier.com";
 
-        async function sendAlert(event, details) {
+        async function sendAlert(event, details, rollData = {}) {
             try {
                 await fetch(`${API_BASE}/lucky-roll-alert`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ event, details })
+                    body: JSON.stringify({ 
+                        event, 
+                        details,
+                        num: rollData.num || document.getElementById('res-num').innerText,
+                        ts: rollData.ts || document.getElementById('res-ts').innerText,
+                        sig: rollData.sig || document.getElementById('res-sig').innerText
+                    })
                 });
             } catch (e) { console.error("Alert failed"); }
         }
@@ -81,7 +86,7 @@
             btn.disabled = true;
             btn.innerText = "VERIFYING...";
             numDisp.classList.remove('winner-glow');
-            copyBtn.style.display = "none"; // Hide copy button on new roll
+            copyBtn.style.display = "none";
             copyBtn.classList.remove('winner-blink');
 
             try {
@@ -90,37 +95,32 @@
                 
                 const data = await response.json();
 
-                // Update Display
                 numDisp.innerText = data.num;
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
                 resultArea.style.display = 'block';
 
-                // Check Winners
                 const sig = String(data.signature);
-                const starts21 = sig.startsWith("21");
-                const ends21 = sig.endsWith("21");
+                const isRareSig = sig.startsWith("21") && sig.endsWith("21");
                 const is2121 = (String(data.num) === "2121");
 
-                if ((starts21 && ends21) || is2121) {
-                    // It's a winner! Stylize everything green
+                if (isRareSig || is2121) {
                     numDisp.classList.add('winner-glow');
-                    copyBtn.style.display = "block"; // Show button only for winners
-                    copyBtn.classList.add('winner-blink'); // Make it blink
+                    copyBtn.style.display = "block";
+                    copyBtn.classList.add('winner-blink');
                     
-                    if (starts21 && ends21) {
+                    if (isRareSig) {
                         statusMsg.innerHTML = "<h3 class='winner-glow'>🍀 RARE SIG WINNER (2000 SATS)!</h3>";
-                        sendAlert("WINNER: 2000 SATS", `Sig: ${sig}`);
+                        sendAlert("WINNER: 2000 SATS", "Rare Signature", data);
                     } else {
                         statusMsg.innerHTML = "<h3 class='winner-glow'>✨ LUCKY 2121 WINNER (500 SATS)!</h3>";
-                        sendAlert("WINNER: 500 SATS", `Roll: 2121`);
+                        sendAlert("WINNER: 500 SATS", "2121 Roll", data);
                     }
                 } else {
                     statusMsg.innerHTML = "<h3 style='color: #666;'>Better luck next time!</h3>";
                 }
 
-                // Cooldown logic
                 const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                 localStorage.setItem('rollCooldown', expiry);
                 startTimer(expiry);
@@ -138,8 +138,11 @@
             try {
                 await navigator.clipboard.writeText(text);
                 btn.innerText = "✅ COPIED!";
-                btn.classList.remove('winner-blink'); // Stop blinking once copied
-                sendAlert("COPY BUTTON CLICKED", "Winner is claiming their sats.");
+                btn.classList.remove('winner-blink');
+                
+                // Send alert with current proof data for validation
+                sendAlert("COPY BUTTON CLICKED", "User is claiming their win.");
+                
                 setTimeout(() => { 
                     btn.innerText = "📋 COPY PROOF";
                     btn.classList.add('winner-blink'); 
