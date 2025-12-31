@@ -33,10 +33,10 @@
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
 
   /* PAGINATION STYLING */
-  #pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 40px 0; background: #1a1a1a; }
-  #pagination button { background: #333; border: 1px solid #444; color: white; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-family: 'Roboto', sans-serif; }
+  #pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 40px 0; }
+  #pagination button { background: #333; border: 1px solid #444; color: white; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-family: 'Roboto', sans-serif; }
   #pagination button:disabled { opacity: 0.3; cursor: not-allowed; }
-  #page-info { color: #888; font-family: 'Roboto', sans-serif; }
+  #page-info { color: #888; font-family: 'Roboto', sans-serif; font-size: 0.9rem; }
 </style>
 </head>
 <body>
@@ -46,7 +46,11 @@
   <a href="roll.html" class="game-link">🎰 PLAY LUCKY ROLL</a>
 </header>
 
-<main id="app" class="grid"></main>
+<main id="app" class="grid">
+    <div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #888;">
+        Loading Bitcoin Headlines...
+    </div>
+</main>
 
 <div id="articleModal" class="modal-overlay">
     <div class="modal-content">
@@ -61,7 +65,7 @@
         
         <div id="bridge-msg">
             <h2>Direct Access Required</h2>
-            <p>This publisher blocks embedded readers to protect their content or advertising.</p>
+            <p>This publisher blocks embedded readers.</p>
             <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">OPEN ARTICLE IN NEW TAB</button>
         </div>
 
@@ -70,17 +74,17 @@
 </div>
 
 <div id="pagination">
-  <button id="prev-btn">Previous</button>
-  <span id="page-info"></span>
-  <button id="next-btn">Next</button>
+  <button id="prev-btn" disabled>Previous</button>
+  <span id="page-info">Page 1</span>
+  <button id="next-btn" disabled>Next</button>
 </div>
 
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
 
-// Initialize pagination
-paginateNews({
-  jsonPath: './data/news.json',
+// Configuration - jsonPath updated to match where GitHub Action moves it
+const config = {
+  jsonPath: 'data/news.json',
   articlesPerSection: 10,
   sections: 3,
   updatedElemId: 'updated',
@@ -88,59 +92,48 @@ paginateNews({
   prevBtnId: 'prev-btn',
   nextBtnId: 'next-btn',
   pageInfoId: 'page-info'
-});
+};
 
+// Error handling & Init
+fetch(config.jsonPath)
+  .then(res => {
+    if (!res.ok) throw new Error('News file not found');
+    return res.json();
+  })
+  .then(data => {
+    console.log(`Successfully loaded ${data.length} articles.`);
+    paginateNews(config);
+  })
+  .catch(err => {
+    console.error('Feed Error:', err);
+    document.getElementById('app').innerHTML = `<div style="grid-column:1/-1; text-align:center; color:orange;">News feed currently unavailable. Please refresh in a moment.</div>`;
+  });
+
+// Article Modal Logic
 let bridgeTimer;
 let currentUrl = '';
 
 window.openArticle = function(url) {
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
-
-    const frameBreakers = [
-        'cointelegraph.com', 'bitcoinmagazine.com', 'btcmanager.com', 'bitcoin.com',
-        'crypto.news', 'coindesk.com', 'beincrypto.com', 'decrypt.co',
-        'cryptoslate.com', 'ccn.com', 'theblock.co', 'bloomberg.com', 'wsj.com'
-    ];
-    
-    const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
     const modal = document.getElementById('articleModal');
     const bridge = document.getElementById('bridge-msg');
     const frame = document.getElementById('articleFrame');
-    const status = document.getElementById('load-status');
-
+    
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    clearTimeout(bridgeTimer);
-    status.innerText = "";
+    
+    bridge.style.display = 'none';
+    frame.style.display = 'block';
+    frame.src = currentUrl;
 
-    if (isKnownBreaker) {
-        showWarning();
-    } else {
-        bridge.style.display = 'none';
-        frame.style.display = 'block';
-        frame.src = currentUrl;
-        status.innerText = "Checking compatibility...";
+    bridgeTimer = setTimeout(() => {
+        bridge.style.display = 'block';
+        frame.style.display = 'none';
+        frame.src = '';
+    }, 4000);
 
-        bridgeTimer = setTimeout(() => {
-            showWarning();
-        }, 3500);
-
-        frame.onload = function() {
-            clearTimeout(bridgeTimer);
-            status.innerText = "Secure Reader Active";
-        };
-    }
+    frame.onload = () => clearTimeout(bridgeTimer);
 };
-
-function showWarning() {
-    const bridge = document.getElementById('bridge-msg');
-    const frame = document.getElementById('articleFrame');
-    const status = document.getElementById('load-status');
-    bridge.style.display = 'block';
-    frame.style.display = 'none';
-    frame.src = ''; 
-    status.innerText = "Compatibility Issue";
-}
 
 window.closeArticle = function() {
     clearTimeout(bridgeTimer);
@@ -149,17 +142,12 @@ window.closeArticle = function() {
     document.body.style.overflow = 'auto';
 };
 
-window.openExternal = function() {
-    if (currentUrl) window.open(currentUrl, '_blank', 'noopener,noreferrer');
-};
+window.openExternal = () => currentUrl && window.open(currentUrl, '_blank');
+window.postToNostr = () => currentUrl && window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
 
-window.postToNostr = function() {
-    if (currentUrl) window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
-};
-
-document.getElementById('app').addEventListener('click', function(e) {
+document.getElementById('app').addEventListener('click', e => {
     const link = e.target.closest('a');
-    if (link && link.href && !link.href.includes('roll.html') && !link.href.includes('github.com')) {
+    if (link && link.href && !link.href.includes('roll.html')) {
         e.preventDefault();
         window.openArticle(link.href);
     }
@@ -167,10 +155,10 @@ document.getElementById('app').addEventListener('click', function(e) {
 </script>
 
 <script>
+    // Cooldown Sync for Lucky Roll
     function syncRollCooldown() {
         const rollLink = document.querySelector('.game-link[href="roll.html"]');
         if (!rollLink) return;
-
         const savedExpiry = localStorage.getItem('rollCooldown');
         const now = Date.now();
 
@@ -178,21 +166,14 @@ document.getElementById('app').addEventListener('click', function(e) {
             const diff = parseInt(savedExpiry) - now;
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
-
             rollLink.style.opacity = "0.4";
-            rollLink.style.filter = "grayscale(1)";
-            rollLink.style.cursor = "not-allowed";
             rollLink.style.pointerEvents = "none";
             rollLink.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
-
             setTimeout(syncRollCooldown, 1000);
         } else {
             rollLink.style.opacity = "1";
-            rollLink.style.filter = "none";
-            rollLink.style.cursor = "pointer";
             rollLink.style.pointerEvents = "auto";
             rollLink.innerText = "🎰 PLAY LUCKY ROLL";
-            if (savedExpiry) localStorage.removeItem('rollCooldown');
         }
     }
     window.addEventListener('load', syncRollCooldown);
