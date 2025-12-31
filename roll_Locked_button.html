@@ -11,8 +11,9 @@
         #number-display { font-size: 5rem; font-weight: bold; color: var(--btc-orange); margin: 1rem 0; text-shadow: 0 0 10px rgba(247, 147, 26, 0.5); transition: 0.3s; }
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
         button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; }
-        button:disabled { background: #444; cursor: not-allowed; color: #888; border: 1px solid #555; }
+        button:disabled { background: #444; cursor: not-allowed; color: #888; }
         
+        /* Winner Styles */
         .winner-glow { animation: glow 1.5s ease-in-out infinite alternate; color: var(--win-green) !important; }
         @keyframes glow { from { text-shadow: 0 0 10px var(--win-green); } to { text-shadow: 0 0 30px var(--win-green); } }
         
@@ -50,6 +51,7 @@
             </div>
 
             <button id="copy-btn" onclick="copyProof()" style="display: none;">📋 COPY PROOF</button>
+            
             <p style="font-size: 0.65rem; color: #555; margin-top: 10px;">Provably fair signature generated on OCI.</p>
         </div>
     </div>
@@ -76,10 +78,6 @@
 
         async function handleRoll() {
             const btn = document.getElementById('roll-btn');
-            
-            // SECURITY CHECK: If button is visually locked, stop the function immediately
-            if (btn.disabled || btn.innerText === "LOCKED") return;
-
             const resultArea = document.getElementById('result-area');
             const numDisp = document.getElementById('number-display');
             const statusMsg = document.getElementById('status-message');
@@ -89,9 +87,12 @@
             btn.innerText = "VERIFYING...";
             numDisp.classList.remove('winner-glow');
             copyBtn.style.display = "none";
+            copyBtn.classList.remove('winner-blink');
 
             try {
                 const response = await fetch(`${API_BASE}/get-roll`);
+                if (!response.ok) throw new Error('API unreachable');
+                
                 const data = await response.json();
 
                 numDisp.innerText = data.num;
@@ -101,14 +102,21 @@
                 resultArea.style.display = 'block';
 
                 const sig = String(data.signature);
-                const isWinner = (String(data.num) === "2121") || (sig.startsWith("21") && sig.endsWith("21"));
+                const isRareSig = sig.startsWith("21") && sig.endsWith("21");
+                const is2121 = (String(data.num) === "2121");
 
-                if (isWinner) {
+                if (isRareSig || is2121) {
                     numDisp.classList.add('winner-glow');
                     copyBtn.style.display = "block";
                     copyBtn.classList.add('winner-blink');
-                    statusMsg.innerHTML = "<h3 class='winner-glow'>✨ WINNER DETECTED!</h3>";
-                    sendAlert("WINNER DETECTED", "User hit a prize combination", data);
+                    
+                    if (isRareSig) {
+                        statusMsg.innerHTML = "<h3 class='winner-glow'>🍀 RARE SIG WINNER (2000 SATS)!</h3>";
+                        sendAlert("WINNER: 2000 SATS", "Rare Signature", data);
+                    } else {
+                        statusMsg.innerHTML = "<h3 class='winner-glow'>✨ LUCKY 2121 WINNER (500 SATS)!</h3>";
+                        sendAlert("WINNER: 500 SATS", "2121 Roll", data);
+                    }
                 } else {
                     statusMsg.innerHTML = "<h3 style='color: #666;'>Better luck next time!</h3>";
                 }
@@ -118,8 +126,9 @@
                 startTimer(expiry);
 
             } catch (error) {
+                console.error(error);
                 btn.disabled = false;
-                btn.innerText = "ROLL FOR SATS";
+                btn.innerText = "RETRY ROLL";
             }
         }
 
@@ -129,18 +138,21 @@
             try {
                 await navigator.clipboard.writeText(text);
                 btn.innerText = "✅ COPIED!";
-                sendAlert("COPY BUTTON CLICKED", "User copied proof data");
-                setTimeout(() => { btn.innerText = "📋 COPY PROOF"; }, 2000);
+                btn.classList.remove('winner-blink');
+                
+                // Send alert with current proof data for validation
+                sendAlert("COPY BUTTON CLICKED", "User is claiming their win.");
+                
+                setTimeout(() => { 
+                    btn.innerText = "📋 COPY PROOF";
+                    btn.classList.add('winner-blink'); 
+                }, 2000);
             } catch (err) { console.error(err); }
         }
 
         function startTimer(expiry) {
             const timerDiv = document.getElementById('timer');
             const btn = document.getElementById('roll-btn');
-            
-            // Hard disable on start
-            btn.disabled = true;
-
             const interval = setInterval(() => {
                 const now = Date.now();
                 const diff = expiry - now;
@@ -155,24 +167,14 @@
                     const secs = Math.floor((diff % 60000) / 1000);
                     timerDiv.innerText = `Next roll in: ${mins}:${secs.toString().padStart(2, '0')}`;
                     btn.innerText = "LOCKED";
-                    btn.disabled = true; // Ensure it stays disabled every tick
                 }
             }, 1000);
         }
 
-        // --- THE FIX ---
         window.onload = () => {
             const savedExpiry = localStorage.getItem('rollCooldown');
-            const btn = document.getElementById('roll-btn');
-            
-            if (savedExpiry && Date.now() < parseInt(savedExpiry)) {
-                // Immediately disable and start timer
-                btn.disabled = true;
-                btn.innerText = "LOCKED";
+            if (savedExpiry && Date.now() < savedExpiry) {
                 startTimer(parseInt(savedExpiry));
-            } else {
-                btn.disabled = false;
-                btn.innerText = "ROLL FOR SATS";
             }
         };
     </script>
