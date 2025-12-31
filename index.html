@@ -165,5 +165,49 @@ document.getElementById('app').addEventListener('click', function(e) {
     }
 });
 </script>
+<script>
+    /**
+     * Synchronizes the "Play Lucky Roll" link with the cooldown timer.
+     * Prevents users from clicking the link if they have already rolled.
+     */
+    function syncRollCooldown() {
+        const rollLink = document.querySelector('.game-link[href="roll.html"]');
+        if (!rollLink) return;
+
+        const savedExpiry = localStorage.getItem('rollCooldown');
+        const now = Date.now();
+
+        if (savedExpiry && now < parseInt(savedExpiry)) {
+            // Cooldown is active: Calculate time remaining
+            const diff = parseInt(savedExpiry) - now;
+            const mins = Math.floor(diff / 60000);
+            const secs = Math.floor((diff % 60000) / 1000);
+
+            // Apply "Disabled" styles and block interaction
+            rollLink.style.opacity = "0.4";
+            rollLink.style.filter = "grayscale(1)";
+            rollLink.style.cursor = "not-allowed";
+            rollLink.style.pointerEvents = "none"; // Hard-blocks clicks
+            rollLink.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
+
+            // Update every second
+            setTimeout(syncRollCooldown, 1000);
+        } else {
+            // Cooldown expired: Restore original link state
+            rollLink.style.opacity = "1";
+            rollLink.style.filter = "none";
+            rollLink.style.cursor = "pointer";
+            rollLink.style.pointerEvents = "auto";
+            rollLink.innerText = "🎰 PLAY LUCKY ROLL";
+            
+            // Cleanup expired data
+            if (savedExpiry) localStorage.removeItem('rollCooldown');
+        }
+    }
+
+    // Run when page loads and when user switches back to this tab
+    window.addEventListener('load', syncRollCooldown);
+    window.addEventListener('focus', syncRollCooldown);
+</script>
 </body>
 </html>
