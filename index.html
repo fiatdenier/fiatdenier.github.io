@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <style>
-  /* Design from original backup */
+  /* Basic design from original backup */
   .game-link { display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #f7931a; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9rem; }
   .game-link:hover { background-color: #e17e0a; }
 
@@ -21,7 +21,8 @@
   
   #bridge-msg { display: none; padding: 60px 20px; text-align: center; color: #ccc; flex-grow: 1; font-family: 'Roboto', sans-serif; }
   #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
-  iframe { flex-grow: 1; width: 100%; border: none; background: white; display: none; }
+  #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; }
+  iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
 </style>
 </head>
 <body>
@@ -39,15 +40,18 @@
             <div id="modal-controls">
                 <button class="modal-btn" onclick="postToNostr()">POST TO NOSTR</button>
                 <button class="modal-btn" style="background:#444;" onclick="openExternal()">OPEN IN NEW TAB ↗</button>
+                <span id="load-status"></span>
             </div>
             <button class="modal-btn" onclick="closeArticle()" style="background:#555;">CLOSE [X]</button>
         </div>
+        
         <div id="bridge-msg">
             <h2>Direct Access Required</h2>
-            <p>This publisher blocks embedded readers. Opening in a new tab...</p>
-            <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">OPEN NOW</button>
+            <p>This publisher blocks embedded readers for security.</p>
+            <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">OPEN ARTICLE IN NEW TAB</button>
         </div>
-        <iframe id="articleFrame"></iframe>
+
+        <iframe id="articleFrame" src=""></iframe>
     </div>
 </div>
 
@@ -57,14 +61,9 @@
   <button id="next-btn">Next</button>
 </div>
 
-<footer>
-<small>Pure links. No tracking. Source on <a href="https://github.com/fiatdenier/BitcoinReport/" target="_blank" rel="noopener">GitHub</a>.</small>
-</footer>
-
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
 
-// 1. Core Initialization
 paginateNews({
   jsonPath: './data/news.json',
   articlesPerSection: 10,
@@ -80,32 +79,65 @@ let bridgeTimer;
 let currentUrl = '';
 
 window.openArticle = function(url) {
-    // FIX: Ensure absolute URL so it doesn't open on fiatdenier.com
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
 
-    const frameBreakers = ['cointelegraph.com', 'bloomberg.com', 'coindesk.com', 'bitcoinmagazine.com', 'decrypt.co', 'cryptoslate.com'];
-    const isBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
+    // 1. THE BLACKLIST (Instant Warning)
+    const frameBreakers = [
+        'cointelegraph.com', 'bloomberg.com', 'coindesk.com', 
+        'bitcoinmagazine.com', 'decrypt.co', 'reuters.com', 'wsj.com', 'cnbc.com' 'cointelegraph.com', 
+        'bitcoinmagazine.com', 'btcmanager', 'bitcoin.com', 'crypto.news',
+		'coindesk.com', 'beincrypto.com', 'decrypt.co', 'coindesk.com', 
+        'cryptoslate.com'  
+    ];
+    
+    const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
     
     const modal = document.getElementById('articleModal');
     const bridge = document.getElementById('bridge-msg');
     const frame = document.getElementById('articleFrame');
-    const controls = document.getElementById('modal-controls');
+    const status = document.getElementById('load-status');
 
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
+    // Reset state
+    clearTimeout(bridgeTimer);
+    status.innerText = "";
 
-    if (isBreaker) {
-        bridge.style.display = 'block';
-        frame.style.display = 'none';
-        controls.style.visibility = 'hidden';
-        bridgeTimer = setTimeout(() => window.open(currentUrl, '_blank', 'noopener,noreferrer'), 2000);
+    if (isKnownBreaker) {
+        // INSTANT WARNING for blacklisted sites
+        showWarning();
     } else {
+        // ATTEMPT LOAD for others
         bridge.style.display = 'none';
         frame.style.display = 'block';
-        controls.style.visibility = 'visible';
         frame.src = currentUrl;
+        status.innerText = "Checking compatibility...";
+
+        // 2. THE AUTOMATIC TIMER (Fallback Warning)
+        // If the frame doesn't load within 3.5 seconds, show the warning
+        bridgeTimer = setTimeout(() => {
+            showWarning();
+        }, 3500);
+
+        frame.onload = function() {
+            // If it loads, clear the warning timer
+            clearTimeout(bridgeTimer);
+            status.innerText = "Secure Reader Active";
+        };
     }
 };
+
+function showWarning() {
+    const bridge = document.getElementById('bridge-msg');
+    const frame = document.getElementById('articleFrame');
+    const status = document.getElementById('load-status');
+    
+    bridge.style.display = 'block';
+    frame.style.display = 'none';
+    frame.src = ''; // Stop trying to load
+    status.innerText = "Compatibility Issue";
+}
 
 window.closeArticle = function() {
     clearTimeout(bridgeTimer);
@@ -122,7 +154,6 @@ window.postToNostr = function() {
     if (currentUrl) window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
 };
 
-// 3. Link Click Hijacker (CAPTURES DYNAMIC LINKS)
 document.getElementById('app').addEventListener('click', function(e) {
     const link = e.target.closest('a');
     if (link && link.href && !link.href.includes('roll.html') && !link.href.includes('github.com')) {
