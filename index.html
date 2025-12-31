@@ -84,10 +84,8 @@ window.openArticle = function(url) {
     // 1. THE BLACKLIST (Instant Warning)
     const frameBreakers = [
         'cointelegraph.com', 'bloomberg.com', 'coindesk.com', 
-        'bitcoinmagazine.com', 'decrypt.co', 'reuters.com', 'wsj.com', 'cnbc.com' 'cointelegraph.com', 
-        'bitcoinmagazine.com', 'btcmanager', 'bitcoin.com', 'crypto.news',
-		'coindesk.com', 'beincrypto.com', 'decrypt.co', 'coindesk.com', 
-        'cryptoslate.com'  
+        'bitcoinmagazine.com', 'decrypt.co', 'cryptoslate.com',
+        'reuters.com', 'wsj.com', 'cnbc.com'
     ];
     
     const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
