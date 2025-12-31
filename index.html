@@ -3,7 +3,26 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bitcoin Wire - Last 24 Hours</title>
+
+<title>Lucky Roll - Deny Fiat, Win Sats</title>
+<meta name="title" content="Lucky Roll - Deny Fiat, Win Sats">
+<meta name="description" content="Roll the dice, verify your luck on-chain, and win Bitcoin. The fairest game in the fountain.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fiatdenier.com/">
+<meta property="og:title" content="🎰 Lucky Roll: Deny Fiat, Win Sats">
+<meta property="og:description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
+
+<meta property="og:image" content="https://fiatdenier.com/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://fiatdenier.com/">
+<meta property="twitter:title" content="Lucky Roll - Deny Fiat, Win Sats">
+<meta property="twitter:description" content="Roll the dice, stack some sats. Cryptographically verified Bitcoin rewards.">
+<meta property="twitter:image" content="https://fiatdenier.com/preview.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -78,10 +97,8 @@ let bridgeTimer;
 let currentUrl = '';
 
 window.openArticle = function(url) {
-    // Standardize URL to absolute
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
 
-    // --- YOUR UPDATED BLACKLIST ---
     const frameBreakers = [
         'cointelegraph.com', 
         'bitcoinmagazine.com',
@@ -119,7 +136,6 @@ window.openArticle = function(url) {
         frame.src = currentUrl;
         status.innerText = "Checking compatibility...";
 
-        // Automatic fallback timer (3.5s) for sites not in blacklist but still block
         bridgeTimer = setTimeout(() => {
             showWarning();
         }, 3500);
@@ -166,46 +182,36 @@ document.getElementById('app').addEventListener('click', function(e) {
 });
 </script>
 <script>
-    /**
-     * Synchronizes the "Play Lucky Roll" link with the cooldown timer.
-     * Prevents users from clicking the link if they have already rolled.
-     */
     function syncRollCooldown() {
-        const rollLink = document.querySelector('.game-link[href="roll.html"]');
+        const rollLink = document.querySelector('.game-link[href=\"roll.html\"]');
         if (!rollLink) return;
 
         const savedExpiry = localStorage.getItem('rollCooldown');
         const now = Date.now();
 
         if (savedExpiry && now < parseInt(savedExpiry)) {
-            // Cooldown is active: Calculate time remaining
             const diff = parseInt(savedExpiry) - now;
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
 
-            // Apply "Disabled" styles and block interaction
-            rollLink.style.opacity = "0.4";
-            rollLink.style.filter = "grayscale(1)";
-            rollLink.style.cursor = "not-allowed";
-            rollLink.style.pointerEvents = "none"; // Hard-blocks clicks
+            rollLink.style.opacity = \"0.4\";
+            rollLink.style.filter = \"grayscale(1)\";
+            rollLink.style.cursor = \"not-allowed\";
+            rollLink.style.pointerEvents = \"none\";
             rollLink.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
 
-            // Update every second
             setTimeout(syncRollCooldown, 1000);
         } else {
-            // Cooldown expired: Restore original link state
-            rollLink.style.opacity = "1";
-            rollLink.style.filter = "none";
-            rollLink.style.cursor = "pointer";
-            rollLink.style.pointerEvents = "auto";
-            rollLink.innerText = "🎰 PLAY LUCKY ROLL";
+            rollLink.style.opacity = \"1\";
+            rollLink.style.filter = \"none\";
+            rollLink.style.cursor = \"pointer\";
+            rollLink.style.pointerEvents = \"auto\";
+            rollLink.innerText = \"🎰 PLAY LUCKY ROLL\";
             
-            // Cleanup expired data
             if (savedExpiry) localStorage.removeItem('rollCooldown');
         }
     }
 
-    // Run when page loads and when user switches back to this tab
     window.addEventListener('load', syncRollCooldown);
     window.addEventListener('focus', syncRollCooldown);
 </script>
