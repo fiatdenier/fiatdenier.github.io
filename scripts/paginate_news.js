@@ -1,7 +1,7 @@
 // /scripts/paginate_news.js
 export function paginateNews(config) {
   const {
-    jsonPath = "./data/news.json", // Matches your GitHub Action move
+    jsonPath = "./data/news.json",
     articlesPerSection = 10,
     sections = 3,
     updatedElemId,
@@ -14,20 +14,27 @@ export function paginateNews(config) {
   let articles = [];
   let currentPage = 1;
 
-  // Internal helper functions
-  const timeAgo = (dateStr) => {
-    const diffMins = Math.floor((new Date() - new Date(dateStr)) / 60000);
-    if (diffMins < 60) return `${diffMins} mins ago`;
-    const hours = Math.floor(diffMins / 60);
-    return hours < 24 ? `${hours} hours ago` : `${Math.floor(hours / 24)} days ago`;
-  };
+  function updateTimestamp() {
+    const el = document.getElementById(updatedElemId);
+    if (!el) return;
+    const now = new Date();
+    el.textContent = `Updated ${now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} EST`;
+  }
 
-  const renderPage = (page) => {
-    const start = (page - 1) * (articlesPerSection * sections);
-    const pageArticles = articles.slice(start, start + (articlesPerSection * sections));
+  function timeAgo(dateStr) {
+    const diff = Math.floor((new Date() - new Date(dateStr)) / 60000);
+    if (diff < 60) return `${diff} mins ago`;
+    const hours = Math.floor(diff / 60);
+    return hours < 24 ? `${hours} hours ago` : `${Math.floor(hours / 24)} days ago`;
+  }
+
+  function renderPage(page) {
+    const perPage = articlesPerSection * sections;
+    const pageArticles = articles.slice((page - 1) * perPage, page * perPage);
     const app = document.getElementById(appElemId);
+    if (!app) return;
     app.innerHTML = "";
-    
+
     const cols = Array.from({ length: sections }, () => []);
     pageArticles.forEach((a, i) => cols[i % sections].push(a));
 
@@ -43,38 +50,51 @@ export function paginateNews(config) {
       app.appendChild(sec);
     });
     updatePagination();
-  };
+  }
 
-  const updatePagination = () => {
+  function updatePagination() {
     const total = Math.ceil(articles.length / (articlesPerSection * sections));
-    document.getElementById(prevBtnId).disabled = currentPage === 1;
-    document.getElementById(nextBtnId).disabled = currentPage === total || total === 0;
-    document.getElementById(pageInfoId).textContent = `Page ${currentPage} of ${total || 1}`;
-  };
+    const prev = document.getElementById(prevBtnId);
+    const next = document.getElementById(nextBtnId);
+    const info = document.getElementById(pageInfoId);
 
-  // THE FIX: Explicitly attach the logic to the buttons
+    if (prev) prev.disabled = currentPage === 1;
+    if (next) next.disabled = currentPage === total || total === 0;
+    if (info) info.textContent = `Page ${currentPage} of ${total || 1}`;
+  }
+
+  // THE FIX: Explicit event handlers
+  function handleNext() {
+    const total = Math.ceil(articles.length / (articlesPerSection * sections));
+    if (currentPage < total) {
+      currentPage++;
+      renderPage(currentPage);
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function handlePrev() {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPage(currentPage);
+      window.scrollTo(0, 0);
+    }
+  }
+
   async function init() {
     try {
       const res = await fetch(jsonPath);
       const data = await res.json();
       articles = data.articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
-      // Connect the buttons to the functions
-      document.getElementById(nextBtnId).onclick = () => {
-        currentPage++;
-        renderPage(currentPage);
-        window.scrollTo(0, 0);
-      };
-      document.getElementById(prevBtnId).onclick = () => {
-        currentPage--;
-        renderPage(currentPage);
-        window.scrollTo(0, 0);
-      };
+      // BIND THE BUTTONS HERE
+      document.getElementById(nextBtnId)?.addEventListener('click', handleNext);
+      document.getElementById(prevBtnId)?.addEventListener('click', handlePrev);
 
       renderPage(currentPage);
+      updateTimestamp();
     } catch (e) {
-      console.error("Path Error:", e);
-      document.getElementById(appElemId).innerText = "Could not load news from " + jsonPath;
+      console.error("News load failed", e);
     }
   }
   init();
