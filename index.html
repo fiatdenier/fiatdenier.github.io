@@ -28,12 +28,12 @@
     margin-bottom: 4px;
   }
 
-  /* SOURCE/META: BOLD & BLACK */
+  /* SOURCE/META: BOLD & SOFTER BLACK (Dark Grey) */
   #app a .meta {
     display: block;
     font-family: 'Roboto', sans-serif;
     font-weight: 700 !important;
-    color: #000000 !important;
+    color: #333333 !important; /* Changed from pure black to a softer dark grey */
     font-size: 0.85rem;
   }
 
@@ -50,6 +50,7 @@
     cursor: pointer;
     font-weight: 700 !important;
     font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
   }
 
   /* MODAL & PAGINATION */
@@ -142,13 +143,14 @@ document.getElementById('app').addEventListener('click', e => {
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
 
-            // ADJUSTED: Lighter grey background for better visibility
+            // LOCKED STATE: Grey background, Orange text as requested
             btn.style.backgroundColor = "#666"; 
-            btn.style.color = "#ccc"; 
+            btn.style.color = "#f7931a"; 
             btn.style.pointerEvents = "none";
             btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
             setTimeout(syncRoll, 1000);
         } else {
+            // ACTIVE STATE: Orange background, White text
             btn.style.backgroundColor = "#f7931a";
             btn.style.color = "#fff";
             btn.style.pointerEvents = "auto";
