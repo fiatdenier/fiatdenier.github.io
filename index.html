@@ -16,15 +16,13 @@
 <link rel="stylesheet" href="styles.css" />
 
 <style>
-  /* GLOBAL UI BOLD & ORANGE */
+  /* FONT & COLOR THEME */
   header h1 a, #updated, #pagination, #page-info {
     font-family: 'Roboto', sans-serif;
     font-weight: 700 !important;
     color: #f7931a !important;
     text-decoration: none;
   }
-
-  /* HEADLINE: BOLD & ORANGE */
   #app a .headline {
     display: block;
     font-family: 'Roboto', sans-serif;
@@ -32,8 +30,6 @@
     color: #f7931a !important;
     margin-bottom: 4px;
   }
-
-  /* SOURCE/META: BOLD & SOFTER GREY */
   #app a .meta {
     display: block;
     font-family: 'Roboto', sans-serif;
@@ -41,10 +37,9 @@
     color: #666666 !important; 
     font-size: 0.85rem;
   }
-
   #app a { text-decoration: none; display: block; margin-bottom: 15px; }
 
-  /* LUCKY ROLL BUTTON */
+  /* BUTTON STYLES */
   .game-link { 
     display: inline-block; 
     margin-top: 10px; 
@@ -54,7 +49,6 @@
     border: none;
     cursor: pointer;
     font-weight: 700 !important;
-    font-family: 'Roboto', sans-serif;
   }
 
   /* MODAL & PAGINATION */
@@ -72,7 +66,7 @@
 <body>
 <header>
   <h1><a href="/">BITCOIN WIRE</a></h1>
-  <p id="updated">Updated</p>
+  <p id="updated">Checking for updates...</p>
   <button class="game-link" id="lucky-roll-btn" onclick="location.href='roll.html'">🎰 PLAY LUCKY ROLL</button>
 </header>
 
@@ -101,12 +95,12 @@
 import { paginateNews } from './scripts/paginate_news.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // CACHE BUSTER: Generates a unique number (timestamp)
-  const cb = Date.now();
+  // FORCE A UNIQUE VERSION EVERY LOAD
+  const version = new Date().getTime();
 
   paginateNews({
-    // Adding the timestamp here forces a fresh fetch of news.json
-    jsonPath: `./data/news.json?t=${cb}`,
+    // Using a double-parameter cache buster
+    jsonPath: `./data/news.json?v=${version}&nocache=true`,
     articlesPerSection: 10,
     sections: 3,
     updatedElemId: 'updated',
@@ -146,12 +140,10 @@ document.getElementById('app').addEventListener('click', e => {
         const btn = document.getElementById('lucky-roll-btn');
         const expiry = localStorage.getItem('rollCooldown');
         const now = Date.now();
-
         if (expiry && now < parseInt(expiry)) {
             const diff = parseInt(expiry) - now;
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
-
             btn.style.backgroundColor = "#AAAAAA"; 
             btn.style.color = "#f7931a"; 
             btn.style.pointerEvents = "none";
