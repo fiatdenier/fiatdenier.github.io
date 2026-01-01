@@ -5,44 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bitcoin Wire - Last 24 Hours</title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="🎰 Lucky Roll: Deny Fiat, Win Sats">
-<meta property="og:description" content="Test your luck! Roll for a chance to win up to 2000 sats.">
-<meta property="og:image" content="https://fiatdenier.com/preview.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 
 <style>
-  /* GLOBAL BOLD & ORANGE FOR HEADERS/UI */
-  body, header, h1, #updated, #pagination, #page-info {
+  /* GLOBAL UI BOLD & ORANGE */
+  header h1 a, #updated, #pagination, #page-info {
     font-family: 'Roboto', sans-serif;
     font-weight: 700 !important;
-    color: #f7931a !important; /* Theme Orange */
-  }
-
-  /* ARTICLE LINKS: BOLD & BLACK */
-  #app a {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700 !important;
-    color: #000000 !important; /* Black as requested */
+    color: #f7931a !important;
     text-decoration: none;
-    display: block;
-    margin-bottom: 15px;
   }
 
-  /* META INFO (Source & Time) WITHIN LINKS: BOLD & BLACK */
+  /* HEADLINE: BOLD & ORANGE */
+  #app a .headline {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700 !important;
+    color: #f7931a !important;
+    margin-bottom: 4px;
+  }
+
+  /* SOURCE/META: BOLD & BLACK */
   #app a .meta {
+    display: block;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700 !important;
     color: #000000 !important;
-    opacity: 0.7; /* Slightly faded black for readability */
     font-size: 0.85rem;
   }
 
-  /* HEADER SPECIFIC */
-  header h1 a { font-size: 2.5rem; text-decoration: none; color: #f7931a !important; }
+  #app a { text-decoration: none; display: block; margin-bottom: 15px; }
 
   /* LUCKY ROLL BUTTON */
   .game-link { 
@@ -54,26 +49,18 @@
     border: none;
     cursor: pointer;
     font-weight: 700 !important;
+    font-family: 'Roboto', sans-serif;
   }
 
-  /* MODAL STYLES */
+  /* MODAL & PAGINATION */
   .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; }
   .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid #f7931a; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
-  .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; border-bottom: 1px solid #444; align-items: center; }
+  .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
   .modal-btn { background: #f7931a; color: #fff !important; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; }
 
-  /* PAGINATION BUTTONS */
   #pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 60px 0; width: 100%; }
-  #pagination button { 
-    background: #333; 
-    border: 1px solid #444; 
-    padding: 12px 24px; 
-    cursor: pointer; 
-    border-radius: 4px; 
-    min-width: 120px;
-    color: #f7931a !important;
-  }
+  #pagination button { background: #333; border: 1px solid #444; padding: 12px 24px; cursor: pointer; border-radius: 4px; min-width: 120px; color: #f7931a !important; font-weight: 700; }
   #pagination button:disabled { opacity: 0.2; cursor: not-allowed; }
 </style>
 </head>
@@ -107,7 +94,6 @@
 
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
-
 document.addEventListener('DOMContentLoaded', () => {
   paginateNews({
     jsonPath: './scripts/news.json',
@@ -156,14 +142,15 @@ document.getElementById('app').addEventListener('click', e => {
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
 
-            btn.style.backgroundColor = "#444"; 
-            btn.style.color = "#888 !important";
+            // ADJUSTED: Lighter grey background for better visibility
+            btn.style.backgroundColor = "#666"; 
+            btn.style.color = "#ccc"; 
             btn.style.pointerEvents = "none";
             btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
             setTimeout(syncRoll, 1000);
         } else {
             btn.style.backgroundColor = "#f7931a";
-            btn.style.color = "#fff !important";
+            btn.style.color = "#fff";
             btn.style.pointerEvents = "auto";
             btn.innerText = "🎰 PLAY LUCKY ROLL";
         }

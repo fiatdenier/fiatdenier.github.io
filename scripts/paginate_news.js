@@ -1,7 +1,6 @@
 // /scripts/paginate_news.js
 export function paginateNews(config) {
   const {
-    jsonPath = "./data/news.json",
     articlesPerSection = 10,
     sections = 3,
     updatedElemId,
@@ -15,16 +14,20 @@ export function paginateNews(config) {
   let currentPage = 1;
 
   function updateTimestamp() {
-    const el = document.getElementById(updatedElemId);
-    if (!el) return;
+    const updatedEl = document.getElementById(updatedElemId);
+    if (!updatedEl) return;
     const now = new Date();
-    el.textContent = `Updated ${now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} EST`;
+    const estDate = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+    const estStr = estDate.toLocaleString("en-US", {
+      hour: "numeric", minute: "2-digit", hour12: true
+    });
+    updatedEl.textContent = `Updated ${estStr} EST`;
   }
 
   function timeAgo(dateStr) {
-    const diff = Math.floor((new Date() - new Date(dateStr)) / 60000);
-    if (diff < 60) return `${diff} mins ago`;
-    const hours = Math.floor(diff / 60);
+    const diffMins = Math.floor((new Date() - new Date(dateStr)) / 60000);
+    if (diffMins < 60) return `${diffMins} mins ago`;
+    const hours = Math.floor(diffMins / 60);
     return hours < 24 ? `${hours} hours ago` : `${Math.floor(hours / 24)} days ago`;
   }
 
@@ -36,66 +39,42 @@ export function paginateNews(config) {
     app.innerHTML = "";
 
     const cols = Array.from({ length: sections }, () => []);
-    pageArticles.forEach((a, i) => cols[i % sections].push(a));
+    pageArticles.forEach((article, i) => cols[i % sections].push(article));
 
     cols.forEach(col => {
-      const sec = document.createElement("section");
-      sec.className = "col";
+      const section = document.createElement("section");
+      section.className = "col";
       col.forEach(a => {
         const link = document.createElement("a");
         link.href = a.url;
-        link.innerHTML = `${a.title}<span class="meta">${a.source} • ${timeAgo(a.published_at)}</span>`;
-        sec.appendChild(link);
+        // WRAPPED: Headline and Meta separated for color logic
+        link.innerHTML = `<span class="headline">${a.title}</span><span class="meta">${a.source} • ${timeAgo(a.published_at)}</span>`;
+        section.appendChild(link);
       });
-      app.appendChild(sec);
+      app.appendChild(section);
     });
     updatePagination();
   }
 
   function updatePagination() {
     const total = Math.ceil(articles.length / (articlesPerSection * sections));
-    const prev = document.getElementById(prevBtnId);
-    const next = document.getElementById(nextBtnId);
-    const info = document.getElementById(pageInfoId);
-
-    if (prev) prev.disabled = currentPage === 1;
-    if (next) next.disabled = currentPage === total || total === 0;
-    if (info) info.textContent = `Page ${currentPage} of ${total || 1}`;
-  }
-
-  // THE FIX: Explicit event handlers
-  function handleNext() {
-    const total = Math.ceil(articles.length / (articlesPerSection * sections));
-    if (currentPage < total) {
-      currentPage++;
-      renderPage(currentPage);
-      window.scrollTo(0, 0);
-    }
-  }
-
-  function handlePrev() {
-    if (currentPage > 1) {
-      currentPage--;
-      renderPage(currentPage);
-      window.scrollTo(0, 0);
-    }
+    document.getElementById(prevBtnId).disabled = currentPage === 1;
+    document.getElementById(nextBtnId).disabled = currentPage === total || total === 0;
+    document.getElementById(pageInfoId).textContent = `Page ${currentPage} of ${total || 1}`;
   }
 
   async function init() {
     try {
-      const res = await fetch(jsonPath);
+      const res = await fetch("./scripts/news.json");
       const data = await res.json();
       articles = data.articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
-      // BIND THE BUTTONS HERE
-      document.getElementById(nextBtnId)?.addEventListener('click', handleNext);
-      document.getElementById(prevBtnId)?.addEventListener('click', handlePrev);
+      document.getElementById(nextBtnId).onclick = () => { currentPage++; renderPage(currentPage); window.scrollTo(0, 0); };
+      document.getElementById(prevBtnId).onclick = () => { currentPage--; renderPage(currentPage); window.scrollTo(0, 0); };
 
       renderPage(currentPage);
       updateTimestamp();
-    } catch (e) {
-      console.error("News load failed", e);
-    }
+    } catch (e) { console.error(e); }
   }
   init();
 }
