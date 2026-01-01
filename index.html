@@ -4,41 +4,50 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
 <title>Bitcoin Wire - Last 24 Hours</title>
+
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fiatdenier.com/">
 <meta property="og:title" content="🎰 Lucky Roll: Deny Fiat, Win Sats">
 <meta property="og:description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
 <meta property="og:image" content="https://fiatdenier.com/preview.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://fiatdenier.com/preview.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 
 <style>
-  header h1 a, #updated, #pagination, #page-info { font-family: 'Roboto', sans-serif; font-weight: 700; color: #f7931a !important; text-decoration: none; }
-  #app a .headline { display: block; font-family: 'Roboto', sans-serif; font-weight: 700; color: #f7931a !important; margin-bottom: 4px; }
-  #app a .meta { display: block; font-family: 'Roboto', sans-serif; font-weight: 700; color: #888888 !important; font-size: 0.85rem; }
-  
-  .game-link { display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #f7931a; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9rem; border:none; cursor:pointer;}
-  
+  header h1 a, #updated, #pagination, #page-info { font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #f7931a !important; text-decoration: none; }
+  #app a .headline { display: block; font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #f7931a !important; margin-bottom: 4px; }
+  #app a .meta { display: block; font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #888888 !important; font-size: 0.85rem; }
+  #app a { text-decoration: none; display: block; margin-bottom: 15px; }
+
+  .game-link { display: inline-block; margin-top: 10px; padding: 10px 20px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: 700 !important; }
+
   .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; }
   .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid #f7931a; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
-  .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #444; }
-  .modal-btn { background: #f7931a; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; color: white; }
+  .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
+  .modal-btn { background: #f7931a; color: #fff !important; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
+  
   #bridge-msg { display: none; padding: 60px 20px; text-align: center; color: #ccc; flex-grow: 1; font-family: 'Roboto', sans-serif; }
   #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
-  #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; }
+  #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; font-family: 'Roboto', sans-serif; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
+
+  #pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 60px 0; width: 100%; }
+  #pagination button { background: #333; border: 1px solid #444; padding: 12px 24px; cursor: pointer; border-radius: 4px; min-width: 120px; color: #f7931a !important; font-weight: 700; }
+  #pagination button:disabled { opacity: 0.2; cursor: not-allowed; }
 </style>
 </head>
 <body>
 <header>
   <h1><a href="/">BITCOIN WIRE</a></h1>
-  <p id="updated">Updated</p>
+  <p id="updated">Checking for updates...</p>
   <button class="game-link" id="lucky-roll-btn" onclick="location.href='roll.html'">🎰 PLAY LUCKY ROLL</button>
 </header>
 
@@ -54,11 +63,13 @@
             </div>
             <button class="modal-btn" onclick="closeArticle()" style="background:#555;">CLOSE [X]</button>
         </div>
+
         <div id="bridge-msg">
             <h2>Direct Access Required</h2>
-            <p>This publisher blocks embedded readers.</p>
+            <p>This publisher blocks embedded readers to protect their content or advertising.</p>
             <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">OPEN ARTICLE IN NEW TAB</button>
         </div>
+
         <iframe id="articleFrame" src=""></iframe>
     </div>
 </div>
@@ -71,61 +82,81 @@
 
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
-const version = new Date().getTime();
-paginateNews({
-  jsonPath: `./data/news.json?v=${version}`,
-  articlesPerSection: 10,
-  sections: 3,
-  updatedElemId: 'updated',
-  appElemId: 'app',
-  prevBtnId: 'prev-btn',
-  nextBtnId: 'next-btn',
-  pageInfoId: 'page-info'
+
+document.addEventListener('DOMContentLoaded', () => {
+  const version = new Date().getTime();
+  paginateNews({
+    jsonPath: `./data/news.json?v=${version}&nocache=true`,
+    articlesPerSection: 10,
+    sections: 3,
+    updatedElemId: 'updated',
+    appElemId: 'app',
+    prevBtnId: 'prev-btn',
+    nextBtnId: 'next-btn',
+    pageInfoId: 'page-info'
+  });
 });
 
-let bridgeTimer;
 let currentUrl = '';
+let bridgeTimer;
 
 window.openArticle = function(url) {
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
-    const frameBreakers = ['cointelegraph.com','bitcoinmagazine.com','bitcoin.com','coindesk.com','decrypt.co','bloomberg.com','wsj.com','reuters.com'];
-    const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
+
+    // BLACKLIST: domains that explicitly block iframes
+    const frameBreakers = [
+        'cointelegraph.com', 'bitcoinmagazine.com', 'btcmanager.com',
+        'bitcoin.com', 'crypto.news', 'coindesk.com', 'beincrypto.com',
+        'decrypt.co', 'cryptoslate.com', 'ccn.com', 'theblock.co',
+        'bloomberg.com', 'wsj.com', 'reuters.com'
+    ];
     
-    document.getElementById('articleModal').style.display = 'block';
+    const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
+    const modal = document.getElementById('articleModal');
+    const bridge = document.getElementById('bridge-msg');
+    const frame = document.getElementById('articleFrame');
+    const status = document.getElementById('load-status');
+
+    modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
     clearTimeout(bridgeTimer);
+    status.innerText = "Connecting...";
 
     if (isKnownBreaker) {
-        showWarning();
+        showBridge();
     } else {
-        document.getElementById('bridge-msg').style.display = 'none';
-        document.getElementById('articleFrame').style.display = 'block';
-        document.getElementById('articleFrame').src = currentUrl;
-        document.getElementById('load-status').innerText = "Checking compatibility...";
-        
-        bridgeTimer = setTimeout(showWarning, 3500);
-        document.getElementById('articleFrame').onload = () => {
+        bridge.style.display = 'none';
+        frame.style.display = 'block';
+        frame.src = currentUrl;
+
+        // Fallback: Show warning after 4s if site blocks connection (Frown Face)
+        bridgeTimer = setTimeout(() => {
+            showBridge();
+        }, 4000);
+
+        frame.onload = function() {
             clearTimeout(bridgeTimer);
-            document.getElementById('load-status').innerText = "Secure Reader Active";
+            status.innerText = "Secure Reader Active";
         };
     }
 };
 
-function showWarning() {
+function showBridge() {
     document.getElementById('bridge-msg').style.display = 'block';
     document.getElementById('articleFrame').style.display = 'none';
-    document.getElementById('articleFrame').src = '';
+    document.getElementById('articleFrame').src = ''; 
     document.getElementById('load-status').innerText = "Compatibility Issue";
 }
 
-window.closeArticle = () => {
+window.closeArticle = function() {
     clearTimeout(bridgeTimer);
     document.getElementById('articleModal').style.display = 'none';
     document.getElementById('articleFrame').src = '';
     document.body.style.overflow = 'auto';
 };
 
-window.openExternal = () => currentUrl && window.open(currentUrl, '_blank');
+window.openExternal = () => currentUrl && window.open(currentUrl, '_blank', 'noopener,noreferrer');
 window.postToNostr = () => currentUrl && window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
 
 document.getElementById('app').addEventListener('click', e => {
@@ -141,19 +172,22 @@ document.getElementById('app').addEventListener('click', e => {
     function syncRoll() {
         const btn = document.getElementById('lucky-roll-btn');
         const expiry = localStorage.getItem('rollCooldown');
-        if (expiry && Date.now() < parseInt(expiry)) {
-            const diff = parseInt(expiry) - Date.now();
+        const now = Date.now();
+        if (expiry && now < parseInt(expiry)) {
+            const diff = parseInt(expiry) - now;
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
             
-            // LOCKED STATE (Grey)
-            btn.style.backgroundColor = "#555555"; 
+            // LOCKED STATE: Grey Background, Orange Text
+            btn.style.backgroundColor = "#AAAAAA"; 
+            btn.style.color = "#f7931a"; 
             btn.style.pointerEvents = "none";
             btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
             setTimeout(syncRoll, 1000);
         } else {
-            // READY STATE (Orange)
+            // READY STATE: Orange Background, White Text
             btn.style.backgroundColor = "#f7931a";
+            btn.style.color = "#fff";
             btn.style.pointerEvents = "auto";
             btn.innerText = "🎰 PLAY LUCKY ROLL";
         }
