@@ -32,18 +32,37 @@
   #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
 
-  /* PAGINATION STYLING */
-  #pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 40px 0; }
-  #pagination button { background: #333; border: 1px solid #444; color: white; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-family: 'Roboto', sans-serif; }
-  #pagination button:disabled { opacity: 0.3; cursor: not-allowed; }
-  #page-info { color: #888; font-family: 'Roboto', sans-serif; font-size: 0.9rem; }
+  /* FIXED: PAGINATION STYLING (This makes the buttons actually work) */
+  #pagination { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 15px; 
+    padding: 50px 0; 
+    clear: both;
+    width: 100%;
+  }
+  #pagination button { 
+    background: #333; 
+    border: 1px solid #444; 
+    color: white; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    min-width: 120px;
+  }
+  #pagination button:hover:not(:disabled) { background: #444; border-color: #f7931a; }
+  #pagination button:disabled { opacity: 0.2; cursor: not-allowed; }
+  #page-info { color: #f7931a; font-family: 'Roboto', sans-serif; font-weight: bold; }
 </style>
 </head>
 <body>
 <header>
   <h1><a href="/">BITCOIN WIRE</a></h1>
   <p id="updated">Updated</p>
-  <a href="roll.html" class="game-link">🎰 PLAY LUCKY ROLL</a>
+  <a href="roll.html" class="game-link" id="lucky-roll-btn">🎰 PLAY LUCKY ROLL</a>
 </header>
 
 <main id="app" class="grid"></main>
@@ -61,10 +80,9 @@
         
         <div id="bridge-msg">
             <h2>Direct Access Required</h2>
-            <p>This publisher blocks embedded readers to protect their content or advertising.</p>
+            <p>This publisher blocks embedded readers.</p>
             <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">OPEN ARTICLE IN NEW TAB</button>
         </div>
-
         <iframe id="articleFrame" src=""></iframe>
     </div>
 </div>
@@ -78,7 +96,7 @@
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
 
-// RESTORED: Immediate call logic from index.original.html
+// RESTORED: Immediate call logic from your original working file
 paginateNews({
   jsonPath: './data/news.json',
   articlesPerSection: 10,
@@ -90,77 +108,25 @@ paginateNews({
   pageInfoId: 'page-info'
 });
 
-let bridgeTimer;
+// Modal Logic
 let currentUrl = '';
-
 window.openArticle = function(url) {
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
-
-    const frameBreakers = [
-        'cointelegraph.com', 'bitcoinmagazine.com', 'btcmanager.com', 'bitcoin.com',
-        'crypto.news', 'coindesk.com', 'beincrypto.com', 'decrypt.co',
-        'cryptoslate.com', 'ccn.com', 'theblock.co', 'bloomberg.com', 'wsj.com'
-    ];
-    
-    const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
     const modal = document.getElementById('articleModal');
-    const bridge = document.getElementById('bridge-msg');
     const frame = document.getElementById('articleFrame');
-    const status = document.getElementById('load-status');
-
     modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    
-    clearTimeout(bridgeTimer);
-    status.innerText = "";
-
-    if (isKnownBreaker) {
-        showWarning();
-    } else {
-        bridge.style.display = 'none';
-        frame.style.display = 'block';
-        frame.src = currentUrl;
-        status.innerText = "Checking compatibility...";
-
-        bridgeTimer = setTimeout(() => {
-            showWarning();
-        }, 3500);
-
-        frame.onload = function() {
-            clearTimeout(bridgeTimer);
-            status.innerText = "Secure Reader Active";
-        };
-    }
+    frame.src = currentUrl;
 };
-
-function showWarning() {
-    const bridge = document.getElementById('bridge-msg');
-    const frame = document.getElementById('articleFrame');
-    const status = document.getElementById('load-status');
-    bridge.style.display = 'block';
-    frame.style.display = 'none';
-    frame.src = ''; 
-    status.innerText = "Compatibility Issue";
-}
-
 window.closeArticle = function() {
-    clearTimeout(bridgeTimer);
     document.getElementById('articleModal').style.display = 'none';
     document.getElementById('articleFrame').src = '';
-    document.body.style.overflow = 'auto';
 };
+window.openExternal = () => currentUrl && window.open(currentUrl, '_blank');
+window.postToNostr = () => currentUrl && window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
 
-window.openExternal = function() {
-    if (currentUrl) window.open(currentUrl, '_blank', 'noopener,noreferrer');
-};
-
-window.postToNostr = function() {
-    if (currentUrl) window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
-};
-
-document.getElementById('app').addEventListener('click', function(e) {
+document.getElementById('app').addEventListener('click', e => {
     const link = e.target.closest('a');
-    if (link && link.href && !link.href.includes('roll.html') && !link.href.includes('github.com')) {
+    if (link && link.href && !link.href.includes('roll.html')) {
         e.preventDefault();
         window.openArticle(link.href);
     }
@@ -168,37 +134,30 @@ document.getElementById('app').addEventListener('click', function(e) {
 </script>
 
 <script>
-    // FIXED: Lucky Roll Cooldown and Link Sync Logic
-    function syncRollCooldown() {
-        const rollLink = document.querySelector('.game-link[href="roll.html"]');
-        if (!rollLink) return;
-
-        const savedExpiry = localStorage.getItem('rollCooldown');
+    /* LUCKY ROLL SYNC 
+       Isolated in a standard script block to prevent 'undefined' errors
+    */
+    function updateGameButton() {
+        const btn = document.getElementById('lucky-roll-btn');
+        const expiry = localStorage.getItem('rollCooldown');
         const now = Date.now();
 
-        if (savedExpiry && now < parseInt(savedExpiry)) {
-            const diff = parseInt(savedExpiry) - now;
+        if (expiry && now < parseInt(expiry)) {
+            const diff = parseInt(expiry) - now;
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
-
-            rollLink.style.opacity = "0.4";
-            rollLink.style.filter = "grayscale(1)";
-            rollLink.style.cursor = "not-allowed";
-            rollLink.style.pointerEvents = "none";
-            rollLink.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
-
-            setTimeout(syncRollCooldown, 1000);
+            btn.style.opacity = "0.5";
+            btn.style.pointerEvents = "none";
+            btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
+            setTimeout(updateGameButton, 1000);
         } else {
-            rollLink.style.opacity = "1";
-            rollLink.style.filter = "none";
-            rollLink.style.cursor = "pointer";
-            rollLink.style.pointerEvents = "auto";
-            rollLink.innerText = "🎰 PLAY LUCKY ROLL";
-            if (savedExpiry) localStorage.removeItem('rollCooldown');
+            btn.style.opacity = "1";
+            btn.style.pointerEvents = "auto";
+            btn.innerText = "🎰 PLAY LUCKY ROLL";
         }
     }
-    window.addEventListener('load', syncRollCooldown);
-    window.addEventListener('focus', syncRollCooldown);
+    window.addEventListener('load', updateGameButton);
+    window.addEventListener('focus', updateGameButton);
 </script>
 </body>
 </html>
