@@ -5,27 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Bitcoin Wire - Last 24 Hours</title>
-<meta name="description" content="Bitcoin headlines, updated automatically.">
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fiatdenier.com/">
 <meta property="og:title" content="🎰 Lucky Roll: Deny Fiat, Win Sats">
 <meta property="og:description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
 <meta property="og:image" content="https://fiatdenier.com/preview.png">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lucky Roll - Deny Fiat, Win Sats">
-<meta name="twitter:description" content="Roll the dice and stack some sats.">
 <meta name="twitter:image" content="https://fiatdenier.com/preview.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+
 <style>
   header h1 a, #updated, #pagination, #page-info { font-family: 'Roboto', sans-serif; font-weight: 700; color: #f7931a !important; text-decoration: none; }
   #app a .headline { display: block; font-family: 'Roboto', sans-serif; font-weight: 700; color: #f7931a !important; margin-bottom: 4px; }
-  #app a .meta { display: block; font-family: 'Roboto', sans-serif; font-weight: 700; color: #666666 !important; font-size: 0.85rem; }
+  #app a .meta { display: block; font-family: 'Roboto', sans-serif; font-weight: 700; color: #888888 !important; font-size: 0.85rem; }
   
   .game-link { display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #f7931a; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9rem; border:none; cursor:pointer;}
   
@@ -75,7 +71,6 @@
 
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
-
 const version = new Date().getTime();
 paginateNews({
   jsonPath: `./data/news.json?v=${version}`,
@@ -93,19 +88,26 @@ let currentUrl = '';
 
 window.openArticle = function(url) {
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
-    const frameBreakers = ['cointelegraph.com','bitcoinmagazine.com','bitcoin.com','coindesk.com','decrypt.co','bloomberg.com','wsj.com'];
+    const frameBreakers = ['cointelegraph.com','bitcoinmagazine.com','bitcoin.com','coindesk.com','decrypt.co','bloomberg.com','wsj.com','reuters.com'];
     const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
     
     document.getElementById('articleModal').style.display = 'block';
     document.body.style.overflow = 'hidden';
-    
+    clearTimeout(bridgeTimer);
+
     if (isKnownBreaker) {
         showWarning();
     } else {
         document.getElementById('bridge-msg').style.display = 'none';
         document.getElementById('articleFrame').style.display = 'block';
         document.getElementById('articleFrame').src = currentUrl;
+        document.getElementById('load-status').innerText = "Checking compatibility...";
+        
         bridgeTimer = setTimeout(showWarning, 3500);
+        document.getElementById('articleFrame').onload = () => {
+            clearTimeout(bridgeTimer);
+            document.getElementById('load-status').innerText = "Secure Reader Active";
+        };
     }
 };
 
@@ -143,12 +145,15 @@ document.getElementById('app').addEventListener('click', e => {
             const diff = parseInt(expiry) - Date.now();
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
-            btn.style.opacity = "0.5";
+            
+            // LOCKED STATE (Grey)
+            btn.style.backgroundColor = "#555555"; 
             btn.style.pointerEvents = "none";
             btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
             setTimeout(syncRoll, 1000);
         } else {
-            btn.style.opacity = "1";
+            // READY STATE (Orange)
+            btn.style.backgroundColor = "#f7931a";
             btn.style.pointerEvents = "auto";
             btn.innerText = "🎰 PLAY LUCKY ROLL";
         }
