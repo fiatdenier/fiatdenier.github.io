@@ -17,9 +17,19 @@ export function paginateNews(config) {
   function updateTimestamp() {
     const el = document.getElementById(updatedElemId);
     if (!el) return;
+    
     const now = new Date();
-    const est = new Date(now.toLocaleString("en-US", {timeZone: "America/New_York"}));
-    el.textContent = `Updated ${est.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit', second: '2-digit'})} EST`;
+    
+    // Formatting the string with forced seconds and EST timezone
+    const timeString = now.toLocaleTimeString("en-US", {
+        timeZone: "America/New_York",
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+    });
+
+    el.textContent = `Updated ${timeString} EST`;
   }
 
   function timeAgo(dateStr) {
