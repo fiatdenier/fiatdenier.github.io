@@ -3,16 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-
 <title>Bitcoin Wire - Last 24 Hours</title>
-<meta name="description" content="Bitcoin headlines, updated automatically.">
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://fiatdenier.com/">
-<meta property="og:title" content="🎰 Lucky Roll: Deny Fiat, Win Sats">
-<meta property="og:description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
-<meta property="og:image" content="https://fiatdenier.com/preview.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -31,38 +22,13 @@
   #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
   #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
-
-  /* FIXED: PAGINATION STYLING (This makes the buttons actually work) */
-  #pagination { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 15px; 
-    padding: 50px 0; 
-    clear: both;
-    width: 100%;
-  }
-  #pagination button { 
-    background: #333; 
-    border: 1px solid #444; 
-    color: white; 
-    padding: 10px 20px; 
-    cursor: pointer; 
-    border-radius: 4px; 
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    min-width: 120px;
-  }
-  #pagination button:hover:not(:disabled) { background: #444; border-color: #f7931a; }
-  #pagination button:disabled { opacity: 0.2; cursor: not-allowed; }
-  #page-info { color: #f7931a; font-family: 'Roboto', sans-serif; font-weight: bold; }
 </style>
 </head>
 <body>
 <header>
   <h1><a href="/">BITCOIN WIRE</a></h1>
   <p id="updated">Updated</p>
-  <a href="roll.html" class="game-link" id="lucky-roll-btn">🎰 PLAY LUCKY ROLL</a>
+  <a href="roll.html" class="game-link">🎰 PLAY LUCKY ROLL</a>
 </header>
 
 <main id="app" class="grid"></main>
@@ -80,9 +46,10 @@
         
         <div id="bridge-msg">
             <h2>Direct Access Required</h2>
-            <p>This publisher blocks embedded readers.</p>
+            <p>This publisher blocks embedded readers to protect their content or advertising.</p>
             <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">OPEN ARTICLE IN NEW TAB</button>
         </div>
+
         <iframe id="articleFrame" src=""></iframe>
     </div>
 </div>
@@ -96,7 +63,6 @@
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
 
-// RESTORED: Immediate call logic from your original working file
 paginateNews({
   jsonPath: './data/news.json',
   articlesPerSection: 10,
@@ -108,56 +74,96 @@ paginateNews({
   pageInfoId: 'page-info'
 });
 
-// Modal Logic
+let bridgeTimer;
 let currentUrl = '';
+
 window.openArticle = function(url) {
+    // Standardize URL to absolute
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
+
+    // --- YOUR UPDATED BLACKLIST ---
+    const frameBreakers = [
+        'cointelegraph.com', 
+        'bitcoinmagazine.com',
+        'btcmanager.com',
+        'bitcoin.com',
+        'crypto.news',
+        'coindesk.com',
+        'beincrypto.com',
+        'decrypt.co',
+        'cryptoslate.com',
+        'ccn.com',
+        'theblock.co',
+        'bloomberg.com',
+        'wsj.com'
+    ];
+    
+    const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
+    
     const modal = document.getElementById('articleModal');
+    const bridge = document.getElementById('bridge-msg');
     const frame = document.getElementById('articleFrame');
+    const status = document.getElementById('load-status');
+
     modal.style.display = 'block';
-    frame.src = currentUrl;
+    document.body.style.overflow = 'hidden';
+    
+    clearTimeout(bridgeTimer);
+    status.innerText = "";
+
+    if (isKnownBreaker) {
+        showWarning();
+    } else {
+        bridge.style.display = 'none';
+        frame.style.display = 'block';
+        frame.src = currentUrl;
+        status.innerText = "Checking compatibility...";
+
+        // Automatic fallback timer (3.5s) for sites not in blacklist but still block
+        bridgeTimer = setTimeout(() => {
+            showWarning();
+        }, 3500);
+
+        frame.onload = function() {
+            clearTimeout(bridgeTimer);
+            status.innerText = "Secure Reader Active";
+        };
+    }
 };
+
+function showWarning() {
+    const bridge = document.getElementById('bridge-msg');
+    const frame = document.getElementById('articleFrame');
+    const status = document.getElementById('load-status');
+    
+    bridge.style.display = 'block';
+    frame.style.display = 'none';
+    frame.src = ''; 
+    status.innerText = "Compatibility Issue";
+}
+
 window.closeArticle = function() {
+    clearTimeout(bridgeTimer);
     document.getElementById('articleModal').style.display = 'none';
     document.getElementById('articleFrame').src = '';
+    document.body.style.overflow = 'auto';
 };
-window.openExternal = () => currentUrl && window.open(currentUrl, '_blank');
-window.postToNostr = () => currentUrl && window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
 
-document.getElementById('app').addEventListener('click', e => {
+window.openExternal = function() {
+    if (currentUrl) window.open(currentUrl, '_blank', 'noopener,noreferrer');
+};
+
+window.postToNostr = function() {
+    if (currentUrl) window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
+};
+
+document.getElementById('app').addEventListener('click', function(e) {
     const link = e.target.closest('a');
-    if (link && link.href && !link.href.includes('roll.html')) {
+    if (link && link.href && !link.href.includes('roll.html') && !link.href.includes('github.com')) {
         e.preventDefault();
         window.openArticle(link.href);
     }
 });
-</script>
-
-<script>
-    /* LUCKY ROLL SYNC 
-       Isolated in a standard script block to prevent 'undefined' errors
-    */
-    function updateGameButton() {
-        const btn = document.getElementById('lucky-roll-btn');
-        const expiry = localStorage.getItem('rollCooldown');
-        const now = Date.now();
-
-        if (expiry && now < parseInt(expiry)) {
-            const diff = parseInt(expiry) - now;
-            const mins = Math.floor(diff / 60000);
-            const secs = Math.floor((diff % 60000) / 1000);
-            btn.style.opacity = "0.5";
-            btn.style.pointerEvents = "none";
-            btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
-            setTimeout(updateGameButton, 1000);
-        } else {
-            btn.style.opacity = "1";
-            btn.style.pointerEvents = "auto";
-            btn.innerText = "🎰 PLAY LUCKY ROLL";
-        }
-    }
-    window.addEventListener('load', updateGameButton);
-    window.addEventListener('focus', updateGameButton);
 </script>
 </body>
 </html>
