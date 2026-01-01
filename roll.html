@@ -62,24 +62,14 @@
         const API_BASE = "https://api.fiatdenier.com";
         let isRolling = false;
         
-        // --- AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         let clickBuffer = null;
         let dingBuffer = null; 
         let loopSource = null;
         let loopGain = null;
 
-        fetch('click.wav')
-            .then(r => r.arrayBuffer())
-            .then(b => audioCtx.decodeAudioData(b))
-            .then(data => { clickBuffer = data; })
-            .catch(e => console.error("Click Sound Load Error:", e));
-
-        fetch('ding.wav')
-            .then(r => r.arrayBuffer())
-            .then(b => audioCtx.decodeAudioData(b))
-            .then(data => { dingBuffer = data; })
-            .catch(e => console.error("Ding Sound Load Error:", e));
+        fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { clickBuffer = data; });
+        fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { dingBuffer = data; });
 
         function playLoop() {
             if (!clickBuffer) return;
@@ -87,34 +77,18 @@
             loopSource.buffer = clickBuffer;
             loopSource.loop = true;
             loopGain = audioCtx.createGain();
-            loopGain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+            loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime);
             loopSource.connect(loopGain);
             loopGain.connect(audioCtx.destination);
             loopSource.start(0);
         }
 
-        // Fades background to zero before a ding hits
-        function silenceLoopForDing() {
+        // Tight fade-out right at the stop moment
+        function fadeLoopFast() {
             if (loopGain) {
                 loopGain.gain.cancelScheduledValues(audioCtx.currentTime);
-                // Ramp to 0.001 over 20ms to avoid a pop
-                loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.02);
-            }
-        }
-
-        // Fades background back in after a ding hits
-        function resumeLoopAfterDing() {
-            if (loopGain) {
-                loopGain.gain.exponentialRampToValueAtTime(0.3, audioCtx.currentTime + 0.1);
-            }
-        }
-
-        function stopLoop() {
-            if (loopSource && loopGain) {
-                loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
-                setTimeout(() => {
-                    if (loopSource) { loopSource.stop(); loopSource = null; }
-                }, 100);
+                // 15ms fade is fast enough to feel instant but slow enough to prevent a pop
+                loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.015);
             }
         }
 
@@ -131,12 +105,11 @@
             if (isRolling) return;
             const btn = document.getElementById('roll-btn');
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
-            const resultArea = document.getElementById('result-area');
             
             isRolling = true;
             btn.disabled = true;
             btn.innerText = "ROLLING...";
-            resultArea.style.display = 'none';
+            document.getElementById('result-area').style.display = 'none';
 
             const spinIntervals = slots.map(slot => {
                 slot.classList.remove('just-finished');
@@ -150,47 +123,41 @@
 
                 const response = await fetch(`${API_BASE}/get-roll`);
                 if (response.status === 429) { 
-                    stopLoop();
+                    if (loopSource) loopSource.stop();
                     spinIntervals.forEach(clearInterval);
                     showIpLock(); 
                     return; 
                 }
                 const data = await response.json();
-
                 const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
                 const finalStr = data.num.toString().padStart(4, '0');
 
                 for (let i = 0; i < stopOrder.length; i++) {
                     const idx = stopOrder[i];
+                    await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
                     
-                    // Random wait time between reels
-                    const wait = 800 + Math.random() * 600;
-                    await new Promise(r => setTimeout(r, wait));
+                    // Kill background loop right as we trigger the stop
+                    fadeLoopFast();
                     
-                    // 1. PRE-EMPTIVE SILENCE: Kill the background loop volume slightly before the stop logic
-                    silenceLoopForDing();
-                    await new Promise(r => setTimeout(r, 50)); // The 50ms buffer you requested
-
-                    // 2. STOP LOGIC
                     clearInterval(spinIntervals[idx]);
                     slots[idx].classList.remove('rolling');
                     slots[idx].classList.add('just-finished');
                     slots[idx].innerText = finalStr[idx];
                     
-                    // 3. TRIGGER DING
                     playDing(data.num === 2121); 
 
-                    // 4. RESUME BACKGROUND (unless it was the last number)
-                    if (i < stopOrder.length - 1) {
-                        resumeLoopAfterDing();
+                    // Only bring the loop back if there are more reels to stop
+                    if (i < stopOrder.length - 1 && loopGain) {
+                        loopGain.gain.exponentialRampToValueAtTime(0.25, audioCtx.currentTime + 0.1);
                     }
                 }
 
-                stopLoop();
+                if (loopSource) { loopSource.stop(); loopSource = null; }
+                
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
-                resultArea.style.display = 'block';
+                document.getElementById('result-area').style.display = 'block';
 
                 if (data.num === 2121) {
                     confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
@@ -206,8 +173,7 @@
                 isRolling = false;
 
             } catch (error) {
-                console.error("Roll failed:", error);
-                stopLoop();
+                if (loopSource) loopSource.stop();
                 spinIntervals.forEach(clearInterval);
                 showIpLock();
                 isRolling = false;
