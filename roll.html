@@ -67,11 +67,12 @@
         let clickBuffer = null;
         let loopSource = null;
 
+        // Pre-load sound
         fetch('click.wav')
             .then(r => r.arrayBuffer())
             .then(b => audioCtx.decodeAudioData(b))
-            .then(data => clickBuffer = data)
-            .catch(e => console.log("Waiting for click.wav..."));
+            .then(data => { clickBuffer = data; })
+            .catch(e => console.error("Audio Load Error:", e));
 
         function playLoop() {
             if (!clickBuffer) return;
@@ -83,30 +84,16 @@
         }
 
         function stopLoop() {
-            if (loopSource) {
-                loopSource.stop();
-                loopSource = null;
-            }
+            if (loopSource) { try { loopSource.stop(); } catch(e){} loopSource = null; }
         }
 
         function playDing(isJackpot = false) {
             if (!clickBuffer) return;
             const source = audioCtx.createBufferSource();
             source.buffer = clickBuffer;
-            // Play a 0.15s slice for the "stop" sound
             if (isJackpot) source.playbackRate.value = 1.3;
             source.connect(audioCtx.destination);
             source.start(0, 0, 0.15); 
-        }
-
-        function triggerConfetti() {
-            const end = Date.now() + 3000;
-            const colors = ['#f7931a', '#ffffff', '#696969'];
-            (function frame() {
-                confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors });
-                confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors });
-                if (Date.now() < end) requestAnimationFrame(frame);
-            }());
         }
 
         async function handleRoll() {
@@ -120,41 +107,47 @@
             btn.innerText = "ROLLING...";
             resultArea.style.display = 'none';
 
+            // Start animation IMMEDIATELY for feedback
+            const spinIntervals = slots.map(slot => {
+                slot.classList.remove('just-finished');
+                slot.classList.add('rolling');
+                return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
+            });
+
             try {
-                const response = await fetch(`${API_BASE}/get-roll`);
-                if (response.status === 429) { showIpLock(); return; }
-                const data = await response.json();
-
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
-                playLoop(); // Start background loop
+                playLoop();
 
-                const spinIntervals = slots.map(slot => {
-                    slot.classList.remove('just-finished');
-                    slot.classList.add('rolling');
-                    return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
-                });
+                const response = await fetch(`${API_BASE}/get-roll`);
+                if (response.status === 429) { 
+                    stopLoop();
+                    spinIntervals.forEach(clearInterval);
+                    showIpLock(); 
+                    return; 
+                }
+                const data = await response.json();
 
                 const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
                 const finalStr = data.num.toString().padStart(4, '0');
 
                 for (let i = 0; i < stopOrder.length; i++) {
                     const idx = stopOrder[i];
-                    await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
+                    await new Promise(r => setTimeout(r, 1000 + Math.random() * 800));
                     clearInterval(spinIntervals[idx]);
                     slots[idx].classList.remove('rolling');
                     slots[idx].classList.add('just-finished');
                     slots[idx].innerText = finalStr[idx];
-                    playDing(data.num === 2121); // Play short ding
+                    playDing(data.num === 2121);
                 }
 
-                stopLoop(); // Stop background loop
+                stopLoop();
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
                 resultArea.style.display = 'block';
 
                 if (data.num === 2121) {
-                    triggerConfetti();
+                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
                     document.getElementById('status-message').innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
                     document.getElementById('copy-btn').style.display = "block";
                 } else {
@@ -167,7 +160,9 @@
                 isRolling = false;
 
             } catch (error) {
+                console.error("Roll failed:", error);
                 stopLoop();
+                spinIntervals.forEach(clearInterval);
                 showIpLock();
                 isRolling = false;
             }
@@ -178,7 +173,7 @@
             localStorage.setItem('rollCooldown', expiry);
             startTimer(expiry);
             document.getElementById('ip-lock-msg').style.display = 'block';
-            [0,1,2,3].forEach(i => document.getElementById(`slot-${i}`).style.display = 'none');
+            document.getElementById('slot-container').style.display = 'none';
         }
 
         function startTimer(expiry) {
@@ -193,6 +188,8 @@
                     btn.classList.remove('locked');
                     btn.innerText = "ROLL FOR SATS";
                     localStorage.removeItem('rollCooldown');
+                    document.getElementById('ip-lock-msg').style.display = 'none';
+                    document.getElementById('slot-container').style.display = 'flex';
                 } else {
                     const mins = Math.floor(diff / 60000);
                     const secs = Math.floor((diff % 60000) / 1000);
