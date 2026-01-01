@@ -14,39 +14,15 @@
             --locked-grey: #444444;
         }
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
-        
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; }
-        
-        /* Slot Machine Styling */
         #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1.5rem 0; font-size: 5rem; font-weight: bold; font-family: 'Roboto', sans-serif; }
         .slot { width: 70px; height: 100px; line-height: 100px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); }
-        
-        /* Animation Classes */
-        .rolling { 
-            animation: blur-spin 0.1s infinite; 
-            opacity: 0.7; 
-            filter: blur(2px); 
-            color: #888; 
-        }
-        @keyframes blur-spin {
-            0% { transform: translateY(-2px); }
-            50% { transform: translateY(2px); }
-            100% { transform: translateY(0); }
-        }
-        .just-finished { 
-            color: var(--btc-orange) !important; 
-            text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); 
-            transform: scale(1.05); 
-            transition: all 0.1s ease-out; 
-        }
-
+        .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); color: #888; }
+        @keyframes blur-spin { 0% { transform: translateY(-2px); } 50% { transform: translateY(2px); } 100% { transform: translateY(0); } }
+        .just-finished { color: var(--btc-orange) !important; text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); transform: scale(1.05); transition: all 0.1s ease-out; }
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
-        
         button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; transition: 0.2s; color: white; }
-        
-        /* Specific Button Colors Requested */
         #roll-btn.locked { background: var(--locked-grey) !important; color: var(--btc-orange) !important; cursor: not-allowed; }
-        
         #timer { font-size: 0.85rem; color: var(--grey-text); margin-top: 10px; height: 20px; font-weight: bold; }
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
         #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
@@ -72,52 +48,45 @@
 
         <div id="result-area" style="display: none;">
             <div id="status-message" style="margin-top: 15px;"></div>
-            
             <div class="proof-box" id="proof-content">
                 <strong>Result:</strong> <span id="res-num"></span><br>
                 <strong>Timestamp:</strong> <span id="res-ts"></span><br>
                 <strong>Signature:</strong> <span id="res-sig" style="color: #666;"></span>
             </div>
-
             <button id="copy-btn" onclick="copyProof()" style="display: none; margin-top:10px;">📋 COPY PROOF</button>
         </div>
     </div>
 
     <script>
-	    const CLICK_SOUND = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA="; // This is a placeholder; use the logic below for the actual synthesis
-        const COOLDOWN_MINUTES = 10; // 10mins
+        const COOLDOWN_MINUTES = 10;
         const API_BASE = "https://api.fiatdenier.com";
         let isRolling = false;
+        
+        // --- AUDIO ENGINE ---
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let clickBuffer = null;
 
-        // --- SOUND ENGINE ---
+        // Load your click.wav file immediately
+        fetch('click.wav')
+            .then(r => r.arrayBuffer())
+            .then(b => audioCtx.decodeAudioData(b))
+            .then(data => clickBuffer = data)
+            .catch(e => console.log("Waiting for click.wav..."));
+
         function playDing(isJackpot = false) {
-            const ctx = new (window.AudioContext || window.webkitAudioContext)();
-            const osc = ctx.createOscillator();
-            const gain = ctx.createGain();
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(isJackpot ? 880 : 660, ctx.currentTime);
-            gain.gain.setValueAtTime(0.1, ctx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.4);
-            osc.connect(gain); gain.connect(ctx.destination);
-            osc.start(); osc.stop(ctx.currentTime + 0.4);
+            if (!clickBuffer) return;
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            
+            const source = audioCtx.createBufferSource();
+            source.buffer = clickBuffer;
+            
+            // Higher pitch if it is a jackpot
+            if (isJackpot) source.playbackRate.value = 1.3;
+            
+            source.connect(audioCtx.destination);
+            source.start(0);
         }
 
-        function playWinArpeggio() {
-            const ctx = new (window.AudioContext || window.webkitAudioContext)();
-            const playNote = (freq, time) => {
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-                osc.frequency.setValueAtTime(freq, time);
-                gain.gain.setValueAtTime(0.1, time);
-                gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.5);
-                osc.connect(gain); gain.connect(ctx.destination);
-                osc.start(time); osc.stop(time + 0.5);
-            };
-            const now = ctx.currentTime;
-            [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => playNote(f, now + (i * 0.15)));
-        }
-
-        // --- CELEBRATION ---
         function triggerConfetti() {
             const end = Date.now() + 3000;
             const colors = ['#f7931a', '#ffffff', '#696969'];
@@ -144,20 +113,20 @@
                 if (response.status === 429) { showIpLock(); return; }
                 const data = await response.json();
 
-                // Start Visual Spin
+                if (audioCtx.state === 'suspended') await audioCtx.resume();
+
                 const spinIntervals = slots.map(slot => {
+                    slot.classList.remove('just-finished');
                     slot.classList.add('rolling');
                     return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
                 });
 
-                // Random stop order
                 const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
                 const finalStr = data.num.toString().padStart(4, '0');
 
                 for (let i = 0; i < stopOrder.length; i++) {
                     const idx = stopOrder[i];
                     await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-                    
                     clearInterval(spinIntervals[idx]);
                     slots[idx].classList.remove('rolling');
                     slots[idx].classList.add('just-finished');
@@ -165,14 +134,12 @@
                     playDing(data.num === 2121);
                 }
 
-                // Finish Up
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
                 resultArea.style.display = 'block';
 
                 if (data.num === 2121) {
-                    playWinArpeggio();
                     triggerConfetti();
                     document.getElementById('status-message').innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
                     document.getElementById('copy-btn').style.display = "block";
@@ -186,7 +153,6 @@
                 isRolling = false;
 
             } catch (error) {
-                console.error(error);
                 showIpLock();
                 isRolling = false;
             }
@@ -205,8 +171,7 @@
             const btn = document.getElementById('roll-btn');
             
             const interval = setInterval(() => {
-                const now = Date.now();
-                const diff = expiry - now;
+                const diff = expiry - Date.now();
                 if (diff <= 0) {
                     clearInterval(interval);
                     timerDiv.innerText = "";
@@ -227,9 +192,7 @@
 
         function copyProof() {
             const text = document.getElementById('proof-content').innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Proof Copied!");
-            });
+            navigator.clipboard.writeText(text).then(() => { alert("Proof Copied!"); });
         }
 
         window.onload = () => {
