@@ -4,32 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiat Denier - Lucky Roll</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        :root { --btc-orange: #f7931a; --dark-bg: #1a1a1a; --win-green: #4CAF50; --error-red: #ff4444; }
-        body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-        .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; }
-        #number-display { font-size: 5rem; font-weight: bold; color: var(--btc-orange); margin: 1rem 0; text-shadow: 0 0 10px rgba(102, 102, 102, 0.5); transition: 0.3s; }
-        .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
-        button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; transition: 0.2s; color: white; }
-        button:disabled { background: #444; cursor: not-allowed; color: #888; border: 1px solid #555; box-shadow: none; }
-        
-        .winner-glow { animation: glow 1.5s ease-in-out infinite alternate; color: var(--win-green) !important; }
-        @keyframes glow { from { text-shadow: 0 0 10px var(--win-green); } to { text-shadow: 0 0 30px var(--win-green); } }
-        
-        .winner-blink { 
-            background: var(--win-green) !important; 
-            color: white !important; 
-            animation: blinker 1s linear infinite;
-            margin-top: 15px;
-            padding: 10px;
-            font-size: 0.9rem;
-            box-shadow: 0 0 15px var(--win-green);
+        :root { 
+            --btc-orange: #f7931a; 
+            --dark-bg: #1a1a1a; 
+            --win-green: #4CAF50; 
+            --grey-text: #696969; 
+            --locked-grey: #444444;
         }
-        @keyframes blinker { 50% { opacity: 0.5; } }
+        body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
+        
+        .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; }
+        
+        /* Slot Machine Styling */
+        #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1.5rem 0; font-size: 5rem; font-weight: bold; font-family: 'Roboto', sans-serif; }
+        .slot { width: 70px; height: 100px; line-height: 100px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); }
+        
+        /* Animation Classes */
+        .rolling { 
+            animation: blur-spin 0.1s infinite; 
+            opacity: 0.7; 
+            filter: blur(2px); 
+            color: #888; 
+        }
+        @keyframes blur-spin {
+            0% { transform: translateY(-2px); }
+            50% { transform: translateY(2px); }
+            100% { transform: translateY(0); }
+        }
+        .just-finished { 
+            color: var(--btc-orange) !important; 
+            text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); 
+            transform: scale(1.05); 
+            transition: all 0.1s ease-out; 
+        }
 
-        #timer { font-size: 0.85rem; color: #888; margin-top: 10px; height: 20px; }
+        .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
+        
+        button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; transition: 0.2s; color: white; }
+        
+        /* Specific Button Colors Requested */
+        #roll-btn.locked { background: var(--locked-grey) !important; color: var(--btc-orange) !important; cursor: not-allowed; }
+        
+        #timer { font-size: 0.85rem; color: var(--grey-text); margin-top: 10px; height: 20px; font-weight: bold; }
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
-        .error-text { color: var(--error-red); font-weight: bold; }
         #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
     </style>
 </head>
@@ -37,9 +56,15 @@
 
     <div class="card">
         <a href="index.html" class="back-link">← Return to Wire</a>
-        <h2 style="margin:0; font-size: 1.2rem;">LUCKY ROLL</h2>
+        <h2 style="margin:0; font-size: 1.2rem; color: #696969;">LUCKY ROLL</h2>
         
-        <div id="number-display">----</div>
+        <div id="slot-container">
+            <div id="slot-0" class="slot">-</div>
+            <div id="slot-1" class="slot">-</div>
+            <div id="slot-2" class="slot">-</div>
+            <div id="slot-3" class="slot">-</div>
+        </div>
+
         <div id="ip-lock-msg">IP LOCKED</div>
         
         <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
@@ -54,92 +79,124 @@
                 <strong>Signature:</strong> <span id="res-sig" style="color: #666;"></span>
             </div>
 
-            <button id="copy-btn" onclick="copyProof()" style="display: none;">📋 COPY PROOF</button>
-            <p style="font-size: 0.65rem; color: #555; margin-top: 10px;">Provably fair signature generated on OCI.</p>
+            <button id="copy-btn" onclick="copyProof()" style="display: none; margin-top:10px;">📋 COPY PROOF</button>
         </div>
     </div>
 
     <script>
-        const COOLDOWN_MINUTES = 10;
+        const COOLDOWN_MINUTES = 120; // 2 Hours
         const API_BASE = "https://api.fiatdenier.com";
+        let isRolling = false;
+
+        // --- SOUND ENGINE ---
+        function playDing(isJackpot = false) {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(isJackpot ? 880 : 660, ctx.currentTime);
+            gain.gain.setValueAtTime(0.1, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.4);
+            osc.connect(gain); gain.connect(ctx.destination);
+            osc.start(); osc.stop(ctx.currentTime + 0.4);
+        }
+
+        function playWinArpeggio() {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const playNote = (freq, time) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.frequency.setValueAtTime(freq, time);
+                gain.gain.setValueAtTime(0.1, time);
+                gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.5);
+                osc.connect(gain); gain.connect(ctx.destination);
+                osc.start(time); osc.stop(time + 0.5);
+            };
+            const now = ctx.currentTime;
+            [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => playNote(f, now + (i * 0.15)));
+        }
+
+        // --- CELEBRATION ---
+        function triggerConfetti() {
+            const end = Date.now() + 3000;
+            const colors = ['#f7931a', '#ffffff', '#696969'];
+            (function frame() {
+                confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors });
+                confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors });
+                if (Date.now() < end) requestAnimationFrame(frame);
+            }());
+        }
 
         async function handleRoll() {
+            if (isRolling) return;
             const btn = document.getElementById('roll-btn');
-            const numDisp = document.getElementById('number-display');
-            const lockMsg = document.getElementById('ip-lock-msg');
+            const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             const resultArea = document.getElementById('result-area');
-            const statusMsg = document.getElementById('status-message');
-
-            if (btn.disabled || btn.innerText === "LOCKED") return;
-
+            
+            isRolling = true;
             btn.disabled = true;
-            btn.innerText = "VERIFYING...";
-            numDisp.style.display = 'block';
-            lockMsg.style.display = 'none';
+            btn.innerText = "ROLLING...";
             resultArea.style.display = 'none';
 
             try {
                 const response = await fetch(`${API_BASE}/get-roll`);
-                
-                // --- HANDLE SERVER-SIDE IP LOCK ---
-                if (response.status === 429) {
-                    showIpLock();
-                    return;
-                }
-
-                if (!response.ok) throw new Error('Server Error');
-
+                if (response.status === 429) { showIpLock(); return; }
                 const data = await response.json();
-                
-                // Double check for missing data to avoid "undefined"
-                if (!data || data.num === undefined) {
-                    showIpLock();
-                    return;
+
+                // Start Visual Spin
+                const spinIntervals = slots.map(slot => {
+                    slot.classList.add('rolling');
+                    return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
+                });
+
+                // Random stop order
+                const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
+                const finalStr = data.num.toString().padStart(4, '0');
+
+                for (let i = 0; i < stopOrder.length; i++) {
+                    const idx = stopOrder[i];
+                    await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
+                    
+                    clearInterval(spinIntervals[idx]);
+                    slots[idx].classList.remove('rolling');
+                    slots[idx].classList.add('just-finished');
+                    slots[idx].innerText = finalStr[idx];
+                    playDing(data.num === 2121);
                 }
 
-                numDisp.innerText = data.num;
+                // Finish Up
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
                 resultArea.style.display = 'block';
 
-                const sig = String(data.signature);
-                const isWinner = (String(data.num) === "2121") || (sig.startsWith("21") && sig.endsWith("21"));
-
-                if (isWinner) {
-                    numDisp.classList.add('winner-glow');
+                if (data.num === 2121) {
+                    playWinArpeggio();
+                    triggerConfetti();
+                    document.getElementById('status-message').innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
                     document.getElementById('copy-btn').style.display = "block";
-                    statusMsg.innerHTML = "<h3 class='winner-glow'>✨ WINNER DETECTED!</h3>";
                 } else {
-                    statusMsg.innerHTML = "<h3 style='color: #666;'>Better luck next time!</h3>";
+                    document.getElementById('status-message').innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
                 }
 
                 const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                 localStorage.setItem('rollCooldown', expiry);
                 startTimer(expiry);
+                isRolling = false;
 
             } catch (error) {
-                console.error("Roll failed:", error);
+                console.error(error);
                 showIpLock();
+                isRolling = false;
             }
         }
 
         function showIpLock() {
-            const btn = document.getElementById('roll-btn');
-            const numDisp = document.getElementById('number-display');
-            const lockMsg = document.getElementById('ip-lock-msg');
-            const resultArea = document.getElementById('result-area');
-
-            numDisp.style.display = 'none';
-            lockMsg.style.display = 'block';
-            btn.innerText = "LOCKED";
-            btn.disabled = true;
-            resultArea.style.display = 'none';
-
-            // Sync timer to 10 minutes from now since the server blocked it
             const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
             localStorage.setItem('rollCooldown', expiry);
             startTimer(expiry);
+            document.getElementById('ip-lock-msg').style.display = 'block';
+            [0,1,2,3].forEach(i => document.getElementById(`slot-${i}`).style.display = 'none');
         }
 
         function startTimer(expiry) {
@@ -153,16 +210,25 @@
                     clearInterval(interval);
                     timerDiv.innerText = "";
                     btn.disabled = false;
+                    btn.classList.remove('locked');
                     btn.innerText = "ROLL FOR SATS";
                     localStorage.removeItem('rollCooldown');
                 } else {
                     const mins = Math.floor(diff / 60000);
                     const secs = Math.floor((diff % 60000) / 1000);
-                    timerDiv.innerText = `Next roll in: ${mins}:${secs.toString().padStart(2, '0')}`;
-                    btn.innerText = "LOCKED";
+                    timerDiv.innerText = `NEXT ROLL IN: ${mins}:${secs.toString().padStart(2, '0')}`;
+                    btn.innerText = `LOCKED (${mins}m)`;
+                    btn.classList.add('locked');
                     btn.disabled = true; 
                 }
             }, 1000);
+        }
+
+        function copyProof() {
+            const text = document.getElementById('proof-content').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Proof Copied!");
+            });
         }
 
         window.onload = () => {
