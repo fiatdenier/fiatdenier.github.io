@@ -19,7 +19,7 @@ export function paginateNews(config) {
     if (!el) return;
     const now = new Date();
     const est = new Date(now.toLocaleString("en-US", {timeZone: "America/New_York"}));
-    el.textContent = `Updated ${est.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'})} EST`;
+    el.textContent = `Updated ${est.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit', second: '2-digit'})} EST`;
   }
 
   function timeAgo(dateStr) {
