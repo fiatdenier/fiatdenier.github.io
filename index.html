@@ -178,9 +178,9 @@ document.getElementById('app').addEventListener('click', e => {
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
             
-            // LOCKED STATE: Grey Background, Orange Text
-            btn.style.backgroundColor = "#AAAAAA"; 
-            btn.style.color = "#f7931a"; 
+            // LOCKED STATE: Grey Background, Grey Text
+            btn.style.backgroundColor = "#ADADAD"; 
+            btn.style.color = "#C4C4C4"; 
             btn.style.pointerEvents = "none";
             btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
             setTimeout(syncRoll, 1000);
