@@ -10,7 +10,7 @@
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; }
         #number-display { font-size: 5rem; font-weight: bold; color: var(--btc-orange); margin: 1rem 0; text-shadow: 0 0 10px rgba(247, 147, 26, 0.5); transition: 0.3s; }
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
-        button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; transition: 0.2s; color: white; }
+        button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; transition: 0.2s; }
         button:disabled { background: #444; cursor: not-allowed; color: #888; border: 1px solid #555; box-shadow: none; }
         
         .winner-glow { animation: glow 1.5s ease-in-out infinite alternate; color: var(--win-green) !important; }
@@ -30,7 +30,6 @@
         #timer { font-size: 0.85rem; color: #888; margin-top: 10px; height: 20px; }
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
         .error-text { color: var(--error-red); font-weight: bold; }
-        #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
     </style>
 </head>
 <body>
@@ -38,10 +37,7 @@
     <div class="card">
         <a href="index.html" class="back-link">← Return to Wire</a>
         <h2 style="margin:0; font-size: 1.2rem;">LUCKY ROLL</h2>
-        
         <div id="number-display">----</div>
-        <div id="ip-lock-msg">IP LOCKED</div>
-        
         <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
         <div id="timer"></div>
 
@@ -63,39 +59,57 @@
         const COOLDOWN_MINUTES = 10;
         const API_BASE = "https://api.fiatdenier.com";
 
+        async function sendAlert(event, details, rollData = {}) {
+            try {
+                await fetch(`${API_BASE}/lucky-roll-alert`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        event, 
+                        details,
+                        num: rollData.num || document.getElementById('res-num').innerText,
+                        ts: rollData.ts || document.getElementById('res-ts').innerText,
+                        sig: rollData.sig || document.getElementById('res-sig').innerText
+                    })
+                });
+            } catch (e) { console.error("Alert failed"); }
+        }
+
         async function handleRoll() {
             const btn = document.getElementById('roll-btn');
-            const numDisp = document.getElementById('number-display');
-            const lockMsg = document.getElementById('ip-lock-msg');
-            const resultArea = document.getElementById('result-area');
-            const statusMsg = document.getElementById('status-message');
-
             if (btn.disabled || btn.innerText === "LOCKED") return;
 
+            const resultArea = document.getElementById('result-area');
+            const numDisp = document.getElementById('number-display');
+            const statusMsg = document.getElementById('status-message');
+            const copyBtn = document.getElementById('copy-btn');
+            
             btn.disabled = true;
             btn.innerText = "VERIFYING...";
-            numDisp.style.display = 'block';
-            lockMsg.style.display = 'none';
+            numDisp.classList.remove('winner-glow');
+            copyBtn.style.display = "none";
             resultArea.style.display = 'none';
 
             try {
                 const response = await fetch(`${API_BASE}/get-roll`);
                 
-                // --- HANDLE SERVER-SIDE IP LOCK ---
+                // --- IP LOCK HANDLING ---
                 if (response.status === 429) {
-                    showIpLock();
+                    const errorData = await response.json();
+                    statusMsg.innerHTML = `<h3 class="error-text">🚫 IP LOCKED</h3><p style="font-size:0.7rem; color:#888;">${errorData.message}</p>`;
+                    numDisp.innerText = "----";
+                    resultArea.style.display = 'block';
+                    
+                    // Force start local timer to match server lock
+                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                    localStorage.setItem('rollCooldown', expiry);
+                    startTimer(expiry);
                     return;
                 }
 
                 if (!response.ok) throw new Error('Server Error');
 
                 const data = await response.json();
-                
-                // Double check for missing data to avoid "undefined"
-                if (!data || data.num === undefined) {
-                    showIpLock();
-                    return;
-                }
 
                 numDisp.innerText = data.num;
                 document.getElementById('res-num').innerText = data.num;
@@ -108,8 +122,10 @@
 
                 if (isWinner) {
                     numDisp.classList.add('winner-glow');
-                    document.getElementById('copy-btn').style.display = "block";
+                    copyBtn.style.display = "block";
+                    copyBtn.classList.add('winner-blink');
                     statusMsg.innerHTML = "<h3 class='winner-glow'>✨ WINNER DETECTED!</h3>";
+                    sendAlert("WINNER DETECTED", "User hit a prize combination", data);
                 } else {
                     statusMsg.innerHTML = "<h3 style='color: #666;'>Better luck next time!</h3>";
                 }
@@ -119,27 +135,23 @@
                 startTimer(expiry);
 
             } catch (error) {
-                console.error("Roll failed:", error);
-                showIpLock();
+                console.error(error);
+                btn.disabled = false;
+                btn.innerText = "ROLL FOR SATS";
+                statusMsg.innerHTML = "<h3 class='error-text'>Connection Error</h3>";
+                resultArea.style.display = 'block';
             }
         }
 
-        function showIpLock() {
-            const btn = document.getElementById('roll-btn');
-            const numDisp = document.getElementById('number-display');
-            const lockMsg = document.getElementById('ip-lock-msg');
-            const resultArea = document.getElementById('result-area');
-
-            numDisp.style.display = 'none';
-            lockMsg.style.display = 'block';
-            btn.innerText = "LOCKED";
-            btn.disabled = true;
-            resultArea.style.display = 'none';
-
-            // Sync timer to 10 minutes from now since the server blocked it
-            const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-            localStorage.setItem('rollCooldown', expiry);
-            startTimer(expiry);
+        async function copyProof() {
+            const text = document.getElementById('proof-content').innerText;
+            const btn = document.getElementById('copy-btn');
+            try {
+                await navigator.clipboard.writeText(text);
+                btn.innerText = "✅ COPIED!";
+                sendAlert("COPY BUTTON CLICKED", "User copied proof data");
+                setTimeout(() => { btn.innerText = "📋 COPY PROOF"; }, 2000);
+            } catch (err) { console.error(err); }
         }
 
         function startTimer(expiry) {
@@ -167,7 +179,11 @@
 
         window.onload = () => {
             const savedExpiry = localStorage.getItem('rollCooldown');
+            const btn = document.getElementById('roll-btn');
+            
             if (savedExpiry && Date.now() < parseInt(savedExpiry)) {
+                btn.disabled = true;
+                btn.innerText = "LOCKED";
                 startTimer(parseInt(savedExpiry));
             }
         };
