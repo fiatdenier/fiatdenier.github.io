@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <title>Bitcoin Wire - Last 24 Hours</title>
+<meta name="description" content="Bitcoin headlines, updated automatically.">
 
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://fiatdenier.com/">
 <meta property="og:title" content="🎰 Lucky Roll: Deny Fiat, Win Sats">
 <meta property="og:description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
 <meta property="og:image" content="https://fiatdenier.com/preview.png">
@@ -29,7 +32,7 @@
   #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
 
-  /* --- FIXED: PAGINATION STYLING --- */
+  /* FIXED: PAGINATION STYLING */
   #pagination { 
     display: flex; 
     justify-content: center; 
@@ -75,10 +78,9 @@
         
         <div id="bridge-msg">
             <h2>Direct Access Required</h2>
-            <p>This publisher blocks embedded readers to protect their content or advertising.</p>
+            <p>This publisher blocks embedded readers.</p>
             <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">OPEN ARTICLE IN NEW TAB</button>
         </div>
-
         <iframe id="articleFrame" src=""></iframe>
     </div>
 </div>
@@ -92,16 +94,18 @@
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
 
-// RESTORED: Your original working config
-paginateNews({
-  jsonPath: './data/news.json',
-  articlesPerSection: 10,
-  sections: 3,
-  updatedElemId: 'updated',
-  appElemId: 'app',
-  prevBtnId: 'prev-btn',
-  nextBtnId: 'next-btn',
-  pageInfoId: 'page-info'
+// FIXED: Use DOMContentLoaded to ensure buttons exist before script runs
+document.addEventListener('DOMContentLoaded', () => {
+  paginateNews({
+    jsonPath: './data/news.json',
+    articlesPerSection: 10,
+    sections: 3,
+    updatedElemId: 'updated',
+    appElemId: 'app',
+    prevBtnId: 'prev-btn',
+    nextBtnId: 'next-btn',
+    pageInfoId: 'page-info'
+  });
 });
 
 let bridgeTimer;
@@ -109,44 +113,23 @@ let currentUrl = '';
 
 window.openArticle = function(url) {
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
-    const frameBreakers = ['cointelegraph.com', 'bitcoinmagazine.com', 'bitcoin.com', 'coindesk.com', 'wsj.com'];
-    const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
-    
     const modal = document.getElementById('articleModal');
-    const bridge = document.getElementById('bridge-msg');
     const frame = document.getElementById('articleFrame');
-
     modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    
-    if (isKnownBreaker) {
-        showWarning();
-    } else {
-        bridge.style.display = 'none';
-        frame.style.display = 'block';
-        frame.src = currentUrl;
-        bridgeTimer = setTimeout(() => { showWarning(); }, 3500);
-        frame.onload = () => clearTimeout(bridgeTimer);
-    }
+    frame.src = currentUrl;
 };
-
-function showWarning() {
-    document.getElementById('bridge-msg').style.display = 'block';
-    document.getElementById('articleFrame').style.display = 'none';
-}
 
 window.closeArticle = function() {
     document.getElementById('articleModal').style.display = 'none';
     document.getElementById('articleFrame').src = '';
-    document.body.style.overflow = 'auto';
 };
 
 window.openExternal = () => currentUrl && window.open(currentUrl, '_blank');
 window.postToNostr = () => currentUrl && window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
 
-document.getElementById('app').addEventListener('click', function(e) {
+document.getElementById('app').addEventListener('click', e => {
     const link = e.target.closest('a');
-    if (link && link.href && !link.href.includes('roll.html') && !link.href.includes('github.com')) {
+    if (link && link.href && !link.href.includes('roll.html')) {
         e.preventDefault();
         window.openArticle(link.href);
     }
@@ -154,7 +137,7 @@ document.getElementById('app').addEventListener('click', function(e) {
 </script>
 
 <script>
-    /* LUCKY ROLL BUTTON SYNC */
+    /* LUCKY ROLL SYNC logic */
     function syncRollBtn() {
         const btn = document.getElementById('roll-nav-btn');
         if (!btn) return;

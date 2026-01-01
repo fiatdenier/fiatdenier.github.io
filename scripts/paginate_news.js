@@ -1,6 +1,8 @@
 // /scripts/paginate_news.js
 export function paginateNews(config) {
   const {
+    // UPDATED: Default to the new location moved by your GitHub Action
+    jsonPath = "./data/news.json", 
     articlesPerSection = 10,
     sections = 3,
     updatedElemId,
@@ -15,6 +17,7 @@ export function paginateNews(config) {
 
   function updateTimestamp() {
     const updatedEl = document.getElementById(updatedElemId);
+    if (!updatedEl) return;
     const now = new Date();
     const estDate = new Date(
       now.toLocaleString("en-US", { timeZone: "America/New_York" })
@@ -62,15 +65,13 @@ export function paginateNews(config) {
     const cols = Array.from({ length: sections }, () => []);
     let colIndex = 0;
 
-    // MODIFIED: Sequential distribution for strict time sorting within columns.
-    // Since articles are already sorted (newest first), cycling through columns
-    // places newer articles above older ones in each column.
     pageArticles.forEach(article => {
       cols[colIndex % sections].push(article);
       colIndex++;
     });
 
     const app = document.getElementById(appElemId);
+    if (!app) return;
     app.innerHTML = "";
 
     ["left", "center", "right"].slice(0, sections).forEach((id, idx) => {
@@ -94,16 +95,22 @@ export function paginateNews(config) {
 
   function updatePagination() {
     const totalPages = Math.ceil(articles.length / (articlesPerSection * sections));
-    document.getElementById(prevBtnId).disabled = currentPage === 1;
-    document.getElementById(nextBtnId).disabled = currentPage === totalPages;
-    document.getElementById(pageInfoId).textContent = `Page ${currentPage} of ${totalPages}`;
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const info = document.getElementById(pageInfoId);
+
+    if (prevBtn) prevBtn.disabled = currentPage === 1;
+    if (nextBtn) nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+    if (info) info.textContent = `Page ${currentPage} of ${totalPages || 1}`;
   }
 
+  // UPDATED: Functions now move the user to the top of the page for better UX
   function nextPage() {
     const totalPages = Math.ceil(articles.length / (articlesPerSection * sections));
     if (currentPage < totalPages) {
       currentPage++;
       renderPage(currentPage);
+      window.scrollTo(0, 0);
     }
   }
 
@@ -111,13 +118,16 @@ export function paginateNews(config) {
     if (currentPage > 1) {
       currentPage--;
       renderPage(currentPage);
+      window.scrollTo(0, 0);
     }
   }
 
   async function init() {
     try {
-      // CORRECTED: Load news.json from the scripts folder.
-      const res = await fetch("./scripts/news.json");
+      // FIXED: Loading from the path passed in config (now ./data/news.json)
+      const res = await fetch(jsonPath);
+      if (!res.ok) throw new Error("Could not find " + jsonPath);
+      
       const data = await res.json();
       articles = removeDuplicates(data.articles)
         .filter(a => {
@@ -127,16 +137,18 @@ export function paginateNews(config) {
         })
         .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
+      // NEW: Explicitly attach click listeners to the buttons
+      document.getElementById(nextBtnId)?.addEventListener('click', nextPage);
+      document.getElementById(prevBtnId)?.addEventListener('click', prevPage);
+
       renderPage(currentPage);
       updateTimestamp();
     } catch (e) {
       console.error("Failed to load news.json", e);
-      document.getElementById(appElemId).textContent = "Failed to load news.";
+      const app = document.getElementById(appElemId);
+      if (app) app.textContent = "Failed to load news. Check if /data/news.json exists.";
     }
   }
-
-  window.nextPage = nextPage;
-  window.prevPage = prevPage;
 
   init();
 }
