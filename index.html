@@ -28,12 +28,12 @@
     margin-bottom: 4px;
   }
 
-  /* SOURCE/META: BOLD & SOFTER BLACK (Dark Grey) */
+  /* SOURCE/META: BOLD & SOFTER GREY */
   #app a .meta {
     display: block;
     font-family: 'Roboto', sans-serif;
     font-weight: 700 !important;
-    color: #666666 !important; /* Changed from pure black to a softer dark grey */
+    color: #666666 !important; /* Lighter, softer grey than before */
     font-size: 0.85rem;
   }
 
@@ -143,8 +143,8 @@ document.getElementById('app').addEventListener('click', e => {
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
 
-            // LOCKED STATE: Grey background, Orange text as requested
-            btn.style.backgroundColor = "#666"; 
+            // LOCKED STATE: Lighter grey background, Orange text
+            btn.style.backgroundColor = "#AAAAAA"; 
             btn.style.color = "#f7931a"; 
             btn.style.pointerEvents = "none";
             btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
