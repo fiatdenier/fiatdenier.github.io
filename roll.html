@@ -65,14 +65,22 @@
         // --- AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         let clickBuffer = null;
+        let dingBuffer = null; // New buffer for separate ding sound
         let loopSource = null;
 
-        // Pre-load sound
+        // Load background click sound
         fetch('click.wav')
             .then(r => r.arrayBuffer())
             .then(b => audioCtx.decodeAudioData(b))
             .then(data => { clickBuffer = data; })
-            .catch(e => console.error("Audio Load Error:", e));
+            .catch(e => console.error("Click Sound Load Error:", e));
+
+        // Load stop ding sound
+        fetch('ding.wav')
+            .then(r => r.arrayBuffer())
+            .then(b => audioCtx.decodeAudioData(b))
+            .then(data => { dingBuffer = data; })
+            .catch(e => console.error("Ding Sound Load Error:", e));
 
         function playLoop() {
             if (!clickBuffer) return;
@@ -88,12 +96,14 @@
         }
 
         function playDing(isJackpot = false) {
-            if (!clickBuffer) return;
+            // Use the new dingBuffer for the stop sound
+            if (!dingBuffer) return;
             const source = audioCtx.createBufferSource();
-            source.buffer = clickBuffer;
+            source.buffer = dingBuffer;
+            // Higher pitch if it is a jackpot
             if (isJackpot) source.playbackRate.value = 1.3;
             source.connect(audioCtx.destination);
-            source.start(0, 0, 0.15); 
+            source.start(0); 
         }
 
         async function handleRoll() {
@@ -107,7 +117,6 @@
             btn.innerText = "ROLLING...";
             resultArea.style.display = 'none';
 
-            // Start animation IMMEDIATELY for feedback
             const spinIntervals = slots.map(slot => {
                 slot.classList.remove('just-finished');
                 slot.classList.add('rolling');
@@ -137,7 +146,7 @@
                     slots[idx].classList.remove('rolling');
                     slots[idx].classList.add('just-finished');
                     slots[idx].innerText = finalStr[idx];
-                    playDing(data.num === 2121);
+                    playDing(data.num === 2121); // This now plays ding.wav
                 }
 
                 stopLoop();
