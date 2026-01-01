@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
@@ -37,7 +38,7 @@
     display: block;
     font-family: 'Roboto', sans-serif;
     font-weight: 700 !important;
-    color: #666666 !important;
+    color: #666666 !important; 
     font-size: 0.85rem;
   }
 
@@ -54,7 +55,6 @@
     cursor: pointer;
     font-weight: 700 !important;
     font-family: 'Roboto', sans-serif;
-    transition: background-color 0.3s ease;
   }
 
   /* MODAL & PAGINATION */
@@ -101,11 +101,12 @@
 import { paginateNews } from './scripts/paginate_news.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // CACHE BUSTER: Generates a unique number to force the browser to fetch the latest news.json
-  const cacheBuster = Date.now();
+  // CACHE BUSTER: Generates a unique number (timestamp)
+  const cb = Date.now();
 
   paginateNews({
-    jsonPath: `./data/news.json?t=${cacheBuster}`,
+    // Adding the timestamp here forces a fresh fetch of news.json
+    jsonPath: `./data/news.json?t=${cb}`,
     articlesPerSection: 10,
     sections: 3,
     updatedElemId: 'updated',
@@ -151,14 +152,12 @@ document.getElementById('app').addEventListener('click', e => {
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
 
-            // LOCKED STATE: Soft light grey background, Orange text
             btn.style.backgroundColor = "#AAAAAA"; 
             btn.style.color = "#f7931a"; 
             btn.style.pointerEvents = "none";
             btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
             setTimeout(syncRoll, 1000);
         } else {
-            // ACTIVE STATE: Orange background, White text
             btn.style.backgroundColor = "#f7931a";
             btn.style.color = "#fff";
             btn.style.pointerEvents = "auto";

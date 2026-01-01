@@ -1,6 +1,7 @@
 // /scripts/paginate_news.js
 export function paginateNews(config) {
   const {
+    jsonPath,
     articlesPerSection = 10,
     sections = 3,
     updatedElemId,
@@ -14,20 +15,17 @@ export function paginateNews(config) {
   let currentPage = 1;
 
   function updateTimestamp() {
-    const updatedEl = document.getElementById(updatedElemId);
-    if (!updatedEl) return;
+    const el = document.getElementById(updatedElemId);
+    if (!el) return;
     const now = new Date();
-    const estDate = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
-    const estStr = estDate.toLocaleString("en-US", {
-      hour: "numeric", minute: "2-digit", hour12: true
-    });
-    updatedEl.textContent = `Updated ${estStr} EST`;
+    const est = new Date(now.toLocaleString("en-US", {timeZone: "America/New_York"}));
+    el.textContent = `Updated ${est.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'})} EST`;
   }
 
   function timeAgo(dateStr) {
-    const diffMins = Math.floor((new Date() - new Date(dateStr)) / 60000);
-    if (diffMins < 60) return `${diffMins} mins ago`;
-    const hours = Math.floor(diffMins / 60);
+    const diff = Math.floor((new Date() - new Date(dateStr)) / 60000);
+    if (diff < 60) return `${diff} mins ago`;
+    const hours = Math.floor(diff / 60);
     return hours < 24 ? `${hours} hours ago` : `${Math.floor(hours / 24)} days ago`;
   }
 
@@ -39,42 +37,45 @@ export function paginateNews(config) {
     app.innerHTML = "";
 
     const cols = Array.from({ length: sections }, () => []);
-    pageArticles.forEach((article, i) => cols[i % sections].push(article));
+    pageArticles.forEach((a, i) => cols[i % sections].push(a));
 
     cols.forEach(col => {
-      const section = document.createElement("section");
-      section.className = "col";
+      const sec = document.createElement("section");
+      sec.className = "col";
       col.forEach(a => {
         const link = document.createElement("a");
         link.href = a.url;
-        // WRAPPED: Headline and Meta separated for color logic
         link.innerHTML = `<span class="headline">${a.title}</span><span class="meta">${a.source} • ${timeAgo(a.published_at)}</span>`;
-        section.appendChild(link);
+        sec.appendChild(link);
       });
-      app.appendChild(section);
+      app.appendChild(sec);
     });
     updatePagination();
   }
 
   function updatePagination() {
     const total = Math.ceil(articles.length / (articlesPerSection * sections));
-    document.getElementById(prevBtnId).disabled = currentPage === 1;
-    document.getElementById(nextBtnId).disabled = currentPage === total || total === 0;
-    document.getElementById(pageInfoId).textContent = `Page ${currentPage} of ${total || 1}`;
+    const p = document.getElementById(prevBtnId);
+    const n = document.getElementById(nextBtnId);
+    const i = document.getElementById(pageInfoId);
+    if (p) p.disabled = currentPage === 1;
+    if (n) n.disabled = currentPage === total || total === 0;
+    if (i) i.textContent = `Page ${currentPage} of ${total || 1}`;
   }
 
   async function init() {
     try {
-      const res = await fetch("./scripts/news.json");
+      // Fetches using the cache-busted path
+      const res = await fetch(jsonPath);
       const data = await res.json();
       articles = data.articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
-      document.getElementById(nextBtnId).onclick = () => { currentPage++; renderPage(currentPage); window.scrollTo(0, 0); };
-      document.getElementById(prevBtnId).onclick = () => { currentPage--; renderPage(currentPage); window.scrollTo(0, 0); };
+      document.getElementById(nextBtnId).onclick = () => { currentPage++; renderPage(currentPage); window.scrollTo(0,0); };
+      document.getElementById(prevBtnId).onclick = () => { currentPage--; renderPage(currentPage); window.scrollTo(0,0); };
 
       renderPage(currentPage);
       updateTimestamp();
-    } catch (e) { console.error(e); }
+    } catch (e) { console.error("Load failed", e); }
   }
   init();
 }
