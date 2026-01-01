@@ -9,19 +9,6 @@
 <meta http-equiv="Expires" content="0" />
 
 <title>Bitcoin Wire - Last 24 Hours</title>
-<meta name="description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://fiatdenier.com/">
-<meta property="og:title" content="🎰 Lucky Roll: Deny Fiat, Win Sats">
-<meta property="og:description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
-<meta property="og:image" content="https://fiatdenier.com/preview.png">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://fiatdenier.com/">
-<meta name="twitter:title" content="🎰 Lucky Roll: Deny Fiat, Win Sats">
-<meta name="twitter:description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
-<meta name="twitter:image" content="https://fiatdenier.com/preview.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +16,7 @@
 <link rel="stylesheet" href="styles.css" />
 
 <style>
+  /* FONT & COLOR THEME */
   header h1 a, #updated, #pagination, #page-info {
     font-family: 'Roboto', sans-serif;
     font-weight: 700 !important;
@@ -51,6 +39,7 @@
   }
   #app a { text-decoration: none; display: block; margin-bottom: 15px; }
 
+  /* BUTTON STYLES */
   .game-link { 
     display: inline-block; 
     margin-top: 10px; 
@@ -62,11 +51,13 @@
     font-weight: 700 !important;
   }
 
+  /* MODAL & PAGINATION */
   .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; }
   .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid #f7931a; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
   .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
   .modal-btn { background: #f7931a; color: #fff !important; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
   
+  /* BRIDGE MESSAGE STYLES */
   #bridge-msg { display: none; padding: 60px 20px; text-align: center; color: #ccc; flex-grow: 1; font-family: 'Roboto', sans-serif; }
   #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
   #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; font-family: 'Roboto', sans-serif; }
@@ -136,11 +127,22 @@ let bridgeTimer;
 window.openArticle = function(url) {
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
 
+    // List of domains that block iframes
     const frameBreakers = [
-        'cointelegraph.com', 'bitcoinmagazine.com', 'btcmanager.com', 'bitcoin.com', 
-        'crypto.news', 'coindesk.com', 'beincrypto.com', 'decrypt.co', 
-        'cryptoslate.com', 'ccn.com', 'theblock.co', 'bloomberg.com', 
-        'wsj.com', 'reuters.com'
+        'cointelegraph.com', 
+        'bitcoinmagazine.com',
+        'btcmanager.com',
+        'bitcoin.com',
+        'crypto.news',
+        'coindesk.com',
+        'beincrypto.com',
+        'decrypt.co',
+        'cryptoslate.com',
+        'ccn.com',
+        'theblock.co',
+        'bloomberg.com',
+        'wsj.com',
+        'reuters.com'
     ];
     
     const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
@@ -163,7 +165,10 @@ window.openArticle = function(url) {
         frame.src = currentUrl;
         status.innerText = "Checking compatibility...";
 
-        bridgeTimer = setTimeout(() => { showBridge(); }, 3500);
+        // Automatic fallback if site blocks but isn't on the list yet
+        bridgeTimer = setTimeout(() => {
+            showBridge();
+        }, 3500);
 
         frame.onload = function() {
             clearTimeout(bridgeTimer);
