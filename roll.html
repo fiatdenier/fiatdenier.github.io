@@ -48,18 +48,7 @@
         const COOLDOWN_MINUTES = 10; // Back to 10 minutes
         let isRolling = false;
 
-        function playDing(isJackpot = false) {
-            const ctx = new (window.AudioContext || window.webkitAudioContext)();
-            const osc = ctx.createOscillator();
-            const gain = ctx.createGain();
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(isJackpot ? 1500 : 1046, ctx.currentTime); // Frequency from video
-            gain.gain.setValueAtTime(0, ctx.currentTime);
-            gain.gain.linearRampToValueAtTime(0.2, ctx.currentTime + 0.01); 
-            gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.1); // Fast decay from video
-            osc.connect(gain); gain.connect(ctx.destination);
-            osc.start(); osc.stop(ctx.currentTime + 0.1);
-        }
+        
 
         async function handleRoll() {
             if (isRolling) return;
@@ -70,7 +59,44 @@
             btn.innerText = "ROLLING...";
 
             const finalNum = Math.floor(1000 + Math.random() * 9000).toString(); // Simulate result for alignment test
-            const spinIntervals = slots.map(slot => {
+            const spinIntervals = s// 1. Move the AudioContext to the top so it stays "warm"
+			const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+			function playDing(isJackpot = false) {
+				// 2. Resume context immediately in case it was suspended
+				if (audioCtx.state === 'suspended') {
+					audioCtx.resume();
+				}
+
+				const osc = audioCtx.createOscillator();
+				const gain = audioCtx.createGain();
+
+				// 3. Refined settings to match your .mov file
+				// Using 'triangle' instead of 'sine' gives it that "mechanical" click from your video.
+				osc.type = 'triangle'; 
+				osc.frequency.setValueAtTime(isJackpot ? 1500 : 1100, audioCtx.currentTime); 
+				
+				// Very sharp "percussive" envelope
+				gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+				gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.08);
+
+				osc.connect(gain);
+				gain.connect(audioCtx.destination);
+
+				osc.start();
+				osc.stop(audioCtx.currentTime + 0.08);
+			}
+
+			async function handleRoll() {
+				if (isRolling) return;
+				
+				// 4. WAKE UP AUDIO HERE: This ensures the first "ding" isn't missed
+				if (audioCtx.state === 'suspended') {
+					await audioCtx.resume();
+				}
+
+    const btn = document.getElementById('roll-btn');
+    // ... rest of your handleRoll codelots.map(slot => {
                 slot.classList.add('rolling');
                 return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
             });
