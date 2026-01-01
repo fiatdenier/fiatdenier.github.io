@@ -23,18 +23,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <style>
+  /* Orange Headlines & Grey Meta (Your preferred style) */
   header h1 a, #updated, #pagination, #page-info { font-family: 'Roboto', sans-serif; font-weight: 700; color: #f7931a !important; text-decoration: none; }
   #app a .headline { display: block; font-family: 'Roboto', sans-serif; font-weight: 700; color: #f7931a !important; margin-bottom: 4px; }
-  #app a .meta { display: block; font-family: 'Roboto', sans-serif; font-weight: 700; color: #666666 !important; font-size: 0.85rem; }
+  #app a .meta { display: block; font-family: 'Roboto', sans-serif; font-weight: 700; color: #888888 !important; font-size: 0.85rem; }
   
   .game-link { display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #f7931a; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9rem; border:none; cursor:pointer;}
   
+  /* MODAL & BRIDGE */
   .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; }
   .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid #f7931a; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
-  .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #444; }
+  .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
   .modal-btn { background: #f7931a; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; color: white; }
-  #bridge-msg { display: none; padding: 60px 20px; text-align: center; color: #ccc; flex-grow: 1; font-family: 'Roboto', sans-serif; }
-  #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
+  #bridge-msg { display: none; padding: 60px 20px; text-align: center; color: #ccc; flex-grow: 1; }
   #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
 </style>
@@ -76,6 +77,7 @@
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
 
+// Internal cache busting is fine, scrapers don't execute this JS
 const version = new Date().getTime();
 paginateNews({
   jsonPath: `./data/news.json?v=${version}`,
@@ -113,7 +115,6 @@ function showWarning() {
     document.getElementById('bridge-msg').style.display = 'block';
     document.getElementById('articleFrame').style.display = 'none';
     document.getElementById('articleFrame').src = '';
-    document.getElementById('load-status').innerText = "Compatibility Issue";
 }
 
 window.closeArticle = () => {
