@@ -23,7 +23,7 @@
         button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; color: white; margin-top: 10px; }
         #roll-btn.locked { background: var(--locked-grey) !important; color: var(--btc-orange) !important; cursor: not-allowed; }
         #timer { font-size: 0.85rem; color: var(--grey-text); margin-top: 10px; font-weight: bold; }
-        .debug-btn { background: #333 !important; font-size: 0.7rem !important; padding: 5px !important; margin-top: 5px !important; color: #888 !important; }
+        .debug-btn { background: #333 !important; font-size: 0.7rem !important; padding: 5px !important; margin-top: 15px !important; color: #888 !important; border: none; border-radius: 4px; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -40,82 +40,100 @@
         <button class="debug-btn" onclick="forceUnlock()">🔓 BYPASS IP LOCK (DEBUG)</button>
         <div id="result-area" style="display: none; margin-top: 20px; border-top: 1px dashed #444; padding-top: 10px;">
             <div id="status-message"></div>
-            <div id="res-num" style="display:none"></div>
         </div>
     </div>
 
     <script>
-        const COOLDOWN_MINUTES = 10; // Back to 10 minutes
+        const COOLDOWN_MINUTES = 10; // Fixed to 10 minutes
+        const API_BASE = "https://api.fiatdenier.com";
         let isRolling = false;
 
-        
+        // Initialize AudioContext outside to keep it warm
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playDing(isJackpot = false) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            
+            // Frequency and wave type matched to your .mov file
+            osc.type = 'triangle'; 
+            osc.frequency.setValueAtTime(isJackpot ? 1500 : 1046, audioCtx.currentTime); 
+            
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.1);
+        }
+
+        function triggerConfetti() {
+            const end = Date.now() + 3000;
+            const colors = ['#f7931a', '#ffffff', '#696969'];
+            (function frame() {
+                confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors });
+                confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors });
+                if (Date.now() < end) requestAnimationFrame(frame);
+            }());
+        }
 
         async function handleRoll() {
             if (isRolling) return;
+            // Wake up audio context on user click
+            if (audioCtx.state === 'suspended') await audioCtx.resume();
+
             const btn = document.getElementById('roll-btn');
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             isRolling = true;
             btn.disabled = true;
             btn.innerText = "ROLLING...";
 
-            const finalNum = Math.floor(1000 + Math.random() * 9000).toString(); // Simulate result for alignment test
-            const spinIntervals = s// 1. Move the AudioContext to the top so it stays "warm"
-			const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            try {
+                // Fetch actual result from server
+                const response = await fetch(`${API_BASE}/get-roll`);
+                if (response.status === 429) { showIpLock(); isRolling = false; return; }
+                const data = await response.json();
+                const finalStr = data.num.toString().padStart(4, '0');
 
-			function playDing(isJackpot = false) {
-				// 2. Resume context immediately in case it was suspended
-				if (audioCtx.state === 'suspended') {
-					audioCtx.resume();
-				}
+                // Start Visual Spin
+                const spinIntervals = slots.map(slot => {
+                    slot.classList.remove('just-finished');
+                    slot.classList.add('rolling');
+                    return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
+                });
 
-				const osc = audioCtx.createOscillator();
-				const gain = audioCtx.createGain();
+                // Random staggered stop
+                const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
+                for (let i = 0; i < stopOrder.length; i++) {
+                    const idx = stopOrder[i];
+                    await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
+                    clearInterval(spinIntervals[idx]);
+                    slots[idx].classList.remove('rolling');
+                    slots[idx].classList.add('just-finished');
+                    slots[idx].innerText = finalStr[idx];
+                    playDing(data.num === 2121);
+                }
 
-				// 3. Refined settings to match your .mov file
-				// Using 'triangle' instead of 'sine' gives it that "mechanical" click from your video.
-				osc.type = 'triangle'; 
-				osc.frequency.setValueAtTime(isJackpot ? 1500 : 1100, audioCtx.currentTime); 
-				
-				// Very sharp "percussive" envelope
-				gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-				gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.08);
+                if (data.num === 2121) {
+                    triggerConfetti();
+                    document.getElementById('status-message').innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
+                }
 
-				osc.connect(gain);
-				gain.connect(audioCtx.destination);
-
-				osc.start();
-				osc.stop(audioCtx.currentTime + 0.08);
-			}
-
-			async function handleRoll() {
-				if (isRolling) return;
-				
-				// 4. WAKE UP AUDIO HERE: This ensures the first "ding" isn't missed
-				if (audioCtx.state === 'suspended') {
-					await audioCtx.resume();
-				}
-
-    const btn = document.getElementById('roll-btn');
-    // ... rest of your handleRoll codelots.map(slot => {
-                slot.classList.add('rolling');
-                return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
-            });
-
-            const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
-            for (let i = 0; i < stopOrder.length; i++) {
-                const idx = stopOrder[i];
-                await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-                clearInterval(spinIntervals[idx]);
-                slots[idx].classList.remove('rolling');
-                slots[idx].classList.add('just-finished');
-                slots[idx].innerText = finalNum[idx];
-                playDing(finalNum === "2121");
+                const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                localStorage.setItem('rollCooldown', expiry);
+                startTimer(expiry);
+                isRolling = false;
+            } catch (e) {
+                showIpLock();
+                isRolling = false;
             }
+        }
 
-            const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-            localStorage.setItem('rollCooldown', expiry);
-            startTimer(expiry);
-            isRolling = false;
+        function showIpLock() {
+            localStorage.setItem('rollCooldown', Date.now() + (COOLDOWN_MINUTES * 60 * 1000));
+            location.reload();
         }
 
         function forceUnlock() {
@@ -126,9 +144,10 @@
         function startTimer(expiry) {
             const timerDiv = document.getElementById('timer');
             const btn = document.getElementById('roll-btn');
-            setInterval(() => {
+            const interval = setInterval(() => {
                 const diff = expiry - Date.now();
                 if (diff <= 0) {
+                    clearInterval(interval);
                     timerDiv.innerText = "";
                     btn.disabled = false;
                     btn.classList.remove('locked');
@@ -139,6 +158,7 @@
                     timerDiv.innerText = `NEXT ROLL IN: ${mins}:${secs.toString().padStart(2, '0')}`;
                     btn.innerText = `LOCKED (${mins}m)`;
                     btn.classList.add('locked');
+                    btn.disabled = true;
                 }
             }, 1000);
         }
