@@ -65,26 +65,38 @@
         // --- AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         let clickBuffer = null;
+        let loopSource = null;
 
-        // Load your click.wav file immediately
         fetch('click.wav')
             .then(r => r.arrayBuffer())
             .then(b => audioCtx.decodeAudioData(b))
             .then(data => clickBuffer = data)
             .catch(e => console.log("Waiting for click.wav..."));
 
+        function playLoop() {
+            if (!clickBuffer) return;
+            loopSource = audioCtx.createBufferSource();
+            loopSource.buffer = clickBuffer;
+            loopSource.loop = true;
+            loopSource.connect(audioCtx.destination);
+            loopSource.start(0);
+        }
+
+        function stopLoop() {
+            if (loopSource) {
+                loopSource.stop();
+                loopSource = null;
+            }
+        }
+
         function playDing(isJackpot = false) {
             if (!clickBuffer) return;
-            if (audioCtx.state === 'suspended') audioCtx.resume();
-            
             const source = audioCtx.createBufferSource();
             source.buffer = clickBuffer;
-            
-            // Higher pitch if it is a jackpot
+            // Play a 0.15s slice for the "stop" sound
             if (isJackpot) source.playbackRate.value = 1.3;
-            
             source.connect(audioCtx.destination);
-            source.start(0);
+            source.start(0, 0, 0.15); 
         }
 
         function triggerConfetti() {
@@ -114,6 +126,7 @@
                 const data = await response.json();
 
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
+                playLoop(); // Start background loop
 
                 const spinIntervals = slots.map(slot => {
                     slot.classList.remove('just-finished');
@@ -131,9 +144,10 @@
                     slots[idx].classList.remove('rolling');
                     slots[idx].classList.add('just-finished');
                     slots[idx].innerText = finalStr[idx];
-                    playDing(data.num === 2121);
+                    playDing(data.num === 2121); // Play short ding
                 }
 
+                stopLoop(); // Stop background loop
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
@@ -153,6 +167,7 @@
                 isRolling = false;
 
             } catch (error) {
+                stopLoop();
                 showIpLock();
                 isRolling = false;
             }
@@ -169,7 +184,6 @@
         function startTimer(expiry) {
             const timerDiv = document.getElementById('timer');
             const btn = document.getElementById('roll-btn');
-            
             const interval = setInterval(() => {
                 const diff = expiry - Date.now();
                 if (diff <= 0) {
