@@ -31,6 +31,12 @@
   #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
   #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
+
+  /* PAGINATION STYLING */
+  #pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 40px 0; }
+  #pagination button { background: #333; border: 1px solid #444; color: white; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-family: 'Roboto', sans-serif; }
+  #pagination button:disabled { opacity: 0.3; cursor: not-allowed; }
+  #page-info { color: #888; font-family: 'Roboto', sans-serif; font-size: 0.9rem; }
 </style>
 </head>
 <body>
@@ -72,7 +78,7 @@
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
 
-// RESTORED: Original immediate call logic from index.original.html
+// RESTORED: Immediate call logic from index.original.html
 paginateNews({
   jsonPath: './data/news.json',
   articlesPerSection: 10,
@@ -91,19 +97,9 @@ window.openArticle = function(url) {
     currentUrl = url.startsWith('http') ? url : 'https://' + url;
 
     const frameBreakers = [
-        'cointelegraph.com', 
-        'bitcoinmagazine.com',
-        'btcmanager.com',
-        'bitcoin.com',
-        'crypto.news',
-        'coindesk.com',
-        'beincrypto.com',
-        'decrypt.co',
-        'cryptoslate.com',
-        'ccn.com',
-        'theblock.co',
-        'bloomberg.com',
-        'wsj.com'
+        'cointelegraph.com', 'bitcoinmagazine.com', 'btcmanager.com', 'bitcoin.com',
+        'crypto.news', 'coindesk.com', 'beincrypto.com', 'decrypt.co',
+        'cryptoslate.com', 'ccn.com', 'theblock.co', 'bloomberg.com', 'wsj.com'
     ];
     
     const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
@@ -172,10 +168,11 @@ document.getElementById('app').addEventListener('click', function(e) {
 </script>
 
 <script>
-    // Lucky Roll Cooldown Script
+    // FIXED: Lucky Roll Cooldown and Link Sync Logic
     function syncRollCooldown() {
         const rollLink = document.querySelector('.game-link[href="roll.html"]');
         if (!rollLink) return;
+
         const savedExpiry = localStorage.getItem('rollCooldown');
         const now = Date.now();
 
@@ -183,14 +180,21 @@ document.getElementById('app').addEventListener('click', function(e) {
             const diff = parseInt(savedExpiry) - now;
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
+
             rollLink.style.opacity = "0.4";
+            rollLink.style.filter = "grayscale(1)";
+            rollLink.style.cursor = "not-allowed";
             rollLink.style.pointerEvents = "none";
             rollLink.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
+
             setTimeout(syncRollCooldown, 1000);
         } else {
             rollLink.style.opacity = "1";
+            rollLink.style.filter = "none";
+            rollLink.style.cursor = "pointer";
             rollLink.style.pointerEvents = "auto";
             rollLink.innerText = "🎰 PLAY LUCKY ROLL";
+            if (savedExpiry) localStorage.removeItem('rollCooldown');
         }
     }
     window.addEventListener('load', syncRollCooldown);
