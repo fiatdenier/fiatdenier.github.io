@@ -33,6 +33,9 @@
         #bonus-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); background: rgba(0, 0, 0, 0.95); border: 3px solid var(--btc-orange); color: var(--btc-orange); padding: 2rem; border-radius: 20px; z-index: 1000; text-align: center; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0 50px rgba(247, 147, 26, 0.5); pointer-events: none; width: 80%; }
         #bonus-overlay.show { transform: translate(-50%, -50%) scale(1); }
 
+        /* Debug Button */
+        #debug-btn { display: none; background: #444; border: 1px dashed var(--btc-orange); color: var(--btc-orange); margin-top: 20px; font-size: 0.8rem; padding: 5px; cursor: pointer; }
+
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
         button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; transition: 0.2s; color: white; margin-top: 10px; }
         #roll-btn.locked { background: var(--locked-grey) !important; color: var(--btc-orange) !important; cursor: not-allowed; }
@@ -77,6 +80,8 @@
             </div>
             <button id="copy-btn" onclick="copyProof()" style="display: none; margin-top:10px;">📋 COPY PROOF</button>
         </div>
+
+        <button id="debug-btn" onclick="testBonus()">🛠️ DEBUG: TRIGGER +5 ROLLS</button>
     </div>
 
     <script>
@@ -133,7 +138,6 @@
             localStorage.setItem('rollCredits', rollCredits);
             localStorage.setItem('totalSats', totalSats);
 
-            // Animate Sat counter
             const satsEl = document.getElementById('total-sats');
             if (animateSats > 0) {
                 let current = totalSats - animateSats;
@@ -146,7 +150,6 @@
                 satsEl.innerText = totalSats.toLocaleString();
             }
 
-            // Logic for unlocking button
             const savedExpiry = localStorage.getItem('rollCooldown');
             const isLocked = savedExpiry && Date.now() < parseInt(savedExpiry);
 
@@ -165,6 +168,20 @@
                     timerDiv.innerText = "";
                 }
             }
+        }
+
+        // --- DEBUG TEST FUNCTION ---
+        function testBonus() {
+            console.log("Debug: Manually triggering bonus...");
+            rollCredits += 5;
+            playSound(bonusBuffer);
+            const overlay = document.getElementById('bonus-overlay');
+            if (overlay) {
+                overlay.classList.add('show');
+                confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+                setTimeout(() => overlay.classList.remove('show'), 2500);
+            }
+            updateStats();
         }
 
         async function handleRoll() {
@@ -215,7 +232,6 @@
 
                 stopLoop();
 
-                // Prize & Bonus Logic
                 let wonBonus = false;
                 let satsWon = (data.num === 2121) ? 1000 : 10;
 
@@ -235,7 +251,6 @@
                 totalSats += satsWon;
                 updateStats(satsWon);
 
-                // Lockout check
                 if (rollCredits <= 0) {
                     const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                     localStorage.setItem('rollCooldown', expiry);
@@ -283,6 +298,12 @@
             const savedExpiry = localStorage.getItem('rollCooldown');
             if (savedExpiry && Date.now() < parseInt(savedExpiry) && rollCredits <= 0) {
                 startTimer(parseInt(savedExpiry));
+            }
+
+            // --- SHOW DEBUG BUTTON IF ?debug=true ---
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('debug') === 'true') {
+                document.getElementById('debug-btn').style.display = 'block';
             }
         };
     </script>
