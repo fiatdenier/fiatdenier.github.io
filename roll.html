@@ -14,8 +14,25 @@
             --locked-grey: #444444;
             --cyber-cyan: #00ffff;
         }
-        body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
+        body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; transition: padding-top 0.3s; }
         
+        /* IAB WARNING STYLES */
+        #iab-warning {
+            display: none;
+            background: #441111;
+            color: #ff9999;
+            padding: 12px;
+            font-size: 0.7rem;
+            text-align: center;
+            border-bottom: 2px solid var(--btc-orange);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        #iab-warning a { color: white; text-decoration: underline; font-weight: bold; }
+
         .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
         .agent-info { text-align: left; }
         .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
@@ -60,6 +77,11 @@
 </head>
 <body>
 
+    <div id="iab-warning">
+        ⚠️ IN-APP BROWSER DETECTED. Credits & Rank will not save. <br>
+        <a href="https://fiatdenier.com" target="_blank">OPEN IN EXTERNAL BROWSER</a>
+    </div>
+
     <div class="card">
         <div class="agent-header">
             <div class="agent-info">
@@ -96,10 +118,7 @@
         <div id="timer"></div>
 
         <div class="hof-container">
-            <div class="hof-title">HALL OF FAME (LOCAL)</div>
-            <div id="hof-list">
-                <div class="hof-entry"><span class="hof-id">Waiting for denial...</span></div>
-            </div>
+            <div id="hof-list"></div>
         </div>
 
         <div id="result-area" style="display: none;">
@@ -131,6 +150,15 @@
         loadSound('click.wav').then(d => clickBuffer = d);
         loadSound('ding.wav').then(d => dingBuffer = d);
         loadSound('free_credit.wav').then(d => bonusBuffer = d);
+
+        function detectIAB() {
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            const isPrimal = ua.includes("Primal") || ua.includes("Nostr");
+            if (isPrimal) {
+                document.getElementById('iab-warning').style.display = 'block';
+                document.body.style.paddingTop = '60px';
+            }
+        }
 
         function playLoop() {
             if (!clickBuffer) return;
@@ -165,24 +193,6 @@
                 localStorage.setItem('agentID', id);
             }
             return id;
-        }
-
-        function updateHallOfFame(newWin = null) {
-            let hof = JSON.parse(localStorage.getItem('hofData')) || [];
-            if (newWin) {
-                hof.push({ id: getAgentID(), amount: newWin, date: new Date().toLocaleTimeString() });
-                hof.sort((a, b) => b.amount - a.amount);
-                hof = hof.slice(0, 5); 
-                localStorage.setItem('hofData', JSON.stringify(hof));
-            }
-            const hofList = document.getElementById('hof-list');
-            if (hof.length === 0) return;
-            hofList.innerHTML = hof.map(e => `
-                <div class="hof-entry">
-                    <span class="hof-id">${e.id}</span>
-                    <span class="hof-val">+${e.amount} SATS</span>
-                </div>
-            `).join('');
         }
 
         function getRank(sats) {
@@ -224,7 +234,7 @@
 
             if (rollCredits > 0) {
                 statsBox.classList.add('has-credits');
-                btn.disabled = isRolling; // Button enabled if not currently rolling
+                btn.disabled = isRolling;
                 btn.classList.remove('locked');
                 btn.innerText = isRolling ? "ROLLING..." : "ROLL FOR SATS";
                 timerDiv.innerText = "USING CREDITS";
@@ -252,12 +262,8 @@
         async function handleRoll() {
             if (isRolling) return;
             
-            // 1. AUTO-UNFREEZE PREP (Emergency 6-second timeout)
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => {
-                controller.abort();
-                console.warn("API Timeout - Emergency Unfreeze triggered.");
-            }, 6000);
+            const timeoutId = setTimeout(() => controller.abort(), 6000);
 
             const btn = document.getElementById('roll-btn');
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
@@ -278,7 +284,7 @@
                 playLoop();
 
                 const response = await fetch(`${API_BASE}/get-roll`, { signal: controller.signal });
-                clearTimeout(timeoutId); // API responded, cancel the emergency timer
+                clearTimeout(timeoutId);
 
                 if (response.status === 429) throw new Error("Cooldown");
                 
@@ -316,7 +322,6 @@
 
                 totalSats += satsWon;
                 updateStats(satsWon);
-                updateHallOfFame(satsWon);
 
                 if (rollCredits <= 0) {
                     const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
@@ -331,15 +336,20 @@
                 document.getElementById('status-message').innerHTML = wonBonus ? "<h3 style='color:var(--btc-orange)'>⚡ 21 POWER ACTIVATED ⚡</h3>" : "<h3 style='color:#666'>Better luck next time!</h3>";
                 
             } catch (error) {
+                // HARD RESET FOR PRIMAL/IAB HANGS
                 stopLoop(); 
                 spinIntervals.forEach(clearInterval);
-                if (error.message === "Cooldown" || error.name === 'AbortError') {
+                slots.forEach(s => s.classList.remove('rolling'));
+                
+                if (error.message === "Cooldown" || error.name === 'AbortError' || error.status === 429) {
                     const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                     localStorage.setItem('rollCooldown', expiry);
                     startTimer(expiry);
+                } else {
+                    btn.innerText = "LINK ERROR";
+                    setTimeout(() => updateStats(), 2000);
                 }
             } finally {
-                // 2. 1s COOL-OFF (Forces a 1-second pause before allowing the next click)
                 setTimeout(() => {
                     isRolling = false;
                     updateStats();
@@ -350,13 +360,9 @@
         function startTimer(expiry) {
             const timerDiv = document.getElementById('timer');
             const btn = document.getElementById('roll-btn');
-            
             if (activeTimerInterval) clearInterval(activeTimerInterval);
-
             activeTimerInterval = setInterval(() => {
                 const diff = expiry - Date.now();
-                
-                // Kill the timer if credits appear or time is up
                 if (diff <= 0 || rollCredits > 0) {
                     clearInterval(activeTimerInterval);
                     activeTimerInterval = null;
@@ -373,8 +379,8 @@
         }
 
         window.onload = () => {
+            detectIAB();
             updateStats();
-            updateHallOfFame();
             const savedExpiry = localStorage.getItem('rollCooldown');
             if (savedExpiry && Date.now() < parseInt(savedExpiry) && rollCredits <= 0) {
                 startTimer(parseInt(savedExpiry));
