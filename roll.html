@@ -16,7 +16,6 @@
         }
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         
-        /* Agent Profile Header */
         .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
         .agent-info { text-align: left; }
         .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
@@ -24,7 +23,6 @@
 
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
         
-        /* Stats & Rank Display */
         #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; transition: all 0.3s; }
         #stats-container.has-credits { border-color: var(--btc-orange); box-shadow: 0 0 15px rgba(247, 147, 26, 0.2); }
         .stat-label { font-size: 0.65rem; color: #888; letter-spacing: 2px; margin-top: 5px; }
@@ -37,51 +35,21 @@
         .rank-sovereign { color: #fff; border: 1px solid #fff; text-shadow: 0 0 10px #fff; }
         .rank-citadel { color: var(--cyber-cyan); border: 1px solid var(--cyber-cyan); text-shadow: 0 0 12px var(--cyber-cyan); }
 
-        /* Slot Machine */
         #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1rem 0; font-size: 5rem; font-weight: bold; font-family: 'Roboto', sans-serif; }
         .slot { width: 70px; height: 100px; line-height: 100px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); }
         .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); color: #888; }
         @keyframes blur-spin { 0% { transform: translateY(-2px); } 50% { transform: translateY(2px); } 100% { transform: translateY(0); } }
         .just-finished { color: var(--btc-orange) !important; text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); transform: scale(1.05); }
 
-        /* Hall of Fame Box */
-        .hof-container { margin-top: 20px; background: #111; border: 1px solid #333; border-radius: 8px; padding: 12px; text-align: left; }
-        .hof-title { font-size: 0.65rem; color: var(--btc-orange); letter-spacing: 2px; margin-bottom: 8px; font-weight: bold; border-bottom: 1px solid #222; padding-bottom: 5px; }
-        .hof-entry { display: flex; justify-content: space-between; font-size: 0.75rem; padding: 4px 0; border-bottom: 1px solid #1a1a1a; }
-        .hof-entry:last-child { border: none; }
-        .hof-id { color: #666; font-family: monospace; }
-        .hof-val { color: var(--win-green); font-weight: bold; }
-
-        /* Overlays & Buttons */
         #bonus-overlay { 
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%) scale(0); 
-            background: rgba(0, 0, 0, 0.95); 
-            border: 3px solid var(--btc-orange); 
-            color: var(--btc-orange); 
-            padding: 2rem; 
-            border-radius: 20px; 
-            z-index: 1000; 
-            text-align: center; 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); 
+            background: rgba(0, 0, 0, 0.95); border: 3px solid var(--btc-orange); color: var(--btc-orange); 
+            padding: 2rem; border-radius: 20px; z-index: 1000; text-align: center; 
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease; 
-            width: 80%; 
-            pointer-events: none; 
-            opacity: 0;
+            width: 80%; pointer-events: none; opacity: 0;
         }
-
-        #bonus-overlay.show { 
-            transform: translate(-50%, -50%) scale(1); 
-            opacity: 1;
-        }
-
-        /* Improved exit animation for the overlay */
-        #bonus-overlay:not(.show) {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.8);
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
+        #bonus-overlay.show { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        #bonus-overlay:not(.show) { opacity: 0; transform: translate(-50%, -50%) scale(0.8); transition: transform 0.3s ease, opacity 0.3s ease; }
 
         #debug-btn { display: none; background: #333; border: 1px dashed var(--btc-orange); color: var(--btc-orange); margin-top: 20px; font-size: 0.7rem; padding: 8px; cursor: pointer; width: 100%; }
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
@@ -151,11 +119,11 @@
         const COOLDOWN_MINUTES = 10;
         const API_BASE = "https://api.fiatdenier.com";
         let isRolling = false;
+        let activeTimerInterval = null; // Track the timer globally
         
         let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
         let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
 
-        // --- AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         let clickBuffer, dingBuffer, bonusBuffer;
         let loopSource, loopGain;
@@ -191,7 +159,6 @@
             source.start(0);
         }
 
-        // --- AGENT & HOF LOGIC ---
         function getAgentID() {
             let id = localStorage.getItem('agentID');
             if (!id) {
@@ -256,6 +223,7 @@
             const savedExpiry = localStorage.getItem('rollCooldown');
             const isLocked = savedExpiry && Date.now() < parseInt(savedExpiry);
 
+            // Credits take priority over locks
             if (rollCredits > 0) {
                 statsBox.classList.add('has-credits');
                 btn.disabled = false;
@@ -279,19 +247,16 @@
             const overlay = document.getElementById('bonus-overlay');
             overlay.classList.add('show');
             confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-            // Animation shortened to 2000ms to match audio
             setTimeout(() => overlay.classList.remove('show'), 2000);
             updateStats();
         }
 
         async function handleRoll() {
             if (isRolling) return;
-            const savedExpiry = localStorage.getItem('rollCooldown');
-            if (rollCredits <= 0 && savedExpiry && Date.now() < parseInt(savedExpiry)) return;
-
-            isRolling = true;
             const btn = document.getElementById('roll-btn');
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
+            
+            isRolling = true;
             btn.disabled = true;
             btn.innerText = "ROLLING...";
             document.getElementById('result-area').style.display = 'none';
@@ -308,11 +273,7 @@
 
                 const response = await fetch(`${API_BASE}/get-roll`);
                 if (response.status === 429) { 
-                    stopLoop(); spinIntervals.forEach(clearInterval); 
-                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-                    localStorage.setItem('rollCooldown', expiry);
-                    startTimer(expiry);
-                    return; 
+                    throw new Error("Cooldown");
                 }
                 
                 const data = await response.json();
@@ -341,7 +302,6 @@
                         playSound(bonusBuffer);
                         document.getElementById('bonus-overlay').classList.add('show');
                         confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-                        // Animation shortened to 2000ms here too
                         setTimeout(() => document.getElementById('bonus-overlay').classList.remove('show'), 2000);
                     }, 200);
                 } else if (rollCredits > 0) {
@@ -364,20 +324,37 @@
                 document.getElementById('result-area').style.display = 'block';
                 document.getElementById('status-message').innerHTML = wonBonus ? "<h3 style='color:var(--btc-orange)'>⚡ 21 POWER ACTIVATED ⚡</h3>" : "<h3 style='color:#666'>Better luck next time!</h3>";
                 
-                isRolling = false;
             } catch (error) {
-                stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false;
+                stopLoop(); 
+                spinIntervals.forEach(clearInterval);
+                if (error.message === "Cooldown") {
+                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                    localStorage.setItem('rollCooldown', expiry);
+                    startTimer(expiry);
+                }
+            } finally {
+                isRolling = false;
+                if (rollCredits > 0) {
+                    btn.disabled = false;
+                    btn.innerText = "ROLL FOR SATS";
+                }
             }
         }
 
         function startTimer(expiry) {
             const timerDiv = document.getElementById('timer');
             const btn = document.getElementById('roll-btn');
-            const interval = setInterval(() => {
+            
+            if (activeTimerInterval) clearInterval(activeTimerInterval);
+
+            activeTimerInterval = setInterval(() => {
                 const diff = expiry - Date.now();
+                
+                // KILL SWITCH: If player has credits, destroy the timer immediately
                 if (diff <= 0 || rollCredits > 0) {
-                    clearInterval(interval);
-                    updateStats();
+                    clearInterval(activeTimerInterval);
+                    activeTimerInterval = null;
+                    updateStats(); // This will unlock the button
                 } else {
                     const mins = Math.floor(diff / 60000);
                     const secs = Math.floor((diff % 60000) / 1000);
