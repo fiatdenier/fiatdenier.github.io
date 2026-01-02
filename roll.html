@@ -49,7 +49,6 @@
             width: 80%; pointer-events: none; opacity: 0;
         }
         #bonus-overlay.show { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-        #bonus-overlay:not(.show) { opacity: 0; transform: translate(-50%, -50%) scale(0.8); transition: transform 0.3s ease, opacity 0.3s ease; }
 
         #debug-btn { display: none; background: #333; border: 1px dashed var(--btc-orange); color: var(--btc-orange); margin-top: 20px; font-size: 0.7rem; padding: 8px; cursor: pointer; width: 100%; }
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
@@ -119,7 +118,7 @@
         const COOLDOWN_MINUTES = 10;
         const API_BASE = "https://api.fiatdenier.com";
         let isRolling = false;
-        let activeTimerInterval = null; // Track the timer globally
+        let activeTimerInterval = null; 
         
         let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
         let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
@@ -223,19 +222,18 @@
             const savedExpiry = localStorage.getItem('rollCooldown');
             const isLocked = savedExpiry && Date.now() < parseInt(savedExpiry);
 
-            // Credits take priority over locks
             if (rollCredits > 0) {
                 statsBox.classList.add('has-credits');
-                btn.disabled = false;
+                btn.disabled = isRolling; // Button enabled if not currently rolling
                 btn.classList.remove('locked');
-                btn.innerText = "ROLL FOR SATS";
+                btn.innerText = isRolling ? "ROLLING..." : "ROLL FOR SATS";
                 timerDiv.innerText = "USING CREDITS";
             } else {
                 statsBox.classList.remove('has-credits');
                 if (!isLocked) {
-                    btn.disabled = false;
+                    btn.disabled = isRolling;
                     btn.classList.remove('locked');
-                    btn.innerText = "ROLL FOR SATS";
+                    btn.innerText = isRolling ? "ROLLING..." : "ROLL FOR SATS";
                     timerDiv.innerText = "";
                 }
             }
@@ -253,6 +251,14 @@
 
         async function handleRoll() {
             if (isRolling) return;
+            
+            // 1. AUTO-UNFREEZE PREP (Emergency 6-second timeout)
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => {
+                controller.abort();
+                console.warn("API Timeout - Emergency Unfreeze triggered.");
+            }, 6000);
+
             const btn = document.getElementById('roll-btn');
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             
@@ -271,10 +277,10 @@
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
                 playLoop();
 
-                const response = await fetch(`${API_BASE}/get-roll`);
-                if (response.status === 429) { 
-                    throw new Error("Cooldown");
-                }
+                const response = await fetch(`${API_BASE}/get-roll`, { signal: controller.signal });
+                clearTimeout(timeoutId); // API responded, cancel the emergency timer
+
+                if (response.status === 429) throw new Error("Cooldown");
                 
                 const data = await response.json();
                 const numStr = data.num.toString().padStart(4, '0');
@@ -327,17 +333,17 @@
             } catch (error) {
                 stopLoop(); 
                 spinIntervals.forEach(clearInterval);
-                if (error.message === "Cooldown") {
+                if (error.message === "Cooldown" || error.name === 'AbortError') {
                     const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                     localStorage.setItem('rollCooldown', expiry);
                     startTimer(expiry);
                 }
             } finally {
-                isRolling = false;
-                if (rollCredits > 0) {
-                    btn.disabled = false;
-                    btn.innerText = "ROLL FOR SATS";
-                }
+                // 2. 1s COOL-OFF (Forces a 1-second pause before allowing the next click)
+                setTimeout(() => {
+                    isRolling = false;
+                    updateStats();
+                }, 1000);
             }
         }
 
@@ -350,11 +356,11 @@
             activeTimerInterval = setInterval(() => {
                 const diff = expiry - Date.now();
                 
-                // KILL SWITCH: If player has credits, destroy the timer immediately
+                // Kill the timer if credits appear or time is up
                 if (diff <= 0 || rollCredits > 0) {
                     clearInterval(activeTimerInterval);
                     activeTimerInterval = null;
-                    updateStats(); // This will unlock the button
+                    updateStats();
                 } else {
                     const mins = Math.floor(diff / 60000);
                     const secs = Math.floor((diff % 60000) / 1000);
