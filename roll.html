@@ -14,96 +14,47 @@
             --locked-grey: #444444;
             --cyber-cyan: #00ffff;
         }
-        body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; transition: padding-top 0.3s; }
+        body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         
-        #iab-warning {
-            display: none;
-            background: #441111;
-            color: #ff9999;
-            padding: 12px;
-            font-size: 0.75rem;
-            text-align: center;
-            border-bottom: 2px solid var(--btc-orange);
-            width: 100%;
-            position: fixed;
-            top: 0;
-            z-index: 9999;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            line-height: 1.4;
-        }
-        #iab-warning a { color: white; text-decoration: underline; font-weight: bold; }
-
-        .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
-        .agent-info { text-align: left; }
-        .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
-        .agent-status { font-size: 0.6rem; color: #666; text-transform: uppercase; }
-
+        /* IAB & Overlay Styles */
+        #iab-warning { display: none; background: #441111; color: #ff9999; padding: 12px; font-size: 0.75rem; text-align: center; border-bottom: 2px solid var(--btc-orange); width: 100%; position: fixed; top: 0; z-index: 9999; }
+        
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
         
-        #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; transition: all 0.3s; }
-        #stats-container.has-credits { border-color: var(--btc-orange); box-shadow: 0 0 15px rgba(247, 147, 26, 0.2); }
-        .stat-label { font-size: 0.65rem; color: #888; letter-spacing: 2px; margin-top: 5px; }
+        /* Leaderboard Styles */
+        #leaderboard-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; width: 85%; max-width: 320px; box-shadow: 0 0 50px rgba(0,0,0,0.9); }
+        .leaderboard-row { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 8px 0; border-bottom: 1px solid #222; }
+        .leaderboard-row.me { color: var(--btc-orange); font-weight: bold; }
+        
+        /* Utility Styles */
+        #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; }
+        .stat-label { font-size: 0.65rem; color: #888; letter-spacing: 2px; }
         .stat-value { font-size: 1.5rem; font-weight: bold; }
-        #total-sats { color: var(--win-green); font-size: 1.1rem; }
-
-        #rank-display { font-size: 0.7rem; font-weight: bold; letter-spacing: 2px; margin-top: 8px; padding: 3px 10px; display: inline-block; border-radius: 4px; text-transform: uppercase; transition: all 0.5s ease; }
-        .rank-pleb { color: #666; border: 1px solid #444; }
-        .rank-denier { color: var(--btc-orange); border: 1px solid var(--btc-orange); text-shadow: 0 0 8px rgba(247, 147, 26, 0.4); }
-        .rank-sovereign { color: #fff; border: 1px solid #fff; text-shadow: 0 0 10px #fff; }
-        .rank-citadel { color: var(--cyber-cyan); border: 1px solid var(--cyber-cyan); text-shadow: 0 0 12px var(--cyber-cyan); }
-
-        #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1rem 0; font-size: 5rem; font-weight: bold; font-family: 'Roboto', sans-serif; }
+        #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1rem 0; font-size: 5rem; font-weight: bold; }
         .slot { width: 70px; height: 100px; line-height: 100px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); }
-        .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); color: #888; }
+        .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); }
+        
+        .share-btn { background: transparent; border: 1px solid #444; color: #888; font-size: 0.7rem; padding: 10px; margin-top: 15px; width: 100%; cursor: pointer; }
+        .share-btn:hover { border-color: var(--cyber-cyan); color: var(--cyber-cyan); }
+        
+        #rank-display { font-size: 0.7rem; font-weight: bold; letter-spacing: 2px; margin-top: 8px; padding: 3px 10px; display: inline-block; border-radius: 4px; text-transform: uppercase; }
+        .rank-pleb { color: #666; border: 1px solid #444; }
+        .rank-denier { color: var(--btc-orange); border: 1px solid var(--btc-orange); }
+        
         @keyframes blur-spin { 0% { transform: translateY(-2px); } 50% { transform: translateY(2px); } 100% { transform: translateY(0); } }
-        .just-finished { color: var(--btc-orange) !important; text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); transform: scale(1.05); }
-
-        #bonus-overlay { 
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); 
-            background: rgba(0, 0, 0, 0.95); border: 3px solid var(--btc-orange); color: var(--btc-orange); 
-            padding: 2rem; border-radius: 20px; z-index: 1000; text-align: center; 
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease; 
-            width: 80%; pointer-events: none; opacity: 0;
-        }
-        #bonus-overlay.show { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-
-        #debug-btn { display: none; background: #333; border: 1px dashed var(--btc-orange); color: var(--btc-orange); margin-top: 20px; font-size: 0.7rem; padding: 8px; cursor: pointer; width: 100%; }
-        .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
-        button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; transition: 0.2s; color: white; margin-top: 10px; }
-        #roll-btn.locked { background: var(--locked-grey) !important; color: var(--btc-orange) !important; cursor: not-allowed; }
-        #timer { font-size: 0.85rem; color: var(--grey-text); margin-top: 10px; height: 20px; font-weight: bold; }
-        .back-link { display: block; margin-bottom: 10px; color: #888; text-decoration: none; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-    <div id="iab-warning">
-        ⚠️ <b>IN-APP BROWSER DETECTED</b><br>
-        Credits & Rank will not save here.<br>
-        <a href="https://fiatdenier.com/roll.html" target="_blank">OPEN IN EXTERNAL BROWSER</a>
-    </div>
+    <div id="iab-warning">⚠️ OPEN IN EXTERNAL BROWSER FOR SAVING</div>
 
     <div class="card">
-        <div class="agent-header">
-            <div class="agent-info">
-                <div class="agent-status">Network Agent</div>
-                <div id="agent-id-display" class="agent-id-tag">AGENT_0000</div>
-            </div>
-            <div style="font-size: 1.5rem;">👤</div>
-        </div>
-
-        <div id="bonus-overlay">
-            <h1 style="margin:0; font-size: 3rem;">+5 ROLLS</h1>
-            <p style="margin:5px 0 0; color:white;">21 POWER ACTIVATED</p>
-        </div>
-
-        <a href="index.html" class="back-link">← Return to Wire</a>
+        <div id="agent-id-display" style="font-size: 0.8rem; color: var(--btc-orange); margin-bottom: 10px;">AGENT_0000</div>
         
         <div id="stats-container">
-            <div class="stat-label">ACCUMULATED ROLLS</div>
+            <div class="stat-label">ROLLS</div>
             <div id="credit-count" class="stat-value">0</div>
-            <hr style="border: 0; border-top: 1px solid #333; margin: 8px 0;">
-            <div class="stat-label">TOTAL SATS DENIED</div>
+            <div class="stat-label">SATS DENIED</div>
             <div id="total-sats" class="stat-value">0</div>
             <div id="rank-display" class="rank-pleb">FIAT PLEB</div>
         </div>
@@ -119,274 +70,139 @@
         <div id="timer"></div>
 
         <div id="result-area" style="display: none;">
-            <div id="status-message" style="margin-top: 15px;"></div>
-            <div class="proof-box" id="proof-content">
-                <strong>Result:</strong> <span id="res-num"></span><br>
-                <strong>Timestamp:</strong> <span id="res-ts"></span><br>
-                <strong>Signature:</strong> <span id="res-sig" style="color: #666;"></span>
+            <div class="proof-box" style="font-size: 0.7rem; color: #666; margin-top: 10px;">
+                Result: <span id="res-num"></span> | Sig: <span id="res-sig"></span>
             </div>
+            <button class="share-btn" onclick="shareResult()">📡 BROADCAST MISSION REPORT</button>
         </div>
 
-        <button id="debug-btn" onclick="testBonus()">🛠️ DEBUG: TRIGGER +5 ROLLS</button>
+        <div onclick="showLeaderboard()" style="cursor:pointer; font-size:0.6rem; color:#555; margin-top:15px; text-decoration: underline;">
+            VIEW GLOBAL NETWORK STATUS
+        </div>
+    </div>
+
+    <div id="leaderboard-overlay">
+        <div style="color:var(--btc-orange); font-size: 0.8rem; margin-bottom:10px;">TOP DENIER NODES</div>
+        <div id="lb-content">Loading...</div>
+        <div onclick="document.getElementById('leaderboard-overlay').style.display='none'" style="margin-top:15px; font-size:0.7rem; color:#666; cursor:pointer;">[ CLOSE ]</div>
     </div>
 
     <script>
-        const COOLDOWN_MINUTES = 10;
         const API_BASE = "https://api.fiatdenier.com";
         let isRolling = false;
-        let activeTimerInterval = null; 
-        
         let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
         let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
 
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        let clickBuffer, dingBuffer, bonusBuffer;
-        let loopSource, loopGain;
-
+        let clickBuffer, dingBuffer;
         const loadSound = (url) => fetch(url).then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b));
         loadSound('click.wav').then(d => clickBuffer = d);
         loadSound('ding.wav').then(d => dingBuffer = d);
-        loadSound('free_credit.wav').then(d => bonusBuffer = d);
 
-        function detectIAB() {
-            const ua = navigator.userAgent || navigator.vendor || window.opera;
-            const isNostrApp = /Primal|Nostr|Damus|Amethyst|Snort/i.test(ua);
-            
-            // Precision logic: Native Safari/Brave ALWAYS have "Version/XX.X" in UserAgent.
-            // iOS In-App Browsers (WebViews) almost always OMIT the "Version/" string.
-            const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            const hasVersion = /Version\/[\d\.]+/.test(ua);
-            const isStandalone = window.navigator.standalone === true;
-
-            // Trigger only if explicitly a Nostr app OR an iOS WebView missing the Version string.
-            if (isNostrApp || (isiOS && !isStandalone && !hasVersion)) {
-                document.getElementById('iab-warning').style.display = 'block';
-                document.body.style.paddingTop = '80px';
-            }
-        }
-
-        function playLoop() {
-            if (!clickBuffer) return;
-            loopSource = audioCtx.createBufferSource();
-            loopSource.buffer = clickBuffer;
-            loopSource.loop = true;
-            loopGain = audioCtx.createGain();
-            loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime);
-            loopSource.connect(loopGain);
-            loopGain.connect(audioCtx.destination);
-            loopSource.start(0);
-        }
-
-        function stopLoop() {
-            if (loopGain) loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
-            setTimeout(() => { if (loopSource) { loopSource.stop(); loopSource = null; } }, 100);
-        }
-
-        function playSound(buffer, rate = 1) {
-            if (!buffer) return;
-            const source = audioCtx.createBufferSource();
-            source.buffer = buffer;
-            source.playbackRate.value = rate;
-            source.connect(audioCtx.destination);
-            source.start(0);
-        }
+        function vibrate(pattern) { if (navigator.vibrate) navigator.vibrate(pattern); }
 
         function getAgentID() {
-            let id = localStorage.getItem('agentID');
-            if (!id) {
-                id = 'AGENT_' + Math.floor(1000 + Math.random() * 9000);
-                localStorage.setItem('agentID', id);
-            }
+            let id = localStorage.getItem('agentID') || 'AGENT_' + Math.floor(1000 + Math.random() * 9000);
+            localStorage.setItem('agentID', id);
             return id;
         }
 
-        function getRank(sats) {
-            if (sats >= 100000) return { title: "CITADEL LEAD", class: "rank-citadel" };
-            if (sats >= 10000)  return { title: "SOVEREIGN NODE", class: "rank-sovereign" };
-            if (sats >= 1000)   return { title: "FIAT DENIER", class: "rank-denier" };
-            return { title: "FIAT PLEB", class: "rank-pleb" };
+        async function syncScore() {
+            try {
+                await fetch(`${API_BASE}/update-score`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
+                });
+            } catch (e) { console.error("Sync failed"); }
         }
 
-        function updateStats(animateSats = 0) {
-            const btn = document.getElementById('roll-btn');
-            const timerDiv = document.getElementById('timer');
-            const statsBox = document.getElementById('stats-container');
-            const rankEl = document.getElementById('rank-display');
-            
-            document.getElementById('agent-id-display').innerText = getAgentID();
-            document.getElementById('credit-count').innerText = rollCredits;
-            localStorage.setItem('rollCredits', rollCredits);
-            localStorage.setItem('totalSats', totalSats);
+        async function showLeaderboard() {
+            const overlay = document.getElementById('leaderboard-overlay');
+            overlay.style.display = 'block';
+            try {
+                const res = await fetch(`${API_BASE}/leaderboard`);
+                const data = await res.json();
+                document.getElementById('lb-content').innerHTML = data.map((e, i) => `
+                    <div class="leaderboard-row ${e.agent === getAgentID() ? 'me' : ''}">
+                        <span>${i+1}. ${e.agent}</span>
+                        <span>${e.sats}</span>
+                    </div>
+                `).join('');
+            } catch (e) { document.getElementById('lb-content').innerText = "NETWORK OFFLINE"; }
+        }
 
-            const currentRank = getRank(totalSats);
-            rankEl.innerText = currentRank.title;
-            rankEl.className = currentRank.class;
-
-            const satsEl = document.getElementById('total-sats');
-            if (animateSats > 0) {
-                let current = totalSats - animateSats;
-                const interval = setInterval(() => {
-                    current += Math.ceil(animateSats / 10);
-                    if (current >= totalSats) { current = totalSats; clearInterval(interval); }
-                    satsEl.innerText = current.toLocaleString();
-                }, 50);
+        function shareResult() {
+            const text = `🕵️ Agent ${getAgentID()} Reporting.\nRoll: [${document.getElementById('res-num').innerText}]\nSats Denied: ${totalSats.toLocaleString()}\n\nJoin the resistance: https://fiatdenier.com`;
+            if (navigator.share) {
+                navigator.share({ title: 'Fiat Denier', text: text, url: 'https://fiatdenier.com' });
             } else {
-                satsEl.innerText = totalSats.toLocaleString();
-            }
-
-            const savedExpiry = localStorage.getItem('rollCooldown');
-            const isLocked = savedExpiry && Date.now() < parseInt(savedExpiry);
-
-            if (rollCredits > 0) {
-                statsBox.classList.add('has-credits');
-                btn.disabled = isRolling;
-                btn.classList.remove('locked');
-                btn.innerText = isRolling ? "ROLLING..." : "ROLL FOR SATS";
-                timerDiv.innerText = "USING CREDITS";
-            } else {
-                statsBox.classList.remove('has-credits');
-                if (!isLocked) {
-                    btn.disabled = isRolling;
-                    btn.classList.remove('locked');
-                    btn.innerText = isRolling ? "ROLLING..." : "ROLL FOR SATS";
-                    timerDiv.innerText = "";
-                }
+                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
             }
         }
 
         async function handleRoll() {
             if (isRolling) return;
+            isRolling = true;
             const btn = document.getElementById('roll-btn');
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             
-            isRolling = true;
             btn.disabled = true;
-            btn.innerText = "CONNECTING...";
             document.getElementById('result-area').style.display = 'none';
 
-            const spinIntervals = slots.map(slot => {
-                slot.classList.remove('just-finished');
-                slot.classList.add('rolling');
-                return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
+            const intervals = slots.map(s => {
+                s.classList.add('rolling');
+                return setInterval(() => s.innerText = Math.floor(Math.random()*10), 60);
             });
 
             try {
-                if (audioCtx.state === 'suspended') await audioCtx.resume();
-                playLoop();
-
-                const response = await fetch(`${API_BASE}/get-roll`, {
-                    method: 'GET',
-                    mode: 'cors',
-                    headers: { 'Accept': 'application/json' }
-                });
-
+                const response = await fetch(`${API_BASE}/get-roll`);
                 const data = await response.json();
+                if (data.error === "LOCKED") throw new Error("LOCKED");
 
-                // CATCH SERVER-SIDE LOCK SIGNAL
-                if (data.error === "LOCKED") {
-                    throw new Error("ServerLocked");
-                }
-
-                if (!response.ok) throw new Error("NetworkError");
-                
                 const numStr = data.num.toString().padStart(4, '0');
-
                 for (let i = 0; i < 4; i++) {
-                    await new Promise(r => setTimeout(r, 600 + Math.random() * 400));
-                    clearInterval(spinIntervals[i]);
+                    await new Promise(r => setTimeout(r, 600 + Math.random()*400));
+                    clearInterval(intervals[i]);
                     slots[i].classList.remove('rolling');
-                    slots[i].classList.add('just-finished');
                     slots[i].innerText = numStr[i];
-                    playSound(dingBuffer);
+                    if (dingBuffer) { const s = audioCtx.createBufferSource(); s.buffer = dingBuffer; s.connect(audioCtx.destination); s.start(0); }
+                    vibrate(40);
                 }
-
-                stopLoop();
-
-                let wonBonus = false;
-                let satsWon = (data.num === "2121") ? 1000 : 10;
 
                 if (numStr.includes('21')) {
                     rollCredits += 5;
-                    wonBonus = true;
-                    showBonus();
-                } else if (rollCredits > 0) {
-                    rollCredits--;
-                }
+                    vibrate([200, 100, 200]);
+                    confetti({ particleCount: 100 });
+                } else if (rollCredits > 0) rollCredits--;
 
-                totalSats += satsWon;
-                updateStats(satsWon);
-
-                if (rollCredits <= 0) {
-                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-                    localStorage.setItem('rollCooldown', expiry);
-                    startTimer(expiry);
-                }
-
+                totalSats += (data.num === "2121") ? 1000 : 10;
+                localStorage.setItem('totalSats', totalSats);
+                localStorage.setItem('rollCredits', rollCredits);
+                
                 document.getElementById('res-num').innerText = data.num;
-                document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
                 document.getElementById('result-area').style.display = 'block';
-                document.getElementById('status-message').innerHTML = wonBonus ? "<h3 style='color:var(--btc-orange)'>⚡ 21 POWER ACTIVATED ⚡</h3>" : "<h3 style='color:#666'>Better luck next time!</h3>";
                 
-            } catch (error) {
-                stopLoop(); 
-                spinIntervals.forEach(clearInterval);
-                slots.forEach(s => { s.classList.remove('rolling'); s.innerText = "-"; });
-                
-                if (error.message === "ServerLocked") {
-                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-                    localStorage.setItem('rollCooldown', expiry);
-                    startTimer(expiry);
-                } else {
-                    btn.innerText = "LINK ERROR";
-                    setTimeout(() => updateStats(), 2000);
-                }
+                syncScore();
+            } catch (e) {
+                alert(e.message === "LOCKED" ? "System Locked. Wait for cooldown." : "Connection Error");
             } finally {
-                setTimeout(() => { isRolling = false; updateStats(); }, 1000);
+                isRolling = false;
+                updateStats();
             }
         }
 
-        function showBonus() {
-            playSound(bonusBuffer);
-            const overlay = document.getElementById('bonus-overlay');
-            overlay.classList.add('show');
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-            setTimeout(() => overlay.classList.remove('show'), 2000);
-        }
-
-        function startTimer(expiry) {
-            const timerDiv = document.getElementById('timer');
+        function updateStats() {
+            document.getElementById('agent-id-display').innerText = getAgentID();
+            document.getElementById('credit-count').innerText = rollCredits;
+            document.getElementById('total-sats').innerText = totalSats.toLocaleString();
             const btn = document.getElementById('roll-btn');
-            if (activeTimerInterval) clearInterval(activeTimerInterval);
-            activeTimerInterval = setInterval(() => {
-                const diff = expiry - Date.now();
-                if (diff <= 0 || rollCredits > 0) {
-                    clearInterval(activeTimerInterval);
-                    activeTimerInterval = null;
-                    updateStats();
-                } else {
-                    const mins = Math.floor(diff / 60000);
-                    const secs = Math.floor((diff % 60000) / 1000);
-                    timerDiv.innerText = `NEXT ROLL IN: ${mins}:${secs.toString().padStart(2, '0')}`;
-                    btn.innerText = `LOCKED (${mins}m)`;
-                    btn.classList.add('locked');
-                    btn.disabled = true;
-                }
-            }, 1000);
+            btn.disabled = false;
+            btn.innerText = "ROLL FOR SATS";
         }
 
-        window.onload = () => {
-            detectIAB();
-            updateStats();
-            const savedExpiry = localStorage.getItem('rollCooldown');
-            if (savedExpiry && Date.now() < parseInt(savedExpiry) && rollCredits <= 0) {
-                startTimer(parseInt(savedExpiry));
-            }
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('debug') === 'true') {
-                document.getElementById('debug-btn').style.display = 'block';
-            }
-        };
+        window.onload = updateStats;
     </script>
 </body>
 </html>
