@@ -80,7 +80,7 @@
     <div id="iab-warning">
         ⚠️ <b>IN-APP BROWSER DETECTED</b><br>
         Credits & Rank will not save here.<br>
-        <a href="https://fiatdenier.com" target="_blank">OPEN IN EXTERNAL BROWSER</a>
+        <a href="https://fiatdenier.com/roll.html" target="_blank">OPEN IN EXTERNAL BROWSER</a>
     </div>
 
     <div class="card">
@@ -150,14 +150,16 @@
 
         function detectIAB() {
             const ua = navigator.userAgent || navigator.vendor || window.opera;
-            const isNostr = /Primal|Nostr|Damus|Amethyst/i.test(ua);
-            const isAndroidWebView = /Android.*(wv|; wv)/i.test(ua);
+            const isNostrApp = /Primal|Nostr|Damus|Amethyst|Snort/i.test(ua);
             
-            // Fixed Brave/Safari logic: 
-            // Only trigger warning if it's Nostr OR a known WebView.
-            // Brave & Safari have "Safari" in UA, but WebViews usually lack "Version/" 
-            // and include "wv" or "Primal".
-            if (isNostr || isAndroidWebView) {
+            // Precision logic: Native Safari/Brave ALWAYS have "Version/XX.X" in UserAgent.
+            // iOS In-App Browsers (WebViews) almost always OMIT the "Version/" string.
+            const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            const hasVersion = /Version\/[\d\.]+/.test(ua);
+            const isStandalone = window.navigator.standalone === true;
+
+            // Trigger only if explicitly a Nostr app OR an iOS WebView missing the Version string.
+            if (isNostrApp || (isiOS && !isStandalone && !hasVersion)) {
                 document.getElementById('iab-warning').style.display = 'block';
                 document.body.style.paddingTop = '80px';
             }
@@ -254,7 +256,6 @@
 
         async function handleRoll() {
             if (isRolling) return;
-            
             const btn = document.getElementById('roll-btn');
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             
@@ -273,17 +274,21 @@
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
                 playLoop();
 
-                // FIX: Explicit CORS and Headers for Brave/Safari
                 const response = await fetch(`${API_BASE}/get-roll`, {
                     method: 'GET',
                     mode: 'cors',
                     headers: { 'Accept': 'application/json' }
                 });
 
-                if (response.status === 429) throw new Error("Cooldown");
-                if (!response.ok) throw new Error("Network Error");
-                
                 const data = await response.json();
+
+                // CATCH SERVER-SIDE LOCK SIGNAL
+                if (data.error === "LOCKED") {
+                    throw new Error("ServerLocked");
+                }
+
+                if (!response.ok) throw new Error("NetworkError");
+                
                 const numStr = data.num.toString().padStart(4, '0');
 
                 for (let i = 0; i < 4; i++) {
@@ -298,7 +303,7 @@
                 stopLoop();
 
                 let wonBonus = false;
-                let satsWon = (data.num === 2121) ? 1000 : 10;
+                let satsWon = (data.num === "2121") ? 1000 : 10;
 
                 if (numStr.includes('21')) {
                     rollCredits += 5;
@@ -328,7 +333,7 @@
                 spinIntervals.forEach(clearInterval);
                 slots.forEach(s => { s.classList.remove('rolling'); s.innerText = "-"; });
                 
-                if (error.message === "Cooldown") {
+                if (error.message === "ServerLocked") {
                     const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                     localStorage.setItem('rollCooldown', expiry);
                     startTimer(expiry);
