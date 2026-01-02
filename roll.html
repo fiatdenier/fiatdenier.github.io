@@ -312,7 +312,7 @@
                         playSound(bonusBuffer);
                         document.getElementById('bonus-overlay').classList.add('show');
                         confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-                        setTimeout(() => document.getElementById('bonus-overlay').classList.remove('show'), 2500);
+                        setTimeout(() => document.getElementById('bonus-overlay').classList.remove('show'), 2000);
                     }, 200);
                 } else if (rollCredits > 0) {
                     rollCredits--;
