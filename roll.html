@@ -1,66 +1,247 @@
-import os
-import random
-import time
-import hashlib
-import json
-from flask import Flask, jsonify, request
-from flask_cors import CORS
-from dotenv import load_dotenv
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiat Denier - Lucky Roll</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root { 
+            --btc-orange: #f7931a; 
+            --dark-bg: #1a1a1a; 
+            --win-green: #4CAF50; 
+            --grey-text: #696969; 
+            --locked-grey: #444444;
+            --cyber-cyan: #00ffff;
+        }
+        body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
+        
+        #iab-warning { display: none; background: #441111; color: #ff9999; padding: 12px; font-size: 0.75rem; text-align: center; border-bottom: 2px solid var(--btc-orange); width: 100%; position: fixed; top: 0; z-index: 9999; }
 
-load_dotenv(dotenv_path="/home/ubuntu/strategy/.random.env")
+        .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
+        
+        /* Agent Header Section */
+        .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
+        .agent-info { text-align: left; }
+        .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
+        .agent-status { font-size: 0.6rem; color: #666; text-transform: uppercase; }
 
-app = Flask(__name__)
-CORS(app)
+        /* Stats & Rank */
+        #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; transition: all 0.3s; }
+        #stats-container.has-credits { border-color: var(--btc-orange); box-shadow: 0 0 15px rgba(247, 147, 26, 0.2); }
+        .stat-label { font-size: 0.65rem; color: #888; letter-spacing: 2px; margin-top: 5px; }
+        .stat-value { font-size: 1.5rem; font-weight: bold; }
+        #total-sats { color: var(--win-green); font-size: 1.1rem; }
 
-SECRET_SALT = os.getenv("MY_GAME_SECRET", "default_salt").strip()
-DATA_FILE = "cooldowns.json"
-LEADERBOARD_FILE = "leaderboard.json"
-COOLDOWN_SECONDS = 600
+        #rank-display { font-size: 0.7rem; font-weight: bold; letter-spacing: 2px; margin-top: 8px; padding: 3px 10px; display: inline-block; border-radius: 4px; text-transform: uppercase; transition: all 0.5s ease; }
+        .rank-pleb { color: #666; border: 1px solid #444; }
+        .rank-denier { color: var(--btc-orange); border: 1px solid var(--btc-orange); text-shadow: 0 0 8px rgba(247, 147, 26, 0.4); }
 
-def load_json(f):
-    if os.path.exists(f):
-        try:
-            with open(f, 'r') as file: return json.load(file)
-        except: return {}
-    return {}
+        /* Slot Machine */
+        #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1rem 0; font-size: 5rem; font-weight: bold; }
+        .slot { width: 70px; height: 100px; line-height: 100px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); }
+        .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); color: #888; }
+        @keyframes blur-spin { 0% { transform: translateY(-2px); } 50% { transform: translateY(2px); } 100% { transform: translateY(0); } }
+        .just-finished { color: var(--btc-orange) !important; text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); transform: scale(1.05); }
 
-def save_json(f, data):
-    with open(f, 'w') as file: json.dump(data, file)
+        /* Leaderboard Modal */
+        #leaderboard-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; width: 85%; max-width: 320px; box-shadow: 0 0 50px rgba(0,0,0,0.9); }
+        .leaderboard-row { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 8px 0; border-bottom: 1px solid #222; }
+        .leaderboard-row.me { color: var(--btc-orange); font-weight: bold; }
 
-@app.route('/update-score', methods=['POST'])
-def update_score():
-    data = request.json
-    lb = load_json(LEADERBOARD_FILE)
-    agent = data.get('agent_id')
-    sats = data.get('sats', 0)
-    if agent not in lb or sats > lb[agent]:
-        lb[agent] = sats
-        save_json(LEADERBOARD_FILE, lb)
-    return jsonify({"status": "ok"})
+        /* Buttons & Extras */
+        button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; color: white; margin-top: 10px; }
+        button.locked { background: var(--locked-grey) !important; color: var(--btc-orange) !important; cursor: not-allowed; }
+        .share-btn { background: transparent; border: 1px solid #444; color: #888; font-size: 0.7rem; padding: 10px; margin-top: 15px; width: 100%; cursor: pointer; letter-spacing: 1px; }
+        .share-btn:hover { border-color: var(--cyber-cyan); color: var(--cyber-cyan); }
+        
+        .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
+        #timer { font-size: 0.85rem; color: var(--grey-text); margin-top: 10px; height: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
 
-@app.route('/leaderboard', methods=['GET'])
-def get_leaderboard():
-    lb = load_json(LEADERBOARD_FILE)
-    sorted_lb = sorted(lb.items(), key=lambda x: x[1], reverse=True)[:5]
-    return jsonify([{"agent": k, "sats": v} for k, v in sorted_lb])
+    <div id="iab-warning">⚠️ <b>IN-APP BROWSER DETECTED</b> - <a href="#" style="color:white">OPEN EXTERNAL</a></div>
 
-@app.route('/get-roll', methods=['GET'])
-def get_roll():
-    user_ip = request.headers.get('X-Forwarded-For', request.remote_addr).split(',')[0].strip()
-    cooldowns = load_json(DATA_FILE)
-    now = time.time()
-    
-    if user_ip in cooldowns and now - cooldowns[user_ip] < COOLDOWN_SECONDS:
-        return jsonify({"error": "LOCKED"}), 200
+    <div class="card">
+        <div class="agent-header">
+            <div class="agent-info">
+                <div class="agent-status">Network Agent</div>
+                <div id="agent-id-display" class="agent-id-tag">AGENT_0000</div>
+            </div>
+            <div style="font-size: 1.5rem;">👤</div>
+        </div>
 
-    num = str(random.randint(0, 9999)).zfill(4)
-    ts = int(now * 1000)
-    signature = hashlib.sha256(f"{num}-{ts}-{SECRET_SALT}".encode()).hexdigest()[:12]
-    
-    cooldowns[user_ip] = now
-    save_json(DATA_FILE, cooldowns)
-    
-    return jsonify({"num": num, "ts": ts, "signature": signature})
+        <div id="stats-container">
+            <div class="stat-label">ACCUMULATED ROLLS</div>
+            <div id="credit-count" class="stat-value">0</div>
+            <hr style="border: 0; border-top: 1px solid #333; margin: 8px 0;">
+            <div class="stat-label">TOTAL SATS DENIED</div>
+            <div id="total-sats" class="stat-value">0</div>
+            <div id="rank-display" class="rank-pleb">FIAT PLEB</div>
+        </div>
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+        <div id="slot-container">
+            <div id="slot-0" class="slot">-</div>
+            <div id="slot-1" class="slot">-</div>
+            <div id="slot-2" class="slot">-</div>
+            <div id="slot-3" class="slot">-</div>
+        </div>
+
+        <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
+        <div id="timer"></div>
+
+        <div id="result-area" style="display: none;">
+            <div id="status-message" style="margin-top: 15px;"></div>
+            <div class="proof-box">
+                <strong>Result:</strong> <span id="res-num"></span><br>
+                <strong>Sig:</strong> <span id="res-sig" style="color: #666;"></span>
+            </div>
+            <button class="share-btn" onclick="shareResult()">📡 BROADCAST TO NETWORK</button>
+        </div>
+
+        <div onclick="showLeaderboard()" style="cursor:pointer; font-size:0.6rem; color:#555; margin-top:15px; text-decoration: underline;">
+            VIEW GLOBAL NETWORK STATUS
+        </div>
+    </div>
+
+    <div id="leaderboard-overlay">
+        <div class="agent-status" style="margin-bottom:15px; color:var(--btc-orange)">TOP DENIER NODES</div>
+        <div id="lb-content">Loading...</div>
+        <div onclick="document.getElementById('leaderboard-overlay').style.display='none'" style="margin-top:15px; font-size:0.7rem; color:#666; cursor:pointer;">[ CLOSE TERMINAL ]</div>
+    </div>
+
+    <script>
+        const API_BASE = "https://api.fiatdenier.com";
+        const COOLDOWN_MINUTES = 10;
+        let isRolling = false;
+        let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
+        let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
+
+        // Sound Logic
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let dingBuffer;
+        fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => dingBuffer = d);
+
+        function vibrate(p) { if (navigator.vibrate) navigator.vibrate(p); }
+        function getAgentID() {
+            let id = localStorage.getItem('agentID') || 'AGENT_' + Math.floor(1000 + Math.random() * 9000);
+            localStorage.setItem('agentID', id);
+            return id;
+        }
+
+        async function syncScore() {
+            try {
+                await fetch(`${API_BASE}/update-score`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
+                });
+            } catch (e) {}
+        }
+
+        async function showLeaderboard() {
+            document.getElementById('leaderboard-overlay').style.display = 'block';
+            try {
+                const res = await fetch(`${API_BASE}/leaderboard`);
+                const data = await res.json();
+                document.getElementById('lb-content').innerHTML = data.map((e, i) => `
+                    <div class="leaderboard-row ${e.agent === getAgentID() ? 'me' : ''}">
+                        <span>${i+1}. ${e.agent}</span>
+                        <span>${e.sats.toLocaleString()}</span>
+                    </div>
+                `).join('');
+            } catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
+        }
+
+        function shareResult() {
+            const text = `🕵️ Agent ${getAgentID()} Reporting.\nRolled: [${document.getElementById('res-num').innerText}]\nTotal SATS Denied: ${totalSats.toLocaleString()}\n\nJoin the resistance: https://fiatdenier.com`;
+            if (navigator.share) navigator.share({ text });
+            else window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`);
+        }
+
+        async function handleRoll() {
+            if (isRolling) return;
+            isRolling = true;
+            const btn = document.getElementById('roll-btn');
+            const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
+            
+            btn.disabled = true;
+            btn.innerText = "CONNECTING...";
+            document.getElementById('result-area').style.display = 'none';
+
+            const intervals = slots.map(s => {
+                s.classList.remove('just-finished');
+                s.classList.add('rolling');
+                return setInterval(() => s.innerText = Math.floor(Math.random()*10), 60);
+            });
+
+            try {
+                if (audioCtx.state === 'suspended') await audioCtx.resume();
+                const response = await fetch(`${API_BASE}/get-roll`);
+                const data = await response.json();
+
+                if (data.error === "LOCKED") throw new Error("LOCKED");
+
+                const numStr = data.num.toString().padStart(4, '0');
+                for (let i = 0; i < 4; i++) {
+                    await new Promise(r => setTimeout(r, 600 + Math.random()*400));
+                    clearInterval(intervals[i]);
+                    slots[i].classList.remove('rolling');
+                    slots[i].classList.add('just-finished');
+                    slots[i].innerText = numStr[i];
+                    vibrate(40);
+                    if (dingBuffer) { const s = audioCtx.createBufferSource(); s.buffer = dingBuffer; s.connect(audioCtx.destination); s.start(0); }
+                }
+
+                if (numStr.includes('21')) {
+                    rollCredits += 5;
+                    vibrate([200, 100, 200]);
+                    confetti({ particleCount: 150, origin: { y: 0.6 } });
+                } else if (rollCredits > 0) rollCredits--;
+
+                totalSats += (data.num === "2121") ? 1000 : 10;
+                localStorage.setItem('totalSats', totalSats);
+                localStorage.setItem('rollCredits', rollCredits);
+                
+                document.getElementById('res-num').innerText = data.num;
+                document.getElementById('res-sig').innerText = data.signature;
+                document.getElementById('result-area').style.display = 'block';
+                syncScore();
+
+            } catch (e) {
+                if (e.message === "LOCKED") {
+                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                    localStorage.setItem('rollCooldown', expiry);
+                }
+            } finally {
+                isRolling = false;
+                updateStats();
+            }
+        }
+
+        function updateStats() {
+            document.getElementById('agent-id-display').innerText = getAgentID();
+            document.getElementById('credit-count').innerText = rollCredits;
+            document.getElementById('total-sats').innerText = totalSats.toLocaleString();
+            
+            const rankEl = document.getElementById('rank-display');
+            if (totalSats >= 1000) { rankEl.innerText = "FIAT DENIER"; rankEl.className = "rank-denier"; }
+            
+            const savedExpiry = localStorage.getItem('rollCooldown');
+            const btn = document.getElementById('roll-btn');
+            if (savedExpiry && Date.now() < parseInt(savedExpiry) && rollCredits <= 0) {
+                btn.disabled = true;
+                btn.innerText = "LOCKED";
+                btn.classList.add('locked');
+            } else {
+                btn.disabled = false;
+                btn.innerText = "ROLL FOR SATS";
+                btn.classList.remove('locked');
+            }
+        }
+
+        window.onload = updateStats;
+    </script>
+</body>
+</html>
