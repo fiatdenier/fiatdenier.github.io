@@ -16,7 +16,6 @@
         }
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; transition: padding-top 0.3s; }
         
-        /* IAB WARNING STYLES */
         #iab-warning {
             display: none;
             background: #441111;
@@ -119,10 +118,6 @@
         <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
         <div id="timer"></div>
 
-        <div class="hof-container">
-            <div id="hof-list"></div>
-        </div>
-
         <div id="result-area" style="display: none;">
             <div id="status-message" style="margin-top: 15px;"></div>
             <div class="proof-box" id="proof-content">
@@ -155,15 +150,14 @@
 
         function detectIAB() {
             const ua = navigator.userAgent || navigator.vendor || window.opera;
-            
-            // Comprehensive check for Primal, Nostr apps, and WebViews
-            const isNostrApp = /Primal|Nostr|Damus|Amethyst|Nos|Nostur/i.test(ua);
+            const isNostr = /Primal|Nostr|Damus|Amethyst/i.test(ua);
             const isAndroidWebView = /Android.*(wv|; wv)/i.test(ua);
-            const isIOS = /iPhone|iPad|iPod/.test(ua);
-            const isIOSWebView = isIOS && !ua.includes('Version/') && ua.includes('AppleWebKit');
-            const isGenericIAB = (!ua.includes('Chrome') && !ua.includes('Firefox') && !ua.includes('Safari')) || ua.includes('FBAN') || ua.includes('FBAV');
-
-            if (isNostrApp || isAndroidWebView || isIOSWebView || isGenericIAB) {
+            
+            // Fixed Brave/Safari logic: 
+            // Only trigger warning if it's Nostr OR a known WebView.
+            // Brave & Safari have "Safari" in UA, but WebViews usually lack "Version/" 
+            // and include "wv" or "Primal".
+            if (isNostr || isAndroidWebView) {
                 document.getElementById('iab-warning').style.display = 'block';
                 document.body.style.paddingTop = '80px';
             }
@@ -258,28 +252,15 @@
             }
         }
 
-        function testBonus() {
-            rollCredits += 5;
-            playSound(bonusBuffer);
-            const overlay = document.getElementById('bonus-overlay');
-            overlay.classList.add('show');
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-            setTimeout(() => overlay.classList.remove('show'), 2000);
-            updateStats();
-        }
-
         async function handleRoll() {
             if (isRolling) return;
             
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 6000);
-
             const btn = document.getElementById('roll-btn');
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             
             isRolling = true;
             btn.disabled = true;
-            btn.innerText = "ROLLING...";
+            btn.innerText = "CONNECTING...";
             document.getElementById('result-area').style.display = 'none';
 
             const spinIntervals = slots.map(slot => {
@@ -292,23 +273,26 @@
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
                 playLoop();
 
-                const response = await fetch(`${API_BASE}/get-roll`, { signal: controller.signal });
-                clearTimeout(timeoutId);
+                // FIX: Explicit CORS and Headers for Brave/Safari
+                const response = await fetch(`${API_BASE}/get-roll`, {
+                    method: 'GET',
+                    mode: 'cors',
+                    headers: { 'Accept': 'application/json' }
+                });
 
                 if (response.status === 429) throw new Error("Cooldown");
+                if (!response.ok) throw new Error("Network Error");
                 
                 const data = await response.json();
                 const numStr = data.num.toString().padStart(4, '0');
-                const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
 
-                for (let i = 0; i < stopOrder.length; i++) {
-                    const idx = stopOrder[i];
-                    await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-                    clearInterval(spinIntervals[idx]);
-                    slots[idx].classList.remove('rolling');
-                    slots[idx].classList.add('just-finished');
-                    slots[idx].innerText = numStr[idx];
-                    playSound(dingBuffer, data.num === 2121 ? 1.3 : 1);
+                for (let i = 0; i < 4; i++) {
+                    await new Promise(r => setTimeout(r, 600 + Math.random() * 400));
+                    clearInterval(spinIntervals[i]);
+                    slots[i].classList.remove('rolling');
+                    slots[i].classList.add('just-finished');
+                    slots[i].innerText = numStr[i];
+                    playSound(dingBuffer);
                 }
 
                 stopLoop();
@@ -316,15 +300,10 @@
                 let wonBonus = false;
                 let satsWon = (data.num === 2121) ? 1000 : 10;
 
-                if (numStr.startsWith('21') || numStr.endsWith('21')) {
+                if (numStr.includes('21')) {
                     rollCredits += 5;
                     wonBonus = true;
-                    setTimeout(() => {
-                        playSound(bonusBuffer);
-                        document.getElementById('bonus-overlay').classList.add('show');
-                        confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-                        setTimeout(() => document.getElementById('bonus-overlay').classList.remove('show'), 2000);
-                    }, 200);
+                    showBonus();
                 } else if (rollCredits > 0) {
                     rollCredits--;
                 }
@@ -345,25 +324,29 @@
                 document.getElementById('status-message').innerHTML = wonBonus ? "<h3 style='color:var(--btc-orange)'>⚡ 21 POWER ACTIVATED ⚡</h3>" : "<h3 style='color:#666'>Better luck next time!</h3>";
                 
             } catch (error) {
-                // HARD RESET FOR HANGS
                 stopLoop(); 
                 spinIntervals.forEach(clearInterval);
-                slots.forEach(s => s.classList.remove('rolling'));
+                slots.forEach(s => { s.classList.remove('rolling'); s.innerText = "-"; });
                 
-                if (error.message === "Cooldown" || error.name === 'AbortError' || error.status === 429) {
+                if (error.message === "Cooldown") {
                     const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                     localStorage.setItem('rollCooldown', expiry);
                     startTimer(expiry);
                 } else {
-                    btn.innerText = "NETWORK ERROR";
+                    btn.innerText = "LINK ERROR";
                     setTimeout(() => updateStats(), 2000);
                 }
             } finally {
-                setTimeout(() => {
-                    isRolling = false;
-                    updateStats();
-                }, 1000);
+                setTimeout(() => { isRolling = false; updateStats(); }, 1000);
             }
+        }
+
+        function showBonus() {
+            playSound(bonusBuffer);
+            const overlay = document.getElementById('bonus-overlay');
+            overlay.classList.add('show');
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            setTimeout(() => overlay.classList.remove('show'), 2000);
         }
 
         function startTimer(expiry) {
