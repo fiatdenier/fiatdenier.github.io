@@ -22,7 +22,7 @@
             background: #441111;
             color: #ff9999;
             padding: 12px;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-align: center;
             border-bottom: 2px solid var(--btc-orange);
             width: 100%;
@@ -30,6 +30,7 @@
             top: 0;
             z-index: 9999;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            line-height: 1.4;
         }
         #iab-warning a { color: white; text-decoration: underline; font-weight: bold; }
 
@@ -78,7 +79,8 @@
 <body>
 
     <div id="iab-warning">
-        ⚠️ IN-APP BROWSER DETECTED. Credits & Rank will not save. <br>
+        ⚠️ <b>IN-APP BROWSER DETECTED</b><br>
+        Credits & Rank will not save here.<br>
         <a href="https://fiatdenier.com" target="_blank">OPEN IN EXTERNAL BROWSER</a>
     </div>
 
@@ -153,10 +155,17 @@
 
         function detectIAB() {
             const ua = navigator.userAgent || navigator.vendor || window.opera;
-            const isPrimal = ua.includes("Primal") || ua.includes("Nostr");
-            if (isPrimal) {
+            
+            // Comprehensive check for Primal, Nostr apps, and WebViews
+            const isNostrApp = /Primal|Nostr|Damus|Amethyst|Nos|Nostur/i.test(ua);
+            const isAndroidWebView = /Android.*(wv|; wv)/i.test(ua);
+            const isIOS = /iPhone|iPad|iPod/.test(ua);
+            const isIOSWebView = isIOS && !ua.includes('Version/') && ua.includes('AppleWebKit');
+            const isGenericIAB = (!ua.includes('Chrome') && !ua.includes('Firefox') && !ua.includes('Safari')) || ua.includes('FBAN') || ua.includes('FBAV');
+
+            if (isNostrApp || isAndroidWebView || isIOSWebView || isGenericIAB) {
                 document.getElementById('iab-warning').style.display = 'block';
-                document.body.style.paddingTop = '60px';
+                document.body.style.paddingTop = '80px';
             }
         }
 
@@ -336,7 +345,7 @@
                 document.getElementById('status-message').innerHTML = wonBonus ? "<h3 style='color:var(--btc-orange)'>⚡ 21 POWER ACTIVATED ⚡</h3>" : "<h3 style='color:#666'>Better luck next time!</h3>";
                 
             } catch (error) {
-                // HARD RESET FOR PRIMAL/IAB HANGS
+                // HARD RESET FOR HANGS
                 stopLoop(); 
                 spinIntervals.forEach(clearInterval);
                 slots.forEach(s => s.classList.remove('rolling'));
@@ -346,7 +355,7 @@
                     localStorage.setItem('rollCooldown', expiry);
                     startTimer(expiry);
                 } else {
-                    btn.innerText = "LINK ERROR";
+                    btn.innerText = "NETWORK ERROR";
                     setTimeout(() => updateStats(), 2000);
                 }
             } finally {
