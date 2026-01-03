@@ -6,46 +6,76 @@
     <title>Fiat Denier - Lucky Roll</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        :root { --btc-orange: #f7931a; --dark-bg: #1a1a1a; --win-green: #4CAF50; --grey-text: #696969; --locked-grey: #444444; }
+        :root { 
+            --btc-orange: #f7931a; 
+            --dark-bg: #1a1a1a; 
+            --win-green: #4CAF50; 
+            --grey-text: #696969; 
+            --locked-grey: #444444;
+        }
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
+        
         .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
         .agent-info { text-align: left; }
         .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
         .agent-status { font-size: 0.6rem; color: #666; text-transform: uppercase; }
+        
         .regen-btn { cursor: pointer; font-size: 0.7rem; margin-left: 8px; color: var(--grey-text); transition: color 0.2s; vertical-align: middle; }
         .regen-btn:hover { color: var(--btc-orange); }
+
         .btc-logo-icon { width: 32px; height: 32px; fill: var(--btc-orange); filter: drop-shadow(0 0 5px rgba(247, 147, 26, 0.4)); }
+        
         #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; }
         .stat-label { font-size: 0.65rem; color: #888; letter-spacing: 2px; margin-top: 5px; }
         .stat-value { font-size: 1.5rem; font-weight: bold; }
         #total-sats-val { color: var(--win-green); font-size: 1.1rem; }
+
         #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1.5rem 0; font-size: 5rem; font-weight: bold; font-family: 'Roboto', sans-serif; }
         .slot { width: 70px; height: 100px; line-height: 100px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); }
         .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); color: #888; }
         @keyframes blur-spin { 0% { transform: translateY(-2px); } 50% { transform: translateY(2px); } 100% { transform: translateY(0); } }
         .just-finished { color: var(--btc-orange) !important; text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); transform: scale(1.05); transition: all 0.1s ease-out; }
+        
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
         button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; transition: 0.2s; color: white; }
         #roll-btn.locked { background: var(--locked-grey) !important; color: var(--btc-orange) !important; cursor: not-allowed; }
         #timer { font-size: 0.85rem; color: var(--grey-text); margin-top: 10px; height: 20px; font-weight: bold; }
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
         #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
+
+        /* Leaderboard Overlay restored exactly as requested */
+        #leaderboard-overlay { 
+            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; 
+            width: 85%; max-width: 320px; box-shadow: 0 0 30px black;
+        }
+        #lb-scroll-area { max-height: 250px; overflow-y: auto; margin-bottom: 15px; padding-right: 5px; }
+        .leaderboard-row { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 8px 0; border-bottom: 1px solid #222; }
+        .leaderboard-row.me { color: var(--btc-orange); font-weight: bold; border-left: 2px solid var(--btc-orange); padding-left: 5px; }
+        #lb-scroll-area::-webkit-scrollbar { width: 4px; }
+        #lb-scroll-area::-webkit-scrollbar-thumb { background: var(--btc-orange); }
+        #my-rank-box { border-top: 1px solid var(--btc-orange); margin-top: 10px; padding-top: 10px; font-size: 0.75rem; color: #aaa; }
     </style>
 </head>
 <body>
+
     <div class="card">
         <a href="index.html" class="back-link">← Return to Wire</a>
+        
         <div class="agent-header">
             <div class="agent-info">
                 <div class="agent-status">Sovereign Individual</div>
                 <div style="display: flex; align-items: center;">
                     <div id="agent-id-display" class="agent-id-tag">...</div>
-                    <span class="regen-btn" onclick="regenerateIdentity()">🔄</span>
+                    <span class="regen-btn" onclick="regenerateIdentity()" title="Regenerate Identity">🔄</span>
                 </div>
             </div>
-            <svg class="btc-logo-icon" viewBox="0 0 64 64"><path d="M48.2,26.5c1-6.7-4.1-10.3-11.1-12.7l2.3-9.1l-5.5-1.4l-2.2,9c-1.5-0.4-3-0.7-4.4-1.1l2.3-9.1L24,0.8l-2.3,9.1c-1.2-0.3-2.3-0.5-3.5-0.8l0,0l-7.6-1.9l-1.5,5.9c0,0,4.1,0.9,4,1c2.2,0.6,2.6,2,2.6,3.2l-2.6,10.3c0.2,0,0.4,0.1,0.6,0.2c-0.2-0.1-0.4-0.1-0.6-0.2l-3.6,14.5c-0.3,0.7-1,1.7-2.6,1.3c0.1,0.1-4,0.9-4,0.9l-2.7,6.3l7.2,1.8c1.3,0.3,2.6,0.7,3.9,1l-2.3,9.3l5.5,1.4l2.3-9.2c1.5,0.4,3,0.8,4.4,1.1l-2.3,9.2l5.5,1.4l2.3-9.3c9.4,1.8,16.5,1.1,19.5-7.4c2.4-6.9-0.1-10.8-5.1-13.4C46.8,32.3,48.8,29.9,48.2,26.5z M39.6,44.7c-1.7,6.8-13.3,3.1-17.1,2.2l3-12.2C29.3,35.6,41.4,37.6,39.6,44.7z M41.3,26.7c-1.6,6.2-11.2,3.1-14.4,2.3l2.8-11.1C32.9,18.7,43,20.1,41.3,26.7z"/></svg>
+            <svg class="btc-logo-icon" viewBox="0 0 64 64">
+                <path d="M48.2,26.5c1-6.7-4.1-10.3-11.1-12.7l2.3-9.1l-5.5-1.4l-2.2,9c-1.5-0.4-3-0.7-4.4-1.1l2.3-9.1L24,0.8l-2.3,9.1c-1.2-0.3-2.3-0.5-3.5-0.8l0,0l-7.6-1.9l-1.5,5.9c0,0,4.1,0.9,4,1c2.2,0.6,2.6,2,2.6,3.2l-2.6,10.3c0.2,0,0.4,0.1,0.6,0.2c-0.2-0.1-0.4-0.1-0.6-0.2l-3.6,14.5c-0.3,0.7-1,1.7-2.6,1.3c0.1,0.1-4,0.9-4,0.9l-2.7,6.3l7.2,1.8c1.3,0.3,2.6,0.7,3.9,1l-2.3,9.3l5.5,1.4l2.3-9.2c1.5,0.4,3,0.8,4.4,1.1l-2.3,9.2l5.5,1.4l2.3-9.3c9.4,1.8,16.5,1.1,19.5-7.4c2.4-6.9-0.1-10.8-5.1-13.4C46.8,32.3,48.8,29.9,48.2,26.5z M39.6,44.7c-1.7,6.8-13.3,3.1-17.1,2.2l3-12.2C29.3,35.6,41.4,37.6,39.6,44.7z M41.3,26.7c-1.6,6.2-11.2,3.1-14.4,2.3l2.8-11.1C32.9,18.7,43,20.1,41.3,26.7z"/>
+            </svg>
         </div>
+
         <div id="stats-container">
             <div class="stat-label">ROLL CREDITS</div>
             <div id="credit-count" class="stat-value">0</div>
@@ -53,12 +83,19 @@
             <div class="stat-label">TOTAL SATS DENIED</div>
             <div id="total-sats-val" class="stat-value">0</div>
         </div>
+
         <div id="slot-container">
-            <div id="slot-0" class="slot">-</div><div id="slot-1" class="slot">-</div><div id="slot-2" class="slot">-</div><div id="slot-3" class="slot">-</div>
+            <div id="slot-0" class="slot">-</div>
+            <div id="slot-1" class="slot">-</div>
+            <div id="slot-2" class="slot">-</div>
+            <div id="slot-3" class="slot">-</div>
         </div>
+
         <div id="ip-lock-msg">IP LOCKED</div>
+        
         <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
         <div id="timer"></div>
+
         <div id="result-area" style="display: none;">
             <div id="status-message" style="margin-top: 15px;"></div>
             <div class="proof-box" id="proof-content">
@@ -66,116 +103,233 @@
                 <strong>Timestamp:</strong> <span id="res-ts"></span><br>
                 <strong>Signature:</strong> <span id="res-sig" style="color: #666;"></span>
             </div>
+            <button id="copy-btn" onclick="copyProof()" style="display: none; margin-top:10px;">📋 COPY PROOF</button>
+        </div>
+
+        <div onclick="showLeaderboard()" style="cursor:pointer; font-size:0.6rem; color:#555; margin-top:15px; text-decoration: underline;">
+            VIEW GLOBAL LEADERBOARD
         </div>
     </div>
 
+    <div id="leaderboard-overlay">
+        <div class="agent-status" style="margin-bottom:15px; color:var(--btc-orange)">TOP SOVEREIGN INDIVIDUALS (TOP 10)</div>
+        <div id="lb-scroll-area">
+            <div id="lb-content">Loading...</div>
+        </div>
+        <div id="my-rank-box">
+            YOUR STATUS: <span id="my-rank-display">CALCULATING...</span>
+        </div>
+        <div onclick="document.getElementById('leaderboard-overlay').style.display='none'" style="margin-top:15px; font-size:0.7rem; color:#666; cursor:pointer; text-align: center;">[ CLOSE TERMINAL ]</div>
+    </div>
+
     <script>
-        const API_BASE = "https://api.fiatdenier.com";
         const COOLDOWN_MINUTES = 10;
+        const API_BASE = "https://api.fiatdenier.com";
         let isRolling = false;
+        
         let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
         let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
 
+        // --- AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        let clickBuffer = null; let dingBuffer = null; let loopSource = null;
-        fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => clickBuffer = d);
-        fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => dingBuffer = d);
+        let clickBuffer = null; let dingBuffer = null; let loopSource = null; let loopGain = null;
+        fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { clickBuffer = data; });
+        fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { dingBuffer = data; });
 
-        function playLoop() { if (!clickBuffer) return; loopSource = audioCtx.createBufferSource(); loopSource.buffer = clickBuffer; loopSource.loop = true; loopSource.connect(audioCtx.destination); loopSource.start(0); }
-        function stopLoop() { if (loopSource) { loopSource.stop(); loopSource = null; } }
-        function playDing() { if (!dingBuffer) return; const s = audioCtx.createBufferSource(); s.buffer = dingBuffer; s.connect(audioCtx.destination); s.start(0); }
+        function playLoop() {
+            if (!clickBuffer) return;
+            loopSource = audioCtx.createBufferSource();
+            loopSource.buffer = clickBuffer;
+            loopSource.loop = true; 
+            loopGain = audioCtx.createGain();
+            loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+            loopSource.connect(loopGain);
+            loopGain.connect(audioCtx.destination);
+            loopSource.start(0);
+        }
+        function stopLoop() {
+            if (loopSource) {
+                if (loopGain) loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
+                setTimeout(() => { if (loopSource) { loopSource.stop(); loopSource = null; } }, 100);
+            }
+        }
+        function playDing(isJackpot = false) {
+            if (!dingBuffer) return;
+            const source = audioCtx.createBufferSource();
+            source.buffer = dingBuffer;
+            if (isJackpot) source.playbackRate.value = 1.3;
+            source.connect(audioCtx.destination);
+            source.start(0); 
+        }
 
-        function getAgentID() { let id = localStorage.getItem('agentID'); if (!id) { id = "Sovereign" + Math.floor(Math.random()*999); localStorage.setItem('agentID', id); } return id; }
+        // --- IDENTITY LOGIC ---
+        function generateAnimalName() {
+            const adjectives = ["Sacred", "Majestic", "Silent", "Golden", "Swift", "Cunning", "Brave", "Ancient", "Hyper", "Stoic", "Ethereal", "Vigilant", "Wild", "Noble", "Fierce", "Lunar", "Solar", "Atomic", "Neon", "Cyber", "Shadow", "Iron", "Glacial", "Volcanic", "Radiant", "Hidden", "Cosmic", "Primal", "Zenith", "Nomad", "Vortex", "Sovereign", "Orphan", "Gilded", "Obsidian"];
+            const animals = ["Wolf", "Eagle", "Tiger", "Lion", "Falcon", "Panther", "Raven", "Stag", "Owl", "Bear", "Shark", "Lynx", "Phoenix", "Bison", "Dragon", "Serpent", "Mamba", "Condor", "Jaguar", "Stallion", "Viper", "Kraken", "Gryphon", "Cobra", "Fox", "Rhino", "Mastodon", "Orca", "Mantiss", "Ram", "Scorpion", "Wolverine", "Badger", "Hawk", "Bull"];
+            return adjectives[Math.floor(Math.random() * adjectives.length)] + animals[Math.floor(Math.random() * animals.length)];
+        }
+        function getAgentID() {
+            let id = localStorage.getItem('agentID');
+            if (!id || id.startsWith('AGENT_')) {
+                id = generateAnimalName();
+                localStorage.setItem('agentID', id);
+            }
+            return id;
+        }
+        function regenerateIdentity() {
+            if (!confirm("Regenerate your network identity?")) return;
+            const newId = generateAnimalName();
+            localStorage.setItem('agentID', newId);
+            document.getElementById('agent-id-display').innerText = newId;
+            fetch(`${API_BASE}/update-score`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ agent_id: newId, sats: totalSats })
+            });
+        }
 
+        // --- ROLL LOGIC ---
         async function handleRoll() {
             if (isRolling) return;
             const btn = document.getElementById('roll-btn');
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
-            
             isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
             document.getElementById('result-area').style.display = 'none';
 
-            const spinIntervals = slots.map(s => {
-                s.classList.remove('just-finished');
-                s.classList.add('rolling');
-                return setInterval(() => { s.innerText = Math.floor(Math.random()*10); }, 60);
+            const spinIntervals = slots.map(slot => {
+                slot.classList.remove('just-finished'); slot.classList.add('rolling');
+                return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
             });
 
             try {
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
                 playLoop();
-                
                 const agentId = getAgentID();
                 const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`);
                 const data = await response.json();
 
-                if (data.error === "LOCKED") {
-                    stopLoop(); spinIntervals.forEach(clearInterval); 
-                    showIpLock(); 
-                    isRolling = false; btn.disabled = false; btn.innerText = "ROLL FOR SATS";
-                    return;
+                if (data.error === "LOCKED") { 
+                    stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); 
+                    isRolling = false; btn.innerText = "ROLL FOR SATS"; return; 
                 }
 
-                // Sync server credit count
+                // # SYNC: Use server's authoritative credit count
                 rollCredits = data.server_credits;
                 localStorage.setItem('rollCredits', rollCredits);
 
                 const finalStr = data.num.toString().padStart(4, '0');
                 for (let i = 0; i < 4; i++) {
-                    await new Promise(r => setTimeout(r, 700 + Math.random()*500));
+                    await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
                     clearInterval(spinIntervals[i]);
                     slots[i].classList.remove('rolling'); slots[i].classList.add('just-finished');
                     slots[i].innerText = finalStr[i];
-                    playDing();
+                    playDing(data.num === 2121); 
                 }
                 stopLoop();
-
-                totalSats += (data.num === "2121") ? 1000 : 10;
+                
+                totalSats += (data.num === 2121) ? 1000 : 10;
                 localStorage.setItem('totalSats', totalSats);
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
                 document.getElementById('result-area').style.display = 'block';
 
-                if (rollCredits <= 0) {
-                    const exp = Date.now() + (COOLDOWN_MINUTES * 60000);
-                    localStorage.setItem('rollCooldown', exp);
-                    startTimer(exp);
+                if (data.num === 2121) {
+                    document.getElementById('status-message').innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
+                    document.getElementById('copy-btn').style.display = "block";
+                } else {
+                    document.getElementById('status-message').innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
+                }
+
+                fetch(`${API_BASE}/update-score`, {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
+                });
+
+                if (rollCredits <= 0) { 
+                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                    localStorage.setItem('rollCooldown', expiry); startTimer(expiry); 
                 } else {
                     btn.disabled = false; btn.innerText = "ROLL FOR SATS";
                 }
-
                 isRolling = false; updateUI();
-            } catch (e) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; btn.disabled = false; updateUI(); }
+            } catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; updateUI(); }
         }
 
-        function showIpLock() { document.getElementById('ip-lock-msg').style.display = 'block'; document.getElementById('slot-container').style.display = 'none'; }
-        function startTimer(exp) {
+        function showIpLock() {
+            document.getElementById('ip-lock-msg').style.display = 'block';
+            document.getElementById('slot-container').style.display = 'none';
+        }
+
+        function startTimer(expiry) {
+            const timerDiv = document.getElementById('timer');
             const btn = document.getElementById('roll-btn');
             const interval = setInterval(() => {
-                const diff = exp - Date.now();
+                const diff = expiry - Date.now();
+                // # SYNC: Unlock immediately if credits found
                 if (diff <= 0 || rollCredits > 0) {
-                    clearInterval(interval); 
-                    document.getElementById('ip-lock-msg').style.display = 'none'; 
+                    clearInterval(interval); timerDiv.innerText = "";
+                    btn.disabled = false; btn.classList.remove('locked'); btn.innerText = "ROLL FOR SATS";
+                    document.getElementById('ip-lock-msg').style.display = 'none';
                     document.getElementById('slot-container').style.display = 'flex';
-                    btn.disabled = false; btn.innerText = "ROLL FOR SATS";
-                    updateUI(); 
                 } else {
-                    document.getElementById('timer').innerText = `NEXT ROLL IN: ${Math.floor(diff/60000)}:${Math.floor((diff%60000)/1000).toString().padStart(2,'0')}`;
+                    const mins = Math.floor(diff / 60000); const secs = Math.floor((diff % 60000) / 1000);
+                    timerDiv.innerText = `NEXT ROLL IN: ${mins}:${secs.toString().padStart(2, '0')}`;
+                    btn.innerText = `LOCKED (${mins}m)`; btn.classList.add('locked'); btn.disabled = true; 
                 }
             }, 1000);
         }
-        function updateUI() { 
-            document.getElementById('agent-id-display').innerText = getAgentID(); 
-            document.getElementById('credit-count').innerText = rollCredits; 
-            document.getElementById('total-sats-val').innerText = totalSats.toLocaleString(); 
+
+        function copyProof() {
+            const text = document.getElementById('proof-content').innerText;
+            navigator.clipboard.writeText(text).then(() => { alert("Proof Copied!"); });
         }
-        window.onload = () => { 
-            updateUI(); 
-            const exp = localStorage.getItem('rollCooldown'); 
-            if (exp && Date.now() < parseInt(exp) && rollCredits <= 0) { 
-                showIpLock(); startTimer(parseInt(exp)); 
-            } 
+
+        async function showLeaderboard() {
+            document.getElementById('leaderboard-overlay').style.display = 'block';
+            const myId = getAgentID();
+            try {
+                const res = await fetch(`${API_BASE}/leaderboard`);
+                const data = await res.json();
+                document.getElementById('lb-content').innerHTML = data.slice(0, 10).map((e, i) => `
+                    <div class="leaderboard-row ${e.agent === myId ? 'me' : ''}">
+                        <span>${i+1}. ${e.agent}</span>
+                        <span>${e.sats.toLocaleString()}</span>
+                    </div>
+                `).join('');
+                const myRank = data.findIndex(e => e.agent === myId) + 1;
+                document.getElementById('my-rank-display').innerText = myRank > 0 ? `#${myRank} GLOBAL` : "UNRANKED";
+                if(myRank > 0 && myRank <= 10) document.getElementById('my-rank-display').style.color = "var(--btc-orange)";
+            } catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
+        }
+
+        function updateUI() {
+            document.getElementById('agent-id-display').innerText = getAgentID();
+            document.getElementById('credit-count').innerText = rollCredits;
+            document.getElementById('total-sats-val').innerText = totalSats.toLocaleString();
+        }
+
+        // # SYNC: Added background credit check on page load
+        window.onload = async () => {
+            updateUI();
+            const agentId = getAgentID();
+            const savedExpiry = localStorage.getItem('rollCooldown');
+            
+            if (savedExpiry && Date.now() < parseInt(savedExpiry) && rollCredits <= 0) {
+                showIpLock();
+                startTimer(parseInt(savedExpiry));
+            }
+
+            // BACKGROUND SYNC: Check if admin granted credits
+            try {
+                const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
+                const data = await response.json();
+                if (data.server_credits !== undefined) {
+                    rollCredits = data.server_credits;
+                    localStorage.setItem('rollCredits', rollCredits);
+                    if (rollCredits > 0) { updateUI(); /* Timer logic inside interval will handle the unlock */ }
+                }
+            } catch (e) { console.log("Initial credit sync failed."); }
         };
     </script>
 </body>
