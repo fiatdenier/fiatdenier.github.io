@@ -204,42 +204,29 @@
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
                 playLoop();
                 const response = await fetch(`${API_BASE}/get-roll`);
-                
-                // --- SYNC CHECK ---
                 if (response.status === 429 && rollCredits <= 0) { 
                     stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); return; 
                 }
-                
                 const data = await response.json();
-
-                // # REVERTED: Restored random stop order from original
-                const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
-                // // const stopOrder = [0, 1, 2, 3]; // Preservation of linear order for reference
-
+                
                 const finalStr = data.num.toString().padStart(4, '0');
-
-                for (let i = 0; i < stopOrder.length; i++) {
-                    const idx = stopOrder[i];
+                for (let i = 0; i < 4; i++) {
                     await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-                    clearInterval(spinIntervals[idx]);
-                    slots[idx].classList.remove('rolling'); slots[idx].classList.add('just-finished');
-                    slots[idx].innerText = finalStr[idx];
+                    clearInterval(spinIntervals[i]);
+                    slots[i].classList.remove('rolling'); slots[i].classList.add('just-finished');
+                    slots[i].innerText = finalStr[i];
                     playDing(data.num === 2121); 
                 }
                 stopLoop();
                 
-                // Handle credits locally
                 if (finalStr.includes('21')) {
                     rollCredits += 5;
                     confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-                } else if (rollCredits > 0) { 
-                    rollCredits--; 
-                }
+                } else if (rollCredits > 0) { rollCredits--; }
                 
                 totalSats += (data.num === 2121) ? 1000 : 10;
                 localStorage.setItem('rollCredits', rollCredits);
                 localStorage.setItem('totalSats', totalSats);
-                
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
@@ -252,7 +239,6 @@
                     document.getElementById('status-message').innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
                 }
 
-                // Sync with server
                 fetch(`${API_BASE}/update-score`, {
                     method: 'POST', headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
@@ -261,12 +247,7 @@
                 const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                 if (rollCredits <= 0) { localStorage.setItem('rollCooldown', expiry); startTimer(expiry); }
                 isRolling = false; updateUI();
-            } catch (error) { 
-                stopLoop(); 
-                spinIntervals.forEach(clearInterval); 
-                isRolling = false; 
-                updateUI();
-            }
+            } catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); isRolling = false; }
         }
 
         function showIpLock() {
