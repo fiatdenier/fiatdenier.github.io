@@ -17,20 +17,27 @@
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
         
         /* Individual Header & Identity */
-        .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
+        .agent-header { display: flex; align-items: flex-start; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
         .agent-info { text-align: left; }
-        .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
-        .agent-status { font-size: 0.6rem; color: #666; text-transform: uppercase; }
+        .agent-status { font-size: 0.6rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        /* Fix for alignment issues */
+        .agent-id-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        .agent-id-tag { font-size: 1rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; line-height: 1; }
         
         .regen-btn {
             cursor: pointer;
-            font-size: 0.7rem;
-            margin-left: 8px;
+            font-size: 0.8rem;
             color: var(--grey-text);
-            transition: color 0.2s;
-            vertical-align: middle;
+            transition: transform 0.2s, color 0.2s;
+            display: inline-flex;
         }
-        .regen-btn:hover { color: var(--btc-orange); }
+        .regen-btn:hover { color: var(--btc-orange); transform: rotate(90deg); }
 
         /* Pulsing Bitcoin Logo Styling */
         .btc-logo-icon {
@@ -90,7 +97,7 @@
         <div class="agent-header">
             <div class="agent-info">
                 <div class="agent-status">Sovereign Individual</div>
-                <div style="display: flex; align-items: center;">
+                <div class="agent-id-container">
                     <div id="agent-id-display" class="agent-id-tag">...</div>
                     <span class="regen-btn" onclick="regenerateIdentity()" title="Regenerate Identity">🔄</span>
                 </div>
