@@ -170,30 +170,46 @@ document.getElementById('app').addEventListener('click', e => {
 </script>
 
 <script>
-    function syncRoll() {
+async function syncRoll() {
         const btn = document.getElementById('lucky-roll-btn');
-        const expiry = localStorage.getItem('rollCooldown');
-        const rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
+        const agentId = localStorage.getItem('agentID') || "UnknownAgent";
+        let expiry = localStorage.getItem('rollCooldown');
+        let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
+
+        // # SURGICAL: Poll server on manual reload to check for newly granted credits
+        try {
+            const response = await fetch(`https://api.fiatdenier.com/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
+            const data = await response.json();
+            
+            if (data.server_credits !== undefined) {
+                rollCredits = data.server_credits;
+                localStorage.setItem('rollCredits', rollCredits);
+            }
+        } catch (e) {
+            console.log("Index sync poll failed, falling back to local storage.");
+        }
+
         const now = Date.now();
+        // If credits > 0, we bypass the lock entirely
         if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
             const diff = parseInt(expiry) - now;
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
             
-            // LOCKED STATE: Grey Background, Grey Text
             btn.style.backgroundColor = "#ADADAD"; 
             btn.style.color = "#DBDBDB"; 
             btn.style.pointerEvents = "none";
             btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
             setTimeout(syncRoll, 1000);
         } else {
-            // READY STATE: Orange Background, White Text
             btn.style.backgroundColor = "#f7931a";
             btn.style.color = "#fff";
             btn.style.pointerEvents = "auto";
             btn.innerText = "🎰 PLAY LUCKY ROLL";
         }
     }
+    
+    // Trigger the sync on load and whenever the user switches back to this tab
     window.addEventListener('load', syncRoll);
     window.addEventListener('focus', syncRoll);
 </script>
