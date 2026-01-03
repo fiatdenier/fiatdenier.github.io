@@ -21,6 +21,8 @@
         /* # SURGICAL: Credit Section Style */
         .credit-ui { display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
         #award-status { font-size: 12px; margin-top: 10px; color: #f2a900; }
+        /* # SURGICAL: Manual Input Styling */
+        .manual-input { width: 100%; margin-bottom: 10px; border: 1px dashed #f2a900; box-sizing: border-box; }
     </style>
 </head>
 <body>
@@ -49,6 +51,8 @@
 
         <div class="card">
             <h3>🎁 Issue Free Credits</h3>
+            <input type="text" id="manual-agent-id" class="manual-input" placeholder="Paste User ID Manually (Overrides dropdown)">
+            
             <div class="credit-ui">
                 <select id="agent-select" style="flex-grow: 1;">
                     <option value="">-- Loading Players... --</option>
@@ -134,25 +138,34 @@
                     select.innerHTML = '<option value="">No players found</option>';
                     return;
                 }
-                select.innerHTML = lbData.map(u => `<option value="${u.agent}">${u.agent} (${u.sats} sats)</option>`).join('');
+                select.innerHTML = '<option value="">-- Use Dropdown or Type Above --</option>' + lbData.map(u => `<option value="${u.agent}">${u.agent} (${u.sats} sats)</option>`).join('');
             } catch (e) { console.error("Leaderboard load failed", e); }
         }
 
-        // # SURGICAL: New helper to talk to /admin-award
+        // # SURGICAL: Modified to check manual input first
         async function issueCredits() {
             const key = localStorage.getItem('adminKey');
-            const agent = document.getElementById('agent-select').value;
+            const manualAgent = document.getElementById('manual-agent-id').value.trim();
+            const dropdownAgent = document.getElementById('agent-select').value;
             const amount = document.getElementById('credit-amount').value;
             const status = document.getElementById('award-status');
 
-            if (!agent) return;
-            status.innerText = "Processing...";
+            // Prioritize the manual text box over the dropdown
+            const agent = manualAgent !== "" ? manualAgent : dropdownAgent;
+
+            if (!agent) {
+                status.innerText = "⚠️ Please select a user or enter an ID manually.";
+                return;
+            }
+            status.innerText = `Processing for ${agent}...`;
 
             try {
                 const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${agent}&amount=${amount}`);
                 const data = await res.json();
                 if (data.status === "Success") {
                     status.innerText = `✅ Granted ${amount} to ${agent}. Total: ${data.new_balance}`;
+                    // Clear manual input on success
+                    document.getElementById('manual-agent-id').value = "";
                 } else {
                     status.innerText = "❌ Error: " + (data.error || "Failed");
                 }
