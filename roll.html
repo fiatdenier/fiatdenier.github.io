@@ -218,11 +218,14 @@
                 localStorage.setItem('rollCredits', rollCredits);
 
                 const finalStr = data.num.toString().padStart(4, '0');
-                for (let i = 0; i < 4; i++) {
+
+                for (let i = 0; i < stopOrder.length; i++) {
+                    const idx = stopOrder[i];
                     await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-                    clearInterval(spinIntervals[i]);
-                    slots[i].classList.remove('rolling'); slots[i].classList.add('just-finished');
-                    slots[i].innerText = finalStr[i];
+                    clearInterval(spinIntervals[idx]);
+                    slots[idx].classList.remove('rolling'); 
+                    slots[idx].classList.add('just-finished');
+                    slots[idx].innerText = finalStr[idx];
                     playDing(data.num === 2121); 
                 }
                 stopLoop();
