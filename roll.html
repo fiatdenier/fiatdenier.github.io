@@ -149,10 +149,12 @@
 
         // --- AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        let clickBuffer = null; let dingBuffer = null; let loopSource = null; let loopGain = null;
+        let clickBuffer = null; let dingBuffer = null; let winBuffer = null; let loopSource = null; let loopGain = null;
 
         fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { clickBuffer = data; });
         fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { dingBuffer = data; });
+        // # Load free_credit sound
+        fetch('free_credit.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { winBuffer = data; });
 
         function playLoop() {
             if (!clickBuffer) return;
@@ -180,6 +182,15 @@
             if (isJackpot) source.playbackRate.value = 1.3;
             source.connect(audioCtx.destination);
             source.start(0); 
+        }
+
+        // # Function to play win sound surgically
+        function playWinSound() {
+            if (!winBuffer) return;
+            const source = audioCtx.createBufferSource();
+            source.buffer = winBuffer;
+            source.connect(audioCtx.destination);
+            source.start(0);
         }
 
         // --- IDENTITY LOGIC ---
@@ -243,10 +254,21 @@
                 }
                 stopLoop();
                 
-                if (finalStr.includes('21')) {
-                    rollCredits += 5;
-                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-                } else if (rollCredits > 0) { rollCredits--; }
+                // # SURGICAL WIN LOGIC REWRITE START
+                try {
+                    if (finalStr.includes('21')) {
+                        rollCredits += 5;
+                        playWinSound();
+                        if (typeof confetti === 'function') {
+                            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+                        }
+                    } else if (rollCredits > 0) { 
+                        rollCredits--; 
+                    }
+                } catch (winError) {
+                    console.error("Win trigger error:", winError);
+                }
+                // # SURGICAL WIN LOGIC REWRITE END
                 
                 totalSats += (data.num === 2121) ? 1000 : 10;
                 localStorage.setItem('rollCredits', rollCredits);
@@ -270,8 +292,20 @@
 
                 const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                 if (rollCredits <= 0) { localStorage.setItem('rollCooldown', expiry); startTimer(expiry); }
-                isRolling = false; updateUI();
-            } catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); isRolling = false; }
+                
+            } catch (error) { 
+                stopLoop(); 
+                spinIntervals.forEach(clearInterval); 
+                showIpLock(); 
+            } finally {
+                // # Always reset state to prevent hangs
+                isRolling = false; 
+                updateUI();
+                if (!document.getElementById('roll-btn').classList.contains('locked')) {
+                    btn.disabled = false;
+                    btn.innerText = "ROLL FOR SATS";
+                }
+            }
         }
 
         function showIpLock() {
