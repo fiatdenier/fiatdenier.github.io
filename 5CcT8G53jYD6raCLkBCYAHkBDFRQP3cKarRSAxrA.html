@@ -21,7 +21,6 @@
         .credit-ui { display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
         #award-status { font-size: 12px; margin-top: 10px; color: #f2a900; }
         .manual-input { width: 100%; margin-bottom: 10px; border: 1px dashed #f2a900; box-sizing: border-box; }
-        /* # SURGICAL: Search Bar Styling */
         #user-search { width: 100%; margin-bottom: 5px; border-color: #555; font-size: 12px; }
     </style>
 </head>
@@ -65,7 +64,7 @@
             <div id="award-status"></div>
         </div>
 
-        <button onclick="loadStats()">🔄 Refresh</button>
+        <button onclick="loadStats()">🔄 Refresh Dashboard</button>
         
         <div class="card">
             <h3>Active Cooldowns</h3>
@@ -81,7 +80,7 @@
 
     <script>
         const API_URL = "https://api.fiatdenier.com";
-        let allUsers = []; // # SURGICAL: Cache for searching
+        let allUsers = []; 
 
         function saveAndLogin() {
             const key = document.getElementById('key-input').value;
@@ -129,21 +128,23 @@
 
         async function loadPlayerList() {
             try {
-                // # SURGICAL: Added ?admin=true to bypass Top 10 limit
                 const res = await fetch(`${API_URL}/leaderboard?admin=true`);
                 allUsers = await res.json();
                 renderUserDropdown(allUsers);
             } catch (e) { console.error("Leaderboard load failed", e); }
         }
 
+        // # SURGICAL: Updated display format to show Sats and Credits in dropdown
         function renderUserDropdown(users) {
             const select = document.getElementById('agent-select');
             users.sort((a, b) => a.agent.localeCompare(b.agent));
             select.innerHTML = '<option value="">-- Select Player --</option>' + 
-                users.map(u => `<option value="${u.agent}">${u.agent} (${u.sats} sats)</option>`).join('');
+                users.map(u => {
+                    const label = `${u.agent} (${u.sats} sats / ${u.credits || 0} credits)`;
+                    return `<option value="${u.agent}">${label}</option>`;
+                }).join('');
         }
 
-        // # SURGICAL: Filter function for the search bar
         function filterUsers() {
             const searchTerm = document.getElementById('user-search').value.toLowerCase();
             const filtered = allUsers.filter(u => u.agent.toLowerCase().includes(searchTerm));
@@ -165,9 +166,13 @@
                 const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${agent}&amount=${amount}`);
                 const data = await res.json();
                 if (data.status === "Success") {
-                    status.innerText = `✅ Granted ${amount} to ${agent}.`;
+                    status.innerText = `✅ Granted ${amount} to ${agent}. Total: ${data.new_balance}`;
                     document.getElementById('manual-agent-id').value = "";
-                } else { status.innerText = "❌ Error: " + (data.error || "Failed"); }
+                    // # SURGICAL: Force immediate refresh of stats and dropdown
+                    loadStats(); 
+                } else {
+                    status.innerText = "❌ Error: " + (data.error || "Failed");
+                }
             } catch (e) { status.innerText = "❌ Connection failed."; }
         }
 
