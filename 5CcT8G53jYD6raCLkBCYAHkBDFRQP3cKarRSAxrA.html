@@ -13,10 +13,14 @@
         .stat-num { display: block; font-size: 24px; font-weight: bold; color: #fff; }
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         th, td { padding: 10px; text-align: left; border-bottom: 1px solid #333; font-size: 14px; }
-        input { padding: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: white; width: 80%; margin-bottom: 10px; }
+        input, select { padding: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: white; margin-bottom: 10px; }
+        input { width: 80%; }
         button { background: #f2a900; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
         .danger { background: #d32f2f; color: white; margin-top: 20px; }
         #admin-content { display: none; } /* Hidden until login */
+        /* # SURGICAL: Credit Section Style */
+        .credit-ui { display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
+        #award-status { font-size: 12px; margin-top: 10px; color: #f2a900; }
     </style>
 </head>
 <body>
@@ -41,6 +45,18 @@
                     Locked IPs
                 </div>
             </div>
+        </div>
+
+        <div class="card">
+            <h3>🎁 Issue Free Credits</h3>
+            <div class="credit-ui">
+                <select id="agent-select" style="flex-grow: 1;">
+                    <option value="">-- Loading Players... --</option>
+                </select>
+                <input type="number" id="credit-amount" value="5" style="width: 60px; margin-bottom: 0;">
+                <button onclick="issueCredits()">Grant</button>
+            </div>
+            <div id="award-status"></div>
         </div>
 
         <button onclick="loadStats()">🔄 Refresh</button>
@@ -86,6 +102,8 @@
                         document.getElementById('login-box').style.display = 'none';
                         document.getElementById('admin-content').style.display = 'block';
                         displayData(data);
+                        // # SURGICAL: Fetch leaderboard players for the dropdown
+                        loadPlayerList();
                     }
                 }
             } catch (err) { console.error(err); }
@@ -96,6 +114,7 @@
             const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
             const data = await response.json();
             displayData(data);
+            loadPlayerList(); // Refresh players too
         }
 
         function displayData(data) {
@@ -103,6 +122,41 @@
             document.getElementById('active-locks').innerText = data.currently_locked_ips;
             const tableBody = document.getElementById('locks-table');
             tableBody.innerHTML = data.locks.map(l => `<tr><td>${l.ip}</td><td>${l.remaining}</td></tr>`).join('');
+        }
+
+        // # SURGICAL: New helper to populate the dropdown
+        async function loadPlayerList() {
+            try {
+                const res = await fetch(`${API_URL}/leaderboard`);
+                const lbData = await res.json();
+                const select = document.getElementById('agent-select');
+                if (lbData.length === 0) {
+                    select.innerHTML = '<option value="">No players found</option>';
+                    return;
+                }
+                select.innerHTML = lbData.map(u => `<option value="${u.agent}">${u.agent} (${u.sats} sats)</option>`).join('');
+            } catch (e) { console.error("Leaderboard load failed", e); }
+        }
+
+        // # SURGICAL: New helper to talk to /admin-award
+        async function issueCredits() {
+            const key = localStorage.getItem('adminKey');
+            const agent = document.getElementById('agent-select').value;
+            const amount = document.getElementById('credit-amount').value;
+            const status = document.getElementById('award-status');
+
+            if (!agent) return;
+            status.innerText = "Processing...";
+
+            try {
+                const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${agent}&amount=${amount}`);
+                const data = await res.json();
+                if (data.status === "Success") {
+                    status.innerText = `✅ Granted ${amount} to ${agent}. Total: ${data.new_balance}`;
+                } else {
+                    status.innerText = "❌ Error: " + (data.error || "Failed");
+                }
+            } catch (e) { status.innerText = "❌ Connection failed."; }
         }
 
         async function resetLocks() {
