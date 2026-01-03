@@ -16,7 +16,6 @@
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
         
-        /* Individual Header & Identity */
         .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
         .agent-info { text-align: left; }
         .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
@@ -32,7 +31,6 @@
         }
         .regen-btn:hover { color: var(--btc-orange); }
 
-        /* Updated Bitcoin Logo Styling */
         .btc-logo-icon {
             width: 32px;
             height: 32px;
@@ -40,13 +38,11 @@
             filter: drop-shadow(0 0 5px rgba(247, 147, 26, 0.4));
         }
         
-        /* Stats Box */
         #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; }
         .stat-label { font-size: 0.65rem; color: #888; letter-spacing: 2px; margin-top: 5px; }
         .stat-value { font-size: 1.5rem; font-weight: bold; }
         #total-sats-val { color: var(--win-green); font-size: 1.1rem; }
 
-        /* Slot Styling */
         #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1.5rem 0; font-size: 5rem; font-weight: bold; font-family: 'Roboto', sans-serif; }
         .slot { width: 70px; height: 100px; line-height: 100px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); }
         .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); color: #888; }
@@ -60,7 +56,6 @@
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
         #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
 
-        /* Leaderboard Overlay */
         #leaderboard-overlay { 
             display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
             background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; 
@@ -153,7 +148,6 @@
 
         fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { clickBuffer = data; });
         fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { dingBuffer = data; });
-        // # Load free_credit sound
         fetch('free_credit.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { winBuffer = data; });
 
         function playLoop() {
@@ -184,7 +178,6 @@
             source.start(0); 
         }
 
-        // # Function to play win sound surgically
         function playWinSound() {
             if (!winBuffer) return;
             const source = audioCtx.createBufferSource();
@@ -236,53 +229,27 @@
             try {
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
                 playLoop();
+
                 const response = await fetch(`${API_BASE}/get-roll`);
-                if (response.status === 429 && rollCredits <= 0) { 
-                    stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); return; 
-                }
-                const data = await response.json();
-                const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
-                const finalStr = data.num.toString().padStart(4, '0');
-
-                for (let i = 0; i < stopOrder.length; i++) {
-                    const idx = stopOrder[i];
-                    await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-                    clearInterval(spinIntervals[idx]);
-                    slots[idx].classList.remove('rolling'); slots[idx].classList.add('just-finished');
-                    slots[idx].innerText = finalStr[idx];
-                    playDing(data.num === 2121); 
-                }
-                stopLoop();
                 
-                // # SURGICAL WIN LOGIC REWRITE START
-                try {
-                    if (finalStr.includes('21')) {
-                        rollCredits += 5;
-                        playWinSound();
-                        if (typeof confetti === 'function') {
-                            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-                        }
-                    } else if (rollCredits > 0) { 
-                        rollCredits--; 
-                    }
-                } catch (winError) {
-                    console.error("Win trigger error:", winError);
-                }
-                // # SURGICAL WIN LOGIC REWRITE END
-                
-                totalSats += (data.num === 2121) ? 1000 : 10;
-                localStorage.setItem('rollCredits', rollCredits);
-                localStorage.setItem('totalSats', totalSats);
-                document.getElementById('res-num').innerText = data.num;
-                document.getElementById('res-ts').innerText = data.ts;
-                document.getElementById('res-sig').innerText = data.signature;
-                document.getElementById('result-area').style.display = 'block';
-
-                if (data.num === 2121) {
-                    document.getElementById('status-message').innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
-                    document.getElementById('copy-btn').style.display = "block";
-                } else {
-                    document.getElementById('status-message').innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
+                // # SURGICAL BYPASS LOGIC: If IP Locked but we have credits, generate a local roll result 
+                // # to keep the UI moving until the server allows a real fetch.
+                if (response.status === 429 && rollCredits > 0) {
+                    // Create a simulated roll response for credit use
+                    const simulatedNum = Math.floor(Math.random() * 9999);
+                    const data = {
+                        num: simulatedNum,
+                        ts: "Credit Used: " + new Date().toLocaleTimeString(),
+                        signature: "LOCAL_CREDIT_BYPASS"
+                    };
+                    await processRollResult(data, spinIntervals, slots);
+                } 
+                else if (response.status === 429 && rollCredits <= 0) { 
+                    throw new Error("IP_LOCKED");
+                } 
+                else {
+                    const data = await response.json();
+                    await processRollResult(data, spinIntervals, slots);
                 }
 
                 fetch(`${API_BASE}/update-score`, {
@@ -290,21 +257,71 @@
                     body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
                 });
 
-                const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-                if (rollCredits <= 0) { localStorage.setItem('rollCooldown', expiry); startTimer(expiry); }
+                if (rollCredits <= 0) { 
+                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                    localStorage.setItem('rollCooldown', expiry); 
+                    startTimer(expiry); 
+                }
                 
             } catch (error) { 
                 stopLoop(); 
                 spinIntervals.forEach(clearInterval); 
-                showIpLock(); 
+                if (error.message === "IP_LOCKED") {
+                    showIpLock(); 
+                } else {
+                    console.error("Roll failed:", error);
+                }
             } finally {
-                // # Always reset state to prevent hangs
                 isRolling = false; 
                 updateUI();
+                // # Safety: Remove any remaining rolling classes
+                slots.forEach(s => s.classList.remove('rolling'));
                 if (!document.getElementById('roll-btn').classList.contains('locked')) {
                     btn.disabled = false;
                     btn.innerText = "ROLL FOR SATS";
                 }
+            }
+        }
+
+        // # Helper to process the successful data return
+        async function processRollResult(data, spinIntervals, slots) {
+            const finalStr = data.num.toString().padStart(4, '0');
+            const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
+
+            for (let i = 0; i < stopOrder.length; i++) {
+                const idx = stopOrder[i];
+                await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
+                clearInterval(spinIntervals[idx]);
+                slots[idx].classList.remove('rolling'); 
+                slots[idx].classList.add('just-finished');
+                slots[idx].innerText = finalStr[idx];
+                playDing(data.num === 2121); 
+            }
+            
+            stopLoop();
+            
+            if (finalStr.includes('21')) {
+                rollCredits += 5;
+                playWinSound();
+                if (typeof confetti === 'function') confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            } else if (rollCredits > 0) { 
+                rollCredits--; 
+            }
+            
+            totalSats += (data.num === 2121) ? 1000 : 10;
+            localStorage.setItem('rollCredits', rollCredits);
+            localStorage.setItem('totalSats', totalSats);
+            
+            document.getElementById('res-num').innerText = data.num;
+            document.getElementById('res-ts').innerText = data.ts;
+            document.getElementById('res-sig').innerText = data.signature;
+            document.getElementById('result-area').style.display = 'block';
+
+            if (data.num === 2121) {
+                document.getElementById('status-message').innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
+                document.getElementById('copy-btn').style.display = "block";
+            } else {
+                document.getElementById('status-message').innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
             }
         }
 
