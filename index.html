@@ -173,8 +173,9 @@ document.getElementById('app').addEventListener('click', e => {
     function syncRoll() {
         const btn = document.getElementById('lucky-roll-btn');
         const expiry = localStorage.getItem('rollCooldown');
+        const rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
         const now = Date.now();
-        if (expiry && now < parseInt(expiry)) {
+        if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
             const diff = parseInt(expiry) - now;
             const mins = Math.floor(diff / 60000);
             const secs = Math.floor((diff % 60000) / 1000);
