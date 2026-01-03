@@ -44,6 +44,7 @@
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
         #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
 
+        /* Leaderboard Overlay restored exactly as requested */
         #leaderboard-overlay { 
             display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
             background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; 
@@ -203,35 +204,30 @@
             try {
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
                 playLoop();
-                const response = await fetch(`${API_BASE}/get-roll`);
-                if (response.status === 429 && rollCredits <= 0) { 
-                    stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); return; 
-                }
+                const agentId = getAgentID();
+                const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`);
                 const data = await response.json();
-                
-                // # REVERTED: Restored random stop order
-                const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
-                // // const stopOrder = [0, 1, 2, 3]; // Left-to-right disabled
+
+                if (data.error === "LOCKED") { 
+                    stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); 
+                    isRolling = false; btn.innerText = "ROLL FOR SATS"; return; 
+                }
+
+                // # SYNC: Use server's authoritative credit count
+                rollCredits = data.server_credits;
+                localStorage.setItem('rollCredits', rollCredits);
 
                 const finalStr = data.num.toString().padStart(4, '0');
-
-                for (let i = 0; i < stopOrder.length; i++) {
-                    const idx = stopOrder[i];
+                for (let i = 0; i < 4; i++) {
                     await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-                    clearInterval(spinIntervals[idx]);
-                    slots[idx].classList.remove('rolling'); slots[idx].classList.add('just-finished');
-                    slots[idx].innerText = finalStr[idx];
+                    clearInterval(spinIntervals[i]);
+                    slots[i].classList.remove('rolling'); slots[i].classList.add('just-finished');
+                    slots[i].innerText = finalStr[i];
                     playDing(data.num === 2121); 
                 }
                 stopLoop();
                 
-                if (finalStr.includes('21')) {
-                    rollCredits += 5;
-                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-                } else if (rollCredits > 0) { rollCredits--; }
-                
                 totalSats += (data.num === 2121) ? 1000 : 10;
-                localStorage.setItem('rollCredits', rollCredits);
                 localStorage.setItem('totalSats', totalSats);
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
@@ -250,16 +246,17 @@
                     body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
                 });
 
-                const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-                if (rollCredits <= 0) { localStorage.setItem('rollCooldown', expiry); startTimer(expiry); }
+                if (rollCredits <= 0) { 
+                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                    localStorage.setItem('rollCooldown', expiry); startTimer(expiry); 
+                } else {
+                    btn.disabled = false; btn.innerText = "ROLL FOR SATS";
+                }
                 isRolling = false; updateUI();
-            } catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); isRolling = false; }
+            } catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; updateUI(); }
         }
 
         function showIpLock() {
-            const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-            localStorage.setItem('rollCooldown', expiry);
-            startTimer(expiry);
             document.getElementById('ip-lock-msg').style.display = 'block';
             document.getElementById('slot-container').style.display = 'none';
         }
@@ -269,10 +266,10 @@
             const btn = document.getElementById('roll-btn');
             const interval = setInterval(() => {
                 const diff = expiry - Date.now();
+                // # SYNC: Unlock immediately if credits found
                 if (diff <= 0 || rollCredits > 0) {
                     clearInterval(interval); timerDiv.innerText = "";
                     btn.disabled = false; btn.classList.remove('locked'); btn.innerText = "ROLL FOR SATS";
-                    localStorage.removeItem('rollCooldown');
                     document.getElementById('ip-lock-msg').style.display = 'none';
                     document.getElementById('slot-container').style.display = 'flex';
                 } else {
@@ -312,14 +309,34 @@
             document.getElementById('total-sats-val').innerText = totalSats.toLocaleString();
         }
 
-        window.onload = () => {
+        // # SYNC: Added background credit and IP lock check on page load
+        window.onload = async () => {
             updateUI();
+            const agentId = getAgentID();
             const savedExpiry = localStorage.getItem('rollCooldown');
+            
             if (savedExpiry && Date.now() < parseInt(savedExpiry) && rollCredits <= 0) {
+                showIpLock();
                 startTimer(parseInt(savedExpiry));
-                document.getElementById('ip-lock-msg').style.display = 'block';
-                document.getElementById('slot-container').style.display = 'none';
             }
+
+            // # SURGICAL: Check if server says IP is locked or credits were granted
+            try {
+                const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
+                const data = await response.json();
+
+                if (data.error === "LOCKED") {
+                    // Force the timer and lock screen if the server confirms IP is under cooldown
+                    const expiry = Date.now() + (data.remaining_seconds * 1000);
+                    localStorage.setItem('rollCooldown', expiry); 
+                    showIpLock();
+                    startTimer(expiry);
+                } else if (data.server_credits !== undefined) {
+                    rollCredits = data.server_credits;
+                    localStorage.setItem('rollCredits', rollCredits);
+                    updateUI();
+                }
+            } catch (e) { console.log("Initial state sync failed."); }
         };
     </script>
 </body>
