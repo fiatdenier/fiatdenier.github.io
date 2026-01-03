@@ -309,7 +309,7 @@
             document.getElementById('total-sats-val').innerText = totalSats.toLocaleString();
         }
 
-        // # SYNC: Added background credit check on page load
+        // # SYNC: Added background credit and IP lock check on page load
         window.onload = async () => {
             updateUI();
             const agentId = getAgentID();
@@ -320,16 +320,23 @@
                 startTimer(parseInt(savedExpiry));
             }
 
-            // BACKGROUND SYNC: Check if admin granted credits
+            // # SURGICAL: Check if server says IP is locked or credits were granted
             try {
                 const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
                 const data = await response.json();
-                if (data.server_credits !== undefined) {
+
+                if (data.error === "LOCKED") {
+                    // Force the timer and lock screen if the server confirms IP is under cooldown
+                    const expiry = Date.now() + (data.remaining_seconds * 1000);
+                    localStorage.setItem('rollCooldown', expiry); 
+                    showIpLock();
+                    startTimer(expiry);
+                } else if (data.server_credits !== undefined) {
                     rollCredits = data.server_credits;
                     localStorage.setItem('rollCredits', rollCredits);
-                    if (rollCredits > 0) { updateUI(); /* Timer logic inside interval will handle the unlock */ }
+                    updateUI();
                 }
-            } catch (e) { console.log("Initial credit sync failed."); }
+            } catch (e) { console.log("Initial state sync failed."); }
         };
     </script>
 </body>
