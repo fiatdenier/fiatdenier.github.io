@@ -15,53 +15,34 @@
             --cyber-cyan: #00ffff;
         }
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
-        
-        #iab-warning { display: none; background: #441111; color: #ff9999; padding: 12px; font-size: 0.75rem; text-align: center; border-bottom: 2px solid var(--btc-orange); width: 100%; position: fixed; top: 0; z-index: 9999; }
-
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
-        
-        /* Agent Header Section */
         .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
         .agent-info { text-align: left; }
         .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
         .agent-status { font-size: 0.6rem; color: #666; text-transform: uppercase; }
-
-        /* Stats & Rank */
-        #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; transition: all 0.3s; }
-        #stats-container.has-credits { border-color: var(--btc-orange); box-shadow: 0 0 15px rgba(247, 147, 26, 0.2); }
+        #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; }
         .stat-label { font-size: 0.65rem; color: #888; letter-spacing: 2px; margin-top: 5px; }
         .stat-value { font-size: 1.5rem; font-weight: bold; }
         #total-sats { color: var(--win-green); font-size: 1.1rem; }
-
-        #rank-display { font-size: 0.7rem; font-weight: bold; letter-spacing: 2px; margin-top: 8px; padding: 3px 10px; display: inline-block; border-radius: 4px; text-transform: uppercase; transition: all 0.5s ease; }
+        #rank-display { font-size: 0.7rem; font-weight: bold; letter-spacing: 2px; margin-top: 8px; padding: 3px 10px; display: inline-block; border-radius: 4px; text-transform: uppercase; }
         .rank-pleb { color: #666; border: 1px solid #444; }
         .rank-denier { color: var(--btc-orange); border: 1px solid var(--btc-orange); text-shadow: 0 0 8px rgba(247, 147, 26, 0.4); }
-
-        /* Slot Machine */
         #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1rem 0; font-size: 5rem; font-weight: bold; }
         .slot { width: 70px; height: 100px; line-height: 100px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); }
         .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); color: #888; }
         @keyframes blur-spin { 0% { transform: translateY(-2px); } 50% { transform: translateY(2px); } 100% { transform: translateY(0); } }
         .just-finished { color: var(--btc-orange) !important; text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); transform: scale(1.05); }
-
-        /* Leaderboard Modal */
-        #leaderboard-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; width: 85%; max-width: 320px; box-shadow: 0 0 50px rgba(0,0,0,0.9); }
+        #leaderboard-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; width: 85%; max-width: 320px; }
         .leaderboard-row { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 8px 0; border-bottom: 1px solid #222; }
         .leaderboard-row.me { color: var(--btc-orange); font-weight: bold; }
-
-        /* Buttons & Extras */
         button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; color: white; margin-top: 10px; }
         button.locked { background: var(--locked-grey) !important; color: var(--btc-orange) !important; cursor: not-allowed; }
-        .share-btn { background: transparent; border: 1px solid #444; color: #888; font-size: 0.7rem; padding: 10px; margin-top: 15px; width: 100%; cursor: pointer; letter-spacing: 1px; }
-        .share-btn:hover { border-color: var(--cyber-cyan); color: var(--cyber-cyan); }
-        
+        .share-btn { background: transparent; border: 1px solid #444; color: #888; font-size: 0.7rem; padding: 10px; margin-top: 15px; width: 100%; cursor: pointer; }
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
         #timer { font-size: 0.85rem; color: var(--grey-text); margin-top: 10px; height: 20px; font-weight: bold; }
     </style>
 </head>
 <body>
-
-    <div id="iab-warning">⚠️ <b>IN-APP BROWSER DETECTED</b> - <a href="#" style="color:white">OPEN EXTERNAL</a></div>
 
     <div class="card">
         <div class="agent-header">
@@ -118,46 +99,51 @@
         let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
         let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
 
-        // Sound Logic
+        // --- RESTORED AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        let dingBuffer;
-        fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => dingBuffer = d);
+        let clickBuffer = null;
+        let dingBuffer = null; 
+        let loopSource = null;
+        let loopGain = null;
 
-        function vibrate(p) { if (navigator.vibrate) navigator.vibrate(p); }
+        fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => { clickBuffer = d; });
+        fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => { dingBuffer = d; });
+
+        function playLoop() {
+            if (!clickBuffer) return;
+            loopSource = audioCtx.createBufferSource();
+            loopSource.buffer = clickBuffer;
+            loopSource.loop = true; 
+            loopGain = audioCtx.createGain();
+            loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+            loopSource.connect(loopGain);
+            loopGain.connect(audioCtx.destination);
+            loopSource.start(0);
+        }
+
+        function stopLoop() {
+            if (loopSource) {
+                if (loopGain) loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
+                setTimeout(() => {
+                    if (loopSource) { loopSource.stop(); loopSource = null; }
+                }, 100);
+            }
+        }
+
+        function playDing(isJackpot = false) {
+            if (!dingBuffer) return;
+            const source = audioCtx.createBufferSource();
+            source.buffer = dingBuffer;
+            if (isJackpot) source.playbackRate.value = 1.3;
+            source.connect(audioCtx.destination);
+            source.start(0); 
+        }
+
+        // --- GAME LOGIC ---
         function getAgentID() {
             let id = localStorage.getItem('agentID') || 'AGENT_' + Math.floor(1000 + Math.random() * 9000);
             localStorage.setItem('agentID', id);
             return id;
-        }
-
-        async function syncScore() {
-            try {
-                await fetch(`${API_BASE}/update-score`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
-                });
-            } catch (e) {}
-        }
-
-        async function showLeaderboard() {
-            document.getElementById('leaderboard-overlay').style.display = 'block';
-            try {
-                const res = await fetch(`${API_BASE}/leaderboard`);
-                const data = await res.json();
-                document.getElementById('lb-content').innerHTML = data.map((e, i) => `
-                    <div class="leaderboard-row ${e.agent === getAgentID() ? 'me' : ''}">
-                        <span>${i+1}. ${e.agent}</span>
-                        <span>${e.sats.toLocaleString()}</span>
-                    </div>
-                `).join('');
-            } catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
-        }
-
-        function shareResult() {
-            const text = `🕵️ Agent ${getAgentID()} Reporting.\nRolled: [${document.getElementById('res-num').innerText}]\nTotal SATS Denied: ${totalSats.toLocaleString()}\n\nJoin the resistance: https://fiatdenier.com`;
-            if (navigator.share) navigator.share({ text });
-            else window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`);
         }
 
         async function handleRoll() {
@@ -178,10 +164,12 @@
 
             try {
                 if (audioCtx.state === 'suspended') await audioCtx.resume();
+                playLoop(); // START CLICKING
+
                 const response = await fetch(`${API_BASE}/get-roll`);
                 const data = await response.json();
 
-                if (data.error === "LOCKED") throw new Error("LOCKED");
+                if (data.error === "LOCKED" && rollCredits <= 0) throw new Error("LOCKED");
 
                 const numStr = data.num.toString().padStart(4, '0');
                 for (let i = 0; i < 4; i++) {
@@ -190,13 +178,13 @@
                     slots[i].classList.remove('rolling');
                     slots[i].classList.add('just-finished');
                     slots[i].innerText = numStr[i];
-                    vibrate(40);
-                    if (dingBuffer) { const s = audioCtx.createBufferSource(); s.buffer = dingBuffer; s.connect(audioCtx.destination); s.start(0); }
+                    playDing(data.num === 2121); // PLAY DING
                 }
+
+                stopLoop(); // STOP CLICKING
 
                 if (numStr.includes('21')) {
                     rollCredits += 5;
-                    vibrate([200, 100, 200]);
                     confetti({ particleCount: 150, origin: { y: 0.6 } });
                 } else if (rollCredits > 0) rollCredits--;
 
@@ -207,9 +195,17 @@
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-sig').innerText = data.signature;
                 document.getElementById('result-area').style.display = 'block';
-                syncScore();
+                
+                // Update server score
+                fetch(`${API_BASE}/update-score`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
+                });
 
             } catch (e) {
+                stopLoop();
+                intervals.forEach(clearInterval);
                 if (e.message === "LOCKED") {
                     const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
                     localStorage.setItem('rollCooldown', expiry);
@@ -218,6 +214,26 @@
                 isRolling = false;
                 updateStats();
             }
+        }
+
+        async function showLeaderboard() {
+            document.getElementById('leaderboard-overlay').style.display = 'block';
+            try {
+                const res = await fetch(`${API_BASE}/leaderboard`);
+                const data = await res.json();
+                document.getElementById('lb-content').innerHTML = data.map((e, i) => `
+                    <div class="leaderboard-row ${e.agent === getAgentID() ? 'me' : ''}">
+                        <span>${i+1}. ${e.agent}</span>
+                        <span>${e.sats.toLocaleString()}</span>
+                    </div>
+                `).join('');
+            } catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
+        }
+
+        function shareResult() {
+            const text = `🕵️ Agent ${getAgentID()} Reporting.\nRolled: [${document.getElementById('res-num').innerText}]\nTotal SATS Denied: ${totalSats.toLocaleString()}\n\nJoin: https://fiatdenier.com`;
+            if (navigator.share) navigator.share({ text });
+            else window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`);
         }
 
         function updateStats() {
@@ -231,8 +247,10 @@
             const savedExpiry = localStorage.getItem('rollCooldown');
             const btn = document.getElementById('roll-btn');
             if (savedExpiry && Date.now() < parseInt(savedExpiry) && rollCredits <= 0) {
+                const diff = parseInt(savedExpiry) - Date.now();
+                const mins = Math.ceil(diff / 60000);
                 btn.disabled = true;
-                btn.innerText = "LOCKED";
+                btn.innerText = `LOCKED (${mins}m)`;
                 btn.classList.add('locked');
             } else {
                 btn.disabled = false;
