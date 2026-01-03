@@ -42,10 +42,41 @@
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
         #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
 
-        /* Leaderboard Overlay */
-        #leaderboard-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; width: 85%; max-width: 320px; }
+        /* Leaderboard Overlay - Improved for Scrolling */
+        #leaderboard-overlay { 
+            display: none; 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            background: #111; 
+            border: 2px solid var(--btc-orange); 
+            padding: 20px; 
+            z-index: 10001; 
+            width: 85%; 
+            max-width: 320px; 
+            box-shadow: 0 0 30px black;
+        }
+        #lb-scroll-area {
+            max-height: 250px; /* Keeps size consistent */
+            overflow-y: auto; /* Makes it scrollable */
+            margin-bottom: 15px;
+            padding-right: 5px;
+        }
         .leaderboard-row { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 8px 0; border-bottom: 1px solid #222; }
-        .leaderboard-row.me { color: var(--btc-orange); font-weight: bold; }
+        .leaderboard-row.me { color: var(--btc-orange); font-weight: bold; border-left: 2px solid var(--btc-orange); padding-left: 5px; }
+        
+        /* Custom scrollbar for terminal feel */
+        #lb-scroll-area::-webkit-scrollbar { width: 4px; }
+        #lb-scroll-area::-webkit-scrollbar-thumb { background: var(--btc-orange); }
+
+        #my-rank-box {
+            border-top: 1px solid var(--btc-orange);
+            margin-top: 10px;
+            padding-top: 10px;
+            font-size: 0.75rem;
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -89,18 +120,26 @@
                 <strong>Signature:</strong> <span id="res-sig" style="color: #666;"></span>
             </div>
             <button id="copy-btn" onclick="copyProof()" style="display: none; margin-top:10px;">📋 COPY PROOF</button>
-            <button id="share-btn" onclick="shareToNetwork()" style="margin-top:10px; background: transparent; border: 1px solid #444; font-size: 0.7rem;">📡 BROADCAST TO NETWORK</button>
-        </div>
+            
+            </div>
 
         <div onclick="showLeaderboard()" style="cursor:pointer; font-size:0.6rem; color:#555; margin-top:15px; text-decoration: underline;">
-            VIEW GLOBAL NETWORK STATUS
+            VIEW GLOBAL LEADERBOARD
         </div>
     </div>
 
     <div id="leaderboard-overlay">
-        <div class="agent-status" style="margin-bottom:15px; color:var(--btc-orange)">TOP DENIER NODES</div>
-        <div id="lb-content">Loading...</div>
-        <div onclick="document.getElementById('leaderboard-overlay').style.display='none'" style="margin-top:15px; font-size:0.7rem; color:#666; cursor:pointer;">[ CLOSE TERMINAL ]</div>
+        <div class="agent-status" style="margin-bottom:15px; color:var(--btc-orange)">TOP DENIER NODES (TOP 10)</div>
+        
+        <div id="lb-scroll-area">
+            <div id="lb-content">Loading...</div>
+        </div>
+
+        <div id="my-rank-box">
+            YOUR STATUS: <span id="my-rank-display">CALCULATING...</span>
+        </div>
+
+        <div onclick="document.getElementById('leaderboard-overlay').style.display='none'" style="margin-top:15px; font-size:0.7rem; color:#666; cursor:pointer; text-align: center;">[ CLOSE TERMINAL ]</div>
     </div>
 
     <script>
@@ -151,7 +190,7 @@
             source.start(0); 
         }
 
-        // --- NEW HELPERS ---
+        // --- HELPERS ---
         function getAgentID() {
             let id = localStorage.getItem('agentID') || 'AGENT_' + Math.floor(1000 + Math.random() * 9000);
             localStorage.setItem('agentID', id);
@@ -180,7 +219,7 @@
 
                 const response = await fetch(`${API_BASE}/get-roll`);
                 
-                // Original Lockout Logic
+                // Original Lockout Logic + Credit Bypass
                 if (response.status === 429 && rollCredits <= 0) { 
                     stopLoop();
                     spinIntervals.forEach(clearInterval);
@@ -206,10 +245,10 @@
                 
                 // Track Credits and Sats
                 if (finalStr.includes('21')) {
-                    rollCredits += 5;
+                    rollCredits += 5; // Bonus added
                     confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
                 } else if (rollCredits > 0) {
-                    rollCredits--;
+                    rollCredits--; // Spend a credit
                 }
                 
                 totalSats += (data.num === 2121) ? 1000 : 10;
@@ -251,7 +290,7 @@
             }
         }
 
-        // --- ORIGINAL FORMATTING FUNCTIONS ---
+        // --- FORMATTING FUNCTIONS ---
         function showIpLock() {
             const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
             localStorage.setItem('rollCooldown', expiry);
@@ -265,7 +304,7 @@
             const btn = document.getElementById('roll-btn');
             const interval = setInterval(() => {
                 const diff = expiry - Date.now();
-                if (diff <= 0) {
+                if (diff <= 0 || rollCredits > 0) { // Bypass if credits exist
                     clearInterval(interval);
                     timerDiv.innerText = "";
                     btn.disabled = false;
@@ -292,23 +331,34 @@
 
         async function showLeaderboard() {
             document.getElementById('leaderboard-overlay').style.display = 'block';
+            const myId = getAgentID();
             try {
                 const res = await fetch(`${API_BASE}/leaderboard`);
                 const data = await res.json();
-                document.getElementById('lb-content').innerHTML = data.map((e, i) => `
-                    <div class="leaderboard-row ${e.agent === getAgentID() ? 'me' : ''}">
+                
+                // Show Top 10
+                document.getElementById('lb-content').innerHTML = data.slice(0, 10).map((e, i) => `
+                    <div class="leaderboard-row ${e.agent === myId ? 'me' : ''}">
                         <span>${i+1}. ${e.agent}</span>
                         <span>${e.sats.toLocaleString()}</span>
                     </div>
                 `).join('');
+
+                // Calculate Rank
+                const myRank = data.findIndex(e => e.agent === myId) + 1;
+                document.getElementById('my-rank-display').innerText = myRank > 0 ? `#${myRank} GLOBAL` : "UNRANKED";
+                if(myRank > 0 && myRank <= 10) document.getElementById('my-rank-display').style.color = "var(--btc-orange)";
+
             } catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
         }
 
+        /* # COMMENTED OUT Broadcast function as requested
         function shareToNetwork() {
             const text = `🕵️ Agent ${getAgentID()} reporting.\nRolled: [${document.getElementById('res-num').innerText}]\nTotal SATS Denied: ${totalSats.toLocaleString()}\n\nJoin: https://fiatdenier.com`;
             if (navigator.share) navigator.share({ text });
             else window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`);
         }
+        */
 
         function updateUI() {
             document.getElementById('agent-id-display').innerText = getAgentID();
