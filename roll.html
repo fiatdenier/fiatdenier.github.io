@@ -16,7 +16,7 @@
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
         
-        /* Agent Header & Identity */
+        /* Individual Header & Identity */
         .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
         .agent-info { text-align: left; }
         .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
@@ -31,6 +31,14 @@
             vertical-align: middle;
         }
         .regen-btn:hover { color: var(--btc-orange); }
+
+        /* Orange Key Icon Styling */
+        .btc-key-icon {
+            width: 32px;
+            height: 32px;
+            fill: var(--btc-orange);
+            filter: drop-shadow(0 0 5px rgba(247, 147, 26, 0.4));
+        }
         
         /* Stats Box */
         #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; }
@@ -74,13 +82,15 @@
         
         <div class="agent-header">
             <div class="agent-info">
-                <div class="agent-status">Network Agent</div>
+                <div class="agent-status">Sovereign Individual</div>
                 <div style="display: flex; align-items: center;">
                     <div id="agent-id-display" class="agent-id-tag">...</div>
                     <span class="regen-btn" onclick="regenerateIdentity()" title="Regenerate Identity">🔄</span>
                 </div>
             </div>
-            <div style="font-size: 1.5rem;">👤</div>
+            <svg class="btc-key-icon" viewBox="0 0 24 24">
+                <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+            </svg>
         </div>
 
         <div id="stats-container">
@@ -119,7 +129,7 @@
     </div>
 
     <div id="leaderboard-overlay">
-        <div class="agent-status" style="margin-bottom:15px; color:var(--btc-orange)">TOP DENIER NODES (TOP 10)</div>
+        <div class="agent-status" style="margin-bottom:15px; color:var(--btc-orange)">TOP SOVEREIGN INDIVIDUALS (TOP 10)</div>
         <div id="lb-scroll-area">
             <div id="lb-content">Loading...</div>
         </div>
