@@ -325,21 +325,32 @@
 
             // # SURGICAL: Check if server says IP is locked or credits were granted
             try {
+                // Fetch fresh data from server to ensure Sats and Credits are accurate
                 const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
                 const data = await response.json();
 
                 if (data.error === "LOCKED") {
-                    // Force the timer and lock screen if the server confirms IP is under cooldown
                     const expiry = Date.now() + (data.remaining_seconds * 1000);
                     localStorage.setItem('rollCooldown', expiry); 
                     showIpLock();
                     startTimer(expiry);
-                } else if (data.server_credits !== undefined) {
-                    rollCredits = data.server_credits;
-                    localStorage.setItem('rollCredits', rollCredits);
-                    updateUI();
+                } else {
+                    // # SYNC: Update local variables with server truth
+                    if (data.server_credits !== undefined) {
+                        rollCredits = data.server_credits;
+                        localStorage.setItem('rollCredits', rollCredits);
+                    }
+                    // Update totalSats from server if provided, otherwise keep local
+                    if (data.server_sats !== undefined) {
+                        totalSats = data.server_sats;
+                        localStorage.setItem('totalSats', totalSats);
+                    }
+                    updateUI(); // Refresh the screen with the new numbers
                 }
-            } catch (e) { console.log("Initial state sync failed."); }
+            } catch (e) { 
+                console.log("Initial state sync failed."); 
+                updateUI(); // Ensure UI is updated even if fetch fails
+            }
         };
     </script>
 </body>
