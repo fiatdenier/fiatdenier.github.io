@@ -325,6 +325,7 @@
 
             // # SURGICAL: Check if server says IP is locked or credits were granted
             try {
+			    if (rollCredits <=0) {  
                 const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
                 const data = await response.json();
 
