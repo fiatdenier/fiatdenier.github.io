@@ -216,7 +216,7 @@
                 // # SYNC: Use server's authoritative credit count
                 rollCredits = data.server_credits;
                 localStorage.setItem('rollCredits', rollCredits);
-
+                const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
                 const finalStr = data.num.toString().padStart(4, '0');
 
                 for (let i = 0; i < stopOrder.length; i++) {
