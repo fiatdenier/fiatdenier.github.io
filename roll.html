@@ -25,7 +25,7 @@
         .regen-btn { cursor: pointer; font-size: 0.8rem; margin-left: 8px; color: #3498db; transition: opacity 0.2s; vertical-align: middle; }
         .regen-btn:hover { opacity: 0.7; }
 
-        /* Fixed Bitcoin Logo + Pulse */
+        /* Bitcoin Logo Pulse */
         .btc-logo-icon {
             width: 38px;
             height: 38px;
@@ -45,9 +45,11 @@
         .stat-value { font-size: 1.8rem; font-weight: bold; }
         #total-sats-val { color: var(--win-green); }
 
-        /* Slots + Animation */
+        /* Slots */
         #slot-container { display: flex; justify-content: center; gap: 12px; margin: 2rem 0; }
         .slot { width: 65px; height: 90px; line-height: 90px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); font-size: 3rem; font-weight: bold; }
+        
+        /* Restored Animation Classes */
         .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); color: #888; }
         @keyframes blur-spin { 0% { transform: translateY(-2px); } 50% { transform: translateY(2px); } 100% { transform: translateY(0); } }
         .just-finished { color: var(--btc-orange) !important; text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); transform: scale(1.05); transition: all 0.1s ease-out; }
@@ -57,7 +59,6 @@
         button:hover:not(:disabled) { background: #e88916; }
         button:disabled { background: var(--locked-grey); color: var(--btc-orange); cursor: not-allowed; }
         
-        #timer { font-size: 0.85rem; color: var(--grey-text); margin-top: 10px; font-weight: bold; height: 20px; }
         .back-link { display: block; margin-bottom: 25px; color: #888; text-decoration: none; font-size: 0.9rem; }
     </style>
 </head>
@@ -95,7 +96,6 @@
         </div>
         
         <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
-        <div id="timer"></div>
 
         <div id="result-area" style="display: none;">
             <div id="status-message" style="margin-top: 15px;"></div>
@@ -117,19 +117,18 @@
 
         // --- AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        let clickBuffer = null; let dingBuffer = null; let loopSource = null;
+        let clickBuffer = null, dingBuffer = null, loopSource = null;
 
         const loadSound = (url) => fetch(url).then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b));
-        loadSound('click.wav').then(d => clickBuffer = d);
-        loadSound('ding.wav').then(d => dingBuffer = d);
+        loadSound('click.wav').then(d => clickBuffer = d).catch(() => console.log("click.wav missing"));
+        loadSound('ding.wav').then(d => dingBuffer = d).catch(() => console.log("ding.wav missing"));
 
         function playLoop() {
             if (!clickBuffer) return;
             loopSource = audioCtx.createBufferSource();
             loopSource.buffer = clickBuffer;
             loopSource.loop = true;
-            const gain = audioCtx.createGain();
-            gain.gain.value = 0.2;
+            const gain = audioCtx.createGain(); gain.gain.value = 0.2;
             loopSource.connect(gain).connect(audioCtx.destination);
             loopSource.start(0);
         }
@@ -144,7 +143,6 @@
 
         // --- IDENTITY ---
         function getAgentID() {
-            // # PRESERVED OLD ID LOGIC
             let id = localStorage.getItem('agentID');
             if (!id) {
                 const adj = ["Sacred", "Stoic", "Silent", "Golden"];
@@ -156,12 +154,12 @@
         }
 
         function regenerateIdentity() {
-            if (!confirm("Regenerate?")) return;
+            if (!confirm("Regenerate Identity?")) return;
             localStorage.removeItem('agentID');
             updateUI();
         }
 
-        // --- ROLL LOGIC ---
+        // --- RESTORED ROLL LOGIC ---
         async function handleRoll() {
             if (isRolling) return;
             if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -172,6 +170,7 @@
             btn.innerText = "ROLLING...";
             document.getElementById('result-area').style.display = 'none';
 
+            // Start Animation
             const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             const intervals = slots.map(s => {
                 s.classList.add('rolling');
@@ -183,12 +182,13 @@
 
             try {
                 const response = await fetch(`${API_BASE}/get-roll`);
+                if (!response.ok) throw new Error("Server Error");
                 const data = await response.json();
                 const finalStr = data.num.toString().padStart(4, '0');
 
-                // Staggered stop
+                // Staggered stop logic
                 for (let i = 0; i < 4; i++) {
-                    await new Promise(r => setTimeout(r, 600 + (i*400)));
+                    await new Promise(r => setTimeout(r, 600 + (i * 400)));
                     clearInterval(intervals[i]);
                     slots[i].classList.remove('rolling');
                     slots[i].classList.add('just-finished');
@@ -196,9 +196,9 @@
                     playDing();
                 }
 
-                if (loopSource) loopSource.stop();
+                if (loopSource) { loopSource.stop(); loopSource = null; }
                 
-                // Rewards
+                // Rewards logic
                 if (finalStr.includes('21')) {
                     rollCredits += 5;
                     confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
@@ -214,13 +214,15 @@
                 document.getElementById('result-area').style.display = 'block';
 
             } catch (e) {
+                console.error(e);
                 intervals.forEach(clearInterval);
-                if (loopSource) loopSource.stop();
-                alert("Connection Interrupted");
+                slots.forEach(s => s.classList.remove('rolling'));
+                if (loopSource) { loopSource.stop(); loopSource = null; }
+                alert("Network timeout or server error. Please try again.");
+            } finally {
+                isRolling = false;
+                updateUI();
             }
-
-            isRolling = false;
-            updateUI();
         }
 
         function updateUI() {
