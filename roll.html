@@ -32,12 +32,19 @@
         }
         .regen-btn:hover { color: var(--btc-orange); }
 
-        /* Orange Key Icon Styling */
-        .btc-key-icon {
+        /* Pulsing Bitcoin Logo Styling */
+        .btc-logo-icon {
             width: 32px;
             height: 32px;
             fill: var(--btc-orange);
-            filter: drop-shadow(0 0 5px rgba(247, 147, 26, 0.4));
+            filter: drop-shadow(0 0 8px rgba(247, 147, 26, 0.5));
+            animation: btc-pulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes btc-pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(247, 147, 26, 0.4)); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 15px rgba(247, 147, 26, 0.8)); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(247, 147, 26, 0.4)); }
         }
         
         /* Stats Box */
@@ -88,8 +95,8 @@
                     <span class="regen-btn" onclick="regenerateIdentity()" title="Regenerate Identity">🔄</span>
                 </div>
             </div>
-            <svg class="btc-key-icon" viewBox="0 0 24 24">
-                <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+            <svg class="btc-logo-icon" viewBox="0 0 24 24">
+                <path d="M23.64 14.904c-0.96 3.852-4.896 6.204-8.748 5.244l-1.5 6.024-3.66-0.912 1.464-5.88c-0.96-0.24-1.92-0.468-2.868-0.708l-1.464 5.88-3.66-0.912 1.5-6.024c-0.792-0.18-1.572-0.348-2.316-0.54l0.012-0.048-5.052-1.26 0.72-2.892s2.724 0.624 2.664 0.528c1.488 0.372 2.196-0.348 2.544-1.368l1.512-6.072c0.096-0.036 0.228-0.084 0.372-0.156l-0.372 0.156-2.112-5.304c-0.18-0.456-0.636-1.14-1.656-1.392 0.072-0.108-2.664-0.66-2.664-0.66l0.516-2.076 4.764 1.188c0.888 0.216 1.752 0.444 2.592 0.66l1.512-6.06 3.66 0.912-1.5 6.024c1 0.264 1.968 0.504 2.904 0.732l1.5-6.024 3.66 0.912-1.512 6.072c6.264 1.188 10.536 4.416 9.3 9.384-0.996 3.996-3.864 4.164-6.732 3.612 2.256 1.308 3.936 3.12 3.408 5.256zM15.912 9.072c-1.14-4.572-8.748-2.1-7.608 2.472 1.14 4.572 8.748 2.1 7.608-2.472zM17.412 14.868c-1.368-5.484-10.488-2.52-9.108 2.964 1.368 5.484 10.488 2.52 9.108-2.964z"/>
             </svg>
         </div>
 
