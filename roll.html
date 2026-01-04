@@ -76,7 +76,7 @@
     <div class="card">
         <a href="index.html" class="back-link">← Return to Wire</a>
 				<div id="jackpot-container" style="background: rgba(0,0,0,0.3); border: 1px solid #333; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center; border-left: 4px solid var(--win-green);">
-			<div style="font-size: 0.6rem; color: #888; letter-spacing: 2px; margin-bottom: 4px;">GLOBAL MIRACLE POT</div>
+			<div style="font-size: 0.6rem; color: #888; letter-spacing: 2px; margin-bottom: 4px;">PROGRESSIVE FREE CREDIT JACKPOT</div>
 			<div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
 				<span id="jackpot-ticker" style="color: var(--win-green); font-size: 1.6rem; font-weight: bold; font-family: 'Courier New', monospace;">210.00</span>
 				<span style="font-size: 0.7rem; color: #555;">ROLLS</span>
@@ -265,10 +265,10 @@
 			// # CHECK DAILY LIMIT
 			const daily = getDailyRolls();
 			if (daily.count >= 100) {
-				document.getElementById('status-message').innerHTML = "<h3 style='color:red;'>Daily limit of 100 rolls reached!</h3>";
+				document.getElementById('status-message').innerHTML = 
+					"<h3 style='color:var(--btc-orange);'>DAILY FREE ROLL ALLOWANCE USED (100/100)</h3><p style='font-size:0.7rem;'>Come back tomorrow to use more credits.</p>";
 				return; 
 			}
-
 			const btn = document.getElementById('roll-btn');
 			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
 			isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
@@ -311,7 +311,9 @@
 				const is21Win = finalStr.includes('21');
 				const is2121 = (data.num === 2121);
 				const isMiracle = sig.startsWith('21') && sig.endsWith('21');
-				
+				if (rollCredits > 0) {
+				incrementDailyRolls();
+				}
 				let miraclePot = parseFloat(localStorage.getItem('fiat_miracle_pot')) || JACKPOT_FLOOR;
 				const statusMsg = document.getElementById('status-message');
 
@@ -348,7 +350,7 @@
 					statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
 				}
 
-				incrementDailyRolls();
+			
 				localStorage.setItem('totalSats', totalSats);
 				localStorage.setItem('rollCredits', rollCredits);
 

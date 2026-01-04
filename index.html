@@ -28,7 +28,7 @@
   #app a .meta { display: block; font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #888888 !important; font-size: 0.85rem; }
   #app a { text-decoration: none; display: block; margin-bottom: 15px; }
 
-  .game-link { display: inline-block; margin-top: 10px; padding: 10px 20px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: 700 !important; }
+  .game-link { display: inline-block; margin-top: 10px; padding: 10px 20px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: 700 !important; transition: background 0.2s; }
 
   /* # ADDED: Game Status Bar Styles */
   .game-status-bar { font-family: 'Roboto', sans-serif; font-size: 0.7rem; margin-top: 8px; color: #888; letter-spacing: 0.5px; }
@@ -56,8 +56,8 @@
   <button class="game-link" id="lucky-roll-btn" onclick="location.href='roll.html'">🎰 PLAY LUCKY ROLL</button>
   
   <div class="game-status-bar">
-    MIRACLE POT: <span id="idx-pot" class="pot-val">210.00</span> ROLLS | 
-    DAILY: <span id="idx-daily">0</span>/100
+    JACKPOT: <span id="idx-pot" class="pot-val">210.00</span> FREE ROLLS | 
+    DAILY ALLOWANCE: <span id="idx-daily">0</span>/100 USED
   </div>
 </header>
 
@@ -73,13 +73,11 @@
             </div>
             <button class="modal-btn" onclick="closeArticle()" style="background:#555;">CLOSE [X]</button>
         </div>
-
         <div id="bridge-msg">
             <h2>Direct Access Required</h2>
             <p>This publisher blocks embedded readers to protect their content or advertising.</p>
             <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">OPEN ARTICLE IN NEW TAB</button>
         </div>
-
         <iframe id="articleFrame" src=""></iframe>
     </div>
 </div>
@@ -159,58 +157,65 @@ document.getElementById('app').addEventListener('click', e => {
 
 <script>
 async function syncRoll() {
-        const btn = document.getElementById('lucky-roll-btn');
-        const agentId = localStorage.getItem('agentID') || "UnknownAgent";
-        let expiry = localStorage.getItem('rollCooldown');
-        let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
+    const btn = document.getElementById('lucky-roll-btn');
+    const agentId = localStorage.getItem('agentID') || "UnknownAgent";
+    let expiry = localStorage.getItem('rollCooldown');
+    let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
 
-        // # ADDED: Sync Pot and Daily usage to index view
-        const potVal = parseFloat(localStorage.getItem('fiat_miracle_pot')) || 210.00;
-        const dailyData = JSON.parse(localStorage.getItem('dailyUsage') || '{"count":0}');
-        document.getElementById('idx-pot').innerText = potVal.toFixed(2);
-        document.getElementById('idx-daily').innerText = dailyData.count;
-
-        try {
-            const response = await fetch(`https://api.fiatdenier.com/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
-            const data = await response.json();
-            
-            if (data.server_credits !== undefined) {
-                rollCredits = data.server_credits;
-                localStorage.setItem('rollCredits', rollCredits);
-            }
-        } catch (e) {
-            console.log("Index sync poll failed.");
-        }
-
-        const now = Date.now();
-        
-        // # UPDATED: Handle daily limit lock on index page
-        if (dailyData.count >= 100) {
-            btn.style.backgroundColor = "#444"; 
-            btn.style.color = "#888"; 
-            btn.style.pointerEvents = "none";
-            btn.innerText = "🎰 DAILY LIMIT REACHED";
-        }
-        else if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
-            const diff = parseInt(expiry) - now;
-            const mins = Math.floor(diff / 60000);
-            const secs = Math.floor((diff % 60000) / 1000);
-            
-            btn.style.backgroundColor = "#ADADAD"; 
-            btn.style.color = "#DBDBDB"; 
-            btn.style.pointerEvents = "none";
-            btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
-            setTimeout(syncRoll, 1000);
-        } else {
-            btn.style.backgroundColor = "#f7931a";
-            btn.style.color = "#fff";
-            btn.style.pointerEvents = "auto";
-            btn.innerText = "🎰 PLAY LUCKY ROLL";
-        }
-    }
+    // # UI UPDATES
+    const potVal = parseFloat(localStorage.getItem('fiat_miracle_pot')) || 210.00;
+    const dailyData = JSON.parse(localStorage.getItem('dailyUsage') || '{"count":0}');
     
-    window.addEventListener('load', syncRoll);
-    window.addEventListener('focus', syncRoll);
+    // Check if the daily usage is from a previous day
+    const todayStr = new Date().toDateString();
+    const displayCount = (dailyData.date === todayStr) ? dailyData.count : 0;
+
+    document.getElementById('idx-daily').innerText = displayCount;
+    document.getElementById('idx-pot').innerText = potVal.toFixed(2);
+
+    try {
+        const response = await fetch(`https://api.fiatdenier.com/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
+        const data = await response.json();
+        
+        if (data.server_credits !== undefined) {
+            rollCredits = data.server_credits;
+            localStorage.setItem('rollCredits', rollCredits);
+        }
+    } catch (e) {
+        console.log("Index sync poll failed.");
+    }
+
+    const now = Date.now();
+    
+    // # BUTTON LOGIC
+    if (displayCount >= 100) {
+        btn.style.backgroundColor = "#444"; 
+        btn.style.color = "#888"; 
+        btn.style.pointerEvents = "none";
+        btn.innerText = "🎰 ALLOWANCE EXHAUSTED";
+    } 
+    else if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
+        const diff = parseInt(expiry) - now;
+        const mins = Math.floor(diff / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        
+        btn.style.backgroundColor = "#ADADAD"; 
+        btn.style.color = "#DBDBDB"; 
+        btn.style.pointerEvents = "none";
+        btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
+        setTimeout(syncRoll, 1000);
+    } else {
+        btn.style.backgroundColor = "#f7931a";
+        btn.style.color = "#fff";
+        btn.style.pointerEvents = "auto";
+        btn.innerText = "🎰 PLAY LUCKY ROLL";
+    }
+}
+
+// Ensure sync runs on load and when user returns to tab
+window.addEventListener('load', syncRoll);
+window.addEventListener('focus', syncRoll);
 </script>
+
 </body>
 </html>
