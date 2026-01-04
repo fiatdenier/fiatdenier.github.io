@@ -13,6 +13,19 @@
             --grey-text: #696969; 
             --locked-grey: #444444;
         }
+		/* # ADDED: Pulse animation for free credit events */
+        @keyframes credit-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.4); color: var(--win-green); text-shadow: 0 0 10px var(--win-green); }
+            100% { transform: scale(1); }
+        }
+        .pulse-active {
+            animation: credit-pulse 0.6s ease-in-out;
+        }
+
+        /* # ADDED: Blink for the status message */
+        @keyframes blink { 50% { opacity: 0; } }
+		
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
         
@@ -132,11 +145,20 @@
 
         // --- AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        let clickBuffer = null; let dingBuffer = null; let loopSource = null; let loopGain = null;
+        let clickBuffer = null; let dingBuffer = null; let loopSource = null; let freeCreditBuffer = null; let loopGain = null;
         fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { clickBuffer = data; });
         fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { dingBuffer = data; });
-
-        function playLoop() {
+        fetch('free_credit.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { freeCreditBuffer = data; });
+		
+		// # ADDED: Function to play the free credit sound
+        function playFreeCreditSound() {
+            if (!freeCreditBuffer) return;
+            const source = audioCtx.createBufferSource();
+            source.buffer = freeCreditBuffer;
+            source.connect(audioCtx.destination);
+            source.start(0);
+        } 
+		function playLoop() {
             if (!clickBuffer) return;
             loopSource = audioCtx.createBufferSource();
             loopSource.buffer = clickBuffer;
@@ -229,21 +251,36 @@
                     playDing(data.num === 2121); 
                 }
                 stopLoop();
-                
+				
+                const is21Win = finalStr.includes('21');
                 totalSats += (data.num === 2121) ? 1000 : 10;
                 localStorage.setItem('totalSats', totalSats);
+				
+				const statusMsg = document.getElementById('status-message');
+                if (data.num === 2121) {
+                    statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
+                    document.getElementById('copy-btn').style.display = "block";
+                } else if (is21Win) {
+                    // # ADDED: Free Credit Event
+                    playFreeCreditSound();
+                    statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ FREE CREDITS GRANTED ⚡</h3>";
+                    
+                    // Trigger visual pulse on credit count
+                    const creditEl = document.getElementById('credit-count');
+                    creditEl.classList.remove('pulse-active');
+                    void creditEl.offsetWidth; // Trigger reflow to restart animation
+                    creditEl.classList.add('pulse-active');
+                    
+                    // Confetti for the free roll
+                    confetti({ particleCount: 50, spread: 40, origin: { y: 0.8 }, colors: ['#4CAF50'] });
+                } else {
+                    statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
+                }
                 document.getElementById('res-num').innerText = data.num;
                 document.getElementById('res-ts').innerText = data.ts;
                 document.getElementById('res-sig').innerText = data.signature;
                 document.getElementById('result-area').style.display = 'block';
-
-                if (data.num === 2121) {
-                    document.getElementById('status-message').innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
-                    document.getElementById('copy-btn').style.display = "block";
-                } else {
-                    document.getElementById('status-message').innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
-                }
-
+                                
                 fetch(`${API_BASE}/update-score`, {
                     method: 'POST', headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
