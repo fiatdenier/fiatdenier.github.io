@@ -12,7 +12,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fiatdenier.com/">
-<meta property="og:title" content="₿ Lucky Roll: Deny Fiat, Win Sats">
+<meta property="og:title" content="🎰 Lucky Roll: Deny Fiat, Win Sats">
 <meta property="og:description" content="Test your luck! Roll for a chance to win up to 2000 sats. Fully verified and decentralized.">
 <meta property="og:image" content="https://fiatdenier.com/preview.png">
 
@@ -34,17 +34,6 @@
   .game-status-bar { font-family: 'Roboto', sans-serif; font-size: 0.7rem; margin-top: 8px; color: #888; letter-spacing: 0.5px; }
   .pot-val { color: #4CAF50; font-weight: bold; }
 
-  /* // # ADDED: Slow blink for exhausted daily allowance */
-  @keyframes exhausted-blink {
-      0% { opacity: 1; color: #ff4444; text-shadow: 0 0 5px #ff4444; }
-      50% { opacity: 0.5; color: #880000; text-shadow: none; }
-      100% { opacity: 1; color: #ff4444; text-shadow: 0 0 5px #ff4444; }
-  }
-  .exhausted-active {
-      animation: exhausted-blink 2s ease-in-out infinite;
-      font-weight: bold;
-  }
-
   .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; }
   .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid #f7931a; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
   .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
@@ -64,7 +53,7 @@
 <header>
   <h1><a href="/">BITCOIN WIRE</a></h1>
   <p id="updated">Checking for updates...</p>
-  <button class="game-link" id="lucky-roll-btn" onclick="location.href='roll.html'">₿ PLAY LUCKY ROLL</button>
+  <button class="game-link" id="lucky-roll-btn" onclick="location.href='roll.html'">🎰 PLAY LUCKY ROLL</button>
   
   <div class="game-status-bar">
     PROGRESSIVE FREE CREDIT JACKPOT: <span id="idx-pot" class="pot-val">210.00</span> | 
@@ -169,7 +158,6 @@ document.getElementById('app').addEventListener('click', e => {
 <script>
 async function syncRoll() {
     const btn = document.getElementById('lucky-roll-btn');
-    const countSpan = document.getElementById('idx-daily'); // # Reference for styling
     const agentId = localStorage.getItem('agentID') || "UnknownAgent";
     let expiry = localStorage.getItem('rollCooldown');
     let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
@@ -180,7 +168,7 @@ async function syncRoll() {
     const todayStr = new Date().toDateString();
     let displayCount = (dailyData.date === todayStr) ? dailyData.count : 0;
 
-    // # SERVER SYNC FOR JACKPOT & DAILY USAGE
+    // # ADDED: SERVER SYNC FOR JACKPOT & DAILY USAGE
     try {
         const jRes = await fetch(`https://api.fiatdenier.com/get-global-jackpot?agent_id=${agentId}`, {
             headers: { 'X-Requested-With': 'XMLHttpRequest' }
@@ -192,19 +180,13 @@ async function syncRoll() {
         }
         if (jData.daily_count !== undefined) {
             displayCount = jData.daily_count;
+            // Keep local storage in sync for consistency
             localStorage.setItem('dailyUsage', JSON.stringify({date: todayStr, count: displayCount}));
         }
     } catch (e) { console.log("Header jackpot sync failed."); }
 
     document.getElementById('idx-daily').innerText = displayCount;
     document.getElementById('idx-pot').innerText = potVal.toFixed(2);
-
-    // // # ADDED: Visual alert for >100 rolls
-    if (displayCount >= 100) {
-        countSpan.classList.add('exhausted-active');
-    } else {
-        countSpan.classList.remove('exhausted-active');
-    }
 
     try {
         const response = await fetch(`https://api.fiatdenier.com/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
@@ -216,6 +198,7 @@ async function syncRoll() {
             rollCredits = data.server_credits;
             localStorage.setItem('rollCredits', rollCredits);
         }
+        // # ADDED: If server says we are locked, update local expiry
         if (data.error === "LOCKED" && data.remaining_seconds) {
             expiry = Date.now() + (data.remaining_seconds * 1000);
             localStorage.setItem('rollCooldown', expiry);
@@ -226,9 +209,14 @@ async function syncRoll() {
 
     const now = Date.now();
     
-    // // # BUTTON LOGIC: Removed Allowance Exhausted check to keep normal 10min timer persistence
-    // # Reverted to standard cooldown/credit check only.
-    if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
+    // # BUTTON LOGIC
+    if (displayCount >= 100) {
+        btn.style.backgroundColor = "#444"; 
+        btn.style.color = "#888"; 
+        btn.style.pointerEvents = "none";
+        btn.innerText = "🎰 ALLOWANCE EXHAUSTED";
+    } 
+    else if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
         const diff = parseInt(expiry) - now;
         const mins = Math.floor(diff / 60000);
         const secs = Math.floor((diff % 60000) / 1000);
@@ -236,16 +224,17 @@ async function syncRoll() {
         btn.style.backgroundColor = "#ADADAD"; 
         btn.style.color = "#DBDBDB"; 
         btn.style.pointerEvents = "none";
-        btn.innerText = `₿ LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
+        btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
         setTimeout(syncRoll, 1000);
     } else {
         btn.style.backgroundColor = "#f7931a";
         btn.style.color = "#fff";
         btn.style.pointerEvents = "auto";
-        btn.innerText = "₿ PLAY LUCKY ROLL";
+        btn.innerText = "🎰 PLAY LUCKY ROLL";
     }
 }
 
+// Ensure sync runs on load and when user returns to tab
 window.addEventListener('load', syncRoll);
 window.addEventListener('focus', syncRoll);
 </script>
