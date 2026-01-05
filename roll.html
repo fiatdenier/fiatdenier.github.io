@@ -286,28 +286,34 @@
 
 		// --- ROLL LOGIC ---
 		async function handleRoll() {
+            // // # FAST LOCK: Immediately disable to prevent overflow clicks (the 106/100 issue)
 			if (isRolling) return;
+            isRolling = true; 
+			const btn = document.getElementById('roll-btn');
+            btn.disabled = true; 
+            btn.innerText = "VERIFYING...";
 
-            // // # ADDED: STRICT ENFORCEMENT - Prevents overflow clicks
-            const dailyDisplay = document.getElementById('daily-count-display');
-            const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
-            // Only enforce if user is out of credits (free rolling)
-            if (currentDailyCount >= 100 && rollCredits <= 0) {
-                const resetIn = getTimeUntilReset();
-                document.getElementById('status-message').innerHTML = `<h3 style='color:var(--btc-orange);'>DAILY FREE CREDIT LIMIT REACHED (100/100)</h3><p style='font-size:0.7rem; color:#888;'>RESETS IN: ${resetIn}</p>`;
-                document.getElementById('result-area').style.display = 'block';
-                return; // Hard stop
-            }
+            // // # STRICT UI CHECK
+			const dailyDisplay = document.getElementById('daily-count-display');
+			const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
+
+			if (currentDailyCount >= 100 && rollCredits <= 0) {
+				const resetIn = getTimeUntilReset();
+				document.getElementById('status-message').innerHTML = `<h3 style='color:var(--btc-orange);'>DAILY LIMIT REACHED (100/100)</h3>`;
+				document.getElementById('result-area').style.display = 'block';
+                btn.disabled = false;
+                btn.innerText = "ROLL FOR SATS";
+                isRolling = false;
+				return; 
+			}
 
 			const creditsAtStart = rollCredits;
-			
-			const btn = document.getElementById('roll-btn');
 			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             
             // # FIX: Reset color stickiness - Ensure numbers are Bitcoin Orange at start of every roll
             slots.forEach(slot => { slot.style.color = 'var(--btc-orange)'; });
 
-			isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
+			btn.innerText = "ROLLING...";
 			document.getElementById('result-area').style.display = 'none';
 
 			const spinIntervals = slots.map(slot => {
@@ -329,7 +335,7 @@
                     stopLoop(); spinIntervals.forEach(clearInterval);
                     if (data.message.includes("Daily limit")) {
                         const resetIn = getTimeUntilReset();
-                        document.getElementById('status-message').innerHTML = `<h3 style='color:var(--btc-orange);'>DAILY FREE CREDIT LIMIT REACHED (100/100)</h3><p style='font-size:0.7rem; color:#888;'>RESETS IN: ${resetIn}</p>`;
+                        document.getElementById('status-message').innerHTML = `<h3 style='color:var(--btc-orange);'>DAILY LIMIT REACHED (100/100)</h3><p style='font-size:0.7rem; color:#888;'>RESETS IN: ${resetIn}</p>`;
                         document.getElementById('result-area').style.display = 'block';
                     } else {
                         showIpLock(); 
