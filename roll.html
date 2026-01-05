@@ -173,7 +173,10 @@
         async function updateJackpotUI() {
             const agentId = getAgentID();
             try {
-                const response = await fetch(`${API_BASE}/get-global-jackpot?agent_id=${agentId}`);
+                // # ADDED: Headers to help bypass Cloudflare direct access block
+                const response = await fetch(`${API_BASE}/get-global-jackpot?agent_id=${agentId}`, {
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
                 const data = await response.json();
                 
                 const tickerEl = document.getElementById('jackpot-ticker');
@@ -268,7 +271,7 @@
 			document.getElementById('agent-id-display').innerText = newId;
 			fetch(`${API_BASE}/update-score`, {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
+				headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
 				body: JSON.stringify({ agent_id: newId, sats: totalSats })
 			});
 		}
@@ -292,7 +295,10 @@
 				if (audioCtx.state === 'suspended') await audioCtx.resume();
 				playLoop();
 				const agentId = getAgentID();
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`);
+                // # ADDED: Request header for Cloudflare/WAF bypass
+				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
 				const data = await response.json();
 
 				if (data.error === "LOCKED") { 
@@ -328,15 +334,18 @@
 				const is2121 = (data.num === 2121);
 				const isMiracle = sig.startsWith('21') && sig.endsWith('21');
 
-                // # SYNC: If using a credit, tell server to increment global pot
-				if (creditsAtStart > 0) {
-				    fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { method: 'POST' });
+                // # SYNC: If using a credit (or rolling free), tell server to increment global pot by 0.21 and update daily usage
+				if (creditsAtStart >= 0) {
+				    fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { 
+                        method: 'POST',
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    }).then(() => updateJackpotUI()); // # Refresh UI to show incremented daily count
 				}
 
 				const statusMsg = document.getElementById('status-message');
 
 				if (isMiracle) {
-                    fetch(`${API_BASE}/reset-jackpot`, { method: 'POST' });
+                    fetch(`${API_BASE}/reset-jackpot`, { method: 'POST', headers: { 'X-Requested-With': 'XMLHttpRequest' } });
 					rollCredits += 210; // Logic fallback if server hasn't updated
 					totalSats += 2000; 
 					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & JACKPOT ROLLS</h2>`;
@@ -373,10 +382,9 @@
 				document.getElementById('result-area').style.display = 'block';
 				
 				updateUI();
-				updateJackpotUI();
 										
 				fetch(`${API_BASE}/update-score`, {
-					method: 'POST', headers: { 'Content-Type': 'application/json' },
+					method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
 					body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
 				});
 
@@ -422,7 +430,7 @@
 			document.getElementById('leaderboard-overlay').style.display = 'block';
 			const myId = getAgentID();
 			try {
-				const res = await fetch(`${API_BASE}/leaderboard`);
+				const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
 				const data = await res.json();
 				document.getElementById('lb-content').innerHTML = data.slice(0, 10).map((e, i) => `
 					<div class="leaderboard-row ${e.agent === myId ? 'me' : ''}">
@@ -456,7 +464,9 @@
 			}
 
 			try {
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
+				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
 				const data = await response.json();
 
 				if (data.error === "LOCKED") {
