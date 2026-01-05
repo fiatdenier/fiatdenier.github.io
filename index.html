@@ -162,24 +162,46 @@ async function syncRoll() {
     let expiry = localStorage.getItem('rollCooldown');
     let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
 
-    // # UI UPDATES
-    const potVal = parseFloat(localStorage.getItem('fiat_miracle_pot')) || 210.00;
+    // # UI FALLBACK (Local Storage)
+    let potVal = parseFloat(localStorage.getItem('fiat_miracle_pot')) || 210.00;
     const dailyData = JSON.parse(localStorage.getItem('dailyUsage') || '{"count":0}');
-    
-    // Check if the daily usage is from a previous day
     const todayStr = new Date().toDateString();
-    const displayCount = (dailyData.date === todayStr) ? dailyData.count : 0;
+    let displayCount = (dailyData.date === todayStr) ? dailyData.count : 0;
+
+    // # ADDED: SERVER SYNC FOR JACKPOT & DAILY USAGE
+    try {
+        const jRes = await fetch(`https://api.fiatdenier.com/get-global-jackpot?agent_id=${agentId}`, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
+        const jData = await jRes.json();
+        if (jData.current_pot) {
+            potVal = jData.current_pot;
+            localStorage.setItem('fiat_miracle_pot', potVal);
+        }
+        if (jData.daily_count !== undefined) {
+            displayCount = jData.daily_count;
+            // Keep local storage in sync for consistency
+            localStorage.setItem('dailyUsage', JSON.stringify({date: todayStr, count: displayCount}));
+        }
+    } catch (e) { console.log("Header jackpot sync failed."); }
 
     document.getElementById('idx-daily').innerText = displayCount;
     document.getElementById('idx-pot').innerText = potVal.toFixed(2);
 
     try {
-        const response = await fetch(`https://api.fiatdenier.com/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`);
+        const response = await fetch(`https://api.fiatdenier.com/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
         const data = await response.json();
         
         if (data.server_credits !== undefined) {
             rollCredits = data.server_credits;
             localStorage.setItem('rollCredits', rollCredits);
+        }
+        // # ADDED: If server says we are locked, update local expiry
+        if (data.error === "LOCKED" && data.remaining_seconds) {
+            expiry = Date.now() + (data.remaining_seconds * 1000);
+            localStorage.setItem('rollCooldown', expiry);
         }
     } catch (e) {
         console.log("Index sync poll failed.");
