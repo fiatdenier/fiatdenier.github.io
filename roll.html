@@ -157,7 +157,15 @@
     </div>
 
     <script>
-	
+		// # ADDED: Force unlock audio context on first user interaction
+		const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		['click', 'touchstart', 'keydown'].forEach(event => {
+			window.addEventListener(event, () => {
+				if (audioCtx.state === 'suspended') {
+					audioCtx.resume();
+				}
+			}, { once: true });
+		});
 		const COOLDOWN_MINUTES = 10;
 		const API_BASE = "https://api.fiatdenier.com";
 		
@@ -206,7 +214,7 @@
 		}
 
 		// --- AUDIO ENGINE ---
-		const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		
 		let clickBuffer = null; let dingBuffer = null; let loopSource = null; let freeCreditBuffer = null; let loopGain = null;
 		fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { clickBuffer = data; });
 		fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { dingBuffer = data; });
@@ -372,8 +380,12 @@
 					document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
 					statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ +5 FREE ROLLS ⚡</h3>";
 					
-                    // # FIX: Trigger sound effect for win
-                    playFreeCreditSound();
+                    // # FIX: Trigger sound effect for win - Ensure AudioContext is resumed before playing
+                    if (audioCtx.state === 'suspended') {
+                        audioCtx.resume().then(() => playFreeCreditSound());
+                    } else {
+                        playFreeCreditSound();
+                    }
                     
 					confetti({ particleCount: 50, spread: 40, colors: ['#4CAF50'] });
 				} 
