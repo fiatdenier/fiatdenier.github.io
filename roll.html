@@ -291,11 +291,20 @@
 			btn.disabled = true; 
 			btn.innerText = "VERIFYING...";
 
+            // // # CREDIT LOCKING LOGIC (The Gate)
 			const dailyDisplay = document.getElementById('daily-count-display');
 			const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
 
-            // // # MODIFIED: Removed "DAILY CREDIT LIMIT REACHED" interrupt block.
-            // # Logic now proceeds to roll even if over limit, server will return LOCKED status if needed.
+            // // # SURGICAL REMOVAL: The "DAILY CREDIT LIMIT REACHED" status message interrupt is gone.
+            // // # The hard locking logic below remains intact.
+			if (currentDailyCount >= 100 && rollCredits <= 0) {
+				showIpLock();
+				const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+				localStorage.setItem('rollCooldown', expiry);
+				startTimer(expiry);
+				isRolling = false;
+				return;
+			}
 
 			const creditsAtStart = rollCredits;
 			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
@@ -313,17 +322,13 @@
 				if (audioCtx.state === 'suspended') await audioCtx.resume();
 				playLoop();
 				const agentId = getAgentID();
-                
-                let syncVal = (currentDailyCount >= 100) ? 0 : rollCredits;
-
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${syncVal}`, {
+				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
                     headers: { 'X-Requested-With': 'XMLHttpRequest' }
                 });
 				const data = await response.json();
 
 				if (data.error === "LOCKED") { 
                     stopLoop(); spinIntervals.forEach(clearInterval);
-                    // // # FIXED: Always use standard IP lock UI instead of daily limit message
 					showIpLock(); 
                     if (data.remaining_seconds) {
                         const expiry = Date.now() + (data.remaining_seconds * 1000);
@@ -333,10 +338,8 @@
 					isRolling = false; return; 
 				}
 
-                if (currentDailyCount < 100) {
-				    rollCredits = data.server_credits;
-				    localStorage.setItem('rollCredits', rollCredits);
-                }
+				rollCredits = data.server_credits;
+				localStorage.setItem('rollCredits', rollCredits);
 
 				const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
 				const finalStr = data.num.toString().padStart(4, '0');
@@ -358,10 +361,12 @@
 				const is2121 = (data.num === 2121);
 				const isMiracle = sig.startsWith('21') && sig.endsWith('21');
 
-				fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { 
-                    method: 'POST',
-                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                }).then(() => updateJackpotUI()); 
+				if (creditsAtStart >= 0) {
+					fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { 
+                        method: 'POST',
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    }).then(() => updateJackpotUI()); 
+				}
 
 				const statusMsg = document.getElementById('status-message');
 
@@ -392,7 +397,6 @@
 					confetti({ particleCount: 50, spread: 40, colors: ['#4CAF50'] });
 				} 
 				else {
-                    // // # PRESERVED: Show standard "Better luck next time!" message even when over limit
 					statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
 				}
 			
@@ -411,7 +415,7 @@
 					body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
 				});
 
-				if (rollCredits <= 0 || currentDailyCount >= 100) { 
+				if (rollCredits <= 0) { 
 					const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
 					localStorage.setItem('rollCooldown', expiry); startTimer(expiry); 
 				} else {
@@ -431,91 +435,12 @@
 			const btn = document.getElementById('roll-btn');
 			const interval = setInterval(() => {
 				const diff = expiry - Date.now();
-                
-                const dailyDisplay = document.getElementById('daily-count-display');
-				const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
-
-				if (diff <= 0 || (rollCredits > 0 && currentDailyCount < 100)) {
+				if (diff <= 0) {
 					clearInterval(interval); timerDiv.innerText = "";
 					btn.disabled = false; btn.classList.remove('locked'); btn.innerText = "ROLL FOR SATS";
 					document.getElementById('ip-lock-msg').style.display = 'none';
 					document.getElementById('slot-container').style.display = 'flex';
 				} else {
 					const mins = Math.floor(diff / 60000); const secs = Math.floor((diff % 60000) / 1000);
-                    // // # PRESERVED: Show standard lock timer text even when over limit
 					timerDiv.innerText = `NEXT ROLL IN: ${mins}:${secs.toString().padStart(2, '0')}`;
-					btn.innerText = `LOCKED (${mins}m)`; btn.classList.add('locked'); btn.disabled = true; 
-				}
-			}, 1000);
-		}
-
-		function copyProof() {
-			const text = document.getElementById('proof-content').innerText;
-			navigator.clipboard.writeText(text).then(() => { alert("Proof Copied!"); });
-		}
-
-		async function showLeaderboard() {
-			document.getElementById('leaderboard-overlay').style.display = 'block';
-			const myId = getAgentID();
-			try {
-				const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-				const data = await res.json();
-				document.getElementById('lb-content').innerHTML = data.slice(0, 10).map((e, i) => `
-					<div class="leaderboard-row ${e.agent === myId ? 'me' : ''}">
-						<span>${i+1}. ${e.agent}</span>
-						<span>${e.sats.toLocaleString()}</span>
-					</div>
-				`).join('');
-				const myRank = data.findIndex(e => e.agent === myId) + 1;
-				document.getElementById('my-rank-display').innerText = myRank > 0 ? `#${myRank} GLOBAL` : "UNRANKED";
-				if(myRank > 0 && myRank <= 10) document.getElementById('my-rank-display').style.color = "var(--btc-orange)";
-			} catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
-		}
-
-		function updateUI() {
-			document.getElementById('agent-id-display').innerText = getAgentID();
-			document.getElementById('credit-count').innerText = rollCredits;
-			document.getElementById('total-sats-val').innerText = totalSats.toLocaleString();
-		}
-
-		window.onload = async () => {
-			updateUI();
-			updateJackpotUI();
-            setInterval(updateJackpotUI, 10000); 
-
-			const agentId = getAgentID();
-			const savedExpiry = localStorage.getItem('rollCooldown');
-			
-			if (savedExpiry && Date.now() < parseInt(savedExpiry)) {
-                const dailyDisplay = document.getElementById('daily-count-display');
-				const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
-
-                if (rollCredits <= 0 || currentDailyCount >= 100) {
-				    showIpLock();
-				    startTimer(parseInt(savedExpiry));
-                }
-			}
-
-			try {
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
-                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                });
-				const data = await response.json();
-
-				if (data.error === "LOCKED") {
-					const expiry = Date.now() + (data.remaining_seconds * 1000);
-					localStorage.setItem('rollCooldown', expiry); 
-					showIpLock();
-					startTimer(expiry);
-				} else {
-					if (data.server_credits !== undefined) {
-						rollCredits = data.server_credits;
-						localStorage.setItem('rollCredits', rollCredits);
-					}
-					updateUI();
-				}
-			} catch (e) { updateUI(); }
-		};
-	</script>
-</body>
-</html>
+					btn.innerText = `LOCKED (${mins}m)`; btn.classList.
