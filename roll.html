@@ -26,6 +26,17 @@
         /* # ADDED: Blink for the status message */
         @keyframes blink { 50% { opacity: 0; } }
 		
+		/* # ADDED: Subtle glow animation for the Progressive Jackpot */
+		@keyframes jackpot-glow {
+			0% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
+			50% { text-shadow: 0 0 15px rgba(76, 175, 80, 0.6); }
+			100% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
+		}
+
+		.glow-active {
+			animation: jackpot-glow 3s ease-in-out infinite;
+		}
+		
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
         
@@ -72,19 +83,20 @@
     </style>
 </head>
 <body>
-
+    
     <div class="card">
         <a href="index.html" class="back-link">← Return to Wire</a>
-				<div id="jackpot-container" style="background: rgba(0,0,0,0.3); border: 1px solid #333; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center; border-left: 4px solid var(--win-green);">
-			<div style="font-size: 0.6rem; color: #888; letter-spacing: 2px; margin-bottom: 4px;">PROGRESSIVE FREE CREDIT JACKPOT</div>
-			<div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-				<span id="jackpot-ticker" style="color: var(--win-green); font-size: 1.6rem; font-weight: bold; font-family: 'Courier New', monospace;">210.00</span>
-				<span style="font-size: 0.7rem; color: #555;">ROLLS</span>
-			</div>
-			<div style="font-size: 0.6rem; color: #666; margin-top: 5px; border-top: 1px solid #222; padding-top: 5px;">
-				DAILY FREE CREDIT REDEEMED: <span id="daily-count-display">0</span>/100
-			</div>
-		</div>
+        
+        <div id="jackpot-container" style="background: rgba(0,0,0,0.3); border: 1px solid #333; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center; border-left: 4px solid var(--win-green);">
+            <div style="font-size: 0.6rem; color: #888; letter-spacing: 2px; margin-bottom: 4px;">PROGRESSIVE FREE CREDIT JACKPOT</div>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <span id="jackpot-ticker" class="glow-active" style="color: var(--win-green); font-size: 1.6rem; font-weight: bold; font-family: 'Courier New', monospace;">210.00</span>
+                <span style="font-size: 0.7rem; color: #555;">ROLLS</span>
+            </div>
+            <div style="font-size: 0.6rem; color: #666; margin-top: 5px; border-top: 1px solid #222; padding-top: 5px;">
+                DAILY FREE CREDIT REDEEMED: <span id="daily-count-display">0</span>/100
+            </div>
+        </div>
         
         <div class="agent-header">
             <div class="agent-info">
