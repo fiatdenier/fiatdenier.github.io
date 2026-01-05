@@ -68,7 +68,6 @@
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
         #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
 
-        /* Leaderboard Overlay restored exactly as requested */
         #leaderboard-overlay { 
             display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
             background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; 
@@ -162,67 +161,42 @@
 		const COOLDOWN_MINUTES = 10;
 		const API_BASE = "https://api.fiatdenier.com";
 		
-		// # PROGRESSIVE CONSTANTS (Moved to top for visibility)
 		const JACKPOT_FLOOR = 210.0;
-		const JACKPOT_MAX = 1000.0;
-		const GROWTH_PER_ROLL = 0.21;
 
 		let isRolling = false;
 		let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
 		let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
 
 		// ==========================================
-		// # PROGRESSIVE & DAILY LIMIT HELPERS
+		// # PROGRESSIVE & DAILY LIMIT HELPERS (SYNCED TO BACKEND)
 		// ==========================================
-		function getDailyRolls() {
-			const today = new Date().toDateString();
-			let data = JSON.parse(localStorage.getItem('dailyUsage') || '{}');
-			if (data.date !== today) {
-				data = { date: today, count: 0 };
-				localStorage.setItem('dailyUsage', JSON.stringify(data));
-			}
-			return data;
-		}
+        async function updateJackpotUI() {
+            const agentId = getAgentID();
+            try {
+                const response = await fetch(`${API_BASE}/get-global-jackpot?agent_id=${agentId}`);
+                const data = await response.json();
+                
+                const tickerEl = document.getElementById('jackpot-ticker');
+                const countEl = document.getElementById('daily-count-display');
+                
+                if (tickerEl && data.current_pot) {
+                    tickerEl.innerText = parseFloat(data.current_pot).toFixed(2);
+                }
+                
+                if (countEl && data.daily_count !== undefined) {
+                    countEl.innerText = data.daily_count;
+                    // PROGRESSIVE COLOR WARNING
+                    if (data.daily_count >= 90) countEl.style.color = "#ff4444";
+                    else if (data.daily_count >= 70) countEl.style.color = "var(--btc-orange)";
+                    else countEl.style.color = "white";
+                }
+            } catch (err) { console.log("Jackpot sync failed."); }
+        }
 
-		function incrementDailyRolls() {
-			let data = getDailyRolls();
-			data.count++;
-			localStorage.setItem('dailyUsage', JSON.stringify(data));
-			const el = document.getElementById('daily-count-display');
-			if (el) {
-				el.classList.remove('pulse-active');
-				void el.offsetWidth; 
-				el.classList.add('pulse-active');
-			}
-			// # ADDED: Force UI color update immediately after roll
-			updateJackpotUI(); 
-		}
-
-		function updateJackpotUI() {
-			const pot = parseFloat(localStorage.getItem('fiat_miracle_pot')) || JACKPOT_FLOOR;
-			const usage = getDailyRolls();
-			const tickerEl = document.getElementById('jackpot-ticker');
-			const countEl = document.getElementById('daily-count-display');
-			
-			if (tickerEl) tickerEl.innerText = pot.toFixed(2);
-			if (countEl) {
-				countEl.innerText = usage.count;
-				// # PROGRESSIVE COLOR WARNING
-				if (usage.count >= 90) {
-					countEl.style.color = "#ff4444"; // Red alert
-				} else if (usage.count >= 70) {
-					countEl.style.color = "var(--btc-orange)"; // Warning orange
-				} else {
-					countEl.style.color = "white"; // Safe/Default
-				}
-			}
-		}
-		
 		function getTimeUntilReset() {
 			const now = new Date();
 			const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-			const diff = tomorrow - now; // milliseconds
-			
+			const diff = tomorrow - now; 
 			const hours = Math.floor(diff / 3600000);
 			const mins = Math.floor((diff % 3600000) / 60000);
 			return `${hours}h ${mins}m`;
@@ -303,14 +277,7 @@
 		async function handleRoll() {
 			if (isRolling) return;
 			const creditsAtStart = rollCredits;
-			// # CHECK DAILY LIMIT
-			const daily = getDailyRolls();
-			if (daily.count >= 100) {
-			    const resetIn = getTimeUntilReset();
-				document.getElementById('status-message').innerHTML = 
-					`<h3 style='color:var(--btc-orange);'>DAILY FREE CREDIT LIMIT REACHED (100/100)</h3><p style='font-size:0.7rem; color:#888;'>RESETS IN: ${resetIn}</p>`;
-				return; 
-			}
+            
 			const btn = document.getElementById('roll-btn');
 			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
 			isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
@@ -329,7 +296,14 @@
 				const data = await response.json();
 
 				if (data.error === "LOCKED") { 
-					stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); 
+                    stopLoop(); spinIntervals.forEach(clearInterval);
+                    if (data.message.includes("Daily limit")) {
+                        const resetIn = getTimeUntilReset();
+                        document.getElementById('status-message').innerHTML = `<h3 style='color:var(--btc-orange);'>DAILY FREE CREDIT LIMIT REACHED (100/100)</h3><p style='font-size:0.7rem; color:#888;'>RESETS IN: ${resetIn}</p>`;
+                        document.getElementById('result-area').style.display = 'block';
+                    } else {
+                        showIpLock(); 
+                    }
 					isRolling = false; btn.innerText = "ROLL FOR SATS"; return; 
 				}
 
@@ -353,24 +327,25 @@
 				const is21Win = finalStr.includes('21');
 				const is2121 = (data.num === 2121);
 				const isMiracle = sig.startsWith('21') && sig.endsWith('21');
+
+                // # SYNC: If using a credit, tell server to increment global pot
 				if (creditsAtStart > 0) {
-				incrementDailyRolls();
+				    fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { method: 'POST' });
 				}
-				let miraclePot = parseFloat(localStorage.getItem('fiat_miracle_pot')) || JACKPOT_FLOOR;
+
 				const statusMsg = document.getElementById('status-message');
 
 				if (isMiracle) {
-					const winAmount = Math.floor(miraclePot);
-					rollCredits += winAmount;
-					totalSats += 2000; // Correct: 2000 sats + Progressive Pot
-					localStorage.setItem('fiat_miracle_pot', JACKPOT_FLOOR.toString());
-					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & ${winAmount} ROLLS</h2>`;
+                    fetch(`${API_BASE}/reset-jackpot`, { method: 'POST' });
+					rollCredits += 210; // Logic fallback if server hasn't updated
+					totalSats += 2000; 
+					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & JACKPOT ROLLS</h2>`;
 					confetti({ particleCount: 300, spread: 100, colors: ['#f7931a', '#fff'] });
 					playFreeCreditSound();
 				}	
 				else if (is2121) {
 					rollCredits += 21;
-					totalSats += 500; // Correct: 500 sats + 21 rolls
+					totalSats += 500; 
 					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121: 500 SATS + 21 ROLLS! ✨</h3>";
 					document.getElementById('copy-btn').style.display = "block";
 					confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
@@ -378,7 +353,6 @@
 				} 
 				else if (is21Win) {
 					rollCredits += 1;
-					// # REMOVED: totalSats += 10; (Per your request to simplify tracking)
 					const startIdx = finalStr.indexOf('21');
 					document.getElementById(`slot-${startIdx}`).style.color = 'var(--win-green)';
 					document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
@@ -387,13 +361,8 @@
 					confetti({ particleCount: 50, spread: 40, colors: ['#4CAF50'] });
 				} 
 				else {
-					// # REMOVED: totalSats += 10; (Per your request to simplify tracking)
-					// # PROGRESSIVE GROWTH: Only the pot grows here
-					miraclePot = Math.min(JACKPOT_MAX, miraclePot + GROWTH_PER_ROLL);
-					localStorage.setItem('fiat_miracle_pot', miraclePot.toString());
 					statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
 				}
-
 			
 				localStorage.setItem('totalSats', totalSats);
 				localStorage.setItem('rollCredits', rollCredits);
@@ -476,12 +445,11 @@
 		window.onload = async () => {
 			updateUI();
 			updateJackpotUI();
+            setInterval(updateJackpotUI, 10000); // Keep it synced in realtime
+
 			const agentId = getAgentID();
 			const savedExpiry = localStorage.getItem('rollCooldown');
-			const savedPot = localStorage.getItem('fiat_miracle_pot');
-			if (savedPot && document.getElementById('jackpot-ticker')) {
-				document.getElementById('jackpot-ticker').innerText = parseFloat(savedPot).toFixed(2);
-			}
+			
 			if (savedExpiry && Date.now() < parseInt(savedExpiry) && rollCredits <= 0) {
 				showIpLock();
 				startTimer(parseInt(savedExpiry));
@@ -500,10 +468,6 @@
 					if (data.server_credits !== undefined) {
 						rollCredits = data.server_credits;
 						localStorage.setItem('rollCredits', rollCredits);
-					}
-					if (data.server_sats !== undefined) {
-						totalSats = data.server_sats;
-						localStorage.setItem('totalSats', totalSats);
 					}
 					updateUI();
 				}
