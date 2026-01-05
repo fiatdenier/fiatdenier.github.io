@@ -350,37 +350,33 @@
 				if (isMiracle) {
 					const winAmount = Math.floor(miraclePot);
 					rollCredits += winAmount;
+					totalSats += 2000; // Correct: 2000 sats + Progressive Pot
 					localStorage.setItem('fiat_miracle_pot', JACKPOT_FLOOR.toString());
-					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT! +${winAmount} ROLLS</h2>`;
+					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & ${winAmount} ROLLS</h2>`;
 					confetti({ particleCount: 300, spread: 100, colors: ['#f7931a', '#fff'] });
 					playFreeCreditSound();
 				}	
-				else if (sig.startsWith('21')) {
-					totalSats += 10;
-					miraclePot = Math.min(JACKPOT_MAX, miraclePot + GROWTH_PER_ROLL);
-					localStorage.setItem('fiat_miracle_pot', miraclePot.toString());
-					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>SO CLOSE! Signature started with 21...</h3>";
-				} 
 				else if (is2121) {
 					rollCredits += 21;
-					totalSats += 1000;
-					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121: +21 ROLLS! ✨</h3>";
+					totalSats += 500; // Correct: 500 sats + 21 rolls
+					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121: 500 SATS + 21 ROLLS! ✨</h3>";
 					document.getElementById('copy-btn').style.display = "block";
 					confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
 					playFreeCreditSound();
 				} 
 				else if (is21Win) {
 					rollCredits += 1;
-					totalSats += 10;
+					// # REMOVED: totalSats += 10; (Per your request to simplify tracking)
 					const startIdx = finalStr.indexOf('21');
 					document.getElementById(`slot-${startIdx}`).style.color = 'var(--win-green)';
 					document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
-					statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ FREE ROLL GRANTED ⚡</h3>";
+					statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ +1 FREE ROLL ⚡</h3>";
 					playFreeCreditSound();
 					confetti({ particleCount: 50, spread: 40, colors: ['#4CAF50'] });
 				} 
 				else {
-					totalSats += 10;
+					// # REMOVED: totalSats += 10; (Per your request to simplify tracking)
+					// # PROGRESSIVE GROWTH: Only the pot grows here
 					miraclePot = Math.min(JACKPOT_MAX, miraclePot + GROWTH_PER_ROLL);
 					localStorage.setItem('fiat_miracle_pot', miraclePot.toString());
 					statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
