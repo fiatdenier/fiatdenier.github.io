@@ -23,8 +23,18 @@
 
 <style>
   header h1 a, #pagination, #page-info { font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #f7931a !important; text-decoration: none; }
-  
-  /* # ADDED: Slow blink for exhausted daily allowance */
+  #updated { font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #696969 !important; }
+  #app a .headline { display: block; font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #f7931a !important; margin-bottom: 4px; }
+  #app a .meta { display: block; font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #888888 !important; font-size: 0.85rem; }
+  #app a { text-decoration: none; display: block; margin-bottom: 15px; }
+
+  .game-link { display: inline-block; margin-top: 10px; padding: 10px 20px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: 700 !important; transition: background 0.2s; }
+
+  /* # ADDED: Game Status Bar Styles */
+  .game-status-bar { font-family: 'Roboto', sans-serif; font-size: 0.7rem; margin-top: 8px; color: #888; letter-spacing: 0.5px; }
+  .pot-val { color: #4CAF50; font-weight: bold; }
+
+  /* // # ADDED: Slow blink for exhausted daily allowance */
   @keyframes exhausted-blink {
       0% { opacity: 1; color: #ff4444; text-shadow: 0 0 5px #ff4444; }
       50% { opacity: 0.5; color: #880000; text-shadow: none; }
@@ -32,110 +42,193 @@
   }
   .exhausted-active {
       animation: exhausted-blink 2s ease-in-out infinite;
+      font-weight: bold;
   }
 
-  /* Existing Styles Preserved */
-  #jackpot-sidebar {
-    background: #1a1a1a;
-    border: 2px solid #f7931a;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 20px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(247, 147, 26, 0.1);
-  }
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; }
+  .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid #f7931a; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
+  .modal-btn { background: #f7931a; color: #fff !important; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
+  
+  #bridge-msg { display: none; padding: 60px 20px; text-align: center; color: #ccc; flex-grow: 1; font-family: 'Roboto', sans-serif; }
+  #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
+  #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; font-family: 'Roboto', sans-serif; }
+  iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
+
+  #pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 60px 0; width: 100%; }
+  #pagination button { background: #333; border: 1px solid #444; padding: 12px 24px; cursor: pointer; border-radius: 4px; min-width: 120px; color: #f7931a !important; font-weight: 700; }
+  #pagination button:disabled { opacity: 0.2; cursor: not-allowed; }
 </style>
 </head>
 <body>
-
-<div id="container">
-  <header>
-    <h1><a href="/">BITCOIN WIRE</a></h1>
-    <p>The only signal that matters. Block by block.</p>
-  </header>
-
-  <div id="jackpot-sidebar">
-    <div style="font-size: 0.65rem; color: #888; letter-spacing: 2px; margin-bottom: 5px; font-family: 'Roboto', sans-serif;">PROGRESSIVE FREE CREDIT JACKPOT</div>
-    <div style="font-size: 2rem; color: #4CAF50; font-weight: bold; margin-bottom: 5px;" id="jackpot-ticker">210.00</div>
-    <div style="font-size: 0.7rem; color: #555; margin-bottom: 15px;">ROLLS UNLOCKED</div>
-    
-    <div style="border-top: 1px solid #333; padding-top: 15px; margin-bottom: 15px;">
-        <div style="font-size: 0.6rem; color: #666; margin-bottom: 10px;">
-            DAILY FREE CREDIT REDEEMED: <span id="daily-count-display" style="color: white;">0</span>/100
-        </div>
-        <a href="roll.html" id="play-roll-btn" style="display: block; background: #f7931a; color: white; text-decoration: none; padding: 12px; border-radius: 6px; font-family: 'Roboto', sans-serif; font-weight: 700; transition: 0.2s;">PLAY LUCKY ROLL</a>
-    </div>
+<header>
+  <h1><a href="/">BITCOIN WIRE</a></h1>
+  <p id="updated">Checking for updates...</p>
+  <button class="game-link" id="lucky-roll-btn" onclick="location.href='roll.html'">₿ PLAY LUCKY ROLL</button>
+  
+  <div class="game-status-bar">
+    PROGRESSIVE FREE CREDIT JACKPOT: <span id="idx-pot" class="pot-val">210.00</span> | 
+    DAILY FREE CREDIT REDEEMED: <span id="idx-daily">0</span>/100
   </div>
+</header>
 
-  <div id="news-feed">
+<main id="app" class="grid"></main>
+
+<div id="articleModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div>
+                <button class="modal-btn" onclick="postToNostr()">POST TO NOSTR</button>
+                <button class="modal-btn" style="background:#444;" onclick="openExternal()">OPEN EXTERNAL ↗</button>
+                <span id="load-status"></span>
+            </div>
+            <button class="modal-btn" onclick="closeArticle()" style="background:#555;">CLOSE [X]</button>
+        </div>
+        <div id="bridge-msg">
+            <h2>Direct Access Required</h2>
+            <p>This publisher blocks embedded readers to protect their content or advertising.</p>
+            <button class="modal-btn" onclick="openExternal()" style="margin-top:20px;">OPEN ARTICLE IN NEW TAB</button>
+        </div>
+        <iframe id="articleFrame" src=""></iframe>
     </div>
 </div>
 
-<script>
-const API_BASE = "https://api.fiatdenier.com";
+<div id="pagination">
+  <button id="prev-btn">Previous</button>
+  <span id="page-info"></span>
+  <button id="next-btn">Next</button>
+</div>
 
-function getAgentID() {
-    let id = localStorage.getItem('agentID');
-    if (!id || id.startsWith('AGENT_')) {
-        const adjectives = ["Sacred", "Majestic", "Silent", "Golden", "Swift"];
-        const animals = ["Wolf", "Eagle", "Tiger", "Lion", "Falcon"];
-        id = adjectives[Math.floor(Math.random() * adjectives.length)] + animals[Math.floor(Math.random() * animals.length)];
-        localStorage.setItem('agentID', id);
+<script type="module">
+import { paginateNews } from './scripts/paginate_news.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const version = new Date().getTime();
+  paginateNews({
+    jsonPath: `./data/news.json?v=${version}&nocache=true`,
+    articlesPerSection: 10,
+    sections: 3,
+    updatedElemId: 'updated',
+    appElemId: 'app',
+    prevBtnId: 'prev-btn',
+    nextBtnId: 'next-btn',
+    pageInfoId: 'page-info'
+  });
+});
+
+let currentUrl = '';
+let bridgeTimer;
+
+window.openArticle = function(url) {
+    currentUrl = url.startsWith('http') ? url : 'https://' + url;
+    const frameBreakers = ['cointelegraph.com', 'bitcoinmagazine.com', 'btcmanager.com', 'bitcoin.com', 'crypto.news', 'coindesk.com', 'beincrypto.com', 'decrypt.co', 'cryptoslate.com', 'ccn.com', 'theblock.co', 'bloomberg.com', 'wsj.com', 'reuters.com'];
+    const isKnownBreaker = frameBreakers.some(domain => currentUrl.toLowerCase().includes(domain));
+    const modal = document.getElementById('articleModal');
+    const bridge = document.getElementById('bridge-msg');
+    const frame = document.getElementById('articleFrame');
+    const status = document.getElementById('load-status');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    clearTimeout(bridgeTimer);
+    status.innerText = "Connecting...";
+    if (isKnownBreaker) { showBridge(); } else {
+        bridge.style.display = 'none';
+        frame.style.display = 'block';
+        frame.src = currentUrl;
+        bridgeTimer = setTimeout(() => { showBridge(); }, 4000);
+        frame.onload = function() { clearTimeout(bridgeTimer); status.innerText = "Secure Reader Active"; };
     }
-    return id;
+};
+
+function showBridge() {
+    document.getElementById('bridge-msg').style.display = 'block';
+    document.getElementById('articleFrame').style.display = 'none';
+    document.getElementById('articleFrame').src = ''; 
+    document.getElementById('load-status').innerText = "Compatibility Issue";
 }
 
+window.closeArticle = function() {
+    clearTimeout(bridgeTimer);
+    document.getElementById('articleModal').style.display = 'none';
+    document.getElementById('articleFrame').src = '';
+    document.body.style.overflow = 'auto';
+};
+
+window.openExternal = () => currentUrl && window.open(currentUrl, '_blank', 'noopener,noreferrer');
+window.postToNostr = () => currentUrl && window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
+
+document.getElementById('app').addEventListener('click', e => {
+    const link = e.target.closest('a');
+    if (link && link.href && !link.href.includes('roll.html')) {
+        e.preventDefault();
+        window.openArticle(link.href);
+    }
+});
+</script>
+
+<script>
 async function syncRoll() {
-    const btn = document.getElementById('play-roll-btn');
-    const countEl = document.getElementById('daily-count-display');
-    const tickerEl = document.getElementById('jackpot-ticker');
-    const agentId = getAgentID();
-    let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
+    const btn = document.getElementById('lucky-roll-btn');
+    const countSpan = document.getElementById('idx-daily'); // # Reference for styling
+    const agentId = localStorage.getItem('agentID') || "UnknownAgent";
     let expiry = localStorage.getItem('rollCooldown');
-    let displayCount = 0;
+    let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
+
+    // # UI FALLBACK (Local Storage)
+    let potVal = parseFloat(localStorage.getItem('fiat_miracle_pot')) || 210.00;
+    const dailyData = JSON.parse(localStorage.getItem('dailyUsage') || '{"count":0}');
+    const todayStr = new Date().toDateString();
+    let displayCount = (dailyData.date === todayStr) ? dailyData.count : 0;
+
+    // # SERVER SYNC FOR JACKPOT & DAILY USAGE
+    try {
+        const jRes = await fetch(`https://api.fiatdenier.com/get-global-jackpot?agent_id=${agentId}`, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
+        const jData = await jRes.json();
+        if (jData.current_pot) {
+            potVal = jData.current_pot;
+            localStorage.setItem('fiat_miracle_pot', potVal);
+        }
+        if (jData.daily_count !== undefined) {
+            displayCount = jData.daily_count;
+            localStorage.setItem('dailyUsage', JSON.stringify({date: todayStr, count: displayCount}));
+        }
+    } catch (e) { console.log("Header jackpot sync failed."); }
+
+    document.getElementById('idx-daily').innerText = displayCount;
+    document.getElementById('idx-pot').innerText = potVal.toFixed(2);
+
+    // // # ADDED: Visual alert for >100 rolls
+    if (displayCount >= 100) {
+        countSpan.classList.add('exhausted-active');
+    } else {
+        countSpan.classList.remove('exhausted-active');
+    }
 
     try {
-        const response = await fetch(`${API_BASE}/get-global-jackpot?agent_id=${agentId}`, {
+        const response = await fetch(`https://api.fiatdenier.com/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
             headers: { 'X-Requested-With': 'XMLHttpRequest' }
         });
         const data = await response.json();
         
-        if (data.current_pot) tickerEl.innerText = parseFloat(data.current_pot).toFixed(2);
-        if (data.daily_count !== undefined) {
-            displayCount = data.daily_count;
-            countEl.innerText = displayCount;
-
-            // // # VISUAL ALERT FIX: Highlight red and blink if >= 100
-            if (displayCount >= 100) {
-                countEl.classList.add('exhausted-active');
-            } else {
-                countEl.classList.remove('exhausted-active');
-                if (displayCount >= 90) countEl.style.color = "#ff4444";
-                else if (displayCount >= 70) countEl.style.color = "#f7931a";
-                else countEl.style.color = "white";
-            }
-        }
-
-        const syncRes = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
-            headers: { 'X-Requested-With': 'XMLHttpRequest' }
-        });
-        const syncData = await syncRes.json();
-        if (syncData.server_credits !== undefined) {
-            rollCredits = syncData.server_credits;
+        if (data.server_credits !== undefined) {
+            rollCredits = data.server_credits;
             localStorage.setItem('rollCredits', rollCredits);
         }
-        if (syncData.error === "LOCKED" && syncData.remaining_seconds) {
-            expiry = Date.now() + (syncData.remaining_seconds * 1000);
+        if (data.error === "LOCKED" && data.remaining_seconds) {
+            expiry = Date.now() + (data.remaining_seconds * 1000);
             localStorage.setItem('rollCooldown', expiry);
         }
-    } catch (e) { console.log("Sync poll failed."); }
+    } catch (e) {
+        console.log("Index sync poll failed.");
+    }
 
     const now = Date.now();
     
-    // // # OVERLAY REMOVAL & TIMER PERSISTENCE
-    // # Removed the hard lock for displayCount >= 100.
-    // # Now it only checks if a cooldown timer is active and if user is out of credits or over limit.
-    if (expiry && now < parseInt(expiry) && (rollCredits <= 0 || displayCount >= 100)) {
+    // // # BUTTON LOGIC: Removed Allowance Exhausted check to keep normal 10min timer persistence
+    // # Reverted to standard cooldown/credit check only.
+    if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
         const diff = parseInt(expiry) - now;
         const mins = Math.floor(diff / 60000);
         const secs = Math.floor((diff % 60000) / 1000);
@@ -143,20 +236,18 @@ async function syncRoll() {
         btn.style.backgroundColor = "#ADADAD"; 
         btn.style.color = "#DBDBDB"; 
         btn.style.pointerEvents = "none";
-        btn.innerText = `LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
+        btn.innerText = `₿ LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
         setTimeout(syncRoll, 1000);
     } else {
-        btn.style.backgroundColor = "#f7931a"; 
-        btn.style.color = "white"; 
+        btn.style.backgroundColor = "#f7931a";
+        btn.style.color = "#fff";
         btn.style.pointerEvents = "auto";
-        btn.innerText = "PLAY LUCKY ROLL";
+        btn.innerText = "₿ PLAY LUCKY ROLL";
     }
 }
 
-window.onload = () => {
-    syncRoll();
-    setInterval(syncRoll, 30000);
-};
+window.addEventListener('load', syncRoll);
+window.addEventListener('focus', syncRoll);
 </script>
 
 </body>
