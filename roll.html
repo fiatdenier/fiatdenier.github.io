@@ -23,12 +23,14 @@
         }
         @keyframes blink { 50% { opacity: 0; } }
         @keyframes jackpot-glow {
-            0% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
-            50% { text-shadow: 0 0 15px rgba(76, 175, 80, 0.6); }
-            100% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
+            0% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); transform: scale(1); }
+            50% { text-shadow: 0 0 20px rgba(76, 175, 80, 0.8); transform: scale(1.05); }
+            100% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); transform: scale(1); }
         }
         .glow-active {
             animation: jackpot-glow 3s ease-in-out infinite;
+            display: inline-block; /* Essential for transform/scale */
+            min-width: 100px;
         }
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
@@ -280,7 +282,9 @@
 
         async function handleRoll() {
             if (isRolling) return;
+			rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0; 
             const creditsAtStart = rollCredits;
+            //const creditsAtStart = parseInt(rollCredits) || 0;
             const daily = getDailyRolls();
             if (daily.count >= 100) {
                 const resetIn = getTimeUntilReset();
@@ -479,14 +483,15 @@
                     showIpLock();
                     startTimer(expiry);
                 } else {
-                    if (data.server_credits !== undefined) {
-                        rollCredits = data.server_credits;
-                        localStorage.setItem('rollCredits', rollCredits);
-                    }
-                    if (data.server_sats !== undefined) {
-                        totalSats = data.server_sats;
-                        localStorage.setItem('totalSats', totalSats);
-                    }
+                    if (data.server_credits !== undefined && data.server_credits !== null) {
+                    rollCredits = data.server_credits;
+                    localStorage.setItem('rollCredits', rollCredits);
+                }
+                
+                if (data.server_sats !== undefined && data.server_sats !== null) {
+                    totalSats = data.server_sats;
+                    localStorage.setItem('totalSats', totalSats);
+                }
                     updateUI();
                 }
             } catch (e) { 
