@@ -280,9 +280,13 @@
 		async function handleRoll() {
 			if (isRolling) return;
 			const creditsAtStart = rollCredits;
-            
+			
 			const btn = document.getElementById('roll-btn');
 			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
+            
+            // # FIX: Reset color stickiness - Ensure numbers are Bitcoin Orange at start of every roll
+            slots.forEach(slot => { slot.style.color = 'var(--btc-orange)'; });
+
 			isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
 			document.getElementById('result-area').style.display = 'none';
 
@@ -361,12 +365,16 @@
 					playFreeCreditSound();
 				} 
 				else if (is21Win) {
-					rollCredits += 1;
+					// # FIX: Award 5 credits instead of 1
+                    rollCredits += 5; 
 					const startIdx = finalStr.indexOf('21');
 					document.getElementById(`slot-${startIdx}`).style.color = 'var(--win-green)';
 					document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
-					statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ +1 FREE ROLL ⚡</h3>";
-					playFreeCreditSound();
+					statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ +5 FREE ROLLS ⚡</h3>";
+					
+                    // # FIX: Trigger sound effect for win
+                    playFreeCreditSound();
+                    
 					confetti({ particleCount: 50, spread: 40, colors: ['#4CAF50'] });
 				} 
 				else {
