@@ -287,6 +287,18 @@
 		// --- ROLL LOGIC ---
 		async function handleRoll() {
 			if (isRolling) return;
+
+            // // # ADDED: STRICT ENFORCEMENT - Prevents overflow clicks
+            const dailyDisplay = document.getElementById('daily-count-display');
+            const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
+            // Only enforce if user is out of credits (free rolling)
+            if (currentDailyCount >= 100 && rollCredits <= 0) {
+                const resetIn = getTimeUntilReset();
+                document.getElementById('status-message').innerHTML = `<h3 style='color:var(--btc-orange);'>DAILY FREE CREDIT LIMIT REACHED (100/100)</h3><p style='font-size:0.7rem; color:#888;'>RESETS IN: ${resetIn}</p>`;
+                document.getElementById('result-area').style.display = 'block';
+                return; // Hard stop
+            }
+
 			const creditsAtStart = rollCredits;
 			
 			const btn = document.getElementById('roll-btn');
