@@ -226,5 +226,28 @@ async function syncRoll() {
     const now = Date.now();
     
     // # BUTTON LOGIC
-    // # SURGICAL CHANGE: Priority check for local cooldown timer
-    if (expiry && now < parseInt(expiry
+    // # SURGICAL CHANGE: Removed "ALLOWANCE EXHAUSTED" block to fallback to LOCKED timer
+    if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
+        const diff = parseInt(expiry) - now;
+        const mins = Math.floor(diff / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        
+        btn.style.backgroundColor = "#ADADAD"; 
+        btn.style.color = "#DBDBDB"; 
+        btn.style.pointerEvents = "none";
+        btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
+        setTimeout(syncRoll, 1000);
+    } else {
+        btn.style.backgroundColor = "#f7931a";
+        btn.style.color = "#fff";
+        btn.style.pointerEvents = "auto";
+        btn.innerText = "🎰 PLAY LUCKY ROLL";
+    }
+}
+
+window.addEventListener('load', syncRoll);
+window.addEventListener('focus', syncRoll);
+</script>
+
+</body>
+</html>
