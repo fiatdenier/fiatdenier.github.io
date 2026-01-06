@@ -30,7 +30,6 @@
 
   .game-link { display: inline-block; margin-top: 10px; padding: 10px 20px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: 700 !important; transition: background 0.2s; }
 
-  /* # ADDED: Game Status Bar Styles */
   .game-status-bar { font-family: 'Roboto', sans-serif; font-size: 0.7rem; margin-top: 8px; color: #888; letter-spacing: 0.5px; }
   .pot-val { color: #4CAF50; font-weight: bold; }
 
@@ -154,7 +153,9 @@ window.closeArticle = function() {
 };
 
 window.openExternal = () => currentUrl && window.open(currentUrl, '_blank', 'noopener,noreferrer');
-window.postToNostr = () => currentUrl && window.open(`https://nostr.social/post?content=${encodeURIComponent(currentUrl)}`, '_blank');
+
+// # SURGICAL CHANGE: Updated Nostr URL to a functional web-intent handler (Primal)
+window.postToNostr = () => currentUrl && window.open(`https://primal.net/home?publish_text=${encodeURIComponent("Found this on Bitcoin Wire: " + currentUrl)}`, '_blank');
 
 document.getElementById('app').addEventListener('click', e => {
     const link = e.target.closest('a');
@@ -168,17 +169,15 @@ document.getElementById('app').addEventListener('click', e => {
 <script>
 async function syncRoll() {
     const btn = document.getElementById('lucky-roll-btn');
-    const countEl = document.getElementById('idx-daily');
     const agentId = localStorage.getItem('agentID') || "UnknownAgent";
     let expiry = localStorage.getItem('rollCooldown');
     let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
 
-    // # UI FALLBACK (Local Storage)
     let potVal = parseFloat(localStorage.getItem('fiat_miracle_pot')) || 210.00;
+    const dailyData = JSON.parse(localStorage.getItem('dailyUsage') || '{"count":0}');
     const todayStr = new Date().toDateString();
-    let displayCount = 0;
+    let displayCount = (dailyData.date === todayStr) ? dailyData.count : 0;
 
-    // # SERVER SYNC FOR JACKPOT & DAILY USAGE
     try {
         const jRes = await fetch(`https://api.fiatdenier.com/get-global-jackpot?agent_id=${agentId}`, {
             headers: { 'X-Requested-With': 'XMLHttpRequest' }
@@ -194,11 +193,11 @@ async function syncRoll() {
         }
     } catch (e) { console.log("Header jackpot sync failed."); }
 
-    // # UI UPDATE
+    const countEl = document.getElementById('idx-daily');
     countEl.innerText = displayCount;
     document.getElementById('idx-pot').innerText = potVal.toFixed(2);
 
-    // # SURGICAL CHANGE: Blink effect for daily count
+    // # SURGICAL CHANGE: Blinking daily count
     if (displayCount >= 100) {
         countEl.classList.add('exhausted-blink');
     } else {
@@ -219,14 +218,11 @@ async function syncRoll() {
             expiry = Date.now() + (data.remaining_seconds * 1000);
             localStorage.setItem('rollCooldown', expiry);
         }
-    } catch (e) {
-        console.log("Index sync poll failed.");
-    }
+    } catch (e) { console.log("Index sync poll failed."); }
 
     const now = Date.now();
     
-    // # BUTTON LOGIC
-    // # SURGICAL CHANGE: Removed "ALLOWANCE EXHAUSTED" block to fallback to LOCKED timer
+    // # BUTTON LOGIC: Removed "ALLOWANCE EXHAUSTED" state
     if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
         const diff = parseInt(expiry) - now;
         const mins = Math.floor(diff / 60000);
