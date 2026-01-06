@@ -34,13 +34,15 @@
   .game-status-bar { font-family: 'Roboto', sans-serif; font-size: 0.7rem; margin-top: 8px; color: #888; letter-spacing: 0.5px; }
   .pot-val { color: #4CAF50; font-weight: bold; }
 
-  /* # ADDED: Blinking animation for exhausted allowance */
-  @keyframes red-blink {
-      50% { opacity: 0; }
+  /* # ADDED: Glowing animation for exhausted allowance (REPLACED BLINKING) */
+  @keyframes red-glow {
+      0% { text-shadow: 0 0 5px rgba(255, 68, 68, 0.2); }
+      50% { text-shadow: 0 0 15px rgba(255, 68, 68, 0.8); }
+      100% { text-shadow: 0 0 5px rgba(255, 68, 68, 0.2); }
   }
-  .exhausted-blink {
+  .exhausted-glow {
       color: #ff4444 !important;
-      animation: red-blink 0.5s step-end infinite;
+      animation: red-glow 2s ease-in-out infinite;
       font-weight: bold;
   }
 
@@ -198,11 +200,11 @@ async function syncRoll() {
     countEl.innerText = displayCount;
     document.getElementById('idx-pot').innerText = potVal.toFixed(2);
 
-    // # SURGICAL CHANGE: Blink effect for daily count
+    // # SURGICAL CHANGE: Glowing effect for daily count (REPLACED BLINKING)
     if (displayCount >= 100) {
-        countEl.classList.add('exhausted-blink');
+        countEl.classList.add('exhausted-glow');
     } else {
-        countEl.classList.remove('exhausted-blink');
+        countEl.classList.remove('exhausted-glow');
     }
 
     try {
