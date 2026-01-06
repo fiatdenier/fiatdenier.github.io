@@ -226,8 +226,8 @@ async function syncRoll() {
     const now = Date.now();
     
     // # BUTTON LOGIC
-    // # SURGICAL CHANGE: Removed "ALLOWANCE EXHAUSTED" block to fallback to LOCKED timer
-    if (expiry && now < parseInt(expiry) && rollCredits <= 0) {
+    // # SURGICAL CHANGE: Updated logic to block based on any active expiry
+    if (expiry && now < parseInt(expiry)) {
         const diff = parseInt(expiry) - now;
         const mins = Math.floor(diff / 60000);
         const secs = Math.floor((diff % 60000) / 1000);
