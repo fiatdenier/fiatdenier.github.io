@@ -154,16 +154,15 @@ window.closeArticle = function() {
 
 window.openExternal = () => currentUrl && window.open(currentUrl, '_blank', 'noopener,noreferrer');
 
-// # SURGICAL CHANGE: Updated Nostr URL to a functional web-intent handler (Primal)
-window.postToNostr = () => currentUrl && window.open(`https://primal.net/home?publish_text=${encodeURIComponent("Found this on Bitcoin Wire: " + currentUrl)}`, '_blank');
+// # SURGICAL FIX: Using Snort.social share intent for better compatibility
+window.postToNostr = () => {
+    if (currentUrl) {
+        const text = "Bitcoin News: " + currentUrl;
+        window.open(`https://snort.social/gen/share?content=${encodeURIComponent(text)}`, '_blank');
+    }
+};
 
 document.getElementById('app').addEventListener('click', e => {
-    const link = e.target.closest('a');
-    if (link && link.href && !link.href.includes('roll.html')) {
-        e.preventDefault();
-        window.openArticle(link.href);
-    }
-});
 </script>
 
 <script>
