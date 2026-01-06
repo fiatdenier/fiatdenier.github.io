@@ -315,13 +315,7 @@
 
 				if (data.error === "LOCKED") { 
                     stopLoop(); spinIntervals.forEach(clearInterval);
-                    if (data.message.includes("Daily limit")) {
-                        const resetIn = getTimeUntilReset();
-                        document.getElementById('status-message').innerHTML = `<h3 style='color:var(--btc-orange);'>DAILY FREE CREDIT LIMIT REACHED (100/100)</h3><p style='font-size:0.7rem; color:#888;'>RESETS IN: ${resetIn}</p>`;
-                        document.getElementById('result-area').style.display = 'block';
-                    } else {
-                        showIpLock(); 
-                    }
+                    showIpLock(); 
 					isRolling = false; btn.innerText = "ROLL FOR SATS"; return; 
 				}
 
@@ -416,7 +410,9 @@
 					body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
 				});
 
-				if (rollCredits <= 0) { 
+				// # UPDATED: Check for both credit exhaustion AND daily limit for the 10-minute timer
+				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
+				if (rollCredits <= 0 || currentDailyCount >= 100) { 
 					const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
 					localStorage.setItem('rollCooldown', expiry); startTimer(expiry); 
 				} else {
@@ -436,7 +432,11 @@
 			const btn = document.getElementById('roll-btn');
 			const interval = setInterval(() => {
 				const diff = expiry - Date.now();
-				if (diff <= 0 || rollCredits > 0) {
+				// # UPDATED: Condition to clear lock logic
+				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
+				const isCurrentlyFrozen = (currentDailyCount >= 100 && rollCredits > 0);
+
+				if (diff <= 0 || (rollCredits > 0 && !isCurrentlyFrozen)) {
 					clearInterval(interval); timerDiv.innerText = "";
 					btn.disabled = false; btn.classList.remove('locked'); btn.innerText = "ROLL FOR SATS";
 					document.getElementById('ip-lock-msg').style.display = 'none';
@@ -486,9 +486,14 @@
 			const agentId = getAgentID();
 			const savedExpiry = localStorage.getItem('rollCooldown');
 			
-			if (savedExpiry && Date.now() < parseInt(savedExpiry) && rollCredits <= 0) {
-				showIpLock();
-				startTimer(parseInt(savedExpiry));
+			// # UPDATED: Ensure timer shows up if they were over the daily limit when they closed the page
+			if (savedExpiry && Date.now() < parseInt(savedExpiry)) {
+				const dailyDisplay = document.getElementById('daily-count-display');
+				const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
+				if (rollCredits <= 0 || currentDailyCount >= 100) {
+					showIpLock();
+					startTimer(parseInt(savedExpiry));
+				}
 			}
 
 			try {
