@@ -138,6 +138,7 @@
             const claimData = await claimRes.json();
 
             if (claimRes.ok) {
+                // // [2026-01-08] Backend now returns a random reward between 10 and 21
                 updateStatus(`SUCCESS! +${claimData.reward} Credits added to ${agentId}.`, "success");
             } else {
                 updateStatus(`Claim Error: ${claimData.error}`, "error");
