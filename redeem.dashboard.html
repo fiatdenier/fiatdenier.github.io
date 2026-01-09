@@ -3,76 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zap Admin Dashboard</title>
+    <title>Zap Admin Login</title>
     <style>
         body { font-family: sans-serif; background: #121212; color: #e0e0e0; padding: 20px; text-align: center; }
-        .card { background: #1e1e1e; padding: 20px; border-radius: 10px; border: 1px solid #333; margin: 0 auto 20px; max-width: 900px; text-align: left; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 10px; border: 1px solid #333; margin: 0 auto 20px; max-width: 800px; text-align: left; }
         h1 { color: #f2a900; text-align: center; }
         input { padding: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: white; width: 80%; margin-bottom: 10px; }
-        button { background: #f2a900; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        button { background: #f2a900; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
+        #admin-content { display: none; }
         table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
         th, td { padding: 10px; border-bottom: 1px solid #333; text-align: left; }
         th { color: #f2a900; }
-        #admin-content { display: none; }
-        .stat-box { background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; flex: 1; }
-        .stat-grid { display: flex; gap: 15px; margin-bottom: 20px; }
+        .stat-box { background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 10px; flex: 1; }
+        .stat-grid { display: flex; gap: 15px; }
     </style>
 </head>
 <body>
 
     <div id="login-box" class="card" style="max-width: 400px; text-align: center;">
         <h1>🔒 Admin Login</h1>
-        <input type="password" id="key-input" placeholder="Admin Password">
+        <input type="password" id="key-input" placeholder="Enter Admin Password">
         <button onclick="saveAndLogin()">Login</button>
     </div>
 
     <div id="admin-content">
         <h1>⚡ Zap Dashboard</h1>
         
-        <div class="stat-grid">
+        <div class="card stat-grid">
             <div class="stat-box">Total Zaps: <b id="stat-count">0</b></div>
             <div class="stat-box">Total Claims: <b id="stat-claims">0</b></div>
         </div>
 
         <div class="card">
-            <h3>📜 Full Zap Logs (Incoming)</h3>
+            <h3>🎁 Recent Redemptions</h3>
             <table>
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>User</th>
-                        <th>Note / Metadata</th>
-                        <th>Hash</th>
-                    </tr>
-                </thead>
-                <tbody id="logs-table"></tbody>
-            </table>
-        </div>
-
-        <div class="card">
-            <h3>🎁 Recent Redemptions (Claims)</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>Agent ID</th>
-                        <th>Reward</th>
-                        <th>Hash Used</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Time</th><th>Agent ID</th><th>Reward</th></tr></thead>
                 <tbody id="claims-table"></tbody>
             </table>
         </div>
 
-        <button onclick="logout()" style="background: #444; color: white;">Logout</button>
+        <div class="card">
+            <h3>📜 Full Zap Logs</h3>
+            <table>
+                <thead><tr><th>Time</th><th>User</th><th>Hash</th></tr></thead>
+                <tbody id="logs-table"></tbody>
+            </table>
+        </div>
+
+        <button onclick="logout()" style="background: #444; color: white; margin-top: 20px;">Logout</button>
     </div>
 
     <script>
-        // # Ensure this port and domain match your zap_app.py configuration
         const API_URL = "https://redeem.fiatdenier.com:2083";
 
         function saveAndLogin() {
-            localStorage.setItem('adminKey', document.getElementById('key-input').value);
+            const key = document.getElementById('key-input').value;
+            localStorage.setItem('adminKey', key); // # Save key locally
             checkAuth();
         }
 
@@ -86,12 +72,10 @@
             if (!key) return;
 
             try {
-                // # Fetch logs using the admin key
+                // # Attempt to fetch data using the stored key
                 const resLogs = await fetch(`${API_URL}/get-logs?key=${key}`);
                 if (resLogs.status === 200) {
                     const logs = await resLogs.json();
-                    
-                    // # Fetch claims
                     const resClaims = await fetch(`${API_URL}/get-claims?key=${key}`);
                     const claims = await resClaims.json();
                     
@@ -99,41 +83,34 @@
                     document.getElementById('admin-content').style.display = 'block';
                     renderData(logs, claims);
                 } else {
-                    alert("Invalid Password or Unauthorized");
+                    alert("Invalid Password");
                     logout();
                 }
-            } catch (err) { 
-                console.error("Auth failed:", err);
-                alert("Could not connect to the Zap Server. Check if it is running on port 2083.");
-            }
+            } catch (err) { console.error("Auth failed", err); }
         }
 
         function renderData(logs, claims) {
             document.getElementById('stat-count').innerText = logs.length;
             document.getElementById('stat-claims').innerText = claims.length;
             
-            // # Render incoming zaps with the note field
-            document.getElementById('logs-table').innerHTML = logs.reverse().map(l => `
-                <tr>
-                    <td>${new Date(l.timestamp * 1000).toLocaleTimeString()}</td>
-                    <td><code>${l.user_pub.substring(0, 8)}...</code></td>
-                    <td style="color: #bbb;">${l.note || '<small>No message</small>'}</td>
-                    <td style="font-family: monospace; font-size: 10px;">${l.redeem_hash.substring(0, 12)}...</td>
-                </tr>
-            `).join('');
-
-            // # Render claims logged in claims.json
             document.getElementById('claims-table').innerHTML = claims.reverse().map(c => `
                 <tr>
                     <td>${new Date(c.timestamp * 1000).toLocaleTimeString()}</td>
-                    <td><b>${c.agent_id}</b></td>
+                    <td><code>${c.agent_id}</code></td>
                     <td style="color:#f2a900">+${c.reward}</td>
-                    <td style="font-size: 10px; color: #666;">${c.redeem_hash.substring(0, 10)}...</td>
+                </tr>
+            `).join('');
+
+            document.getElementById('logs-table').innerHTML = logs.reverse().map(l => `
+                <tr>
+                    <td>${new Date(l.timestamp * 1000).toLocaleDateString()}</td>
+                    <td>${l.user_pub.substring(0, 8)}...</td>
+                    <td><code>${l.redeem_hash.substring(0, 10)}...</code></td>
                 </tr>
             `).join('');
         }
 
-        // # Attempt auto-login if key exists in storage
+        // # Run auth check on page load
         checkAuth();
     </script>
 </body>
