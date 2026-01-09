@@ -41,7 +41,8 @@
                     <tr>
                         <th>Time</th>
                         <th>User</th>
-                        <th>Note / Metadata</th> <th>Hash</th>
+                        <th>Note / Metadata</th>
+                        <th>Hash</th>
                     </tr>
                 </thead>
                 <tbody id="logs-table"></tbody>
@@ -67,6 +68,7 @@
     </div>
 
     <script>
+        // # Ensure this port and domain match your zap_app.py configuration
         const API_URL = "https://redeem.fiatdenier.com:2083";
 
         function saveAndLogin() {
@@ -84,9 +86,12 @@
             if (!key) return;
 
             try {
+                // # Fetch logs using the admin key
                 const resLogs = await fetch(`${API_URL}/get-logs?key=${key}`);
                 if (resLogs.status === 200) {
                     const logs = await resLogs.json();
+                    
+                    // # Fetch claims
                     const resClaims = await fetch(`${API_URL}/get-claims?key=${key}`);
                     const claims = await resClaims.json();
                     
@@ -94,27 +99,30 @@
                     document.getElementById('admin-content').style.display = 'block';
                     renderData(logs, claims);
                 } else {
-                    alert("Invalid Password");
+                    alert("Invalid Password or Unauthorized");
                     logout();
                 }
-            } catch (err) { console.error("Auth failed", err); }
+            } catch (err) { 
+                console.error("Auth failed:", err);
+                alert("Could not connect to the Zap Server. Check if it is running on port 2083.");
+            }
         }
 
         function renderData(logs, claims) {
             document.getElementById('stat-count').innerText = logs.length;
             document.getElementById('stat-claims').innerText = claims.length;
             
-            // # Render incoming zaps with the new Metadata/Note field
+            // # Render incoming zaps with the note field
             document.getElementById('logs-table').innerHTML = logs.reverse().map(l => `
                 <tr>
                     <td>${new Date(l.timestamp * 1000).toLocaleTimeString()}</td>
                     <td><code>${l.user_pub.substring(0, 8)}...</code></td>
-                    <td style="color: #bbb;">${l.note || '<small>No metadata</small>'}</td>
+                    <td style="color: #bbb;">${l.note || '<small>No message</small>'}</td>
                     <td style="font-family: monospace; font-size: 10px;">${l.redeem_hash.substring(0, 12)}...</td>
                 </tr>
             `).join('');
 
-            // # Render claims
+            // # Render claims logged in claims.json
             document.getElementById('claims-table').innerHTML = claims.reverse().map(c => `
                 <tr>
                     <td>${new Date(c.timestamp * 1000).toLocaleTimeString()}</td>
@@ -125,6 +133,7 @@
             `).join('');
         }
 
+        // # Attempt auto-login if key exists in storage
         checkAuth();
     </script>
 </body>
