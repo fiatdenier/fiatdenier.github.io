@@ -138,10 +138,13 @@
             const claimData = await claimRes.json();
 
             if (claimRes.ok) {
-                // // [2026-01-08] Backend now returns a random reward between 10 and 21
                 updateStatus(`SUCCESS! +${claimData.reward} Credits added to ${agentId}.`, "success");
+            } else if (claimRes.status === 403) {
+                // # SECURITY FIX: Specific message for already used hashes
+                updateStatus("Free Roll Credits already claimed", "error");
             } else {
-                updateStatus(`Claim Error: ${claimData.error}`, "error");
+                // # IMPROVED: More robust error message display
+                updateStatus(`Claim Error: ${claimData.message || claimData.error || "Redemption Failed"}`, "error");
             }
 
         } catch (err) {
