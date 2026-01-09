@@ -3,141 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zap Redemption Dashboard</title>
+    <title>Zap Admin Login</title>
     <style>
         body { font-family: sans-serif; background: #121212; color: #e0e0e0; padding: 20px; text-align: center; }
-        .card { background: #1e1e1e; padding: 20px; border-radius: 10px; border: 1px solid #333; margin: 0 auto 20px; max-width: 900px; text-align: left; }
-        h1 { color: #f2a900; }
-        .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
-        .stat-box { background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; }
-        .stat-num { display: block; font-size: 24px; font-weight: bold; color: #fff; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #333; font-size: 13px; }
-        th { color: #f2a900; background: #181818; }
-        code { background: #333; padding: 2px 4px; border-radius: 4px; color: #f2a900; }
-        .status-tag { padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; }
-        .redeemed { background: #2e7d32; color: white; }
-        .pending { background: #f57c00; color: white; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 10px; border: 1px solid #333; margin: 0 auto 20px; max-width: 800px; text-align: left; }
+        h1 { color: #f2a900; text-align: center; }
+        input { padding: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: white; width: 80%; margin-bottom: 10px; }
+        button { background: #f2a900; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
+        #admin-content { display: none; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+        th, td { padding: 10px; border-bottom: 1px solid #333; text-align: left; }
+        th { color: #f2a900; }
+        .stat-box { background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 10px; flex: 1; }
+        .stat-grid { display: flex; gap: 15px; }
     </style>
 </head>
 <body>
 
-    <h1>⚡ Zap & Redemption Admin</h1>
+    <div id="login-box" class="card" style="max-width: 400px; text-align: center;">
+        <h1>🔒 Admin Login</h1>
+        <input type="password" id="key-input" placeholder="Enter Admin Password">
+        <button onclick="saveAndLogin()">Login</button>
+    </div>
 
-    <div class="card">
-        <div class="stat-grid">
-            <div class="stat-box">
-                <span class="stat-num" id="stat-total-zaps">0</span>
-                Total Zaps
-            </div>
-            <div class="stat-box">
-                <span class="stat-num" id="stat-total-sats">0</span>
-                Sats Processed
-            </div>
-            <div class="stat-box">
-                <span class="stat-num" id="stat-redeemed">0</span>
-                Hashes Claimed
-            </div>
+    <div id="admin-content">
+        <h1>⚡ Zap Dashboard</h1>
+        
+        <div class="card stat-grid">
+            <div class="stat-box">Total Zaps: <b id="stat-count">0</b></div>
+            <div class="stat-box">Total Claims: <b id="stat-claims">0</b></div>
         </div>
-    </div>
 
-    <div class="card">
-        <h3>🎁 Recent Redemptions (Claims)</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>Agent ID</th>
-                    <th>Hash (Partial)</th>
-                    <th>Credit Issued</th>
-                </tr>
-            </thead>
-            <tbody id="claims-table"></tbody>
-        </table>
-    </div>
+        <div class="card">
+            <h3>🎁 Recent Redemptions</h3>
+            <table>
+                <thead><tr><th>Time</th><th>Agent ID</th><th>Reward</th></tr></thead>
+                <tbody id="claims-table"></tbody>
+            </table>
+        </div>
 
-    <div class="card">
-        <h3>📜 All Zap Logs (Creation)</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>User Pubkey</th>
-                    <th>Redeem Hash</th>
-                    <th>Sats</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody id="logs-table"></tbody>
-        </table>
-    </div>
+        <div class="card">
+            <h3>📜 Full Zap Logs</h3>
+            <table>
+                <thead><tr><th>Time</th><th>User</th><th>Hash</th></tr></thead>
+                <tbody id="logs-table"></tbody>
+            </table>
+        </div>
 
-    <button onclick="loadAllData()" style="background: #f2a900; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">🔄 Refresh Data</button>
+        <button onclick="logout()" style="background: #444; color: white; margin-top: 20px;">Logout</button>
+    </div>
 
     <script>
         const API_URL = "https://redeem.fiatdenier.com:2083";
 
-        async function loadAllData() {
-            try {
-                const logsRes = await fetch(`${API_URL}/get-logs`);
-                const claimsRes = await fetch(`${API_URL}/get-claims`);
-                
-                const logs = await logsRes.json();
-                const claims = await claimsRes.json();
-
-                renderDashboard(logs, claims);
-            } catch (e) {
-                console.error("Failed to load dashboard data", e);
-            }
+        function saveAndLogin() {
+            const key = document.getElementById('key-input').value;
+            localStorage.setItem('adminKey', key); // # Save key locally
+            checkAuth();
         }
 
-        function renderDashboard(logs, claims) {
-            // # Reverse to show newest first
-            logs.reverse();
-            claims.reverse();
+        function logout() {
+            localStorage.removeItem('adminKey');
+            location.reload();
+        }
 
-            // # Stats
-            document.getElementById('stat-total-zaps').innerText = logs.length;
-            document.getElementById('stat-redeemed').innerText = claims.length;
-            const totalSats = logs.reduce((acc, l) => acc + (parseInt(l.amount) || 0), 0);
-            document.getElementById('stat-total-sats').innerText = totalSats;
+        async function checkAuth() {
+            const key = localStorage.getItem('adminKey');
+            if (!key) return;
 
-            // # Claims Table
-            const claimsTable = document.getElementById('claims-table');
-            claimsTable.innerHTML = claims.map(c => `
+            try {
+                // # Attempt to fetch data using the stored key
+                const resLogs = await fetch(`${API_URL}/get-logs?key=${key}`);
+                if (resLogs.status === 200) {
+                    const logs = await resLogs.json();
+                    const resClaims = await fetch(`${API_URL}/get-claims?key=${key}`);
+                    const claims = await resClaims.json();
+                    
+                    document.getElementById('login-box').style.display = 'none';
+                    document.getElementById('admin-content').style.display = 'block';
+                    renderData(logs, claims);
+                } else {
+                    alert("Invalid Password");
+                    logout();
+                }
+            } catch (err) { console.error("Auth failed", err); }
+        }
+
+        function renderData(logs, claims) {
+            document.getElementById('stat-count').innerText = logs.length;
+            document.getElementById('stat-claims').innerText = claims.length;
+            
+            document.getElementById('claims-table').innerHTML = claims.reverse().map(c => `
                 <tr>
-                    <td>${new Date(c.timestamp * 1000).toLocaleString()}</td>
+                    <td>${new Date(c.timestamp * 1000).toLocaleTimeString()}</td>
                     <td><code>${c.agent_id}</code></td>
-                    <td><code>${c.redeem_hash.substring(0, 12)}...</code></td>
-                    <td style="color:#f2a900; font-weight:bold;">+${c.reward}</td>
+                    <td style="color:#f2a900">+${c.reward}</td>
                 </tr>
             `).join('');
 
-            // # Full Logs Table
-            const logsTable = document.getElementById('logs-table');
-            const claimedHashes = new Set(claims.map(c => c.redeem_hash));
-
-            logsTable.innerHTML = logs.map(l => {
-                const isRedeemed = claimedHashes.has(l.redeem_hash);
-                return `
+            document.getElementById('logs-table').innerHTML = logs.reverse().map(l => `
                 <tr>
-                    <td>${new Date(l.timestamp * 1000).toLocaleString()}</td>
-                    <td>${l.user_pub.substring(0, 10)}...</td>
-                    <td><code>${l.redeem_hash.substring(0, 12)}...</code></td>
-                    <td>${l.amount}</td>
-                    <td>
-                        <span class="status-tag ${isRedeemed ? 'redeemed' : 'pending'}">
-                            ${isRedeemed ? 'CLAIMED' : 'PENDING'}
-                        </span>
-                    </td>
+                    <td>${new Date(l.timestamp * 1000).toLocaleDateString()}</td>
+                    <td>${l.user_pub.substring(0, 8)}...</td>
+                    <td><code>${l.redeem_hash.substring(0, 10)}...</code></td>
                 </tr>
-            `}).join('');
+            `).join('');
         }
 
-        // # Initial load
-        loadAllData();
-        // # Auto refresh every 30 seconds
-        setInterval(loadAllData, 30000);
+        // # Run auth check on page load
+        checkAuth();
     </script>
 </body>
 </html>
