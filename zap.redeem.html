@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sovereign Credit Redemption</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         :root {
             --neon-green: #39ff14;
             --dark-bg: #0a0a0a;
             --glass-bg: rgba(255, 255, 255, 0.05);
+            /* # ADDED: Bitcoin Orange for the new button */
+            --btc-orange: #f7931a; 
         }
 
         body {
@@ -67,6 +70,21 @@
             transform: translateY(-2px);
         }
 
+        /* # ADDED: Style for the Lucky Roll button */
+        .game-link { 
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            background: var(--btc-orange);
+            color: white !important;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            border: none;
+            cursor: pointer;
+        }
+
         #status {
             margin-top: 15px;
             font-size: 0.85rem;
@@ -90,28 +108,53 @@
     <button id="redeem-btn" onclick="processRedemption()">Claim Reward</button>
     
     <div id="status"></div>
+
+    <button class="game-link" id="lucky-roll-btn" style="display: none;" onclick="location.href='roll.html'">🎰 PLAY LUCKY ROLL</button>
 </div>
 
 <script>
     const API_BASE = "https://redeem.fiatdenier.com:2083";
+
+    // # ADDED: Audio Engine from roll.html
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let freeCreditBuffer = null;
+
+    fetch('free_credit.wav')
+        .then(r => r.arrayBuffer())
+        .then(b => audioCtx.decodeAudioData(b))
+        .then(data => { freeCreditBuffer = data; });
+
+    function playFreeCreditSound() {
+        if (!freeCreditBuffer) return;
+        const source = audioCtx.createBufferSource();
+        source.buffer = freeCreditBuffer;
+        source.connect(audioCtx.destination);
+        source.start(0);
+    }
+
+    // # ADDED: Unlock audio context on user interaction
+    ['click', 'touchstart', 'keydown'].forEach(event => {
+        window.addEventListener(event, () => {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }, { once: true });
+    });
 
     async function processRedemption() {
         const agentId = document.getElementById('agent_id').value.trim();
         const zapHash = document.getElementById('zap_hash').value.trim();
         const statusDiv = document.getElementById('status');
         const btn = document.getElementById('redeem-btn');
+        const gameBtn = document.getElementById('lucky-roll-btn');
 
         if (!agentId || !zapHash) {
             updateStatus("Please fill in both fields.", "error");
             return;
         }
 
-        // Disable UI
         btn.disabled = true;
         updateStatus("Verifying Zap on OCI...", "loading");
 
         try {
-            // 1. VERIFY
             const verifyRes = await fetch(`${API_BASE}/redeem-verify`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -125,25 +168,27 @@
                 return;
             }
 
-            // 2. CLAIM
             updateStatus("Hash valid! Claiming credits...", "loading");
             const claimRes = await fetch(`${API_BASE}/redeem-claim`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    hash: zapHash, 
-                    agent_id: agentId 
-                })
+                body: JSON.stringify({ hash: zapHash, agent_id: agentId })
             });
             const claimData = await claimRes.json();
 
             if (claimRes.ok) {
                 updateStatus(`SUCCESS! +${claimData.reward} Credits added to ${agentId}.`, "success");
+                
+                // # ADDED: Reward Effects (Confetti & Sound) from roll.html
+                playFreeCreditSound();
+                confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#39ff14', '#ffffff'] });
+                
+                // # ADDED: Show the Lucky Roll button on success
+                gameBtn.style.display = 'inline-block';
+
             } else if (claimRes.status === 403) {
-                // # SECURITY FIX: Specific message for already used hashes
                 updateStatus("Free Roll Credits already claimed", "error");
             } else {
-                // # IMPROVED: More robust error message display
                 updateStatus(`Claim Error: ${claimData.message || claimData.error || "Redemption Failed"}`, "error");
             }
 
