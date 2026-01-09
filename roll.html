@@ -178,20 +178,6 @@
 		// ==========================================
 		// # PROGRESSIVE & DAILY LIMIT HELPERS (SYNCED TO BACKEND)
 		// ==========================================
-
-        // # [2026-01-09] Helper to keep UI and LocalStorage in sync with Server
-        function syncUIWithServer(data) {
-            if (data.server_credits !== undefined) {
-                rollCredits = data.server_credits;
-                localStorage.setItem('rollCredits', rollCredits);
-            }
-            if (data.total_denied !== undefined) {
-                totalSats = data.total_denied;
-                localStorage.setItem('totalSats', totalSats);
-            }
-            updateUI();
-        }
-
         async function updateJackpotUI() {
             const agentId = getAgentID();
             try {
@@ -214,11 +200,6 @@
                     if (data.daily_count >= 90) countEl.style.color = "#ff4444";
                     else if (data.daily_count >= 70) countEl.style.color = "var(--btc-orange)";
                     else countEl.style.color = "white";
-                }
-
-                // # [2026-01-09] NEW SYNC: Refresh stats during idle play
-                if (data.total_denied !== undefined) {
-                    syncUIWithServer(data); 
                 }
             } catch (err) { console.log("Jackpot sync failed."); }
         }
@@ -338,9 +319,8 @@
 					isRolling = false; btn.innerText = "ROLL FOR SATS"; return; 
 				}
 
-				// # [2026-01-09] Use sync helper for immediate leaderboard restoration
-				syncUIWithServer(data);
-
+				rollCredits = data.server_credits;
+				localStorage.setItem('rollCredits', rollCredits);
 				const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
 				const finalStr = data.num.toString().padStart(4, '0');
 
@@ -355,8 +335,8 @@
 				}
 				stopLoop();
 
-				// # [2026-01-09] COMMENTED: Removed manual guessing, server is now truth
-				// totalSats += 10; 
+				// // # ADDED: Universal increment for Total Sats Denied (+10 per successive roll)
+				totalSats += 10; 
 
 				const sig = data.signature; 
 				const is21Win = finalStr.includes('21');
@@ -538,8 +518,11 @@
 					showIpLock();
 					startTimer(expiry);
 				} else {
-					// # [2026-01-09] Initial Sync: Use helper to restore 2555 sats on load
-					syncUIWithServer(data);
+					if (data.server_credits !== undefined) {
+						rollCredits = data.server_credits;
+						localStorage.setItem('rollCredits', rollCredits);
+					}
+					updateUI();
 				}
 			} catch (e) { 
 				console.log("Initial state sync failed."); 
