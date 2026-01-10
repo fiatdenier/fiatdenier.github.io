@@ -13,6 +13,7 @@
             --grey-text: #696969; 
             --locked-grey: #444444;
         }
+        /* Keep all your existing CSS exactly as it was */
         @keyframes credit-pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.4); color: var(--win-green); text-shadow: 0 0 10px var(--win-green); }
@@ -60,10 +61,10 @@
 <body>
     <div class="card">
         <a href="index.html" class="back-link">← Return to Wire</a>
-        <div id="jackpot-container" style="background: rgba(0,0,0,0.3); border: 1px solid #333; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center;">
+        <div id="jackpot-container">
             <div style="font-size: 0.6rem; color: #888; letter-spacing: 2px; margin-bottom: 4px;">PROGRESSIVE FREE CREDIT JACKPOT</div>
             <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-                <span id="jackpot-ticker" class="glow-active" style="color: var(--win-green); font-size: 1.6rem; font-weight: bold; font-family: 'Courier New', monospace;">210.00</span>
+                <span id="jackpot-ticker" class="glow-active" style="color: var(--win-green); font-size: 1.6rem; font-weight: bold; font-family: 'Courier New', monospace;">0.00</span>
                 <span style="font-size: 0.7rem; color: #555;">ROLLS</span>
             </div>
             <div style="font-size: 0.6rem; color: #666; margin-top: 5px; border-top: 1px solid #222; padding-top: 5px;">
@@ -103,7 +104,7 @@
                 <strong>Timestamp:</strong> <span id="res-ts"></span><br>
                 <strong>Signature:</strong> <span id="res-sig" style="color: #666;"></span>
             </div>
-            <button id="copy-btn" onclick="copyProof()" style="display: none; margin-top:10px;">📋 COPY PROOF</button>
+            <button id="copy-btn" onclick="copyProof()" style="display: block; margin: 10px auto; width: 80%;">📋 COPY PROOF</button>
         </div>
         <div onclick="showLeaderboard()" style="cursor:pointer; font-size:0.6rem; color:#555; margin-top:15px; text-decoration: underline;">VIEW GLOBAL LEADERBOARD</div>
     </div>
@@ -119,31 +120,51 @@
 		const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 		const API_BASE = "https://api.fiatdenier.com";
 		let isRolling = false;
-		let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
-		let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
+		let rollCredits = 0;
+		let totalSats = 0;
 
-		// --- AUDIO ENGINE ---
-		let clickBuffer, dingBuffer, loopSource, freeCreditBuffer, loopGain;
-		fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => { clickBuffer = d; });
-		fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => { dingBuffer = d; });
-		fetch('free_credit.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => { freeCreditBuffer = d; });
-
-		function playFreeCreditSound() { if (freeCreditBuffer) { const s = audioCtx.createBufferSource(); s.buffer = freeCreditBuffer; s.connect(audioCtx.destination); s.start(0); } }
-		function playLoop() { if (clickBuffer) { loopSource = audioCtx.createBufferSource(); loopSource.buffer = clickBuffer; loopSource.loop = true; loopGain = audioCtx.createGain(); loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime); loopSource.connect(loopGain); loopGain.connect(audioCtx.destination); loopSource.start(0); } }
-		function stopLoop() { if (loopSource) { if (loopGain) loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1); setTimeout(() => { if (loopSource) { loopSource.stop(); loopSource = null; } }, 100); } }
-		function playDing(isJackpot = false) { if (dingBuffer) { const s = audioCtx.createBufferSource(); s.buffer = dingBuffer; if (isJackpot) s.playbackRate.value = 1.3; s.connect(audioCtx.destination); s.start(0); } }
-
-		// --- IDENTITY & UI ---
+		// --- IDENTITY MANAGEMENT ---
 		function generateAnimalName() {
 			const adj = ["Sacred", "Majestic", "Silent", "Golden", "Swift", "Cunning", "Brave", "Ancient", "Hyper", "Stoic", "Neon", "Cyber", "Shadow", "Sovereign"];
 			const ani = ["Wolf", "Eagle", "Tiger", "Lion", "Falcon", "Panther", "Raven", "Stag", "Phoenix", "Dragon", "Kraken", "Cobra", "Fox", "Bull"];
 			return adj[Math.floor(Math.random() * adj.length)] + ani[Math.floor(Math.random() * ani.length)];
 		}
-		function getAgentID() { let id = localStorage.getItem('agentID'); if (!id || id.startsWith('AGENT_')) { id = generateAnimalName(); localStorage.setItem('agentID', id); } return id; }
+		function getAgentID() { let id = localStorage.getItem('agentID'); if (!id) { id = generateAnimalName(); localStorage.setItem('agentID', id); } return id; }
+		function regenerateIdentity() { if(confirm("Regenerate Agent ID? Your stats are linked to this ID.")) { localStorage.removeItem('agentID'); location.reload(); } }
+
+		// --- AUDIO ENGINE ---
+		let clickBuffer, dingBuffer, freeCreditBuffer, loopSource, loopGain;
+		async function loadAudio() {
+			try {
+				const [c, d, f] = await Promise.all([
+					fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)),
+					fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)),
+					fetch('free_credit.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b))
+				]);
+				clickBuffer = c; dingBuffer = d; freeCreditBuffer = f;
+			} catch(e) { console.log("Audio failed"); }
+		}
+
+		function playFreeCreditSound() { if (freeCreditBuffer) { const s = audioCtx.createBufferSource(); s.buffer = freeCreditBuffer; s.connect(audioCtx.destination); s.start(0); } }
+		function playLoop() { if (clickBuffer) { loopSource = audioCtx.createBufferSource(); loopSource.buffer = clickBuffer; loopSource.loop = true; loopGain = audioCtx.createGain(); loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime); loopSource.connect(loopGain); loopGain.connect(audioCtx.destination); loopSource.start(0); } }
+		function stopLoop() { if (loopSource) { loopSource.stop(); loopSource = null; } }
+		function playDing(isJackpot = false) { if (dingBuffer) { const s = audioCtx.createBufferSource(); s.buffer = dingBuffer; if (isJackpot) s.playbackRate.value = 1.3; s.connect(audioCtx.destination); s.start(0); } }
+
+		// --- CORE LOGIC ---
 		function updateUI() {
 			document.getElementById('agent-id-display').innerText = getAgentID();
 			document.getElementById('credit-count').innerText = rollCredits;
 			document.getElementById('total-sats-val').innerText = totalSats.toLocaleString();
+            
+            const btn = document.getElementById('roll-btn');
+            if (document.getElementById('ip-lock-msg').style.display === 'block') {
+                btn.classList.add('locked');
+                btn.innerText = "IP LOCKED";
+            } else if (rollCredits <= 0) {
+                btn.innerText = "OUT OF CREDITS";
+            } else {
+                btn.innerText = "ROLL FOR SATS";
+            }
 		}
 
 		async function updateJackpotUI() {
@@ -153,6 +174,88 @@
 				document.getElementById('jackpot-ticker').innerText = parseFloat(d.current_pot).toFixed(2);
 				document.getElementById('daily-count-display').innerText = d.daily_count;
 			} catch (e) {}
+		}
+
+		async function syncWithServer() {
+			try {
+				const r = await fetch(`${API_BASE}/get-roll?agent_id=${getAgentID()}&sync=true`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+				const d = await r.json();
+				
+                if (d.error === "LOCKED") {
+                    showIpLock();
+                } else {
+                    rollCredits = d.server_credits;
+                    totalSats = d.server_sats || 0; // Pulling stats from server if local is cleared
+                    localStorage.setItem('rollCredits', rollCredits);
+                    localStorage.setItem('totalSats', totalSats);
+                }
+				updateUI();
+			} catch (e) {}
+		}
+
+		async function handleRoll() {
+			if (isRolling || rollCredits <= 0) return;
+			const btn = document.getElementById('roll-btn');
+			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
+			
+			isRolling = true; btn.disabled = true;
+			document.getElementById('result-area').style.display = 'none';
+
+			const spinIntervals = slots.map(slot => {
+				slot.classList.remove('just-finished'); slot.classList.add('rolling');
+				return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
+			});
+
+			try {
+				if (audioCtx.state === 'suspended') await audioCtx.resume();
+				playLoop();
+				
+				const response = await fetch(`${API_BASE}/get-roll?agent_id=${getAgentID()}`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+				const data = await response.json();
+
+				if (data.error === "LOCKED") { 
+                    stopLoop(); spinIntervals.forEach(clearInterval);
+                    showIpLock(); isRolling = false; return; 
+                }
+
+				rollCredits = data.server_credits;
+				localStorage.setItem('rollCredits', rollCredits);
+
+				const finalStr = data.num.toString().padStart(4, '0');
+				for (let i = 0; i < 4; i++) {
+					await new Promise(r => setTimeout(r, 600 + i*400));
+					clearInterval(spinIntervals[i]);
+					slots[i].classList.remove('rolling'); slots[i].classList.add('just-finished');
+					slots[i].innerText = finalStr[i];
+					playDing(data.num === 2121);
+				}
+				stopLoop();
+
+				totalSats += 10;
+				if (data.num === 2121) {
+					totalSats += 500; confetti({ particleCount: 150 }); playFreeCreditSound();
+				} else if (finalStr.includes('21')) {
+					totalSats += 21; playFreeCreditSound();
+				}
+				
+				localStorage.setItem('totalSats', totalSats);
+				
+                // Send to Server
+                fetch(`${API_BASE}/update-score`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+                    body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
+                });
+                fetch(`${API_BASE}/increment-jackpot?agent_id=${getAgentID()}`, { method: 'POST', headers: {'X-Requested-With': 'XMLHttpRequest'} });
+
+				document.getElementById('res-num').innerText = data.num;
+				document.getElementById('res-ts').innerText = data.ts;
+				document.getElementById('res-sig').innerText = data.signature;
+				document.getElementById('result-area').style.display = 'block';
+				
+				updateUI();
+				isRolling = false; btn.disabled = false;
+			} catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; }
 		}
 
         async function showLeaderboard() {
@@ -172,109 +275,18 @@
             } catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
         }
 
-		// --- ROLL LOGIC ---
-		async function handleRoll() {
-			if (isRolling) return;
-			const btn = document.getElementById('roll-btn');
-			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
-			
-			isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
-			document.getElementById('result-area').style.display = 'none';
-
-			const spinIntervals = slots.map(slot => {
-				slot.classList.remove('just-finished'); slot.classList.add('rolling');
-				return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
-			});
-
-			try {
-				if (audioCtx.state === 'suspended') await audioCtx.resume();
-				playLoop();
-				
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${getAgentID()}`, {
-                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                });
-				const data = await response.json();
-
-				if (data.error === "LOCKED") { 
-                    stopLoop(); spinIntervals.forEach(clearInterval);
-                    showIpLock(); btn.innerText = "ROLL FOR SATS"; isRolling = false; return; 
-                }
-
-				rollCredits = data.server_credits;
-				localStorage.setItem('rollCredits', rollCredits);
-
-				const finalStr = data.num.toString().padStart(4, '0');
-				const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
-
-				for (let i = 0; i < stopOrder.length; i++) {
-					const idx = stopOrder[i];
-					await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-					clearInterval(spinIntervals[idx]);
-					slots[idx].classList.remove('rolling'); slots[idx].classList.add('just-finished');
-					slots[idx].innerText = finalStr[idx];
-					playDing(data.num === 2121); 
-				}
-				stopLoop();
-
-				totalSats += 10; 
-				const statusMsg = document.getElementById('status-message');
-
-                // # RE-ENABLED: Increment Progressive Jackpot on server
-                fetch(`${API_BASE}/increment-jackpot?agent_id=${getAgentID()}`, { 
-                    method: 'POST',
-                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                }).then(() => updateJackpotUI());
-
-				if (data.num === 2121) {
-					totalSats += 500;
-					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
-					confetti({ particleCount: 150, spread: 70 });
-					playFreeCreditSound();
-				} else if (finalStr.includes('21')) {
-					totalSats += 21;
-					statusMsg.innerHTML = "<h3 style='color:var(--win-green);'>⚡ +5 FREE ROLLS ⚡</h3>";
-					playFreeCreditSound();
-				} else { statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>"; }
-			
-				localStorage.setItem('totalSats', totalSats);
-				document.getElementById('res-num').innerText = data.num;
-				document.getElementById('res-ts').innerText = data.ts;
-				document.getElementById('res-sig').innerText = data.signature;
-				document.getElementById('result-area').style.display = 'block';
-				
-                // # RE-ENABLED: Update Leaderboard Score on server
-                fetch(`${API_BASE}/update-score`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-                    body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
-                });
-
-                updateUI();
-				isRolling = false; 
-                btn.disabled = (rollCredits <= 0);
-                if (btn.disabled) btn.innerText = "OUT OF CREDITS"; else btn.innerText = "ROLL FOR SATS";
-
-			} catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; updateUI(); }
-		}
-
-		function showIpLock() { document.getElementById('ip-lock-msg').style.display = 'block'; document.getElementById('slot-container').style.display = 'none'; }
-        
-        async function syncWithServer() {
-            try {
-                const r = await fetch(`${API_BASE}/get-roll?agent_id=${getAgentID()}&sync=true`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-                const d = await r.json();
-                if (d.server_credits !== undefined) {
-                    rollCredits = d.server_credits;
-                    localStorage.setItem('rollCredits', rollCredits);
-                    updateUI();
-                }
-            } catch (e) {}
+		function showIpLock() { 
+            document.getElementById('ip-lock-msg').style.display = 'block'; 
+            document.getElementById('slot-container').style.display = 'none'; 
+            document.getElementById('roll-btn').classList.add('locked');
+            document.getElementById('roll-btn').innerText = "IP LOCKED";
         }
 
-		window.onload = async () => {
+		window.onload = () => {
+			loadAudio();
 			updateUI();
 			updateJackpotUI();
-            await syncWithServer();
+			syncWithServer();
 			setInterval(updateJackpotUI, 10000);
 		};
 
