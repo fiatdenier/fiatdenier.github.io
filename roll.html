@@ -300,6 +300,28 @@
 			} catch (e) { console.log("Sync failed"); }
 		}
 
+		// # RECONCILE: New function to fetch existing stats from server if local is out of sync
+		async function reconcileStatsFromServer() {
+			const agentId = getAgentID();
+			try {
+				const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+				const data = await res.json();
+				// Find this specific agent in the global leaderboard data
+				const myEntry = data.find(e => e.agent === agentId);
+				if (myEntry) {
+					// Only update if the server score is higher than our local score
+					if (myEntry.sats > totalSats) {
+						totalSats = myEntry.sats;
+						localStorage.setItem('totalSats', totalSats);
+						updateUI();
+						console.log(`Reconciled: Updated local sats to match server (${totalSats})`);
+					}
+				}
+			} catch (e) {
+				console.log("Reconciliation failed. Using local state.");
+			}
+		}
+
 		// --- ROLL LOGIC ---
 		async function handleRoll() {
 			if (isRolling) return;
@@ -508,6 +530,10 @@
 		window.onload = async () => {
 			updateUI();
 			updateJackpotUI();
+            
+			// # RECONCILE: Run the check on page load to fix the "starts at 0" issue
+			await reconcileStatsFromServer();
+
             setInterval(updateJackpotUI, 10000); // Keep it synced in realtime
 
 			const agentId = getAgentID();
