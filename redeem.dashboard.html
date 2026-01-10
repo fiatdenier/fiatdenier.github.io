@@ -17,6 +17,7 @@
         .stat-box { background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; flex: 1; border: 1px solid #444; }
         .stat-grid { display: flex; gap: 15px; margin-bottom: 20px; }
         code { background: #000; padding: 2px 4px; border-radius: 3px; color: #ffeb3b; }
+		/* # [2026-01-09] Added to keep long Hashes and User IDs from breaking the layout */
         td { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     </style>
 </head>
@@ -30,6 +31,7 @@
 
     <div id="admin-content">
         <h1>⚡ Zap Dashboard</h1>
+        
         <div class="stat-grid">
             <div class="stat-box">Total Zaps: <b id="stat-count" style="color:#f2a900">0</b></div>
             <div class="stat-box">Total Claims: <b id="stat-claims" style="color:#f2a900">0</b></div>
@@ -38,7 +40,14 @@
         <div class="card">
             <h3>📜 Full Zap Logs (Incoming)</h3>
             <table>
-                <thead><tr><th>Time</th><th>User</th><th>Note / Metadata</th><th>Hash</th></tr></thead>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>User</th>
+                        <th>Note / Metadata</th>
+                        <th>Hash</th>
+                    </tr>
+                </thead>
                 <tbody id="logs-table"></tbody>
             </table>
         </div>
@@ -46,14 +55,23 @@
         <div class="card">
             <h3>🎁 Recent Redemptions (Claims)</h3>
             <table>
-                <thead><tr><th>Time</th><th>Agent ID</th><th>Reward</th><th>Hash Used</th></tr></thead>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Agent ID</th>
+                        <th>Reward</th>
+                        <th>Hash Used</th>
+                    </tr>
+                </thead>
                 <tbody id="claims-table"></tbody>
             </table>
         </div>
+
         <button onclick="logout()" style="background: #444; color: white; width: 200px; margin-bottom: 50px;">Logout</button>
     </div>
 
     <script>
+        // # Ensure port 2083 is open on your server
         const API_URL = "https://redeem.fiatdenier.com:2083";
 
         function saveAndLogin() {
@@ -72,13 +90,10 @@
             if (!key) return;
 
             try {
-                // # ADDED SHIELD HEADER
-                const shieldHeaders = { 'X-Requested-With': 'XMLHttpRequest' };
-                
-                const resLogs = await fetch(`${API_URL}/get-logs?key=${key}`, { headers: shieldHeaders });
+                const resLogs = await fetch(`${API_URL}/get-logs?key=${key}`);
                 if (resLogs.status === 200) {
                     const logs = await resLogs.json();
-                    const resClaims = await fetch(`${API_URL}/get-claims?key=${key}`, { headers: shieldHeaders });
+                    const resClaims = await fetch(`${API_URL}/get-claims?key=${key}`);
                     const claims = await resClaims.json();
                     
                     document.getElementById('login-box').style.display = 'none';
@@ -90,13 +105,16 @@
                 }
             } catch (err) { 
                 console.error("Dashboard Connection Error:", err);
-                alert("Could not connect to Zap Server.");
+                alert("Could not connect to Zap Server. Try visiting " + API_URL + "/get-logs manually to accept the SSL certificate.");
             }
         }
 
         function renderData(logs, claims) {
             document.getElementById('stat-count').innerText = logs.length;
             document.getElementById('stat-claims').innerText = claims.length;
+            
+            // # Render Logs (Incoming Zaps)
+            // # Added safety: l.note || '-' and l.user_pub check to prevent crashes on old data
             document.getElementById('logs-table').innerHTML = logs.reverse().map(l => `
                 <tr>
                     <td>${new Date(l.timestamp * 1000).toLocaleTimeString()}</td>
@@ -105,6 +123,8 @@
                     <td style="font-family: monospace; font-size: 10px;">${l.redeem_hash ? l.redeem_hash.substring(0, 12) : '---'}...</td>
                 </tr>
             `).join('');
+
+            // # Render Claims (Redemptions)
             document.getElementById('claims-table').innerHTML = claims.reverse().map(c => `
                 <tr>
                     <td>${new Date(c.timestamp * 1000).toLocaleTimeString()}</td>
@@ -114,6 +134,7 @@
                 </tr>
             `).join('');
         }
+
         checkAuth();
     </script>
 </body>

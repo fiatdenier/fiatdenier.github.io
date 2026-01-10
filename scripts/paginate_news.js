@@ -75,12 +75,8 @@ export function paginateNews(config) {
 
   async function init() {
     try {
-      // # SURGICAL CHANGE: Added Bot Shield Header to news fetch
-      const res = await fetch(jsonPath, {
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        }
-      });
+      // Fetches using the cache-busted path
+      const res = await fetch(jsonPath);
       const data = await res.json();
       articles = data.articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
