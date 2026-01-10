@@ -80,6 +80,8 @@
 
     <script>
         const API_URL = "https://api.fiatdenier.com";
+        // # ADDED: Bot Shield Header
+        const SECURE_HEADERS = { 'X-Requested-With': 'XMLHttpRequest' };
         let allUsers = []; 
 
         function saveAndLogin() {
@@ -97,7 +99,8 @@
             const key = localStorage.getItem('adminKey');
             if (!key) return;
             try {
-                const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
+                // # UPDATED: Added SECURE_HEADERS
+                const response = await fetch(`${API_URL}/admin-stats?key=${key}`, { headers: SECURE_HEADERS });
                 if (response.status === 200) {
                     const data = await response.json();
                     if (data.error) { logout(); } 
@@ -113,7 +116,8 @@
 
         async function loadStats() {
             const key = localStorage.getItem('adminKey');
-            const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
+            // # UPDATED: Added SECURE_HEADERS
+            const response = await fetch(`${API_URL}/admin-stats?key=${key}`, { headers: SECURE_HEADERS });
             const data = await response.json();
             displayData(data);
             loadPlayerList();
@@ -123,18 +127,18 @@
             document.getElementById('total-players').innerText = data.total_unique_players;
             document.getElementById('active-locks').innerText = data.currently_locked_ips;
             const tableBody = document.getElementById('locks-table');
-            tableBody.innerHTML = data.locks.map(l => `<tr><td>${l.ip}</td><td>${l.remaining}</td></tr>`).join('');
+            tableBody.innerHTML = (data.locks || []).map(l => `<tr><td>${l.ip}</td><td>${l.remaining}</td></tr>`).join('');
         }
 
         async function loadPlayerList() {
             try {
-                const res = await fetch(`${API_URL}/leaderboard?admin=true`);
+                // # UPDATED: Added SECURE_HEADERS
+                const res = await fetch(`${API_URL}/leaderboard?admin=true`, { headers: SECURE_HEADERS });
                 allUsers = await res.json();
                 renderUserDropdown(allUsers);
             } catch (e) { console.error("Leaderboard load failed", e); }
         }
 
-        // # SURGICAL: Updated display format to show Sats and Credits in dropdown
         function renderUserDropdown(users) {
             const select = document.getElementById('agent-select');
             users.sort((a, b) => a.agent.localeCompare(b.agent));
@@ -163,12 +167,12 @@
             status.innerText = `Processing for ${agent}...`;
 
             try {
-                const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${agent}&amount=${amount}`);
+                // # UPDATED: Added SECURE_HEADERS
+                const res = await fetch(`${API_BASE}/admin-award?key=${key}&agent=${agent}&amount=${amount}`, { headers: SECURE_HEADERS });
                 const data = await res.json();
                 if (data.status === "Success") {
                     status.innerText = `✅ Granted ${amount} to ${agent}. Total: ${data.new_balance}`;
                     document.getElementById('manual-agent-id').value = "";
-                    // # SURGICAL: Force immediate refresh of stats and dropdown
                     loadStats(); 
                 } else {
                     status.innerText = "❌ Error: " + (data.error || "Failed");
@@ -179,7 +183,8 @@
         async function resetLocks() {
             const key = localStorage.getItem('adminKey');
             if (confirm("Clear all locks?")) {
-                await fetch(`${API_URL}/admin-reset?key=${key}`);
+                // # UPDATED: Added SECURE_HEADERS
+                await fetch(`${API_URL}/admin-reset?key=${key}`, { headers: SECURE_HEADERS });
                 loadStats();
             }
         }
