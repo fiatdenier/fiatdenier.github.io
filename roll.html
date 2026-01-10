@@ -13,79 +13,52 @@
             --grey-text: #696969; 
             --locked-grey: #444444;
         }
-		/* # ADDED: Pulse animation for free credit events */
         @keyframes credit-pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.4); color: var(--win-green); text-shadow: 0 0 10px var(--win-green); }
             100% { transform: scale(1); }
         }
-        .pulse-active {
-            animation: credit-pulse 0.6s ease-in-out;
-        }
-
-        /* # ADDED: Blink for the status message */
+        .pulse-active { animation: credit-pulse 0.6s ease-in-out; }
         @keyframes blink { 50% { opacity: 0; } }
-		
-		/* # ADDED: Subtle glow animation for the Progressive Jackpot */
-		@keyframes jackpot-glow {
-			0% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
-			50% { text-shadow: 0 0 15px rgba(76, 175, 80, 0.6); }
-			100% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
-		}
-
-		.glow-active {
-			animation: jackpot-glow 3s ease-in-out infinite;
-		}
-		
+        @keyframes jackpot-glow {
+            0% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
+            50% { text-shadow: 0 0 15px rgba(76, 175, 80, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
+        }
+        .glow-active { animation: jackpot-glow 3s ease-in-out infinite; }
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
-        
         .agent-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #333; }
         .agent-info { text-align: left; }
         .agent-id-tag { font-size: 0.8rem; color: var(--btc-orange); font-weight: bold; letter-spacing: 1px; }
         .agent-status { font-size: 0.6rem; color: #666; text-transform: uppercase; }
-        
         .regen-btn { cursor: pointer; font-size: 0.7rem; margin-left: 8px; color: var(--grey-text); transition: color 0.2s; vertical-align: middle; }
         .regen-btn:hover { color: var(--btc-orange); }
-
         .btc-logo-icon { width: 32px; height: 32px; fill: var(--btc-orange); filter: drop-shadow(0 0 5px rgba(247, 147, 26, 0.4)); }
-        
         #stats-container { background: rgba(0,0,0,0.3); border: 1px solid #444; padding: 10px; border-radius: 8px; margin-bottom: 15px; }
         .stat-label { font-size: 0.65rem; color: #888; letter-spacing: 2px; margin-top: 5px; }
         .stat-value { font-size: 1.5rem; font-weight: bold; }
         #total-sats-val { color: var(--win-green); font-size: 1.1rem; }
-
         #slot-container { display: flex; justify-content: center; gap: 10px; margin: 1.5rem 0; font-size: 5rem; font-weight: bold; font-family: 'Roboto', sans-serif; }
         .slot { width: 70px; height: 100px; line-height: 100px; background: #111; border-radius: 8px; border: 1px solid #333; color: var(--btc-orange); }
         .rolling { animation: blur-spin 0.1s infinite; opacity: 0.7; filter: blur(2px); color: #888; }
         @keyframes blur-spin { 0% { transform: translateY(-2px); } 50% { transform: translateY(2px); } 100% { transform: translateY(0); } }
         .just-finished { color: var(--btc-orange) !important; text-shadow: 0 0 15px rgba(247, 147, 26, 0.8); transform: scale(1.05); transition: all 0.1s ease-out; }
-        
         .proof-box { background: #111; padding: 1rem; border-radius: 8px; font-size: 0.75rem; text-align: left; margin-top: 1.5rem; word-break: break-all; border: 1px dashed #444; color: #aaa; }
         button { background: var(--btc-orange); border: none; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; font-family: inherit; transition: 0.2s; color: white; }
         #roll-btn.locked { background: var(--locked-grey) !important; color: var(--btc-orange) !important; cursor: not-allowed; }
         #timer { font-size: 0.85rem; color: var(--grey-text); margin-top: 10px; height: 20px; font-weight: bold; }
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
         #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
-
-        #leaderboard-overlay { 
-            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-            background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; 
-            width: 85%; max-width: 320px; box-shadow: 0 0 30px black;
-        }
+        #leaderboard-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; width: 85%; max-width: 320px; box-shadow: 0 0 30px black; }
         #lb-scroll-area { max-height: 250px; overflow-y: auto; margin-bottom: 15px; padding-right: 5px; }
         .leaderboard-row { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 8px 0; border-bottom: 1px solid #222; }
         .leaderboard-row.me { color: var(--btc-orange); font-weight: bold; border-left: 2px solid var(--btc-orange); padding-left: 5px; }
-        #lb-scroll-area::-webkit-scrollbar { width: 4px; }
-        #lb-scroll-area::-webkit-scrollbar-thumb { background: var(--btc-orange); }
-        #my-rank-box { border-top: 1px solid var(--btc-orange); margin-top: 10px; padding-top: 10px; font-size: 0.75rem; color: #aaa; }
     </style>
 </head>
 <body>
-    
     <div class="card">
         <a href="index.html" class="back-link">← Return to Wire</a>
-        
         <div id="jackpot-container" style="background: rgba(0,0,0,0.3); border: 1px solid #333; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center;">
             <div style="font-size: 0.6rem; color: #888; letter-spacing: 2px; margin-bottom: 4px;">PROGRESSIVE FREE CREDIT JACKPOT</div>
             <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
@@ -96,7 +69,6 @@
                 DAILY FREE CREDIT REDEEMED: <span id="daily-count-display">0</span>/100
             </div>
         </div>
-        
         <div class="agent-header">
             <div class="agent-info">
                 <div class="agent-status">Sovereign Individual</div>
@@ -109,7 +81,6 @@
                 <path d="M48.2,26.5c1-6.7-4.1-10.3-11.1-12.7l2.3-9.1l-5.5-1.4l-2.2,9c-1.5-0.4-3-0.7-4.4-1.1l2.3-9.1L24,0.8l-2.3,9.1c-1.2-0.3-2.3-0.5-3.5-0.8l0,0l-7.6-1.9l-1.5,5.9c0,0,4.1,0.9,4,1c2.2,0.6,2.6,2,2.6,3.2l-2.6,10.3c0.2,0,0.4,0.1,0.6,0.2c-0.2-0.1-0.4-0.1-0.6-0.2l-3.6,14.5c-0.3,0.7-1,1.7-2.6,1.3c0.1,0.1-4,0.9-4,0.9l-2.7,6.3l7.2,1.8c1.3,0.3,2.6,0.7,3.9,1l-2.3,9.3l5.5,1.4l2.3-9.2c1.5,0.4,3,0.8,4.4,1.1l-2.3,9.2l5.5,1.4l2.3-9.3c9.4,1.8,16.5,1.1,19.5-7.4c2.4-6.9-0.1-10.8-5.1-13.4C46.8,32.3,48.8,29.9,48.2,26.5z M39.6,44.7c-1.7,6.8-13.3,3.1-17.1,2.2l3-12.2C29.3,35.6,41.4,37.6,39.6,44.7z M41.3,26.7c-1.6,6.2-11.2,3.1-14.4,2.3l2.8-11.1C32.9,18.7,43,20.1,41.3,26.7z"/>
             </svg>
         </div>
-
         <div id="stats-container">
             <div class="stat-label">ROLL CREDITS</div>
             <div id="credit-count" class="stat-value">0</div>
@@ -117,19 +88,15 @@
             <div class="stat-label">TOTAL SATS DENIED</div>
             <div id="total-sats-val" class="stat-value">0</div>
         </div>
-
         <div id="slot-container">
             <div id="slot-0" class="slot">-</div>
             <div id="slot-1" class="slot">-</div>
             <div id="slot-2" class="slot">-</div>
             <div id="slot-3" class="slot">-</div>
         </div>
-
         <div id="ip-lock-msg">IP LOCKED</div>
-        
         <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
         <div id="timer"></div>
-
         <div id="result-area" style="display: none;">
             <div id="status-message" style="margin-top: 15px;"></div>
             <div class="proof-box" id="proof-content">
@@ -139,420 +106,178 @@
             </div>
             <button id="copy-btn" onclick="copyProof()" style="display: none; margin-top:10px;">📋 COPY PROOF</button>
         </div>
-
-        <div onclick="showLeaderboard()" style="cursor:pointer; font-size:0.6rem; color:#555; margin-top:15px; text-decoration: underline;">
-            VIEW GLOBAL LEADERBOARD
-        </div>
+        <div onclick="showLeaderboard()" style="cursor:pointer; font-size:0.6rem; color:#555; margin-top:15px; text-decoration: underline;">VIEW GLOBAL LEADERBOARD</div>
     </div>
-
     <div id="leaderboard-overlay">
         <div class="agent-status" style="margin-bottom:15px; color:var(--btc-orange)">TOP SOVEREIGN INDIVIDUALS (TOP 10)</div>
-        <div id="lb-scroll-area">
-            <div id="lb-content">Loading...</div>
-        </div>
-        <div id="my-rank-box">
-            YOUR STATUS: <span id="my-rank-display">CALCULATING...</span>
-        </div>
+        <div id="lb-scroll-area"><div id="lb-content">Loading...</div></div>
+        <div id="my-rank-box">YOUR STATUS: <span id="my-rank-display">CALCULATING...</span></div>
         <div onclick="document.getElementById('leaderboard-overlay').style.display='none'" style="margin-top:15px; font-size:0.7rem; color:#666; cursor:pointer; text-align: center;">[ CLOSE TERMINAL ]</div>
     </div>
 
     <script>
-		// # ADDED: Force unlock audio context on first user interaction
-		const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-		['click', 'touchstart', 'keydown'].forEach(event => {
-			window.addEventListener(event, () => {
-				if (audioCtx.state === 'suspended') {
-					audioCtx.resume();
-				}
-			}, { once: true });
-		});
-		const COOLDOWN_MINUTES = 10;
-		const API_BASE = "https://api.fiatdenier.com";
-		
-		const JACKPOT_FLOOR = 210.0;
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        ['click', 'touchstart', 'keydown'].forEach(event => {
+            window.addEventListener(event, () => { if (audioCtx.state === 'suspended') audioCtx.resume(); }, { once: true });
+        });
+        const COOLDOWN_MINUTES = 10;
+        const API_BASE = "https://api.fiatdenier.com";
+        
+        // # SECURITY: Simple Request Header "Bot Shield"
+        const SECURE_HEADERS = { 
+            'X-Requested-With': 'XMLHttpRequest',
+            'Content-Type': 'application/json'
+        };
 
-		let isRolling = false;
-		let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
-		let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
+        let isRolling = false;
+        let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
+        let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
 
-		// ==========================================
-		// # PROGRESSIVE & DAILY LIMIT HELPERS (SYNCED TO BACKEND)
-		// ==========================================
         async function updateJackpotUI() {
             const agentId = getAgentID();
             try {
-                const response = await fetch(`${API_BASE}/get-global-jackpot?agent_id=${agentId}`, {
-                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                });
+                const response = await fetch(`${API_BASE}/get-global-jackpot?agent_id=${agentId}`, { headers: SECURE_HEADERS });
                 const data = await response.json();
-                
-                const tickerEl = document.getElementById('jackpot-ticker');
-                const countEl = document.getElementById('daily-count-display');
-                
-                if (tickerEl && data.current_pot) {
-                    tickerEl.innerText = parseFloat(data.current_pot).toFixed(2);
+                if (document.getElementById('jackpot-ticker') && data.current_pot) {
+                    document.getElementById('jackpot-ticker').innerText = parseFloat(data.current_pot).toFixed(2);
                 }
-                
-                if (countEl && data.daily_count !== undefined) {
-                    countEl.innerText = data.daily_count;
-                    if (data.daily_count >= 90) countEl.style.color = "#ff4444";
-                    else if (data.daily_count >= 70) countEl.style.color = "var(--btc-orange)";
-                    else countEl.style.color = "white";
+                if (document.getElementById('daily-count-display') && data.daily_count !== undefined) {
+                    document.getElementById('daily-count-display').innerText = data.daily_count;
                 }
             } catch (err) { console.log("Jackpot sync failed."); }
         }
 
-		function getTimeUntilReset() {
-			const now = new Date();
-			const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-			const diff = tomorrow - now; 
-			const hours = Math.floor(diff / 3600000);
-			const mins = Math.floor((diff % 3600000) / 60000);
-			return `${hours}h ${mins}m`;
-		}
+        // --- AUDIO ENGINE (Simplified for space) ---
+        let clickBuffer, dingBuffer, loopSource, freeCreditBuffer, loopGain;
+        fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => clickBuffer = d);
+        fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => dingBuffer = d);
+        fetch('free_credit.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => freeCreditBuffer = d);
 
-		// --- AUDIO ENGINE ---
-		
-		let clickBuffer = null; let dingBuffer = null; let loopSource = null; let freeCreditBuffer = null; let loopGain = null;
-		fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { clickBuffer = data; });
-		fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { dingBuffer = data; });
-		fetch('free_credit.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { freeCreditBuffer = data; });
+        function playFreeCreditSound() { if (freeCreditBuffer) { const s = audioCtx.createBufferSource(); s.buffer = freeCreditBuffer; s.connect(audioCtx.destination); s.start(0); } }
+        function playLoop() { if (!clickBuffer) return; loopSource = audioCtx.createBufferSource(); loopSource.buffer = clickBuffer; loopSource.loop = true; loopGain = audioCtx.createGain(); loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime); loopSource.connect(loopGain); loopGain.connect(audioCtx.destination); loopSource.start(0); }
+        function stopLoop() { if (loopSource) { loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1); setTimeout(() => { if (loopSource) { loopSource.stop(); loopSource = null; } }, 100); } }
+        function playDing(isJ) { if (dingBuffer) { const s = audioCtx.createBufferSource(); s.buffer = dingBuffer; if (isJ) s.playbackRate.value = 1.3; s.connect(audioCtx.destination); s.start(0); } }
 
-		function playFreeCreditSound() {
-			if (!freeCreditBuffer) return;
-			const source = audioCtx.createBufferSource();
-			source.buffer = freeCreditBuffer;
-			source.connect(audioCtx.destination);
-			source.start(0);
-		} 
+        // --- IDENTITY LOGIC ---
+        function generateAnimalName() {
+            const adj = ["Sacred", "Majestic", "Silent", "Golden", "Swift", "Cunning", "Brave", "Ancient", "Hyper", "Stoic"];
+            const ani = ["Wolf", "Eagle", "Tiger", "Lion", "Falcon", "Panther", "Raven", "Stag", "Owl", "Bear"];
+            return adj[Math.floor(Math.random() * adj.length)] + ani[Math.floor(Math.random() * ani.length)];
+        }
+        function getAgentID() {
+            let id = localStorage.getItem('agentID');
+            if (!id) { id = generateAnimalName(); localStorage.setItem('agentID', id); }
+            return id;
+        }
+        function regenerateIdentity() {
+            if (!confirm("Regenerate identity? Credits remain linked to old ID.")) return;
+            localStorage.setItem('agentID', generateAnimalName());
+            location.reload();
+        }
 
-		function playLoop() {
-			if (!clickBuffer) return;
-			loopSource = audioCtx.createBufferSource();
-			loopSource.buffer = clickBuffer;
-			loopSource.loop = true; 
-			loopGain = audioCtx.createGain();
-			loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime);
-			loopSource.connect(loopGain);
-			loopGain.connect(audioCtx.destination);
-			loopSource.start(0);
-		}
-
-		function stopLoop() {
-			if (loopSource) {
-				if (loopGain) loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
-				setTimeout(() => { if (loopSource) { loopSource.stop(); loopSource = null; } }, 100);
-			}
-		}
-
-		function playDing(isJackpot = false) {
-			if (!dingBuffer) return;
-			const source = audioCtx.createBufferSource();
-			source.buffer = dingBuffer;
-			if (isJackpot) source.playbackRate.value = 1.3;
-			source.connect(audioCtx.destination);
-			source.start(0); 
-		}
-
-		// --- IDENTITY LOGIC ---
-		function generateAnimalName() {
-			const adjectives = ["Sacred", "Majestic", "Silent", "Golden", "Swift", "Cunning", "Brave", "Ancient", "Hyper", "Stoic", "Ethereal", "Vigilant", "Wild", "Noble", "Fierce", "Lunar", "Solar", "Atomic", "Neon", "Cyber", "Shadow", "Iron", "Glacial", "Volcanic", "Radiant", "Hidden", "Cosmic", "Primal", "Zenith", "Nomad", "Vortex", "Sovereign", "Orphan", "Gilded", "Obsidian"];
-			const animals = ["Wolf", "Eagle", "Tiger", "Lion", "Falcon", "Panther", "Raven", "Stag", "Owl", "Bear", "Shark", "Lynx", "Phoenix", "Bison", "Dragon", "Serpent", "Mamba", "Condor", "Jaguar", "Stallion", "Viper", "Kraken", "Gryphon", "Cobra", "Fox", "Rhino", "Mastodon", "Orca", "Mantiss", "Ram", "Scorpion", "Wolverine", "Badger", "Hawk", "Bull"];
-			return adjectives[Math.floor(Math.random() * adjectives.length)] + animals[Math.floor(Math.random() * animals.length)];
-		}
-
-		function getAgentID() {
-			let id = localStorage.getItem('agentID');
-			if (!id || id.startsWith('AGENT_')) {
-				id = generateAnimalName();
-				localStorage.setItem('agentID', id);
-			}
-			return id;
-		}
-
-		function regenerateIdentity() {
-			if (!confirm("Regenerate your network identity?")) return;
-			const newId = generateAnimalName();
-			localStorage.setItem('agentID', newId);
-			document.getElementById('agent-id-display').innerText = newId;
-			fetch(`${API_BASE}/update-score`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-				body: JSON.stringify({ agent_id: newId, sats: totalSats })
-			});
-		}
-
-		async function syncStateFromServer() {
-			const agentId = getAgentID();
-			try {
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
-					headers: { 'X-Requested-With': 'XMLHttpRequest' }
-				});
-				const data = await response.json();
-				if (data.server_credits !== undefined) {
-					rollCredits = data.server_credits;
-					localStorage.setItem('rollCredits', rollCredits);
-				}
-				updateUI();
-			} catch (e) { console.log("Sync failed"); }
-		}
-
-		async function reconcileStatsFromServer() {
-			const agentId = getAgentID();
-			try {
-				const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-				const data = await res.json();
-				const myEntry = data.find(e => e.agent === agentId);
-				if (myEntry) {
-					if (myEntry.sats > totalSats) {
-						totalSats = myEntry.sats;
-						localStorage.setItem('totalSats', totalSats);
-						updateUI();
-						console.log(`Reconciled: Updated local sats to match server (${totalSats})`);
-					}
-				}
-			} catch (e) {
-				console.log("Reconciliation failed. Using local state.");
-			}
-		}
-
-		// --- ROLL LOGIC ---
-		async function handleRoll() {
-			if (isRolling) return;
-			const creditsAtStart = rollCredits;
-			
-			const btn = document.getElementById('roll-btn');
-			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
+        // --- HARDENED ROLL LOGIC ---
+        async function handleRoll() {
+            if (isRolling) return;
+            const btn = document.getElementById('roll-btn');
+            const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             
-            slots.forEach(slot => { slot.style.color = 'var(--btc-orange)'; });
+            isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
+            document.getElementById('result-area').style.display = 'none';
 
-			isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
-			document.getElementById('result-area').style.display = 'none';
+            const spinIntervals = slots.map(slot => {
+                slot.classList.remove('just-finished'); slot.classList.add('rolling');
+                return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
+            });
 
-			const spinIntervals = slots.map(slot => {
-				slot.classList.remove('just-finished'); slot.classList.add('rolling');
-				return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
-			});
+            try {
+                if (audioCtx.state === 'suspended') await audioCtx.resume();
+                playLoop();
+                const agentId = getAgentID();
+                
+                // # ACTION: FETCH OFFICIAL RESULT FROM SERVER
+                const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}`, { headers: SECURE_HEADERS });
+                const data = await response.json();
 
-			try {
-				if (audioCtx.state === 'suspended') await audioCtx.resume();
-				playLoop();
-				const agentId = getAgentID();
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
-                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                });
-				const data = await response.json();
+                if (data.error === "LOCKED") { 
+                    stopLoop(); spinIntervals.forEach(clearInterval); showIpLock(); 
+                    isRolling = false; btn.innerText = "ROLL FOR SATS"; return; 
+                }
 
-				if (data.error === "LOCKED") { 
-                    stopLoop(); spinIntervals.forEach(clearInterval);
-                    showIpLock(); 
-					isRolling = false; btn.innerText = "ROLL FOR SATS"; return; 
-				}
+                // # SECURITY: OVERWRITE LOCAL STATE WITH SERVER TRUTH
+                rollCredits = data.server_credits;
+                totalSats = data.total_denied; 
+                localStorage.setItem('rollCredits', rollCredits);
+                localStorage.setItem('totalSats', totalSats);
 
-				rollCredits = data.server_credits;
-				localStorage.setItem('rollCredits', rollCredits);
-				const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
-				const finalStr = data.num.toString().padStart(4, '0');
+                const finalStr = data.num.toString().padStart(4, '0');
+                for (let i = 0; i < 4; i++) {
+                    await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
+                    clearInterval(spinIntervals[i]);
+                    slots[i].classList.remove('rolling'); slots[i].classList.add('just-finished');
+                    slots[i].innerText = finalStr[i];
+                    playDing(data.num === "2121"); 
+                }
+                stopLoop();
 
-				for (let i = 0; i < stopOrder.length; i++) {
-					const idx = stopOrder[i];
-					await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-					clearInterval(spinIntervals[idx]);
-					slots[idx].classList.remove('rolling'); 
-					slots[idx].classList.add('just-finished');
-					slots[idx].innerText = finalStr[idx];
-					playDing(data.num === 2121); 
-				}
-				stopLoop();
+                // # DISPLAY REWARDS
+                const statusMsg = document.getElementById('status-message');
+                if (data.signature.startsWith('21') && data.signature.endsWith('21')) {
+                    statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!</h2>`;
+                    confetti({ particleCount: 300 }); playFreeCreditSound();
+                } else if (data.num === "2121") {
+                    statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121 ✨</h3>";
+                    confetti({ particleCount: 150 }); playFreeCreditSound();
+                } else if (finalStr.includes('21')) {
+                    statusMsg.innerHTML = "<h3 style='color:var(--win-green)'>⚡ +5 FREE ROLLS ⚡</h3>";
+                    playFreeCreditSound();
+                }
 
-				totalSats += 10; 
+                document.getElementById('res-num').innerText = data.num;
+                document.getElementById('res-ts').innerText = data.ts;
+                document.getElementById('res-sig').innerText = data.signature;
+                document.getElementById('result-area').style.display = 'block';
+                
+                updateUI();
+                updateJackpotUI();
 
-				const sig = data.signature; 
-				const is21Win = finalStr.includes('21');
-				const is2121 = (data.num === 2121);
-				const isMiracle = sig.startsWith('21') && sig.endsWith('21');
+                if (rollCredits <= 0 || data.daily_count >= 100) { 
+                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                    localStorage.setItem('rollCooldown', expiry); startTimer(expiry); 
+                } else {
+                    btn.disabled = false; btn.innerText = "ROLL FOR SATS";
+                }
+                isRolling = false;
+            } catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; updateUI(); }
+        }
 
-				if (creditsAtStart >= 0) {
-				    fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { 
-                        method: 'POST',
-                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                    }).then(() => updateJackpotUI());
-				}
+        function updateUI() {
+            document.getElementById('agent-id-display').innerText = getAgentID();
+            document.getElementById('credit-count').innerText = rollCredits;
+            document.getElementById('total-sats-val').innerText = totalSats;
+        }
 
-				const statusMsg = document.getElementById('status-message');
+        function showIpLock() {
+            document.getElementById('ip-lock-msg').style.display = 'block';
+            document.getElementById('slot-container').style.display = 'none';
+        }
 
-				if (isMiracle) {
-                    fetch(`${API_BASE}/reset-jackpot`, { method: 'POST', headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-					rollCredits += 210; 
-					totalSats += 2000;
-					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & JACKPOT ROLLS</h2>`;
-					confetti({ particleCount: 300, spread: 100, colors: ['#f7931a', '#fff'] });
-					playFreeCreditSound();
-				}	
-				else if (is2121) {
-					rollCredits += 21;
-					totalSats += 500;
-					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121: 500 SATS + 21 ROLLS! ✨</h3>";
-					document.getElementById('copy-btn').style.display = "block";
-					confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-					playFreeCreditSound();
-				} 
-				else if (is21Win) {
-                    rollCredits += 5; 
-					totalSats += 21;
-					const startIdx = finalStr.indexOf('21');
-					document.getElementById(`slot-${startIdx}`).style.color = 'var(--win-green)';
-					document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
-					statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ +5 FREE ROLLS ⚡</h3>";
-					
-                    if (audioCtx.state === 'suspended') {
-                        audioCtx.resume().then(() => playFreeCreditSound());
-                    } else {
-                        playFreeCreditSound();
-                    }
-                    
-					confetti({ particleCount: 50, spread: 40, colors: ['#4CAF50'] });
-				} 
-				else {
-					statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
-				}
-			
-				localStorage.setItem('totalSats', totalSats);
-				localStorage.setItem('rollCredits', rollCredits);
+        function startTimer(expiry) {
+            const t = document.getElementById('timer');
+            const b = document.getElementById('roll-btn');
+            b.classList.add('locked');
+            const iv = setInterval(() => {
+                const rem = Math.max(0, Math.floor((expiry - Date.now()) / 1000));
+                if (rem <= 0) { clearInterval(iv); t.innerText = ""; b.disabled = false; b.classList.remove('locked'); b.innerText = "ROLL FOR SATS"; }
+                else t.innerText = `NEXT ROLL IN: ${Math.floor(rem/60)}m ${rem%60}s`;
+            }, 1000);
+        }
 
-				document.getElementById('res-num').innerText = data.num;
-				document.getElementById('res-ts').innerText = data.ts;
-				document.getElementById('res-sig').innerText = data.signature;
-				document.getElementById('result-area').style.display = 'block';
-				
-				updateUI();
-										
-				// # FIX: Push score to server but do NOT trigger syncStateFromServer() immediately.
-                // # This preserves the credits awarded above (server_credits) without a double-deduction loop.
-				fetch(`${API_BASE}/update-score`, {
-					method: 'POST', 
-					headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-					body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
-				}); 
-
-				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
-				if (rollCredits <= 0 || currentDailyCount >= 100) { 
-					const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-					localStorage.setItem('rollCooldown', expiry); startTimer(expiry); 
-				} else {
-					btn.disabled = false; btn.innerText = "ROLL FOR SATS";
-				}
-				isRolling = false; updateUI();
-			} catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; updateUI(); }
-		}
-
-		function showIpLock() {
-			document.getElementById('ip-lock-msg').style.display = 'block';
-			document.getElementById('slot-container').style.display = 'none';
-		}
-
-		function startTimer(expiry) {
-			const timerDiv = document.getElementById('timer');
-			const btn = document.getElementById('roll-btn');
-            const agentId = getAgentID();
-
-            const remainingSecs = Math.max(0, Math.floor((expiry - Date.now()) / 1000));
-            fetch(`${API_BASE}/set-lockout`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-                body: JSON.stringify({ agent_id: agentId, duration: remainingSecs })
-            }).catch(err => console.log("Lockout sync failed."));
-
-			const interval = setInterval(() => {
-				const diff = expiry - Date.now();
-				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
-				const isCurrentlyFrozen = (currentDailyCount >= 100 && rollCredits > 0);
-
-				if (diff <= 0 || (rollCredits > 0 && !isCurrentlyFrozen)) {
-					clearInterval(interval); timerDiv.innerText = "";
-					btn.disabled = false; btn.classList.remove('locked'); btn.innerText = "ROLL FOR SATS";
-					document.getElementById('ip-lock-msg').style.display = 'none';
-					document.getElementById('slot-container').style.display = 'flex';
-				} else {
-					const mins = Math.floor(diff / 60000); const secs = Math.floor((diff % 60000) / 1000);
-					timerDiv.innerText = `NEXT ROLL IN: ${mins}:${secs.toString().padStart(2, '0')}`;
-					btn.innerText = `LOCKED (${mins}m)`; btn.classList.add('locked'); btn.disabled = true; 
-				}
-			}, 1000);
-		}
-
-		function copyProof() {
-			const text = document.getElementById('proof-content').innerText;
-			navigator.clipboard.writeText(text).then(() => { alert("Proof Copied!"); });
-		}
-
-		async function showLeaderboard() {
-			document.getElementById('leaderboard-overlay').style.display = 'block';
-			const myId = getAgentID();
-			try {
-				const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-				const data = await res.json();
-				document.getElementById('lb-content').innerHTML = data.slice(0, 10).map((e, i) => `
-					<div class="leaderboard-row ${e.agent === myId ? 'me' : ''}">
-						<span>${i+1}. ${e.agent}</span>
-						<span>${e.sats.toLocaleString()}</span>
-					</div>
-				`).join('');
-				const myRank = data.findIndex(e => e.agent === myId) + 1;
-				document.getElementById('my-rank-display').innerText = myRank > 0 ? `#${myRank} GLOBAL` : "UNRANKED";
-				if(myRank > 0 && myRank <= 10) document.getElementById('my-rank-display').style.color = "var(--btc-orange)";
-			} catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
-		}
-
-		function updateUI() {
-			document.getElementById('agent-id-display').innerText = getAgentID();
-			document.getElementById('credit-count').innerText = rollCredits;
-			document.getElementById('total-sats-val').innerText = totalSats.toLocaleString();
-		}
-
-		window.onload = async () => {
-			updateUI();
-			updateJackpotUI();
-            
-			await reconcileStatsFromServer();
-
-            setInterval(updateJackpotUI, 10000);
-
-			const agentId = getAgentID();
-			const savedExpiry = localStorage.getItem('rollCooldown');
-			
-			if (savedExpiry && Date.now() < parseInt(savedExpiry)) {
-				const dailyDisplay = document.getElementById('daily-count-display');
-				const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
-				if (rollCredits <= 0 || currentDailyCount >= 100) {
-					showIpLock();
-					startTimer(parseInt(savedExpiry));
-				}
-			}
-
-			try {
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
-                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                });
-				const data = await response.json();
-
-				if (data.error === "LOCKED") {
-					const expiry = Date.now() + (data.remaining_seconds * 1000);
-					localStorage.setItem('rollCooldown', expiry); 
-					showIpLock();
-					startTimer(expiry);
-				} else {
-					if (data.server_credits !== undefined) {
-						rollCredits = data.server_credits;
-						localStorage.setItem('rollCredits', rollCredits);
-					}
-					updateUI();
-				}
-			} catch (e) { 
-				console.log("Initial state sync failed."); 
-				updateUI();
-			}
-		};
-	</script>
+        window.onload = () => {
+            updateUI();
+            updateJackpotUI();
+            const cd = localStorage.getItem('rollCooldown');
+            if (cd && Date.now() < cd) startTimer(parseInt(cd));
+        };
+    </script>
 </body>
 </html>
