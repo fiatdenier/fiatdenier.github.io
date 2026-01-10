@@ -324,6 +324,7 @@
 				if (audioCtx.state === 'suspended') await audioCtx.resume();
 				playLoop();
 				const agentId = getAgentID();
+                // # THE MAIN SERVER CALL
 				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
                     headers: { 'X-Requested-With': 'XMLHttpRequest' }
                 });
@@ -337,6 +338,7 @@
 					isRolling = false; return; 
 				}
 
+                // # THE ONLY SOURCE OF TRUTH FOR CREDITS:
 				rollCredits = data.server_credits;
 				localStorage.setItem('rollCredits', rollCredits);
 				const finalStr = data.num.toString().padStart(4, '0');
@@ -371,20 +373,23 @@
 
 				if (isMiracle) {
                     fetch(`${API_BASE}/reset-jackpot`, { method: 'POST', headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-					rollCredits += 210; totalSats += 2000;
+					// rollCredits += 210; // # REMOVED: Server handles credit math
+                    totalSats += 2000;
 					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & JACKPOT ROLLS</h2>`;
 					confetti({ particleCount: 300, spread: 100, colors: ['#f7931a', '#fff'] });
 					playFreeCreditSound();
 				}	
 				else if (is2121) {
-					rollCredits += 21; totalSats += 500;
+					// rollCredits += 21; // # REMOVED: Server handles credit math
+                    totalSats += 500;
 					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121: 500 SATS + 21 ROLLS! ✨</h3>";
 					document.getElementById('copy-btn').style.display = "block";
 					confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
 					playFreeCreditSound();
 				} 
 				else if (is21Win) {
-                    rollCredits += 5; totalSats += 21;
+                    // rollCredits += 5; // # REMOVED: Server handles credit math
+                    totalSats += 21;
 					const startIdx = finalStr.indexOf('21');
 					document.getElementById(`slot-${startIdx}`).style.color = 'var(--win-green)';
 					document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
@@ -397,7 +402,7 @@
 				else { statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>"; }
 			
 				localStorage.setItem('totalSats', totalSats);
-				localStorage.setItem('rollCredits', rollCredits);
+				// localStorage.setItem('rollCredits', rollCredits); // # REMOVED: Redundant as it was set after the fetch above
 
 				document.getElementById('res-num').innerText = data.num;
 				document.getElementById('res-ts').innerText = data.ts;
@@ -409,7 +414,7 @@
 					method: 'POST', 
 					headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
 					body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
-				}).then(() => syncStateFromServer()); 
+				})/*.then(() => syncStateFromServer());*/ // # COMMENTED OUT: Removed secondary sync that caused double deduction
 
 				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
 				if (rollCredits <= 0 || currentDailyCount >= 100) { 
