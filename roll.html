@@ -117,13 +117,12 @@
 
     <script>
 		const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-		const COOLDOWN_MINUTES = 10;
 		const API_BASE = "https://api.fiatdenier.com";
 		let isRolling = false;
 		let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
 		let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
 
-        // --- AUDIO ENGINE ---
+		// --- AUDIO ENGINE ---
 		let clickBuffer, dingBuffer, loopSource, freeCreditBuffer, loopGain;
 		fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => { clickBuffer = d; });
 		fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(d => { dingBuffer = d; });
@@ -156,7 +155,24 @@
 			} catch (e) {}
 		}
 
-        // --- ROLL LOGIC ---
+        async function showLeaderboard() {
+            document.getElementById('leaderboard-overlay').style.display = 'block';
+            const myId = getAgentID();
+            try {
+                const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+                const data = await res.json();
+                document.getElementById('lb-content').innerHTML = data.slice(0, 10).map((e, i) => `
+                    <div class="leaderboard-row ${e.agent === myId ? 'me' : ''}">
+                        <span>${i+1}. ${e.agent}</span>
+                        <span>${e.sats.toLocaleString()}</span>
+                    </div>
+                `).join('');
+                const myRank = data.findIndex(e => e.agent === myId) + 1;
+                document.getElementById('my-rank-display').innerText = myRank > 0 ? `#${myRank} GLOBAL` : "UNRANKED";
+            } catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
+        }
+
+		// --- ROLL LOGIC ---
 		async function handleRoll() {
 			if (isRolling) return;
 			const btn = document.getElementById('roll-btn');
@@ -174,7 +190,6 @@
 				if (audioCtx.state === 'suspended') await audioCtx.resume();
 				playLoop();
 				
-                // # CALLING SERVER: The server performs the subtraction and return new balance
 				const response = await fetch(`${API_BASE}/get-roll?agent_id=${getAgentID()}`, {
                     headers: { 'X-Requested-With': 'XMLHttpRequest' }
                 });
@@ -185,7 +200,6 @@
                     showIpLock(); btn.innerText = "ROLL FOR SATS"; isRolling = false; return; 
                 }
 
-                // # SYNC SERVER CREDITS IMMEDIATELY
 				rollCredits = data.server_credits;
 				localStorage.setItem('rollCredits', rollCredits);
 
@@ -204,16 +218,21 @@
 
 				totalSats += 10; 
 				const statusMsg = document.getElementById('status-message');
-                const is21Win = finalStr.includes('21');
+
+                // # RE-ENABLED: Increment Progressive Jackpot on server
+                fetch(`${API_BASE}/increment-jackpot?agent_id=${getAgentID()}`, { 
+                    method: 'POST',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                }).then(() => updateJackpotUI());
 
 				if (data.num === 2121) {
 					totalSats += 500;
 					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121! ✨</h3>";
 					confetti({ particleCount: 150, spread: 70 });
 					playFreeCreditSound();
-				} else if (is21Win) {
+				} else if (finalStr.includes('21')) {
 					totalSats += 21;
-					statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ +5 FREE ROLLS ⚡</h3>";
+					statusMsg.innerHTML = "<h3 style='color:var(--win-green);'>⚡ +5 FREE ROLLS ⚡</h3>";
 					playFreeCreditSound();
 				} else { statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>"; }
 			
@@ -223,6 +242,13 @@
 				document.getElementById('res-sig').innerText = data.signature;
 				document.getElementById('result-area').style.display = 'block';
 				
+                // # RE-ENABLED: Update Leaderboard Score on server
+                fetch(`${API_BASE}/update-score`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+                    body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
+                });
+
                 updateUI();
 				isRolling = false; 
                 btn.disabled = (rollCredits <= 0);
@@ -235,7 +261,6 @@
         
         async function syncWithServer() {
             try {
-                // # Calling with admin=true or just getting status returns current balance without rolling
                 const r = await fetch(`${API_BASE}/get-roll?agent_id=${getAgentID()}&sync=true`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
                 const d = await r.json();
                 if (d.server_credits !== undefined) {
@@ -249,9 +274,14 @@
 		window.onload = async () => {
 			updateUI();
 			updateJackpotUI();
-            await syncWithServer(); // Ensure we have the right balance on load
+            await syncWithServer();
 			setInterval(updateJackpotUI, 10000);
 		};
+
+        function copyProof() {
+            const text = document.getElementById('proof-content').innerText;
+            navigator.clipboard.writeText(text).then(() => { alert("Proof Copied!"); });
+        }
 	</script>
 </body>
 </html>
