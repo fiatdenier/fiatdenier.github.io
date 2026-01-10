@@ -306,7 +306,7 @@
 		// --- ROLL LOGIC ---
 		async function handleRoll() {
 			if (isRolling) return;
-			const creditsAtStart = rollCredits;
+			
 			const btn = document.getElementById('roll-btn');
 			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             
@@ -332,13 +332,14 @@
 				if (data.error === "LOCKED") { 
                     stopLoop(); spinIntervals.forEach(clearInterval);
                     showIpLock(); 
-					// # FIX: Restore button text so it doesn't stay on "ROLLING..."
                     btn.innerText = "ROLL FOR SATS"; 
 					isRolling = false; return; 
 				}
 
+                // # UPDATED: Use server balance immediately to ensure deduction/addition is tracked
 				rollCredits = data.server_credits;
 				localStorage.setItem('rollCredits', rollCredits);
+
 				const finalStr = data.num.toString().padStart(4, '0');
 				const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
 
@@ -353,6 +354,7 @@
 				}
 				stopLoop();
 
+				// # KEEPING CLIENT-SIDE SAT LOGIC FOR DISPLAY (Sats aren't currency)
 				totalSats += 10; 
 
 				const sig = data.signature; 
@@ -360,31 +362,33 @@
 				const is2121 = (data.num === 2121);
 				const isMiracle = sig.startsWith('21') && sig.endsWith('21');
 
-				if (creditsAtStart >= 0) {
-				    fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { 
-                        method: 'POST',
-                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                    }).then(() => updateJackpotUI());
-				}
+                // Inform server of the event to increment jackpot
+				fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { 
+                    method: 'POST',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                }).then(() => updateJackpotUI());
 
 				const statusMsg = document.getElementById('status-message');
 
 				if (isMiracle) {
                     fetch(`${API_BASE}/reset-jackpot`, { method: 'POST', headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-					rollCredits += 210; totalSats += 2000;
+					// rollCredits += 210; // # MOVED TO SERVER
+					totalSats += 2000;
 					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & JACKPOT ROLLS</h2>`;
 					confetti({ particleCount: 300, spread: 100, colors: ['#f7931a', '#fff'] });
 					playFreeCreditSound();
 				}	
 				else if (is2121) {
-					rollCredits += 21; totalSats += 500;
+					// rollCredits += 21; // # MOVED TO SERVER
+					totalSats += 500;
 					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121: 500 SATS + 21 ROLLS! ✨</h3>";
 					document.getElementById('copy-btn').style.display = "block";
 					confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
 					playFreeCreditSound();
 				} 
 				else if (is21Win) {
-                    rollCredits += 5; totalSats += 21;
+                    // rollCredits += 5; // # MOVED TO SERVER
+					totalSats += 21;
 					const startIdx = finalStr.indexOf('21');
 					document.getElementById(`slot-${startIdx}`).style.color = 'var(--win-green)';
 					document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
@@ -397,7 +401,7 @@
 				else { statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>"; }
 			
 				localStorage.setItem('totalSats', totalSats);
-				localStorage.setItem('rollCredits', rollCredits);
+                // localStorage.setItem('rollCredits', rollCredits); // # Redundant as already set above
 
 				document.getElementById('res-num').innerText = data.num;
 				document.getElementById('res-ts').innerText = data.ts;
@@ -418,7 +422,8 @@
 				} else {
 					btn.disabled = false; btn.innerText = "ROLL FOR SATS";
 				}
-				isRolling = false; updateUI();
+				isRolling = false; 
+                updateUI(); // Final refresh
 			} catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; updateUI(); }
 		}
 
