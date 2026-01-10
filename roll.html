@@ -273,14 +273,21 @@
 		}
 
 		function regenerateIdentity() {
-			if (!confirm("Regenerate your network identity?")) return;
+			if (!confirm("Regenerate your network identity? This will reset your local score.")) return;
+            
+            // # SURGICAL CHANGE: Reset score on identity swap
+            totalSats = 0;
+            localStorage.setItem('totalSats', 0);
+            
 			const newId = generateAnimalName();
 			localStorage.setItem('agentID', newId);
 			document.getElementById('agent-id-display').innerText = newId;
+            updateUI();
+
 			fetch(`${API_BASE}/update-score`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-				body: JSON.stringify({ agent_id: newId, sats: totalSats })
+				body: JSON.stringify({ agent_id: newId, sats: 0 })
 			});
 		}
 
