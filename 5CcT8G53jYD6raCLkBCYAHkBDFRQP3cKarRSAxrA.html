@@ -168,7 +168,7 @@
 
             try {
                 // # UPDATED: Added SECURE_HEADERS
-                const res = await fetch(`${API_BASE}/admin-award?key=${key}&agent=${agent}&amount=${amount}`, { headers: SECURE_HEADERS });
+                const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${agent}&amount=${amount}`, { headers: SECURE_HEADERS });
                 const data = await res.json();
                 if (data.status === "Success") {
                     status.innerText = `✅ Granted ${amount} to ${agent}. Total: ${data.new_balance}`;

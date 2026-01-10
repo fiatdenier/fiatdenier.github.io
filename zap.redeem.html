@@ -10,87 +10,17 @@
             --neon-green: #39ff14;
             --dark-bg: #0a0a0a;
             --glass-bg: rgba(255, 255, 255, 0.05);
-            /* # ADDED: Bitcoin Orange for the new button */
             --btc-orange: #f7931a; 
         }
-
-        body {
-            background-color: var(--dark-bg);
-            color: white;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        .container {
-            background: var(--glass-bg);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid var(--neon-green);
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-        }
-
+        body { background-color: var(--dark-bg); color: white; font-family: 'Courier New', Courier, monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .container { background: var(--glass-bg); padding: 2rem; border-radius: 15px; border: 1px solid var(--neon-green); box-shadow: 0 0 20px rgba(57, 255, 20, 0.2); text-align: center; max-width: 400px; width: 90%; }
         h1 { font-size: 1.5rem; color: var(--neon-green); text-transform: uppercase; }
         p { font-size: 0.9rem; opacity: 0.8; line-height: 1.4; }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            background: #1a1a1a;
-            border: 1px solid #333;
-            color: var(--neon-green);
-            border-radius: 5px;
-            box-sizing: border-box;
-            outline: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: var(--neon-green);
-            color: black;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            box-shadow: 0 0 15px var(--neon-green);
-            transform: translateY(-2px);
-        }
-
-        /* # ADDED: Style for the Lucky Roll button */
-        .game-link { 
-            display: inline-block; 
-            margin-top: 20px; 
-            padding: 10px 20px; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            background: var(--btc-orange);
-            color: white !important;
-            font-weight: 700;
-            font-family: 'Roboto', sans-serif;
-            border: none;
-            cursor: pointer;
-        }
-
-        #status {
-            margin-top: 15px;
-            font-size: 0.85rem;
-            min-height: 1.2rem;
-        }
-
+        input { width: 100%; padding: 12px; margin: 10px 0; background: #1a1a1a; border: 1px solid #333; color: var(--neon-green); border-radius: 5px; box-sizing: border-box; outline: none; }
+        button { width: 100%; padding: 12px; background: var(--neon-green); color: black; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; text-transform: uppercase; transition: 0.3s; }
+        button:hover { box-shadow: 0 0 15px var(--neon-green); transform: translateY(-2px); }
+        .game-link { display: inline-block; margin-top: 20px; padding: 10px 20px; text-decoration: none; border-radius: 4px; background: var(--btc-orange); color: white !important; font-weight: 700; font-family: 'Roboto', sans-serif; border: none; cursor: pointer; }
+        #status { margin-top: 15px; font-size: 0.85rem; min-height: 1.2rem; }
         .loading { color: orange; }
         .success { color: var(--neon-green); font-weight: bold; }
         .error { color: #ff3131; }
@@ -101,21 +31,15 @@
 <div class="container">
     <h1>⚡ Free Roll Redemption</h1>
     <p>Enter your <b>Sovereign Individual Name</b> and the <b>Redemption Hash</b> from your Zap to claim your credits.</p>
-    
     <input type="text" id="agent_id" placeholder="Sovereign Individual Name (e.g. GoldenEagle)">
     <input type="text" id="zap_hash" placeholder="Paste Redemption Hash Here">
-    
     <button id="redeem-btn" onclick="processRedemption()">Claim Reward</button>
-    
     <div id="status"></div>
-
     <button class="game-link" id="lucky-roll-btn" style="display: none;" onclick="location.href='roll.html'">🎰 PLAY LUCKY ROLL</button>
 </div>
 
 <script>
     const API_BASE = "https://redeem.fiatdenier.com:2083";
-
-    // # ADDED: Audio Engine from roll.html
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     let freeCreditBuffer = null;
 
@@ -132,7 +56,6 @@
         source.start(0);
     }
 
-    // # ADDED: Unlock audio context on user interaction
     ['click', 'touchstart', 'keydown'].forEach(event => {
         window.addEventListener(event, () => {
             if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -157,7 +80,10 @@
         try {
             const verifyRes = await fetch(`${API_BASE}/redeem-verify`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest' 
+                },
                 body: JSON.stringify({ hash: zapHash })
             });
             const verifyData = await verifyRes.json();
@@ -171,27 +97,24 @@
             updateStatus("Hash valid! Claiming credits...", "loading");
             const claimRes = await fetch(`${API_BASE}/redeem-claim`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest' 
+                },
                 body: JSON.stringify({ hash: zapHash, agent_id: agentId })
             });
             const claimData = await claimRes.json();
 
             if (claimRes.ok) {
                 updateStatus(`SUCCESS! +${claimData.reward} Credits added to ${agentId}.`, "success");
-                
-                // # ADDED: Reward Effects (Confetti & Sound) from roll.html
                 playFreeCreditSound();
                 confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#39ff14', '#ffffff'] });
-                
-                // # ADDED: Show the Lucky Roll button on success
                 gameBtn.style.display = 'inline-block';
-
             } else if (claimRes.status === 403) {
                 updateStatus("Free Roll Credits already claimed", "error");
             } else {
                 updateStatus(`Claim Error: ${claimData.message || claimData.error || "Redemption Failed"}`, "error");
             }
-
         } catch (err) {
             console.error(err);
             updateStatus("Network Error. Is the backend running?", "error");
@@ -206,6 +129,5 @@
         statusDiv.className = type;
     }
 </script>
-
 </body>
 </html>
