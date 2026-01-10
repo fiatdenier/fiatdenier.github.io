@@ -86,7 +86,7 @@
     <div class="card">
         <a href="index.html" class="back-link">← Return to Wire</a>
         
-        <div id="jackpot-container" style="background: rgba(0,0,0,0.3); border: 1px solid #333; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center; /*border-left: 4px solid var(--win-green)*/;">
+        <div id="jackpot-container" style="background: rgba(0,0,0,0.3); border: 1px solid #333; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center;">
             <div style="font-size: 0.6rem; color: #888; letter-spacing: 2px; margin-bottom: 4px;">PROGRESSIVE FREE CREDIT JACKPOT</div>
             <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
                 <span id="jackpot-ticker" class="glow-active" style="color: var(--win-green); font-size: 1.6rem; font-weight: bold; font-family: 'Courier New', monospace;">210.00</span>
@@ -181,7 +181,6 @@
         async function updateJackpotUI() {
             const agentId = getAgentID();
             try {
-                // # ADDED: Headers to help bypass Cloudflare direct access block
                 const response = await fetch(`${API_BASE}/get-global-jackpot?agent_id=${agentId}`, {
                     headers: { 'X-Requested-With': 'XMLHttpRequest' }
                 });
@@ -196,7 +195,6 @@
                 
                 if (countEl && data.daily_count !== undefined) {
                     countEl.innerText = data.daily_count;
-                    // PROGRESSIVE COLOR WARNING
                     if (data.daily_count >= 90) countEl.style.color = "#ff4444";
                     else if (data.daily_count >= 70) countEl.style.color = "var(--btc-orange)";
                     else countEl.style.color = "white";
@@ -284,7 +282,6 @@
 			});
 		}
 
-		// # ADDED: Global sync helper to reconcile local and server states
 		async function syncStateFromServer() {
 			const agentId = getAgentID();
 			try {
@@ -300,16 +297,13 @@
 			} catch (e) { console.log("Sync failed"); }
 		}
 
-		// # RECONCILE: New function to fetch existing stats from server if local is out of sync
 		async function reconcileStatsFromServer() {
 			const agentId = getAgentID();
 			try {
 				const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
 				const data = await res.json();
-				// Find this specific agent in the global leaderboard data
 				const myEntry = data.find(e => e.agent === agentId);
 				if (myEntry) {
-					// Only update if the server score is higher than our local score
 					if (myEntry.sats > totalSats) {
 						totalSats = myEntry.sats;
 						localStorage.setItem('totalSats', totalSats);
@@ -330,7 +324,6 @@
 			const btn = document.getElementById('roll-btn');
 			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             
-            // # FIX: Reset color stickiness - Ensure numbers are Bitcoin Orange at start of every roll
             slots.forEach(slot => { slot.style.color = 'var(--btc-orange)'; });
 
 			isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
@@ -345,7 +338,6 @@
 				if (audioCtx.state === 'suspended') await audioCtx.resume();
 				playLoop();
 				const agentId = getAgentID();
-                // # ADDED: Request header for Cloudflare/WAF bypass
 				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
                     headers: { 'X-Requested-With': 'XMLHttpRequest' }
                 });
@@ -373,7 +365,6 @@
 				}
 				stopLoop();
 
-				// // # ADDED: Universal increment for Total Sats Denied (+10 per successive roll)
 				totalSats += 10; 
 
 				const sig = data.signature; 
@@ -381,12 +372,11 @@
 				const is2121 = (data.num === 2121);
 				const isMiracle = sig.startsWith('21') && sig.endsWith('21');
 
-                // # SYNC: If using a credit (or rolling free), tell server to increment global pot by 0.21 and update daily usage
 				if (creditsAtStart >= 0) {
 				    fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { 
                         method: 'POST',
                         headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                    }).then(() => updateJackpotUI()); // # Refresh UI to show incremented daily count
+                    }).then(() => updateJackpotUI());
 				}
 
 				const statusMsg = document.getElementById('status-message');
@@ -394,7 +384,6 @@
 				if (isMiracle) {
                     fetch(`${API_BASE}/reset-jackpot`, { method: 'POST', headers: { 'X-Requested-With': 'XMLHttpRequest' } });
 					rollCredits += 210; 
-					// // # ADDED: Bonus to Total Sats Denied for Miracle Win
 					totalSats += 2000;
 					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & JACKPOT ROLLS</h2>`;
 					confetti({ particleCount: 300, spread: 100, colors: ['#f7931a', '#fff'] });
@@ -402,7 +391,6 @@
 				}	
 				else if (is2121) {
 					rollCredits += 21;
-					// // # ADDED: Bonus to Total Sats Denied for 2121 Jackpot
 					totalSats += 500;
 					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121: 500 SATS + 21 ROLLS! ✨</h3>";
 					document.getElementById('copy-btn').style.display = "block";
@@ -410,16 +398,13 @@
 					playFreeCreditSound();
 				} 
 				else if (is21Win) {
-					// # FIX: Award 5 credits instead of 1
                     rollCredits += 5; 
-					// // # ADDED: Bonus to Total Sats Denied for Standard '21' Win
 					totalSats += 21;
 					const startIdx = finalStr.indexOf('21');
 					document.getElementById(`slot-${startIdx}`).style.color = 'var(--win-green)';
 					document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
 					statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ +5 FREE ROLLS ⚡</h3>";
 					
-                    // # FIX: Trigger sound effect for win - Ensure AudioContext is resumed before playing
                     if (audioCtx.state === 'suspended') {
                         audioCtx.resume().then(() => playFreeCreditSound());
                     } else {
@@ -442,14 +427,14 @@
 				
 				updateUI();
 										
-				// // # GLOBAL SYNC: Push the updated Total Sats Denied score to the global leaderboard and sync back
+				// # FIX: Push score to server but do NOT trigger syncStateFromServer() immediately.
+                // # This preserves the credits awarded above (server_credits) without a double-deduction loop.
 				fetch(`${API_BASE}/update-score`, {
 					method: 'POST', 
 					headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
 					body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
-				}).then(() => syncStateFromServer()); 
+				}); 
 
-				// # UPDATED: Check for both credit exhaustion AND daily limit for the 10-minute timer
 				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
 				if (rollCredits <= 0 || currentDailyCount >= 100) { 
 					const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
@@ -471,7 +456,6 @@
 			const btn = document.getElementById('roll-btn');
             const agentId = getAgentID();
 
-            // # ADDED: Sync lockout state to server
             const remainingSecs = Math.max(0, Math.floor((expiry - Date.now()) / 1000));
             fetch(`${API_BASE}/set-lockout`, {
                 method: 'POST',
@@ -481,7 +465,6 @@
 
 			const interval = setInterval(() => {
 				const diff = expiry - Date.now();
-				// # UPDATED: Condition to clear lock logic
 				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
 				const isCurrentlyFrozen = (currentDailyCount >= 100 && rollCredits > 0);
 
@@ -531,15 +514,13 @@
 			updateUI();
 			updateJackpotUI();
             
-			// # RECONCILE: Run the check on page load to fix the "starts at 0" issue
 			await reconcileStatsFromServer();
 
-            setInterval(updateJackpotUI, 10000); // Keep it synced in realtime
+            setInterval(updateJackpotUI, 10000);
 
 			const agentId = getAgentID();
 			const savedExpiry = localStorage.getItem('rollCooldown');
 			
-			// # UPDATED: Ensure timer shows up if they were over the daily limit when they closed the page
 			if (savedExpiry && Date.now() < parseInt(savedExpiry)) {
 				const dailyDisplay = document.getElementById('daily-count-display');
 				const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
