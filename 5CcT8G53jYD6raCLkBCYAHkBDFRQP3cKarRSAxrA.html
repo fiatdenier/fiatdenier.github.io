@@ -19,7 +19,7 @@
         .danger { background: #d32f2f; color: white; margin-top: 20px; }
         #admin-content { display: none; }
         .credit-ui { display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
-        #award-status { font-size: 12px; margin-top: 10px; color: #f2a900; }
+        #award-status, #rewrite-status { font-size: 12px; margin-top: 10px; color: #f2a900; }
         .manual-input { width: 100%; margin-bottom: 10px; border: 1px dashed #f2a900; box-sizing: border-box; }
         #user-search { width: 100%; margin-bottom: 5px; border-color: #555; font-size: 12px; }
     </style>
@@ -35,6 +35,7 @@
 
     <div id="admin-content">
         <h1>🎰 Admin Dashboard</h1>
+        
         <div class="card">
             <div class="stat-grid">
                 <div class="stat-box">
@@ -49,19 +50,31 @@
         </div>
 
         <div class="card">
-            <h3>🎁 Issue Free Credits</h3>
+            <h3>👤 Target User Selection</h3>
             <input type="text" id="manual-agent-id" class="manual-input" placeholder="Paste User ID Manually (Overrides dropdown)">
-            
             <input type="text" id="user-search" placeholder="Search dropdown list..." onkeyup="filterUsers()">
-            
+            <select id="agent-select" style="width: 100%;">
+                <option value="">-- Loading Players... --</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <h3>🎁 Issue Free Credits</h3>
             <div class="credit-ui">
-                <select id="agent-select" style="flex-grow: 1;">
-                    <option value="">-- Loading Players... --</option>
-                </select>
-                <input type="number" id="credit-amount" value="5" style="width: 60px; margin-bottom: 0;">
-                <button onclick="issueCredits()">Grant</button>
+                <input type="number" id="credit-amount" value="5" style="flex-grow: 1; margin-bottom: 0;">
+                <button onclick="issueCredits()">Grant Credits</button>
             </div>
             <div id="award-status"></div>
+        </div>
+
+        <div class="card" style="border-color: #d32f2f;">
+            <h3 style="color: #d32f2f;">✍️ Rewrite User Sats</h3>
+            <p style="font-size: 11px; color: #888;">This overwrites the Leaderboard total. Use 0 to reset them.</p>
+            <div class="credit-ui">
+                <input type="number" id="rewrite-sats-amount" placeholder="New Total" style="flex-grow: 1; margin-bottom: 0;">
+                <button onclick="rewriteSats()" style="background: #d32f2f; color: white;">Overwrite Sats</button>
+            </div>
+            <div id="rewrite-status"></div>
         </div>
 
         <button onclick="loadStats()">🔄 Refresh Dashboard</button>
@@ -134,7 +147,6 @@
             } catch (e) { console.error("Leaderboard load failed", e); }
         }
 
-        // # SURGICAL: Updated display format to show Sats and Credits in dropdown
         function renderUserDropdown(users) {
             const select = document.getElementById('agent-select');
             users.sort((a, b) => a.agent.localeCompare(b.agent));
@@ -160,16 +172,46 @@
             const agent = manualAgent !== "" ? manualAgent : dropdownAgent;
 
             if (!agent) { status.innerText = "⚠️ Select user or enter ID."; return; }
-            status.innerText = `Processing for ${agent}...`;
+            status.innerText = `Processing credits for ${agent}...`;
 
             try {
                 const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${agent}&amount=${amount}`);
                 const data = await res.json();
                 if (data.status === "Success") {
-                    status.innerText = `✅ Granted ${amount} to ${agent}. Total: ${data.new_balance}`;
+                    status.innerText = `✅ Granted ${amount} credits to ${agent}.`;
                     document.getElementById('manual-agent-id').value = "";
-                    // # SURGICAL: Force immediate refresh of stats and dropdown
                     loadStats(); 
+                } else {
+                    status.innerText = "❌ Error: " + (data.error || "Failed");
+                }
+            } catch (e) { status.innerText = "❌ Connection failed."; }
+        }
+
+        async function rewriteSats() {
+            const key = localStorage.getItem('adminKey');
+            const manualAgent = document.getElementById('manual-agent-id').value.trim();
+            const dropdownAgent = document.getElementById('agent-select').value;
+            const newSats = document.getElementById('rewrite-sats-amount').value;
+            const status = document.getElementById('rewrite-status');
+            const agent = manualAgent !== "" ? manualAgent : dropdownAgent;
+
+            if (!agent || newSats === "") { 
+                status.innerText = "⚠️ Select user and enter new sats value."; 
+                return; 
+            }
+            
+            if (!confirm(`Force ${agent}'s score to ${newSats}?`)) return;
+
+            status.innerText = `Updating score for ${agent}...`;
+
+            try {
+                const res = await fetch(`${API_URL}/admin-rewrite-sats?key=${key}&agent=${agent}&sats=${newSats}`);
+                const data = await res.json();
+                if (data.status === "Success") {
+                    status.innerText = `✅ Set ${agent} to ${data.new_sats} sats.`;
+                    document.getElementById('manual-agent-id').value = "";
+                    document.getElementById('rewrite-sats-amount').value = "";
+                    loadStats();
                 } else {
                     status.innerText = "❌ Error: " + (data.error || "Failed");
                 }
