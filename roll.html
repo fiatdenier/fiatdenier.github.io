@@ -298,23 +298,28 @@
 		}
 
 		async function reconcileStatsFromServer() {
-			const agentId = getAgentID();
-			try {
-				const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-				const data = await res.json();
-				const myEntry = data.find(e => e.agent === agentId);
-				if (myEntry) {
-					if (myEntry.sats > totalSats) {
-						totalSats = myEntry.sats;
-						localStorage.setItem('totalSats', totalSats);
-						updateUI();
-						console.log(`Reconciled: Updated local sats to match server (${totalSats})`);
-					}
-				}
-			} catch (e) {
-				console.log("Reconciliation failed. Using local state.");
+		const agentId = getAgentID();
+		try {
+			const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+			const data = await res.json();
+			const myEntry = data.find(e => e.agent === agentId);
+			
+			// # UPDATED: We now sync regardless of which is higher.
+			// # This ensures that if the server resets to 0, the browser follows.
+			if (myEntry) {
+				totalSats = myEntry.sats;
+			} else {
+				// If I'm not on the leaderboard, my score must be 0 (fresh reset)
+				totalSats = 0;
 			}
+			
+			localStorage.setItem('totalSats', totalSats);
+			updateUI();
+			console.log(`Reconciled with server: ${totalSats} SATS`);
+		} catch (e) {
+			console.log("Reconciliation failed. Using local state.");
 		}
+	}
 
 		// --- ROLL LOGIC ---
 		async function handleRoll() {
@@ -365,7 +370,7 @@
 				}
 				stopLoop();
 
-				totalSats += 10; 
+				//totalSats += 10; 
 
 				const sig = data.signature; 
 				const is21Win = finalStr.includes('21');
@@ -429,12 +434,28 @@
 										
 				// # FIX: Push score to server but do NOT trigger syncStateFromServer() immediately.
                 // # This preserves the credits awarded above (server_credits) without a double-deduction loop.
-				fetch(`${API_BASE}/update-score`, {
+				//fetch(`${API_BASE}/update-score`, {
+					//method: 'POST', 
+					//headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+					//body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
+				//}); 
+                // [2026-01-12] SECURITY FIX: Use Server-Side Authority for scores.
+				// We remove 'sats: totalSats' from the body so the browser can't dictate the score.
+				const scoreResponse = await fetch(`${API_BASE}/update-score`, {
 					method: 'POST', 
 					headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-					body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
+					body: JSON.stringify({ agent_id: getAgentID() })
 				}); 
 
+				const scoreData = await scoreResponse.json();
+
+				// This replaces the old "totalSats += 10" and ensures 
+				// the UI matches the server exactly (crucial for resets).
+				if (scoreData.new_total !== undefined) {
+					totalSats = scoreData.new_total;
+					localStorage.setItem('totalSats', totalSats);
+					updateUI();
+				}
 				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
 				if (rollCredits <= 0 || currentDailyCount >= 100) { 
 					const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
