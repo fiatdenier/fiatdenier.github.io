@@ -20,7 +20,6 @@ export function paginateNews(config) {
     
     const now = new Date();
     
-    // Formatting the string with forced seconds and EST timezone
     const timeString = now.toLocaleTimeString("en-US", {
         timeZone: "America/New_York",
         hour: 'numeric',
@@ -50,12 +49,22 @@ export function paginateNews(config) {
     pageArticles.forEach((a, i) => cols[i % sections].push(a));
 
     cols.forEach(col => {
-      const sec = document.createElement("section");
+      // # INCREMENTAL CHANGE: Changed section tag to div for row layout if needed
+      const sec = document.createElement("div"); 
       sec.className = "col";
+      
       col.forEach(a => {
+        // # NETFLIX TRANSFORMATION: Updated HTML structure to match .story-card CSS
         const link = document.createElement("a");
         link.href = a.url;
-        link.innerHTML = `<span class="headline">${a.title}</span><span class="meta">${a.source} • ${timeAgo(a.published_at)}</span>`;
+        link.className = "story-card"; // # Added card class for styling
+        
+        link.innerHTML = `
+          <div class="card-content">
+              <span class="headline">${a.title}</span>
+              <span class="meta">${a.source} • ${timeAgo(a.published_at)}</span>
+          </div>`;
+        
         sec.appendChild(link);
       });
       app.appendChild(sec);
@@ -75,7 +84,6 @@ export function paginateNews(config) {
 
   async function init() {
     try {
-      // Fetches using the cache-busted path
       const res = await fetch(jsonPath);
       const data = await res.json();
       articles = data.articles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
