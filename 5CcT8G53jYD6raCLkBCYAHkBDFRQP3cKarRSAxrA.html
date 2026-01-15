@@ -5,411 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucky Roll Admin</title>
     <style>
-        body { 
-            font-family: 'Courier New', monospace; 
-            background: #121212; 
-            color: #e0e0e0; 
-            padding: 20px; 
-            text-align: center; 
-        }
-        .card { 
-            background: #1e1e1e; 
-            padding: 20px; 
-            border-radius: 10px; 
-            border: 1px solid #333; 
-            margin: 0 auto 20px; 
-            max-width: 800px; 
-            text-align: left; 
-        }
+        body { font-family: sans-serif; background: #121212; color: #e0e0e0; padding: 20px; text-align: center; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 10px; border: 1px solid #333; margin: 0 auto 20px; max-width: 600px; text-align: left; }
         h1 { color: #f2a900; }
-        h3 { color: #e0e0e0; margin-top: 0; }
-        
-        .stat-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-            gap: 15px; 
-        }
-        .stat-box { 
-            background: #2a2a2a; 
-            padding: 15px; 
-            border-radius: 8px; 
-            text-align: center; 
-        }
-        .stat-num { 
-            display: block; 
-            font-size: 24px; 
-            font-weight: bold; 
-            color: #fff; 
-        }
-        .stat-label {
-            font-size: 12px;
-            color: #888;
-            margin-top: 5px;
-        }
-        
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 10px; 
-        }
-        th, td { 
-            padding: 10px; 
-            text-align: left; 
-            border-bottom: 1px solid #333; 
-            font-size: 14px; 
-        }
-        th {
-            background: #2a2a2a;
-            color: #f2a900;
-        }
-        
-        input, select { 
-            padding: 10px; 
-            border-radius: 5px; 
-            border: 1px solid #444; 
-            background: #222; 
-            color: white; 
-            margin-bottom: 10px; 
-            font-family: 'Courier New', monospace;
-        }
-        input[type="text"], input[type="password"] { 
-            width: calc(100% - 22px); 
-        }
-        input[type="number"] {
-            width: 120px;
-        }
-        
-        select {
-            width: 100%;
-            cursor: pointer;
-        }
-        
-        button { 
-            background: #f2a900; 
-            color: black; 
-            border: none; 
-            padding: 12px 24px; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
-            transition: all 0.2s;
-        }
-        button:hover {
-            background: #ffc107;
-            transform: translateY(-2px);
-        }
-        button:active {
-            transform: translateY(0);
-        }
-        
-        .btn-danger { 
-            background: #d32f2f; 
-            color: white; 
-        }
-        .btn-danger:hover {
-            background: #f44336;
-        }
-        
-        .btn-secondary {
-            background: #555;
-            color: white;
-        }
-        .btn-secondary:hover {
-            background: #666;
-        }
-        
-        .btn-full {
-            width: 100%;
-            margin-top: 10px;
-        }
-        
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .stat-box { background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; }
+        .stat-num { display: block; font-size: 24px; font-weight: bold; color: #fff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #333; font-size: 14px; }
+        input, select { padding: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: white; margin-bottom: 10px; }
+        input { width: 80%; }
+        button { background: #f2a900; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .danger { background: #d32f2f; color: white; margin-top: 20px; }
         #admin-content { display: none; }
-        
-        .action-row { 
-            display: flex; 
-            gap: 10px; 
-            align-items: center; 
-            margin-top: 10px; 
-            flex-wrap: wrap; 
-        }
-        
-        .status-message { 
-            font-size: 12px; 
-            margin-top: 10px; 
-            padding: 8px;
-            border-radius: 4px;
-            background: #2a2a2a;
-        }
-        .status-success { color: #4CAF50; }
-        .status-error { color: #f44336; }
-        .status-warning { color: #ff9800; }
-        
-        .manual-input { 
-            border: 1px dashed #f2a900 !important;
-        }
-        
-        #user-search { 
-            border-color: #555; 
-            font-size: 12px; 
-        }
-        
-        .user-has-balance { 
-            color: #4CAF50 !important; 
-            font-weight: bold; 
-        }
-        
-        .danger-zone {
-            border-color: #d32f2f;
-            background: #1a0f0f;
-        }
-        
-        .empty-state {
-            text-align: center;
-            color: #666;
-            padding: 20px;
-            font-style: italic;
-        }
-        
-        .info-box {
-            background: #2a2a2a;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 11px;
-            color: #888;
-            margin-bottom: 10px;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        .loading {
-            animation: pulse 1.5s ease-in-out infinite;
-        }
+        .credit-ui { display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
+        #award-status, #rewrite-status { font-size: 12px; margin-top: 10px; color: #f2a900; }
+        .manual-input { width: 100%; margin-bottom: 10px; border: 1px dashed #f2a900; box-sizing: border-box; }
+        #user-search { width: 100%; margin-bottom: 5px; border-color: #555; font-size: 12px; }
     </style>
 </head>
 <body>
 
-    <div id="login-box" class="card" style="text-align: center; max-width: 400px;">
-        <h1>🔒 Admin Login</h1>
-        <input type="password" id="key-input" placeholder="Enter Admin Password" onkeypress="if(event.key==='Enter') saveAndLogin()">
+    <div id="login-box" class="card" style="text-align: center;">
+        <h1>ð Admin Login</h1>
+        <input type="password" id="key-input" placeholder="Enter Admin Password">
         <br>
-        <button onclick="saveAndLogin()" class="btn-full">Login</button>
+        <button onclick="saveAndLogin()">Login</button>
     </div>
 
     <div id="admin-content">
-        <h1>🎰 Admin Dashboard</h1>
+        <h1>ð° Admin Dashboard</h1>
         
         <div class="card">
-            <h3>📊 System Statistics</h3>
             <div class="stat-grid">
                 <div class="stat-box">
                     <span class="stat-num" id="total-players">0</span>
-                    <div class="stat-label">Total Players</div>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-num" id="total-agents">0</span>
-                    <div class="stat-label">Registered Agents</div>
+                    Total Unique Players
                 </div>
                 <div class="stat-box">
                     <span class="stat-num" id="active-locks">0</span>
-                    <div class="stat-label">Locked IPs</div>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-num" id="current-jackpot">210.00</span>
-                    <div class="stat-label">Current Jackpot</div>
+                    Locked IPs
                 </div>
             </div>
-            <button onclick="loadStats()" class="btn-secondary btn-full">🔄 Refresh Stats</button>
         </div>
 
         <div class="card">
-            <h3>👤 User Selection</h3>
-            <div class="info-box">
-                💡 Tip: Paste an agent ID manually or select from the dropdown. Green = has balance.
-            </div>
-            <input type="text" id="manual-agent-id" class="manual-input" placeholder="Paste Agent ID manually (overrides dropdown)">
-            <input type="text" id="user-search" placeholder="🔍 Search agents..." onkeyup="filterUsers()">
-            <select id="agent-select" size="8">
-                <option value="" disabled>-- Loading agents... --</option>
+            <h3>ð¤ Target User Selection</h3>
+            <input type="text" id="manual-agent-id" class="manual-input" placeholder="Paste User ID Manually (Overrides dropdown)">
+            <input type="text" id="user-search" placeholder="Search dropdown list..." onkeyup="filterUsers()">
+            <select id="agent-select" style="width: 100%;">
+                <option value="">-- Loading Players... --</option>
             </select>
         </div>
 
         <div class="card">
-            <h3>🎁 Award Credits</h3>
-            <div class="info-box">
-                Grant roll credits to selected user. This adds to their existing balance.
+            <h3>ð Issue Free Credits</h3>
+            <div class="credit-ui">
+                <input type="number" id="credit-amount" value="5" style="flex-grow: 1; margin-bottom: 0;">
+                <button onclick="issueCredits()">Grant Credits</button>
             </div>
-            <div class="action-row">
-                <input type="number" id="credit-amount" value="5" min="1" placeholder="Credits">
-                <button onclick="issueCredits()">💳 Grant Credits</button>
-            </div>
-            <div id="award-status" class="status-message" style="display: none;"></div>
+            <div id="award-status"></div>
         </div>
 
-        <div class="card danger-zone">
-            <h3 style="color: #d32f2f;">⚠️ Dangerous Operations</h3>
-            
-            <div style="margin-bottom: 20px;">
-                <h4 style="color: #ff9800; margin-bottom: 5px;">Rewrite Total Sats</h4>
-                <div class="info-box">
-                    🚨 This OVERWRITES the user's total sats on the leaderboard. Use with caution!
-                </div>
-                <div class="action-row">
-                    <input type="number" id="rewrite-sats-amount" placeholder="New total sats" min="0">
-                    <button onclick="rewriteSats()" class="btn-danger">✏️ Overwrite Sats</button>
-                </div>
-                <div id="rewrite-status" class="status-message" style="display: none;"></div>
+        <div class="card" style="border-color: #d32f2f;">
+            <h3 style="color: #d32f2f;">âï¸ Rewrite User Sats</h3>
+            <p style="font-size: 11px; color: #888;">This overwrites the Leaderboard total. Use 0 to reset them.</p>
+            <div class="credit-ui">
+                <input type="number" id="rewrite-sats-amount" placeholder="New Total" style="flex-grow: 1; margin-bottom: 0;">
+                <button onclick="rewriteSats()" style="background: #d32f2f; color: white;">Overwrite Sats</button>
             </div>
-            
-            <hr style="border-color: #333; margin: 20px 0;">
-            
-            <div>
-                <h4 style="color: #ff9800; margin-bottom: 5px;">Jackpot Management</h4>
-                <div class="info-box">
-                    Reset the progressive jackpot back to 210.00 rolls.
-                </div>
-                <button onclick="resetJackpot()" class="btn-danger btn-full">🎰 Reset Jackpot</button>
-                <div id="jackpot-status" class="status-message" style="display: none;"></div>
-            </div>
+            <div id="rewrite-status"></div>
         </div>
 
+        <button onclick="loadStats()">ð Refresh Dashboard</button>
+        
         <div class="card">
-            <h3>🔒 Active Cooldowns</h3>
-            <div id="locks-container">
-                <table id="locks-table-wrapper">
-                    <thead>
-                        <tr>
-                            <th>IP Address</th>
-                            <th>Agent</th>
-                            <th>Time Remaining</th>
-                            <th>Unlocks At</th>
-                        </tr>
-                    </thead>
-                    <tbody id="locks-table">
-                        <tr><td colspan="4" class="empty-state loading">Loading cooldowns...</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <button onclick="resetLocks()" class="btn-danger btn-full">💀 Clear All Locks</button>
+            <h3>Active Cooldowns</h3>
+            <table>
+                <thead><tr><th>IP Address</th><th>Time Left</th></tr></thead>
+                <tbody id="locks-table"></tbody>
+            </table>
         </div>
 
-        <div class="card">
-            <h3>🚪 Session</h3>
-            <button onclick="logout()" class="btn-secondary btn-full">Logout</button>
-        </div>
+        <button class="danger" onclick="resetLocks()">ð Clear All Locks</button>
+        <button class="danger" style="background: #444;" onclick="logout()">Logout</button>
     </div>
 
     <script>
         const API_URL = "https://api.fiatdenier.com";
-        let allUsers = [];
-        let refreshInterval = null;
+        let allUsers = []; 
 
-        // ==========================================
-        // AUTHENTICATION
-        // ==========================================
-        
         function saveAndLogin() {
-            const key = document.getElementById('key-input').value.trim();
-            if (!key) {
-                alert('Please enter admin password');
-                return;
-            }
+            const key = document.getElementById('key-input').value;
             localStorage.setItem('adminKey', key);
             checkAuth();
         }
 
         function logout() {
-            if (confirm('Logout from admin panel?')) {
-                localStorage.removeItem('adminKey');
-                if (refreshInterval) clearInterval(refreshInterval);
-                location.reload();
-            }
+            localStorage.removeItem('adminKey');
+            location.reload();
         }
 
         async function checkAuth() {
             const key = localStorage.getItem('adminKey');
             if (!key) return;
-            
             try {
                 const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
-                const data = await response.json();
-                
-                if (response.status === 403 || data.error === "Unauthorized") {
-                    alert('Invalid admin password');
-                    logout();
-                    return;
+                if (response.status === 200) {
+                    const data = await response.json();
+                    if (data.error) { logout(); } 
+                    else {
+                        document.getElementById('login-box').style.display = 'none';
+                        document.getElementById('admin-content').style.display = 'block';
+                        displayData(data);
+                        loadPlayerList();
+                    }
                 }
-                
-                if (response.status === 200 && data.status === "online") {
-                    document.getElementById('login-box').style.display = 'none';
-                    document.getElementById('admin-content').style.display = 'block';
-                    displayData(data);
-                    loadPlayerList();
-                    
-                    // Auto-refresh every 30 seconds
-                    if (refreshInterval) clearInterval(refreshInterval);
-                    refreshInterval = setInterval(loadStats, 30000);
-                }
-            } catch (err) {
-                console.error('Auth check failed:', err);
-                alert('Failed to connect to server');
-            }
+            } catch (err) { console.error(err); }
         }
 
-        // ==========================================
-        // DATA LOADING
-        // ==========================================
-        
         async function loadStats() {
             const key = localStorage.getItem('adminKey');
-            try {
-                const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
-                const data = await response.json();
-                
-                if (data.error === "Unauthorized") {
-                    logout();
-                    return;
-                }
-                
-                displayData(data);
-            } catch (err) {
-                console.error('Failed to load stats:', err);
-            }
+            const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
+            const data = await response.json();
+            displayData(data);
+            loadPlayerList();
         }
 
         function displayData(data) {
-            document.getElementById('total-players').innerText = data.total_unique_players || 0;
-            document.getElementById('total-agents').innerText = data.total_agents || 0;
-            document.getElementById('active-locks').innerText = data.currently_locked_ips || 0;
-            document.getElementById('current-jackpot').innerText = 
-                (data.current_jackpot || 210.0).toFixed(2);
-            
+            document.getElementById('total-players').innerText = data.total_unique_players;
+            document.getElementById('active-locks').innerText = data.currently_locked_ips;
             const tableBody = document.getElementById('locks-table');
-            
-            if (!data.locks || data.locks.length === 0) {
-                tableBody.innerHTML = '<tr><td colspan="4" class="empty-state">No active cooldowns</td></tr>';
-            } else {
-                tableBody.innerHTML = data.locks.map(l => `
-                    <tr>
-                        <td>${l.ip || 'Unknown'}</td>
-                        <td>${l.agent || 'Unknown'}</td>
-                        <td>${l.remaining || 'N/A'}</td>
-                        <td style="font-size: 11px; color: #888;">${formatTimestamp(l.unlocks_at)}</td>
-                    </tr>
-                `).join('');
-            }
-        }
-
-        function formatTimestamp(isoString) {
-            if (!isoString) return 'N/A';
-            try {
-                const date = new Date(isoString);
-                return date.toLocaleTimeString();
-            } catch {
-                return 'Invalid';
-            }
+            tableBody.innerHTML = data.locks.map(l => `<tr><td>${l.ip}</td><td>${l.remaining}</td></tr>`).join('');
         }
 
         async function loadPlayerList() {
@@ -417,213 +144,88 @@
                 const res = await fetch(`${API_URL}/leaderboard?admin=true`);
                 allUsers = await res.json();
                 renderUserDropdown(allUsers);
-            } catch (e) {
-                console.error("Failed to load player list:", e);
-                document.getElementById('agent-select').innerHTML = 
-                    '<option value="">Failed to load agents</option>';
-            }
+            } catch (e) { console.error("Leaderboard load failed", e); }
         }
 
         function renderUserDropdown(users) {
             const select = document.getElementById('agent-select');
-            
-            if (!users || users.length === 0) {
-                select.innerHTML = '<option value="">No agents found</option>';
-                return;
-            }
-            
-            // Sort alphabetically
             users.sort((a, b) => a.agent.localeCompare(b.agent));
-            
-            select.innerHTML = '<option value="">-- Select an agent --</option>' + 
+            select.innerHTML = '<option value="">-- Select Player --</option>' + 
                 users.map(u => {
-                    const sats = u.sats || 0;
-                    const credits = u.credits || 0;
-                    const label = `${u.agent} (${sats.toLocaleString()} sats / ${credits} credits)`;
-                    const hasBalance = (sats > 0 || credits > 0);
-                    const cssClass = hasBalance ? 'class="user-has-balance"' : '';
-                    return `<option value="${u.agent}" ${cssClass}>${label}</option>`;
+                    const label = `${u.agent} (${u.sats} sats / ${u.credits || 0} credits)`;
+                    return `<option value="${u.agent}">${label}</option>`;
                 }).join('');
         }
 
         function filterUsers() {
             const searchTerm = document.getElementById('user-search').value.toLowerCase();
-            if (searchTerm === '') {
-                renderUserDropdown(allUsers);
-            } else {
-                const filtered = allUsers.filter(u => 
-                    u.agent.toLowerCase().includes(searchTerm)
-                );
-                renderUserDropdown(filtered);
-            }
+            const filtered = allUsers.filter(u => u.agent.toLowerCase().includes(searchTerm));
+            renderUserDropdown(filtered);
         }
 
-        function getSelectedAgent() {
-            const manualAgent = document.getElementById('manual-agent-id').value.trim();
-            const dropdownAgent = document.getElementById('agent-select').value;
-            return manualAgent !== "" ? manualAgent : dropdownAgent;
-        }
-
-        function showStatus(elementId, message, type = 'success') {
-            const statusEl = document.getElementById(elementId);
-            statusEl.style.display = 'block';
-            statusEl.className = `status-message status-${type}`;
-            statusEl.innerText = message;
-            
-            // Auto-hide after 5 seconds
-            setTimeout(() => {
-                statusEl.style.display = 'none';
-            }, 5000);
-        }
-
-        // ==========================================
-        // ADMIN ACTIONS
-        // ==========================================
-        
         async function issueCredits() {
             const key = localStorage.getItem('adminKey');
-            const agent = getSelectedAgent();
-            const amount = parseInt(document.getElementById('credit-amount').value);
+            const manualAgent = document.getElementById('manual-agent-id').value.trim();
+            const dropdownAgent = document.getElementById('agent-select').value;
+            const amount = document.getElementById('credit-amount').value;
+            const status = document.getElementById('award-status');
+            const agent = manualAgent !== "" ? manualAgent : dropdownAgent;
 
-            if (!agent) {
-                showStatus('award-status', '⚠️ Please select a user or enter an agent ID', 'warning');
-                return;
-            }
-            
-            if (!amount || amount < 1) {
-                showStatus('award-status', '⚠️ Please enter a valid credit amount', 'warning');
-                return;
-            }
-
-            showStatus('award-status', `Processing ${amount} credits for ${agent}...`, 'warning');
+            if (!agent) { status.innerText = "â ï¸ Select user or enter ID."; return; }
+            status.innerText = `Processing credits for ${agent}...`;
 
             try {
-                const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${encodeURIComponent(agent)}&amount=${amount}`);
+                const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${agent}&amount=${amount}`);
                 const data = await res.json();
-                
                 if (data.status === "Success") {
-                    showStatus('award-status', `✅ Granted ${amount} credits to ${agent}. New balance: ${data.new_balance}`, 'success');
+                    status.innerText = `â Granted ${amount} credits to ${agent}.`;
                     document.getElementById('manual-agent-id').value = "";
-                    document.getElementById('credit-amount').value = "5";
-                    setTimeout(() => {
-                        loadStats();
-                        loadPlayerList();
-                    }, 1000);
+                    loadStats(); 
                 } else {
-                    showStatus('award-status', `❌ Error: ${data.error || 'Failed to award credits'}`, 'error');
+                    status.innerText = "â Error: " + (data.error || "Failed");
                 }
-            } catch (e) {
-                console.error('Award credits failed:', e);
-                showStatus('award-status', '❌ Connection failed. Check server logs.', 'error');
-            }
+            } catch (e) { status.innerText = "â Connection failed."; }
         }
 
         async function rewriteSats() {
             const key = localStorage.getItem('adminKey');
-            const agent = getSelectedAgent();
-            const newSats = parseInt(document.getElementById('rewrite-sats-amount').value);
+            const manualAgent = document.getElementById('manual-agent-id').value.trim();
+            const dropdownAgent = document.getElementById('agent-select').value;
+            const newSats = document.getElementById('rewrite-sats-amount').value;
+            const status = document.getElementById('rewrite-status');
+            const agent = manualAgent !== "" ? manualAgent : dropdownAgent;
 
-            if (!agent) {
-                showStatus('rewrite-status', '⚠️ Please select a user or enter an agent ID', 'warning');
-                return;
+            if (!agent || newSats === "") { 
+                status.innerText = "â ï¸ Select user and enter new sats value."; 
+                return; 
             }
             
-            if (isNaN(newSats) || newSats < 0) {
-                showStatus('rewrite-status', '⚠️ Please enter a valid sats value (0 or greater)', 'warning');
-                return;
-            }
-            
-            if (!confirm(`⚠️ DANGER: Overwrite ${agent}'s total sats to ${newSats}?\n\nThis action cannot be undone!`)) {
-                return;
-            }
+            if (!confirm(`Force ${agent}'s score to ${newSats}?`)) return;
 
-            showStatus('rewrite-status', `Updating ${agent}'s sats...`, 'warning');
+            status.innerText = `Updating score for ${agent}...`;
 
             try {
-                // Use admin-award with negative amount to set exact value
-                // First, get current sats
-                const currentUser = allUsers.find(u => u.agent === agent);
-                const currentSats = currentUser ? currentUser.sats : 0;
-                const delta = newSats - currentSats;
-                
-                const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${encodeURIComponent(agent)}&amount=${delta}`);
+                const res = await fetch(`${API_URL}/admin-rewrite-sats?key=${key}&agent=${agent}&sats=${newSats}`);
                 const data = await res.json();
-                
                 if (data.status === "Success") {
-                    showStatus('rewrite-status', `✅ Set ${agent} to ${data.total_denied} total sats`, 'success');
+                    status.innerText = `â Set ${agent} to ${data.new_sats} sats.`;
                     document.getElementById('manual-agent-id').value = "";
                     document.getElementById('rewrite-sats-amount').value = "";
-                    setTimeout(() => {
-                        loadStats();
-                        loadPlayerList();
-                    }, 1000);
-                } else {
-                    showStatus('rewrite-status', `❌ Error: ${data.error || 'Failed to rewrite sats'}`, 'error');
-                }
-            } catch (e) {
-                console.error('Rewrite sats failed:', e);
-                showStatus('rewrite-status', '❌ Connection failed. Check server logs.', 'error');
-            }
-        }
-
-        async function resetJackpot() {
-            const key = localStorage.getItem('adminKey');
-            
-            if (!confirm('Reset jackpot to 210.00 rolls?')) {
-                return;
-            }
-
-            try {
-                const res = await fetch(`${API_URL}/reset-jackpot`, {
-                    method: 'POST',
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                });
-                const data = await res.json();
-                
-                if (data.status === "reset") {
-                    showStatus('jackpot-status', '✅ Jackpot reset to 210.00 rolls', 'success');
                     loadStats();
                 } else {
-                    showStatus('jackpot-status', '❌ Failed to reset jackpot', 'error');
+                    status.innerText = "â Error: " + (data.error || "Failed");
                 }
-            } catch (e) {
-                console.error('Reset jackpot failed:', e);
-                showStatus('jackpot-status', '❌ Connection failed', 'error');
-            }
+            } catch (e) { status.innerText = "â Connection failed."; }
         }
 
         async function resetLocks() {
             const key = localStorage.getItem('adminKey');
-            
-            if (!confirm('🚨 Clear ALL cooldowns? This will allow all locked users to roll immediately.')) {
-                return;
-            }
-
-            try {
-                const res = await fetch(`${API_URL}/admin-reset?key=${key}`);
-                const data = await res.json();
-                
-                if (data.status) {
-                    alert('✅ ' + data.status);
-                    loadStats();
-                } else {
-                    alert('❌ Failed to clear locks');
-                }
-            } catch (e) {
-                console.error('Reset locks failed:', e);
-                alert('❌ Connection failed');
+            if (confirm("Clear all locks?")) {
+                await fetch(`${API_URL}/admin-reset?key=${key}`);
+                loadStats();
             }
         }
-
-        // ==========================================
-        // INITIALIZATION
-        // ==========================================
-        
-        window.onload = () => {
-            checkAuth();
-        };
+        checkAuth();
     </script>
 </body>
 </html>
