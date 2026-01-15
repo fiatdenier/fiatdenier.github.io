@@ -22,6 +22,9 @@
         #award-status, #rewrite-status { font-size: 12px; margin-top: 10px; color: #f2a900; }
         .manual-input { width: 100%; margin-bottom: 10px; border: 1px dashed #f2a900; box-sizing: border-box; }
         #user-search { width: 100%; margin-bottom: 5px; border-color: #555; font-size: 12px; }
+        
+        // # ADDED: Style for users with positive balances
+        .user-has-balance { color: #4CAF50 !important; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -153,7 +156,10 @@
             select.innerHTML = '<option value="">-- Select Player --</option>' + 
                 users.map(u => {
                     const label = `${u.agent} (${u.sats} sats / ${u.credits || 0} credits)`;
-                    return `<option value="${u.agent}">${label}</option>`;
+                    // # UPDATED: Apply green class if sats or credits are greater than 0
+                    const hasBalance = (u.sats > 0 || (u.credits && u.credits > 0));
+                    const cssClass = hasBalance ? 'class="user-has-balance"' : '';
+                    return `<option value="${u.agent}" ${cssClass}>${label}</option>`;
                 }).join('');
         }
 
