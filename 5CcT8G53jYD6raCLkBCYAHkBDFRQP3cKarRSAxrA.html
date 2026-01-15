@@ -27,14 +27,14 @@
 <body>
 
     <div id="login-box" class="card" style="text-align: center;">
-        <h1>ð Admin Login</h1>
+        <h1>🔒 Admin Login</h1>
         <input type="password" id="key-input" placeholder="Enter Admin Password">
         <br>
         <button onclick="saveAndLogin()">Login</button>
     </div>
 
     <div id="admin-content">
-        <h1>ð° Admin Dashboard</h1>
+        <h1>🎰 Admin Dashboard</h1>
         
         <div class="card">
             <div class="stat-grid">
@@ -50,7 +50,7 @@
         </div>
 
         <div class="card">
-            <h3>ð¤ Target User Selection</h3>
+            <h3>👤 Target User Selection</h3>
             <input type="text" id="manual-agent-id" class="manual-input" placeholder="Paste User ID Manually (Overrides dropdown)">
             <input type="text" id="user-search" placeholder="Search dropdown list..." onkeyup="filterUsers()">
             <select id="agent-select" style="width: 100%;">
@@ -59,7 +59,7 @@
         </div>
 
         <div class="card">
-            <h3>ð Issue Free Credits</h3>
+            <h3>🎁 Issue Free Credits</h3>
             <div class="credit-ui">
                 <input type="number" id="credit-amount" value="5" style="flex-grow: 1; margin-bottom: 0;">
                 <button onclick="issueCredits()">Grant Credits</button>
@@ -68,7 +68,7 @@
         </div>
 
         <div class="card" style="border-color: #d32f2f;">
-            <h3 style="color: #d32f2f;">âï¸ Rewrite User Sats</h3>
+            <h3 style="color: #d32f2f;">✍️ Rewrite User Sats</h3>
             <p style="font-size: 11px; color: #888;">This overwrites the Leaderboard total. Use 0 to reset them.</p>
             <div class="credit-ui">
                 <input type="number" id="rewrite-sats-amount" placeholder="New Total" style="flex-grow: 1; margin-bottom: 0;">
@@ -77,7 +77,7 @@
             <div id="rewrite-status"></div>
         </div>
 
-        <button onclick="loadStats()">ð Refresh Dashboard</button>
+        <button onclick="loadStats()">🔄 Refresh Dashboard</button>
         
         <div class="card">
             <h3>Active Cooldowns</h3>
@@ -87,7 +87,7 @@
             </table>
         </div>
 
-        <button class="danger" onclick="resetLocks()">ð Clear All Locks</button>
+        <button class="danger" onclick="resetLocks()">💀 Clear All Locks</button>
         <button class="danger" style="background: #444;" onclick="logout()">Logout</button>
     </div>
 
@@ -171,20 +171,20 @@
             const status = document.getElementById('award-status');
             const agent = manualAgent !== "" ? manualAgent : dropdownAgent;
 
-            if (!agent) { status.innerText = "â ï¸ Select user or enter ID."; return; }
+            if (!agent) { status.innerText = "⚠️ Select user or enter ID."; return; }
             status.innerText = `Processing credits for ${agent}...`;
 
             try {
                 const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${agent}&amount=${amount}`);
                 const data = await res.json();
                 if (data.status === "Success") {
-                    status.innerText = `â Granted ${amount} credits to ${agent}.`;
+                    status.innerText = `✅ Granted ${amount} credits to ${agent}.`;
                     document.getElementById('manual-agent-id').value = "";
                     loadStats(); 
                 } else {
-                    status.innerText = "â Error: " + (data.error || "Failed");
+                    status.innerText = "❌ Error: " + (data.error || "Failed");
                 }
-            } catch (e) { status.innerText = "â Connection failed."; }
+            } catch (e) { status.innerText = "❌ Connection failed."; }
         }
 
         async function rewriteSats() {
@@ -196,7 +196,7 @@
             const agent = manualAgent !== "" ? manualAgent : dropdownAgent;
 
             if (!agent || newSats === "") { 
-                status.innerText = "â ï¸ Select user and enter new sats value."; 
+                status.innerText = "⚠️ Select user and enter new sats value."; 
                 return; 
             }
             
@@ -208,14 +208,14 @@
                 const res = await fetch(`${API_URL}/admin-rewrite-sats?key=${key}&agent=${agent}&sats=${newSats}`);
                 const data = await res.json();
                 if (data.status === "Success") {
-                    status.innerText = `â Set ${agent} to ${data.new_sats} sats.`;
+                    status.innerText = `✅ Set ${agent} to ${data.new_sats} sats.`;
                     document.getElementById('manual-agent-id').value = "";
                     document.getElementById('rewrite-sats-amount').value = "";
                     loadStats();
                 } else {
-                    status.innerText = "â Error: " + (data.error || "Failed");
+                    status.innerText = "❌ Error: " + (data.error || "Failed");
                 }
-            } catch (e) { status.innerText = "â Connection failed."; }
+            } catch (e) { status.innerText = "❌ Connection failed."; }
         }
 
         async function resetLocks() {
