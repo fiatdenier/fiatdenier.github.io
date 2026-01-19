@@ -5,625 +5,204 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucky Roll Admin</title>
     <style>
-        body { 
-            font-family: 'Courier New', monospace; 
-            background: #121212; 
-            color: #e0e0e0; 
-            padding: 20px; 
-            text-align: center; 
-        }
-        .card { 
-            background: #1e1e1e; 
-            padding: 20px; 
-            border-radius: 10px; 
-            border: 1px solid #333; 
-            margin: 0 auto 20px; 
-            max-width: 800px; 
-            text-align: left; 
-        }
+        body { font-family: sans-serif; background: #121212; color: #e0e0e0; padding: 20px; text-align: center; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 10px; border: 1px solid #333; margin: 0 auto 20px; max-width: 600px; text-align: left; }
         h1 { color: #f2a900; }
-        h3 { color: #e0e0e0; margin-top: 0; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .stat-box { background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; }
+        .stat-num { display: block; font-size: 24px; font-weight: bold; color: #fff; }
         
-        .stat-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-            gap: 15px; 
-        }
-        .stat-box { 
-            background: #2a2a2a; 
-            padding: 15px; 
-            border-radius: 8px; 
-            text-align: center; 
-        }
-        .stat-num { 
-            display: block; 
-            font-size: 24px; 
-            font-weight: bold; 
-            color: #fff; 
-        }
-        .stat-label {
-            font-size: 12px;
-            color: #888;
-            margin-top: 5px;
-        }
-        
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 10px; 
-        }
-        th, td { 
-            padding: 10px; 
-            text-align: left; 
-            border-bottom: 1px solid #333; 
-            font-size: 14px; 
-        }
-        th {
-            background: #2a2a2a;
-            color: #f2a900;
-        }
-        
-        input, select { 
-            padding: 10px; 
-            border-radius: 5px; 
-            border: 1px solid #444; 
-            background: #222; 
-            color: white; 
-            margin-bottom: 10px; 
-            font-family: 'Courier New', monospace;
-        }
-        input[type="text"], input[type="password"] { 
-            width: calc(100% - 22px); 
-        }
-        input[type="number"] {
-            width: 120px;
-        }
-        
-        select {
-            width: 100%;
-            cursor: pointer;
-        }
-        
-        button { 
-            background: #f2a900; 
-            color: black; 
-            border: none; 
-            padding: 12px 24px; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
-            transition: all 0.2s;
-        }
-        button:hover {
-            background: #ffc107;
-            transform: translateY(-2px);
-        }
-        button:active {
-            transform: translateY(0);
-        }
-        
-        .btn-danger { 
-            background: #d32f2f; 
-            color: white; 
-        }
-        .btn-danger:hover {
-            background: #f44336;
-        }
-        
-        .btn-secondary {
-            background: #555;
-            color: white;
-        }
-        .btn-secondary:hover {
-            background: #666;
-        }
-        
-        .btn-full {
-            width: 100%;
+        /* # FIXED: Custom List View for Mobile Green Text */
+        #user-list-container {
+            background: #111;
+            border: 1px solid #444;
+            max-height: 250px;
+            overflow-y: auto;
+            border-radius: 5px;
             margin-top: 10px;
         }
-        
-        #admin-content { display: none; }
-        
-        .action-row { 
-            display: flex; 
-            gap: 10px; 
-            align-items: center; 
-            margin-top: 10px; 
-            flex-wrap: wrap; 
+        .user-row {
+            padding: 12px;
+            cursor: pointer;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            font-family: monospace;
+            font-size: 13px;
         }
-        
-        .status-message { 
-            font-size: 12px; 
-            margin-top: 10px; 
-            padding: 8px;
-            border-radius: 4px;
-            background: #2a2a2a;
-        }
-        .status-success { color: #4CAF50; }
-        .status-error { color: #f44336; }
-        .status-warning { color: #ff9800; }
-        
-        .manual-input { 
-            border: 1px dashed #f2a900 !important;
-        }
-        
-        #user-search { 
-            border-color: #555; 
-            font-size: 12px; 
-        }
-        
-        .user-has-balance { 
-            color: #4CAF50 !important; 
-            font-weight: bold; 
-        }
-        
-        .danger-zone {
-            border-color: #d32f2f;
-            background: #1a0f0f;
-        }
-        
-        .empty-state {
-            text-align: center;
-            color: #666;
-            padding: 20px;
-            font-style: italic;
-        }
-        
-        .info-box {
-            background: #2a2a2a;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 11px;
-            color: #888;
-            margin-bottom: 10px;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        .loading {
-            animation: pulse 1.5s ease-in-out infinite;
-        }
+        .user-row:hover { background: #222; }
+        .user-row.selected { background: #333; border-left: 4px solid #f2a900; }
+        .user-has-balance { color: #4CAF50 !important; font-weight: bold; }
+
+        .filter-controls { display: flex; gap: 10px; margin-bottom: 10px; }
+        .toggle-btn { background: #333; color: #888; border: 1px solid #444; padding: 8px; cursor: pointer; border-radius: 4px; flex-grow: 1; font-size: 11px; }
+        .toggle-btn.active { background: #4CAF50; color: white; }
+
+        input { width: 100%; padding: 10px; box-sizing: border-box; background: #222; border: 1px solid #444; color: white; border-radius: 5px; margin-bottom: 10px; }
+        button { background: #f2a900; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
+        .danger { background: #d32f2f; color: white; margin-top: 10px; }
     </style>
 </head>
 <body>
 
-    <div id="login-box" class="card" style="text-align: center; max-width: 400px;">
+    <div id="login-box" class="card" style="text-align: center;">
         <h1>🔒 Admin Login</h1>
-        <input type="password" id="key-input" placeholder="Enter Admin Password" onkeypress="if(event.key==='Enter') saveAndLogin()">
-        <br>
-        <button onclick="saveAndLogin()" class="btn-full">Login</button>
+        <input type="password" id="key-input" placeholder="Enter Admin Password">
+        <button onclick="saveAndLogin()">Login</button>
     </div>
 
-    <div id="admin-content">
+    <div id="admin-content" style="display:none;">
         <h1>🎰 Admin Dashboard</h1>
         
+        <div class="card" style="border: 2px solid #4CAF50;">
+            <div style="font-size: 11px; color: #888;">LIVE PROGRESSIVE JACKPOT</div>
+            <div id="admin-jackpot-val" style="font-size: 32px; font-weight: bold; color: #4CAF50;">0.00</div>
+        </div>
+
         <div class="card">
-            <h3>📊 System Statistics</h3>
             <div class="stat-grid">
-                <div class="stat-box">
-                    <span class="stat-num" id="total-players">0</span>
-                    <div class="stat-label">Total Players</div>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-num" id="total-agents">0</span>
-                    <div class="stat-label">Registered Agents</div>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-num" id="active-locks">0</span>
-                    <div class="stat-label">Locked IPs</div>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-num" id="current-jackpot">210.00</span>
-                    <div class="stat-label">Current Jackpot</div>
-                </div>
+                <div class="stat-box"><span class="stat-num" id="total-players">0</span>Players</div>
+                <div class="stat-box"><span class="stat-num" id="active-locks">0</span>Locked IPs</div>
             </div>
-            <button onclick="loadStats()" class="btn-secondary btn-full">🔄 Refresh Stats</button>
         </div>
 
         <div class="card">
-            <h3>👤 User Selection</h3>
-            <div class="info-box">
-                💡 Tip: Paste an agent ID manually or select from the dropdown. Green = has balance.
-            </div>
-            <input type="text" id="manual-agent-id" class="manual-input" placeholder="Paste Agent ID manually (overrides dropdown)">
-            <input type="text" id="user-search" placeholder="🔍 Search agents..." onkeyup="filterUsers()">
-            <select id="agent-select" size="8">
-                <option value="" disabled>-- Loading agents... --</option>
-            </select>
-        </div>
-
-        <div class="card">
-            <h3>🎁 Award Credits</h3>
-            <div class="info-box">
-                Grant roll credits to selected user. This adds to their existing balance.
-            </div>
-            <div class="action-row">
-                <input type="number" id="credit-amount" value="5" min="1" placeholder="Credits">
-                <button onclick="issueCredits()">💳 Grant Credits</button>
-            </div>
-            <div id="award-status" class="status-message" style="display: none;"></div>
-        </div>
-
-        <div class="card danger-zone">
-            <h3 style="color: #d32f2f;">⚠️ Dangerous Operations</h3>
-            
-            <div style="margin-bottom: 20px;">
-                <h4 style="color: #ff9800; margin-bottom: 5px;">Rewrite Total Sats</h4>
-                <div class="info-box">
-                    🚨 This OVERWRITES the user's total sats on the leaderboard. Use with caution!
-                </div>
-                <div class="action-row">
-                    <input type="number" id="rewrite-sats-amount" placeholder="New total sats" min="0">
-                    <button onclick="rewriteSats()" class="btn-danger">✏️ Overwrite Sats</button>
-                </div>
-                <div id="rewrite-status" class="status-message" style="display: none;"></div>
+            <h3>👤 User Management</h3>
+            <div class="filter-controls">
+                <input type="text" id="user-search" placeholder="Search name..." onkeyup="filterUsers()" style="margin-bottom:0;">
+                <button id="balance-filter-btn" class="toggle-btn" onclick="toggleBalanceFilter()">💰 BALANCE ONLY</button>
             </div>
             
-            <hr style="border-color: #333; margin: 20px 0;">
-            
-            <div>
-                <h4 style="color: #ff9800; margin-bottom: 5px;">Jackpot Management</h4>
-                <div class="info-box">
-                    Reset the progressive jackpot back to 210.00 rolls.
-                </div>
-                <button onclick="resetJackpot()" class="btn-danger btn-full">🎰 Reset Jackpot</button>
-                <div id="jackpot-status" class="status-message" style="display: none;"></div>
+            <div id="user-list-container">
+                <div id="user-list-content">Loading...</div>
             </div>
+            <input type="hidden" id="selected-agent-hidden">
         </div>
 
         <div class="card">
-            <h3>🔒 Active Cooldowns</h3>
-            <div id="locks-container">
-                <table id="locks-table-wrapper">
-                    <thead>
-                        <tr>
-                            <th>IP Address</th>
-                            <th>Agent</th>
-                            <th>Time Remaining</th>
-                            <th>Unlocks At</th>
-                        </tr>
-                    </thead>
-                    <tbody id="locks-table">
-                        <tr><td colspan="4" class="empty-state loading">Loading cooldowns...</td></tr>
-                    </tbody>
-                </table>
+            <h3>🎁 Quick Actions</h3>
+            <input type="number" id="action-amount" placeholder="Amount (Credits or Sats)">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button onclick="issueCredits()">Grant Credits</button>
+                <button onclick="rewriteSats()" style="background:#d32f2f; color:white;">Rewrite Sats</button>
             </div>
-            <button onclick="resetLocks()" class="btn-danger btn-full">💀 Clear All Locks</button>
+            <div id="action-status" style="margin-top:10px; font-size:12px; color:#f2a900;"></div>
         </div>
 
-        <div class="card">
-            <h3>🚪 Session</h3>
-            <button onclick="logout()" class="btn-secondary btn-full">Logout</button>
-        </div>
+        <button onclick="loadStats()">🔄 Refresh Everything</button>
+        <button class="danger" onclick="resetLocks()">💀 Clear All IP Locks</button>
     </div>
 
     <script>
         const API_URL = "https://api.fiatdenier.com";
         let allUsers = [];
-        let refreshInterval = null;
+        let onlyShowBalances = false;
+        let selectedAgent = "";
 
-        // ==========================================
-        // AUTHENTICATION
-        // ==========================================
-        
+        // # RE-VERIFIED: Login & Auth
         function saveAndLogin() {
-            const key = document.getElementById('key-input').value.trim();
-            if (!key) {
-                alert('Please enter admin password');
-                return;
-            }
-            localStorage.setItem('adminKey', key);
+            localStorage.setItem('adminKey', document.getElementById('key-input').value);
             checkAuth();
-        }
-
-        function logout() {
-            if (confirm('Logout from admin panel?')) {
-                localStorage.removeItem('adminKey');
-                if (refreshInterval) clearInterval(refreshInterval);
-                location.reload();
-            }
         }
 
         async function checkAuth() {
             const key = localStorage.getItem('adminKey');
             if (!key) return;
-            
             try {
-                const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
-                const data = await response.json();
-                
-                if (response.status === 403 || data.error === "Unauthorized") {
-                    alert('Invalid admin password');
-                    logout();
-                    return;
-                }
-                
-                if (response.status === 200 && data.status === "online") {
+                const res = await fetch(`${API_URL}/admin-stats?key=${key}`);
+                if (res.ok) {
                     document.getElementById('login-box').style.display = 'none';
                     document.getElementById('admin-content').style.display = 'block';
-                    displayData(data);
-                    loadPlayerList();
-                    
-                    // Auto-refresh every 30 seconds
-                    if (refreshInterval) clearInterval(refreshInterval);
-                    refreshInterval = setInterval(loadStats, 30000);
+                    loadStats();
+                    setInterval(loadStats, 10000); // Auto-refresh
                 }
-            } catch (err) {
-                console.error('Auth check failed:', err);
-                alert('Failed to connect to server');
-            }
+            } catch (e) { console.error(e); }
         }
 
-        // ==========================================
-        // DATA LOADING
-        // ==========================================
-        
         async function loadStats() {
             const key = localStorage.getItem('adminKey');
             try {
-                const response = await fetch(`${API_URL}/admin-stats?key=${key}`);
-                const data = await response.json();
-                
-                if (data.error === "Unauthorized") {
-                    logout();
-                    return;
-                }
-                
-                displayData(data);
-            } catch (err) {
-                console.error('Failed to load stats:', err);
-            }
+                // 1. Fetch Admin Stats (Locks/Counts)
+                const resStats = await fetch(`${API_URL}/admin-stats?key=${key}`);
+                const dataStats = await resStats.json();
+                document.getElementById('total-players').innerText = dataStats.total_unique_players;
+                document.getElementById('active-locks').innerText = dataStats.currently_locked_ips;
+
+                // 2. Fetch Jackpot (The missing part)
+                const resJackpot = await fetch(`${API_URL}/get-global-jackpot`);
+                const dataJackpot = await resJackpot.json();
+                document.getElementById('admin-jackpot-val').innerText = parseFloat(dataJackpot.current_pot).toFixed(2);
+
+                // 3. Fetch Players
+                const resLB = await fetch(`${API_URL}/leaderboard?admin=true`);
+                allUsers = await resLB.json();
+                filterUsers();
+            } catch (e) { console.log("Refresh failed"); }
         }
 
-        function displayData(data) {
-            document.getElementById('total-players').innerText = data.total_unique_players || 0;
-            document.getElementById('total-agents').innerText = data.total_agents || 0;
-            document.getElementById('active-locks').innerText = data.currently_locked_ips || 0;
-            document.getElementById('current-jackpot').innerText = 
-                (data.current_jackpot || 210.0).toFixed(2);
-            
-            const tableBody = document.getElementById('locks-table');
-            
-            if (!data.locks || data.locks.length === 0) {
-                tableBody.innerHTML = '<tr><td colspan="4" class="empty-state">No active cooldowns</td></tr>';
-            } else {
-                tableBody.innerHTML = data.locks.map(l => `
-                    <tr>
-                        <td>${l.ip || 'Unknown'}</td>
-                        <td>${l.agent || 'Unknown'}</td>
-                        <td>${l.remaining || 'N/A'}</td>
-                        <td style="font-size: 11px; color: #888;">${formatTimestamp(l.unlocks_at)}</td>
-                    </tr>
-                `).join('');
-            }
-        }
-
-        function formatTimestamp(isoString) {
-            if (!isoString) return 'N/A';
-            try {
-                const date = new Date(isoString);
-                return date.toLocaleTimeString();
-            } catch {
-                return 'Invalid';
-            }
-        }
-
-        async function loadPlayerList() {
-            try {
-                const res = await fetch(`${API_URL}/leaderboard?admin=true`);
-                allUsers = await res.json();
-                renderUserDropdown(allUsers);
-            } catch (e) {
-                console.error("Failed to load player list:", e);
-                document.getElementById('agent-select').innerHTML = 
-                    '<option value="">Failed to load agents</option>';
-            }
-        }
-
-        function renderUserDropdown(users) {
-            const select = document.getElementById('agent-select');
-            
-            if (!users || users.length === 0) {
-                select.innerHTML = '<option value="">No agents found</option>';
-                return;
-            }
-            
-            // Sort alphabetically
-            users.sort((a, b) => a.agent.localeCompare(b.agent));
-            
-            select.innerHTML = '<option value="">-- Select an agent --</option>' + 
-                users.map(u => {
-                    const sats = u.sats || 0;
-                    const credits = u.credits || 0;
-                    const label = `${u.agent} (${sats.toLocaleString()} sats / ${credits} credits)`;
-                    const hasBalance = (sats > 0 || credits > 0);
-                    const cssClass = hasBalance ? 'class="user-has-balance"' : '';
-                    return `<option value="${u.agent}" ${cssClass}>${label}</option>`;
-                }).join('');
+        function toggleBalanceFilter() {
+            onlyShowBalances = !onlyShowBalances;
+            document.getElementById('balance-filter-btn').classList.toggle('active', onlyShowBalances);
+            filterUsers();
         }
 
         function filterUsers() {
-            const searchTerm = document.getElementById('user-search').value.toLowerCase();
-            if (searchTerm === '') {
-                renderUserDropdown(allUsers);
-            } else {
-                const filtered = allUsers.filter(u => 
-                    u.agent.toLowerCase().includes(searchTerm)
-                );
-                renderUserDropdown(filtered);
-            }
+            const term = document.getElementById('user-search').value.toLowerCase();
+            const filtered = allUsers.filter(u => {
+                const match = u.agent.toLowerCase().includes(term);
+                const hasBal = (u.sats > 0 || (u.credits || 0) > 0);
+                return onlyShowBalances ? (match && hasBal) : match;
+            });
+            renderList(filtered);
         }
 
-        function getSelectedAgent() {
-            const manualAgent = document.getElementById('manual-agent-id').value.trim();
-            const dropdownAgent = document.getElementById('agent-select').value;
-            return manualAgent !== "" ? manualAgent : dropdownAgent;
+        function renderList(users) {
+            const content = document.getElementById('user-list-content');
+            content.innerHTML = users.map(u => {
+                const hasBal = (u.sats > 0 || (u.credits || 0) > 0);
+                const colorClass = hasBal ? 'user-has-balance' : '';
+                const selClass = u.agent === selectedAgent ? 'selected' : '';
+                return `<div class="user-row ${colorClass} ${selClass}" onclick="selectUser('${u.agent}')">
+                    <span>${u.agent}</span>
+                    <span>${u.sats} S / ${u.credits || 0} C</span>
+                </div>`;
+            }).join('');
         }
 
-        function showStatus(elementId, message, type = 'success') {
-            const statusEl = document.getElementById(elementId);
-            statusEl.style.display = 'block';
-            statusEl.className = `status-message status-${type}`;
-            statusEl.innerText = message;
-            
-            // Auto-hide after 5 seconds
-            setTimeout(() => {
-                statusEl.style.display = 'none';
-            }, 5000);
+        function selectUser(id) {
+            selectedAgent = id;
+            document.getElementById('selected-agent-hidden').value = id;
+            filterUsers();
         }
 
-        // ==========================================
-        // ADMIN ACTIONS
-        // ==========================================
-        
+        // # FIXED: Unified Action handlers
         async function issueCredits() {
-            const key = localStorage.getItem('adminKey');
-            const agent = getSelectedAgent();
-            const amount = parseInt(document.getElementById('credit-amount').value);
-
-            if (!agent) {
-                showStatus('award-status', '⚠️ Please select a user or enter an agent ID', 'warning');
-                return;
-            }
-            
-            if (!amount || amount < 1) {
-                showStatus('award-status', '⚠️ Please enter a valid credit amount', 'warning');
-                return;
-            }
-
-            showStatus('award-status', `Processing ${amount} credits for ${agent}...`, 'warning');
-
-            try {
-                const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${encodeURIComponent(agent)}&amount=${amount}`);
-                const data = await res.json();
-                
-                if (data.status === "Success") {
-                    showStatus('award-status', `✅ Granted ${amount} credits to ${agent}. New balance: ${data.new_balance}`, 'success');
-                    document.getElementById('manual-agent-id').value = "";
-                    document.getElementById('credit-amount').value = "5";
-                    setTimeout(() => {
-                        loadStats();
-                        loadPlayerList();
-                    }, 1000);
-                } else {
-                    showStatus('award-status', `❌ Error: ${data.error || 'Failed to award credits'}`, 'error');
-                }
-            } catch (e) {
-                console.error('Award credits failed:', e);
-                showStatus('award-status', '❌ Connection failed. Check server logs.', 'error');
-            }
+            const agent = document.getElementById('selected-agent-hidden').value;
+            const amt = document.getElementById('action-amount').value;
+            if(!agent) return alert("Select a user first");
+            const res = await fetch(`${API_URL}/admin-award?key=${localStorage.getItem('adminKey')}&agent=${agent}&amount=${amt}`);
+            const data = await res.json();
+            document.getElementById('action-status').innerText = data.status === "Success" ? "✅ Credits Issued" : "❌ Failed";
+            loadStats();
         }
 
         async function rewriteSats() {
-            const key = localStorage.getItem('adminKey');
-            const agent = getSelectedAgent();
-            const newSats = parseInt(document.getElementById('rewrite-sats-amount').value);
-
-            if (!agent) {
-                showStatus('rewrite-status', '⚠️ Please select a user or enter an agent ID', 'warning');
-                return;
-            }
-            
-            if (isNaN(newSats) || newSats < 0) {
-                showStatus('rewrite-status', '⚠️ Please enter a valid sats value (0 or greater)', 'warning');
-                return;
-            }
-            
-            if (!confirm(`⚠️ DANGER: Overwrite ${agent}'s total sats to ${newSats}?\n\nThis action cannot be undone!`)) {
-                return;
-            }
-
-            showStatus('rewrite-status', `Updating ${agent}'s sats...`, 'warning');
-
-            try {
-                // Use admin-award with negative amount to set exact value
-                // First, get current sats
-                const currentUser = allUsers.find(u => u.agent === agent);
-                const currentSats = currentUser ? currentUser.sats : 0;
-                const delta = newSats - currentSats;
-                
-                const res = await fetch(`${API_URL}/admin-award?key=${key}&agent=${encodeURIComponent(agent)}&amount=${delta}`);
-                const data = await res.json();
-                
-                if (data.status === "Success") {
-                    showStatus('rewrite-status', `✅ Set ${agent} to ${data.total_denied} total sats`, 'success');
-                    document.getElementById('manual-agent-id').value = "";
-                    document.getElementById('rewrite-sats-amount').value = "";
-                    setTimeout(() => {
-                        loadStats();
-                        loadPlayerList();
-                    }, 1000);
-                } else {
-                    showStatus('rewrite-status', `❌ Error: ${data.error || 'Failed to rewrite sats'}`, 'error');
-                }
-            } catch (e) {
-                console.error('Rewrite sats failed:', e);
-                showStatus('rewrite-status', '❌ Connection failed. Check server logs.', 'error');
-            }
-        }
-
-        async function resetJackpot() {
-            const key = localStorage.getItem('adminKey');
-            
-            if (!confirm('Reset jackpot to 210.00 rolls?')) {
-                return;
-            }
-
-            try {
-                const res = await fetch(`${API_URL}/reset-jackpot`, {
-                    method: 'POST',
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                });
-                const data = await res.json();
-                
-                if (data.status === "reset") {
-                    showStatus('jackpot-status', '✅ Jackpot reset to 210.00 rolls', 'success');
-                    loadStats();
-                } else {
-                    showStatus('jackpot-status', '❌ Failed to reset jackpot', 'error');
-                }
-            } catch (e) {
-                console.error('Reset jackpot failed:', e);
-                showStatus('jackpot-status', '❌ Connection failed', 'error');
-            }
+            const agent = document.getElementById('selected-agent-hidden').value;
+            const amt = document.getElementById('action-amount').value;
+            if(!agent || !confirm(`Set ${agent} to ${amt} sats?`)) return;
+            const res = await fetch(`${API_URL}/admin-rewrite-sats?key=${localStorage.getItem('adminKey')}&agent=${agent}&sats=${amt}`);
+            const data = await res.json();
+            document.getElementById('action-status').innerText = data.status === "Success" ? "✅ Score Updated" : "❌ Failed";
+            loadStats();
         }
 
         async function resetLocks() {
-            const key = localStorage.getItem('adminKey');
-            
-            if (!confirm('🚨 Clear ALL cooldowns? This will allow all locked users to roll immediately.')) {
-                return;
-            }
-
-            try {
-                const res = await fetch(`${API_URL}/admin-reset?key=${key}`);
-                const data = await res.json();
-                
-                if (data.status) {
-                    alert('✅ ' + data.status);
-                    loadStats();
-                } else {
-                    alert('❌ Failed to clear locks');
-                }
-            } catch (e) {
-                console.error('Reset locks failed:', e);
-                alert('❌ Connection failed');
-            }
+            if(!confirm("Clear all blocks?")) return;
+            await fetch(`${API_URL}/admin-reset?key=${localStorage.getItem('adminKey')}`);
+            loadStats();
         }
 
-        // ==========================================
-        // INITIALIZATION
-        // ==========================================
-        
-        window.onload = () => {
-            checkAuth();
-        };
+        checkAuth();
     </script>
 </body>
 </html>
