@@ -1,6 +1,102 @@
 {
   "articles": [
     {
+      "title": "CFTC Faces Tough Crypto Mandate With Fewer Staff, Inspector General Says",
+      "url": "https://decrypt.co/355225/cftc-faces-tough-crypto-mandate-fewer-staff-inspector-general",
+      "source": "Decrypt",
+      "published_at": "Wed, 21 Jan 2026 01:23:47 +0000"
+    },
+    {
+      "title": "Crypto market crash deepens as investors digest Trump tariff threat",
+      "url": "https://cointelegraph.com/news/crypto-market-crash-deepens-as-investors-digest-trump-tariff-threat?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 21 Jan 2026 01:16:42 +0000"
+    },
+    {
+      "title": "Bitcoin Bear Market Depths: A Closer Look At How Low BTC Could Go",
+      "url": "https://www.newsbtc.com/bitcoin-news/bitcoin-bear-market-depths-a-closer-look-at-how-low-btc-could-go/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 21 Jan 2026 01:00:42 +0000"
+    },
+    {
+      "title": "Nvidia Vs. Dogecoin: A Historic Ratio Suggests A Possible Rotation, Says Trader",
+      "url": "https://bitcoinist.com/nvidia-vs-dogecoin-historic-ratio-rotation/",
+      "source": "Bitcoinist",
+      "published_at": "Wed, 21 Jan 2026 01:00:31 +0000"
+    },
+    {
+      "title": "How MegaETH targets 15K–35K TPS in 7-day mainnet stress test",
+      "url": "https://ambcrypto.com/how-megaeth-targets-15k-35k-tps-in-7-day-mainnet-stress-test/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 21 Jan 2026 01:00:01 +0000"
+    },
+    {
+      "title": "Peter Brandt Says $58K–$62K Is Where Bitcoin Is Likely Headed",
+      "url": "https://news.bitcoin.com/peter-brandt-says-58k-62k-is-where-bitcoin-is-likely-headed/",
+      "source": "Bitcoin.com",
+      "published_at": "Wed, 21 Jan 2026 00:45:44 +0000"
+    },
+    {
+      "title": "Trove Markets retains $9.4m ICO funds after platform pivot",
+      "url": "https://crypto.news/trove-markets-retains-ico-funds-after-platform-pivot/",
+      "source": "BTCManager",
+      "published_at": "Wed, 21 Jan 2026 00:30:00 +0000"
+    },
+    {
+      "title": "Trove Markets retains $9.4m ICO funds after platform pivot",
+      "url": "https://crypto.news/trove-markets-retains-ico-funds-after-platform-pivot/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 21 Jan 2026 00:30:00 +0000"
+    },
+    {
+      "title": "Fundstrat’s Lee sees ‘painful’ start to 2026 before late-year rebound",
+      "url": "https://cointelegraph.com/news/fundstrat-lee-sees-tough-start-market-prices-2026?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 21 Jan 2026 00:28:21 +0000"
+    },
+    {
+      "title": "OpenAI Deploys Age Prediction to Restrict Teen Access on ChatGPT",
+      "url": "https://decrypt.co/355220/openai-deploys-age-prediction-to-restrict-teen-access-on-chatgpt",
+      "source": "Decrypt",
+      "published_at": "Wed, 21 Jan 2026 00:22:42 +0000"
+    },
+    {
+      "title": "Red Everywhere: Stocks Stumble, Bitcoin Slips Below $88K as Tariff Fears Bite",
+      "url": "https://news.bitcoin.com/red-everywhere-stocks-stumble-bitcoin-slips-below-88k-as-tariff-fears-bite/",
+      "source": "Bitcoin.com",
+      "published_at": "Wed, 21 Jan 2026 00:14:39 +0000"
+    },
+    {
+      "title": "US–Venezuela Oil Moves Ignite Meme Coin Frenzy as ‘USOR’ Surges 150%",
+      "url": "https://beincrypto.com/usor-meme-coin-pumps-venezuela-oil-news/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 21 Jan 2026 00:01:36 +0000"
+    },
+    {
+      "title": "Bitcoin Recovers In January: Funding Divergence Points To A Spot-Driven Market",
+      "url": "https://bitcoinist.com/bitcoin-recovers-in-january-funding-divergence/",
+      "source": "Bitcoinist",
+      "published_at": "Wed, 21 Jan 2026 00:00:41 +0000"
+    },
+    {
+      "title": "Bitcoin Whale Panic Fades: Sell Pressure On Binance Falls Off A Cliff",
+      "url": "https://www.newsbtc.com/bitcoin-news/bitcoin-whale-panic-fades-sell-pressure-binance/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 21 Jan 2026 00:00:06 +0000"
+    },
+    {
+      "title": "JAN3 CEO calls Bitcoin ‘trade of lifetime,’ predicts $1m by 2031",
+      "url": "https://crypto.news/jan3-ceo-btc-trade-lifetime-predicts-2031-lifetime/",
+      "source": "BTCManager",
+      "published_at": "Wed, 21 Jan 2026 00:00:00 +0000"
+    },
+    {
+      "title": "JAN3 CEO calls Bitcoin ‘trade of lifetime,’ predicts $1m by 2031",
+      "url": "https://crypto.news/jan3-ceo-btc-trade-lifetime-predicts-2031-lifetime/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 21 Jan 2026 00:00:00 +0000"
+    },
+    {
       "title": "Wall Street’s secret blockchain platform is coming for your dividends and it’s using stablecoins to do it",
       "url": "https://cryptoslate.com/wall-streets-secret-blockchain-platform-is-coming-for-your-dividends-and-its-using-stablecoins-to-do-it/",
       "source": "CryptoSlate",
@@ -517,12 +613,6 @@
       "published_at": "Tue, 20 Jan 2026 17:36:55 +0000"
     },
     {
-      "title": "Ray Dalio Warns of a Cracking Fiat Order as Global Markets Feel the Strain",
-      "url": "https://news.bitcoin.com/ray-dalio-warns-of-a-cracking-fiat-order-as-global-markets-feel-the-strain/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 20 Jan 2026 17:31:53 +0000"
-    },
-    {
       "title": "Mastercard Eyes Bitcoin and Crypto Infrastructure Firm Zerohash Investment After Acquisition Talks Fall Through",
       "url": "https://bitcoinmagazine.com/news/mastercard-eyes-zerohash-investment",
       "source": "Bitcoin Magazine",
@@ -533,12 +623,6 @@
       "url": "https://ambcrypto.com/axie-infinity-up-14-axs-faces-decisive-2-test-next/",
       "source": "Ambcrypto",
       "published_at": "Tue, 20 Jan 2026 17:30:50 +0000"
-    },
-    {
-      "title": "XRP’s Blessing In Disguise: How Investors Could Benefit Soon",
-      "url": "https://bitcoinist.com/xrp-blessing-in-disguise/",
-      "source": "Bitcoinist",
-      "published_at": "Tue, 20 Jan 2026 17:30:10 +0000"
     },
     {
       "title": "Is Dogecoin About To Repeat NVIDIA’s Run? Here’s What The Chart Says",
@@ -631,12 +715,6 @@
       "published_at": "Tue, 20 Jan 2026 16:44:13 +0000"
     },
     {
-      "title": "Tether Partners With Bitqik for Bitcoin and Stablecoin Education in Laos",
-      "url": "https://news.bitcoin.com/tether-partners-with-bitqik-for-bitcoin-and-stablecoin-education-in-laos/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 20 Jan 2026 16:40:10 +0000"
-    },
-    {
       "title": "Market pressures rise: Ethereum whale’s $110 million bets",
       "url": "https://crypto.news/market-pressures-rise-ethereum-whales-110-million-bets/",
       "source": "BTCManager",
@@ -725,12 +803,6 @@
       "url": "https://www.newsbtc.com/analysis/xrp/xrp-price-at-10-too-low/",
       "source": "NewsBTC",
       "published_at": "Tue, 20 Jan 2026 16:00:24 +0000"
-    },
-    {
-      "title": "Are Crypto Exchanges Manipulating The Bitcoin Price Crash?",
-      "url": "https://bitcoinist.com/exchanges-manipulating-bitcoin/",
-      "source": "Bitcoinist",
-      "published_at": "Tue, 20 Jan 2026 16:00:21 +0000"
     },
     {
       "title": "Chainlink expands data streams to cover multitrillion-dollar U.S. stock market",
@@ -853,12 +925,6 @@
       "published_at": "Tue, 20 Jan 2026 15:02:52 +0000"
     },
     {
-      "title": "Is Ethereum’s activity growth fake? Behind the 3.86mln poisoned wallets",
-      "url": "https://ambcrypto.com/is-ethereums-activity-growth-fake-behind-the-3-86mln-poisoned-wallets/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 20 Jan 2026 15:00:44 +0000"
-    },
-    {
       "title": "How Wall Street took over the bitcoin options market",
       "url": "https://www.coindesk.com/opinion/2026/01/20/how-wall-street-took-over-the-bitcoin-options-market",
       "source": "Coindesk",
@@ -875,12 +941,6 @@
       "url": "https://cryptopotato.com/ripple-vs-cardano-4-ais-predict-whether-xrp-or-ada-will-rally-more-by-valentines-day/",
       "source": "CryptoPotato",
       "published_at": "Tue, 20 Jan 2026 14:56:37 +0000"
-    },
-    {
-      "title": "Slow Rug? Trump-Associated World Liberty Fi Accused Of Value Extraction",
-      "url": "https://www.newsbtc.com/news/slow-rug-trump-world-liberty-fi-value-extraction/",
-      "source": "NewsBTC",
-      "published_at": "Tue, 20 Jan 2026 14:30:05 +0000"
     },
     {
       "title": "CoinDesk 20 Performance Update: Internet Computer Drops 8.3% as All Assets Decline",
@@ -1015,12 +1075,6 @@
       "published_at": "Tue, 20 Jan 2026 13:27:17 +0000"
     },
     {
-      "title": "DASH Faces 3 Hidden Risks That Could Catch Holders Off Guard",
-      "url": "https://beincrypto.com/what-risks-of-dash-in-january/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 20 Jan 2026 13:21:27 +0000"
-    },
-    {
       "title": "Coinbase says capital access beats income in wealth creation",
       "url": "https://cointelegraph.com/news/coinbase-says-capital-access-beats-income-in-wealth-creation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1055,12 +1109,6 @@
       "url": "https://cryptopotato.com/saylors-strategy-buys-over-2-billion-worth-of-btc-despite-growing-geopolitical-tension/",
       "source": "CryptoPotato",
       "published_at": "Tue, 20 Jan 2026 13:05:38 +0000"
-    },
-    {
-      "title": "Shiba Inu Whales Are On The Move Again, 361 Billion SHIB Stuns Community",
-      "url": "https://www.newsbtc.com/shiba-inu/shiba-inu-whales-on-the-move/",
-      "source": "NewsBTC",
-      "published_at": "Tue, 20 Jan 2026 13:00:11 +0000"
     },
     {
       "title": "Bitcoin lags gold as debasement trade tilts toward bullion in early 2026",
@@ -1513,12 +1561,6 @@
       "published_at": "Tue, 20 Jan 2026 05:07:13 +0000"
     },
     {
-      "title": "Ethereum activity surge could be linked to dusting attacks: Researcher",
-      "url": "https://cointelegraph.com/news/address-poisoning-attack-adding-record-ethereum-network-activity-says-researcher?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 20 Jan 2026 04:59:14 +0000"
-    },
-    {
       "title": "$2.17B Floods Into Crypto as Bitcoin Dominates, But Geopolitics Trigger a Sudden Reversal",
       "url": "https://cryptopotato.com/2-17b-floods-into-crypto-as-bitcoin-dominates-but-geopolitics-trigger-a-sudden-reversal/",
       "source": "CryptoPotato",
@@ -1535,12 +1577,6 @@
       "url": "https://crypto.news/zero-knowledge-proof-launches-450-day-presale-auction-with-time-based-pricing-structure/",
       "source": "CryptoNews",
       "published_at": "Tue, 20 Jan 2026 04:30:00 +0000"
-    },
-    {
-      "title": "Magic Eden co-founder sees  ‘speculation supercycle’ ahead",
-      "url": "https://cointelegraph.com/news/magic-eden-ceo-sees-speculation-supercycle-ahead?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 20 Jan 2026 04:12:03 +0000"
     },
     {
       "title": "Pump.fun expands into startup funding with new $3M ecosystem fund",
@@ -1795,34 +1831,10 @@
       "published_at": "Mon, 19 Jan 2026 17:07:37 +0000"
     },
     {
-      "title": "ZKP presale auction pushes toward $1.7b with massive projections",
-      "url": "https://crypto.news/zkp-presale-auction-pushes-toward-1-7b-with-massive-projections/",
-      "source": "BTCManager",
-      "published_at": "Mon, 19 Jan 2026 17:00:00 +0000"
-    },
-    {
-      "title": "ZKP presale auction pushes toward $1.7b with massive projections",
-      "url": "https://crypto.news/zkp-presale-auction-pushes-toward-1-7b-with-massive-projections/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 19 Jan 2026 17:00:00 +0000"
-    },
-    {
       "title": "New York Stock Exchange Reveals Trading Platform for Tokenized Stocks and ETFs",
       "url": "https://decrypt.co/355012/new-york-stock-exchange-trading-platform-tokenized-stocks-etfs",
       "source": "Decrypt",
       "published_at": "Mon, 19 Jan 2026 16:30:28 +0000"
-    },
-    {
-      "title": "HBAR price prints double bottom at $0.10, is a reversal forming?",
-      "url": "https://crypto.news/hbar-price-prints-double-bottom-at-0-10-is-a-reversal-forming/",
-      "source": "BTCManager",
-      "published_at": "Mon, 19 Jan 2026 16:30:00 +0000"
-    },
-    {
-      "title": "HBAR price prints double bottom at $0.10, is a reversal forming?",
-      "url": "https://crypto.news/hbar-price-prints-double-bottom-at-0-10-is-a-reversal-forming/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 19 Jan 2026 16:30:00 +0000"
     },
     {
       "title": "Pudgy Penguins, Known For NFT Toys, Now Dives Deeper Into Soccer",
@@ -2147,18 +2159,6 @@
       "url": "https://decrypt.co/354791/dtcc-walled-gardens-tokenization-digital-assets-head",
       "source": "Decrypt",
       "published_at": "Fri, 16 Jan 2026 21:16:03 +0000"
-    },
-    {
-      "title": "Robinhood Offers Prediction Market 'Custom Combos'—But Don't Call Them Parlays",
-      "url": "https://decrypt.co/354939/robinhood-offers-prediction-market-custom-combos-but-dont-call-them-parlays",
-      "source": "Decrypt",
-      "published_at": "Fri, 16 Jan 2026 20:02:22 +0000"
-    },
-    {
-      "title": "Bitcoin Seized From Samourai Wallet Has Not Been Sold, White House Says",
-      "url": "https://decrypt.co/354941/bitcoin-seized-samourai-wallet-reserve-not-sold-white-house",
-      "source": "Decrypt",
-      "published_at": "Fri, 16 Jan 2026 19:31:52 +0000"
     },
     {
       "title": "Did Bitcoin Price Peak in 2025? Famed Analyst Casts Doubt on 2026 Growth",
