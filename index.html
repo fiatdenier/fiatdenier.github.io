@@ -41,7 +41,35 @@
     padding: 20px;
   }
 
+  /* # UPDATED: Responsive Header Layout */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* # CENTERED: Default for mobile */
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 768px) {
+    header {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
   header h1 a, #pagination, #page-info { font-family: 'Courier New', monospace; font-weight: 700 !important; color: var(--btc-orange) !important; text-decoration: none; }
+  
+  /* # ADDED: Live BTC Ticker Style */
+  #btc-price-ticker {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: var(--win-green);
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+
   #updated { font-family: 'Courier New', monospace; font-weight: 700 !important; color: var(--grey-text) !important; }
   
   /* # UPDATED: News Headings and Meta */
@@ -135,13 +163,19 @@
 </head>
 <body>
 <header>
-  <h1><a href="/">BITCOIN WIRE</a></h1>
-  <p id="updated">Checking for updates...</p>
-  <button class="game-link" id="lucky-roll-btn" onclick="location.href='roll.html'">🎰 PLAY LUCKY ROLL</button>
+  <div class="header-main">
+    <h1><a href="/">BITCOIN WIRE</a></h1>
+    <div id="btc-price-ticker">BTC/USD: Fetching...</div>
+    <p id="updated">Checking for updates...</p>
+  </div>
   
-  <div class="game-status-bar">
-    PROGRESSIVE FREE CREDIT JACKPOT: <span id="idx-pot" class="pot-val">210.00</span> | 
-    DAILY FREE CREDIT REDEEMED: <span id="idx-daily">0</span>/100
+  <div class="header-actions">
+    <button class="game-link" id="lucky-roll-btn" onclick="location.href='roll.html'">🎰 PLAY LUCKY ROLL</button>
+    <br>
+    <div class="game-status-bar">
+      PROGRESSIVE FREE CREDIT JACKPOT: <span id="idx-pot" class="pot-val">210.00</span> | 
+      DAILY FREE CREDIT REDEEMED: <span id="idx-daily">0</span>/100
+    </div>
   </div>
 </header>
 
@@ -171,6 +205,22 @@
   <span id="page-info"></span>
   <button id="next-btn">Next</button>
 </div>
+
+<script>
+// # ADDED: Bitcoin Price Fetch Script
+async function fetchBTCPrice() {
+    try {
+        const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
+        const data = await response.json();
+        const price = data.bpi.USD.rate_float;
+        document.getElementById('btc-price-ticker').innerText = `BTC/USD: $${price.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+    } catch (e) {
+        console.log("Price fetch failed");
+    }
+}
+setInterval(fetchBTCPrice, 60000);
+fetchBTCPrice();
+</script>
 
 <script type="module">
 import { paginateNews } from './scripts/paginate_news.js';
