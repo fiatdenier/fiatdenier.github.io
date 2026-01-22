@@ -22,49 +22,86 @@
 <link rel="stylesheet" href="styles.css" />
 
 <style>
-  /* # UPDATED: Center-aligned Header Layout */
+  /* # RESTORED: Dark Theme from roll.html */
+  :root { 
+      --btc-orange: #f7931a; 
+      --dark-bg: #1a1a1a; 
+      --win-green: #4CAF50; 
+      --grey-text: #696969; 
+  }
+
+  body { 
+      background: var(--dark-bg); 
+      color: white; 
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+  }
+
+  /* # UPDATED: Everything Centered */
   header {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 30px;
+    padding: 20px;
     width: 100%;
   }
 
-  /* # COMMENTED OUT: Removed side-alignment for desktop to keep everything centered */
-  /* @media (min-width: 768px) {
+  /* # COMMENTED OUT: Side-alignment logic to maintain center on all screens */
+  /*
+  @media (min-width: 768px) {
     header {
       flex-direction: row;
       justify-content: space-between;
       text-align: left;
-      align-items: flex-start;
     }
-  } 
+  }
   */
 
-  header h1 a, #pagination, #page-info { font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #f7931a !important; text-decoration: none; }
+  header h1 a, #pagination, #page-info { font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: var(--btc-orange) !important; text-decoration: none; }
   
-  /* # ADDED: Centered Ticker Style */
+  /* # ADDED: Price Ticker Styling */
   #btc-price-ticker {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    color: #4CAF50;
+    color: var(--win-green);
     font-size: 1.2rem;
-    margin-top: 5px;
-    min-height: 1.5rem;
+    margin: 5px 0;
   }
 
-  #updated { font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #696969 !important; margin-top: 5px; }
+  #updated { font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: var(--grey-text) !important; margin: 0; }
   
-  #app a .headline { display: block; font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #f7931a !important; margin-bottom: 4px; }
+  #app a .headline { display: block; font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: var(--btc-orange) !important; margin-bottom: 4px; }
   #app a .meta { display: block; font-family: 'Roboto', sans-serif; font-weight: 700 !important; color: #888888 !important; font-size: 0.85rem; }
   #app a { text-decoration: none; display: block; margin-bottom: 15px; }
 
-  .game-link { display: inline-block; margin-top: 15px; padding: 12px 24px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: 700 !important; transition: background 0.2s; background: #f7931a; color: white !important; }
+  .game-link { 
+      display: inline-block; 
+      margin-top: 15px; 
+      padding: 12px 24px; 
+      text-decoration: none; 
+      border-radius: 4px; 
+      border: none; 
+      cursor: pointer; 
+      font-weight: 700 !important; 
+      transition: background 0.2s; 
+      background: var(--btc-orange); 
+      color: white !important; 
+  }
 
-  .game-status-bar { font-family: 'Roboto', sans-serif; font-size: 0.7rem; margin-top: 12px; color: #888; letter-spacing: 0.5px; background: rgba(0,0,0,0.2); padding: 8px 15px; border-radius: 20px; }
-  .pot-val { color: #4CAF50; font-weight: bold; }
+  /* # UPDATED: Status Bar Theme */
+  .game-status-bar { 
+      font-family: 'Roboto', sans-serif; 
+      font-size: 0.7rem; 
+      margin-top: 12px; 
+      color: #888; 
+      letter-spacing: 0.5px; 
+      background: rgba(0,0,0,0.4); 
+      padding: 8px 15px; 
+      border-radius: 20px; 
+      border: 1px solid #333;
+  }
+  .pot-val { color: var(--win-green); font-weight: bold; }
 
   @keyframes red-glow {
       0% { text-shadow: 0 0 5px rgba(255, 68, 68, 0.2); }
@@ -78,17 +115,17 @@
   }
 
   .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; }
-  .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid #f7931a; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .modal-content { position: relative; width: 95%; max-width: 1100px; height: 90vh; margin: 5vh auto; background: #2a2a2a; border: 2px solid var(--btc-orange); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
   .modal-header { background: #111; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
-  .modal-btn { background: #f7931a; color: #fff !important; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
+  .modal-btn { background: var(--btc-orange); color: #fff !important; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
   
   #bridge-msg { display: none; padding: 60px 20px; text-align: center; color: #ccc; flex-grow: 1; font-family: 'Roboto', sans-serif; }
-  #bridge-msg h2 { color: #f7931a; margin-bottom: 15px; }
+  #bridge-msg h2 { color: var(--btc-orange); margin-bottom: 15px; }
   #load-status { color: #888; font-size: 0.8rem; margin-left: 10px; font-family: 'Roboto', sans-serif; }
   iframe { flex-grow: 1; width: 100%; border: none; background: white; display: block; }
 
   #pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 60px 0; width: 100%; }
-  #pagination button { background: #333; border: 1px solid #444; padding: 12px 24px; cursor: pointer; border-radius: 4px; min-width: 120px; color: #f7931a !important; font-weight: 700; }
+  #pagination button { background: #333; border: 1px solid #444; padding: 12px 24px; cursor: pointer; border-radius: 4px; min-width: 120px; color: var(--btc-orange) !important; font-weight: 700; }
   #pagination button:disabled { opacity: 0.2; cursor: not-allowed; }
 </style>
 </head>
@@ -108,7 +145,7 @@
   </div>
 </header>
 
-<main id="app" class="grid"></main>
+<main id="app" class="grid" style="padding: 20px;"></main>
 
 <div id="articleModal" class="modal-overlay">
     <div class="modal-content">
@@ -139,24 +176,22 @@
 async function updateBTCPrice() {
     const priceEl = document.getElementById('btc-price-ticker');
     try {
-        // Using CoinGecko as a fallback/primary reliable API
         const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
         const data = await response.json();
         const price = data.bitcoin.usd;
         priceEl.innerText = `BTC/USD: $${price.toLocaleString()}`;
     } catch (e) {
-        console.error("Price fetch error:", e);
-        // Try CoinDesk as secondary if first fails
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(res => res.json())
-            .then(data => {
-                const altPrice = data.bpi.USD.rate_float;
-                priceEl.innerText = `BTC/USD: $${altPrice.toLocaleString()}`;
-            })
-            .catch(() => { priceEl.innerText = "BTC/USD: Live Connection Error"; });
+        console.log("Primary fetch failed, trying fallback...");
+        try {
+            const res = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
+            const data = await res.json();
+            const altPrice = data.bpi.USD.rate_float;
+            priceEl.innerText = `BTC/USD: $${altPrice.toLocaleString()}`;
+        } catch (err) {
+            priceEl.innerText = "BTC/USD: Update Pending...";
+        }
     }
 }
-// Update price every 60 seconds
 setInterval(updateBTCPrice, 60000);
 updateBTCPrice();
 </script>
@@ -247,7 +282,7 @@ async function syncRoll() {
     // # SERVER SYNC FOR JACKPOT & DAILY USAGE
     try {
         const jRes = await fetch(`https://api.fiatdenier.com/get-global-jackpot?agent_id=${agentId}`, {
-            headers: SECURE_HEADERS // # ENSURED: Bot Shield Header included
+            headers: SECURE_HEADERS 
         });
         const jData = await jRes.json();
         if (jData.current_pot) {
@@ -264,7 +299,6 @@ async function syncRoll() {
     countEl.innerText = displayCount;
     document.getElementById('idx-pot').innerText = potVal.toFixed(2);
 
-    // # SURGICAL CHANGE: Glowing effect for daily count (REPLACED BLINKING)
     if (displayCount >= 100) {
         countEl.classList.add('exhausted-glow');
     } else {
@@ -273,7 +307,7 @@ async function syncRoll() {
 
     try {
         const response = await fetch(`https://api.fiatdenier.com/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
-            headers: SECURE_HEADERS // # ENSURED: Bot Shield Header included
+            headers: SECURE_HEADERS 
         });
         const data = await response.json();
         
@@ -291,8 +325,6 @@ async function syncRoll() {
 
     const now = Date.now();
     
-    // # BUTTON LOGIC
-    // # SURGICAL CHANGE: Updated logic to block based on any active expiry
     if (expiry && now < parseInt(expiry)) {
         const diff = parseInt(expiry) - now;
         const mins = Math.floor(diff / 60000);
@@ -304,7 +336,7 @@ async function syncRoll() {
         btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
         setTimeout(syncRoll, 1000);
     } else {
-        btn.style.backgroundColor = "#f7931a";
+        btn.style.backgroundColor = "var(--btc-orange)";
         btn.style.color = "#fff";
         btn.style.pointerEvents = "auto";
         btn.innerText = "🎰 PLAY LUCKY ROLL";
