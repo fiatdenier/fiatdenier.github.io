@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Fiat Denier - Lucky Roll</title>
 	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 	<style>
 		:root {
 			--btc-orange: #f7931a;
@@ -629,16 +629,12 @@
 					qrContainer.innerHTML = '<p style="color:var(--btc-orange); font-size:0.7rem;">QR Library not loaded. Please refresh.</p>';
 				} else {
 					try {
-						// New implementation: Creating canvas element explicitly before drawing
-						const canvas = document.createElement('canvas');
-						QRCode.toCanvas(canvas, data.payment_request, { width: 200 }, function (error) {
-							if (error) {
-								console.error('QR generation error:', error);
-								qrContainer.innerText = 'Error generating QR code.';
-							} else {
-								qrContainer.appendChild(canvas);
-							}
-						});
+						const typeNumber = 0;
+						const errorCorrectionLevel = 'L';
+						const qr = qrcode(typeNumber, errorCorrectionLevel);
+						qr.addData(data.payment_request);
+						qr.make();
+						qrContainer.innerHTML = qr.createImgTag(5); // Creates the QR image automatically
 					} catch (err) {
 						console.error('QR Execution Error:', err);
 						qrContainer.innerHTML = '<p style="color:red; font-size:0.7rem;">QR Execution Failed.</p>';
