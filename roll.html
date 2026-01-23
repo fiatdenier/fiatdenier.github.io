@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiat Denier - Lucky Roll</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
     <style>
         :root { 
             --btc-orange: #f7931a; 
@@ -13,30 +14,20 @@
             --grey-text: #696969; 
             --locked-grey: #444444;
         }
-		/* # ADDED: Pulse animation for free credit events */
         @keyframes credit-pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.4); color: var(--win-green); text-shadow: 0 0 10px var(--win-green); }
             100% { transform: scale(1); }
         }
-        .pulse-active {
-            animation: credit-pulse 0.6s ease-in-out;
-        }
-
-        /* # ADDED: Blink for the status message */
+        .pulse-active { animation: credit-pulse 0.6s ease-in-out; }
         @keyframes blink { 50% { opacity: 0; } }
-		
-		/* # ADDED: Subtle glow animation for the Progressive Jackpot */
-		@keyframes jackpot-glow {
-			0% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
-			50% { text-shadow: 0 0 15px rgba(76, 175, 80, 0.6); }
-			100% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
-		}
-
-		.glow-active {
-			animation: jackpot-glow 3s ease-in-out infinite;
-		}
-		
+        @keyframes jackpot-glow {
+            0% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
+            50% { text-shadow: 0 0 15px rgba(76, 175, 80, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
+        }
+        .glow-active { animation: jackpot-glow 3s ease-in-out infinite; }
+        
         body { font-family: 'Courier New', monospace; background: var(--dark-bg); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow-x: hidden; }
         .card { background: #2a2a2a; padding: 2rem; border-radius: 15px; border: 2px solid var(--btc-orange); text-align: center; box-shadow: 0 0 20px rgba(247, 147, 26, 0.2); width: 90%; max-width: 400px; position: relative; }
         
@@ -68,7 +59,7 @@
         .back-link { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.8rem; }
         #ip-lock-msg { color: var(--btc-orange); font-size: 2.5rem; font-weight: bold; display: none; margin: 1rem 0; }
 
-        #leaderboard-overlay { 
+        #leaderboard-overlay, #payment-overlay { 
             display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
             background: #111; border: 2px solid var(--btc-orange); padding: 20px; z-index: 10001; 
             width: 85%; max-width: 320px; box-shadow: 0 0 30px black;
@@ -79,6 +70,26 @@
         #lb-scroll-area::-webkit-scrollbar { width: 4px; }
         #lb-scroll-area::-webkit-scrollbar-thumb { background: var(--btc-orange); }
         #my-rank-box { border-top: 1px solid var(--btc-orange); margin-top: 10px; padding-top: 10px; font-size: 0.75rem; color: #aaa; }
+        
+        .buy-credits-btn { background: #4CAF50; margin-top: 10px; padding: 0.8rem; font-size: 1rem; }
+        .buy-credits-btn:hover { background: #45a049; }
+        
+        #qr-container { margin: 20px 0; display: flex; justify-content: center; }
+        #qr-container canvas { border: 3px solid var(--btc-orange); border-radius: 10px; }
+        
+        .payment-amount-selector { display: flex; gap: 10px; margin: 15px 0; flex-wrap: wrap; justify-content: center; }
+        .amount-btn { flex: 1; min-width: 80px; padding: 10px; background: #333; border: 2px solid #555; cursor: pointer; border-radius: 5px; font-size: 0.9rem; transition: all 0.2s; }
+        .amount-btn:hover { border-color: var(--btc-orange); background: #444; }
+        .amount-btn.selected { background: var(--btc-orange); border-color: var(--btc-orange); color: white; }
+        .amount-btn .sats { font-weight: bold; color: var(--btc-orange); }
+        .amount-btn.selected .sats { color: white; }
+        .amount-btn .credits { font-size: 0.7rem; color: #888; }
+        .amount-btn.selected .credits { color: rgba(255,255,255,0.8); }
+        
+        .payment-status { margin-top: 15px; padding: 10px; background: rgba(76, 175, 80, 0.1); border: 1px solid var(--win-green); border-radius: 5px; color: var(--win-green); font-size: 0.85rem; }
+        
+        .close-btn { margin-top: 15px; font-size: 0.7rem; color: #666; cursor: pointer; text-align: center; }
+        .close-btn:hover { color: var(--btc-orange); }
     </style>
 </head>
 <body>
@@ -128,6 +139,7 @@
         <div id="ip-lock-msg">IP LOCKED</div>
         
         <button id="roll-btn" onclick="handleRoll()">ROLL FOR SATS</button>
+        <button class="buy-credits-btn" onclick="showPayment()">⚡ BUY CREDITS WITH ₿</button>
         <div id="timer"></div>
 
         <div id="result-area" style="display: none;">
@@ -153,31 +165,217 @@
         <div id="my-rank-box">
             YOUR STATUS: <span id="my-rank-display">CALCULATING...</span>
         </div>
-        <div onclick="document.getElementById('leaderboard-overlay').style.display='none'" style="margin-top:15px; font-size:0.7rem; color:#666; cursor:pointer; text-align: center;">[ CLOSE TERMINAL ]</div>
+        <div class="close-btn" onclick="document.getElementById('leaderboard-overlay').style.display='none'">[ CLOSE TERMINAL ]</div>
+    </div>
+
+    <div id="payment-overlay">
+        <div class="agent-status" style="margin-bottom:15px; color:var(--btc-orange)">⚡ LIGHTNING PAYMENT</div>
+        
+        <div style="margin-bottom: 15px;">
+            <div style="font-size: 0.7rem; color: #888; margin-bottom: 10px;">SELECT AMOUNT:</div>
+            <div class="payment-amount-selector">
+                <div class="amount-btn selected" onclick="selectAmount(21, 10)">
+                    <div class="sats">21 sats</div>
+                    <div class="credits">10 credits</div>
+                </div>
+                <div class="amount-btn" onclick="selectAmount(42, 20)">
+                    <div class="sats">42 sats</div>
+                    <div class="credits">20 credits</div>
+                </div>
+                <div class="amount-btn" onclick="selectAmount(210, 100)">
+                    <div class="sats">210 sats</div>
+                    <div class="credits">100 credits</div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="generateInvoice()" id="generate-invoice-btn" style="margin-bottom: 15px;">GENERATE INVOICE</button>
+
+        <div id="invoice-container" style="display: none;">
+            <div id="qr-container"></div>
+            
+            <div style="margin: 15px 0;">
+                <div style="font-size: 0.7rem; color: #888; margin-bottom: 5px;">LIGHTNING INVOICE:</div>
+                <div style="background: #000; padding: 10px; border-radius: 5px; word-break: break-all; font-size: 0.65rem; color: #666; max-height: 100px; overflow-y: auto;">
+                    <span id="invoice-text"></span>
+                </div>
+                <button onclick="copyInvoice()" style="margin-top: 10px; font-size: 0.9rem; padding: 0.5rem;">📋 COPY INVOICE</button>
+            </div>
+
+            <div class="payment-status" id="payment-status" style="display: none;">
+                <div>⏳ Waiting for payment...</div>
+                <div style="font-size: 0.7rem; margin-top: 5px;">Checking every 3 seconds</div>
+            </div>
+        </div>
+
+        <div class="close-btn" onclick="closePayment()">[ CLOSE ]</div>
     </div>
 
     <script>
-		// # ADDED: Force unlock audio context on first user interaction
-		const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-		['click', 'touchstart', 'keydown'].forEach(event => {
-			window.addEventListener(event, () => {
-				if (audioCtx.state === 'suspended') {
-					audioCtx.resume();
-				}
-			}, { once: true });
-		});
-		const COOLDOWN_MINUTES = 10;
-		const API_BASE = "https://api.fiatdenier.com";
-		
-		const JACKPOT_FLOOR = 210.0;
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        ['click', 'touchstart', 'keydown'].forEach(event => {
+            window.addEventListener(event, () => {
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+            }, { once: true });
+        });
+        const COOLDOWN_MINUTES = 10;
+        const API_BASE = "https://api.fiatdenier.com";
+        
+        const JACKPOT_FLOOR = 210.0;
 
-		let isRolling = false;
-		let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
-		let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
+        let isRolling = false;
+        let rollCredits = parseInt(localStorage.getItem('rollCredits')) || 0;
+        let totalSats = parseInt(localStorage.getItem('totalSats')) || 0;
+        
+        // Payment state
+        let selectedAmount = 21;
+        let selectedCredits = 10;
+        let currentPaymentHash = null;
+        let paymentCheckInterval = null;
 
-		// ==========================================
-		// # PROGRESSIVE & DAILY LIMIT HELPERS (SYNCED TO BACKEND)
-		// ==========================================
+        // ==========================================
+        // LIGHTNING PAYMENT FUNCTIONS
+        // ==========================================
+        
+        function showPayment() {
+            document.getElementById('payment-overlay').style.display = 'block';
+            document.getElementById('invoice-container').style.display = 'none';
+            document.getElementById('payment-status').style.display = 'none';
+        }
+
+        function closePayment() {
+            document.getElementById('payment-overlay').style.display = 'none';
+            if (paymentCheckInterval) {
+                clearInterval(paymentCheckInterval);
+                paymentCheckInterval = null;
+            }
+        }
+
+        function selectAmount(sats, credits) {
+            selectedAmount = sats;
+            selectedCredits = credits;
+            
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            event.target.closest('.amount-btn').classList.add('selected');
+        }
+
+        async function generateInvoice() {
+            const agentId = getAgentID();
+            const btn = document.getElementById('generate-invoice-btn');
+            btn.disabled = true;
+            btn.innerText = 'GENERATING...';
+
+            try {
+                const response = await fetch(`${API_BASE}/create-invoice`, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({
+                        agent_id: agentId,
+                        amount_sats: selectedAmount
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    alert('Failed to generate invoice: ' + data.error);
+                    return;
+                }
+
+                currentPaymentHash = data.payment_hash;
+                
+                // Display QR code
+                const qrContainer = document.getElementById('qr-container');
+                qrContainer.innerHTML = '';
+                QRCode.toCanvas(data.payment_request, { width: 200 }, (error, canvas) => {
+                    if (error) {
+                        console.error('QR generation error:', error);
+                        return;
+                    }
+                    qrContainer.appendChild(canvas);
+                });
+
+                // Display invoice text
+                document.getElementById('invoice-text').innerText = data.payment_request;
+                document.getElementById('invoice-container').style.display = 'block';
+                document.getElementById('payment-status').style.display = 'block';
+
+                // Start checking for payment
+                startPaymentCheck();
+
+            } catch (error) {
+                console.error('Invoice generation error:', error);
+                alert('Failed to generate invoice. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.innerText = 'GENERATE INVOICE';
+            }
+        }
+
+        function copyInvoice() {
+            const invoiceText = document.getElementById('invoice-text').innerText;
+            navigator.clipboard.writeText(invoiceText).then(() => {
+                alert('Invoice copied to clipboard!');
+            });
+        }
+
+        function startPaymentCheck() {
+            if (paymentCheckInterval) {
+                clearInterval(paymentCheckInterval);
+            }
+
+            paymentCheckInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(
+                        `${API_BASE}/check-payment?payment_hash=${currentPaymentHash}`,
+                        { headers: { 'X-Requested-With': 'XMLHttpRequest' } }
+                    );
+                    const data = await response.json();
+
+                    if (data.paid) {
+                        clearInterval(paymentCheckInterval);
+                        paymentCheckInterval = null;
+
+                        // Update credits
+                        rollCredits = data.roll_credits || rollCredits;
+                        localStorage.setItem('rollCredits', rollCredits);
+                        updateUI();
+
+                        // Show success
+                        document.getElementById('payment-status').innerHTML = `
+                            <div style="color: var(--win-green);">✅ PAYMENT RECEIVED!</div>
+                            <div style="font-size: 0.8rem; margin-top: 5px;">+${data.roll_credits} Roll Credits</div>
+                        `;
+
+                        confetti({ 
+                            particleCount: 100, 
+                            spread: 70, 
+                            colors: ['#f7931a', '#4CAF50'] 
+                        });
+
+                        // Sync state
+                        await syncStateFromServer();
+
+                        setTimeout(() => {
+                            closePayment();
+                        }, 3000);
+                    }
+                } catch (error) {
+                    console.error('Payment check error:', error);
+                }
+            }, 3000);
+        }
+
+        // ==========================================
+        // PROGRESSIVE & DAILY LIMIT HELPERS
+        // ==========================================
         async function updateJackpotUI() {
             const agentId = getAgentID();
             try {
@@ -202,279 +400,263 @@
             } catch (err) { console.log("Jackpot sync failed."); }
         }
 
-		function getTimeUntilReset() {
-			const now = new Date();
-			const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-			const diff = tomorrow - now; 
-			const hours = Math.floor(diff / 3600000);
-			const mins = Math.floor((diff % 3600000) / 60000);
-			return `${hours}h ${mins}m`;
-		}
+        function getTimeUntilReset() {
+            const now = new Date();
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            const diff = tomorrow - now; 
+            const hours = Math.floor(diff / 3600000);
+            const mins = Math.floor((diff % 3600000) / 60000);
+            return `${hours}h ${mins}m`;
+        }
 
-		// --- AUDIO ENGINE ---
-		
-		let clickBuffer = null; let dingBuffer = null; let loopSource = null; let freeCreditBuffer = null; let loopGain = null;
-		fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { clickBuffer = data; });
-		fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { dingBuffer = data; });
-		fetch('free_credit.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { freeCreditBuffer = data; });
+        // --- AUDIO ENGINE ---
+        
+        let clickBuffer = null; let dingBuffer = null; let loopSource = null; let freeCreditBuffer = null; let loopGain = null;
+        fetch('click.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { clickBuffer = data; });
+        fetch('ding.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { dingBuffer = data; });
+        fetch('free_credit.wav').then(r => r.arrayBuffer()).then(b => audioCtx.decodeAudioData(b)).then(data => { freeCreditBuffer = data; });
 
-		function playFreeCreditSound() {
-			if (!freeCreditBuffer) return;
-			const source = audioCtx.createBufferSource();
-			source.buffer = freeCreditBuffer;
-			source.connect(audioCtx.destination);
-			source.start(0);
-		} 
+        function playFreeCreditSound() {
+            if (!freeCreditBuffer) return;
+            const source = audioCtx.createBufferSource();
+            source.buffer = freeCreditBuffer;
+            source.connect(audioCtx.destination);
+            source.start(0);
+        } 
 
-		function playLoop() {
-			if (!clickBuffer) return;
-			loopSource = audioCtx.createBufferSource();
-			loopSource.buffer = clickBuffer;
-			loopSource.loop = true; 
-			loopGain = audioCtx.createGain();
-			loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime);
-			loopSource.connect(loopGain);
-			loopGain.connect(audioCtx.destination);
-			loopSource.start(0);
-		}
+        function playLoop() {
+            if (!clickBuffer) return;
+            loopSource = audioCtx.createBufferSource();
+            loopSource.buffer = clickBuffer;
+            loopSource.loop = true; 
+            loopGain = audioCtx.createGain();
+            loopGain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+            loopSource.connect(loopGain);
+            loopGain.connect(audioCtx.destination);
+            loopSource.start(0);
+        }
 
-		function stopLoop() {
-			if (loopSource) {
-				if (loopGain) loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
-				setTimeout(() => { if (loopSource) { loopSource.stop(); loopSource = null; } }, 100);
-			}
-		}
+        function stopLoop() {
+            if (loopSource) {
+                if (loopGain) loopGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
+                setTimeout(() => { if (loopSource) { loopSource.stop(); loopSource = null; } }, 100);
+            }
+        }
 
-		function playDing(isJackpot = false) {
-			if (!dingBuffer) return;
-			const source = audioCtx.createBufferSource();
-			source.buffer = dingBuffer;
-			if (isJackpot) source.playbackRate.value = 1.3;
-			source.connect(audioCtx.destination);
-			source.start(0); 
-		}
+        function playDing(isJackpot = false) {
+            if (!dingBuffer) return;
+            const source = audioCtx.createBufferSource();
+            source.buffer = dingBuffer;
+            if (isJackpot) source.playbackRate.value = 1.3;
+            source.connect(audioCtx.destination);
+            source.start(0); 
+        }
 
-		// --- IDENTITY LOGIC ---
-		function generateAnimalName() {
-			const adjectives = ["Sacred", "Majestic", "Silent", "Golden", "Swift", "Cunning", "Brave", "Ancient", "Hyper", "Stoic", "Ethereal", "Vigilant", "Wild", "Noble", "Fierce", "Lunar", "Solar", "Atomic", "Neon", "Cyber", "Shadow", "Iron", "Glacial", "Volcanic", "Radiant", "Hidden", "Cosmic", "Primal", "Zenith", "Nomad", "Vortex", "Sovereign", "Orphan", "Gilded", "Obsidian"];
-			const animals = ["Wolf", "Eagle", "Tiger", "Lion", "Falcon", "Panther", "Raven", "Stag", "Owl", "Bear", "Shark", "Lynx", "Phoenix", "Bison", "Dragon", "Serpent", "Mamba", "Condor", "Jaguar", "Stallion", "Viper", "Kraken", "Gryphon", "Cobra", "Fox", "Rhino", "Mastodon", "Orca", "Mantiss", "Ram", "Scorpion", "Wolverine", "Badger", "Hawk", "Bull"];
-			return adjectives[Math.floor(Math.random() * adjectives.length)] + animals[Math.floor(Math.random() * animals.length)];
-		}
+        // --- IDENTITY LOGIC ---
+        function generateAnimalName() {
+            const adjectives = ["Sacred", "Majestic", "Silent", "Golden", "Swift", "Cunning", "Brave", "Ancient", "Hyper", "Stoic", "Ethereal", "Vigilant", "Wild", "Noble", "Fierce", "Lunar", "Solar", "Atomic", "Neon", "Cyber", "Shadow", "Iron", "Glacial", "Volcanic", "Radiant", "Hidden", "Cosmic", "Primal", "Zenith", "Nomad", "Vortex", "Sovereign", "Orphan", "Gilded", "Obsidian"];
+            const animals = ["Wolf", "Eagle", "Tiger", "Lion", "Falcon", "Panther", "Raven", "Stag", "Owl", "Bear", "Shark", "Lynx", "Phoenix", "Bison", "Dragon", "Serpent", "Mamba", "Condor", "Jaguar", "Stallion", "Viper", "Kraken", "Gryphon", "Cobra", "Fox", "Rhino", "Mastodon", "Orca", "Mantiss", "Ram", "Scorpion", "Wolverine", "Badger", "Hawk", "Bull"];
+            return adjectives[Math.floor(Math.random() * adjectives.length)] + animals[Math.floor(Math.random() * animals.length)];
+        }
 
-		function getAgentID() {
-			let id = localStorage.getItem('agentID');
-			if (!id || id.startsWith('AGENT_')) {
-				id = generateAnimalName();
-				localStorage.setItem('agentID', id);
-			}
-			return id;
-		}
+        function getAgentID() {
+            let id = localStorage.getItem('agentID');
+            if (!id || id.startsWith('AGENT_')) {
+                id = generateAnimalName();
+                localStorage.setItem('agentID', id);
+            }
+            return id;
+        }
 
-		function regenerateIdentity() {
-			if (!confirm("Regenerate your network identity?")) return;
-			const newId = generateAnimalName();
-			localStorage.setItem('agentID', newId);
-			document.getElementById('agent-id-display').innerText = newId;
-			fetch(`${API_BASE}/update-score`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-				body: JSON.stringify({ agent_id: newId, sats: totalSats })
-			});
-		}
+        function regenerateIdentity() {
+            if (!confirm("Regenerate your network identity?")) return;
+            const newId = generateAnimalName();
+            localStorage.setItem('agentID', newId);
+            document.getElementById('agent-id-display').innerText = newId;
+            fetch(`${API_BASE}/update-score`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+                body: JSON.stringify({ agent_id: newId, sats: totalSats })
+            });
+        }
 
-		async function syncStateFromServer() {
-			const agentId = getAgentID();
-			try {
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
-					headers: { 'X-Requested-With': 'XMLHttpRequest' }
-				});
-				const data = await response.json();
-				if (data.server_credits !== undefined) {
-					rollCredits = data.server_credits;
-					localStorage.setItem('rollCredits', rollCredits);
-				}
-				updateUI();
-			} catch (e) { console.log("Sync failed"); }
-		}
+        async function syncStateFromServer() {
+            const agentId = getAgentID();
+            try {
+                const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+                const data = await response.json();
+                if (data.server_credits !== undefined) {
+                    rollCredits = data.server_credits;
+                    localStorage.setItem('rollCredits', rollCredits);
+                }
+                updateUI();
+            } catch (e) { console.log("Sync failed"); }
+        }
 
-		async function reconcileStatsFromServer() {
-		const agentId = getAgentID();
-		try {
-			const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-			const data = await res.json();
-			const myEntry = data.find(e => e.agent === agentId);
-			
-			// # UPDATED: We now sync regardless of which is higher.
-			// # This ensures that if the server resets to 0, the browser follows.
-			if (myEntry) {
-				totalSats = myEntry.sats;
-			} else {
-				// If I'm not on the leaderboard, my score must be 0 (fresh reset)
-				totalSats = 0;
-			}
-			
-			localStorage.setItem('totalSats', totalSats);
-			updateUI();
-			console.log(`Reconciled with server: ${totalSats} SATS`);
-		} catch (e) {
-			console.log("Reconciliation failed. Using local state.");
-		}
-	}
+        async function reconcileStatsFromServer() {
+            const agentId = getAgentID();
+            try {
+                const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+                const data = await res.json();
+                const myEntry = data.find(e => e.agent === agentId);
+                
+                if (myEntry) {
+                    totalSats = myEntry.sats;
+                } else {
+                    totalSats = 0;
+                }
+                
+                localStorage.setItem('totalSats', totalSats);
+                updateUI();
+                console.log(`Reconciled with server: ${totalSats} SATS`);
+            } catch (e) {
+                console.log("Reconciliation failed. Using local state.");
+            }
+        }
 
-		// --- ROLL LOGIC ---
-		async function handleRoll() {
-			if (isRolling) return;
-			const creditsAtStart = rollCredits;
-			
-			const btn = document.getElementById('roll-btn');
-			const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
+        // --- ROLL LOGIC ---
+        async function handleRoll() {
+            if (isRolling) return;
+            const creditsAtStart = rollCredits;
+            
+            const btn = document.getElementById('roll-btn');
+            const slots = [0,1,2,3].map(i => document.getElementById(`slot-${i}`));
             
             slots.forEach(slot => { slot.style.color = 'var(--btc-orange)'; });
 
-			isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
-			document.getElementById('result-area').style.display = 'none';
+            isRolling = true; btn.disabled = true; btn.innerText = "ROLLING...";
+            document.getElementById('result-area').style.display = 'none';
 
-			const spinIntervals = slots.map(slot => {
-				slot.classList.remove('just-finished'); slot.classList.add('rolling');
-				return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
-			});
+            const spinIntervals = slots.map(slot => {
+                slot.classList.remove('just-finished'); slot.classList.add('rolling');
+                return setInterval(() => { slot.innerText = Math.floor(Math.random() * 10); }, 60);
+            });
 
-			try {
-				if (audioCtx.state === 'suspended') await audioCtx.resume();
-				playLoop();
-				const agentId = getAgentID();
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
+            try {
+                if (audioCtx.state === 'suspended') await audioCtx.resume();
+                playLoop();
+                const agentId = getAgentID();
+                const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}`, {
                     headers: { 'X-Requested-With': 'XMLHttpRequest' }
                 });
-				const data = await response.json();
+                const data = await response.json();
 
-				if (data.error === "LOCKED") { 
+                if (data.error === "LOCKED") { 
                     stopLoop(); spinIntervals.forEach(clearInterval);
                     showIpLock(); 
-					isRolling = false; btn.innerText = "ROLL FOR SATS"; return; 
-				}
+                    isRolling = false; btn.innerText = "ROLL FOR SATS"; return; 
+                }
 
-				rollCredits = data.server_credits;
-				localStorage.setItem('rollCredits', rollCredits);
-				const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
-				const finalStr = data.num.toString().padStart(4, '0');
+                rollCredits = data.server_credits;
+                localStorage.setItem('rollCredits', rollCredits);
+                const stopOrder = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
+                const finalStr = data.num.toString().padStart(4, '0');
 
-				for (let i = 0; i < stopOrder.length; i++) {
-					const idx = stopOrder[i];
-					await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
-					clearInterval(spinIntervals[idx]);
-					slots[idx].classList.remove('rolling'); 
-					slots[idx].classList.add('just-finished');
-					slots[idx].innerText = finalStr[idx];
-					playDing(data.num === 2121); 
-				}
-				stopLoop();
+                for (let i = 0; i < stopOrder.length; i++) {
+                    const idx = stopOrder[i];
+                    await new Promise(r => setTimeout(r, 800 + Math.random() * 600));
+                    clearInterval(spinIntervals[idx]);
+                    slots[idx].classList.remove('rolling'); 
+                    slots[idx].classList.add('just-finished');
+                    slots[idx].innerText = finalStr[idx];
+                    playDing(data.num === 2121); 
+                }
+                stopLoop();
 
-				//totalSats += 10; 
+                const sig = data.signature; 
+                const is21Win = finalStr.includes('21');
+                const is2121 = (data.num === 2121);
+                const isMiracle = sig.startsWith('21') && sig.endsWith('21');
 
-				const sig = data.signature; 
-				const is21Win = finalStr.includes('21');
-				const is2121 = (data.num === 2121);
-				const isMiracle = sig.startsWith('21') && sig.endsWith('21');
-
-				if (creditsAtStart >= 0) {
-				    fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { 
+                if (creditsAtStart >= 0) {
+                    fetch(`${API_BASE}/increment-jackpot?agent_id=${agentId}`, { 
                         method: 'POST',
                         headers: { 'X-Requested-With': 'XMLHttpRequest' }
                     }).then(() => updateJackpotUI());
-				}
+                }
 
-				const statusMsg = document.getElementById('status-message');
+                const statusMsg = document.getElementById('status-message');
 
-				if (isMiracle) {
+                if (isMiracle) {
                     fetch(`${API_BASE}/reset-jackpot`, { method: 'POST', headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-					rollCredits += 210; 
-					totalSats += 2000;
-					statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & JACKPOT ROLLS</h2>`;
-					confetti({ particleCount: 300, spread: 100, colors: ['#f7931a', '#fff'] });
-					playFreeCreditSound();
-				}	
-				else if (is2121) {
-					rollCredits += 21;
-					totalSats += 500;
-					statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121: 500 SATS + 21 ROLLS! ✨</h3>";
-					document.getElementById('copy-btn').style.display = "block";
-					confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-					playFreeCreditSound();
-				} 
-				else if (is21Win) {
+                    rollCredits += 210; 
+                    totalSats += 2000;
+                    statusMsg.innerHTML = `<h2 style='color:gold;'>🏛️ MIRACLE JACKPOT!<br>+2000 SATS & JACKPOT ROLLS</h2>`;
+                    confetti({ particleCount: 300, spread: 100, colors: ['#f7931a', '#fff'] });
+                    playFreeCreditSound();
+                }	
+                else if (is2121) {
+                    rollCredits += 21;
+                    totalSats += 500;
+                    statusMsg.innerHTML = "<h3 style='color:var(--btc-orange)'>✨ JACKPOT 2121: 500 SATS + 21 ROLLS! ✨</h3>";
+                    document.getElementById('copy-btn').style.display = "block";
+                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+                    playFreeCreditSound();
+                } 
+                else if (is21Win) {
                     rollCredits += 5; 
-					totalSats += 21;
-					const startIdx = finalStr.indexOf('21');
-					document.getElementById(`slot-${startIdx}`).style.color = 'var(--win-green)';
-					document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
-					statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ +5 FREE ROLLS ⚡</h3>";
-					
+                    totalSats += 21;
+                    const startIdx = finalStr.indexOf('21');
+                    document.getElementById(`slot-${startIdx}`).style.color = 'var(--win-green)';
+                    document.getElementById(`slot-${startIdx + 1}`).style.color = 'var(--win-green)';
+                    statusMsg.innerHTML = "<h3 style='color:var(--win-green); animation: blink 0.5s step-end infinite;'>⚡ +5 FREE ROLLS ⚡</h3>";
+                    
                     if (audioCtx.state === 'suspended') {
                         audioCtx.resume().then(() => playFreeCreditSound());
                     } else {
                         playFreeCreditSound();
                     }
                     
-					confetti({ particleCount: 50, spread: 40, colors: ['#4CAF50'] });
-				} 
-				else {
-					statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
-				}
-			
-				localStorage.setItem('totalSats', totalSats);
-				localStorage.setItem('rollCredits', rollCredits);
+                    confetti({ particleCount: 50, spread: 40, colors: ['#4CAF50'] });
+                } 
+                else {
+                    statusMsg.innerHTML = "<h3 style='color:#666'>Better luck next time!</h3>";
+                }
+            
+                localStorage.setItem('totalSats', totalSats);
+                localStorage.setItem('rollCredits', rollCredits);
 
-				document.getElementById('res-num').innerText = data.num;
-				document.getElementById('res-ts').innerText = data.ts;
-				document.getElementById('res-sig').innerText = data.signature;
-				document.getElementById('result-area').style.display = 'block';
-				
-				updateUI();
-										
-				// # FIX: Push score to server but do NOT trigger syncStateFromServer() immediately.
-                // # This preserves the credits awarded above (server_credits) without a double-deduction loop.
-				//fetch(`${API_BASE}/update-score`, {
-					//method: 'POST', 
-					//headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-					//body: JSON.stringify({ agent_id: getAgentID(), sats: totalSats })
-				//}); 
-                // [2026-01-12] SECURITY FIX: Use Server-Side Authority for scores.
-				// We remove 'sats: totalSats' from the body so the browser can't dictate the score.
-				const scoreResponse = await fetch(`${API_BASE}/update-score`, {
-					method: 'POST', 
-					headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-					body: JSON.stringify({ agent_id: getAgentID() })
-				}); 
+                document.getElementById('res-num').innerText = data.num;
+                document.getElementById('res-ts').innerText = data.ts;
+                document.getElementById('res-sig').innerText = data.signature;
+                document.getElementById('result-area').style.display = 'block';
+                
+                updateUI();
+                
+                const scoreResponse = await fetch(`${API_BASE}/update-score`, {
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+                    body: JSON.stringify({ agent_id: getAgentID() })
+                }); 
 
-				const scoreData = await scoreResponse.json();
+                const scoreData = await scoreResponse.json();
 
-				// This replaces the old "totalSats += 10" and ensures 
-				// the UI matches the server exactly (crucial for resets).
-				if (scoreData.new_total !== undefined) {
-					totalSats = scoreData.new_total;
-					localStorage.setItem('totalSats', totalSats);
-					updateUI();
-				}
-				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
-				if (rollCredits <= 0 || currentDailyCount >= 100) { 
-					const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
-					localStorage.setItem('rollCooldown', expiry); startTimer(expiry); 
-				} else {
-					btn.disabled = false; btn.innerText = "ROLL FOR SATS";
-				}
-				isRolling = false; updateUI();
-			} catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; updateUI(); }
-		}
+                if (scoreData.new_total !== undefined) {
+                    totalSats = scoreData.new_total;
+                    localStorage.setItem('totalSats', totalSats);
+                    updateUI();
+                }
+                const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
+                if (rollCredits <= 0 || currentDailyCount >= 100) { 
+                    const expiry = Date.now() + (COOLDOWN_MINUTES * 60 * 1000);
+                    localStorage.setItem('rollCooldown', expiry); startTimer(expiry); 
+                } else {
+                    btn.disabled = false; btn.innerText = "ROLL FOR SATS";
+                }
+                isRolling = false; updateUI();
+            } catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; updateUI(); }
+        }
 
-		function showIpLock() {
-			document.getElementById('ip-lock-msg').style.display = 'block';
-			document.getElementById('slot-container').style.display = 'none';
-		}
+        function showIpLock() {
+            document.getElementById('ip-lock-msg').style.display = 'block';
+            document.getElementById('slot-container').style.display = 'none';
+        }
 
-		function startTimer(expiry) {
-			const timerDiv = document.getElementById('timer');
-			const btn = document.getElementById('roll-btn');
+        function startTimer(expiry) {
+            const timerDiv = document.getElementById('timer');
+            const btn = document.getElementById('roll-btn');
             const agentId = getAgentID();
 
             const remainingSecs = Math.max(0, Math.floor((expiry - Date.now()) / 1000));
@@ -484,96 +666,96 @@
                 body: JSON.stringify({ agent_id: agentId, duration: remainingSecs })
             }).catch(err => console.log("Lockout sync failed."));
 
-			const interval = setInterval(() => {
-				const diff = expiry - Date.now();
-				const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
-				const isCurrentlyFrozen = (currentDailyCount >= 100 && rollCredits > 0);
+            const interval = setInterval(() => {
+                const diff = expiry - Date.now();
+                const currentDailyCount = parseInt(document.getElementById('daily-count-display').innerText) || 0;
+                const isCurrentlyFrozen = (currentDailyCount >= 100 && rollCredits > 0);
 
-				if (diff <= 0 || (rollCredits > 0 && !isCurrentlyFrozen)) {
-					clearInterval(interval); timerDiv.innerText = "";
-					btn.disabled = false; btn.classList.remove('locked'); btn.innerText = "ROLL FOR SATS";
-					document.getElementById('ip-lock-msg').style.display = 'none';
-					document.getElementById('slot-container').style.display = 'flex';
-				} else {
-					const mins = Math.floor(diff / 60000); const secs = Math.floor((diff % 60000) / 1000);
-					timerDiv.innerText = `NEXT ROLL IN: ${mins}:${secs.toString().padStart(2, '0')}`;
-					btn.innerText = `LOCKED (${mins}m)`; btn.classList.add('locked'); btn.disabled = true; 
-				}
-			}, 1000);
-		}
+                if (diff <= 0 || (rollCredits > 0 && !isCurrentlyFrozen)) {
+                    clearInterval(interval); timerDiv.innerText = "";
+                    btn.disabled = false; btn.classList.remove('locked'); btn.innerText = "ROLL FOR SATS";
+                    document.getElementById('ip-lock-msg').style.display = 'none';
+                    document.getElementById('slot-container').style.display = 'flex';
+                } else {
+                    const mins = Math.floor(diff / 60000); const secs = Math.floor((diff % 60000) / 1000);
+                    timerDiv.innerText = `NEXT ROLL IN: ${mins}:${secs.toString().padStart(2, '0')}`;
+                    btn.innerText = `LOCKED (${mins}m)`; btn.classList.add('locked'); btn.disabled = true; 
+                }
+            }, 1000);
+        }
 
-		function copyProof() {
-			const text = document.getElementById('proof-content').innerText;
-			navigator.clipboard.writeText(text).then(() => { alert("Proof Copied!"); });
-		}
+        function copyProof() {
+            const text = document.getElementById('proof-content').innerText;
+            navigator.clipboard.writeText(text).then(() => { alert("Proof Copied!"); });
+        }
 
-		async function showLeaderboard() {
-			document.getElementById('leaderboard-overlay').style.display = 'block';
-			const myId = getAgentID();
-			try {
-				const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-				const data = await res.json();
-				document.getElementById('lb-content').innerHTML = data.slice(0, 10).map((e, i) => `
-					<div class="leaderboard-row ${e.agent === myId ? 'me' : ''}">
-						<span>${i+1}. ${e.agent}</span>
-						<span>${e.sats.toLocaleString()}</span>
-					</div>
-				`).join('');
-				const myRank = data.findIndex(e => e.agent === myId) + 1;
-				document.getElementById('my-rank-display').innerText = myRank > 0 ? `#${myRank} GLOBAL` : "UNRANKED";
-				if(myRank > 0 && myRank <= 10) document.getElementById('my-rank-display').style.color = "var(--btc-orange)";
-			} catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
-		}
+        async function showLeaderboard() {
+            document.getElementById('leaderboard-overlay').style.display = 'block';
+            const myId = getAgentID();
+            try {
+                const res = await fetch(`${API_BASE}/leaderboard`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+                const data = await res.json();
+                document.getElementById('lb-content').innerHTML = data.slice(0, 10).map((e, i) => `
+                    <div class="leaderboard-row ${e.agent === myId ? 'me' : ''}">
+                        <span>${i+1}. ${e.agent}</span>
+                        <span>${e.sats.toLocaleString()}</span>
+                    </div>
+                `).join('');
+                const myRank = data.findIndex(e => e.agent === myId) + 1;
+                document.getElementById('my-rank-display').innerText = myRank > 0 ? `#${myRank} GLOBAL` : "UNRANKED";
+                if(myRank > 0 && myRank <= 10) document.getElementById('my-rank-display').style.color = "var(--btc-orange)";
+            } catch (e) { document.getElementById('lb-content').innerText = "OFFLINE"; }
+        }
 
-		function updateUI() {
-			document.getElementById('agent-id-display').innerText = getAgentID();
-			document.getElementById('credit-count').innerText = rollCredits;
-			document.getElementById('total-sats-val').innerText = totalSats.toLocaleString();
-		}
+        function updateUI() {
+            document.getElementById('agent-id-display').innerText = getAgentID();
+            document.getElementById('credit-count').innerText = rollCredits;
+            document.getElementById('total-sats-val').innerText = totalSats.toLocaleString();
+        }
 
-		window.onload = async () => {
-			updateUI();
-			updateJackpotUI();
+        window.onload = async () => {
+            updateUI();
+            updateJackpotUI();
             
-			await reconcileStatsFromServer();
+            await reconcileStatsFromServer();
 
             setInterval(updateJackpotUI, 10000);
 
-			const agentId = getAgentID();
-			const savedExpiry = localStorage.getItem('rollCooldown');
-			
-			if (savedExpiry && Date.now() < parseInt(savedExpiry)) {
-				const dailyDisplay = document.getElementById('daily-count-display');
-				const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
-				if (rollCredits <= 0 || currentDailyCount >= 100) {
-					showIpLock();
-					startTimer(parseInt(savedExpiry));
-				}
-			}
+            const agentId = getAgentID();
+            const savedExpiry = localStorage.getItem('rollCooldown');
+            
+            if (savedExpiry && Date.now() < parseInt(savedExpiry)) {
+                const dailyDisplay = document.getElementById('daily-count-display');
+                const currentDailyCount = parseInt(dailyDisplay.innerText) || 0;
+                if (rollCredits <= 0 || currentDailyCount >= 100) {
+                    showIpLock();
+                    startTimer(parseInt(savedExpiry));
+                }
+            }
 
-			try {
-				const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
+            try {
+                const response = await fetch(`${API_BASE}/get-roll?agent_id=${agentId}&sync=${rollCredits}&admin=true`, {
                     headers: { 'X-Requested-With': 'XMLHttpRequest' }
                 });
-				const data = await response.json();
+                const data = await response.json();
 
-				if (data.error === "LOCKED") {
-					const expiry = Date.now() + (data.remaining_seconds * 1000);
-					localStorage.setItem('rollCooldown', expiry); 
-					showIpLock();
-					startTimer(expiry);
-				} else {
-					if (data.server_credits !== undefined) {
-						rollCredits = data.server_credits;
-						localStorage.setItem('rollCredits', rollCredits);
-					}
-					updateUI();
-				}
-			} catch (e) { 
-				console.log("Initial state sync failed."); 
-				updateUI();
-			}
-		};
-	</script>
+                if (data.error === "LOCKED") {
+                    const expiry = Date.now() + (data.remaining_seconds * 1000);
+                    localStorage.setItem('rollCooldown', expiry); 
+                    showIpLock();
+                    startTimer(expiry);
+                } else {
+                    if (data.server_credits !== undefined) {
+                        rollCredits = data.server_credits;
+                        localStorage.setItem('rollCredits', rollCredits);
+                    }
+                    updateUI();
+                }
+            } catch (e) { 
+                console.log("Initial state sync failed."); 
+                updateUI();
+            }
+        };
+    </script>
 </body>
 </html>
