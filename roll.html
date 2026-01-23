@@ -892,6 +892,22 @@
 				});
 				const data = await response.json();
 
+				if (data.status === "synced") {
+					stopLoop();
+					spinIntervals.forEach(clearInterval);
+					slots.forEach(slot => {
+						slot.classList.remove('rolling');
+						slot.innerText = "-";
+					});
+					rollCredits = data.server_credits;
+					localStorage.setItem('rollCredits', rollCredits);
+					isRolling = false;
+					btn.disabled = false;
+					btn.innerText = "ROLL FOR SATS";
+					updateUI();
+					return;
+				}
+
 				if (data.error === "LOCKED") {
 					stopLoop(); spinIntervals.forEach(clearInterval);
 					showIpLock();
@@ -995,7 +1011,7 @@
 					btn.disabled = false; btn.innerText = "ROLL FOR SATS";
 				}
 				isRolling = false; updateUI();
-			} catch (error) { stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; updateUI(); }
+			} catch (error) { console.error("Roll error:", error); stopLoop(); spinIntervals.forEach(clearInterval); isRolling = false; btn.disabled = false; btn.innerText = "ROLL FOR SATS"; updateUI(); }
 		}
 
 		function showIpLock() {
