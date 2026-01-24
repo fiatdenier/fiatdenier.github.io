@@ -6,19 +6,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Fiat Denier - Lucky Roll</title>
 	<script>
-        (function() {
-            try {
-                // # Check if we are not the top-level window
-                if (window.self !== window.top || window.location !== window.parent.location) {
-                    // # Break out and redirect to the direct URL
-                    window.top.location.replace(window.self.location.href);
-                }
-            } catch (e) {
-                // # If access to window.top is denied (Cross-Origin error), we are definitely in an iframe
-                window.location.replace(window.self.location.href);
-            }
-        })();
-    </script>
+		(function () {
+			try {
+				// # Check if we are not the top-level window
+				if (window.self !== window.top || window.location !== window.parent.location) {
+					// # Break out and redirect to the direct URL
+					window.top.location.replace(window.self.location.href);
+				}
+			} catch (e) {
+				// # If access to window.top is denied (Cross-Origin error), we are definitely in an iframe
+				window.location.replace(window.self.location.href);
+			}
+		})();
+	</script>
 	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 	<script>if (window.top !== window.self) { window.top.location.replace(window.self.location.href); }</script>
@@ -706,6 +706,7 @@
                         `;
 
 						confetti({ particleCount: 200, spread: 100, colors: ['#f7931a', '#4CAF50'], zIndex: 99999 });
+						playFreeCreditSound();
 
 						await syncStateFromServer();
 						setTimeout(() => { closePayment(); }, 3000);
