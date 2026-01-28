@@ -281,6 +281,51 @@
             cursor: not-allowed;
         }
     </style>
+
+    <div id="outbound-bridge"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#1a1a1a; z-index:999999; color:white; font-family: 'Roboto', sans-serif; text-align:center; padding:40px 20px; box-sizing:border-box;">
+        <h1 style="color:#f7931a; margin-top:20vh;">BITCOIN WIRE</h1>
+        <p style="font-size:18px; line-height:1.6; color:#ccc;">This app's internal browser is restricting the reader
+            experience.</p>
+        <div style="margin:40px 0;">
+            <a id="breakout-link" href="#" target="_blank"
+                style="background:#f7931a; color:white; padding:18px 35px; text-decoration:none; border-radius:8px; font-weight:bold; font-size:20px; display:inline-block; box-shadow: 0 4px 15px rgba(247, 147, 26, 0.4);">
+                OPEN IN FULL BROWSER
+            </a>
+        </div>
+        <p style="font-size:14px; color:#666;">Tap the button above to view the live news feed.</p>
+    </div>
+
+    <script>
+        // # ADDED: Detection Logic
+        (function () {
+            // Check if the page is being viewed in an iframe
+            const isIframe = window.self !== window.top;
+
+            if (isIframe) {
+                const bridge = document.getElementById('outbound-bridge');
+                const link = document.getElementById('breakout-link');
+                const currentUrl = window.location.href;
+
+                // Show the bridge overlay
+                bridge.style.display = 'block';
+
+                // Modern iOS trick: 'x-safari-https://' forces it out of the app into Safari
+                const safariUrl = currentUrl.replace('https://', 'x-safari-https://');
+                link.href = safariUrl;
+
+                // Fallback for older iOS versions: just use the standard URL with target="_blank"
+                link.onclick = function (e) {
+                    // If the special protocol fails, the target="_blank" remains the backup
+                    setTimeout(() => {
+                        if (!document.hidden) window.location.href = currentUrl;
+                    }, 1000);
+                };
+            }
+        })();
+    </script>
+
+
 </head>
 
 <body>
