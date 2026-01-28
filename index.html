@@ -3,26 +3,39 @@
 
 <head>
     <script>
-        // # ADDED: Mobile App Iframe Detection
+        // # UPDATED: Unified Mobile Breakout for index.html
         (function () {
-            // Check if we are inside an iframe
             const isTrapped = window.self !== window.top;
-
-            // Check if it's a mobile device (common for Primal users)
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
             if (isTrapped && isMobile) {
-                // Prevent background scrolling while bridge is visible
-                document.documentElement.style.overflow = 'hidden';
+                // # IMMEDIATE ACTION: Hide background to prevent "flicker"
+                document.documentElement.style.visibility = 'hidden';
 
-                // Use a small delay to ensure the DOM has loaded the bridge div
-                window.addEventListener('load', function () {
+                window.addEventListener('DOMContentLoaded', () => {
                     const bridge = document.getElementById('primal-breakout');
-                    if (bridge) bridge.style.display = 'block';
+                    if (bridge) {
+                        bridge.style.display = 'block';
+                        document.documentElement.style.visibility = 'visible';
+                        document.documentElement.style.overflow = 'hidden';
+
+                        const link = bridge.querySelector('a');
+                        const currentUrl = window.location.href;
+
+                        // # FIX: Use x-safari-https to force-launch the Safari App
+                        link.href = currentUrl.replace('https://', 'x-safari-https://');
+
+                        link.onclick = function () {
+                            // Fallback if the custom protocol is blocked
+                            window.open(currentUrl, '_blank');
+                            return true;
+                        };
+                    }
                 });
             }
         })();
     </script>
+
 
     <script>
         // # ADDED: Frame Buster to prevent page from being embedded in iframes (e.g., Primal)
