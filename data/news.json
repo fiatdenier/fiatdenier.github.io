@@ -1,6 +1,24 @@
 {
   "articles": [
     {
+      "title": "Bitcoin miner production data reveals scale of US winter storm disruption",
+      "url": "https://cointelegraph.com/news/bitcoin-miner-output-us-winter-storm-latest-data?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Sun, 01 Feb 2026 20:36:13 +0000"
+    },
+    {
+      "title": "As global “Bye America” investors ditch US risk, Bitcoin is finally ready to be the macro alternative",
+      "url": "https://cryptoslate.com/the-bye-america-trade-is-back-and-bitcoin-is-catching-the-draft/",
+      "source": "CryptoSlate",
+      "published_at": "Sun, 01 Feb 2026 20:35:00 +0000"
+    },
+    {
+      "title": "Sleeping Stashes Blink: Early Bitcoin Wallets Shift Nearly 5,000 BTC in January",
+      "url": "https://news.bitcoin.com/sleeping-stashes-blink-early-bitcoin-wallets-shift-nearly-5000-btc-in-january/",
+      "source": "Bitcoin.com",
+      "published_at": "Sun, 01 Feb 2026 20:30:36 +0000"
+    },
+    {
       "title": "Will Artificial Intelligence Save Humanity—Or End It?",
       "url": "https://decrypt.co/356554/will-artificial-intelligence-save-humanity-end",
       "source": "Decrypt",
@@ -479,12 +497,6 @@
       "url": "https://ambcrypto.com/analyzing-asters-5-month-low-can-the-0-5-support-hold/",
       "source": "Ambcrypto",
       "published_at": "Sun, 01 Feb 2026 10:00:18 +0000"
-    },
-    {
-      "title": "‘Stop Chasing a Ghost:’ Analyst Claims the Bitcoin Adoption-Fueled Trade Is Dead",
-      "url": "https://news.bitcoin.com/stop-chasing-a-ghost-analyst-claims-the-bitcoin-adoption-fueled-trade-is-dead/",
-      "source": "Bitcoin.com",
-      "published_at": "Sun, 01 Feb 2026 09:30:40 +0000"
     },
     {
       "title": "SEC pauses ETFs and key crypto decisions ahead of another government shutdown",
@@ -991,12 +1003,6 @@
       "published_at": "Sat, 31 Jan 2026 14:31:47 +0000"
     },
     {
-      "title": "Shock surge in inflation destroys hopes for early rate cuts as Bitcoin price sinks",
-      "url": "https://cryptoslate.com/shock-surge-in-services-inflation-destroys-hopes-for-early-rate-cuts-as-bitcoin-price-sinks/",
-      "source": "CryptoSlate",
-      "published_at": "Sat, 31 Jan 2026 14:27:14 +0000"
-    },
-    {
       "title": "Analyst Will Sell Everything And Go All-In on Bitcoin at This Price: Details",
       "url": "https://cryptopotato.com/analyst-will-sell-everything-and-go-all-in-on-bitcoin-at-this-price-details/",
       "source": "CryptoPotato",
@@ -1373,12 +1379,6 @@
       "url": "https://insidebitcoins.com/news/best-altcoins-to-buy-as-bitcoin-struggles-below-85k-after-massive-liquidations",
       "source": "InsideBitcoin",
       "published_at": "Fri, 30 Jan 2026 19:07:38 +0000"
-    },
-    {
-      "title": "DeFi stays outside the rules as regulators tighten elsewhere: Finance Redefined",
-      "url": "https://cointelegraph.com/news/defi-stays-outside-rules-regulators-tighten-finance-redefined?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Fri, 30 Jan 2026 19:00:00 +0000"
     },
     {
       "title": "Norway Fund’s Bitcoin Holdings Surge 149% to 9,573 BTC in 2025",
@@ -2425,6 +2425,12 @@
       "published_at": "Sat, 24 Jan 2026 03:12:30 +0000"
     },
     {
+      "title": "Trump sues JPMorgan for $5B! Ledger prepares for $4B IPO! “Crypto Adoption is no longer reversible” says PWC!",
+      "url": "https://decrypt.co/videos/interviews/VpBdSuOE/trump-sues-jpmorgan-for-5b-ledger-prepares-for-4b-ipo-crypto-adoption-is-no-longer-reversible-says-pwc",
+      "source": "Decrypt",
+      "published_at": "Fri, 23 Jan 2026 16:40:55 +0000"
+    },
+    {
       "title": "Top Trending Cryptos of 2026 Amid SEC and CFTC Harmonization Talks",
       "url": "https://insidebitcoins.com/news/top-trending-cryptos-of-2026-amid-sec-and-cftc-harmonization-talks",
       "source": "InsideBitcoin",
@@ -2479,10 +2485,22 @@
       "published_at": "Fri, 23 Jan 2026 03:31:04 +0000"
     },
     {
+      "title": "From Stellar to Canton: How Franklin Templeton Adopted Tokenization",
+      "url": "https://decrypt.co/videos/interviews/ZJJKjnAR/from-stellar-to-canton-how-franklin-templeton-adopted-tokenization",
+      "source": "Decrypt",
+      "published_at": "Thu, 22 Jan 2026 18:29:30 +0000"
+    },
+    {
       "title": "NFT Firm Azuki Unveils Its 2026 Roadmap, Including A Manga",
       "url": "https://insidebitcoins.com/news/nft-firm-azuki-unveils-its-2026-roadmap-including-a-manga",
       "source": "InsideBitcoin",
       "published_at": "Thu, 22 Jan 2026 17:26:56 +0000"
+    },
+    {
+      "title": "Crypto rebounds after Trump TACO’s on Tariffs! BitGo $2.1B IPO! Solana’s SKR token soars 250% FDV!",
+      "url": "https://decrypt.co/videos/interviews/MqZOhomP/crypto-rebounds-after-trump-tacos-on-tariffs-bitgo-21b-ipo-solanas-skr-token-soars-250-fdv",
+      "source": "Decrypt",
+      "published_at": "Thu, 22 Jan 2026 16:14:50 +0000"
     },
     {
       "title": "Saga Hacked For $7 Million, Pauses SagaEVM Chain",
@@ -2507,6 +2525,12 @@
       "url": "https://insidebitcoins.com/news/senate-agriculture-committee-releases-crypto-bill-ahead-of-january-27-markup",
       "source": "InsideBitcoin",
       "published_at": "Thu, 22 Jan 2026 02:58:42 +0000"
+    },
+    {
+      "title": "Trump’s speech at Davos gives small boost to Crypto! Saylor buys $2.13B BTC! Blondish Interview!",
+      "url": "https://decrypt.co/videos/interviews/nWmEOl4c/trumps-speech-at-davos-gives-small-boost-to-crypto-saylor-buys-213b-btc-blondish-interview",
+      "source": "Decrypt",
+      "published_at": "Wed, 21 Jan 2026 16:17:26 +0000"
     },
     {
       "title": "Billionaire Adam Weitsman Buys Fire Ghost NFT From Ghost Labs",
@@ -2537,6 +2561,18 @@
       "url": "https://insidebitcoins.com/news/bitcoin-price-dips-as-michael-saylors-strategy-boosts-bitcoin-holdings-to-709715-btc",
       "source": "InsideBitcoin",
       "published_at": "Wed, 21 Jan 2026 03:23:28 +0000"
+    },
+    {
+      "title": "Trump Tariffs 3: Return of the Bull Market! NYSE Tokenising, what that means for $Hype! Claude Meme Meta!",
+      "url": "https://decrypt.co/videos/interviews/O1HZN4PH/trump-tariffs-3-return-of-the-bull-market-nyse-tokenising-what-that-means-for-hype-claude-meme-meta",
+      "source": "Decrypt",
+      "published_at": "Tue, 20 Jan 2026 18:12:06 +0000"
+    },
+    {
+      "title": "Crypto sells off amidst Trump Tariff Turmoil! $Trove falls 90% in awful TGE! Pump Fund announced!",
+      "url": "https://decrypt.co/videos/interviews/lokwS0bc/crypto-sells-off-amidst-trump-tariff-turmoil-trove-falls-90-in-awful-tge-pump-fund-announced",
+      "source": "Decrypt",
+      "published_at": "Tue, 20 Jan 2026 16:07:15 +0000"
     },
     {
       "title": "A Hoodie CryptoPunks NFT, Bought For $82K In 2021, Sells For $382K",
@@ -2663,6 +2699,36 @@
       "url": "https://insidebitcoins.com/news/xrp-price-falls-despite-decline-in-whale-activity-on-binance",
       "source": "InsideBitcoin",
       "published_at": "Sat, 17 Jan 2026 02:21:15 +0000"
+    },
+    {
+      "title": "Massive Coinbase News! Bitcoin Rips to $96,750! Football.Fun TGE Interview with Founder!",
+      "url": "https://decrypt.co/videos/interviews/9g4stfJX/massive-coinbase-news-bitcoin-rips-to-96-750-footballfun-tge-interview-with-founder",
+      "source": "Decrypt",
+      "published_at": "Thu, 15 Jan 2026 16:49:34 +0000"
+    },
+    {
+      "title": "Are we back? Crypto is Green! Solana Intern goes rogue! Pump up 13%! Monero hits another ATH!",
+      "url": "https://decrypt.co/videos/interviews/Iv1NIhI4/are-we-back-crypto-is-green-solana-intern-goes-rogue-pump-up-13-monero-hits-another-ath",
+      "source": "Decrypt",
+      "published_at": "Wed, 14 Jan 2026 16:38:32 +0000"
+    },
+    {
+      "title": "Pump & Memes HEATING up! XMR vs ZEC! How important are these rate cuts? - Under Exposed",
+      "url": "https://decrypt.co/videos/interviews/IuLdmgP6/pump-memes-heating-up-xmr-vs-zec-how-important-are-these-rate-cuts-under-exposed",
+      "source": "Decrypt",
+      "published_at": "Wed, 14 Jan 2026 16:01:53 +0000"
+    },
+    {
+      "title": "PsyopAnime Meme up 30X! Are Memes back? Monero ATH! Interview W/ Joseph Chalom, CEO of Sharplink",
+      "url": "https://decrypt.co/videos/interviews/mefbKZgQ/psyopanime-meme-up-30x-are-memes-back-monero-ath-interview-w-joseph-chalom-ceo-of-sharplink",
+      "source": "Decrypt",
+      "published_at": "Tue, 13 Jan 2026 18:12:27 +0000"
+    },
+    {
+      "title": "A16z raise $15B! Jerome Powell vs Trump! Crypto remains flat! Special Guest: Dudas!",
+      "url": "https://decrypt.co/videos/interviews/0y90noNs/a16z-raise-15b-jerome-powell-vs-trump-crypto-remains-flat-special-guest-dudas",
+      "source": "Decrypt",
+      "published_at": "Mon, 12 Jan 2026 17:15:46 +0000"
     }
   ]
 }
