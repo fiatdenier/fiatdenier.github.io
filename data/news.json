@@ -1,6 +1,78 @@
 {
   "articles": [
     {
+      "title": "XRP In The Spotlight After Ripple CEO’s Stunning Disclosure That Could Change Its Outlook",
+      "url": "https://bitcoinist.com/ripple-ceos-stunning-disclosure/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 13 Feb 2026 21:30:28 +0000"
+    },
+    {
+      "title": "Trump Media Files to Launch Truth Social-Branded Bitcoin, Ethereum, Cronos ETFs",
+      "url": "https://decrypt.co/358079/trump-media-files-truth-social-bitcoin-ethereum-cronos-etfs",
+      "source": "Decrypt",
+      "published_at": "Fri, 13 Feb 2026 21:22:46 +0000"
+    },
+    {
+      "title": "How Silent.Link Solves SIM-Swap Risks and Roaming Hassles for Traveling Bitcoiners",
+      "url": "https://bitcoinmagazine.com/business/how-silent-link-solves-sim-swap-risks-and-roaming-hassles-for-traveling-bitcoiners",
+      "source": "Bitcoin Magazine",
+      "published_at": "Fri, 13 Feb 2026 21:11:47 +0000"
+    },
+    {
+      "title": "White House Crypto Adviser Warns Time Is Running Out To Pass CLARITY Act",
+      "url": "https://bitcoinist.com/white-house-crypto-time-is-running-out-clarity-act/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 13 Feb 2026 21:10:16 +0000"
+    },
+    {
+      "title": "Dogecoin: How traders can react to DOGE’s possible $0.10 move",
+      "url": "https://ambcrypto.com/dogecoin-how-traders-can-react-to-doges-possible-0-10-move/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 13 Feb 2026 21:00:35 +0000"
+    },
+    {
+      "title": "After 95% Crash, Avalanche Forms High-Timeframe Reversal Structure",
+      "url": "https://www.newsbtc.com/news/avalanche/avalanche-high-timeframe-reversal/",
+      "source": "NewsBTC",
+      "published_at": "Fri, 13 Feb 2026 21:00:33 +0000"
+    },
+    {
+      "title": "Coinbase (COIN) Surges 18%, Strategy (MSTR) Jumps 10% as Crypto Stocks Jump",
+      "url": "https://bitcoinmagazine.com/markets/coinbase-surges-18-strategy-mstr-jumps",
+      "source": "Bitcoin Magazine",
+      "published_at": "Fri, 13 Feb 2026 20:58:12 +0000"
+    },
+    {
+      "title": "Why Chainlink price could rally to $10 as oversold RSI signals a bounce",
+      "url": "https://crypto.news/why-chainlink-price-could-rally-to-10-as-oversold-rsi-signals-a-bounce/",
+      "source": "BTCManager",
+      "published_at": "Fri, 13 Feb 2026 20:56:26 +0000"
+    },
+    {
+      "title": "Why Chainlink price could rally to $10 as oversold RSI signals a bounce",
+      "url": "https://crypto.news/why-chainlink-price-could-rally-to-10-as-oversold-rsi-signals-a-bounce/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 13 Feb 2026 20:56:26 +0000"
+    },
+    {
+      "title": "Solana price breaks local bearish structure as $95 target comes into focus",
+      "url": "https://crypto.news/solana-price-breaks-bearish-structure-as-95-focus/",
+      "source": "BTCManager",
+      "published_at": "Fri, 13 Feb 2026 20:51:46 +0000"
+    },
+    {
+      "title": "Solana price breaks local bearish structure as $95 target comes into focus",
+      "url": "https://crypto.news/solana-price-breaks-bearish-structure-as-95-focus/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 13 Feb 2026 20:51:46 +0000"
+    },
+    {
+      "title": "Trump-linked Truth Social seeks SEC approval for two crypto ETFs",
+      "url": "https://www.coindesk.com/markets/2026/02/13/trump-linked-truth-social-seeks-sec-approval-for-two-crypto-etfs",
+      "source": "Coindesk",
+      "published_at": "Fri, 13 Feb 2026 20:45:28 +0000"
+    },
+    {
       "title": "France’s Binance Head Targeted in Latest Wrench Attack",
       "url": "https://news.bitcoin.com/frances-binance-head-targeted-in-latest-wrench-attack/",
       "source": "Bitcoin.com",
@@ -97,7 +169,7 @@
       "published_at": "Fri, 13 Feb 2026 19:21:46 +0000"
     },
     {
-      "title": "If the CFTC “only does Bitcoin,” why did it just invite crypto’s biggest CEOs into the room?",
+      "title": "CFTC chair just built a 35-seat crypto mega-panel, and it changes the SEC vs CFTC fight",
       "url": "https://cryptoslate.com/cftc-chair-forms-a-new-innovation-advisory-committee-packed-with-crypto-exchange-and-prediction-market-ceos/",
       "source": "CryptoSlate",
       "published_at": "Fri, 13 Feb 2026 19:05:14 +0000"
@@ -229,7 +301,7 @@
       "published_at": "Fri, 13 Feb 2026 17:30:00 +0000"
     },
     {
-      "title": "Bitcoin devs merge new plan to limit “quantum” exposure risk but there’s a fee and privacy tradeoff",
+      "title": "This “quantum-safe” Bitcoin idea removes Taproot’s key-path — and raises fees on purpose",
       "url": "https://cryptoslate.com/bitcoin-devs-merge-new-plan-to-limit-quantum-exposure-risk-but-you-pay-in-fees-and-privacy/",
       "source": "CryptoSlate",
       "published_at": "Fri, 13 Feb 2026 17:25:46 +0000"
@@ -433,7 +505,7 @@
       "published_at": "Fri, 13 Feb 2026 15:19:34 +0000"
     },
     {
-      "title": "Are spot Bitcoin ETFs at risk after custodian Coinbase reports $667M loss? The 1.5M BTC question",
+      "title": "Coinbase lost $667M but one boring custody detail decides whether crypto ETF holders should worry",
       "url": "https://cryptoslate.com/are-spot-bitcoin-etfs-at-risk-after-custodian-coinbase-reports-667m-loss-the-1-5m-btc-question/",
       "source": "CryptoSlate",
       "published_at": "Fri, 13 Feb 2026 15:15:49 +0000"
@@ -757,7 +829,7 @@
       "published_at": "Fri, 13 Feb 2026 11:39:00 +0000"
     },
     {
-      "title": "Bitcoin difficulty just plunged 11% but a projected rebound next week may decide miners’ fate",
+      "title": "Bitcoin difficulty just printed a historic -11.16% — if the next epoch stays red, miners are in trouble",
       "url": "https://cryptoslate.com/bitcoin-difficulty-just-plunged-11-but-a-projected-rebound-next-week-may-decide-miners-fate/",
       "source": "CryptoSlate",
       "published_at": "Fri, 13 Feb 2026 11:35:40 +0000"
@@ -827,12 +899,6 @@
       "url": "https://crypto.news/bhutan-bitcoin-sales-enter-third-straight-week/",
       "source": "CryptoNews",
       "published_at": "Fri, 13 Feb 2026 11:04:37 +0000"
-    },
-    {
-      "title": "HSBC To Power Pilot Issuance Of UK Digital Bonds – Details",
-      "url": "https://bitcoinist.com/hsbc-to-power-pilot-issuance-of-uk-digital-bonds-details/",
-      "source": "Bitcoinist",
-      "published_at": "Fri, 13 Feb 2026 11:00:19 +0000"
     },
     {
       "title": "Can Bitcoin reclaim $74K? – $559M BTC whale dump raises doubts",
@@ -907,7 +973,7 @@
       "published_at": "Fri, 13 Feb 2026 10:38:59 +0000"
     },
     {
-      "title": "Binance bank run? Reserves show a $40B drop yet Bitcoin holdings rose to 655k BTC, so what changed?",
+      "title": "Traders may be walking into a Binance “bank-run” trap as $2B outflow claims go viral",
       "url": "https://cryptoslate.com/binance-bank-run-reserves-show-a-40b-drop-yet-bitcoin-holdings-rose-to-655k-btc-so-what-changed/",
       "source": "CryptoSlate",
       "published_at": "Fri, 13 Feb 2026 10:34:56 +0000"
@@ -953,12 +1019,6 @@
       "url": "https://cryptopotato.com/qzino-introduces-token-based-revenue-model-for-web3-igaming-platform/",
       "source": "CryptoPotato",
       "published_at": "Fri, 13 Feb 2026 10:03:36 +0000"
-    },
-    {
-      "title": "Hedera’s (HBAR) $0.09 Support Intact, Revenue Decline Threatens Upside Momentum",
-      "url": "https://www.newsbtc.com/news/hederas-hbar-0-09-support-intact-revenue-decline-threatens-upside-momentum/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 13 Feb 2026 10:00:53 +0000"
     },
     {
       "title": "Crypto leaders join CFTC panel as U.S. pushes ‘pro-innovation’ rules",
@@ -1025,12 +1085,6 @@
       "url": "https://cryptopotato.com/btcs-price-dumps-every-time-this-whale-deposits-and-it-just-happened-again/",
       "source": "CryptoPotato",
       "published_at": "Fri, 13 Feb 2026 09:34:54 +0000"
-    },
-    {
-      "title": "XRP Ledger Activates Token Escrow: Here’s What XLS-85 Unlocks",
-      "url": "https://bitcoinist.com/xrp-ledger-activates-token-escrow/",
-      "source": "Bitcoinist",
-      "published_at": "Fri, 13 Feb 2026 09:30:05 +0000"
     },
     {
       "title": "Can Monero price reclaim January highs as bullish MACD crossover forms after weekly rebound?",
@@ -1193,12 +1247,6 @@
       "url": "https://cryptopotato.com/crypto-price-analysis-february-13-eth-xrp-ada-bnb-and-hype/",
       "source": "CryptoPotato",
       "published_at": "Fri, 13 Feb 2026 07:14:10 +0000"
-    },
-    {
-      "title": "Is Bitcoin ‘no longer digital gold?’ Bloomberg analyst says NO!",
-      "url": "https://ambcrypto.com/is-bitcoin-no-longer-digital-gold-bloomberg-analyst-says-no/",
-      "source": "Ambcrypto",
-      "published_at": "Fri, 13 Feb 2026 07:00:39 +0000"
     },
     {
       "title": "Bitcoin Volatility Climbs as Investors Deploy Strategic Solutions Amid Market Uncertainty",
@@ -1681,12 +1729,6 @@
       "published_at": "Thu, 12 Feb 2026 16:16:56 +0000"
     },
     {
-      "title": "Bitcoin’s Next Stop Might Be $50,000, Not the Moon, Says Standard Chartered Analyst",
-      "url": "https://bitcoinmagazine.com/markets/bitcoins-next-stop-might-be-50000",
-      "source": "Bitcoin Magazine",
-      "published_at": "Thu, 12 Feb 2026 16:00:01 +0000"
-    },
-    {
       "title": "Crypto market in panic: Smart investors are positioning in SolStaking",
       "url": "https://crypto.news/crypto-market-in-panic-smart-investors-are-positioning-in-solstaking/",
       "source": "BTCManager",
@@ -1723,12 +1765,6 @@
       "published_at": "Thu, 12 Feb 2026 15:29:46 +0000"
     },
     {
-      "title": "Standard Chartered sees bitcoin sliding to $50,000, ether to $1,400 before recovery",
-      "url": "https://www.coindesk.com/markets/2026/02/12/standard-chartered-sees-bitcoin-sliding-to-usd50-000-ether-to-usd1-400-before-recovery",
-      "source": "Coindesk",
-      "published_at": "Thu, 12 Feb 2026 15:19:44 +0000"
-    },
-    {
       "title": "Bitcoin Approaching Historical Accumulation Phase as Price Bottom Nears",
       "url": "https://thecryptobasic.com/2026/02/12/bitcoin-approaching-historical-accumulation-phase-as-price-bottom-nears/",
       "source": "CryptoBasic",
@@ -1745,12 +1781,6 @@
       "url": "https://decrypt.co/357870/ai-chatbots-giving-dangerous-medical-advice-oxford-study-warns",
       "source": "Decrypt",
       "published_at": "Thu, 12 Feb 2026 15:08:46 +0000"
-    },
-    {
-      "title": "Coinbase ($COIN) in Limbo as CEO Continues Selling Shares, Analysts Issue Downgrades",
-      "url": "https://bitcoinmagazine.com/news/coinbase-coin-in-limbo-analysts-cut-target",
-      "source": "Bitcoin Magazine",
-      "published_at": "Thu, 12 Feb 2026 14:49:39 +0000"
     },
     {
       "title": "Bitcoin Risks Falling to $50,000 and Ethereum to $1,400: Standard Chartered",
@@ -1823,30 +1853,6 @@
       "url": "https://coingeek.com/bessent-warns-on-china-criticizes-us-firms-resisting-rules/",
       "source": "CoinGeek",
       "published_at": "Thu, 12 Feb 2026 14:00:00 +0000"
-    },
-    {
-      "title": "Trump-linked World Liberty Financial to launch forex remittance platform",
-      "url": "https://crypto.news/world-liberty-financial-to-launch-forex-platform/",
-      "source": "BTCManager",
-      "published_at": "Thu, 12 Feb 2026 13:15:43 +0000"
-    },
-    {
-      "title": "Trump-linked World Liberty Financial to launch forex remittance platform",
-      "url": "https://crypto.news/world-liberty-financial-to-launch-forex-platform/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 12 Feb 2026 13:15:43 +0000"
-    },
-    {
-      "title": "SoftBank misses profit target as OpenAI bet, exits reshape portfolio",
-      "url": "https://crypto.news/softbank-misses-profit-target-as-openai-bet-exits-reshape-portfolio/",
-      "source": "BTCManager",
-      "published_at": "Thu, 12 Feb 2026 13:11:44 +0000"
-    },
-    {
-      "title": "SoftBank misses profit target as OpenAI bet, exits reshape portfolio",
-      "url": "https://crypto.news/softbank-misses-profit-target-as-openai-bet-exits-reshape-portfolio/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 12 Feb 2026 13:11:44 +0000"
     },
     {
       "title": "Morning Minute: Coinbase Gives AI Agents Their Own Wallets",
@@ -2003,12 +2009,6 @@
       "url": "https://decrypt.co/357816/thailands-sec-clears-path-crypto-linked-derivatives",
       "source": "Decrypt",
       "published_at": "Thu, 12 Feb 2026 03:45:00 +0000"
-    },
-    {
-      "title": "Coinbase Launches Wallet for AI Agents With Built-In Guardrails",
-      "url": "https://decrypt.co/357813/coinbase-launches-wallet-ai-agents-built-in-guardrails",
-      "source": "Decrypt",
-      "published_at": "Thu, 12 Feb 2026 00:47:55 +0000"
     },
     {
       "title": "Banks Take Hard Line on Stablecoin Yields as White House Talks Stall",
