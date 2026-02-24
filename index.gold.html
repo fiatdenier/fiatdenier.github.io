@@ -315,6 +315,97 @@
             opacity: 0.2;
             cursor: not-allowed;
         }
+
+        /* BTC Live Ticker */
+        .btc-ticker {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 10px 20px;
+            background: #111;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            margin: 5px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .ticker-icon {
+            font-size: 1.3rem;
+        }
+
+        .ticker-label {
+            color: #888;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ticker-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f7931a;
+            transition: color 0.4s ease;
+            min-width: 120px;
+        }
+
+        .ticker-price.up {
+            color: #22c55e;
+        }
+
+        .ticker-price.down {
+            color: #ef4444;
+        }
+
+        .ticker-change {
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+
+        .ticker-change.up {
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+        }
+
+        .ticker-change.down {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+        }
+
+        .ticker-status {
+            margin-left: auto;
+            font-size: 0.72rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ticker-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #555;
+            flex-shrink: 0;
+        }
+
+        .ticker-dot.live {
+            background: #22c55e;
+            animation: ticker-pulse 1.5s infinite;
+        }
+
+        @keyframes ticker-pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
     </style>
 
     <div id="outbound-bridge"
@@ -384,7 +475,18 @@
     <header>
         <h1><a href="/">BITCOIN WIRE</a></h1>
 
-        <div id="btc-price-ticker">BTC/USD: Fetching...</div>
+        <div class="btc-ticker">
+            <span class="ticker-icon">₿</span>
+            <div>
+                <div class="ticker-label">BTC / USD</div>
+                <div class="ticker-price" id="ticker-price">Connecting...</div>
+            </div>
+            <div id="ticker-change" class="ticker-change" style="display:none;"></div>
+            <div class="ticker-status">
+                <div class="ticker-dot" id="ticker-dot"></div>
+                <span id="ticker-status-text">Connecting to live feed...</span>
+            </div>
+        </div>
 
         <p id="updated">Checking for updates...</p>
 
@@ -425,27 +527,150 @@
     </div>
 
     <script>
-        async function updateBTCPrice() {
-            const priceEl = document.getElementById('btc-price-ticker');
-            try {
-                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
-                const data = await response.json();
-                const price = data.bitcoin.usd;
-                priceEl.innerText = `BTC/USD: $${price.toLocaleString()}`;
-            } catch (e) {
-                console.log("Primary fetch failed, trying fallback...");
+        (function startTicker() {
+            const priceEl = document.getElementById('ticker-price');
+            const changeEl = document.getElementById('ticker-change');
+            const dotEl = document.getElementById('ticker-dot');
+            const statusEl = document.getElementById('ticker-status-text');
+
+            let lastPrice = null;
+            let openPrice = null;
+            let ws = null;
+            let usingFallback = false;
+            let fallbackTimer = null;
+            let wsConnected = false;
+
+            function setStatus(live, label) {
+                dotEl.className = 'ticker-dot' + (live ? ' live' : '');
+                statusEl.textContent = label || (live ? 'Live' : 'Reconnecting...');
+            }
+
+            function formatPrice(p) {
+                return '$' + Number(p).toLocaleString('en-US', {
+                    minimumFractionDigits: 2, maximumFractionDigits: 2
+                });
+            }
+
+            function updateDisplay(price) {
+                if (!openPrice) return;
+                const diff = price - openPrice;
+                const pct = (diff / openPrice) * 100;
+                const dir = diff >= 0 ? 'up' : 'down';
+                const arrow = diff >= 0 ? '▲' : '▼';
+
+                if (lastPrice !== null && price !== lastPrice) {
+                    priceEl.className = 'ticker-price ' + (price > lastPrice ? 'up' : 'down');
+                    setTimeout(() => { priceEl.className = 'ticker-price'; }, 600);
+                }
+
+                priceEl.textContent = formatPrice(price);
+                changeEl.style.display = '';
+                changeEl.className = 'ticker-change ' + dir;
+                changeEl.textContent = `${arrow} ${Math.abs(pct).toFixed(2)}% (${diff >= 0 ? '+' : ''}${formatPrice(diff)})`;
+                lastPrice = price;
+                window.liveBtcPrice = price;
+            }
+
+            // Fetch 24h open price from Coinbase stats
+            async function fetchOpenPrice() {
                 try {
-                    const res = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
-                    const data = await res.json();
-                    const altPrice = data.bpi.USD.rate_float;
-                    priceEl.innerText = `BTC/USD: $${altPrice.toLocaleString()}`;
-                } catch (err) {
-                    priceEl.innerText = "BTC/USD: Update Pending...";
+                    const r = await fetch('https://api.exchange.coinbase.com/products/BTC-USD/stats');
+                    const d = await r.json();
+                    openPrice = parseFloat(d.open);
+                } catch (e) {
+                    console.log('[Ticker] Could not fetch open price:', e);
                 }
             }
-        }
-        setInterval(updateBTCPrice, 60000);
-        updateBTCPrice();
+
+            // --- REST POLLING FALLBACK (CoinGecko) ---
+            let pollInterval = null;
+            async function pollCoinGecko() {
+                try {
+                    const r = await fetch(
+                        'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true',
+                        { cache: 'no-store' }
+                    );
+                    const d = await r.json();
+                    const price = d.bitcoin.usd;
+                    const change = d.bitcoin.usd_24h_change;
+                    if (!openPrice) openPrice = price / (1 + change / 100);
+                    updateDisplay(price);
+                    window.liveBtcPrice = price;
+                    setStatus(true, 'Live (polling)');
+                } catch (e) {
+                    setStatus(false, 'No feed');
+                }
+            }
+
+            function startFallback() {
+                if (usingFallback) return;
+                usingFallback = true;
+                if (ws) { try { ws.close(); } catch (e) { } ws = null; }
+                console.log('[Ticker] WebSocket failed, switching to REST polling');
+                pollCoinGecko();
+                pollInterval = setInterval(pollCoinGecko, 15000);
+            }
+
+            // --- COINBASE WEBSOCKET ---
+            function connectWS() {
+                if (usingFallback) return;
+                wsConnected = false;
+
+                fallbackTimer = setTimeout(() => {
+                    if (!wsConnected) {
+                        console.log('[Ticker] WS timeout, switching to REST');
+                        startFallback();
+                    }
+                }, 5000);
+
+                try {
+                    ws = new WebSocket('wss://advanced-trade-ws.coinbase.com');
+
+                    ws.onopen = () => {
+                        ws.send(JSON.stringify({
+                            type: 'subscribe',
+                            product_ids: ['BTC-USD'],
+                            channel: 'ticker'
+                        }));
+                    };
+
+                    ws.onmessage = (e) => {
+                        try {
+                            const msg = JSON.parse(e.data);
+                            const events = msg.events || [];
+                            for (const ev of events) {
+                                const tickers = ev.tickers || [];
+                                for (const t of tickers) {
+                                    if (t.product_id !== 'BTC-USD') continue;
+                                    const price = parseFloat(t.price);
+                                    if (!price) continue;
+                                    wsConnected = true;
+                                    clearTimeout(fallbackTimer);
+                                    updateDisplay(price);
+                                    setStatus(true, 'Live');
+                                }
+                            }
+                        } catch (err) { }
+                    };
+
+                    ws.onerror = () => { if (!wsConnected) startFallback(); };
+
+                    ws.onclose = () => {
+                        if (!usingFallback && wsConnected) {
+                            setStatus(false);
+                            setTimeout(connectWS, 5000);
+                        } else if (!usingFallback) {
+                            startFallback();
+                        }
+                    };
+
+                } catch (e) {
+                    startFallback();
+                }
+            }
+
+            fetchOpenPrice().then(connectWS);
+        })();
     </script>
 
     <script type="module">
