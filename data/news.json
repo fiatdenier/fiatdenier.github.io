@@ -1,6 +1,168 @@
 {
   "articles": [
     {
+      "title": "AI agents will be primary users of blockchain, NEAR co-founder says",
+      "url": "https://www.coindesk.com/tech/2026/03/03/ai-agents-will-be-primary-users-of-blockchain-near-co-founder-says",
+      "source": "Coindesk",
+      "published_at": "Tue, 03 Mar 2026 17:28:48 +0000"
+    },
+    {
+      "title": "Aave governance rift deepens as major governance group exits $26 billion DeFi protocol",
+      "url": "https://www.coindesk.com/web3/2026/03/03/aave-governance-rift-deepens-as-major-governance-group-exits-usd26-billion-defi-protocol",
+      "source": "Coindesk",
+      "published_at": "Tue, 03 Mar 2026 17:26:07 +0000"
+    },
+    {
+      "title": "How Trump’s Escalation With Iran Could Become the Catalyst for Declining Political Support",
+      "url": "https://beincrypto.com/trump-iran-israel-political-impact-oil-markets/",
+      "source": "BeinCrypto",
+      "published_at": "Tue, 03 Mar 2026 17:26:06 +0000"
+    },
+    {
+      "title": "Ethereum price outlook as exchange withdrawals hit highest level since November — will $2K support hold?",
+      "url": "https://crypto.news/ethereum-price-2000-exchange-withdrawals-spike-2026/",
+      "source": "BTCManager",
+      "published_at": "Tue, 03 Mar 2026 17:25:50 +0000"
+    },
+    {
+      "title": "Ethereum price outlook as exchange withdrawals hit highest level since November — will $2K support hold?",
+      "url": "https://crypto.news/ethereum-price-2000-exchange-withdrawals-spike-2026/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 03 Mar 2026 17:25:50 +0000"
+    },
+    {
+      "title": "Eric Trump’s American Bitcoin buys 11,298 ASIC miners, increasing mining capacity by 12%",
+      "url": "https://www.coindesk.com/business/2026/03/03/eric-trump-s-american-bitcoin-buys-11-298-asic-miners-increasing-capacity-by-12",
+      "source": "Coindesk",
+      "published_at": "Tue, 03 Mar 2026 17:18:21 +0000"
+    },
+    {
+      "title": "Why Bermuda is testing a fully onchain economy instead of crypto mandates",
+      "url": "https://cointelegraph.com/explained/why-bermuda-is-testing-a-fully-onchain-economy-instead-of-crypto-mandates?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Tue, 03 Mar 2026 17:15:17 +0000"
+    },
+    {
+      "title": "Bank of Japan expands blockchain settlement sandbox and says CBDC efforts are ongoing",
+      "url": "https://www.coindesk.com/business/2026/03/03/bank-of-japan-expands-blockchain-settlement-sandbox-as-2026-cbdc-decision-nears",
+      "source": "Coindesk",
+      "published_at": "Tue, 03 Mar 2026 17:09:59 +0000"
+    },
+    {
+      "title": "Bitcoin leverage jumps as open interest spikes near $70k",
+      "url": "https://crypto.news/bitcoin-leverage-jumps-as-open-interest-spikes-near-70k/",
+      "source": "BTCManager",
+      "published_at": "Tue, 03 Mar 2026 17:06:57 +0000"
+    },
+    {
+      "title": "Bitcoin leverage jumps as open interest spikes near $70k",
+      "url": "https://crypto.news/bitcoin-leverage-jumps-as-open-interest-spikes-near-70k/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 03 Mar 2026 17:06:57 +0000"
+    },
+    {
+      "title": "MSTR stock eyes a big move as short interest jumps to 12.6%",
+      "url": "https://crypto.news/mstr-stock-eyes-a-big-move-as-short-interest-jumps-to-12-6/",
+      "source": "BTCManager",
+      "published_at": "Tue, 03 Mar 2026 17:02:46 +0000"
+    },
+    {
+      "title": "MSTR stock eyes a big move as short interest jumps to 12.6%",
+      "url": "https://crypto.news/mstr-stock-eyes-a-big-move-as-short-interest-jumps-to-12-6/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 03 Mar 2026 17:02:46 +0000"
+    },
+    {
+      "title": "Iran’s crypto market spikes 700% after strikes – Is this capital flight or…",
+      "url": "https://ambcrypto.com/irans-crypto-market-spikes-700-after-strikes-is-this-capital-flight-or/",
+      "source": "Ambcrypto",
+      "published_at": "Tue, 03 Mar 2026 17:00:41 +0000"
+    },
+    {
+      "title": "Bitcoin Is Mirroring 2017, Not 2021, And An Explosive Rally Will Begin After This Happens",
+      "url": "https://bitcoinist.com/bitcoin-is-mirroring-2017-2021/",
+      "source": "Bitcoinist",
+      "published_at": "Tue, 03 Mar 2026 17:00:04 +0000"
+    },
+    {
+      "title": "Gate Hits 50 Million Users – a Reading on Structural Maturity",
+      "url": "https://beincrypto.com/gate-hits-50-million-users/",
+      "source": "BeinCrypto",
+      "published_at": "Tue, 03 Mar 2026 16:58:06 +0000"
+    },
+    {
+      "title": "Brazil central bank orders daily crypto exchange asset proof by 2027",
+      "url": "https://crypto.news/brazil-central-bank-orders-daily-crypto-exchange-asset-proof-by-2027/",
+      "source": "BTCManager",
+      "published_at": "Tue, 03 Mar 2026 16:56:38 +0000"
+    },
+    {
+      "title": "Brazil central bank orders daily crypto exchange asset proof by 2027",
+      "url": "https://crypto.news/brazil-central-bank-orders-daily-crypto-exchange-asset-proof-by-2027/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 03 Mar 2026 16:56:38 +0000"
+    },
+    {
+      "title": "Wirex launches Wirex Agents to enable AI-driven Stablecoin Cards and Autonomous Micropayments",
+      "url": "https://beincrypto.com/wirex-launches-wirex-agents/",
+      "source": "BeinCrypto",
+      "published_at": "Tue, 03 Mar 2026 16:56:08 +0000"
+    },
+    {
+      "title": "Mining companies move deeper into AI, HPC as MARA may sell Bitcoin",
+      "url": "https://cointelegraph.com/news/mining-companies-ai-hpc-mara-sell-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Tue, 03 Mar 2026 16:51:06 +0000"
+    },
+    {
+      "title": "Paraguay Exploring Using Seized Miners for State-Run Bitcoin Operation",
+      "url": "https://bitcoinmagazine.com/featured/paraguay-miners-bitcoin-mining",
+      "source": "Bitcoin Magazine",
+      "published_at": "Tue, 03 Mar 2026 16:50:55 +0000"
+    },
+    {
+      "title": "XRP capital surge: $1.4b ETF inflows as investors build stable passive income via BFXMining",
+      "url": "https://crypto.news/xrp-capital-surge-1-4b-etf-inflows-as-investors-build-stable-passive-income-via-bfxmining/",
+      "source": "BTCManager",
+      "published_at": "Tue, 03 Mar 2026 16:49:36 +0000"
+    },
+    {
+      "title": "XRP capital surge: $1.4b ETF inflows as investors build stable passive income via BFXMining",
+      "url": "https://crypto.news/xrp-capital-surge-1-4b-etf-inflows-as-investors-build-stable-passive-income-via-bfxmining/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 03 Mar 2026 16:49:36 +0000"
+    },
+    {
+      "title": "BNB price compresses into a bearish rising wedge as $580 target emerges",
+      "url": "https://crypto.news/bnb-price-compresses-into-rising-wedge-580-target/",
+      "source": "BTCManager",
+      "published_at": "Tue, 03 Mar 2026 16:47:24 +0000"
+    },
+    {
+      "title": "BNB price compresses into a bearish rising wedge as $580 target emerges",
+      "url": "https://crypto.news/bnb-price-compresses-into-rising-wedge-580-target/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 03 Mar 2026 16:47:24 +0000"
+    },
+    {
+      "title": "Wartime Snapshot: How Prediction Markets Are Pricing the Iran Conflict",
+      "url": "https://news.bitcoin.com/wartime-snapshot-how-prediction-markets-are-pricing-the-iran-conflict/",
+      "source": "Bitcoin.com",
+      "published_at": "Tue, 03 Mar 2026 16:47:17 +0000"
+    },
+    {
+      "title": "Uniswap wins again in New York court as judge draws new line on DeFi liability",
+      "url": "https://cryptoslate.com/uniswap-wins-again-in-new-york-court-as-judge-draws-new-line-on-defi-liability/",
+      "source": "CryptoSlate",
+      "published_at": "Tue, 03 Mar 2026 16:45:49 +0000"
+    },
+    {
+      "title": "NEAR Protocol (NEAR) Soars by Double Digits: Breakout Confirmed or Bull Trap?",
+      "url": "https://cryptopotato.com/near-protocol-near-soars-by-double-digits-breakout-confirmed-or-bull-trap/",
+      "source": "CryptoPotato",
+      "published_at": "Tue, 03 Mar 2026 16:41:25 +0000"
+    },
+    {
       "title": "Binance launches AI trading skills with unified agent interface",
       "url": "https://crypto.news/binance-launches-ai-trading-skills-with-unified-agent-interface/",
       "source": "BTCManager",
@@ -607,12 +769,6 @@
       "published_at": "Tue, 03 Mar 2026 12:03:31 +0000"
     },
     {
-      "title": "Trade Everything, Always: RWA Perpification as the Missing Layer Between DeFi and Wall Street",
-      "url": "https://beincrypto.com/rwa-perpification-defi-wall-street-layer/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 03 Mar 2026 12:02:47 +0000"
-    },
-    {
       "title": "Japan PM Takaichi disavows ‘Sanae Token’ after memecoin hits $28M peak",
       "url": "https://cointelegraph.com/news/sanae-token-27m-japan-pm-denies-links-fsa-probe?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -629,12 +785,6 @@
       "url": "https://news.bitcoin.com/bitget-kicks-off-motogp-2026-season-with-120000-usdt-smart-speed-challenge/",
       "source": "Bitcoin.com",
       "published_at": "Tue, 03 Mar 2026 12:00:03 +0000"
-    },
-    {
-      "title": "Silver Price Analysis: Road To $100 Stays Open, But Macro Headwinds Build",
-      "url": "https://beincrypto.com/silver-price-100-level-analysis/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 03 Mar 2026 12:00:00 +0000"
     },
     {
       "title": "US stablecoin holders appear set to lose passive ‘rewards’",
@@ -671,12 +821,6 @@
       "url": "https://www.coindesk.com/markets/2026/03/03/dollar-surge-pressures-crypto-and-gold-after-escalation-in-iran-conflict",
       "source": "Coindesk",
       "published_at": "Tue, 03 Mar 2026 11:30:00 +0000"
-    },
-    {
-      "title": "Credit Markets Flash Warning Signs: How It Could Spill Into Crypto",
-      "url": "https://beincrypto.com/credit-market-warning-signs-crypto-impact/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 03 Mar 2026 11:28:31 +0000"
     },
     {
       "title": "Paradex Signals Upcoming $DIME Token Generation Event",
@@ -931,12 +1075,6 @@
       "published_at": "Tue, 03 Mar 2026 08:36:14 +0000"
     },
     {
-      "title": "Iran’s Conflict and Internet Disruptions Hit Local Crypto Industry",
-      "url": "https://news.bitcoin.com/irans-conflict-and-internet-disruptions-hit-local-crypto-industry/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 03 Mar 2026 08:30:42 +0000"
-    },
-    {
       "title": "Bank of Japan testing blockchain settlement for bank deposits in new sandbox",
       "url": "https://cointelegraph.com/news/boj-blockchain-reserve-settlement-sandbox?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1055,12 +1193,6 @@
       "url": "https://crypto.news/iranian-crypto-outflows-from-nobitex-surge-700-following-tehran-strikes/",
       "source": "CryptoNews",
       "published_at": "Tue, 03 Mar 2026 07:33:43 +0000"
-    },
-    {
-      "title": "No Crypto Market Structure Deal Could Lead To Increased Regulatory Crackdown, Expert Says",
-      "url": "https://bitcoinist.com/no-crypto-market-structure-regulatory-crackdown/",
-      "source": "Bitcoinist",
-      "published_at": "Tue, 03 Mar 2026 07:00:26 +0000"
     },
     {
       "title": "XRP price outlook as Ripple Prime connects XRPL to NSCC for post-trade settlement",
@@ -1237,12 +1369,6 @@
       "published_at": "Tue, 03 Mar 2026 03:47:15 +0000"
     },
     {
-      "title": "‘The audacity met reality’: Why Mt. Gox’s Bitcoin hard fork died in 17 hours",
-      "url": "https://ambcrypto.com/the-audacity-met-reality-why-mt-goxs-bitcoin-hard-fork-died-in-17-hours/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 03 Mar 2026 03:00:32 +0000"
-    },
-    {
       "title": "Human Brain Cells Learn to Play Doom in Cortical Labs Experiment",
       "url": "https://decrypt.co/359697/human-brain-cells-play-doom-cortical-labs-experiment",
       "source": "Decrypt",
@@ -1309,28 +1435,10 @@
       "published_at": "Mon, 02 Mar 2026 21:40:57 +0000"
     },
     {
-      "title": "Core Scientific turns lower after Q4 results disappoint",
-      "url": "https://www.coindesk.com/markets/2026/03/02/core-scientific-turns-lower-after-q4-results-disappoint",
-      "source": "Coindesk",
-      "published_at": "Mon, 02 Mar 2026 21:38:56 +0000"
-    },
-    {
-      "title": "TD Securities sees NYSE tokenization as institutional turning point",
-      "url": "https://cointelegraph.com/news/nyse-tokenized-stocks-td-securities-market-impact?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Mon, 02 Mar 2026 21:32:17 +0000"
-    },
-    {
       "title": "Ethereum usage is at record highs yet ETH nears its longest monthly losing streak since 2018",
       "url": "https://cryptoslate.com/ethereum-battles-longest-monthly-loss-streak-since-2018/",
       "source": "CryptoSlate",
       "published_at": "Mon, 02 Mar 2026 21:30:50 +0000"
-    },
-    {
-      "title": "Bitfinex revives tokenized bonds targeting crypto-native yield seekers",
-      "url": "https://cointelegraph.com/news/bitfinex-relaunches-tokenized-bond-program-on-bitcoin-s-liquid-network?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Mon, 02 Mar 2026 21:23:24 +0000"
     },
     {
       "title": "OpenAI Claims Safety 'Red Lines' in Pentagon Deal—But Users Aren't Buying It",
@@ -1357,12 +1465,6 @@
       "published_at": "Mon, 02 Mar 2026 20:56:51 +0000"
     },
     {
-      "title": "Australia could unlock A$24 billion in digital finance gains, is on track for just A$1 billion",
-      "url": "https://www.coindesk.com/policy/2026/03/02/australia-could-unlock-ausd24-billion-in-digital-finance-gains-is-on-track-for-just-ausd1-billion",
-      "source": "Coindesk",
-      "published_at": "Mon, 02 Mar 2026 20:00:00 +0000"
-    },
-    {
       "title": "Bitcoin Treasury Firm ProCap Adds $31 Million in BTC as Stock Buybacks Grow",
       "url": "https://decrypt.co/359646/bitcoin-treasury-firm-procap-adds-31-million-stock-buybacks-grow",
       "source": "Decrypt",
@@ -1385,12 +1487,6 @@
       "url": "https://bitcoinmagazine.com/news/as-bombs-fall-on-tehran-irans-crypto",
       "source": "Bitcoin Magazine",
       "published_at": "Mon, 02 Mar 2026 19:44:56 +0000"
-    },
-    {
-      "title": "Bitcoin’s 5% spike higher Monday driven by short-covering, not fresh buying, says analyst",
-      "url": "https://www.coindesk.com/markets/2026/03/02/bitcoin-s-5-spike-higher-monday-driven-by-short-covering-not-fresh-buying-says-analyst",
-      "source": "Coindesk",
-      "published_at": "Mon, 02 Mar 2026 19:35:01 +0000"
     },
     {
       "title": "Cardano price tests historic 2022 support as oversold conditions hint at reversal",
@@ -1445,12 +1541,6 @@
       "url": "https://crypto-economy.com/anthony-pomplianos-firm-ramps-up-450-btc/",
       "source": "CryptoEconomy",
       "published_at": "Mon, 02 Mar 2026 18:56:55 +0000"
-    },
-    {
-      "title": "Vitalik Buterin unveils plan to curb Ethereum block builder centralization",
-      "url": "https://www.coindesk.com/tech/2026/03/02/vitalik-buterin-unveils-plan-to-curb-ethereum-block-builder-centralization",
-      "source": "Coindesk",
-      "published_at": "Mon, 02 Mar 2026 18:45:17 +0000"
     },
     {
       "title": "Brutal Start: Bitcoin Records Fourth-Worst Q1 Since 2013",
@@ -1687,12 +1777,6 @@
       "published_at": "Mon, 02 Mar 2026 15:11:22 +0000"
     },
     {
-      "title": "Citrea Launches Foundation to Advance Bitcoin’s Programmable Future",
-      "url": "https://bitcoinmagazine.com/news/citrea-launches-foundation-bitcoins",
-      "source": "Bitcoin Magazine",
-      "published_at": "Mon, 02 Mar 2026 15:04:03 +0000"
-    },
-    {
       "title": "Anthropic Claude Outage: AI Chatbot Goes Offline Following Trump, Pentagon Blowup",
       "url": "https://decrypt.co/359590/anthropic-claude-outage-ai-chatbot-offline-trump-pentagon-blowup",
       "source": "Decrypt",
@@ -1735,24 +1819,6 @@
       "published_at": "Mon, 02 Mar 2026 14:24:49 +0000"
     },
     {
-      "title": "Strategy buys 3,015 BTC for $204M as holdings climb past 720K",
-      "url": "https://crypto.news/strategy-buys-btc-204m-holdings-climb-past-720k-2026/",
-      "source": "BTCManager",
-      "published_at": "Mon, 02 Mar 2026 14:12:28 +0000"
-    },
-    {
-      "title": "Strategy buys 3,015 BTC for $204M as holdings climb past 720K",
-      "url": "https://crypto.news/strategy-buys-btc-204m-holdings-climb-past-720k-2026/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 02 Mar 2026 14:12:28 +0000"
-    },
-    {
-      "title": "Bitcoin ETF custody concentrates power in one place, and now a single operational failure causes dangerous ripples",
-      "url": "https://cryptoslate.com/bitcoin-etf-custody-concentrates-power-in-one-place-and-now-a-single-operational-failure-can-ripple-outward/",
-      "source": "CryptoSlate",
-      "published_at": "Mon, 02 Mar 2026 14:05:17 +0000"
-    },
-    {
       "title": "Ethereum Price Prediction: Will ETH Drop Below $1.8K Amid Escalating Macro Uncertainty?",
       "url": "https://cryptopotato.com/ethereum-price-prediction-will-eth-drop-below-1-8k-amid-escalating-macro-uncertainty/",
       "source": "CryptoPotato",
@@ -1771,30 +1837,6 @@
       "published_at": "Mon, 02 Mar 2026 13:12:51 +0000"
     },
     {
-      "title": "How investors are generating income as XRP adoption expands",
-      "url": "https://crypto.news/how-investors-are-generating-income-as-xrp-adoption-expands/",
-      "source": "BTCManager",
-      "published_at": "Mon, 02 Mar 2026 13:09:09 +0000"
-    },
-    {
-      "title": "How investors are generating income as XRP adoption expands",
-      "url": "https://crypto.news/how-investors-are-generating-income-as-xrp-adoption-expands/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 02 Mar 2026 13:09:09 +0000"
-    },
-    {
-      "title": "Tokenized gold PAXG, XAUT jump as missiles fly, BTC stalls near $66.2k",
-      "url": "https://crypto.news/tokenized-gold-paxg-xaut-jump-as-missiles-fly-btc-stalls-near-66-2k/",
-      "source": "BTCManager",
-      "published_at": "Mon, 02 Mar 2026 13:00:00 +0000"
-    },
-    {
-      "title": "Tokenized gold PAXG, XAUT jump as missiles fly, BTC stalls near $66.2k",
-      "url": "https://crypto.news/tokenized-gold-paxg-xaut-jump-as-missiles-fly-btc-stalls-near-66-2k/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 02 Mar 2026 13:00:00 +0000"
-    },
-    {
       "title": "Bitcoin Price Analysis: Why Bitcoin Must Clear $68K to Avoid Another Big Leg Down",
       "url": "https://cryptopotato.com/bitcoin-price-analysis-why-bitcoin-must-clear-68k-to-avoid-another-big-leg-down/",
       "source": "CryptoPotato",
@@ -1807,46 +1849,10 @@
       "published_at": "Mon, 02 Mar 2026 12:43:04 +0000"
     },
     {
-      "title": "Centralized messengers are the weakest link in free communication | Opinion",
-      "url": "https://crypto.news/centralized-messengers-are-the-weakest-link/",
-      "source": "BTCManager",
-      "published_at": "Mon, 02 Mar 2026 12:37:53 +0000"
-    },
-    {
-      "title": "Centralized messengers are the weakest link in free communication | Opinion",
-      "url": "https://crypto.news/centralized-messengers-are-the-weakest-link/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 02 Mar 2026 12:37:53 +0000"
-    },
-    {
-      "title": "Bitcoin Cash dips 22% over one week while new lending protocol captures over 19,000 investor interest",
-      "url": "https://crypto.news/bitcoin-cash-dips-22-over-one-week-while-new-lending-protocol-captures-over-19000-investor-interest/",
-      "source": "BTCManager",
-      "published_at": "Mon, 02 Mar 2026 12:36:55 +0000"
-    },
-    {
-      "title": "Bitcoin Cash dips 22% over one week while new lending protocol captures over 19,000 investor interest",
-      "url": "https://crypto.news/bitcoin-cash-dips-22-over-one-week-while-new-lending-protocol-captures-over-19000-investor-interest/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 02 Mar 2026 12:36:55 +0000"
-    },
-    {
       "title": "Altcoins Outperform Bitcoin With Double-Digit Weekly Gains",
       "url": "https://decrypt.co/359581/altcoins-outperform-bitcoin-with-double-digit-weekly-gains",
       "source": "Decrypt",
       "published_at": "Mon, 02 Mar 2026 12:36:29 +0000"
-    },
-    {
-      "title": "Crypto funds snap outflow streak with $1bn inflows amid Middle East strikes",
-      "url": "https://crypto.news/crypto-funds-snap-outflow-streak-with-1bn-inflows/",
-      "source": "BTCManager",
-      "published_at": "Mon, 02 Mar 2026 12:21:33 +0000"
-    },
-    {
-      "title": "Crypto funds snap outflow streak with $1bn inflows amid Middle East strikes",
-      "url": "https://crypto.news/crypto-funds-snap-outflow-streak-with-1bn-inflows/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 02 Mar 2026 12:21:33 +0000"
     },
     {
       "title": "Bitcoin Open Interest Drops 25% as Traders Deleverage Amid Rising Uncertainty",
@@ -2021,12 +2027,6 @@
       "url": "https://cryptopotato.com/good-news-for-ripple-xrp-users-important-integration/",
       "source": "CryptoPotato",
       "published_at": "Sun, 01 Mar 2026 11:25:41 +0000"
-    },
-    {
-      "title": "War in 2026: 3 Cryptocurrencies to Watch Amid the Ongoing Geopolitical Storm",
-      "url": "https://cryptopotato.com/war-in-2026-3-cryptocurrencies-to-watch-amid-the-ongoing-geopolitical-storm/",
-      "source": "CryptoPotato",
-      "published_at": "Sun, 01 Mar 2026 09:28:06 +0000"
     },
     {
       "title": "Bitcoin Recovers Following Plunge as US, Israel Begin Bombing Iran",
