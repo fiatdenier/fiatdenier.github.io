@@ -1,6 +1,96 @@
 {
   "articles": [
     {
+      "title": "Bank Executive Reinforces Bolivia’s Cryptocurrency Pivot Relevance Amidst Dollar Drought",
+      "url": "https://news.bitcoin.com/bank-bolivia-crypto-pivot/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 20 Mar 2026 05:30:35 +0000"
+    },
+    {
+      "title": "FBI warns of Tron-based scam tokens posing as law enforcement",
+      "url": "https://crypto.news/fbi-warns-of-tron-based-scam-tokens-posing-as-law-enforcement/",
+      "source": "BTCManager",
+      "published_at": "Fri, 20 Mar 2026 05:26:24 +0000"
+    },
+    {
+      "title": "FBI warns of Tron-based scam tokens posing as law enforcement",
+      "url": "https://crypto.news/fbi-warns-of-tron-based-scam-tokens-posing-as-law-enforcement/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 20 Mar 2026 05:26:24 +0000"
+    },
+    {
+      "title": "Appeals court denies Kalshi’s bid to stave off ban in Nevada",
+      "url": "https://cointelegraph.com/news/appeals-court-denies-kalshi-s-bid-to-stave-off-ban-in-nevada?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 20 Mar 2026 05:21:52 +0000"
+    },
+    {
+      "title": "Dogecoin (DOGE) Slips After Failure, Can Bulls Contain More Downside?",
+      "url": "https://www.newsbtc.com/analysis/doge/dogecoin-doge-slips-0-0920/",
+      "source": "NewsBTC",
+      "published_at": "Fri, 20 Mar 2026 05:08:02 +0000"
+    },
+    {
+      "title": "Morgan Stanley sets MSBT ticker and $1 million seed capital for bitcoin ETF",
+      "url": "https://www.coindesk.com/markets/2026/03/20/morgan-stanley-sets-msbt-ticker-and-usd1-million-seed-capital-for-bitcoin-etf",
+      "source": "Coindesk",
+      "published_at": "Fri, 20 Mar 2026 05:05:54 +0000"
+    },
+    {
+      "title": "Kentucky Senate Urged to Strip Hardware Wallet Provision From Crypto Bill",
+      "url": "https://decrypt.co/361870/kentucky-senate-strip-hardware-wallet-provision-crypto-bill",
+      "source": "Decrypt",
+      "published_at": "Fri, 20 Mar 2026 05:03:38 +0000"
+    },
+    {
+      "title": "BTQ Unveils First Bitcoin Upgrade Testnet Designed To Thwart Quantum Attacks",
+      "url": "https://www.newsbtc.com/bitcoin-news/btq-unveils-first-bitcoin-upgrade-testnet-designed-to-thwart-quantum-attacks/",
+      "source": "NewsBTC",
+      "published_at": "Fri, 20 Mar 2026 05:00:56 +0000"
+    },
+    {
+      "title": "$100M in crypto shifted by BlackRock – Panic move or just some rebalancing?",
+      "url": "https://ambcrypto.com/100m-in-crypto-shifted-by-blackrock-panic-move-or-just-some-rebalancing/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 20 Mar 2026 05:00:34 +0000"
+    },
+    {
+      "title": "XRP ‘Cheat Sheet’ Places Price Above $10, But When Will This Happen?",
+      "url": "https://bitcoinist.com/xrp-cheat-sheet-above-10/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 20 Mar 2026 05:00:14 +0000"
+    },
+    {
+      "title": "Major gold trade group releases framework for tokenized gold",
+      "url": "https://cointelegraph.com/news/world-gold-council-framework-tokenized-gold?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 20 Mar 2026 04:53:26 +0000"
+    },
+    {
+      "title": "From Trillion-Dollar Chips to Power Grid Stress: AI’s Breakneck Week Explained",
+      "url": "https://news.bitcoin.com/from-trillion-dollar-chips-to-power-grid-stress-ais-breakneck-week-explained/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 20 Mar 2026 04:30:18 +0000"
+    },
+    {
+      "title": "Algorand Foundation cuts 25% of workforce, citing macro and market pressures",
+      "url": "https://ambcrypto.com/algorand-foundation-cuts-25-of-workforce-citing-macro-and-market-pressures/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 20 Mar 2026 04:30:18 +0000"
+    },
+    {
+      "title": "Nvidia Deepens Grip on Cloud AI With Major AWS Chip Deal",
+      "url": "https://decrypt.co/361867/nvidia-deepens-grip-cloud-ai-major-aws-chip-deal",
+      "source": "Decrypt",
+      "published_at": "Fri, 20 Mar 2026 04:29:21 +0000"
+    },
+    {
+      "title": "Gemini shares surge 6% after hours on Q4 earnings",
+      "url": "https://cointelegraph.com/news/gemini-shares-up-after-hours-on-q4-earnings?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 20 Mar 2026 04:15:03 +0000"
+    },
+    {
       "title": "XRP Price Drifts Lower, All Eyes on Bulls Defending $1.42 Zone",
       "url": "https://www.newsbtc.com/analysis/xrp/xrp-price-drifts-lower-1-42/",
       "source": "NewsBTC",
@@ -175,12 +265,6 @@
       "published_at": "Thu, 19 Mar 2026 22:31:55 +0000"
     },
     {
-      "title": "Bitcoin Demand Heats Up: Coinbase Premium Green For 25 Straight Days",
-      "url": "https://www.newsbtc.com/bitcoin-news/bitcoin-demand-coinbase-premium-green-25-days/",
-      "source": "NewsBTC",
-      "published_at": "Thu, 19 Mar 2026 22:30:38 +0000"
-    },
-    {
       "title": "Bitcoin Clears Key Supply Wall, But Weak Conviction Clouds Bull Market Outlook",
       "url": "https://cryptopotato.com/bitcoin-clears-key-supply-wall-but-weak-conviction-clouds-bull-market-outlook/",
       "source": "CryptoPotato",
@@ -277,12 +361,6 @@
       "published_at": "Thu, 19 Mar 2026 21:14:17 +0000"
     },
     {
-      "title": "XRP Wins Major Regulatory Clarity As Commodity Status Emerges",
-      "url": "https://www.newsbtc.com/xrp-news/xrp-wins-major-regulatory-clarity/",
-      "source": "NewsBTC",
-      "published_at": "Thu, 19 Mar 2026 21:00:11 +0000"
-    },
-    {
       "title": "EtherFi turns to real-world assets for yield with $25M Plume allocation",
       "url": "https://cointelegraph.com/news/etherfi-turns-to-real-world-assets-for-yield-with-25m-plume-allocation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -323,12 +401,6 @@
       "url": "https://bitcoinist.com/crypto-structure-bill-progress-settlement-reached/",
       "source": "Bitcoinist",
       "published_at": "Thu, 19 Mar 2026 20:34:37 +0000"
-    },
-    {
-      "title": "Analyst Shares Dogecoin Quantitative Roadmap To New All-Time Highs, Here’s What It Says",
-      "url": "https://bitcoinist.com/dogecoin-quantitative-roadmap/",
-      "source": "Bitcoinist",
-      "published_at": "Thu, 19 Mar 2026 20:30:48 +0000"
     },
     {
       "title": "WLFI unveils AI payment infrastructure as USD1 targets ‘agentic economy’",
@@ -427,12 +499,6 @@
       "published_at": "Thu, 19 Mar 2026 19:37:24 +0000"
     },
     {
-      "title": "MiCA Decoded: A European Regulation? White Paper Data Says Something Else",
-      "url": "https://news.bitcoin.com/mica-decoded-a-european-regulation-white-paper-data-says-something-else/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 19 Mar 2026 19:35:49 +0000"
-    },
-    {
       "title": "Animoca invests in Ava Labs to boost Avalanche adoption in Asia, Middle East",
       "url": "https://cointelegraph.com/news/animoca-brands-invests-in-avax-partners-with-ava-labs-to-expand-avalanche-in-asia-and-middle-east?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -467,12 +533,6 @@
       "url": "https://crypto.news/hyperliquid-whale-wiped-out-as-458-million-in-crypto-longs-vanish/",
       "source": "CryptoNews",
       "published_at": "Thu, 19 Mar 2026 19:00:00 +0000"
-    },
-    {
-      "title": "UK Moves to Dissolve Zedxion Crypto Exchange Over IRGC Sanctions Links",
-      "url": "https://news.bitcoin.com/uk-moves-to-dissolve-zedxion-crypto-exchange-over-irgc-sanctions-links/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 19 Mar 2026 18:56:18 +0000"
     },
     {
       "title": "DDC Enterprise buys 200 more Bitcoin as its treasury hits 2,383 coins",
@@ -697,12 +757,6 @@
       "published_at": "Thu, 19 Mar 2026 16:00:00 +0000"
     },
     {
-      "title": "Crypto market extends losses as Bitcoin struggles below $70K after Fed-driven sell-off",
-      "url": "https://ambcrypto.com/crypto-market-extends-losses-as-bitcoin-struggles-below-70k-after-fed-driven-sell-off/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 19 Mar 2026 15:57:55 +0000"
-    },
-    {
       "title": "OpenClaw developers targeted in GitHub phishing scam offering fake token airdrops",
       "url": "https://www.coindesk.com/tech/2026/03/19/openclaw-developers-targeted-in-github-phishing-scam-offering-fake-token-airdrops",
       "source": "Coindesk",
@@ -785,12 +839,6 @@
       "url": "https://cointelegraph.com/news/bitcoin-prediction-markets-see-70-chance-btc-price-crashes-to-55k-in-2026?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Thu, 19 Mar 2026 15:02:02 +0000"
-    },
-    {
-      "title": "Arthur Hayes buys $72K ETHFI 5 hours before Upbit listing: Market takes note",
-      "url": "https://ambcrypto.com/arthur-hayes-buys-72k-ethfi-5-hours-before-upbit-listing-market-takes-note/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 19 Mar 2026 15:00:56 +0000"
     },
     {
       "title": "Crypto for Advisors: Bitcoin’s price discovery",
@@ -1003,22 +1051,10 @@
       "published_at": "Thu, 19 Mar 2026 12:34:27 +0000"
     },
     {
-      "title": "The era of listings and on-ramps is ending, as intent protocols make access native",
-      "url": "https://cointelegraph.com/news/intent-protocols-make-access-native?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 19 Mar 2026 12:30:00 +0000"
-    },
-    {
       "title": "Morning Minute: Markets Tumble as Iran War Escalates",
       "url": "https://decrypt.co/361685/morning-minute-markets-tumble-as-iran-war-escalates",
       "source": "Decrypt",
       "published_at": "Thu, 19 Mar 2026 12:25:54 +0000"
-    },
-    {
-      "title": "Bitcoin ETF inflow streak snaps with $164M outflows amid BTC dip",
-      "url": "https://cointelegraph.com/news/spot-bitcoin-etf-end-inflow-streak-164-million-outflows?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 19 Mar 2026 12:22:02 +0000"
     },
     {
       "title": "South Korea’s People Power Party proposes bill to abolish 22% crypto tax",
@@ -1037,12 +1073,6 @@
       "url": "https://blockonomi.com/saylors-new-bitcoin-playbook-is-strc-replacing-share-issuance-as-strategy-primary-funding-tool/",
       "source": "Blockonomi",
       "published_at": "Thu, 19 Mar 2026 12:17:43 +0000"
-    },
-    {
-      "title": "Ethereum long squeeze risk rises as ETH price dips to $2,100",
-      "url": "https://cointelegraph.com/news/ethereum-long-squeeze-risk-rises-eth-price-dips-2-100?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 19 Mar 2026 12:16:49 +0000"
     },
     {
       "title": "Bitcoin Dips Under $70K as Stocks Tumble on Hawkish Fed Hold—What’s Next?",
@@ -1169,12 +1199,6 @@
       "url": "https://crypto.news/morgan-stanley-advances-bitcoin-etf-plans-with-amended-s-1/",
       "source": "CryptoNews",
       "published_at": "Thu, 19 Mar 2026 10:33:09 +0000"
-    },
-    {
-      "title": "Bitcoin’s quantum threat is real, but far from an existential crisis, Galaxy says",
-      "url": "https://www.coindesk.com/tech/2026/03/19/bitcoin-s-quantum-threat-is-real-but-far-from-an-existential-crisis-galaxy-says",
-      "source": "Coindesk",
-      "published_at": "Thu, 19 Mar 2026 10:30:00 +0000"
     },
     {
       "title": "Bitcoin Dips Below $70K After FOMC Meeting, Ethereum Loses $2.2K Support: Market Watch",
@@ -1615,12 +1639,6 @@
       "published_at": "Wed, 18 Mar 2026 16:43:03 +0000"
     },
     {
-      "title": "Citi Downgrades Crypto Exchange Gemini After Cutting Bitcoin, Ethereum Price Targets",
-      "url": "https://decrypt.co/361496/citi-downgrades-gemini-cutting-bitcoin-ethereum-targets",
-      "source": "Decrypt",
-      "published_at": "Wed, 18 Mar 2026 16:34:19 +0000"
-    },
-    {
       "title": "Gemini stock’s 3% slide flags decoupling from Bitcoin and crypto rally",
       "url": "https://crypto.news/gemini-stocks-3-slide-flags-decoupling-from-bitcoin-and-crypto-rally/",
       "source": "BTCManager",
@@ -1643,12 +1661,6 @@
       "url": "https://cryptopotato.com/bitcoin-everlight-4-steps-to-activate-shards-and-stack-sats/",
       "source": "CryptoPotato",
       "published_at": "Wed, 18 Mar 2026 16:00:50 +0000"
-    },
-    {
-      "title": "'Crypto Castle': YouTube Comedy Takes You Back to When Bitcoin Was Just $250",
-      "url": "https://decrypt.co/360897/new-youtube-comedy-set-bitcoin-just-250",
-      "source": "Decrypt",
-      "published_at": "Wed, 18 Mar 2026 15:31:02 +0000"
     },
     {
       "title": "Canada’s FINTRAC revokes registrations of 23 crypto MSBs in AML crackdown",
@@ -1889,18 +1901,6 @@
       "url": "https://cryptopotato.com/analyst-warns-btc-dominance-break-will-dictate-whether-alts-explode-or-collapse/",
       "source": "CryptoPotato",
       "published_at": "Wed, 18 Mar 2026 11:07:03 +0000"
-    },
-    {
-      "title": "Ethereum ETFs hit three-week high inflows, will ETH price break $2,400?",
-      "url": "https://crypto.news/ethereum-etfs-hit-three-week-high-inflows-will-eth-price-break-2400/",
-      "source": "BTCManager",
-      "published_at": "Wed, 18 Mar 2026 10:39:14 +0000"
-    },
-    {
-      "title": "Ethereum ETFs hit three-week high inflows, will ETH price break $2,400?",
-      "url": "https://crypto.news/ethereum-etfs-hit-three-week-high-inflows-will-eth-price-break-2400/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 18 Mar 2026 10:39:14 +0000"
     },
     {
       "title": "Ripple (XRP) Price Predictions for This Week",
