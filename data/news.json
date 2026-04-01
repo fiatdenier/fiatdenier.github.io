@@ -1,6 +1,78 @@
 {
   "articles": [
     {
+      "title": "Fed's Barr Says Stablecoins Need Tighter Controls to Fight Money Laundering",
+      "url": "https://decrypt.co/363071/fed-barr-stablecoins-tighter-controls-fight-money-laundering",
+      "source": "Decrypt",
+      "published_at": "Wed, 01 Apr 2026 18:05:57 +0000"
+    },
+    {
+      "title": "U.S. Treasury Launches First GENIUS Act Rulemaking With 87-Page Proposal",
+      "url": "https://bitcoinmagazine.com/news/u-s-treasury-launches-genius-act-proposal",
+      "source": "Bitcoin Magazine",
+      "published_at": "Wed, 01 Apr 2026 18:05:16 +0000"
+    },
+    {
+      "title": "Trump Says US Leaving Iran Soon — What This Means For Bitcoin And Oil",
+      "url": "https://bitcoinist.com/trump-signals-looming-exit-from-iran-what-this-means-for-bitcoin-and-oil/",
+      "source": "Bitcoinist",
+      "published_at": "Wed, 01 Apr 2026 18:00:55 +0000"
+    },
+    {
+      "title": "Ethereum shows early accumulation signals – Can ETH’s demand sustain a breakout?",
+      "url": "https://ambcrypto.com/ethereum-shows-early-accumulation-signals-can-eths-demand-sustain-a-breakout/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 01 Apr 2026 18:00:10 +0000"
+    },
+    {
+      "title": "Paradigm builds pro-grade prediction market terminal for institutional traders",
+      "url": "https://crypto.news/paradigm-builds-pro-grade-prediction-market-terminal-for-institutional-traders/",
+      "source": "BTCManager",
+      "published_at": "Wed, 01 Apr 2026 18:00:00 +0000"
+    },
+    {
+      "title": "Paradigm builds pro-grade prediction market terminal for institutional traders",
+      "url": "https://crypto.news/paradigm-builds-pro-grade-prediction-market-terminal-for-institutional-traders/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 01 Apr 2026 18:00:00 +0000"
+    },
+    {
+      "title": "Treasury moves to lock in stablecoin rules with state–federal hybrid framework",
+      "url": "https://ambcrypto.com/treasury-moves-to-lock-in-stablecoin-rules-with-state-federal-hybrid-framework/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 01 Apr 2026 17:57:49 +0000"
+    },
+    {
+      "title": "Nakamoto Bitcoin sale could signal industry-wide DAT contagion: Analyst",
+      "url": "https://cointelegraph.com/news/nakamoto-sale-signal-dat-contagion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 01 Apr 2026 18:56:12 +0100"
+    },
+    {
+      "title": "Warren Buffett bought $17B in US T-bills: A bad omen for Bitcoin price?",
+      "url": "https://cointelegraph.com/news/warren-buffett-bought-17b-in-us-t-bills-a-bad-omen-for-bitcoin-price?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 01 Apr 2026 18:49:18 +0100"
+    },
+    {
+      "title": "Galaxy Digital's testnet suffers hack but no client funds or information were compromised",
+      "url": "https://www.coindesk.com/tech/2026/04/01/galaxy-digital-suffers-hack-but-no-client-funds-or-information-were-compromised",
+      "source": "Coindesk",
+      "published_at": "Wed, 01 Apr 2026 17:48:13 +0000"
+    },
+    {
+      "title": "Bitcoin looks ready to break $70k — but one group decision keeps capping the rally",
+      "url": "https://cryptoslate.com/bitcoin-70k-resistance-sellers-capping-rally/",
+      "source": "CryptoSlate",
+      "published_at": "Wed, 01 Apr 2026 17:35:52 +0000"
+    },
+    {
+      "title": "Bitcoin Below $54K Would Signal Best Accumulation Zone, Analyst Says",
+      "url": "https://www.newsbtc.com/news/bitcoin/bitcoin-below-54k-would-signal-best-accumulation-zone-analyst-says/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 01 Apr 2026 17:30:36 +0000"
+    },
+    {
       "title": "Solana hits 10B transactions as Ethereum crosses 200M — two blockchains, two models",
       "url": "https://ambcrypto.com/solana-hits-10b-transactions-as-ethereum-crosses-200m-two-blockchains-two-models/",
       "source": "Ambcrypto",
@@ -29,6 +101,18 @@
       "url": "https://bitcoinmagazine.com/news/genius-group-gns-dumps-all-bitcoin",
       "source": "Bitcoin Magazine",
       "published_at": "Wed, 01 Apr 2026 17:12:50 +0000"
+    },
+    {
+      "title": "Naoris launches post-quantum blockchain as quantum security risks gain attention",
+      "url": "https://cointelegraph.com/news/naoris-post-quantum-blockchain-quantum-security-risks-gain-attention?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 01 Apr 2026 18:12:33 +0100"
+    },
+    {
+      "title": "CFTC chair says agency is ready to oversee entire crypto market",
+      "url": "https://cointelegraph.com/news/cftc-chair-oversee-crypto-market-clarity-passes?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 01 Apr 2026 18:04:28 +0100"
     },
     {
       "title": "Texas targets crypto, gambling loopholes amid prediction market concerns",
@@ -955,12 +1039,6 @@
       "published_at": "Wed, 01 Apr 2026 08:12:48 +0000"
     },
     {
-      "title": "CZ: Here’s What The Crypto Industry Must Do To Defend Against Rising Quantum Computing Threat",
-      "url": "https://bitcoinist.com/cz-crypto-must-do-defend-against-quantum-computing/",
-      "source": "Bitcoinist",
-      "published_at": "Wed, 01 Apr 2026 08:00:58 +0000"
-    },
-    {
       "title": "Ethereum Is Flashing a Warning Signal Most Holders Are Ignoring – Here Is What It Says",
       "url": "https://www.newsbtc.com/news/ethereum/ethereum-is-flashing-a-warning-signal-most-holders-are-ignoring-here-is-what-it-says/",
       "source": "NewsBTC",
@@ -1135,12 +1213,6 @@
       "published_at": "Wed, 01 Apr 2026 05:59:35 +0000"
     },
     {
-      "title": "6 best quant trading platforms in 2026: Boost your returns with AI trading bots",
-      "url": "https://ambcrypto.com/6-best-quant-trading-platforms-in-2026-boost-your-returns-with-ai-trading-bots/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 01 Apr 2026 05:50:34 +0000"
-    },
-    {
       "title": "Bitcoin Price Rises Ahead of Trump’s Key Iran War Announcement",
       "url": "https://cryptopotato.com/bitcoin-price-rises-ahead-of-trumps-key-iran-war-announcement/",
       "source": "CryptoPotato",
@@ -1183,12 +1255,6 @@
       "published_at": "Wed, 01 Apr 2026 05:19:11 +0000"
     },
     {
-      "title": "Dogecoin (DOGE) Consolidates Below $0.10, Breakout Still Elusive",
-      "url": "https://www.newsbtc.com/analysis/doge/dogecoin-doge-consolidates-below-0-10/",
-      "source": "NewsBTC",
-      "published_at": "Wed, 01 Apr 2026 05:18:41 +0000"
-    },
-    {
       "title": "Interactive Brokers rolls out crypto trading for retail clients in Europe",
       "url": "https://crypto.news/interactive-brokers-rolls-out-crypto-trading-for-retail-clients-in-europe/",
       "source": "BTCManager",
@@ -1205,12 +1271,6 @@
       "url": "https://cryptopotato.com/dont-panic-heres-how-crypto-resists-quantum-risks-according-to-cz/",
       "source": "CryptoPotato",
       "published_at": "Wed, 01 Apr 2026 05:03:31 +0000"
-    },
-    {
-      "title": "Zcash – All about a potential ZEC breakout after $10M inflows, whales lead the charge",
-      "url": "https://ambcrypto.com/zcash-all-about-a-potential-zec-breakout-after-10m-inflows-whales-lead-the-charge/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 01 Apr 2026 05:00:50 +0000"
     },
     {
       "title": "Myanmar eyes cashless future for rice industry",
@@ -1279,12 +1339,6 @@
       "published_at": "Wed, 01 Apr 2026 01:31:59 +0100"
     },
     {
-      "title": "Bitcoin enters the public bond market as Moody’s gives a first-of-its-kind crypto deal a rating",
-      "url": "https://www.coindesk.com/markets/2026/03/31/bitcoin-enters-the-public-bond-market-as-moody-s-gives-a-first-of-its-kind-crypto-deal-a-rating",
-      "source": "Coindesk",
-      "published_at": "Tue, 31 Mar 2026 22:58:55 +0000"
-    },
-    {
       "title": "Donald Trump says US will leave Iran within 2 to 3 weeks",
       "url": "https://cointelegraph.com/news/trump-signals-us-withdrawal-iran-weeks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1295,12 +1349,6 @@
       "url": "https://cointelegraph.com/news/crypto-fear-and-greed-index-stuck-on-extreme-fear-but-is-there-a-silver-lining?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Tue, 31 Mar 2026 23:29:21 +0100"
-    },
-    {
-      "title": "Texas Lt. Gov. calls for study of crypto, prediction markets",
-      "url": "https://cointelegraph.com/news/texas-dan-patrick-crypto-prediction-markets-senate?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 31 Mar 2026 22:48:00 +0100"
     },
     {
       "title": "Bitcoin Slides Into 5-Month Losing Streak as On-Chain Data Signals Capitulation",
@@ -1319,12 +1367,6 @@
       "url": "https://cryptopotato.com/analyst-bitcoins-sp-correlation-is-not-the-bull-sign-it-looks/",
       "source": "CryptoPotato",
       "published_at": "Tue, 31 Mar 2026 21:35:11 +0000"
-    },
-    {
-      "title": "Wall Street moves benchmarks onchain as S&P tokenizes Treasurys index",
-      "url": "https://cointelegraph.com/news/sp-tokenizes-treasury-index-canton-network?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 31 Mar 2026 22:33:58 +0100"
     },
     {
       "title": "Trump’s $200B Iran war ask raises risk-off pressure on crypto markets",
@@ -1387,12 +1429,6 @@
       "published_at": "Tue, 31 Mar 2026 20:18:45 +0000"
     },
     {
-      "title": "Chainalysis to add ‘blockchain intelligence’ agents to platform",
-      "url": "https://cointelegraph.com/news/chainalysis-blockchain-intelligence-agents?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 31 Mar 2026 21:13:13 +0100"
-    },
-    {
       "title": "Latin America’s Mercado Libre Pulls the Plug on Its Crypto Coin",
       "url": "https://decrypt.co/362958/latin-america-mercado-libre-pulls-plug-crypto-coin",
       "source": "Decrypt",
@@ -1427,12 +1463,6 @@
       "url": "https://crypto.news/cz-says-quantum-wont-kill-crypto-calls-for-calm-post-quantum-upgrade/",
       "source": "CryptoNews",
       "published_at": "Tue, 31 Mar 2026 20:00:00 +0000"
-    },
-    {
-      "title": "Bitcoin hits $68K but BTC futures, macro data show traders remain bearish",
-      "url": "https://cointelegraph.com/news/bitcoin-hits-68k-but-btc-futures-macro-data-show-traders-remain-bearish?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 31 Mar 2026 20:59:25 +0100"
     },
     {
       "title": "JAN3 CEO Samson Mow Hints at Elon Musk’s Renewed Bitcoin Interest",
@@ -1475,12 +1505,6 @@
       "url": "https://cryptopotato.com/2-important-binance-updates-affecting-numerous-altcoin-traders-details-inside/",
       "source": "CryptoPotato",
       "published_at": "Tue, 31 Mar 2026 18:59:42 +0000"
-    },
-    {
-      "title": "Satoshi’s 2010 Quantum Response Is Getting a 2026 Stress Test as Google Warns Timeline May Be Closer Than Expected",
-      "url": "https://bitcoinmagazine.com/news/satoshis-2010-quantum-response-stress-test",
-      "source": "Bitcoin Magazine",
-      "published_at": "Tue, 31 Mar 2026 18:44:49 +0000"
     },
     {
       "title": "Tether's USAT Stablecoin Expands Beyond Ethereum Mainnet to Celo",
@@ -1649,12 +1673,6 @@
       "url": "https://decrypt.co/362883/nakamoto-shares-new-low-bitcoin-treasury-firm-sells-btc",
       "source": "Decrypt",
       "published_at": "Tue, 31 Mar 2026 15:25:56 +0000"
-    },
-    {
-      "title": "Google slashes quantum cracking estimates by 20X creating $600 billion countdown for Bitcoin and Ethereum",
-      "url": "https://cryptoslate.com/google-slashes-quantum-cracking-estimates-by-20x-creating-600-billion-quantum-countdown-for-bitcoin-and-ethereum/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 31 Mar 2026 15:10:55 +0000"
     },
     {
       "title": "Google: Quantum Computing Could Crack Top 1,000 ETH Wallets in Days",
@@ -1843,18 +1861,6 @@
       "published_at": "Tue, 31 Mar 2026 10:46:47 +0000"
     },
     {
-      "title": "Nakamoto sells 284 BTC, reduces Metaplanet stake amid restructuring push",
-      "url": "https://crypto.news/nakamoto-sells-284-btc-reduces-metaplanet-stake-amid-restructuring-push/",
-      "source": "BTCManager",
-      "published_at": "Tue, 31 Mar 2026 10:18:43 +0000"
-    },
-    {
-      "title": "Nakamoto sells 284 BTC, reduces Metaplanet stake amid restructuring push",
-      "url": "https://crypto.news/nakamoto-sells-284-btc-reduces-metaplanet-stake-amid-restructuring-push/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 31 Mar 2026 10:18:43 +0000"
-    },
-    {
       "title": "Solana Yields Keep Falling — Why Investors Are Turning to This New BTC Reward Model",
       "url": "https://cryptopotato.com/solana-yields-keep-falling-why-investors-are-turning-to-this-new-btc-reward-model/",
       "source": "CryptoPotato",
@@ -2003,12 +2009,6 @@
       "url": "https://decrypt.co/362768/ethereum-foundation-stakes-eth-50-million",
       "source": "Decrypt",
       "published_at": "Mon, 30 Mar 2026 19:52:47 +0000"
-    },
-    {
-      "title": "Qwen 3.5 Omni: Alibaba’s AI Model Can Now Hear, Watch, and Clone Your Voice",
-      "url": "https://decrypt.co/362742/alibaba-qwen-omni-major-upgrade-review",
-      "source": "Decrypt",
-      "published_at": "Mon, 30 Mar 2026 19:39:55 +0000"
     },
     {
       "title": "No New Bitcoin Buys From Strategy This Week, Breaking Ongoing Streak",
