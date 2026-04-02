@@ -1,6 +1,102 @@
 {
   "articles": [
     {
+      "title": "Circle Reveals Wrapped Bitcoin Product With Real-Time Onchain Reserve Verification",
+      "url": "https://news.bitcoin.com/circle-reveals-wrapped-bitcoin-product-with-real-time-onchain-reserve-verification/",
+      "source": "Bitcoin.com",
+      "published_at": "Thu, 02 Apr 2026 17:45:47 +0000"
+    },
+    {
+      "title": "Bitcoin Net Realized Losses Worsen 60% Weekly to -$410M",
+      "url": "https://cryptopotato.com/bitcoin-net-realized-losses-worsen-60-weekly-to-410m/",
+      "source": "CryptoPotato",
+      "published_at": "Thu, 02 Apr 2026 17:44:22 +0000"
+    },
+    {
+      "title": "Coinbase Links Up With Linux Foundation to Launch x402 Foundation",
+      "url": "https://decrypt.co/363173/coinbase-linux-foundation-launch-x402-foundation",
+      "source": "Decrypt",
+      "published_at": "Thu, 02 Apr 2026 17:44:15 +0000"
+    },
+    {
+      "title": "Cifra Markets review: A regulated gateway to crypto trading",
+      "url": "https://crypto.news/cifra-markets-review-a-regulated-gateway-to-crypto-trading/",
+      "source": "BTCManager",
+      "published_at": "Thu, 02 Apr 2026 17:44:07 +0000"
+    },
+    {
+      "title": "Cifra Markets review: A regulated gateway to crypto trading",
+      "url": "https://crypto.news/cifra-markets-review-a-regulated-gateway-to-crypto-trading/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 02 Apr 2026 17:44:07 +0000"
+    },
+    {
+      "title": "X (Twitter) Targets Scams by Locking First-Time Crypto Posts",
+      "url": "https://beincrypto.com/x-twitter-crypto-scam-crackdown-auto-lock-feature/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 02 Apr 2026 17:43:45 +0000"
+    },
+    {
+      "title": "x402 joins Linux Foundation with backing from Google, Stripe, AWS",
+      "url": "https://crypto.news/x402-joins-linux-foundation-with-backing-from-google-stripe-aws/",
+      "source": "BTCManager",
+      "published_at": "Thu, 02 Apr 2026 17:30:00 +0000"
+    },
+    {
+      "title": "x402 joins Linux Foundation with backing from Google, Stripe, AWS",
+      "url": "https://crypto.news/x402-joins-linux-foundation-with-backing-from-google-stripe-aws/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 02 Apr 2026 17:30:00 +0000"
+    },
+    {
+      "title": "Trump Admin Backs Prediction Markets With Lawsuits Against Illinois, Arizona and Connecticut",
+      "url": "https://decrypt.co/363171/trump-admin-backs-prediction-markets-lawsuits-illinois-arizona-connecticut",
+      "source": "Decrypt",
+      "published_at": "Thu, 02 Apr 2026 17:25:01 +0000"
+    },
+    {
+      "title": "Why Iran’s Top War Operator Suddenly Sounds Very American",
+      "url": "https://beincrypto.com/iran-war-chief-ghalibaf-american-style-posts/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 02 Apr 2026 17:06:36 +0000"
+    },
+    {
+      "title": "From Inbox to Income: W3.io is Building the Digital Rails That Lead Creators to Bitcoin",
+      "url": "https://news.bitcoin.com/from-inbox-to-income-w3-io-is-building-the-digital-rails-that-lead-creators-to-bitcoin/",
+      "source": "Bitcoin.com",
+      "published_at": "Thu, 02 Apr 2026 17:00:55 +0000"
+    },
+    {
+      "title": "AI Could Become 2,000 Times More Efficient by Copying the Brain: Study",
+      "url": "https://decrypt.co/363164/ai-could-become-2000-times-more-efficient-by-copying-the-brain-study",
+      "source": "Decrypt",
+      "published_at": "Thu, 02 Apr 2026 17:00:32 +0000"
+    },
+    {
+      "title": "‘USD debasement risk’ – Will Taiwan adopt a Bitcoin reserve now?",
+      "url": "https://ambcrypto.com/usd-debasement-risk-will-taiwan-adopt-a-bitcoin-reserve-now/",
+      "source": "Ambcrypto",
+      "published_at": "Thu, 02 Apr 2026 17:00:18 +0000"
+    },
+    {
+      "title": "YZi Labs doubles down on Predict.fun after $1.8B volume surge",
+      "url": "https://crypto.news/yzi-labs-doubles-down-on-predict-fun-after-1-8b-volume-surge/",
+      "source": "BTCManager",
+      "published_at": "Thu, 02 Apr 2026 17:00:00 +0000"
+    },
+    {
+      "title": "YZi Labs doubles down on Predict.fun after $1.8B volume surge",
+      "url": "https://crypto.news/yzi-labs-doubles-down-on-predict-fun-after-1-8b-volume-surge/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 02 Apr 2026 17:00:00 +0000"
+    },
+    {
+      "title": "SoFi expands into institutional finance with integrated crypto services",
+      "url": "https://cointelegraph.com/news/sofi-institutional-banking-platform-crypto-services?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Thu, 02 Apr 2026 17:56:28 +0100"
+    },
+    {
       "title": "Beyond the Term Sheet: What Founders Should Expect from Crypto Venture Funds in 2026",
       "url": "https://cryptopotato.com/beyond-the-term-sheet-what-founders-should-expect-from-crypto-venture-funds-in-2026/",
       "source": "CryptoPotato",
@@ -61,7 +157,7 @@
       "published_at": "Thu, 02 Apr 2026 16:25:00 +0000"
     },
     {
-      "title": "CFTC sues Illinois over state's cease-and-desist letters against prediction markets",
+      "title": "CFTC sues Illinois, Arizona, Connecticut over states' sports prediction market efforts",
       "url": "https://www.coindesk.com/policy/2026/04/02/cftc-sues-illinois-over-state-s-cease-and-desist-letters-against-prediction-markets",
       "source": "Coindesk",
       "published_at": "Thu, 02 Apr 2026 16:24:42 +0000"
@@ -643,12 +739,6 @@
       "published_at": "Thu, 02 Apr 2026 11:52:53 +0000"
     },
     {
-      "title": "Metaplanet Buys 5,075 Bitcoin in Q1 2026, Total Holdings Hit 40,177 BTC",
-      "url": "https://news.bitcoin.com/metaplanet-buys-5075-bitcoin-in-q1-2026-total-holdings-hit-40177-btc/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 02 Apr 2026 11:50:08 +0000"
-    },
-    {
       "title": "BTC Drops to $66K Following Trump’s War Remarks; Altcoins Deepen Their Losses",
       "url": "https://crypto-economy.com/btc-drops-to-66k-following-trumps-war-remarks-altcoins-deepen-their-losses/",
       "source": "CryptoEconomy",
@@ -659,18 +749,6 @@
       "url": "https://www.coindesk.com/business/2026/04/02/france-s-new-stock-exchange-is-taking-an-aerospace-giant-public-onchain",
       "source": "Coindesk",
       "published_at": "Thu, 02 Apr 2026 11:45:45 +0000"
-    },
-    {
-      "title": "Bitcoin Believers Who Lasted 16 Months Just Sold Every Coin to Survive",
-      "url": "https://beincrypto.com/genius-group-sells-bitcoin-treasury-debt/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 02 Apr 2026 11:42:00 +0000"
-    },
-    {
-      "title": "NVIDIA Stock Rallied 8%, But 3 Signals Point to a Reversal",
-      "url": "https://beincrypto.com/nvidia-stock-inverse-grip-rally-risk-analysis/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 02 Apr 2026 11:41:44 +0000"
     },
     {
       "title": "Bitcoin Price Is Only Halfway To The Bottom And Will Crash Below $40,000, Here’s Why",
@@ -719,12 +797,6 @@
       "url": "https://www.coindesk.com/business/2026/04/02/doj-sting-exposes-crypto-wash-trading-continues-to-be-far-more-common-than-expected",
       "source": "Coindesk",
       "published_at": "Thu, 02 Apr 2026 11:03:30 +0000"
-    },
-    {
-      "title": "Adrian Wall of Digital Sovereignty Alliance Speaks on Tokenization at Penn Blockchain Conference 2026",
-      "url": "https://news.bitcoin.com/adrian-wall-of-digital-sovereignty-alliance-speaks-on-tokenization-at-penn-blockchain-conference-2026/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 02 Apr 2026 11:00:50 +0000"
     },
     {
       "title": "Coinbase CLO turns bullish on CLARITY: ‘Confident we’re going to see progress’",
@@ -1201,12 +1273,6 @@
       "published_at": "Thu, 02 Apr 2026 03:53:36 +0100"
     },
     {
-      "title": "Ethereum: $35mln ETH shorts build at key levels – Squeeze ahead IF…",
-      "url": "https://ambcrypto.com/ethereum-35mln-eth-shorts-build-at-key-levels-squeeze-ahead-if/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 02 Apr 2026 02:00:08 +0000"
-    },
-    {
       "title": "Elon Musk’s SpaceX quietly files for IPO, seeking mammoth debut: Report",
       "url": "https://cointelegraph.com/news/elon-musks-spacex-files-confidential-ipo-with-sec?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1253,12 +1319,6 @@
       "url": "https://decrypt.co/363089/volatility-shares-everaged-crypto-etfs-three-altcoins",
       "source": "Decrypt",
       "published_at": "Wed, 01 Apr 2026 21:08:22 +0000"
-    },
-    {
-      "title": "Hyperliquid whale makes $80M bet on market crash: Is Bitcoin in trouble?",
-      "url": "https://cointelegraph.com/news/hyperliquid-whale-makes-dollar80m-bet-on-market-crash-is-bitcoin-in-trouble?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 01 Apr 2026 22:00:08 +0100"
     },
     {
       "title": "eToro wins New York BitLicense, expands crypto access to 48 US states",
@@ -1795,52 +1855,16 @@
       "published_at": "Wed, 01 Apr 2026 08:48:03 +0000"
     },
     {
-      "title": "Zcash patches critical bug affecting the Sprout shielded pool",
-      "url": "https://crypto.news/zcash-patches-critical-bug-affecting-the-sprout-shielded-pool/",
-      "source": "BTCManager",
-      "published_at": "Wed, 01 Apr 2026 08:33:25 +0000"
-    },
-    {
-      "title": "Zcash patches critical bug affecting the Sprout shielded pool",
-      "url": "https://crypto.news/zcash-patches-critical-bug-affecting-the-sprout-shielded-pool/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 01 Apr 2026 08:33:25 +0000"
-    },
-    {
       "title": "FBI Sting Operation Exposes Crypto Market Manipulation: 10 Executives Charged",
       "url": "https://blockonomi.com/fbi-sting-operation-exposes-crypto-market-manipulation-10-executives-charged/",
       "source": "Blockonomi",
       "published_at": "Wed, 01 Apr 2026 08:00:07 +0000"
     },
     {
-      "title": "BitGo launches unified crypto financing platform for institutional lending and borrowing",
-      "url": "https://crypto.news/bitgo-launches-unified-crypto-financing-platform-for-institutional-lending-and-borrowing/",
-      "source": "BTCManager",
-      "published_at": "Wed, 01 Apr 2026 07:56:38 +0000"
-    },
-    {
-      "title": "BitGo launches unified crypto financing platform for institutional lending and borrowing",
-      "url": "https://crypto.news/bitgo-launches-unified-crypto-financing-platform-for-institutional-lending-and-borrowing/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 01 Apr 2026 07:56:38 +0000"
-    },
-    {
       "title": "Bitcoin Barely Avoids Equaling Worst Red Monthly Streak: What’s Next for April?",
       "url": "https://cryptopotato.com/bitcoin-barely-avoids-equaling-worst-red-monthly-streak-whats-next-for-april/",
       "source": "CryptoPotato",
       "published_at": "Wed, 01 Apr 2026 07:53:34 +0000"
-    },
-    {
-      "title": "Why is the crypto market going up today? (April 1)",
-      "url": "https://crypto.news/why-is-the-crypto-market-going-up-today-april-1/",
-      "source": "BTCManager",
-      "published_at": "Wed, 01 Apr 2026 07:50:39 +0000"
-    },
-    {
-      "title": "Why is the crypto market going up today? (April 1)",
-      "url": "https://crypto.news/why-is-the-crypto-market-going-up-today-april-1/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 01 Apr 2026 07:50:39 +0000"
     },
     {
       "title": "New Hampshire Launches America’s First Bitcoin-Backed Municipal Bond",
@@ -2005,22 +2029,10 @@
       "published_at": "Tue, 31 Mar 2026 16:31:42 +0000"
     },
     {
-      "title": "Encrypt Is Coming to Solana to Power Encrypted Capital Markets",
-      "url": "https://cryptopotato.com/encrypt-is-coming-to-solana-to-power-encrypted-capital-markets/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 31 Mar 2026 16:22:42 +0000"
-    },
-    {
       "title": "Nakamoto Shares Hit New Low After Bitcoin Treasury Firm Sells Off BTC",
       "url": "https://decrypt.co/362883/nakamoto-shares-new-low-bitcoin-treasury-firm-sells-btc",
       "source": "Decrypt",
       "published_at": "Tue, 31 Mar 2026 15:25:56 +0000"
-    },
-    {
-      "title": "US Users Barred From KuCoin After $500K CFTC Settlement",
-      "url": "https://decrypt.co/362873/us-users-barred-from-kucoin-after-500k-cftc-settlement",
-      "source": "Decrypt",
-      "published_at": "Tue, 31 Mar 2026 13:34:36 +0000"
     },
     {
       "title": "Nakamoto Unloads $20M in Bitcoin, Trimming Its Metaplanet Position",
