@@ -1,6 +1,168 @@
 {
   "articles": [
     {
+      "title": "Attacking bitcoin mining with a quantum computer would require the energy of a star, academics say",
+      "url": "https://www.coindesk.com/tech/2026/04/08/attacking-bitcoin-mining-with-a-quantum-computer-would-require-the-energy-of-a-star-academics-say",
+      "source": "Coindesk",
+      "published_at": "Wed, 08 Apr 2026 05:42:54 +0000"
+    },
+    {
+      "title": "Trump secures two week ceasefire with Iran, Bitcoin reclaims $70k",
+      "url": "https://crypto.news/trump-secures-two-week-ceasefire-with-iran-bitcoin-reclaims-70k/",
+      "source": "BTCManager",
+      "published_at": "Wed, 08 Apr 2026 05:31:21 +0000"
+    },
+    {
+      "title": "Trump secures two week ceasefire with Iran, Bitcoin reclaims $70k",
+      "url": "https://crypto.news/trump-secures-two-week-ceasefire-with-iran-bitcoin-reclaims-70k/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 08 Apr 2026 05:31:21 +0000"
+    },
+    {
+      "title": "Why Long-Term Profitability Remains Elusive for 99% of Polymarket Users",
+      "url": "https://news.bitcoin.com/why-long-term-profitability-remains-elusive-for-99-of-polymarket-users/",
+      "source": "Bitcoin.com",
+      "published_at": "Wed, 08 Apr 2026 05:30:47 +0000"
+    },
+    {
+      "title": "Analyzing how Bitcoin’s short-term holders and $64K-level can unlock market bulls",
+      "url": "https://ambcrypto.com/analyzing-how-bitcoins-short-term-holders-and-64k-level-can-unlock-market-bulls/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 08 Apr 2026 05:30:36 +0000"
+    },
+    {
+      "title": "Whale.io Launches the First AI Agent MCP for Crypto Casino",
+      "url": "https://cryptopotato.com/whale-io-launches-the-first-ai-agent-mcp-for-crypto-casino/",
+      "source": "CryptoPotato",
+      "published_at": "Wed, 08 Apr 2026 05:29:37 +0000"
+    },
+    {
+      "title": "Islamabad Talks Collide With Friday’s $2 Billion Options Expiry as Ceasefire Crushes Volatility",
+      "url": "https://beincrypto.com/islamabad-talks-btc-options-expiry-volatility/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 08 Apr 2026 05:08:55 +0000"
+    },
+    {
+      "title": "Solana (SOL) Eyes $88 Break, Will Bulls Finally Push Higher?",
+      "url": "https://www.newsbtc.com/analysis/solana-sol-eyes-88-break/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 08 Apr 2026 05:08:18 +0000"
+    },
+    {
+      "title": "Why Is The Crypto Market Up Today?",
+      "url": "https://beincrypto.com/why-is-the-crypto-market-up-today/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 08 Apr 2026 05:07:11 +0000"
+    },
+    {
+      "title": "Is DeFi Development Corp’s Solana bet finally paying off?",
+      "url": "https://ambcrypto.com/is-defi-development-corps-solana-bet-finally-paying-off/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 08 Apr 2026 05:00:49 +0000"
+    },
+    {
+      "title": "FDIC Advances Rulemaking For GENIUS Act: New Framework For Stablecoin Issuers",
+      "url": "https://www.newsbtc.com/crypto/fdic-advances-rulemaking-for-genius-act-new-framework-for-stablecoin-issuers/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 08 Apr 2026 05:00:27 +0000"
+    },
+    {
+      "title": "Grayscale Highlights XRP’s Push To Counter Quantum Risk",
+      "url": "https://bitcoinist.com/grayscale-highlights-xrps-push-to-counter-quantum-risk/",
+      "source": "Bitcoinist",
+      "published_at": "Wed, 08 Apr 2026 05:00:00 +0000"
+    },
+    {
+      "title": "Stablecoin liquidity: How Coins.ph is redefining corporate treasury for 24/7 markets",
+      "url": "https://coingeek.com/stablecoin-liquidity-how-coins-ph-is-redefining-corporate-treasury-for-24-7-markets/",
+      "source": "CoinGeek",
+      "published_at": "Wed, 08 Apr 2026 05:00:00 +0000"
+    },
+    {
+      "title": "Bitcoin Taps $72K as Trump Agrees to Two-Week Ceasefire With Iran",
+      "url": "https://cryptopotato.com/bitcoin-taps-72k-as-trump-agrees-to-two-week-ceasefire-with-iran/",
+      "source": "CryptoPotato",
+      "published_at": "Wed, 08 Apr 2026 04:54:28 +0000"
+    },
+    {
+      "title": "XRP zooms 5% on bitcoin strength, but trend reversal still unconfirmed",
+      "url": "https://www.coindesk.com/markets/2026/04/08/xrp-zooms-5-on-bitcoin-strength-but-trend-reversal-still-unconfirmed",
+      "source": "Coindesk",
+      "published_at": "Wed, 08 Apr 2026 04:49:00 +0000"
+    },
+    {
+      "title": "Morgan Stanley's Bitcoin ETF set to launch on Wednesday",
+      "url": "https://cointelegraph.com/news/morgan-stanley-bitcoin-etf-debut-wednesday?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 08 Apr 2026 05:42:37 +0100"
+    },
+    {
+      "title": "Anthropic limits access to AI model, fearing future of cyberattacks",
+      "url": "https://cointelegraph.com/news/claude-mythos-finds-thousands-of-zero-day-os-and-browser-vulnerabilities?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 08 Apr 2026 05:30:59 +0100"
+    },
+    {
+      "title": "Optimove Acquires Smartico in iGaming CRM Consolidation Play",
+      "url": "https://news.bitcoin.com/optimove-acquires-smartico-in-igaming-crm-consolidation-play/",
+      "source": "Bitcoin.com",
+      "published_at": "Wed, 08 Apr 2026 04:30:50 +0000"
+    },
+    {
+      "title": "‘Wrong approach’ – Crypto lobby rejects Wall Street’s tighter DeFi rules for tokenized securities",
+      "url": "https://ambcrypto.com/wrong-approach-crypto-lobby-rejects-wall-streets-tighter-defi-rules-for-tokenized-securities/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 08 Apr 2026 04:30:25 +0000"
+    },
+    {
+      "title": "FBI Data Reveals Who Scammers Targeted Most as Crypto Fraud Losses Hit $11.4 Billion",
+      "url": "https://beincrypto.com/fbi-crypto-fraud-losses-2025-report/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 08 Apr 2026 04:29:55 +0000"
+    },
+    {
+      "title": "XRP Price Pushes Higher, Can Bulls Crack $1.40 Resistance?",
+      "url": "https://www.newsbtc.com/analysis/xrp/xrp-price-pushes-higher-1-40/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 08 Apr 2026 04:28:18 +0000"
+    },
+    {
+      "title": "Bitcoin, ether, oil shorts lead $427 million wipeout on US-Iran ceasefire",
+      "url": "https://www.coindesk.com/markets/2026/04/08/bitcoin-ether-oil-shorts-lead-usd427-million-wipeout-on-us-iran-ceasefire",
+      "source": "Coindesk",
+      "published_at": "Wed, 08 Apr 2026 04:25:32 +0000"
+    },
+    {
+      "title": "BloFin Research: Silver’s Physical Tightness is a Bullish Signal",
+      "url": "https://beincrypto.com/silver-price-outlook-blofin-research/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 08 Apr 2026 04:14:27 +0000"
+    },
+    {
+      "title": "XRP Steals the Spotlight With Biggest Weekly Surge Since December 2025",
+      "url": "https://cryptopotato.com/xrp-steals-the-spotlight-with-biggest-weekly-surge-since-december-2025/",
+      "source": "CryptoPotato",
+      "published_at": "Wed, 08 Apr 2026 04:10:47 +0000"
+    },
+    {
+      "title": "AAVE Whales Shed Nearly 1 Million Tokens as Exchange Reserves Flip Bearish",
+      "url": "https://beincrypto.com/aave-whales-sell-exchange-reserves-bearish/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 08 Apr 2026 04:07:43 +0000"
+    },
+    {
+      "title": "South Korea Imposes 5-Minute Audit Rule On Crypto Platforms",
+      "url": "https://www.newsbtc.com/news/south-korea-imposes-5-minute-audit-rule-on-crypto-platforms/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 08 Apr 2026 04:00:11 +0000"
+    },
+    {
+      "title": "Ripple Maps 2026 Shift In African Crypto Rules: What Regulators Are Changing",
+      "url": "https://bitcoinist.com/ripple-maps-2026-shift-in-african-crypto-rules/",
+      "source": "Bitcoinist",
+      "published_at": "Wed, 08 Apr 2026 04:00:05 +0000"
+    },
+    {
       "title": "Rwanda Central Bank: Crypto P2P Trading With FRW Carries Serious Financial Risks",
       "url": "https://news.bitcoin.com/rwanda-central-bank-crypto-p2p-trading-with-frw-carries-serious-financial-risks/",
       "source": "Bitcoin.com",
@@ -11,6 +173,12 @@
       "url": "https://www.newsbtc.com/analysis/eth/ethereum-price-surges-over-2200/",
       "source": "NewsBTC",
       "published_at": "Wed, 08 Apr 2026 03:18:35 +0000"
+    },
+    {
+      "title": "Bitcoin Caught In The Crossfire As Trump’s Iran Deadline Nears",
+      "url": "https://bitcoinist.com/bitcoin-caught-in-the-crossfire-as-trumps-iran-deadline-nears/",
+      "source": "Bitcoinist",
+      "published_at": "Wed, 08 Apr 2026 03:00:48 +0000"
     },
     {
       "title": "XRP Leads Crypto Funds $224M Rebound With Largest Weekly Inflows Since December",
@@ -151,12 +319,6 @@
       "published_at": "Wed, 08 Apr 2026 00:07:02 +0000"
     },
     {
-      "title": "A Key Bitcoin Signal Is Quietly Building While The Price Stays Flat: Here Is What to Watch Next",
-      "url": "https://www.newsbtc.com/bitcoin-news/a-key-bitcoin-signal-is-quietly-building-while-the-price-stays-flat-here-is-what-to-watch-next/",
-      "source": "NewsBTC",
-      "published_at": "Wed, 08 Apr 2026 00:00:08 +0000"
-    },
-    {
       "title": "Altcoin Inflows To Binance Just Hit A 3-Month High. The Reason Is Not What You Would Expect",
       "url": "https://bitcoinist.com/altcoin-inflows-to-binance-just-hit-a-3-month-high/",
       "source": "Bitcoinist",
@@ -247,12 +409,6 @@
       "published_at": "Tue, 07 Apr 2026 23:00:57 +0000"
     },
     {
-      "title": "XRP Fake Pump Or Real Shift? Here’s What The Structure Is Saying",
-      "url": "https://www.newsbtc.com/analysis/xrp/xrp-fake-pump-or-real-shift/",
-      "source": "NewsBTC",
-      "published_at": "Tue, 07 Apr 2026 23:00:55 +0000"
-    },
-    {
       "title": "Michael Saylor Says Bitcoin 4-Year Cycle Is Over, But This Is A Good Thing For Price",
       "url": "https://bitcoinist.com/bitcoin-4-year-cycle-is-over/",
       "source": "Bitcoinist",
@@ -311,12 +467,6 @@
       "url": "https://ambcrypto.com/river-jumps-19-as-short-liquidations-spike-rally-sustainable-if/",
       "source": "Ambcrypto",
       "published_at": "Tue, 07 Apr 2026 22:00:40 +0000"
-    },
-    {
-      "title": "Can An Altcoin Season Come Again? Why Bitcoin Price Can’t Fall Below $40,000",
-      "url": "https://www.newsbtc.com/news/bitcoin/altcoin-season-come-again/",
-      "source": "NewsBTC",
-      "published_at": "Tue, 07 Apr 2026 22:00:13 +0000"
     },
     {
       "title": "XRP Waning Price Action Drives Supply Deeper Into The Loss Territory",
@@ -391,18 +541,6 @@
       "published_at": "Tue, 07 Apr 2026 21:00:29 +0000"
     },
     {
-      "title": "Bitcoin Transactions Hit Highest Since 2024—But Fees Remain Low",
-      "url": "https://bitcoinist.com/bitcoin-transactions-highest-since-2024-fees-low/",
-      "source": "Bitcoinist",
-      "published_at": "Tue, 07 Apr 2026 21:00:11 +0000"
-    },
-    {
-      "title": "XRP Spot Buying Hits $520M While Futures Stay Negative. Here Is the Signal To Watch For A Real Move",
-      "url": "https://www.newsbtc.com/xrp-news/xrp-spot-buying-hits-520m-while-futures-stay-negative-here-is-the-signal-to-watch-for-a-real-move/",
-      "source": "NewsBTC",
-      "published_at": "Tue, 07 Apr 2026 21:00:04 +0000"
-    },
-    {
       "title": "Crypto Market Update: Iran Is Charging Stablecoins to Pass Through Hormuz — but Bitcoin Is Losing the War Hedge Debate",
       "url": "https://crypto.news/crypto-market-update-irans-hormuz-crypto-toll/",
       "source": "BTCManager",
@@ -449,12 +587,6 @@
       "url": "https://crypto.news/uniswap-price-jumps-on-perp-squeeze-but-chart-still-screams-range/",
       "source": "CryptoNews",
       "published_at": "Tue, 07 Apr 2026 20:34:23 +0000"
-    },
-    {
-      "title": "Solana DEX Warns Liquidity Providers to Withdraw After North Korean Employee Link Surfaces",
-      "url": "https://news.bitcoin.com/solana-dex-warns-liquidity-providers-to-withdraw-after-north-korean-employee-link-surfaces/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 07 Apr 2026 20:30:54 +0000"
     },
     {
       "title": "US Politics News Today: A Georgia Special Election Is Happening Right Now — And It Could Predict the November Midterms",
@@ -527,18 +659,6 @@
       "url": "https://ambcrypto.com/memecores-rejection-at-3-traps-bulls-heres-what-happens-next/",
       "source": "Ambcrypto",
       "published_at": "Tue, 07 Apr 2026 20:00:23 +0000"
-    },
-    {
-      "title": "Here’s Why The Dogecoin Price Could See Big Gains Soon",
-      "url": "https://bitcoinist.com/dogecoin-to-see-big-gains-soon/",
-      "source": "Bitcoinist",
-      "published_at": "Tue, 07 Apr 2026 20:00:10 +0000"
-    },
-    {
-      "title": "HTX Releases “2026 Digital Asset Trends White Paper”: Regime Shift of Global Liquidity Defines a New Era of On-Chain Finance",
-      "url": "https://news.bitcoin.com/htx-releases-2026-digital-asset-trends-white-paper-regime-shift-of-global-liquidity-defines-a-new-era-of-on-chain-finance/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 07 Apr 2026 20:00:07 +0000"
     },
     {
       "title": "Iran Nuclear Plant Strike War News: IAEA Says Attacks Near Bushehr Risk a Radiation Disaster Beyond Iran’s Borders",
@@ -649,12 +769,6 @@
       "published_at": "Tue, 07 Apr 2026 19:07:47 +0000"
     },
     {
-      "title": "Circle’s USYC hits $2.68B as 95% of AUM moves to BNB Chain: Details",
-      "url": "https://ambcrypto.com/circles-usyc-hits-2-68b-as-95-of-aum-moves-to-bnb-chain-details/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 07 Apr 2026 19:00:56 +0000"
-    },
-    {
       "title": "Iran US Ceasefire Deal Update: Tehran Exits Talks After Trump’s Post — But the Picture Is Murky",
       "url": "https://crypto.news/iran-us-ceasefire-deal-update-tehran-exits-peace-talks/",
       "source": "BTCManager",
@@ -683,12 +797,6 @@
       "url": "https://crypto.news/whitebit-secures-broker-license-in-georgia/",
       "source": "CryptoNews",
       "published_at": "Tue, 07 Apr 2026 18:46:23 +0000"
-    },
-    {
-      "title": "Morgan Stanley Readies Spot Bitcoin ETF For Wednesday Debut – What Investors Should Know",
-      "url": "https://bitcoinist.com/morgan-stanley-spot-bitcoin-etf-for-wednesday-debut/",
-      "source": "Bitcoinist",
-      "published_at": "Tue, 07 Apr 2026 18:43:09 +0000"
     },
     {
       "title": "US Iran War Latest News: America Strikes Iran’s Biggest Oil Hub at Kharg Island — Oil Prices Today Jump to $116",
@@ -779,12 +887,6 @@
       "url": "https://crypto.news/circle-mints-1-billion-usdc-in-24-hours-as-institutional-flows-surge/",
       "source": "CryptoNews",
       "published_at": "Tue, 07 Apr 2026 17:34:45 +0000"
-    },
-    {
-      "title": "Why Is the US Stock Market Down Today?",
-      "url": "https://beincrypto.com/us-stock-market-live-update-before-trump-iran-deadline/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 07 Apr 2026 17:31:55 +0000"
     },
     {
       "title": "Bitcoin (BTC) Accumulation Zones: Where Are the Next Big Opportunities",
@@ -1075,12 +1177,6 @@
       "published_at": "Tue, 07 Apr 2026 15:15:55 +0100"
     },
     {
-      "title": "Ripple Reveals $33 Trillion Stablecoin Prediction at XRP Tokyo 2026",
-      "url": "https://beincrypto.com/ripple-stablecoin-prediction-xrp-tokyo-2026/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 07 Apr 2026 14:13:52 +0000"
-    },
-    {
       "title": "Aave’s $25 billion lending empire faces a real test as key contributors exit",
       "url": "https://cryptoslate.com/aave-contributor-exits-put-25b-lending-lead-to-the-test/",
       "source": "CryptoSlate",
@@ -1093,28 +1189,10 @@
       "published_at": "Tue, 07 Apr 2026 15:02:45 +0100"
     },
     {
-      "title": "Trump’s Ultimatum Splits Markets Between Nuclear Fear and “TACO Tuesday”",
-      "url": "https://beincrypto.com/bitcoin-trump-iran-ultimatum-market-split/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 07 Apr 2026 14:01:12 +0000"
-    },
-    {
       "title": "Proposed Ethereum Standard Aims to Help AI Agents Execute Complex DeFi Trades",
       "url": "https://decrypt.co/363473/proposed-ethereum-standard-ai-agents-execute-complex-defi-trades",
       "source": "Decrypt",
       "published_at": "Tue, 07 Apr 2026 14:01:03 +0000"
-    },
-    {
-      "title": "What to Expect From NVIDIA Stock Price in April 2026?",
-      "url": "https://beincrypto.com/nvidia-stock-price-april-2026-outlook/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 07 Apr 2026 14:00:00 +0000"
-    },
-    {
-      "title": "TON Partners with SCRYPT to Enable Institutional Access to Stablecoins",
-      "url": "https://beincrypto.com/ton-scrypt-usdt-infrastructure/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 07 Apr 2026 14:00:00 +0000"
     },
     {
       "title": "Crypto's $224 million inflow rebound was led by mostly one country and XRP",
@@ -1465,12 +1543,6 @@
       "published_at": "Tue, 07 Apr 2026 09:22:15 +0000"
     },
     {
-      "title": "Solana rolls out ‘STRIDE,’ a DeFi-wide security push after $285 mln Drift breach",
-      "url": "https://ambcrypto.com/solana-rolls-out-stride-a-defi-wide-security-push-after-285-mln-drift-breach/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 07 Apr 2026 09:15:30 +0000"
-    },
-    {
       "title": "These Alts Bleed the Most as Bitcoin Was Rejected at $70K: Market Watch",
       "url": "https://cryptopotato.com/these-alts-bleed-the-most-as-bitcoin-was-rejected-at-70k-market-watch/",
       "source": "CryptoPotato",
@@ -1487,12 +1559,6 @@
       "url": "https://crypto.news/ethereum-price-forms-double-top-as-market-reacts-to-iran-tensions-will-it-crash/",
       "source": "CryptoNews",
       "published_at": "Tue, 07 Apr 2026 09:07:18 +0000"
-    },
-    {
-      "title": "Bitcoin nears $70K: Could FOMO drive BTC higher despite macro risks?",
-      "url": "https://ambcrypto.com/bitcoin-nears-70k-could-fomo-drive-btc-higher-despite-macro-risks/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 07 Apr 2026 09:00:48 +0000"
     },
     {
       "title": "Chainalysis unveils AI agents to fight on-chain crime",
@@ -1609,18 +1675,6 @@
       "published_at": "Tue, 07 Apr 2026 06:40:29 +0000"
     },
     {
-      "title": "SEC crypo safe harbor framework reaches White House",
-      "url": "https://crypto.news/sec-crypo-safe-harbor-framework-reaches-white-house/",
-      "source": "BTCManager",
-      "published_at": "Tue, 07 Apr 2026 06:38:52 +0000"
-    },
-    {
-      "title": "SEC crypo safe harbor framework reaches White House",
-      "url": "https://crypto.news/sec-crypo-safe-harbor-framework-reaches-white-house/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 07 Apr 2026 06:38:52 +0000"
-    },
-    {
       "title": "Bitcoin ETF inflows hit highest level since February",
       "url": "https://www.coindesk.com/markets/2026/04/07/bitcoin-etf-inflows-hit-highest-level-since-february",
       "source": "Coindesk",
@@ -1631,18 +1685,6 @@
       "url": "https://cointelegraph.com/news/bitcoin-quantum-challenges-more-social-than-technical-grayscale?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Tue, 07 Apr 2026 06:46:56 +0100"
-    },
-    {
-      "title": "XRP slips to $1.31 after failed breakout as liquidity dries up",
-      "url": "https://www.coindesk.com/markets/2026/04/07/xrp-slips-to-usd1-31-after-failed-breakout-as-liquidity-dries-up",
-      "source": "Coindesk",
-      "published_at": "Tue, 07 Apr 2026 05:41:56 +0000"
-    },
-    {
-      "title": "Bitcoin miners face a new rival for cheap power as Anthropic signs multi-gigawatt compute deal",
-      "url": "https://www.coindesk.com/tech/2026/04/07/bitcoin-miners-face-a-new-rival-for-cheap-power-as-anthropic-signs-multi-gigawatt-compute-deal",
-      "source": "Coindesk",
-      "published_at": "Tue, 07 Apr 2026 05:01:18 +0000"
     },
     {
       "title": "Rwanda to phase out ID cards, embrace digital ID by 2027",
@@ -1657,28 +1699,10 @@
       "published_at": "Tue, 07 Apr 2026 05:52:38 +0100"
     },
     {
-      "title": "Bitcoin, ether, solana hold steady as Trump sets Tuesday night deadline for Iran deal",
-      "url": "https://www.coindesk.com/markets/2026/04/07/bitcoin-ether-solana-hold-steady-as-trump-sets-tuesday-night-deadline-for-iran-deal",
-      "source": "Coindesk",
-      "published_at": "Tue, 07 Apr 2026 04:30:53 +0000"
-    },
-    {
       "title": "Bitcoin Network Activity Jumps Higher, Will BTC Prices Follow?",
       "url": "https://cryptopotato.com/bitcoin-network-activity-jumps-higher-will-btc-prices-follow/",
       "source": "CryptoPotato",
       "published_at": "Tue, 07 Apr 2026 04:30:01 +0000"
-    },
-    {
-      "title": "Crypto market safe harbor lands at White House for review",
-      "url": "https://cointelegraph.com/news/regulation-crypto-assets-safe-harbor-lands-at-white-house-for-final-review-sec-chair-atkins?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 07 Apr 2026 05:13:33 +0100"
-    },
-    {
-      "title": "New evidence in Libra probe renews questions about Milei involvement",
-      "url": "https://cointelegraph.com/news/milei-libra-token-investigation-new-evidence-raises-questions?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 07 Apr 2026 05:11:26 +0100"
     },
     {
       "title": "Jamie Dimon Says AI Will Impact 'Virtually Every Function' at JPMorgan Chase",
@@ -2005,24 +2029,6 @@
       "published_at": "Mon, 06 Apr 2026 04:54:40 +0000"
     },
     {
-      "title": "Binance Controls $1.8T: Derivatives Now Driving 90% of Crypto Exchange Volume",
-      "url": "https://cryptopotato.com/binance-controls-1-8t-derivatives-now-driving-90-of-crypto-exchange-volume/",
-      "source": "CryptoPotato",
-      "published_at": "Sun, 05 Apr 2026 21:15:27 +0000"
-    },
-    {
-      "title": "Ripple (XRP) ETFs Went From Bad to Worse: First Red Month and No Inflow Days",
-      "url": "https://cryptopotato.com/ripple-xrp-etfs-went-from-bad-to-worse-first-red-month-and-no-inflow-days/",
-      "source": "CryptoPotato",
-      "published_at": "Sun, 05 Apr 2026 19:03:52 +0000"
-    },
-    {
-      "title": "Calm Before the BTC Storm as Trump Says a Deal or Obliteration Is Next for Iran?",
-      "url": "https://cryptopotato.com/calm-before-the-btc-storm-as-trump-says-a-deal-or-obliteration-is-next-for-iran/",
-      "source": "CryptoPotato",
-      "published_at": "Sun, 05 Apr 2026 15:38:16 +0000"
-    },
-    {
       "title": "AI Giant Anthropic Files to Launch 'AnthroPAC' Amid Clash With Trump Administration",
       "url": "https://decrypt.co/363355/ai-giant-anthropic-anthropac-clash-trump-administration",
       "source": "Decrypt",
@@ -2057,12 +2063,6 @@
       "url": "https://coingeek.com/spain-digital-id-enters-phase-2-rollout-via-midni-app/",
       "source": "CoinGeek",
       "published_at": "Fri, 03 Apr 2026 09:00:00 +0000"
-    },
-    {
-      "title": "Canada proposes curbs on crypto donations to parties",
-      "url": "https://coingeek.com/canada-proposes-curbs-on-crypto-donations-to-parties/",
-      "source": "CoinGeek",
-      "published_at": "Fri, 03 Apr 2026 07:00:00 +0000"
     }
   ]
 }
