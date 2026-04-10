@@ -1,6 +1,132 @@
 {
   "articles": [
     {
+      "title": "Powell, Bessent Warn Banks About Security Risks From Anthropic's Mythos AI: Bloomberg",
+      "url": "https://decrypt.co/363927/powell-bessent-warn-banks-security-anthropic-mythos-ai",
+      "source": "Decrypt",
+      "published_at": "Fri, 10 Apr 2026 15:45:18 +0000"
+    },
+    {
+      "title": "Trump-Linked WLFI Erases $427 Million From Market Cap on DeFi Loan, Token Unlock Proposal",
+      "url": "https://decrypt.co/363928/trump-linked-wlfi-erases-427-million-token-unlock-proposal-defi-loan",
+      "source": "Decrypt",
+      "published_at": "Fri, 10 Apr 2026 15:39:07 +0000"
+    },
+    {
+      "title": "Star Xu calls CZ a ‘liar’ as founders of world’s largest crypto exchanges argue over past allegations",
+      "url": "https://www.coindesk.com/business/2026/04/10/star-xu-calls-cz-a-liar-as-founders-of-world-s-largest-crypto-exchanges-argue-over-past-allegations",
+      "source": "Coindesk",
+      "published_at": "Fri, 10 Apr 2026 15:38:47 +0000"
+    },
+    {
+      "title": "BitTensor AI Token Plunges as Top Builder Departs Over Decentralization Doubts",
+      "url": "https://decrypt.co/363926/bittensor-token-plunges-builder-departs-decentralization-doubts",
+      "source": "Decrypt",
+      "published_at": "Fri, 10 Apr 2026 15:30:44 +0000"
+    },
+    {
+      "title": "Analyst Says The Real XRP Move Hasn’t Happened Yet, What To Expect",
+      "url": "https://bitcoinist.com/real-xrp-move-hasnt-happened/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 10 Apr 2026 15:30:40 +0000"
+    },
+    {
+      "title": "Hong Kong Grants First Stablecoin Licences to HSBC, Standard Chartered Consortium",
+      "url": "https://news.bitcoin.com/hong-kong-grants-first-stablecoin-licences-to-hsbc-standard-chartered-consortium/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 10 Apr 2026 15:30:10 +0000"
+    },
+    {
+      "title": "Bittensor's TAO risks 45% dip amid 'decentralization theater' accusation",
+      "url": "https://cointelegraph.com/news/bittensor-s-tao-risks-45percent-dip-amid-decentralization-theater-accusation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 10 Apr 2026 16:30:00 +0100"
+    },
+    {
+      "title": "The magic word for digital assets adoption and success: choice",
+      "url": "https://www.coindesk.com/opinion/2026/04/10/the-magic-word-for-digital-assets-adoption-and-success-choice",
+      "source": "Coindesk",
+      "published_at": "Fri, 10 Apr 2026 15:30:00 +0000"
+    },
+    {
+      "title": "Ethereum meets the Strait of Hormuz as analyst bets on bears, will price go sub $2k again?",
+      "url": "https://crypto.news/ethereum-meets-the-strait-of-hormuz-as-analyst-bets-on-bears-will-price-go-sub-2k-again/",
+      "source": "BTCManager",
+      "published_at": "Fri, 10 Apr 2026 15:26:12 +0000"
+    },
+    {
+      "title": "Ethereum meets the Strait of Hormuz as analyst bets on bears, will price go sub $2k again?",
+      "url": "https://crypto.news/ethereum-meets-the-strait-of-hormuz-as-analyst-bets-on-bears-will-price-go-sub-2k-again/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 10 Apr 2026 15:26:12 +0000"
+    },
+    {
+      "title": "CZ’s prison‑born ‘Freedom of Money’ lights up crypto’s fault lines",
+      "url": "https://crypto.news/czs-prison-born-freedom-of-money-lights-up-cryptos-fault-lines/",
+      "source": "BTCManager",
+      "published_at": "Fri, 10 Apr 2026 15:18:20 +0000"
+    },
+    {
+      "title": "CZ’s prison‑born ‘Freedom of Money’ lights up crypto’s fault lines",
+      "url": "https://crypto.news/czs-prison-born-freedom-of-money-lights-up-cryptos-fault-lines/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 10 Apr 2026 15:18:20 +0000"
+    },
+    {
+      "title": "Zcash price cools after parabolic run as derivatives froth flashes risk, is $400 in range?",
+      "url": "https://crypto.news/zcash-price-cools-after-parabolic-run-as-derivatives-froth-flashes-risk-is-400-in-range/",
+      "source": "BTCManager",
+      "published_at": "Fri, 10 Apr 2026 15:12:06 +0000"
+    },
+    {
+      "title": "Zcash price cools after parabolic run as derivatives froth flashes risk, is $400 in range?",
+      "url": "https://crypto.news/zcash-price-cools-after-parabolic-run-as-derivatives-froth-flashes-risk-is-400-in-range/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 10 Apr 2026 15:12:06 +0000"
+    },
+    {
+      "title": "Circle defends USDC freeze policy after Drift exploit, calls for faster legal frameworks",
+      "url": "https://ambcrypto.com/circle-defends-usdc-freeze-policy-after-drift-exploit-calls-for-faster-legal-frameworks/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 10 Apr 2026 15:03:15 +0000"
+    },
+    {
+      "title": "Bitcoin climbs 11% as accumulation enters day 11 – Is BTC’s bull run coming?",
+      "url": "https://ambcrypto.com/bitcoin-climbs-11-as-accumulation-enters-day-11-is-btcs-bull-run-coming/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 10 Apr 2026 15:00:45 +0000"
+    },
+    {
+      "title": "Bittensor sheds $900 million in market value as key AI developer exits amid in-fighting",
+      "url": "https://cryptoslate.com/bittensors-tao-plunges-27-after-top-ai-builder-exit/",
+      "source": "CryptoSlate",
+      "published_at": "Fri, 10 Apr 2026 15:00:26 +0000"
+    },
+    {
+      "title": "Japan Passes Bill Reclassifying Crypto as Financial Instruments",
+      "url": "https://news.bitcoin.com/japan-passes-bill-reclassifying-crypto-as-financial-instruments/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 10 Apr 2026 14:51:12 +0000"
+    },
+    {
+      "title": "Cardano price prediction: ADA eyes $1.15 while BlockchainFX emerges as the next 100x crypto",
+      "url": "https://crypto.news/cardano-price-prediction-ada-eyes-1-15-while-blockchainfx-emerges-as-the-next-100x-crypto/",
+      "source": "BTCManager",
+      "published_at": "Fri, 10 Apr 2026 14:49:08 +0000"
+    },
+    {
+      "title": "Cardano price prediction: ADA eyes $1.15 while BlockchainFX emerges as the next 100x crypto",
+      "url": "https://crypto.news/cardano-price-prediction-ada-eyes-1-15-while-blockchainfx-emerges-as-the-next-100x-crypto/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 10 Apr 2026 14:49:08 +0000"
+    },
+    {
+      "title": "Bittensor (TAO) Collapses 20% Daily: Here’s What Happened",
+      "url": "https://cryptopotato.com/bittensor-tao-collapses-20-daily-heres-what-happened/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 10 Apr 2026 14:46:46 +0000"
+    },
+    {
       "title": "Gotbit’s fake trades haunt Cere as $157m suits hit Lime chair",
       "url": "https://crypto.news/gotbits-fake-trades-haunt-cere-as-157m-suits-hit-lime-chair/",
       "source": "BTCManager",
@@ -11,6 +137,24 @@
       "url": "https://crypto.news/gotbits-fake-trades-haunt-cere-as-157m-suits-hit-lime-chair/",
       "source": "CryptoNews",
       "published_at": "Fri, 10 Apr 2026 14:41:53 +0000"
+    },
+    {
+      "title": "Bitcoin hits $73K as cool US CPI data shows 60-year record gas price hike",
+      "url": "https://cointelegraph.com/news/bitcoin-hits-73k-as-cool-us-cpi-data-shows-60-year-record-gas-price-hike?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 10 Apr 2026 15:37:16 +0100"
+    },
+    {
+      "title": "White House warns staff as Iran bets add to growing insider trading concerns",
+      "url": "https://cointelegraph.com/news/white-house-insider-trading-warning-oil-prediction-markets?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 10 Apr 2026 15:28:02 +0100"
+    },
+    {
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 10 Apr 2026 15:15:14 +0100"
     },
     {
       "title": "Japan Moves to Classify Bitcoin and Crypto as Financial Instruments Under New Bill",
@@ -71,12 +215,6 @@
       "url": "https://cryptoslate.com/us-inflation-soars-to-3-3-in-largest-jump-since-2021-so-did-bitcoin-barely-move/",
       "source": "CryptoSlate",
       "published_at": "Fri, 10 Apr 2026 14:00:12 +0000"
-    },
-    {
-      "title": "Solana Gains Tokenized Stock Push As Traders Watch $1,000 Talk",
-      "url": "https://www.newsbtc.com/altcoin/solana-gains-tokenized-stock-push-as-traders-watch-1000-talk/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 14:00:01 +0000"
     },
     {
       "title": "Bitcoin May Avoid Immediate Quantum Upgrade With New Workaround: Study",
@@ -217,12 +355,6 @@
       "published_at": "Fri, 10 Apr 2026 13:00:06 +0000"
     },
     {
-      "title": "Why A Bitcoin Price Breakdown To $50,000 Could Be Important For Long-Term Bullishness",
-      "url": "https://www.newsbtc.com/news/bitcoin/bitcoin-price-breakdown-50000/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 13:00:02 +0000"
-    },
-    {
       "title": "Xandeum Opens Airdrop 2 Claims With Instant $XAND Access and No Vesting",
       "url": "https://beincrypto.com/xandeum-airdrop-2-instant-xand-claims/",
       "source": "BeinCrypto",
@@ -361,12 +493,6 @@
       "published_at": "Fri, 10 Apr 2026 11:45:23 +0000"
     },
     {
-      "title": "Pundit Says XRP Won’t Reach $10,000 The Way You Think, Here’s How It Will Happen",
-      "url": "https://www.newsbtc.com/analysis/xrp/how-xrp-10000-will-happen/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 11:30:54 +0000"
-    },
-    {
       "title": "Institutions' bitcoin positioning lacks conviction; CPI, Iran talks might help",
       "url": "https://www.coindesk.com/daybook-us/2026/04/10/institutions-bitcoin-positioning-lacks-conviction-cpi-iran-talks-might-help",
       "source": "Coindesk",
@@ -383,12 +509,6 @@
       "url": "https://news.bitcoin.com/teamz-summit-2026-recap-global-web3-meets-japan-at-a-historic-tokyo-venue/",
       "source": "Bitcoin.com",
       "published_at": "Fri, 10 Apr 2026 11:15:05 +0000"
-    },
-    {
-      "title": "Is XRP Safer Than Bitcoin? This Analyst Explains The Real Quantum Risk For Holders",
-      "url": "https://www.newsbtc.com/xrp-news/is-xrp-safer-than-bitcoin-this-analyst-explains-the-real-quantum-risk-for-holders/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 11:08:06 +0000"
     },
     {
       "title": "Analyst: XRP Better Positioned Than Bitcoin Against Quantum Attacks",
@@ -503,12 +623,6 @@
       "url": "https://ambcrypto.com/hyperliquid-can-a-2-3-mln-whale-buy-drive-hype-to-50/",
       "source": "Ambcrypto",
       "published_at": "Fri, 10 Apr 2026 10:00:58 +0000"
-    },
-    {
-      "title": "Bitcoin ETF Hype Hits Ceiling, Sharp Drop Risk Emerges: Analyst",
-      "url": "https://www.newsbtc.com/bitcoin-news/bitcoin-etf-hype-hits-ceiling-sharp-drop-risk-emerges-analyst/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 10:00:56 +0000"
     },
     {
       "title": "The fake website that led to an arrest: Inside the CoinDCX impersonation case",
@@ -655,12 +769,6 @@
       "published_at": "Fri, 10 Apr 2026 08:00:31 +0000"
     },
     {
-      "title": "XRP Eyes $17 After Massive Breakout—Is A 1,100% Surge Next?",
-      "url": "https://www.newsbtc.com/altcoin/xrp-eyes-17-after-massive-breakout-is-a-1100-surge-next/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 08:00:23 +0000"
-    },
-    {
       "title": "Crypto CEX Activity Cools: Volume Down 48% From Bitcoin ATH",
       "url": "https://bitcoinist.com/crypto-cex-activity-volume-down-48-bitcoin-ath/",
       "source": "Bitcoinist",
@@ -689,12 +797,6 @@
       "url": "https://ambcrypto.com/dogecoin-analyzing-the-effect-of-profit-taking-on-doges-latest-rally-attempts/",
       "source": "Ambcrypto",
       "published_at": "Fri, 10 Apr 2026 07:30:17 +0000"
-    },
-    {
-      "title": "Australia’s Own Impact Analysis Undercuts Landmark Gambling Ad Crackdown as New Zealand Delays Similar Action",
-      "url": "https://news.bitcoin.com/australias-own-impact-analysis-undercuts-landmark-gambling-ad-crackdown-as-new-zealand-delays-similar-action/",
-      "source": "Bitcoin.com",
-      "published_at": "Fri, 10 Apr 2026 07:30:04 +0000"
     },
     {
       "title": "Crypto market climbs back above $2.5T as $250M in short positions wiped out",
@@ -731,12 +833,6 @@
       "url": "https://ambcrypto.com/tron-inc-boosts-trx-holdings-to-690m-but-will-more-whales-and-institutions-follow/",
       "source": "Ambcrypto",
       "published_at": "Fri, 10 Apr 2026 07:00:53 +0000"
-    },
-    {
-      "title": "Solana Price At Risk As Key Pattern Emerges – Is $52 The Next Stop?",
-      "url": "https://www.newsbtc.com/news/solana-at-risk-pattern-emerges-52-next-stop/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 07:00:24 +0000"
     },
     {
       "title": "SEC Chair Presses Congress On Crypto Market Structure, Wants Bill To Reach President’s Desk",
@@ -779,12 +875,6 @@
       "url": "https://blockonomi.com/bitcoin-btc-surges-past-72k-following-netanyahus-lebanon-ceasefire-announcement/",
       "source": "Blockonomi",
       "published_at": "Fri, 10 Apr 2026 06:38:42 +0000"
-    },
-    {
-      "title": "Spot Crypto Volumes Drop Nearly 20% in March",
-      "url": "https://news.bitcoin.com/spot-crypto-volumes-drop-nearly-20-in-march/",
-      "source": "Bitcoin.com",
-      "published_at": "Fri, 10 Apr 2026 06:30:08 +0000"
     },
     {
       "title": "OKX backs VPBank-linked CAEX for Vietnam crypto pilot bid",
@@ -835,22 +925,10 @@
       "published_at": "Fri, 10 Apr 2026 06:05:59 +0000"
     },
     {
-      "title": "Polymarket Sees Record $153M Daily Volume After Chainlink Integration",
-      "url": "https://bitcoinist.com/polymarket-sees-record-153m-daily-volume-after-chainlink-integration/",
-      "source": "Bitcoinist",
-      "published_at": "Fri, 10 Apr 2026 06:00:50 +0000"
-    },
-    {
       "title": "XRP trading activity drops to 2021 lows – Bigger move ahead?",
       "url": "https://ambcrypto.com/xrp-trading-activity-drops-to-2021-lows-bigger-move-ahead/",
       "source": "Ambcrypto",
       "published_at": "Fri, 10 Apr 2026 06:00:25 +0000"
-    },
-    {
-      "title": "Zcash Breaks Out With 34% Surge—Is $440 The Next Target?",
-      "url": "https://www.newsbtc.com/news/zcash-zec/zcash-breaks-34-surge-is-440-the-next-target/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 06:00:22 +0000"
     },
     {
       "title": "Why is Bitcoin price stuck today?",
@@ -865,34 +943,10 @@
       "published_at": "Fri, 10 Apr 2026 05:45:35 +0000"
     },
     {
-      "title": "Cango sells 2,000 BTC in ‘strategic deleveraging’ as Bitcoin miners pivot to AI",
-      "url": "https://ambcrypto.com/cango-sells-2000-btc-in-strategic-deleveraging-as-bitcoin-miners-pivot-to-ai/",
-      "source": "Ambcrypto",
-      "published_at": "Fri, 10 Apr 2026 05:30:52 +0000"
-    },
-    {
-      "title": "Solana (SOL) Maintains Strength, Gradual Gains Signal Bullish Bias",
-      "url": "https://www.newsbtc.com/analysis/solana-sol-maintains-strength-82-5/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 05:08:02 +0000"
-    },
-    {
       "title": "XRP edges higher to $1.35 on breakout, but bullish momentum still lacks",
       "url": "https://www.coindesk.com/markets/2026/04/10/xrp-edges-higher-to-usd1-35-on-breakout-but-bullish-momentum-still-lacks",
       "source": "Coindesk",
       "published_at": "Fri, 10 Apr 2026 05:01:38 +0000"
-    },
-    {
-      "title": "Expert Forecasts Bitcoin Surge To $80,000 Amid US-Iran Ceasefire And Oil Price Drop",
-      "url": "https://www.newsbtc.com/bitcoin-news/expert-forecasts-bitcoin-surge-to-80000-amid-us-iran-ceasefire-and-oil-price-drop/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 10 Apr 2026 05:00:50 +0000"
-    },
-    {
-      "title": "Treasuries and yield funds – Is this the next phase of tokenization?",
-      "url": "https://ambcrypto.com/treasuries-and-yield-funds-is-this-the-next-phase-of-tokenization/",
-      "source": "Ambcrypto",
-      "published_at": "Fri, 10 Apr 2026 05:00:03 +0000"
     },
     {
       "title": "Digital payments rise but cash still leads in the Philippines",
@@ -1037,12 +1091,6 @@
       "url": "https://decrypt.co/363880/ai-advance-mankind-not-destroy-why-florida-investigating-openai",
       "source": "Decrypt",
       "published_at": "Thu, 09 Apr 2026 21:57:09 +0000"
-    },
-    {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 09 Apr 2026 22:46:57 +0100"
     },
     {
       "title": "US Political News Today: US Troops Who Survived an Iranian Attack That Killed 6 Americans Are Now Saying the Pentagon Lied About What Happened",
@@ -1405,22 +1453,10 @@
       "published_at": "Thu, 09 Apr 2026 17:05:19 +0000"
     },
     {
-      "title": "TON blockchain claims sub-second finality with Catchain 2.0 upgrade",
-      "url": "https://cointelegraph.com/news/ton-sub-second-finality-catchain-2?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 09 Apr 2026 17:59:26 +0100"
-    },
-    {
       "title": "Is Iran Collecting Hormuz Tolls in Bitcoin? This Crypto Intelligence Firm Is Skeptical",
       "url": "https://decrypt.co/363828/iran-hormuz-tolls-bitcoin-crypto-intelligence-firm-skeptical",
       "source": "Decrypt",
       "published_at": "Thu, 09 Apr 2026 16:55:31 +0000"
-    },
-    {
-      "title": "Three reasons why Ether traders expect ETH to hold above $1.8K",
-      "url": "https://cointelegraph.com/news/three-reasons-why-ether-traders-expect-eth-to-hold-above-dollar1-8k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 09 Apr 2026 17:45:36 +0100"
     },
     {
       "title": "Bitcoin Profit Supply Drops to 59%, Closing In on Bear Market Levels",
@@ -1439,12 +1475,6 @@
       "url": "https://crypto.news/uk-led-operation-atlantic-freezes-12-million-in-crypto-scam-funds/",
       "source": "CryptoNews",
       "published_at": "Thu, 09 Apr 2026 16:38:40 +0000"
-    },
-    {
-      "title": "Binance rolls out prediction markets for app using Predict.fun",
-      "url": "https://cointelegraph.com/news/binance-prediction-markets-app?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 09 Apr 2026 17:34:33 +0100"
     },
     {
       "title": "Tether’s QVAC SDK brings local, offline AI to mainstream devices",
@@ -1561,18 +1591,6 @@
       "published_at": "Thu, 09 Apr 2026 15:49:07 +0000"
     },
     {
-      "title": "SEC chair says agency is ready to implement CLARITY Act once Congress acts",
-      "url": "https://crypto.news/sec-chair-says-agency-is-ready-to-implement-clarity-act-once-congress-acts/",
-      "source": "BTCManager",
-      "published_at": "Thu, 09 Apr 2026 15:43:46 +0000"
-    },
-    {
-      "title": "SEC chair says agency is ready to implement CLARITY Act once Congress acts",
-      "url": "https://crypto.news/sec-chair-says-agency-is-ready-to-implement-clarity-act-once-congress-acts/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 09 Apr 2026 15:43:46 +0000"
-    },
-    {
       "title": "Bitcoin Signals Early Recovery Stage as Key Metrics Present Compelling Risk-Reward Setup",
       "url": "https://thecryptobasic.com/2026/04/09/bitcoin-signals-early-recovery-stage-as-key-metrics-present-compelling-risk-reward-setup/",
       "source": "CryptoBasic",
@@ -1583,18 +1601,6 @@
       "url": "https://decrypt.co/363818/openai-pauses-uk-ai-tech-nvidia-energy-costs-regulation",
       "source": "Decrypt",
       "published_at": "Thu, 09 Apr 2026 15:39:32 +0000"
-    },
-    {
-      "title": "Inside SCRYPT’s bid to be the OS for institutional crypto",
-      "url": "https://crypto.news/inside-scrypts-bid-to-be-the-os-for-institutional-crypto/",
-      "source": "BTCManager",
-      "published_at": "Thu, 09 Apr 2026 15:36:55 +0000"
-    },
-    {
-      "title": "Inside SCRYPT’s bid to be the OS for institutional crypto",
-      "url": "https://crypto.news/inside-scrypts-bid-to-be-the-os-for-institutional-crypto/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 09 Apr 2026 15:36:55 +0000"
     },
     {
       "title": "Market Technician Identifies Four Price Zones Bitcoin Could Bottom At",
@@ -1609,34 +1615,10 @@
       "published_at": "Thu, 09 Apr 2026 15:25:51 +0000"
     },
     {
-      "title": "Finestel report shows pros braced for Bitcoin’s February 2026 crash, will BTC recover?",
-      "url": "https://crypto.news/finestel-report-shows-pros-braced-for-bitcoins-february-2026-crash-will-btc-recover/",
-      "source": "BTCManager",
-      "published_at": "Thu, 09 Apr 2026 15:12:04 +0000"
-    },
-    {
-      "title": "Finestel report shows pros braced for Bitcoin’s February 2026 crash, will BTC recover?",
-      "url": "https://crypto.news/finestel-report-shows-pros-braced-for-bitcoins-february-2026-crash-will-btc-recover/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 09 Apr 2026 15:12:04 +0000"
-    },
-    {
       "title": "Stablecoin Giant Tether Launches Toolkit for Building Local, Offline AI Apps",
       "url": "https://decrypt.co/363809/stablecoin-giant-tether-launches-toolkit-for-building-local-offline-ai-apps",
       "source": "Decrypt",
       "published_at": "Thu, 09 Apr 2026 15:09:32 +0000"
-    },
-    {
-      "title": "Opinion Market debuts with a model where anyone can create a market from $1",
-      "url": "https://crypto.news/opinion-market-debuts-with-a-model-where-anyone-can-create-a-market-from-1/",
-      "source": "BTCManager",
-      "published_at": "Thu, 09 Apr 2026 15:08:22 +0000"
-    },
-    {
-      "title": "Opinion Market debuts with a model where anyone can create a market from $1",
-      "url": "https://crypto.news/opinion-market-debuts-with-a-model-where-anyone-can-create-a-market-from-1/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 09 Apr 2026 15:08:22 +0000"
     },
     {
       "title": "Bithumb Files to Seize Bitcoin From Holdouts After $43B Blunder",
@@ -1645,22 +1627,10 @@
       "published_at": "Thu, 09 Apr 2026 15:02:22 +0000"
     },
     {
-      "title": "Crypto for Advisors: Crypto’s Performance Q1",
-      "url": "https://www.coindesk.com/coindesk-indices/2026/04/08/crypto-for-advisors-crypto-s-performance-q1",
-      "source": "Coindesk",
-      "published_at": "Thu, 09 Apr 2026 15:00:00 +0000"
-    },
-    {
       "title": "Nunchuk Launches Open-Source Bitcoin Tools for AI Agents With 'Bounded Authority'",
       "url": "https://decrypt.co/363737/nunchuk-open-source-bitcoin-tools-ai-agents-bounded-authority",
       "source": "Decrypt",
       "published_at": "Thu, 09 Apr 2026 14:57:29 +0000"
-    },
-    {
-      "title": "Stablecoin volumes to reach $719T by 2035 as generational wealth shift speeds up crypto adoption",
-      "url": "https://www.coindesk.com/business/2026/04/09/stablecoin-volumes-to-reach-usd719t-by-2035-as-generational-wealth-shift-speeds-up-crypto-adoption",
-      "source": "Coindesk",
-      "published_at": "Thu, 09 Apr 2026 14:57:10 +0000"
     },
     {
       "title": "Morgan Stanley’s Bitcoin ETF Debuts With $34 Million in Volume",
@@ -1781,12 +1751,6 @@
       "url": "https://decrypt.co/363769/bitmex-co-founder-ben-delo-reveals-5-4m-donation-to-farages-reform-uk",
       "source": "Decrypt",
       "published_at": "Thu, 09 Apr 2026 10:26:40 +0000"
-    },
-    {
-      "title": "Ethereum Foundation is still selling ETH after it staked 70,000 coins",
-      "url": "https://cryptoslate.com/ethereum-foundation-eth-sale-undercuts-staking-selloff-thesis/",
-      "source": "CryptoSlate",
-      "published_at": "Thu, 09 Apr 2026 10:25:04 +0000"
     },
     {
       "title": "Market Updates: Bitcoin Depot Loses $3.7M in BTC Hack, ETH Slides after Foundation Sales, Canary Capital Files PEPE spot ETF",
@@ -1993,28 +1957,10 @@
       "published_at": "Wed, 08 Apr 2026 17:19:49 +0000"
     },
     {
-      "title": "Potential Insiders Made $600K Predicting US and Iran Ceasefire on Polymarket: Bubblemaps",
-      "url": "https://decrypt.co/363656/potential-insiders-600k-predicting-us-iran-ceasefire-polymarket-bubblemaps",
-      "source": "Decrypt",
-      "published_at": "Wed, 08 Apr 2026 17:17:31 +0000"
-    },
-    {
-      "title": "Partner of Trump-Backed World Liberty Linked to Sanctioned Cambodian Scam Company: Report",
-      "url": "https://decrypt.co/363617/partner-trump-backed-world-liberty-sanctioned-cambodian-scam-company",
-      "source": "Decrypt",
-      "published_at": "Wed, 08 Apr 2026 16:10:22 +0000"
-    },
-    {
       "title": "Bitcoin Rebound Gains Strength, Yet This Key Signal Warns It’s Not Over",
       "url": "https://cryptopotato.com/bitcoin-rebound-gains-strength-yet-this-key-signal-warns-its-not-over/",
       "source": "CryptoPotato",
       "published_at": "Wed, 08 Apr 2026 16:05:56 +0000"
-    },
-    {
-      "title": "Adam Back Denies He's Satoshi Nakamoto After NYT Names Him as Bitcoin Creator",
-      "url": "https://decrypt.co/363649/adam-back-denies-bitcoin-creator-satoshi-nakamoto-nyt-expose",
-      "source": "Decrypt",
-      "published_at": "Wed, 08 Apr 2026 16:00:34 +0000"
     },
     {
       "title": "Veteran Economist Jim Rickards Says Bitcoin ‘Easier to Hack Than People Realize’",
@@ -2027,12 +1973,6 @@
       "url": "https://cryptopotato.com/bitcoin-price-analysis-what-are-btcs-next-targets-after-surging-past-70k/",
       "source": "CryptoPotato",
       "published_at": "Wed, 08 Apr 2026 14:59:44 +0000"
-    },
-    {
-      "title": "Ripple Price Analysis: Is XRP Ready to Break Out After 5% Daily Surge?",
-      "url": "https://cryptopotato.com/ripple-price-analysis-is-xrp-ready-to-break-out-after-5-daily-surge/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 08 Apr 2026 14:53:48 +0000"
     },
     {
       "title": "BTC Rebounds From $65K Lows to $72K on Ceasefire Announcement",
