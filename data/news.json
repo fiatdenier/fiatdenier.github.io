@@ -1,6 +1,126 @@
 {
   "articles": [
     {
+      "title": "OpenAI Super App Takes Shape: Codex Gets Computer Use, Browser, and Image Gen",
+      "url": "https://decrypt.co/364670/codex-computer-use-browser-image-gen-openai-super-app",
+      "source": "Decrypt",
+      "published_at": "Thu, 16 Apr 2026 20:43:06 +0000"
+    },
+    {
+      "title": "Israel-Lebanon Ceasefire Begins Today After Trump Announcement",
+      "url": "https://crypto.news/israel-lebanon-10-day-ceasefire-starts-today/",
+      "source": "BTCManager",
+      "published_at": "Thu, 16 Apr 2026 20:41:00 +0000"
+    },
+    {
+      "title": "Israel-Lebanon Ceasefire Begins Today After Trump Announcement",
+      "url": "https://crypto.news/israel-lebanon-10-day-ceasefire-starts-today/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 16 Apr 2026 20:41:00 +0000"
+    },
+    {
+      "title": "Russian Crypto Exchange Grinex Halts Trading, Alleging $13M Exploit by 'Western Special Services'",
+      "url": "https://decrypt.co/364656/russian-crypto-exchange-grinex-halts-trading-13m-exploit",
+      "source": "Decrypt",
+      "published_at": "Thu, 16 Apr 2026 20:35:39 +0000"
+    },
+    {
+      "title": "Bitwise: Geopolitical Chaos Might Push Bitcoin Over $1 Million",
+      "url": "https://news.bitcoin.com/bitwise-geopolitical-chaos-might-push-bitcoin-over-1-million/",
+      "source": "Bitcoin.com",
+      "published_at": "Thu, 16 Apr 2026 20:30:29 +0000"
+    },
+    {
+      "title": "Citi Says Mixing Bitcoin With Gold Can Boost Your Portfolio Performance",
+      "url": "https://bitcoinmagazine.com/news/citi-says-mixing-bitcoin-with-gold-boost",
+      "source": "Bitcoin Magazine",
+      "published_at": "Thu, 16 Apr 2026 20:26:44 +0000"
+    },
+    {
+      "title": "Federal AI Use Soars, But Bottlenecks Threaten Momentum Amid Public Skepticism: Brookings",
+      "url": "https://decrypt.co/364659/federal-ai-use-soars-bottlenecks-threaten-momentum-skepticism",
+      "source": "Decrypt",
+      "published_at": "Thu, 16 Apr 2026 20:23:08 +0000"
+    },
+    {
+      "title": "xAI Terafab Reaches Out to Chip Suppliers at “Light Speed”",
+      "url": "https://crypto.news/xai-terafab-contacts-chip-suppliers/",
+      "source": "BTCManager",
+      "published_at": "Thu, 16 Apr 2026 20:20:00 +0000"
+    },
+    {
+      "title": "xAI Terafab Reaches Out to Chip Suppliers at “Light Speed”",
+      "url": "https://crypto.news/xai-terafab-contacts-chip-suppliers/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 16 Apr 2026 20:20:00 +0000"
+    },
+    {
+      "title": "Bhutan Moves 250 BTC as Bitcoin Climbs Above $74K",
+      "url": "https://blockonomi.com/bhutan-moves-250-btc-as-bitcoin-climbs-above-74k/",
+      "source": "Blockonomi",
+      "published_at": "Thu, 16 Apr 2026 20:08:58 +0000"
+    },
+    {
+      "title": "Bitcoin: Assessing if $120mln whale withdrawal could spark BTC’s rally to $80K",
+      "url": "https://ambcrypto.com/bitcoin-assessing-if-120mln-whale-withdrawal-could-spark-btcs-rally-to-80k/",
+      "source": "Ambcrypto",
+      "published_at": "Thu, 16 Apr 2026 20:00:48 +0000"
+    },
+    {
+      "title": "Is SWIFT Integrating XRP For Payments? The Code Might Hold The Answer",
+      "url": "https://bitcoinist.com/swift-to-xrp-for-payments/",
+      "source": "Bitcoinist",
+      "published_at": "Thu, 16 Apr 2026 20:00:39 +0000"
+    },
+    {
+      "title": "Ethereum Buyers Dominate Like It’s 2021 – Find Out What Happens Next",
+      "url": "https://www.newsbtc.com/ethereum-news/ethereum-buyers-dominate-like-its-2021-find-out-what-happens-next/",
+      "source": "NewsBTC",
+      "published_at": "Thu, 16 Apr 2026 20:00:26 +0000"
+    },
+    {
+      "title": "Gate brings F1 Red Bull spectacle to Hong Kong waterfront for 13th anniversary",
+      "url": "https://crypto.news/gate-brings-f1-red-bull-spectacle-to-hong-kong-waterfront-for-13th-anniversary/",
+      "source": "BTCManager",
+      "published_at": "Thu, 16 Apr 2026 20:00:00 +0000"
+    },
+    {
+      "title": "Gate brings F1 Red Bull spectacle to Hong Kong waterfront for 13th anniversary",
+      "url": "https://crypto.news/gate-brings-f1-red-bull-spectacle-to-hong-kong-waterfront-for-13th-anniversary/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 16 Apr 2026 20:00:00 +0000"
+    },
+    {
+      "title": "Tennessee Senate to Review State Bitcoin Reserve Bill",
+      "url": "https://blockonomi.com/tennessee-senate-to-review-state-bitcoin-reserve-bill/",
+      "source": "Blockonomi",
+      "published_at": "Thu, 16 Apr 2026 19:59:08 +0000"
+    },
+    {
+      "title": "Quantum Computing Stocks Surge After NVIDIA Ising Launch",
+      "url": "https://crypto.news/quantum-stocks-surge-on-nvidia-ising-launch/",
+      "source": "BTCManager",
+      "published_at": "Thu, 16 Apr 2026 19:55:00 +0000"
+    },
+    {
+      "title": "Quantum Computing Stocks Surge After NVIDIA Ising Launch",
+      "url": "https://crypto.news/quantum-stocks-surge-on-nvidia-ising-launch/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 16 Apr 2026 19:55:00 +0000"
+    },
+    {
+      "title": "Trump Announces Israel and Lebanon Ceasefire, But Oil Crisis Deepens",
+      "url": "https://beincrypto.com/israel-lebanon-ceasefire-trump-oil-crisis-impact/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 16 Apr 2026 19:50:33 +0000"
+    },
+    {
+      "title": "Suspicious Polymarket Trader Made $320K on Last-Minute 2025 Biden Pardons",
+      "url": "https://decrypt.co/364660/suspicious-polymarket-trader-320k-2025-biden-pardons",
+      "source": "Decrypt",
+      "published_at": "Thu, 16 Apr 2026 19:48:33 +0000"
+    },
+    {
       "title": "On Schedule and Above Target: JST’s Third Buyback and Burn Breaches $21 Million",
       "url": "https://cryptoslate.com/on-schedule-and-above-target-jsts-third-buyback-and-burn-breaches-21-million/",
       "source": "CryptoSlate",
@@ -565,12 +685,6 @@
       "published_at": "Thu, 16 Apr 2026 14:46:38 +0000"
     },
     {
-      "title": "Morgan Stanley Bitcoin ETF Tops $100 Million in Six Days",
-      "url": "https://news.bitcoin.com/morgan-stanley-bitcoin-etf-tops-100-million-in-six-days/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 16 Apr 2026 14:42:27 +0000"
-    },
-    {
       "title": "The 24-hour trap: Why the UK’s new crypto rules could catch some firms off guard",
       "url": "https://www.coindesk.com/policy/2026/04/16/uk-s-financial-watchdog-releases-sweeping-crypto-asset-framework-for-final-consultation",
       "source": "Coindesk",
@@ -853,12 +967,6 @@
       "published_at": "Thu, 16 Apr 2026 13:00:00 +0000"
     },
     {
-      "title": "Galaxy Digital Urges SEC to Let Tokenized Securities Trade on AMMs",
-      "url": "https://beincrypto.com/galaxy-digital-sec-tokenized-securities-amm/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 16 Apr 2026 12:55:25 +0000"
-    },
-    {
       "title": "AllUnity takes MiCA-regulated euro stablecoin EURAU further into DeFi",
       "url": "https://cointelegraph.com/news/allunity-mica-regulated-euro-stablecoin-eurau-defi?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -929,12 +1037,6 @@
       "url": "https://ambcrypto.com/dogecoin-hits-a-3-week-high-can-doge-bulls-flip-0-1-next/",
       "source": "Ambcrypto",
       "published_at": "Thu, 16 Apr 2026 12:00:38 +0000"
-    },
-    {
-      "title": "15 Best Free AI Crypto and Stock Trading Bots to Get Started Safely",
-      "url": "https://ambcrypto.com/15-best-free-ai-crypto-and-stock-trading-bots-to-get-started-safely/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 16 Apr 2026 12:00:05 +0000"
     },
     {
       "title": "UK Sets Path to Crypto Regulation With FCA Consultation",
@@ -1195,12 +1297,6 @@
       "published_at": "Thu, 16 Apr 2026 09:12:40 +0000"
     },
     {
-      "title": "CLARITY Act Progress: Key Markup Slipping Toward The Final Week Of April Or Mid-May",
-      "url": "https://bitcoinist.com/clarity-act-markup-final-week-april-mid-may/",
-      "source": "Bitcoinist",
-      "published_at": "Thu, 16 Apr 2026 09:00:35 +0000"
-    },
-    {
       "title": "China advances AI adoption with nationwide education overhaul",
       "url": "https://coingeek.com/china-advances-ai-adoption-with-nationwide-education-overhaul/",
       "source": "CoinGeek",
@@ -1279,12 +1375,6 @@
       "published_at": "Thu, 16 Apr 2026 08:03:59 +0000"
     },
     {
-      "title": "Ethereum Retail Hands Still In Disbelief, Keep Selling Into Strength",
-      "url": "https://www.newsbtc.com/news/ethereum/ethereum-retail-hands-disbelief-selling-strength/",
-      "source": "NewsBTC",
-      "published_at": "Thu, 16 Apr 2026 08:00:04 +0000"
-    },
-    {
       "title": "World Liberty Financial investors revolt over four-year token lock-up proposal",
       "url": "https://crypto.news/world-liberty-financial-investors-revolt-over-four-year-token-lock-up-proposal/",
       "source": "BTCManager",
@@ -1315,12 +1405,6 @@
       "published_at": "Thu, 16 Apr 2026 07:27:05 +0000"
     },
     {
-      "title": "Arthur Hayes Declares Crypto Market Off-Limits Amid Global Tensions and AI Revolution",
-      "url": "https://blockonomi.com/arthur-hayes-declares-crypto-market-off-limits-amid-global-tensions-and-ai-revolution/",
-      "source": "Blockonomi",
-      "published_at": "Thu, 16 Apr 2026 07:21:28 +0000"
-    },
-    {
       "title": "Nasdaq and S&P 500 reach record highs on optimism over U.S.-Iran peace talks",
       "url": "https://crypto.news/nasdaq-and-sp-500-reach-record-highs-on-optimism-over-u-s-iran-peace-talks/",
       "source": "BTCManager",
@@ -1331,12 +1415,6 @@
       "url": "https://crypto.news/nasdaq-and-sp-500-reach-record-highs-on-optimism-over-u-s-iran-peace-talks/",
       "source": "CryptoNews",
       "published_at": "Thu, 16 Apr 2026 07:20:33 +0000"
-    },
-    {
-      "title": "Errol Musk Discloses Elon and Kimbal’s Alleged $1.7B Bitcoin Holdings",
-      "url": "https://blockonomi.com/errol-musk-discloses-elon-and-kimbals-alleged-1-7b-bitcoin-holdings/",
-      "source": "Blockonomi",
-      "published_at": "Thu, 16 Apr 2026 07:10:12 +0000"
     },
     {
       "title": "Bitcoin is testing a level that capped its rally in January, CryptoQuant says",
@@ -1573,58 +1651,10 @@
       "published_at": "Wed, 15 Apr 2026 21:14:00 +0000"
     },
     {
-      "title": "Bitcoin breaks $75k on Gate as bulls eye key resistance",
-      "url": "https://crypto.news/bitcoin-breaks-75k-on-gate-as-bulls-eye-key-resistance/",
-      "source": "BTCManager",
-      "published_at": "Wed, 15 Apr 2026 20:49:52 +0000"
-    },
-    {
-      "title": "Bitcoin breaks $75k on Gate as bulls eye key resistance",
-      "url": "https://crypto.news/bitcoin-breaks-75k-on-gate-as-bulls-eye-key-resistance/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 15 Apr 2026 20:49:52 +0000"
-    },
-    {
-      "title": "U.S. stocks hit fresh records as tech rally lifts S&P 500, Nasdaq",
-      "url": "https://crypto.news/u-s-stocks-hit-fresh-records-as-tech-rally-lifts-sp-500-nasdaq/",
-      "source": "BTCManager",
-      "published_at": "Wed, 15 Apr 2026 20:42:49 +0000"
-    },
-    {
-      "title": "U.S. stocks hit fresh records as tech rally lifts S&P 500, Nasdaq",
-      "url": "https://crypto.news/u-s-stocks-hit-fresh-records-as-tech-rally-lifts-sp-500-nasdaq/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 15 Apr 2026 20:42:49 +0000"
-    },
-    {
-      "title": "Xi Denies Arming Iran in Trump Letter Exchange",
-      "url": "https://crypto.news/xi-denies-arming-iran-in-trump-letter/",
-      "source": "BTCManager",
-      "published_at": "Wed, 15 Apr 2026 20:40:00 +0000"
-    },
-    {
-      "title": "Xi Denies Arming Iran in Trump Letter Exchange",
-      "url": "https://crypto.news/xi-denies-arming-iran-in-trump-letter/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 15 Apr 2026 20:40:00 +0000"
-    },
-    {
       "title": "You Switched to Claude Over Surveillance Fears. Now It Wants Your Passport",
       "url": "https://decrypt.co/364509/claude-anthropic-government-id-kyc-privacy",
       "source": "Decrypt",
       "published_at": "Wed, 15 Apr 2026 20:37:38 +0000"
-    },
-    {
-      "title": "Paris Blockchain Week opens with privacy, composability and tokenized gold in focus",
-      "url": "https://crypto.news/paris-blockchain-week-opens-with-privacy-composability-and-tokenized-gold-in-focus/",
-      "source": "BTCManager",
-      "published_at": "Wed, 15 Apr 2026 20:37:04 +0000"
-    },
-    {
-      "title": "Paris Blockchain Week opens with privacy, composability and tokenized gold in focus",
-      "url": "https://crypto.news/paris-blockchain-week-opens-with-privacy-composability-and-tokenized-gold-in-focus/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 15 Apr 2026 20:37:04 +0000"
     },
     {
       "title": "World Liberty Wants WLFI Locked Beyond Trump's Second Term—Investors Aren't Thrilled",
@@ -1681,7 +1711,7 @@
       "published_at": "Wed, 15 Apr 2026 18:30:22 +0000"
     },
     {
-      "title": "Tether moves over $70 million in bitcoin to reserves, on-chain data shows",
+      "title": "Tether Moves Over $70 Million in Bitcoin to Reserves, On-Chain Data Shows",
       "url": "https://bitcoinmagazine.com/news/tether-moves-over-70-million-in-bitcoin",
       "source": "Bitcoin Magazine",
       "published_at": "Wed, 15 Apr 2026 18:24:48 +0000"
@@ -1813,12 +1843,6 @@
       "published_at": "Wed, 15 Apr 2026 13:36:09 +0000"
     },
     {
-      "title": "Pakistan Ends Bitcoin and Crypto Banking Ban, Opens Financial System to Licensed Firms",
-      "url": "https://bitcoinmagazine.com/news/pakistan-ends-bitcoin-and-crypto-banking",
-      "source": "Bitcoin Magazine",
-      "published_at": "Wed, 15 Apr 2026 13:23:19 +0000"
-    },
-    {
       "title": "BTC Rally Stalls at Multi-Week High Near $76K, Market Turns Red",
       "url": "https://crypto-economy.com/btc-rally-stalls-at-multi-week-high-near-76k/",
       "source": "CryptoEconomy",
@@ -1871,12 +1895,6 @@
       "url": "https://coingeek.com/tether-launches-stablecoin-wallet-circle-arc-chain-going-proof-of-stake/",
       "source": "CoinGeek",
       "published_at": "Wed, 15 Apr 2026 11:00:00 +0000"
-    },
-    {
-      "title": "Bitcoin ETFs Draw $411M After BTC Hits $75K, But Analysts Urge Caution",
-      "url": "https://decrypt.co/364423/bitcoin-etfs-draw-411m-after-btc-hits-75k-but-analysts-urge-caution",
-      "source": "Decrypt",
-      "published_at": "Wed, 15 Apr 2026 10:42:06 +0000"
     },
     {
       "title": "Market Updates: Bitcoin Devs Push BIP-361 to Freeze Quantum-Vulnerable Coins; Bitwise CIO Sees BTC Overtaking Gold in Market Cap; Deutsche Börse Takes 1.5% Stake in Kraken Parent",
@@ -1957,22 +1975,10 @@
       "published_at": "Wed, 15 Apr 2026 04:12:01 +0000"
     },
     {
-      "title": "Trump Is Hosting Another Meme Coin Gala—The Price for VIP Access Is Down 90%",
-      "url": "https://decrypt.co/364382/trump-meme-coin-gala-cheaper-vip-access",
-      "source": "Decrypt",
-      "published_at": "Tue, 14 Apr 2026 22:12:04 +0000"
-    },
-    {
       "title": "Strategy’s STRC Stock Hits $1.1B Daily Volume Record",
       "url": "https://cryptopotato.com/strategys-strc-stock-hits-1-1b-daily-volume-record/",
       "source": "CryptoPotato",
       "published_at": "Tue, 14 Apr 2026 21:48:17 +0000"
-    },
-    {
-      "title": "Ethereum DeFi Exchange CoW Swap Pauses Protocol Following Website Compromise",
-      "url": "https://decrypt.co/364377/ethereum-defi-exchange-cow-swap-website-compromise",
-      "source": "Decrypt",
-      "published_at": "Tue, 14 Apr 2026 21:37:18 +0000"
     },
     {
       "title": "Kraken Says No Funds at Risk Despite Insider Data Breach Attempt and Blackmail Threats",
