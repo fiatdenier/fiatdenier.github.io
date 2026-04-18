@@ -1,6 +1,54 @@
 {
   "articles": [
     {
+      "title": "The Lightning Network isn’t ‘helplessly broken’",
+      "url": "https://www.coindesk.com/opinion/2026/04/18/the-lightning-network-isn-t-helplessly-broken",
+      "source": "Coindesk",
+      "published_at": "Sat, 18 Apr 2026 16:30:00 +0000"
+    },
+    {
+      "title": "RAVE Crashes 68% as Binance and Bitget Investigate Manipulation Claims",
+      "url": "https://news.bitcoin.com/rave-crashes-68-as-binance-and-bitget-investigate-manipulation-claims/",
+      "source": "Bitcoin.com",
+      "published_at": "Sat, 18 Apr 2026 16:28:40 +0000"
+    },
+    {
+      "title": "The Pi Network Paradox: Major Feature Launched, But PI Token Slides Again",
+      "url": "https://cryptopotato.com/the-pi-network-paradox-major-feature-launched-but-pi-token-slides-again/",
+      "source": "CryptoPotato",
+      "published_at": "Sat, 18 Apr 2026 16:19:25 +0000"
+    },
+    {
+      "title": "RAVE Pump-and-Dump Allegations Spark $25,000 Bounty and Exchange Pressure",
+      "url": "https://beincrypto.com/rave-token-pump-dump-allegations/",
+      "source": "BeinCrypto",
+      "published_at": "Sat, 18 Apr 2026 16:04:07 +0000"
+    },
+    {
+      "title": "Bitcoin STHs realize gains: Correction or short squeeze, what’s ahead?",
+      "url": "https://ambcrypto.com/bitcoin-sths-realize-gains-correction-or-short-squeeze-whats-ahead/",
+      "source": "Ambcrypto",
+      "published_at": "Sat, 18 Apr 2026 16:00:52 +0000"
+    },
+    {
+      "title": "Bold Call: Ripple Tipped To Become Payments Giant By 2040",
+      "url": "https://bitcoinist.com/bold-call-ripple-tipped-to-become-payments-giant-by-2040/",
+      "source": "Bitcoinist",
+      "published_at": "Sat, 18 Apr 2026 16:00:37 +0000"
+    },
+    {
+      "title": "ADA Deja Vu? Cardano Price Surged 200% Last Time It Was At This Support Level",
+      "url": "https://www.newsbtc.com/news/cardano/cardano-price-surged-200-last-time/",
+      "source": "NewsBTC",
+      "published_at": "Sat, 18 Apr 2026 16:00:29 +0000"
+    },
+    {
+      "title": "What Is Q-Day? The Quantum Threat to Bitcoin Explained",
+      "url": "https://decrypt.co/resources/what-q-day-quantum-threat-bitcoin-explained",
+      "source": "Decrypt",
+      "published_at": "Sat, 18 Apr 2026 15:53:16 +0000"
+    },
+    {
       "title": "US Bitcoin ETFs pull in $664M in largest daily inflow since January, because Iran reopened Hormuz for a few hours",
       "url": "https://cryptoslate.com/bitcoin-etfs-pull-in-664-million-after-strait-of-hormuz-reopened/",
       "source": "CryptoSlate",
@@ -47,6 +95,12 @@
       "url": "https://www.newsbtc.com/news/bitcoin/bitcoin-is-going-to-170000/",
       "source": "NewsBTC",
       "published_at": "Sat, 18 Apr 2026 14:30:28 +0000"
+    },
+    {
+      "title": "Bitcoin Miner Selling Pressure Fades as Record Q1 2026 BTC Outflows Signal a Supply Turning Point",
+      "url": "https://blockonomi.com/bitcoin-miner-selling-pressure-fades-as-record-q1-2026-btc-outflows-signal-a-supply-turning-point/",
+      "source": "Blockonomi",
+      "published_at": "Sat, 18 Apr 2026 14:03:15 +0000"
     },
     {
       "title": "Bitcoin miners dump 32K BTC: Is the supply overhang finally clearing?",
@@ -433,16 +487,16 @@
       "published_at": "Sat, 18 Apr 2026 06:30:27 +0000"
     },
     {
+      "title": "Bitcoin (BTC) Surges Past $78K as Iran Reopens Hormuz Strait Amid Peace Talks",
+      "url": "https://blockonomi.com/bitcoin-btc-surges-past-78k-as-iran-reopens-hormuz-strait-amid-peace-talks/",
+      "source": "Blockonomi",
+      "published_at": "Sat, 18 Apr 2026 06:24:30 +0000"
+    },
+    {
       "title": "The $78K Bull Trap? Why Iran’s Latest Statement Could Send Bitcoin Tumbling",
       "url": "https://cryptopotato.com/the-78k-bull-trap-why-irans-latest-statement-could-send-bitcoin-tumbling/",
       "source": "CryptoPotato",
       "published_at": "Sat, 18 Apr 2026 06:11:50 +0000"
-    },
-    {
-      "title": "Ethereum Is Finally Rewarding Risk Again – But the Direction Has Changed",
-      "url": "https://bitcoinist.com/ethereum-finally-rewarding-risk-direction-changed/",
-      "source": "Bitcoinist",
-      "published_at": "Sat, 18 Apr 2026 06:00:23 +0000"
     },
     {
       "title": "A ‘Sustained’ Crypto Winter? Trading Volume Hits Lowest Levels Since 2023 – Report",
@@ -505,6 +559,12 @@
       "published_at": "Sat, 18 Apr 2026 04:00:58 +0000"
     },
     {
+      "title": "Stripe doubles down on blockchain and stablecoins, aiming to become 'AWS for money'",
+      "url": "https://www.coindesk.com/business/2026/04/18/stripe-doubles-down-on-blockchain-and-stablecoins-aiming-to-become-aws-for-money",
+      "source": "Coindesk",
+      "published_at": "Sat, 18 Apr 2026 04:00:00 +0000"
+    },
+    {
       "title": "How a quantum computer can be used to actually steal your bitcoin in '9 minutes'",
       "url": "https://www.coindesk.com/tech/2026/04/18/how-a-quantum-computer-can-be-used-to-actually-steal-your-bitcoin-in-9-minutes",
       "source": "Coindesk",
@@ -521,12 +581,6 @@
       "url": "https://news.bitcoin.com/tempo-launches-private-stablecoin-zones-for-enterprise-payroll-and-treasury-settlements/",
       "source": "Bitcoin.com",
       "published_at": "Sat, 18 Apr 2026 03:05:48 +0000"
-    },
-    {
-      "title": "Bitcoin Coinbase Premium Turns Red: Bearish Signal?",
-      "url": "https://www.newsbtc.com/bitcoin-news/bitcoin-coinbase-premium-red-bearish-signal/",
-      "source": "NewsBTC",
-      "published_at": "Sat, 18 Apr 2026 03:00:54 +0000"
     },
     {
       "title": "X's new Cashtags feature drives $1B trading volume in first two days",
@@ -583,6 +637,12 @@
       "published_at": "Fri, 17 Apr 2026 22:41:11 +0000"
     },
     {
+      "title": "Bitcoin Breaks Key Resistance After 16% Rally as Momentum Signals Trend Shift",
+      "url": "https://blockonomi.com/bitcoin-breaks-key-resistance-after-16-rally-as-momentum-signals-trend-shift/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 17 Apr 2026 22:40:51 +0000"
+    },
+    {
       "title": "SIREN surges 102% amid $64 mln whale buying: What’s next?",
       "url": "https://ambcrypto.com/siren-surges-102-amid-64-mln-whale-buying-whats-next/",
       "source": "Ambcrypto",
@@ -611,18 +671,6 @@
       "url": "https://cointelegraph.com/news/russia-criminalize-unregistered-crypto-services?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Fri, 17 Apr 2026 22:33:01 +0100"
-    },
-    {
-      "title": "Elon Musk Pushes ‘Universal High Income’ Checks as Ultimate Solution for AI Unemployment",
-      "url": "https://news.bitcoin.com/elon-musk-pushes-universal-high-income-checks-as-ultimate-solution-for-ai-unemployment/",
-      "source": "Bitcoin.com",
-      "published_at": "Fri, 17 Apr 2026 21:32:30 +0000"
-    },
-    {
-      "title": "PIPPIN surges 16%, but the threat of a sharp reversal looms",
-      "url": "https://ambcrypto.com/pippin-surges-16-but-the-threat-of-a-sharp-reversal-looms/",
-      "source": "Ambcrypto",
-      "published_at": "Fri, 17 Apr 2026 21:30:42 +0000"
     },
     {
       "title": "Solana News Today: DoubleZero Launches Edge to Bring Wall Street Data Infrastructure Onchain",
@@ -829,6 +877,12 @@
       "published_at": "Fri, 17 Apr 2026 18:58:00 +0000"
     },
     {
+      "title": "Bitcoin Breaks $78K as Iran’s Strait of Hormuz Reopening Triggers Global Risk Rally",
+      "url": "https://blockonomi.com/bitcoin-breaks-78k-as-irans-strait-of-hormuz-reopening-triggers-global-risk-rally/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 17 Apr 2026 18:53:40 +0000"
+    },
+    {
       "title": "Stanford’s 2026 AI Index Shows US-China AI Gap Has Collapsed to 2.7%",
       "url": "https://crypto.news/stanford-2026-ai-index-us-leads-china-by-2-7/",
       "source": "BTCManager",
@@ -857,6 +911,12 @@
       "url": "https://crypto.news/white-house-probes-mysterious-scientist-deaths/",
       "source": "CryptoNews",
       "published_at": "Fri, 17 Apr 2026 18:35:00 +0000"
+    },
+    {
+      "title": "Bitcoin Whales Move 100+ BTC as Price Tops $78,000",
+      "url": "https://blockonomi.com/bitcoin-whales-move-100-btc-as-price-tops-78000/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 17 Apr 2026 18:33:48 +0000"
     },
     {
       "title": "Crypto market liquidations hit $820M as Bitcoin price taps $78K",
@@ -913,6 +973,12 @@
       "published_at": "Fri, 17 Apr 2026 18:00:00 +0000"
     },
     {
+      "title": "Tennessee Moves Toward Bitcoin Reserve With Strict Rules on Public Fund Allocation",
+      "url": "https://blockonomi.com/tennessee-moves-toward-bitcoin-reserve-with-strict-rules-on-public-fund-allocation/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 17 Apr 2026 17:56:48 +0000"
+    },
+    {
       "title": "Fired FEMA Chief Cameron Hamilton Set for Renomination Under Trump",
       "url": "https://crypto.news/trump-plans-to-renominate-fired-fema-chief/",
       "source": "BTCManager",
@@ -935,6 +1001,12 @@
       "url": "https://www.coindesk.com/tech/2026/04/17/sam-altman-s-world-project-launches-major-upgrade-to-fight-deepfakes-and-bots",
       "source": "Coindesk",
       "published_at": "Fri, 17 Apr 2026 17:50:27 +0000"
+    },
+    {
+      "title": "Sheri Biggs Reports $250K Bitcoin ETF Purchase in Filing",
+      "url": "https://blockonomi.com/sheri-biggs-reports-250k-bitcoin-etf-purchase-in-filing/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 17 Apr 2026 17:45:54 +0000"
     },
     {
       "title": "20 House Republicans Force Johnson Into 2 AM Stopgap With FISA Rebellion",
@@ -1127,12 +1199,6 @@
       "url": "https://crypto.news/gate-research-flags-5x-etfs-as-tactical-not-buy-and-hold/",
       "source": "CryptoNews",
       "published_at": "Fri, 17 Apr 2026 15:00:00 +0000"
-    },
-    {
-      "title": "RAVE Price Double Peak Near $20 Risks Flush to $15.34",
-      "url": "https://beincrypto.com/rave-price-double-peak-near-20-risks-flush-to-15-34/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 17 Apr 2026 14:54:49 +0000"
     },
     {
       "title": "AI Agents Already Run a Fifth of DeFi, But Still Lose to Humans at Trading",
@@ -1477,6 +1543,12 @@
       "published_at": "Fri, 17 Apr 2026 12:52:42 +0100"
     },
     {
+      "title": "Chinese Commentator Calls Bitcoin a CIA Trap as Iran’s Military Uses It to Bypass Sanctions",
+      "url": "https://blockonomi.com/chinese-commentator-calls-bitcoin-a-cia-trap-as-irans-military-uses-it-to-bypass-sanctions/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 17 Apr 2026 11:44:13 +0000"
+    },
+    {
       "title": "Global finance leaders flag serious concerns about Mythos AI model",
       "url": "https://crypto.news/global-finance-leaders-flag-serious-concerns-about-mythos-ai-model/",
       "source": "BTCManager",
@@ -1621,6 +1693,12 @@
       "published_at": "Fri, 17 Apr 2026 09:00:00 +0000"
     },
     {
+      "title": "Bitcoin (BTC) Struggles at Resistance While Stock Markets Reach New Peaks",
+      "url": "https://blockonomi.com/bitcoin-btc-struggles-at-resistance-while-stock-markets-reach-new-peaks/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 17 Apr 2026 08:55:14 +0000"
+    },
+    {
       "title": "Why Ripple (XRP) Keeps Pumping: 3 Key Reasons and What’s Next",
       "url": "https://cryptopotato.com/why-ripple-xrp-keeps-pumping-3-key-reasons-and-whats-next/",
       "source": "CryptoPotato",
@@ -1637,6 +1715,12 @@
       "url": "https://crypto.news/researcher-uncovers-fake-ledger-nano-s-modified-to-siphon-crypto-assets/",
       "source": "CryptoNews",
       "published_at": "Fri, 17 Apr 2026 08:34:44 +0000"
+    },
+    {
+      "title": "Bitcoin’s (BTC) Quantum Defense Plan Could Lock Away 1.7M BTC Forever",
+      "url": "https://blockonomi.com/bitcoins-btc-quantum-defense-plan-could-lock-away-1-7m-btc-forever/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 17 Apr 2026 08:12:57 +0000"
     },
     {
       "title": "Pi Network’s PI Finally Stages Big Recovery After New Deadline Announcement",
@@ -1693,12 +1777,6 @@
       "published_at": "Fri, 17 Apr 2026 05:00:00 +0000"
     },
     {
-      "title": "XRP leads bitcoin and ether on weekly gains, but muted volume keeps breakout in check",
-      "url": "https://www.coindesk.com/markets/2026/04/17/xrp-leads-bitcoin-and-ether-on-weekly-gains-but-muted-volume-keeps-breakout-in-check",
-      "source": "Coindesk",
-      "published_at": "Fri, 17 Apr 2026 04:44:11 +0000"
-    },
-    {
       "title": "Will Markets Break Resistance When $2B Crypto Options Expire Today?",
       "url": "https://cryptopotato.com/will-markets-break-resistance-when-2b-crypto-options-expire-today/",
       "source": "CryptoPotato",
@@ -1709,12 +1787,6 @@
       "url": "https://thecryptobasic.com/bitcoin-wholecoiners-grow-rarer-as-exchange-flows-hit-2018-lows/",
       "source": "CryptoBasic",
       "published_at": "Fri, 17 Apr 2026 04:13:17 +0000"
-    },
-    {
-      "title": "Bitcoin bulls target $125,000 as U.S.-Iran peace talks trigger risk-on mood",
-      "url": "https://www.coindesk.com/markets/2026/04/17/bitcoin-bulls-target-usd125-000-as-u-s-iran-peace-talks-trigger-risk-on-mood",
-      "source": "Coindesk",
-      "published_at": "Fri, 17 Apr 2026 03:52:56 +0000"
     },
     {
       "title": "Whales Move In: Bitcoin Inflows Jump as $76K Resistance Holds",
@@ -1939,12 +2011,6 @@
       "published_at": "Thu, 16 Apr 2026 08:26:01 +0000"
     },
     {
-      "title": "Bitcoin Whales Go on Accumulation Spree as BTC Price Reaches ‘Make-or-Break’ Point",
-      "url": "https://cryptopotato.com/bitcoin-whales-go-on-accumulation-spree-as-btc-price-reaches-make-or-break-point/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 16 Apr 2026 07:27:05 +0000"
-    },
-    {
       "title": "STAS 3.0: The first true layer 1 DEX on Bitcoin",
       "url": "https://coingeek.com/stas-3-0-the-first-true-layer-1-dex-on-bitcoin/",
       "source": "CoinGeek",
@@ -1955,12 +2021,6 @@
       "url": "https://coingeek.com/thailand-eyes-stricter-checks-on-crypto-firm-backers/",
       "source": "CoinGeek",
       "published_at": "Thu, 16 Apr 2026 05:00:00 +0000"
-    },
-    {
-      "title": "Google's Latest AI Update Makes Industrial Robots Way Smarter—Here's How",
-      "url": "https://decrypt.co/364521/google-ai-update-makes-industrial-robots-way-smarter",
-      "source": "Decrypt",
-      "published_at": "Wed, 15 Apr 2026 21:31:35 +0000"
     },
     {
       "title": "Bitcoin Bull Score Index Shows Market May Have Now Officially Entered a Recovery Path",
