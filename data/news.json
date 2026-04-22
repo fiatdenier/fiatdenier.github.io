@@ -1,6 +1,108 @@
 {
   "articles": [
     {
+      "title": "Bitcoin Tops $79,000 as Trump Extends US-Iran Ceasefire, S&P 500 Climbs",
+      "url": "https://news.bitcoin.com/bitcoin-tops-79000-as-trump-extends-us-iran-ceasefire-sp-500-climbs/",
+      "source": "Bitcoin.com",
+      "published_at": "Wed, 22 Apr 2026 16:30:53 +0000"
+    },
+    {
+      "title": "SpaceX Warns Investors Elon Musk’s Space-Based AI Data Centers May Not Pay Off",
+      "url": "https://decrypt.co/365132/spacex-warns-investors-elon-musk-space-ai-data-centers",
+      "source": "Decrypt",
+      "published_at": "Wed, 22 Apr 2026 16:28:44 +0000"
+    },
+    {
+      "title": "'Axie Infinity' Gaming Network Ronin Sets Date for Ethereum Layer-2 Migration",
+      "url": "https://decrypt.co/365131/axie-infinity-gaming-network-ronin-ethereum-layer-2-migration",
+      "source": "Decrypt",
+      "published_at": "Wed, 22 Apr 2026 16:28:21 +0000"
+    },
+    {
+      "title": "Ethereum risks 10% decline versus Bitcoin despite record ETH staking",
+      "url": "https://cointelegraph.com/news/ethereum-decline-10percent-versus-bitcoin-despite-record-eth-staking?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 22 Apr 2026 17:19:07 +0100"
+    },
+    {
+      "title": "Justin Sun Sues Trump-Linked World Liberty Financial Over Frozen WLFI Tokens",
+      "url": "https://cryptopotato.com/justin-sun-sues-trump-linked-world-liberty-financial-over-frozen-wlfi-tokens/",
+      "source": "CryptoPotato",
+      "published_at": "Wed, 22 Apr 2026 16:14:50 +0000"
+    },
+    {
+      "title": "Infinite Launches Fiat and Stablecoin Bank Accounts Powered by Erebor Bank for US Businesses",
+      "url": "https://news.bitcoin.com/infinite-launches-fiat-and-stablecoin-bank-accounts-powered-by-erebor-bank-for-us-businesses/",
+      "source": "Bitcoin.com",
+      "published_at": "Wed, 22 Apr 2026 16:10:01 +0000"
+    },
+    {
+      "title": "FCA targets illegal crypto traders in first coordinated UK crackdown",
+      "url": "https://ambcrypto.com/fca-targets-illegal-crypto-traders-in-first-coordinated-uk-crackdown/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 22 Apr 2026 16:02:14 +0000"
+    },
+    {
+      "title": "SUI And USDC Now Power Real-World Transactions On RedotPay",
+      "url": "https://www.newsbtc.com/news/sui-and-usdc-on-redotpay/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 22 Apr 2026 16:00:06 +0000"
+    },
+    {
+      "title": "Ethereum Staking Hits Fresh High As Network Locks Up More ETH",
+      "url": "https://bitcoinist.com/ethereum-staking-fresh-high/",
+      "source": "Bitcoinist",
+      "published_at": "Wed, 22 Apr 2026 16:00:03 +0000"
+    },
+    {
+      "title": "Starknet up 15%: Did STRK’s 1.5B transfer and Shinobi upgrade fuel this?",
+      "url": "https://ambcrypto.com/starknet-up-15-did-strks-1-5b-transfer-and-shinobi-upgrade-fuel-this/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 22 Apr 2026 16:00:03 +0000"
+    },
+    {
+      "title": "Syed Sameer steps in as power broker in Justin Sun–WLFI standoff",
+      "url": "https://crypto.news/syed-sameer-steps-in-as-power-broker-in-justin-sun-wlfi-standoff/",
+      "source": "BTCManager",
+      "published_at": "Wed, 22 Apr 2026 16:00:00 +0000"
+    },
+    {
+      "title": "Syed Sameer steps in as power broker in Justin Sun–WLFI standoff",
+      "url": "https://crypto.news/syed-sameer-steps-in-as-power-broker-in-justin-sun-wlfi-standoff/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 22 Apr 2026 16:00:00 +0000"
+    },
+    {
+      "title": "GSR Launches Actively Managed Bitcoin, Ethereum and Solana Basket ETF on Nasdaq",
+      "url": "https://decrypt.co/365127/gsr-actively-managed-bitcoin-ethereum-solana-etf-nasdaq",
+      "source": "Decrypt",
+      "published_at": "Wed, 22 Apr 2026 15:47:59 +0000"
+    },
+    {
+      "title": "Crypto is leading the race to build the ultimate gambling super-app",
+      "url": "https://cryptoslate.com/crypto-is-leading-the-race-to-build-the-ultimate-gambling-super-app/",
+      "source": "CryptoSlate",
+      "published_at": "Wed, 22 Apr 2026 15:41:49 +0000"
+    },
+    {
+      "title": "New Report Reveals AI Arms Race at 3 Major Exchanges",
+      "url": "https://beincrypto.com/okx-bybit-bitget-mandate-ai-tools-2/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 22 Apr 2026 15:37:39 +0000"
+    },
+    {
+      "title": "Russia Advances Sweeping Crypto Bill With Provisions for 'Circumventing Sanctions'",
+      "url": "https://decrypt.co/365125/russia-advances-sweeping-crypto-bill-with-provisions-for-circumventing-sanctions",
+      "source": "Decrypt",
+      "published_at": "Wed, 22 Apr 2026 15:26:41 +0000"
+    },
+    {
+      "title": "MemeCore ($M) Pumps 20% Today. Why Is This Meme Coin Still Rallying?",
+      "url": "https://beincrypto.com/memecore-m-pumps-20-today-why-is-this-meme-coin-still-rallying/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 22 Apr 2026 15:21:01 +0000"
+    },
+    {
       "title": "Moneygram and Stellar Expand USDC Push Amid Stablecoin Growth",
       "url": "https://news.bitcoin.com/moneygram-and-stellar-expand-usdc-push-amid-stablecoin-growth/",
       "source": "Bitcoin.com",
@@ -31,6 +133,12 @@
       "published_at": "Wed, 22 Apr 2026 15:00:00 +0000"
     },
     {
+      "title": "Umbra Confirms $800,000 in Hack Funds Ran Through the Protocol — Pulls Its Frontend Offline",
+      "url": "https://beincrypto.com/umbra-frontend-offline-stolen-eth/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 22 Apr 2026 14:55:20 +0000"
+    },
+    {
       "title": "FCA Raids 8 Sites in First UK Crackdown on Illegal Peer-to-Peer Crypto Trading",
       "url": "https://news.bitcoin.com/fca-raids-8-sites-in-first-uk-crackdown-on-illegal-peer-to-peer-crypto-trading/",
       "source": "Bitcoin.com",
@@ -41,6 +149,12 @@
       "url": "https://news.bitcoin.com/bitmine-tom-lee-staked-eth-7-billion/",
       "source": "Bitcoin.com",
       "published_at": "Wed, 22 Apr 2026 14:50:34 +0000"
+    },
+    {
+      "title": "Bitcoin Races To $80,000 As Trump Extends Iran Ceasefire: Here Are Other Factors Driving The Rally",
+      "url": "https://beincrypto.com/bitcoin-80000-trump-iran-ceasefire/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 22 Apr 2026 14:47:51 +0000"
     },
     {
       "title": "The London P2P sweep: UK FCA raids eight illegal peer-to-peer trading hubs",
@@ -61,6 +175,12 @@
       "published_at": "Wed, 22 Apr 2026 14:40:00 +0000"
     },
     {
+      "title": "XLM Price Breaks 9-Month Descending Triangle, $0.30 Next Target",
+      "url": "https://beincrypto.com/xlm-price-breaks-9-month-descending-triangle-0-30-next-target/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 22 Apr 2026 14:37:53 +0000"
+    },
+    {
       "title": "Crypto giant GSR launches its first ETF to give investors an easy way to bet on the big 3 tokens",
       "url": "https://www.coindesk.com/markets/2026/04/21/crypto-giant-gsr-launches-its-first-etf-to-give-investors-an-easy-way-to-bet-on-the-big-3-tokens",
       "source": "Coindesk",
@@ -77,6 +197,12 @@
       "url": "https://decrypt.co/365123/american-bitcoin-shares-spike-trump-backed-firm-11k-btc-miners",
       "source": "Decrypt",
       "published_at": "Wed, 22 Apr 2026 14:27:51 +0000"
+    },
+    {
+      "title": "Lazarus-linked macOS malware hits crypto and fintech firms",
+      "url": "https://cointelegraph.com/news/lazarus-group-malware-crypto-business-execs-macos?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 22 Apr 2026 15:20:48 +0100"
     },
     {
       "title": "Mach-O Man Malware Steals macOS Keychain Data in Lazarus Group Crypto Campaign",
@@ -101,6 +227,12 @@
       "url": "https://blockonomi.com/stock-futures-climb-as-trump-prolongs-iran-ceasefire-agreement/",
       "source": "Blockonomi",
       "published_at": "Wed, 22 Apr 2026 14:14:52 +0000"
+    },
+    {
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 22 Apr 2026 15:13:14 +0100"
     },
     {
       "title": "Tax-free bitcoin is back: How UK investors can avoid paying duty on crypto investments once more",
@@ -481,12 +613,6 @@
       "published_at": "Wed, 22 Apr 2026 12:00:00 +0000"
     },
     {
-      "title": "Russia Locks in July 1 Crypto Payments Regime to Bypass Sanctions",
-      "url": "https://beincrypto.com/russia-crypto-payments-foreign-trade-july/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 22 Apr 2026 11:59:19 +0000"
-    },
-    {
       "title": "Morning Minute: Bitcoin Passes $78k as Trump Extends Ceasefire Indefinitely",
       "url": "https://decrypt.co/365112/morning-minute-bitcoin-passes-78k-as-trump-extends-ceasefire-indefinitely",
       "source": "Decrypt",
@@ -553,12 +679,6 @@
       "published_at": "Wed, 22 Apr 2026 11:13:50 +0000"
     },
     {
-      "title": "Anthropic’s ‘Too Dangerous’ Mythos AI Hacked on Day One While White House Plans Rollout",
-      "url": "https://beincrypto.com/anthropic-mythos-ai-unauthorized-access/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 22 Apr 2026 11:07:01 +0000"
-    },
-    {
       "title": "Sui-Based Volo Protocol Hit by $3.5M Exploit, Freezes Vaults to Contain Damage",
       "url": "https://cryptopotato.com/sui-based-volo-protocol-hit-by-3-5m-exploit-freezes-vaults-to-contain-damage/",
       "source": "CryptoPotato",
@@ -613,34 +733,16 @@
       "published_at": "Wed, 22 Apr 2026 11:55:44 +0100"
     },
     {
-      "title": "ETH to $250,000 — New Thesis Calls Bitcoin and Gold Dead Capital",
-      "url": "https://beincrypto.com/etherealize-eth-price-250000-productive-money-thesis/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 22 Apr 2026 10:49:38 +0000"
-    },
-    {
       "title": "PENGU Notches Double-Digit Gains as Bitcoin Hits $78K Amid $418M Liquidation Spree",
       "url": "https://decrypt.co/365109/pengu-notches-double-digit-gains-as-bitcoin-hits-78k-amid-418m-liquidation-spree",
       "source": "Decrypt",
       "published_at": "Wed, 22 Apr 2026 10:49:24 +0000"
     },
     {
-      "title": "Consensus Miami 2026 Announces 500-Speaker Lineup for Its Largest Gathering Yet",
-      "url": "https://beincrypto.com/consensus-miami-2026-speaker-lineup/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 22 Apr 2026 10:49:23 +0000"
-    },
-    {
       "title": "What happened in crypto today: New Fed chair pick, DeFi cracks, and more",
       "url": "https://ambcrypto.com/what-happened-in-crypto-today-new-fed-chair-pick-defi-cracks-and-more/",
       "source": "Ambcrypto",
       "published_at": "Wed, 22 Apr 2026 10:45:00 +0000"
-    },
-    {
-      "title": "Stablecoins Push Into Mainstream Payments as DoorDash Joins Tempo Network",
-      "url": "https://beincrypto.com/doordash-stablecoins-tempo-blockchain-worker-payments/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 22 Apr 2026 10:42:07 +0000"
     },
     {
       "title": "Three reasons why Ethereum price could surge to $3,000 soon",
@@ -757,12 +859,6 @@
       "published_at": "Wed, 22 Apr 2026 09:40:00 +0000"
     },
     {
-      "title": "Greek Firm Warns of Bitcoin Fraud as Vessels Face Military Fire in the Strait of Hormuz",
-      "url": "https://news.bitcoin.com/greek-firm-warns-of-bitcoin-fraud-as-vessels-face-military-fire-in-the-strait-of-hormuz/",
-      "source": "Bitcoin.com",
-      "published_at": "Wed, 22 Apr 2026 09:30:53 +0000"
-    },
-    {
       "title": "Uzbekistan creates state-backed crypto mining zone with tax breaks",
       "url": "https://cointelegraph.com/news/uzbekistan-crypto-mining-zone-karakalpakstan-investment-push?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -823,12 +919,6 @@
       "published_at": "Wed, 22 Apr 2026 09:00:54 +0000"
     },
     {
-      "title": "‘Already part of U.S. finance’ – Fed Chair nominee Kevin Warsh backs crypto",
-      "url": "https://ambcrypto.com/already-part-of-u-s-finance-fed-chair-pick-kevin-warsh-backs-crypto/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 22 Apr 2026 09:00:13 +0000"
-    },
-    {
       "title": "Switzerland crypto sector reached new funding heights in 2025",
       "url": "https://coingeek.com/switzerland-crypto-sector-reached-new-funding-heights-in-2025/",
       "source": "CoinGeek",
@@ -877,12 +967,6 @@
       "published_at": "Wed, 22 Apr 2026 08:40:00 +0000"
     },
     {
-      "title": "Tron Founder Justin Sun Files Federal Lawsuit Against World Liberty Financial Over Frozen Tokens",
-      "url": "https://news.bitcoin.com/justin-sun-world-liberty-financial-lawsuit-wlfi-tokens/",
-      "source": "Bitcoin.com",
-      "published_at": "Wed, 22 Apr 2026 08:30:08 +0000"
-    },
-    {
       "title": "Crypto market update: Bitcoin rallies past $78K after ceasefire extension, liquidations jump",
       "url": "https://crypto.news/crypto-market-update-bitcoin-rallies-past-78k-after-ceasefire-extension-liquidations-jump/",
       "source": "BTCManager",
@@ -917,12 +1001,6 @@
       "url": "https://crypto.news/35-of-european-investors-would-switch-banks-for-crypto-access-survey/",
       "source": "CryptoNews",
       "published_at": "Wed, 22 Apr 2026 08:03:00 +0000"
-    },
-    {
-      "title": "Stellar clears resistance, XLM bulls target $0.22 amid strong momentum",
-      "url": "https://ambcrypto.com/stellar-clears-resistance-xlm-bulls-target-0-22-amid-strong-momentum/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 22 Apr 2026 08:00:32 +0000"
     },
     {
       "title": "BlackRock And Mastercard Turn To XRP Ledger In DeFi Power Play",
@@ -1115,18 +1193,6 @@
       "url": "https://cointelegraph.com/news/privacy-protocol-umbra-shuts-front-end-in-attempt-to-stifle-kelp-exploiters?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Wed, 22 Apr 2026 07:11:20 +0100"
-    },
-    {
-      "title": "Crypto Fraudsters Allegedly Selling Hormuz Transit Guarantees As Iranian Fire Is Reported",
-      "url": "https://bitcoinist.com/crypto-fraudsters-selling-hormuz-transit-guarantees/",
-      "source": "Bitcoinist",
-      "published_at": "Wed, 22 Apr 2026 06:00:57 +0000"
-    },
-    {
-      "title": "Bitcoin’s Record Miner Sell-Off Casts Shadow Over Ceasefire-Fueled Rebound",
-      "url": "https://www.newsbtc.com/news/bitcoin/bitcoins-record-miner-sell-off-casts-shadow-over-ceasefire-fueled-rebound/",
-      "source": "NewsBTC",
-      "published_at": "Wed, 22 Apr 2026 06:00:32 +0000"
     },
     {
       "title": "Justin Sun sues Trump-backed World Liberty over WLFI token freeze",
@@ -1357,12 +1423,6 @@
       "published_at": "Tue, 21 Apr 2026 21:45:40 +0000"
     },
     {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 21 Apr 2026 22:40:16 +0100"
-    },
-    {
       "title": "Coinbase Launches Agentic.market, a Discovery Layer Where AI Agents Buy and Sell Services With Stablecoins",
       "url": "https://crypto.news/coinbase-ai-agents-get-their-own-app-store/",
       "source": "BTCManager",
@@ -1427,18 +1487,6 @@
       "url": "https://decrypt.co/365069/revolut-targeting-200-billion-valuation-ipo-not-until-2028",
       "source": "Decrypt",
       "published_at": "Tue, 21 Apr 2026 20:23:06 +0000"
-    },
-    {
-      "title": "Coinbase Advisory Board Paper Warns Crypto Cannot Afford to Wait on Quantum Threats",
-      "url": "https://crypto.news/quantum-computing-crypto-act-now-coinbase-warns/",
-      "source": "BTCManager",
-      "published_at": "Tue, 21 Apr 2026 20:15:00 +0000"
-    },
-    {
-      "title": "Coinbase Advisory Board Paper Warns Crypto Cannot Afford to Wait on Quantum Threats",
-      "url": "https://crypto.news/quantum-computing-crypto-act-now-coinbase-warns/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 21 Apr 2026 20:15:00 +0000"
     },
     {
       "title": "Google Fixes AI Coding Tool Flaw That Let Attackers Execute Malicious Code: Report",
@@ -1585,18 +1633,6 @@
       "published_at": "Tue, 21 Apr 2026 17:55:37 +0100"
     },
     {
-      "title": "Core Scientific plans $3.3B debt raise to fund AI data center push",
-      "url": "https://cointelegraph.com/news/core-scientific-3-3b-debt-ai-data-center-expansion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 21 Apr 2026 17:50:38 +0100"
-    },
-    {
-      "title": "Bitcoin funding stays negative at $78K as short squeeze expectations grow",
-      "url": "https://cointelegraph.com/news/bitcoin-funding-stays-negative-78k-short-squeeze-expectations-grow?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 21 Apr 2026 17:48:54 +0100"
-    },
-    {
       "title": "Amazon Will Invest Up to $25 Billion More in Anthropic as AI Demand Surges",
       "url": "https://decrypt.co/365034/amazon-invest-25-billion-anthropic-ai-demand-surges",
       "source": "Decrypt",
@@ -1613,12 +1649,6 @@
       "url": "https://decrypt.co/365028/doordash-pay-delivery-workers-tablecoins-stripe-tempo-blockchain",
       "source": "Decrypt",
       "published_at": "Tue, 21 Apr 2026 15:54:35 +0000"
-    },
-    {
-      "title": "Why Strategy’s multi billion dollar Bitcoin purchases are no longer bullish catalysts for the market",
-      "url": "https://cryptoslate.com/why-strategys-multi-billion-dollar-bitcoin-purchases-are-no-longer-bullish-catalysts-for-the-market/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 21 Apr 2026 15:45:36 +0000"
     },
     {
       "title": "This Ripple (XRP) Indicator Turns Bullish After Months: Is a Massive Breakout Coming?",
@@ -1837,34 +1867,10 @@
       "published_at": "Mon, 20 Apr 2026 19:38:25 +0000"
     },
     {
-      "title": "Palantir Faces Backlash Over AI-Driven Military Doctrine",
-      "url": "https://decrypt.co/364935/palantir-backlash-ai-driven-military-doctrine",
-      "source": "Decrypt",
-      "published_at": "Mon, 20 Apr 2026 18:43:10 +0000"
-    },
-    {
-      "title": "Prediction Markets Expect Prolonged Strait of Hormuz Disruption—And Oil Traders Are Betting Big",
-      "url": "https://decrypt.co/364914/prediction-markets-strait-of-hormuz-oil-traders",
-      "source": "Decrypt",
-      "published_at": "Mon, 20 Apr 2026 18:30:41 +0000"
-    },
-    {
-      "title": "Nearly Half of New Streaming Music Is AI-Generated, Says Deezer—But Nobody’s Listening",
-      "url": "https://decrypt.co/364937/nearly-half-streaming-music-ai-generated-deezer-nobodys-listening",
-      "source": "Decrypt",
-      "published_at": "Mon, 20 Apr 2026 18:23:33 +0000"
-    },
-    {
       "title": "$1.4B Flows Into Crypto Funds in Biggest Weekly Total Since Early Year",
       "url": "https://cryptopotato.com/1-4b-flows-into-crypto-funds-in-biggest-weekly-total-since-early-year/",
       "source": "CryptoPotato",
       "published_at": "Mon, 20 Apr 2026 18:18:12 +0000"
-    },
-    {
-      "title": "RaveDAO Token Crashes, Sheds $6.6 Billion in Value as Exchanges Probe Alleged Manipulation",
-      "url": "https://decrypt.co/364911/ravedao-token-crashes-sheds-6-6-billion-exchanges-probe-alleged-manipulation",
-      "source": "Decrypt",
-      "published_at": "Mon, 20 Apr 2026 18:01:03 +0000"
     },
     {
       "title": "DeFi TVL Plummets Across Top Chains After KelpDAO Hack",
@@ -1961,12 +1967,6 @@
       "url": "https://cryptopotato.com/a-35-xrp-price-swing-the-massive-symmetrical-triangle-forming-on-ripples-chart/",
       "source": "CryptoPotato",
       "published_at": "Mon, 20 Apr 2026 07:49:40 +0000"
-    },
-    {
-      "title": "Startale Expands to Abu Dhabi, Aligning With UAE’s State-Backed Crypto Push",
-      "url": "https://cryptopotato.com/startale-expands-to-abu-dhabi-aligning-with-uaes-state-backed-crypto-push/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 20 Apr 2026 07:04:32 +0000"
     },
     {
       "title": "Bitcoin Derivatives Flash the First Warning Sign of a Quantum Selloff, Says Joshua Lim",
