@@ -1,6 +1,102 @@
 {
   "articles": [
     {
+      "title": "SEC Commissioner Hester Peirce to Join Regent Law Faculty",
+      "url": "https://news.bitcoin.com/sec-commissioner-hester-peirce-to-join-regent-law-faculty/",
+      "source": "Bitcoin.com",
+      "published_at": "Thu, 21 May 2026 02:30:52 +0000"
+    },
+    {
+      "title": "SpaceX reveals larger-than-expected Bitcoin holdings in IPO filing",
+      "url": "https://cointelegraph.com/news/spacex-filing-reveals-larger-than-expected-bitcoin-holdings-ahead-of-ipo?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Thu, 21 May 2026 02:08:30 +0000"
+    },
+    {
+      "title": "Decoding Hyperliquid’s setup: HYPE whale split, rising TVL, and $50 test",
+      "url": "https://ambcrypto.com/decoding-hyperliquids-setup-hype-whale-split-rising-tvl-and-50-test/",
+      "source": "Ambcrypto",
+      "published_at": "Thu, 21 May 2026 02:00:38 +0000"
+    },
+    {
+      "title": "Ripple’s Fed Master Account Bid Gains Momentum After Trump Order",
+      "url": "https://bitcoinist.com/ripple-fed-master-account-trump-order/",
+      "source": "Bitcoinist",
+      "published_at": "Thu, 21 May 2026 01:30:33 +0000"
+    },
+    {
+      "title": "Why Multicoin Is Betting Big On Zcash: Tushar Jain Lays Out The Bull Case",
+      "url": "https://www.newsbtc.com/news/why-multicoin-betting-big-zcash-tushar-jain/",
+      "source": "NewsBTC",
+      "published_at": "Thu, 21 May 2026 01:30:32 +0000"
+    },
+    {
+      "title": "Italy Traces €1 Million in Undeclared Bitcoin Ordinals Gains",
+      "url": "https://news.bitcoin.com/italy-traces-e1-million-in-undeclared-bitcoin-ordinals-gains/",
+      "source": "Bitcoin.com",
+      "published_at": "Thu, 21 May 2026 01:30:06 +0000"
+    },
+    {
+      "title": "Bitcoin Firm Nakamoto Plots 1-for-40 Stock Split Following 99% Price Plunge",
+      "url": "https://decrypt.co/368562/bitcoin-firm-nakamoto-stock-split-99-price-plunge",
+      "source": "Decrypt",
+      "published_at": "Thu, 21 May 2026 01:21:18 +0000"
+    },
+    {
+      "title": "Inside the CFTC’s fight against Minnesota’s prediction market ban",
+      "url": "https://ambcrypto.com/inside-the-cftcs-fight-against-minnesotas-prediction-market-ban/",
+      "source": "Ambcrypto",
+      "published_at": "Thu, 21 May 2026 01:00:43 +0000"
+    },
+    {
+      "title": "Hester Peirce exits SEC for Regent Law in November",
+      "url": "https://crypto.news/hester-peirce-exits-sec-for-regent-law-in-november/",
+      "source": "BTCManager",
+      "published_at": "Thu, 21 May 2026 01:00:00 +0000"
+    },
+    {
+      "title": "Hester Peirce exits SEC for Regent Law in November",
+      "url": "https://crypto.news/hester-peirce-exits-sec-for-regent-law-in-november/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 21 May 2026 01:00:00 +0000"
+    },
+    {
+      "title": "Idle XRP Finds New Use Case Through Flare Yield Vault After XRP Alliance Launch",
+      "url": "https://news.bitcoin.com/idle-xrp-finds-new-use-case-through-flare-yield-vault-after-xrp-alliance-launch/",
+      "source": "Bitcoin.com",
+      "published_at": "Thu, 21 May 2026 00:30:34 +0000"
+    },
+    {
+      "title": "Lummis says Clarity Act floor vote likely before August",
+      "url": "https://crypto.news/clarity-act-floor-vote-could-come-august-says-lummis/",
+      "source": "BTCManager",
+      "published_at": "Thu, 21 May 2026 00:30:00 +0000"
+    },
+    {
+      "title": "Lummis says Clarity Act floor vote likely before August",
+      "url": "https://crypto.news/clarity-act-floor-vote-could-come-august-says-lummis/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 21 May 2026 00:30:00 +0000"
+    },
+    {
+      "title": "Crypto Access To Banks In Focus After Trump’s New Executive Order",
+      "url": "https://www.newsbtc.com/altcoin/crypto-access-to-banks-in-focus-after-trumps-new-executive-order/",
+      "source": "NewsBTC",
+      "published_at": "Thu, 21 May 2026 00:00:47 +0000"
+    },
+    {
+      "title": "Crypto faces fresh macro pressure as Japan, U.S. yields spike – Here’s why!",
+      "url": "https://ambcrypto.com/crypto-faces-fresh-macro-pressure-as-japan-u-s-yields-spike-heres-why/",
+      "source": "Ambcrypto",
+      "published_at": "Thu, 21 May 2026 00:00:27 +0000"
+    },
+    {
+      "title": "The Brutally Honest Truth About Bitcoin That Most People Miss",
+      "url": "https://bitcoinist.com/brutally-honest-truth-bitcoin/",
+      "source": "Bitcoinist",
+      "published_at": "Thu, 21 May 2026 00:00:19 +0000"
+    },
+    {
       "title": "Crypto Bank Charter Battle Grows as OCC Clears Coinbase, Ripple, Bitgo and Others",
       "url": "https://news.bitcoin.com/crypto-bank-charter-battle-grows-as-occ-clears-coinbase-ripple-bitgo-and-others/",
       "source": "Bitcoin.com",
@@ -433,18 +529,6 @@
       "published_at": "Wed, 20 May 2026 18:45:17 +0000"
     },
     {
-      "title": "Bitcoin Adds $20B to Crypto Economy as Traders Defend $77,000 Support",
-      "url": "https://news.bitcoin.com/bitcoin-adds-20b-to-crypto-economy-as-traders-defend-77000-support/",
-      "source": "Bitcoin.com",
-      "published_at": "Wed, 20 May 2026 18:42:40 +0000"
-    },
-    {
-      "title": "Wintermute Launches Armitage as $10B Trading Network Expands Into DeFi Lending",
-      "url": "https://news.bitcoin.com/wintermute-launches-armitage-as-10b-trading-network-expands-into-defi-lending/",
-      "source": "Bitcoin.com",
-      "published_at": "Wed, 20 May 2026 18:38:36 +0000"
-    },
-    {
       "title": "Massad warns CBDC ban hides US digital dollar work",
       "url": "https://crypto.news/cbdc-ban-hides-us-digital-dollar-work-says-massad/",
       "source": "BTCManager",
@@ -457,7 +541,7 @@
       "published_at": "Wed, 20 May 2026 18:38:11 +0000"
     },
     {
-      "title": "Securitize remains in the red even as record quarter fuels public listing plans",
+      "title": "Securitize posts record revenue in the first quarter as it gears up for public listing",
       "url": "https://www.coindesk.com/markets/2026/05/20/securitize-remains-in-the-red-even-as-record-quarter-fuels-public-listing-plans",
       "source": "Coindesk",
       "published_at": "Wed, 20 May 2026 18:37:42 +0000"
@@ -497,12 +581,6 @@
       "url": "https://decrypt.co/368481/google-stock-ai-gemini-why-bofa-bank-america-still-buying",
       "source": "Decrypt",
       "published_at": "Wed, 20 May 2026 18:04:50 +0000"
-    },
-    {
-      "title": "Bitcoin at Risk as Capriole Warns 3.8% Inflation Has Historically Preceded 30% Market Crashes",
-      "url": "https://news.bitcoin.com/capriole-investments-inflation-market-crash-30-percent-2026/",
-      "source": "Bitcoin.com",
-      "published_at": "Wed, 20 May 2026 18:04:38 +0000"
     },
     {
       "title": "Fairshake PAC’s $20M backing pays off in three US state primaries",
@@ -637,22 +715,10 @@
       "published_at": "Wed, 20 May 2026 16:31:33 +0000"
     },
     {
-      "title": "Arthur Hayes’ Bombshell CLARITY Act Warning Just Resurfaced — And The Timing Couldn’t Be Worse",
-      "url": "https://bitcoinist.com/arthur-hayes-bombshell-clarity-act-warning-returned/",
-      "source": "Bitcoinist",
-      "published_at": "Wed, 20 May 2026 16:30:59 +0000"
-    },
-    {
       "title": "Zcash (ZEC) Technical Setup Continues Strengthening Above Key Macro Resistance",
       "url": "https://www.newsbtc.com/news/zcash-setup-strengthening/",
       "source": "NewsBTC",
       "published_at": "Wed, 20 May 2026 16:30:00 +0000"
-    },
-    {
-      "title": "Top Crypto Exchange Expands Into UK With New Local Platform",
-      "url": "https://bitcoinist.com/top-crypto-exchange-expands-uk-with-new-platform/",
-      "source": "Bitcoinist",
-      "published_at": "Wed, 20 May 2026 16:18:47 +0000"
     },
     {
       "title": "Bitcoin sees fresh US sell-off as markets await Nvidia 'biggest earnings event'",
@@ -835,12 +901,6 @@
       "published_at": "Wed, 20 May 2026 14:12:39 +0000"
     },
     {
-      "title": "8 Beginner-friendly AI stock trading bots and tools to use legally in 2026",
-      "url": "https://ambcrypto.com/8-beginner-friendly-ai-stock-trading-bots-and-tools-to-use-legally-in-2026/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 20 May 2026 14:10:24 +0000"
-    },
-    {
       "title": "Vitalik Buterin outlines Ethereum's privacy measures. Here is what it means for the network and ETH",
       "url": "https://www.coindesk.com/tech/2026/05/20/vitalik-buterin-outlines-ethereum-s-privacy-measures-here-is-what-it-means-for-the-network-and-eth",
       "source": "Coindesk",
@@ -859,22 +919,10 @@
       "published_at": "Wed, 20 May 2026 14:06:30 +0000"
     },
     {
-      "title": "Why Tether’s latest Twenty One move is bigger than a treasury bet",
-      "url": "https://ambcrypto.com/why-tethers-latest-twenty-one-move-is-bigger-than-a-treasury-bet/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 20 May 2026 14:06:03 +0000"
-    },
-    {
       "title": "HYPE Surges 101% This Year: What’s Driving Hyperliquid’s Growth?",
       "url": "https://decrypt.co/368443/hype-surges-101-this-year-whats-driving-hyperliquids-growth",
       "source": "Decrypt",
       "published_at": "Wed, 20 May 2026 14:02:37 +0000"
-    },
-    {
-      "title": "Decoding AI Companions’ 37% rally – Why are AIC retail traders staying quiet?",
-      "url": "https://ambcrypto.com/decoding-ai-companions-37-rally-why-are-aic-retail-traders-staying-quiet/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 20 May 2026 14:00:25 +0000"
     },
     {
       "title": "Bitcoin ETF flows expose the split inside crypto’s $1 billion selloff",
@@ -941,12 +989,6 @@
       "url": "https://crypto.news/layerzero-details-292m-kelpdao-exploit-and-tightens-bridge-security/",
       "source": "CryptoNews",
       "published_at": "Wed, 20 May 2026 13:34:38 +0000"
-    },
-    {
-      "title": "What’s The Latest With The US-Iran War And How Does It Affect Bitcoin?",
-      "url": "https://www.newsbtc.com/bitcoin-news/us-iran-war-effect-on-bitcoin/",
-      "source": "NewsBTC",
-      "published_at": "Wed, 20 May 2026 13:30:48 +0000"
     },
     {
       "title": "Mouro closes $400M fund as Santander backs AI and blockchain bets",
@@ -1127,12 +1169,6 @@
       "url": "https://crypto.news/white-label-prop-firm-technology-vs-custom-development/",
       "source": "CryptoNews",
       "published_at": "Wed, 20 May 2026 12:05:14 +0000"
-    },
-    {
-      "title": "Ripple And Project Eleven Join Forces To Make XRP Ledger Quantum-Ready",
-      "url": "https://www.newsbtc.com/altcoin/ripple-and-project-eleven-join-forces-to-make-xrp-ledger-quantum-ready/",
-      "source": "NewsBTC",
-      "published_at": "Wed, 20 May 2026 12:00:21 +0000"
     },
     {
       "title": "Ripple (XRP) Price Predictions for This Week",
@@ -1525,34 +1561,10 @@
       "published_at": "Wed, 20 May 2026 07:28:51 +0000"
     },
     {
-      "title": "Ark Invest bets on crypto exchange Bullish after selloff",
-      "url": "https://crypto.news/ark-invest-bets-on-crypto-exchange-bullish-after-selloff/",
-      "source": "BTCManager",
-      "published_at": "Wed, 20 May 2026 07:25:00 +0000"
-    },
-    {
-      "title": "Ark Invest bets on crypto exchange Bullish after selloff",
-      "url": "https://crypto.news/ark-invest-bets-on-crypto-exchange-bullish-after-selloff/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 20 May 2026 07:25:00 +0000"
-    },
-    {
       "title": "Trump orders review of fintech firms' access to Fed payment services",
       "url": "https://cointelegraph.com/news/trump-review-crypto-access-federal-reserve-payment-systems?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Wed, 20 May 2026 07:20:28 +0000"
-    },
-    {
-      "title": "Crypto layoffs grow as Meta’s AI shift hits jobs",
-      "url": "https://crypto.news/crypto-layoffs-grow-as-metas-ai-shift-hits-jobs/",
-      "source": "BTCManager",
-      "published_at": "Wed, 20 May 2026 07:04:00 +0000"
-    },
-    {
-      "title": "Crypto layoffs grow as Meta’s AI shift hits jobs",
-      "url": "https://crypto.news/crypto-layoffs-grow-as-metas-ai-shift-hits-jobs/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 20 May 2026 07:04:00 +0000"
     },
     {
       "title": "Trump Media Scraps Bitcoin ETF Plans — What’s Behind the Sudden Withdrawal?",
@@ -1649,12 +1661,6 @@
       "url": "https://crypto-economy.com/bitcoin-hits-major-wall-of-resistance-warns-cryptoquant-research-head/",
       "source": "CryptoEconomy",
       "published_at": "Wed, 20 May 2026 02:19:33 +0000"
-    },
-    {
-      "title": "Solana futures funding rate turns negative: Is $78 SOL next?",
-      "url": "https://cointelegraph.com/markets/solana-futures-funding-rate-turns-negative-is-a-drop-to-78-next?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 20 May 2026 00:15:57 +0000"
     },
     {
       "title": "Bitcoin Miners Are Becoming Key Players in the AI Infrastructure Boom, Bernstein Says",
@@ -1931,12 +1937,6 @@
       "url": "https://decrypt.co/368265/arfbench-datadog-benchmark-ai-engineers-outages",
       "source": "Decrypt",
       "published_at": "Mon, 18 May 2026 21:05:45 +0000"
-    },
-    {
-      "title": "Bitcoin Faces Greater Quantum Computing Risk Than Ethereum, Citi Warns",
-      "url": "https://decrypt.co/368264/bitcoin-faces-greater-quantum-computing-risk-ethereum-citi-warns",
-      "source": "Decrypt",
-      "published_at": "Mon, 18 May 2026 20:55:33 +0000"
     },
     {
       "title": "SpaceX’s $637M Bitcoin Holding Enters IPO Spotlight",
