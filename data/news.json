@@ -1,6 +1,312 @@
 {
   "articles": [
     {
+      "title": "SpaceX IPO filing gives crypto investors a new way to price Bitcoin exposure, X payments, and AI compute",
+      "url": "https://cryptoslate.com/spacex-ipo-bitcoin-exposure-x-payments-ai-compute/",
+      "source": "CryptoSlate",
+      "published_at": "Fri, 22 May 2026 10:45:52 +0000"
+    },
+    {
+      "title": "Ark Invest buys $12.5 million of Bullish stock in four days",
+      "url": "https://www.coindesk.com/markets/2026/05/22/ark-invest-buys-usd12-5-million-of-bullish-stock-in-four-days",
+      "source": "Coindesk",
+      "published_at": "Fri, 22 May 2026 10:45:29 +0000"
+    },
+    {
+      "title": "XRP Sees 4th-Largest Wallet Growth Spike Of 2026, Santiment Says",
+      "url": "https://www.newsbtc.com/xrp-news/xrp-4th-largest-wallet-growth-spike-of-2026/",
+      "source": "NewsBTC",
+      "published_at": "Fri, 22 May 2026 10:30:20 +0000"
+    },
+    {
+      "title": "Trump Media Sends 2,650 Bitcoin Worth $205M to Crypto.com, Raising Treasury Questions",
+      "url": "https://news.bitcoin.com/trump-media-2650-bitcoin-crypto-com-transfer-2026/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 22 May 2026 10:30:05 +0000"
+    },
+    {
+      "title": "Polymarket Taps Jupiter Exec to Lead Japan Push: Report",
+      "url": "https://decrypt.co/368734/polymarket-taps-jupiter-exec-to-lead-japan-push-report",
+      "source": "Decrypt",
+      "published_at": "Fri, 22 May 2026 10:29:48 +0000"
+    },
+    {
+      "title": "Can Hyperliquid and Zcash hold their parabolic rallies?",
+      "url": "https://crypto.news/can-hyperliquid-and-zcash-hold-their-parabolic-rallies/",
+      "source": "BTCManager",
+      "published_at": "Fri, 22 May 2026 10:29:16 +0000"
+    },
+    {
+      "title": "Can Hyperliquid and Zcash hold their parabolic rallies?",
+      "url": "https://crypto.news/can-hyperliquid-and-zcash-hold-their-parabolic-rallies/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 22 May 2026 10:29:16 +0000"
+    },
+    {
+      "title": "Polymarket Admin Wallet Exploited on Polygon, Says ZachXBT",
+      "url": "https://cryptopotato.com/polymarket-admin-wallet-exploited-on-polygon-says-zachxbt/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 22 May 2026 10:26:53 +0000"
+    },
+    {
+      "title": "Crypto majors stuck in tight range as altcoin rotation picks up steam",
+      "url": "https://www.coindesk.com/markets/2026/05/22/crypto-majors-stuck-in-tight-range-as-altcoin-rotation-picks-up-steam",
+      "source": "Coindesk",
+      "published_at": "Fri, 22 May 2026 10:23:48 +0000"
+    },
+    {
+      "title": "Ripple’s Ex-CTO Switched His Profile Picture to an XRPL Meme Coin",
+      "url": "https://beincrypto.com/ripple-meme-coin-schwartz-fuzzy-profile-pic-debate/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 22 May 2026 10:12:52 +0000"
+    },
+    {
+      "title": "F2Pool co-founder joins SpaceX’s 2-year Mars flyby plan",
+      "url": "https://crypto.news/f2pool-co-founder-joins-spacexs-2-year-mars-flyby-plan/",
+      "source": "BTCManager",
+      "published_at": "Fri, 22 May 2026 10:06:57 +0000"
+    },
+    {
+      "title": "F2Pool co-founder joins SpaceX’s 2-year Mars flyby plan",
+      "url": "https://crypto.news/f2pool-co-founder-joins-spacexs-2-year-mars-flyby-plan/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 22 May 2026 10:06:57 +0000"
+    },
+    {
+      "title": "XRP Ledger Hits No. 4 In RWA Rankings In Less Than A Year",
+      "url": "https://bitcoinist.com/xrp-ledger-no-4-in-rwa-rankings-in-less-than-year/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 22 May 2026 10:00:13 +0000"
+    },
+    {
+      "title": "As Bitcoin miners stay strong, BTC’s next major move depends entirely on…",
+      "url": "https://ambcrypto.com/as-bitcoin-miners-stay-strong-btcs-next-major-move-depends-entirely-on/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 22 May 2026 10:00:13 +0000"
+    },
+    {
+      "title": "ERA Wallet Closed the Blind Signing Gap That Has Cost DeFi Billions",
+      "url": "https://beincrypto.com/era-wallet-closed-the-blind-signing-gap-that-has-cost-defi-billions/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 22 May 2026 09:46:54 +0000"
+    },
+    {
+      "title": "ZachXBT flags $520K Polymarket exploit on Polygon, team says funds are safe",
+      "url": "https://www.coindesk.com/markets/2026/05/22/zachxbt-flags-usd520k-polymarket-exploit-on-polygon-team-says-funds-are-safe",
+      "source": "Coindesk",
+      "published_at": "Fri, 22 May 2026 09:39:55 +0000"
+    },
+    {
+      "title": "Polymarket UMA alert: are user funds safe after $520K loss?",
+      "url": "https://crypto.news/polymarket-hit-zachxbt-flags-520k-uma-adapter-loss/",
+      "source": "BTCManager",
+      "published_at": "Fri, 22 May 2026 09:37:16 +0000"
+    },
+    {
+      "title": "Polymarket UMA alert: are user funds safe after $520K loss?",
+      "url": "https://crypto.news/polymarket-hit-zachxbt-flags-520k-uma-adapter-loss/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 22 May 2026 09:37:16 +0000"
+    },
+    {
+      "title": "Arthur Hayes Warns AI Could Spark the Next Major Banking Crisis Worse Than 2008",
+      "url": "https://blockonomi.com/arthur-hayes-warns-ai-could-spark-the-next-major-banking-crisis-worse-than-2008/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 22 May 2026 09:36:00 +0000"
+    },
+    {
+      "title": "Verus bridge exploiter returns $8.5M after bounty offer",
+      "url": "https://cointelegraph.com/news/verus-bridge-hacker-returns-85m-eth-28m-bounty?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 22 May 2026 09:32:03 +0000"
+    },
+    {
+      "title": "US Lawmakers Introduce ARMA Bill to Codify Strategic Bitcoin Reserve With 20-Year Hold and 1M BTC Goal",
+      "url": "https://news.bitcoin.com/arma-bill-strategic-bitcoin-reserve-20-year-hold-2026/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 22 May 2026 09:30:07 +0000"
+    },
+    {
+      "title": "Will Bitcoin price revisit $76K as bullish trendline support collapses?",
+      "url": "https://crypto.news/will-bitcoin-price-revisit-76k-as-bullish-trendline-support-collapses/",
+      "source": "BTCManager",
+      "published_at": "Fri, 22 May 2026 09:29:43 +0000"
+    },
+    {
+      "title": "Will Bitcoin price revisit $76K as bullish trendline support collapses?",
+      "url": "https://crypto.news/will-bitcoin-price-revisit-76k-as-bullish-trendline-support-collapses/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 22 May 2026 09:29:43 +0000"
+    },
+    {
+      "title": "Bitcoin Traders Return to Derivatives Markets After 8 Months of Deleveraging",
+      "url": "https://blockonomi.com/bitcoin-traders-return-to-derivatives-markets-after-8-months-of-deleveraging/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 22 May 2026 09:21:08 +0000"
+    },
+    {
+      "title": "3 Altcoins To Watch This Weekend | May 23 – 24",
+      "url": "https://beincrypto.com/altcoins-to-watch-this-weekend-may-23-24/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 22 May 2026 09:12:01 +0000"
+    },
+    {
+      "title": "CLARITY Act Under Fire As Hayes Presses Trump To Shut It Down",
+      "url": "https://bitcoinist.com/clarity-act-under-fire-as-hayes-presses-trump-to-shut-it-down/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 22 May 2026 09:00:48 +0000"
+    },
+    {
+      "title": "Saylor Says Bitcoin Could Triple S&P 500 Returns: ‘We Expect 30%’",
+      "url": "https://www.newsbtc.com/news/bitcoin-vs-sp-500-michael-saylor-bets-big-on-crypto-winning-long-term/",
+      "source": "NewsBTC",
+      "published_at": "Fri, 22 May 2026 09:00:17 +0000"
+    },
+    {
+      "title": "Verus bridge attacker sends back $8.5M, keeps bounty",
+      "url": "https://crypto.news/verus-bridge-attacker-sends-back-8-5m-keeps-bounty/",
+      "source": "BTCManager",
+      "published_at": "Fri, 22 May 2026 09:00:00 +0000"
+    },
+    {
+      "title": "Verus bridge attacker sends back $8.5M, keeps bounty",
+      "url": "https://crypto.news/verus-bridge-attacker-sends-back-8-5m-keeps-bounty/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 22 May 2026 09:00:00 +0000"
+    },
+    {
+      "title": "Europe’s 37-bank stablecoin push tests whether on-chain finance defaults to euros or dollars",
+      "url": "https://cryptoslate.com/europes-37-bank-stablecoin-push-tests-whether-on-chain-finance-defaults-to-euros-or-dollars/",
+      "source": "CryptoSlate",
+      "published_at": "Fri, 22 May 2026 08:56:01 +0000"
+    },
+    {
+      "title": "Near Protocol to automate its own growth and its token is skyrocketing",
+      "url": "https://www.coindesk.com/markets/2026/05/22/near-protocol-to-automate-its-own-growth-and-its-token-is-skyrocketing",
+      "source": "Coindesk",
+      "published_at": "Fri, 22 May 2026 08:52:32 +0000"
+    },
+    {
+      "title": "Bitcoin Pizza Day 2026: Commemorating Crypto’s First Real-World Transaction",
+      "url": "https://cryptopotato.com/bitcoin-pizza-day-2026-commemorating-cryptos-first-real-world-transaction/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 22 May 2026 08:50:30 +0000"
+    },
+    {
+      "title": "Trump Media moves over 2K BTC to crypto.com, what does it mean for Bitcoin?",
+      "url": "https://crypto.news/trump-media-moves-over-2k-btc-to-crypto-com-what-does-it-mean-for-bitcoin/",
+      "source": "BTCManager",
+      "published_at": "Fri, 22 May 2026 08:48:00 +0000"
+    },
+    {
+      "title": "Trump Media moves over 2K BTC to crypto.com, what does it mean for Bitcoin?",
+      "url": "https://crypto.news/trump-media-moves-over-2k-btc-to-crypto-com-what-does-it-mean-for-bitcoin/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 22 May 2026 08:48:00 +0000"
+    },
+    {
+      "title": "Polymarket aims for prediction market approval in Japan by 2030",
+      "url": "https://www.coindesk.com/policy/2026/05/22/polymarket-aims-for-prediction-market-approval-in-japan-by-2030",
+      "source": "Coindesk",
+      "published_at": "Fri, 22 May 2026 08:34:13 +0000"
+    },
+    {
+      "title": "ZachXBT Flags Polymarket Smart-Contract Exploit With $520,000 in Losses",
+      "url": "https://beincrypto.com/polymarket-exploit-with-520000-in-losses/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 22 May 2026 08:32:43 +0000"
+    },
+    {
+      "title": "Ethereum price pressure builds as retail sentiment weakens",
+      "url": "https://crypto.news/ethereum-price-pressure-builds-as-retail-sentiment-weakens/",
+      "source": "BTCManager",
+      "published_at": "Fri, 22 May 2026 08:31:59 +0000"
+    },
+    {
+      "title": "Ethereum price pressure builds as retail sentiment weakens",
+      "url": "https://crypto.news/ethereum-price-pressure-builds-as-retail-sentiment-weakens/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 22 May 2026 08:31:59 +0000"
+    },
+    {
+      "title": "$128 mln leaves Aave, raises liquidity concerns across DeFi",
+      "url": "https://ambcrypto.com/128-mln-leaves-aave-raises-liquidity-concerns-across-defi/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 22 May 2026 08:30:26 +0000"
+    },
+    {
+      "title": "Polymarket Targets Japan Market Entry, Appoints Representative in Push for 2030 Approval",
+      "url": "https://news.bitcoin.com/polymarket-japan-market-entry-approval-2030/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 22 May 2026 08:30:04 +0000"
+    },
+    {
+      "title": "Market Wrap: Equity Futures Climb While Bitcoin Slides Amid US-Iran Diplomacy",
+      "url": "https://blockonomi.com/market-wrap-equity-futures-climb-while-bitcoin-slides-amid-us-iran-diplomacy/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 22 May 2026 08:27:43 +0000"
+    },
+    {
+      "title": "Bitcoin implied volatility drops to 7 month low despite macro risks",
+      "url": "https://www.coindesk.com/markets/2026/05/22/bitcoin-implied-volatility-drops-to-7-month-low-despite-macro-risks",
+      "source": "Coindesk",
+      "published_at": "Fri, 22 May 2026 08:24:46 +0000"
+    },
+    {
+      "title": "Bitcoin price record 90-day uptrend 'resembles bull market rally:' New analysis",
+      "url": "https://cointelegraph.com/markets/bitcoin-price-record-90-day-uptrend-resembles-bull-market-rally-new-analysis?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 22 May 2026 08:12:28 +0000"
+    },
+    {
+      "title": "Polymarket targets approval in Japan as global scrutiny intensifies",
+      "url": "https://crypto.news/polymarket-targets-approval-in-japan-as-global-scrutiny-intensifies/",
+      "source": "BTCManager",
+      "published_at": "Fri, 22 May 2026 08:10:42 +0000"
+    },
+    {
+      "title": "Polymarket targets approval in Japan as global scrutiny intensifies",
+      "url": "https://crypto.news/polymarket-targets-approval-in-japan-as-global-scrutiny-intensifies/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 22 May 2026 08:10:42 +0000"
+    },
+    {
+      "title": "Is Pi Network’s utility push enough to lift PI price?",
+      "url": "https://crypto.news/is-pi-networks-utility-push-enough-to-lift-pi-price/",
+      "source": "BTCManager",
+      "published_at": "Fri, 22 May 2026 08:10:00 +0000"
+    },
+    {
+      "title": "Is Pi Network’s utility push enough to lift PI price?",
+      "url": "https://crypto.news/is-pi-networks-utility-push-enough-to-lift-pi-price/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 22 May 2026 08:10:00 +0000"
+    },
+    {
+      "title": "Polymarket Reportedly Targets Tokyo Approval by 2030 in Japan Lobbying Effort",
+      "url": "https://beincrypto.com/polymarket-japan-approval-2030/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 22 May 2026 08:07:45 +0000"
+    },
+    {
+      "title": "Ripple Network Explodes With Thousands of New XRP Wallets – Bullish Signal?",
+      "url": "https://cryptopotato.com/ripple-network-explodes-with-thousands-of-new-xrp-wallets-bullish-signal/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 22 May 2026 08:01:59 +0000"
+    },
+    {
+      "title": "Hunting the discount area – Mapping out a NEAR pullback for sidelined bulls",
+      "url": "https://ambcrypto.com/hunting-the-discount-area-mapping-out-a-near-pullback-for-sidelined-bulls/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 22 May 2026 08:00:29 +0000"
+    },
+    {
+      "title": "Not Bitcoin: US Government Bets $2 Billion On Quantum Instead",
+      "url": "https://bitcoinist.com/bitcoin-us-government-2-billion-quantum-instead/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 22 May 2026 08:00:10 +0000"
+    },
+    {
       "title": "THORChain offers hacker bounty as restart vote opens",
       "url": "https://crypto.news/thorchain-offers-hacker-bounty-as-restart-vote-opens/",
       "source": "BTCManager",
@@ -23,6 +329,12 @@
       "url": "https://crypto.news/south-korea-to-review-22-crypto-tax-repeal-request-as-opposition-grows/",
       "source": "CryptoNews",
       "published_at": "Fri, 22 May 2026 07:36:07 +0000"
+    },
+    {
+      "title": "Investor Demand for S&P 500 Downside Protection Plummets 75% Since March",
+      "url": "https://beincrypto.com/sp-500-put-call-skew-drops/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 22 May 2026 07:35:06 +0000"
     },
     {
       "title": "ZachXBT Accuses Kucoin of Shielding $13M in Stolen Crypto From German Investigators",
@@ -385,12 +697,6 @@
       "published_at": "Fri, 22 May 2026 04:28:56 +0000"
     },
     {
-      "title": "Why Is The Crypto Market Up Today?",
-      "url": "https://beincrypto.com/why-is-the-crypto-market-up-today/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 22 May 2026 04:21:04 +0000"
-    },
-    {
       "title": "XRP Futures on CME One Year Later: $63B in Trading Volume and Counting",
       "url": "https://cryptopotato.com/xrp-futures-on-cme-one-year-later-63b-in-trading-volume-and-counting/",
       "source": "CryptoPotato",
@@ -457,18 +763,6 @@
       "published_at": "Fri, 22 May 2026 03:00:27 +0000"
     },
     {
-      "title": "Bitcoin Price Consolidates Near Lows As Market Searches For Direction",
-      "url": "https://www.newsbtc.com/analysis/btc/bitcoin-price-consolidates-78k/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 22 May 2026 02:54:07 +0000"
-    },
-    {
-      "title": "Ripple Prime Integration Gives Institutions Unified Access to EDX Markets",
-      "url": "https://news.bitcoin.com/ripple-prime-integration-gives-institutions-unified-access-to-edx-markets/",
-      "source": "Bitcoin.com",
-      "published_at": "Fri, 22 May 2026 02:30:30 +0000"
-    },
-    {
       "title": "WhiteBIT Enters the UK with Dedicated Crypto Platform for Local Users",
       "url": "https://ambcrypto.com/whitebit-enters-the-uk-with-dedicated-crypto-platform-for-local-users/",
       "source": "Ambcrypto",
@@ -479,30 +773,6 @@
       "url": "https://crypto-economy.com/new-bill-aims-to-protect-us-crypto-reserve-from-political-turnover/",
       "source": "CryptoEconomy",
       "published_at": "Fri, 22 May 2026 02:06:25 +0000"
-    },
-    {
-      "title": "Bitcoin Treasury Company Nakamoto Takes Action To Prevent Stock Slide",
-      "url": "https://www.newsbtc.com/bitcoin-news/bitcoin-treasury-company-nakamoto-takes-action-to-prevent-stock-slide/",
-      "source": "NewsBTC",
-      "published_at": "Fri, 22 May 2026 02:00:17 +0000"
-    },
-    {
-      "title": "Bitcoin Flashes Rare Signal As Binance Buying Aggression Surges: Here’s What Happened Last Time",
-      "url": "https://bitcoinist.com/bitcoin-flashes-signal-binance-buying-aggression/",
-      "source": "Bitcoinist",
-      "published_at": "Fri, 22 May 2026 02:00:09 +0000"
-    },
-    {
-      "title": "Upside Still Rolling For HYPE And Zcash—But Danger Zones Are Getting Closer",
-      "url": "https://bitcoinist.com/upside-for-hype-zcash-but-danger-zones-are-closer/",
-      "source": "Bitcoinist",
-      "published_at": "Fri, 22 May 2026 01:30:46 +0000"
-    },
-    {
-      "title": "XRP vs RLUSD: Evernorth Says XRP’s XRPL Utility Case Keeps Growing",
-      "url": "https://news.bitcoin.com/xrp-vs-rlusd-evernorth-says-xrps-xrpl-utility-case-keeps-growing/",
-      "source": "Bitcoin.com",
-      "published_at": "Fri, 22 May 2026 01:30:45 +0000"
     },
     {
       "title": "On-Chain Data Reveals Bitcoin Miners Are Not Yet Convinced the Market Has Reached Its Bottom",
@@ -517,12 +787,6 @@
       "published_at": "Fri, 22 May 2026 01:00:45 +0000"
     },
     {
-      "title": "Crypto Leverage Still Down 50% After October’s Black Friday Crash, CoinGecko Shows",
-      "url": "https://beincrypto.com/crypto-leverage-perp-trading-report-coingecko/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 22 May 2026 00:57:13 +0000"
-    },
-    {
       "title": "Bitcoin Supply Squeeze Tightens as Institutional Demand Meets Old-Whale Selling",
       "url": "https://blockonomi.com/bitcoin-supply-squeeze-tightens-as-institutional-demand-meets-old-whale-selling/",
       "source": "Blockonomi",
@@ -535,34 +799,10 @@
       "published_at": "Fri, 22 May 2026 00:34:56 +0000"
     },
     {
-      "title": "Can Nvidia Extend Its AI-Driven Rally After New All-Time High?",
-      "url": "https://beincrypto.com/nvidia-stock-forecast-after-new-all-time-high/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 22 May 2026 00:30:59 +0000"
-    },
-    {
-      "title": "67 Million Americans Hold Crypto: 90% Plan to Buy More Next Year",
-      "url": "https://news.bitcoin.com/67-million-americans-hold-crypto-90-plan-to-buy-more-next-year/",
-      "source": "Bitcoin.com",
-      "published_at": "Fri, 22 May 2026 00:30:51 +0000"
-    },
-    {
-      "title": "Early Morgan Stanley Bitcoin ETF Demand Was Self-Directed, Exec Reveals",
-      "url": "https://bitcoinist.com/early-morgan-stanley-bitcoin-etf-demand/",
-      "source": "Bitcoinist",
-      "published_at": "Fri, 22 May 2026 00:30:36 +0000"
-    },
-    {
       "title": "Bittensor rebounds from KEY support – Can bulls push TAO back to $300?",
       "url": "https://ambcrypto.com/bittensor-rebounds-from-key-support-can-bulls-push-tao-back-to-300/",
       "source": "Ambcrypto",
       "published_at": "Fri, 22 May 2026 00:00:05 +0000"
-    },
-    {
-      "title": "US Regulators Move on Prediction Markets With ETF Pause and NHL Pact",
-      "url": "https://beincrypto.com/sec-cftc-prediction-markets-etfs-nhl/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 21 May 2026 23:36:54 +0000"
     },
     {
       "title": "Bitcoin longs soar despite weak US macroeconomic data: Is $82K BTC next?",
@@ -617,12 +857,6 @@
       "url": "https://ambcrypto.com/inside-the-legal-war-threatening-the-future-of-kalshi-polymarket-100-gambling-platforms/",
       "source": "Ambcrypto",
       "published_at": "Thu, 21 May 2026 22:00:10 +0000"
-    },
-    {
-      "title": "Cardano’s Science Coin Identity at Risk as Charles Hoskinson Warns of Research Collapse",
-      "url": "https://beincrypto.com/cardano-risk-hoskinson-research-vote/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 21 May 2026 21:58:17 +0000"
     },
     {
       "title": "Spotify and Universal Launch AI Remix Tool for Fan-Made Covers",
@@ -709,12 +943,6 @@
       "published_at": "Thu, 21 May 2026 21:00:00 +0000"
     },
     {
-      "title": "10 Surprising Facts About Elon Musk’s $1 Trillion SpaceX IPO",
-      "url": "https://beincrypto.com/elon-musk-spacex-ipo-surprising-facts/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 21 May 2026 20:59:49 +0000"
-    },
-    {
       "title": "Young Adults Involved in AI Romance Hide Full Use From Partners 69% of the Time",
       "url": "https://decrypt.co/368686/young-adults-involved-ai-romance-hide-from-human-partners",
       "source": "Decrypt",
@@ -775,22 +1003,10 @@
       "published_at": "Thu, 21 May 2026 20:21:51 +0000"
     },
     {
-      "title": "Michael Saylor Says Bitcoin Will Beat the S&P 500 Over Time",
-      "url": "https://blockonomi.com/michael-saylor-says-bitcoin-will-beat-the-sp-500-over-time/",
-      "source": "Blockonomi",
-      "published_at": "Thu, 21 May 2026 20:14:45 +0000"
-    },
-    {
       "title": "World Liberty Financial rebound gives dormant WLFI holders an exit as AI Financial warns of survival risk",
       "url": "https://cryptoslate.com/world-liberty-financial-wlfi-rebound-ai-financial-risk/",
       "source": "CryptoSlate",
       "published_at": "Thu, 21 May 2026 20:10:45 +0000"
-    },
-    {
-      "title": "Solana: Why the $88–$89 cluster is a short-term line of defense for SOL bears",
-      "url": "https://ambcrypto.com/solana-why-the-88-89-cluster-is-a-short-term-line-of-defense-for-sol-bears/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 21 May 2026 20:00:09 +0000"
     },
     {
       "title": "CLEAR collapses 48% as Everclear shuts down protocol",
@@ -823,12 +1039,6 @@
       "published_at": "Thu, 21 May 2026 19:23:34 +0000"
     },
     {
-      "title": "Mark Cuban Dumped Bitcoin, Says Hedge Thesis Fell Short",
-      "url": "https://blockonomi.com/mark-cuban-dumped-bitcoin-says-hedge-thesis-fell-short/",
-      "source": "Blockonomi",
-      "published_at": "Thu, 21 May 2026 19:12:04 +0000"
-    },
-    {
       "title": "Satoshi’s 1.1 million bitcoin and millions more can be saved from quantum attack, says expert",
       "url": "https://www.coindesk.com/tech/2026/05/21/satoshi-s-1-1m-bitcoin-stash-can-be-saved-from-quantum-attack-says-americanfortress",
       "source": "Coindesk",
@@ -841,12 +1051,6 @@
       "published_at": "Thu, 21 May 2026 19:05:23 +0000"
     },
     {
-      "title": "Why Zcash’s $743 test matters more than ZEC rally itself",
-      "url": "https://ambcrypto.com/why-zcashs-743-test-matters-more-than-zec-rally-itself/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 21 May 2026 19:00:19 +0000"
-    },
-    {
       "title": "Solana treasury firm Solmate raises $11.4M in premium stock offering",
       "url": "https://crypto.news/solana-treasury-firm-solmate-raises-11-4m-in-premium-stock-offering/",
       "source": "BTCManager",
@@ -857,12 +1061,6 @@
       "url": "https://crypto.news/solana-treasury-firm-solmate-raises-11-4m-in-premium-stock-offering/",
       "source": "CryptoNews",
       "published_at": "Thu, 21 May 2026 19:00:00 +0000"
-    },
-    {
-      "title": "Pump.fun is shifting Solana memecoin trading toward stablecoin-based liquidity",
-      "url": "https://ambcrypto.com/pump-fun-is-shifting-solana-memecoin-trading-toward-stablecoin-based-liquidity/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 21 May 2026 18:58:54 +0000"
     },
     {
       "title": "Privacy coins Zcash and QRL surge 25% on quantum fears",
@@ -1345,18 +1543,6 @@
       "published_at": "Thu, 21 May 2026 13:28:49 +0000"
     },
     {
-      "title": "Fed hike odds hit 52% as 30-year yields break above 5%",
-      "url": "https://crypto.news/fed-hike-odds-hit-52-as-30-year-yields-break-above-5/",
-      "source": "BTCManager",
-      "published_at": "Thu, 21 May 2026 13:24:54 +0000"
-    },
-    {
-      "title": "Fed hike odds hit 52% as 30-year yields break above 5%",
-      "url": "https://crypto.news/fed-hike-odds-hit-52-as-30-year-yields-break-above-5/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 21 May 2026 13:24:54 +0000"
-    },
-    {
       "title": "US sanctions Sinaloa cartel-linked Ethereum addresses",
       "url": "https://cointelegraph.com/news/us-sanctions-sinaloa-cartel-ethereum-addresses?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1379,42 +1565,6 @@
       "url": "https://www.coindesk.com/coindesk-indices/2026/05/21/coindesk-20-performance-update-internet-computer-drops-1-6-leading-index-lower",
       "source": "Coindesk",
       "published_at": "Thu, 21 May 2026 13:16:12 +0000"
-    },
-    {
-      "title": "Kraken nears UAE launch after Dubai VARA approval",
-      "url": "https://crypto.news/kraken-nears-uae-launch-after-dubai-vara-approval/",
-      "source": "BTCManager",
-      "published_at": "Thu, 21 May 2026 13:03:29 +0000"
-    },
-    {
-      "title": "Kraken nears UAE launch after Dubai VARA approval",
-      "url": "https://crypto.news/kraken-nears-uae-launch-after-dubai-vara-approval/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 21 May 2026 13:03:29 +0000"
-    },
-    {
-      "title": "7 profitable cloud mining platforms of 2026: Compliant, profitable, and beginner-friendly",
-      "url": "https://crypto.news/7-profitable-cloud-mining-platforms-of-2026-compliant-profitable-and-beginner-friendly/",
-      "source": "BTCManager",
-      "published_at": "Thu, 21 May 2026 13:02:30 +0000"
-    },
-    {
-      "title": "7 profitable cloud mining platforms of 2026: Compliant, profitable, and beginner-friendly",
-      "url": "https://crypto.news/7-profitable-cloud-mining-platforms-of-2026-compliant-profitable-and-beginner-friendly/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 21 May 2026 13:02:30 +0000"
-    },
-    {
-      "title": "Is the Bitcoin halving cycle dead? Here’s what comes next",
-      "url": "https://crypto.news/is-the-bitcoin-halving-cycle-dead-heres-what-comes-next/",
-      "source": "BTCManager",
-      "published_at": "Thu, 21 May 2026 13:00:00 +0000"
-    },
-    {
-      "title": "Is the Bitcoin halving cycle dead? Here’s what comes next",
-      "url": "https://crypto.news/is-the-bitcoin-halving-cycle-dead-heres-what-comes-next/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 21 May 2026 13:00:00 +0000"
     },
     {
       "title": "Hyperliquid price crosses $50 as HYPE ETFs outpace Bitcoin on adjusted inflows",
@@ -1447,46 +1597,10 @@
       "published_at": "Thu, 21 May 2026 12:38:34 +0000"
     },
     {
-      "title": "Ripple is booming. XRP is not. Inside crypto’s strangest disconnect",
-      "url": "https://crypto.news/ripple-is-booming-xrp-is-not-inside-cryptos-strangest-disconnect/",
-      "source": "BTCManager",
-      "published_at": "Thu, 21 May 2026 12:30:00 +0000"
-    },
-    {
-      "title": "Ripple is booming. XRP is not. Inside crypto’s strangest disconnect",
-      "url": "https://crypto.news/ripple-is-booming-xrp-is-not-inside-cryptos-strangest-disconnect/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 21 May 2026 12:30:00 +0000"
-    },
-    {
-      "title": "Can Hyperliquid price hit ATH as ETF launch leads rising wedge breakout?",
-      "url": "https://crypto.news/can-hyperliquid-price-hit-ath-as-etf-launch-leads-rising-wedge-breakout/",
-      "source": "BTCManager",
-      "published_at": "Thu, 21 May 2026 12:18:08 +0000"
-    },
-    {
-      "title": "Can Hyperliquid price hit ATH as ETF launch leads rising wedge breakout?",
-      "url": "https://crypto.news/can-hyperliquid-price-hit-ath-as-etf-launch-leads-rising-wedge-breakout/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 21 May 2026 12:18:08 +0000"
-    },
-    {
       "title": "Boerse Stuttgart taps SocGen, flatexDEGIRO for EU blockchain settlement push",
       "url": "https://cointelegraph.com/news/boerse-stuttgart-societe-generale-flatexdegiro-team-up-for-blockchain-securities-settlement-in-eu?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Thu, 21 May 2026 12:13:58 +0000"
-    },
-    {
-      "title": "FBI fake crypto token sting exposes wash trading schemes",
-      "url": "https://crypto.news/fbi-crypto-token-trap-caught-market-makers-faking-volume/",
-      "source": "BTCManager",
-      "published_at": "Thu, 21 May 2026 12:13:53 +0000"
-    },
-    {
-      "title": "FBI fake crypto token sting exposes wash trading schemes",
-      "url": "https://crypto.news/fbi-crypto-token-trap-caught-market-makers-faking-volume/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 21 May 2026 12:13:53 +0000"
     },
     {
       "title": "Morning Minute: SpaceX Files for IPO, Shares Surprising BTC Portfolio",
@@ -1511,18 +1625,6 @@
       "url": "https://cryptopotato.com/hype-etfs-see-rare-first-week-surge-as-eric-balchunas-calls-launch-timing-perfect/",
       "source": "CryptoPotato",
       "published_at": "Thu, 21 May 2026 11:50:56 +0000"
-    },
-    {
-      "title": "Boerse Stuttgart adds SocGen for EU blockchain settlement",
-      "url": "https://crypto.news/boerse-stuttgart-adds-socgen-for-eu-blockchain-settlement/",
-      "source": "BTCManager",
-      "published_at": "Thu, 21 May 2026 11:35:13 +0000"
-    },
-    {
-      "title": "Boerse Stuttgart adds SocGen for EU blockchain settlement",
-      "url": "https://crypto.news/boerse-stuttgart-adds-socgen-for-eu-blockchain-settlement/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 21 May 2026 11:35:13 +0000"
     },
     {
       "title": "HYPE Jumps Double Digits as Hyperliquid ETFs Add $25.5M",
@@ -1555,18 +1657,6 @@
       "published_at": "Thu, 21 May 2026 11:19:50 +0000"
     },
     {
-      "title": "Federal Reserve proposes narrow payment rail access for crypto-linked banks",
-      "url": "https://crypto.news/federal-reserve-proposes-narrow-payment-rail-access-for-crypto-linked-banks/",
-      "source": "BTCManager",
-      "published_at": "Thu, 21 May 2026 11:17:47 +0000"
-    },
-    {
-      "title": "Federal Reserve proposes narrow payment rail access for crypto-linked banks",
-      "url": "https://crypto.news/federal-reserve-proposes-narrow-payment-rail-access-for-crypto-linked-banks/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 21 May 2026 11:17:47 +0000"
-    },
-    {
       "title": "OSL Strengthens Asia’s Digital Asset Ecosystem with Listing of State-Supervised Gold-Backed Stablecoin USDKG",
       "url": "https://cryptopotato.com/osl-strengthens-asias-digital-asset-ecosystem-with-listing-of-state-supervised-gold-backed-stablecoin-usdkg/",
       "source": "CryptoPotato",
@@ -1597,34 +1687,10 @@
       "published_at": "Thu, 21 May 2026 10:28:20 +0000"
     },
     {
-      "title": "Bitcoin Institutional Selling Intensifies as BTC Tests Critical $77,800 Resistance Level",
-      "url": "https://blockonomi.com/bitcoin-institutional-selling-intensifies-as-btc-tests-critical-77800-resistance-level/",
-      "source": "Blockonomi",
-      "published_at": "Thu, 21 May 2026 10:19:54 +0000"
-    },
-    {
-      "title": "Cardano’s May 29 hard fork vote brings ADA’s DeFi weakness into view",
-      "url": "https://cryptoslate.com/cardano-may-29-hard-fork-vote-ada-growth/",
-      "source": "CryptoSlate",
-      "published_at": "Thu, 21 May 2026 09:54:31 +0000"
-    },
-    {
-      "title": "A crypto whale has made a $224,000 bet that XRP's price stays perfectly flat through June",
-      "url": "https://www.coindesk.com/markets/2026/05/21/a-massive-xrp-trade-is-betting-prices-gravitate-to-usd1-40-until-the-end-of-june",
-      "source": "Coindesk",
-      "published_at": "Thu, 21 May 2026 09:34:48 +0000"
-    },
-    {
       "title": "Japan backs AI-blockchain financial system",
       "url": "https://coingeek.com/japan-backs-ai-blockchain-financial-system/",
       "source": "CoinGeek",
       "published_at": "Thu, 21 May 2026 09:00:00 +0000"
-    },
-    {
-      "title": "TradFi giant IG to expand crypto trading across Europe through Bitpanda",
-      "url": "https://www.coindesk.com/business/2026/05/20/tradfi-giant-ig-to-expand-crypto-trading-across-europe-through-bitpanda",
-      "source": "Coindesk",
-      "published_at": "Thu, 21 May 2026 08:58:31 +0000"
     },
     {
       "title": "HYPE and ZEC Steal the Show, BTC Price Stopped at $78K: Market Watch",
@@ -1637,24 +1703,6 @@
       "url": "https://cryptopotato.com/hype-surges-above-57-as-short-squeeze-pushes-it-2-away-from-ath/",
       "source": "CryptoPotato",
       "published_at": "Thu, 21 May 2026 07:47:34 +0000"
-    },
-    {
-      "title": "Silvergate’s Fraher breaks silence on settlement with Gensler’s SEC",
-      "url": "https://cointelegraph.com/news/silvergates-fraher-breaks-silence-on-settlement-with-genslers-sec?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 21 May 2026 07:38:46 +0000"
-    },
-    {
-      "title": "Tax evaders are trying ‘novel digital assets’ to dodge authorities: Chainalysis",
-      "url": "https://cointelegraph.com/news/criminals-attempt-to-use-bitcoin-ordinals-to-evade-authorities-chainalysis?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 21 May 2026 07:34:52 +0000"
-    },
-    {
-      "title": "Binance launches SpaceX pre-IPO perps amid $2 trillion valuation bets",
-      "url": "https://www.coindesk.com/markets/2026/05/21/binance-launches-spacex-pre-ipo-perps",
-      "source": "Coindesk",
-      "published_at": "Thu, 21 May 2026 07:03:20 +0000"
     },
     {
       "title": "GorillaPool turns Bitcoin blocks into collectible art NFTs for miners",
@@ -1675,12 +1723,6 @@
       "published_at": "Thu, 21 May 2026 05:25:29 +0000"
     },
     {
-      "title": "Don't call us just a WLFI treasury company, says AI Financial",
-      "url": "https://www.coindesk.com/markets/2026/05/21/don-t-call-us-just-a-wlfi-treasury-company-says-ai-financial",
-      "source": "Coindesk",
-      "published_at": "Thu, 21 May 2026 05:20:35 +0000"
-    },
-    {
       "title": "Sui Launches Gasless Stablecoin Transfers With Support From Fireblocks",
       "url": "https://cryptopotato.com/sui-launches-gasless-stablecoin-transfers-with-support-from-fireblocks/",
       "source": "CryptoPotato",
@@ -1691,12 +1733,6 @@
       "url": "https://coingeek.com/vatican-forms-ai-commission-ahead-of-historic-encyclical/",
       "source": "CoinGeek",
       "published_at": "Thu, 21 May 2026 05:00:00 +0000"
-    },
-    {
-      "title": "Here's why bitcoin turned lower from the 200-day average",
-      "url": "https://www.coindesk.com/markets/2026/05/21/bitcoin-s-rebound-has-a-buyer-problem-as-etf-coinbase-and-korea-demand-fade",
-      "source": "Coindesk",
-      "published_at": "Thu, 21 May 2026 04:52:32 +0000"
     },
     {
       "title": "Binance Will Temporarily Suspend ETH Deposits and Withdrawals: Details Inside",
@@ -1715,12 +1751,6 @@
       "url": "https://decrypt.co/368477/shai-hulud-what-know-malware-spreading-software-pipelines",
       "source": "Decrypt",
       "published_at": "Wed, 20 May 2026 23:00:04 +0000"
-    },
-    {
-      "title": "Polymarket moves to list parlays while SEC seeks public input on prediction market ETFs",
-      "url": "https://www.coindesk.com/policy/2026/05/20/polymarket-moves-to-list-parlays-while-sec-seeks-public-input-on-prediction-market-etfs",
-      "source": "Coindesk",
-      "published_at": "Wed, 20 May 2026 22:55:53 +0000"
     },
     {
       "title": "SpaceX IPO Filing Shows Musk Building an AI and Space Infrastructure Giant",
@@ -1757,12 +1787,6 @@
       "url": "https://decrypt.co/368543/artificial-womb-growing-mammals-one-yard-line-colossal-ceo",
       "source": "Decrypt",
       "published_at": "Wed, 20 May 2026 20:40:55 +0000"
-    },
-    {
-      "title": "Bitcoin is left stranded as Fed projections flip to 54% chance of rate hikes this year",
-      "url": "https://cryptoslate.com/bitcoin-holders-expected-fed-relief-futures-now-point-the-other-way/",
-      "source": "CryptoSlate",
-      "published_at": "Wed, 20 May 2026 20:20:17 +0000"
     },
     {
       "title": "Why Bitwise CIO Thinks Investors Are Mispricing Hyperliquid and HYPE Token",
@@ -1861,12 +1885,6 @@
       "published_at": "Wed, 20 May 2026 14:12:39 +0000"
     },
     {
-      "title": "HYPE Surges 101% This Year: What’s Driving Hyperliquid’s Growth?",
-      "url": "https://decrypt.co/368443/hype-surges-101-this-year-whats-driving-hyperliquids-growth",
-      "source": "Decrypt",
-      "published_at": "Wed, 20 May 2026 14:02:37 +0000"
-    },
-    {
       "title": "Pi Network (PI) Price Predictions for This Week, May 20",
       "url": "https://cryptopotato.com/pi-network-pi-price-predictions-for-this-week-may-20/",
       "source": "CryptoPotato",
@@ -1907,24 +1925,6 @@
       "url": "https://coingeek.com/us-crypto-exchanges-brace-for-impact-as-binance-us-plots-return/",
       "source": "CoinGeek",
       "published_at": "Wed, 20 May 2026 11:00:00 +0000"
-    },
-    {
-      "title": "Key XRP Metrics Signal Bullish Shift After Weeks of Heavy Sell-Offs",
-      "url": "https://cryptopotato.com/key-xrp-metrics-signal-bullish-shift-after-weeks-of-heavy-sell-offs/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 20 May 2026 10:26:52 +0000"
-    },
-    {
-      "title": "Double-Digit Gains From These 2 Altcoins as Bitcoin Reclaims $77K: Market Watch",
-      "url": "https://cryptopotato.com/double-digit-gains-from-these-2-altcoins-as-bitcoin-reclaims-77k-market-watch/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 20 May 2026 09:50:56 +0000"
-    },
-    {
-      "title": "WhiteBIT Launches the UK Platform, Expanding Into a Key Global Crypto Hub",
-      "url": "https://cryptopotato.com/whitebit-launches-the-uk-platform-expanding-into-a-key-global-crypto-hub/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 20 May 2026 09:21:22 +0000"
     },
     {
       "title": "Bitcoin Author Predicts When BTC Could Hit Next ATH, Citing Recurrent Gold Pattern",
