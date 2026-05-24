@@ -1,6 +1,102 @@
 {
   "articles": [
     {
+      "title": "Cardano governance fight grows as Hoskinson audits 11,000 DAOs",
+      "url": "https://crypto.news/cardano-governance-fight-grows-as-hoskinson-audits-11000-daos/",
+      "source": "BTCManager",
+      "published_at": "Sun, 24 May 2026 10:13:34 +0000"
+    },
+    {
+      "title": "Cardano governance fight grows as Hoskinson audits 11,000 DAOs",
+      "url": "https://crypto.news/cardano-governance-fight-grows-as-hoskinson-audits-11000-daos/",
+      "source": "CryptoNews",
+      "published_at": "Sun, 24 May 2026 10:13:34 +0000"
+    },
+    {
+      "title": "How the StablR exploit drained $10.4M via unbacked stablecoin issuance",
+      "url": "https://ambcrypto.com/how-the-stablr-exploit-triggered-10-4m-in-unbacked-stablecoin-sales/",
+      "source": "Ambcrypto",
+      "published_at": "Sun, 24 May 2026 10:00:53 +0000"
+    },
+    {
+      "title": "XRP users warned as fake Xaman airdrop scams spread",
+      "url": "https://crypto.news/xrp-users-warned-as-fake-xaman-airdrop-scams-spread/",
+      "source": "BTCManager",
+      "published_at": "Sun, 24 May 2026 09:55:39 +0000"
+    },
+    {
+      "title": "XRP users warned as fake Xaman airdrop scams spread",
+      "url": "https://crypto.news/xrp-users-warned-as-fake-xaman-airdrop-scams-spread/",
+      "source": "CryptoNews",
+      "published_at": "Sun, 24 May 2026 09:55:39 +0000"
+    },
+    {
+      "title": "HYPE Hits New All-Time High as BTC, ETH, and XRP Rebound: Weekend Watch",
+      "url": "https://cryptopotato.com/hype-hits-new-all-time-high-as-btc-eth-and-xrp-rebound-weekend-watch/",
+      "source": "CryptoPotato",
+      "published_at": "Sun, 24 May 2026 09:43:20 +0000"
+    },
+    {
+      "title": "Bitcoin’s Fed cut trade flips as bond market turns into the risk",
+      "url": "https://cryptoslate.com/bitcoins-fed-cut-trade-flips-as-bond-market-turns-into-the-risk/",
+      "source": "CryptoSlate",
+      "published_at": "Sun, 24 May 2026 09:39:14 +0000"
+    },
+    {
+      "title": "Libra Trust Prepares to Distribute Controversial Crypto Millions to Argentine Companies",
+      "url": "https://news.bitcoin.com/libra-trust-prepares-to-distribute-controversial-crypto-millions-to-argentine-companies/",
+      "source": "Bitcoin.com",
+      "published_at": "Sun, 24 May 2026 09:30:11 +0000"
+    },
+    {
+      "title": "Blockchain researcher defends Ethereum Foundation, says it’s ‘exactly’ doing its job",
+      "url": "https://cointelegraph.com/news/blockchain-researcher-defends-ethereum-foundation-says-its-exactly-doing-its-job?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Sun, 24 May 2026 09:22:16 +0000"
+    },
+    {
+      "title": "Bank of America picks Bitcoin ETF over Ether and Solana in Q1",
+      "url": "https://crypto.news/bank-of-america-picks-bitcoin-etf-over-ether-and-solana-in-q1/",
+      "source": "BTCManager",
+      "published_at": "Sun, 24 May 2026 09:08:23 +0000"
+    },
+    {
+      "title": "Bank of America picks Bitcoin ETF over Ether and Solana in Q1",
+      "url": "https://crypto.news/bank-of-america-picks-bitcoin-etf-over-ether-and-solana-in-q1/",
+      "source": "CryptoNews",
+      "published_at": "Sun, 24 May 2026 09:08:23 +0000"
+    },
+    {
+      "title": "Why is Bitcoin falling despite pro-crypto Kevin Warsh becoming Fed chair?",
+      "url": "https://cointelegraph.com/markets/why-is-bitcoin-falling-despite-pro-crypto-kevin-warsh-becoming-fed-chair?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Sun, 24 May 2026 09:02:25 +0000"
+    },
+    {
+      "title": "Is the market mispricing Ethereum? What ETH’s fee compression tells us",
+      "url": "https://ambcrypto.com/is-the-market-mispricing-ethereum-what-eths-fee-compression-tells-us/",
+      "source": "Ambcrypto",
+      "published_at": "Sun, 24 May 2026 09:00:06 +0000"
+    },
+    {
+      "title": "StablR Stablecoins Depeg After $2.8 Million Exploit",
+      "url": "https://beincrypto.com/stablr-stablecoin-depeg-exploit/",
+      "source": "BeinCrypto",
+      "published_at": "Sun, 24 May 2026 08:50:28 +0000"
+    },
+    {
+      "title": "Why France is now the hotspot for crypto wrench attacks",
+      "url": "https://crypto.news/why-france-is-now-the-hotspot-for-crypto-wrench-attacks/",
+      "source": "BTCManager",
+      "published_at": "Sun, 24 May 2026 08:43:04 +0000"
+    },
+    {
+      "title": "Why France is now the hotspot for crypto wrench attacks",
+      "url": "https://crypto.news/why-france-is-now-the-hotspot-for-crypto-wrench-attacks/",
+      "source": "CryptoNews",
+      "published_at": "Sun, 24 May 2026 08:43:04 +0000"
+    },
+    {
       "title": "StablR depeg shock hits EURR and USDR after $2.8M exploit warning",
       "url": "https://crypto.news/stablr-depeg-shock-hits-eurr-and-usdr-after-2-8m-exploit-warning/",
       "source": "BTCManager",
@@ -17,6 +113,12 @@
       "url": "https://ambcrypto.com/zcash-zec-reclaims-613-despite-953m-in-crypto-liquidations-heres-how/",
       "source": "Ambcrypto",
       "published_at": "Sun, 24 May 2026 08:00:38 +0000"
+    },
+    {
+      "title": "ECB Pushes Back on Euro Stablecoin Proposals, Citing Bank Lending Risks",
+      "url": "https://beincrypto.com/ecb-euro-stablecoin-expansion-banking-risks/",
+      "source": "BeinCrypto",
+      "published_at": "Sun, 24 May 2026 08:00:00 +0000"
     },
     {
       "title": "5 Cryptocurrencies Positioned to Outperform in the Next Bull Run",
@@ -47,6 +149,12 @@
       "url": "https://news.bitcoin.com/mica-decoded-comparing-mica-eu-to-vara-dubai-and-mas-singapore/",
       "source": "Bitcoin.com",
       "published_at": "Sun, 24 May 2026 07:30:46 +0000"
+    },
+    {
+      "title": "XRP Confirms Negative Breakout With Price Headed For $1.14 – Analyst",
+      "url": "https://www.newsbtc.com/analysis/xrp/xrp-confirms-negative-breakout-with-price-headed-for-1-14-analyst/",
+      "source": "NewsBTC",
+      "published_at": "Sun, 24 May 2026 07:00:19 +0000"
     },
     {
       "title": "Uniswap drops below KEY support – Will UNI bears target $3.00 next?",
@@ -101,6 +209,12 @@
       "url": "https://cryptopotato.com/we-asked-chatgpt-if-kevin-warsh-could-spark-a-bitcoin-rally-heres-the-brutal-reality/",
       "source": "CryptoPotato",
       "published_at": "Sun, 24 May 2026 05:12:16 +0000"
+    },
+    {
+      "title": "Bitcoin Spot ETFs Bleed $1.26 Billion In Largest Net Outflows In 3 Months – Details",
+      "url": "https://bitcoinist.com/bitcoin-spot-etfs-1-26-billion-largest-outflows-3-m/",
+      "source": "Bitcoinist",
+      "published_at": "Sun, 24 May 2026 05:00:58 +0000"
     },
     {
       "title": "Ethena nears KEY support after sell-off: What’s next for ENA?",
@@ -205,12 +319,6 @@
       "published_at": "Sat, 23 May 2026 23:00:43 +0000"
     },
     {
-      "title": "Arthur Hayes-Linked Wallet Deposits $6.33M in HYPE to Bybit After Calling $150 Target",
-      "url": "https://news.bitcoin.com/arthur-hayes-deposits-6-33m-hype-bybit-after-150-price-call/",
-      "source": "Bitcoin.com",
-      "published_at": "Sat, 23 May 2026 22:44:37 +0000"
-    },
-    {
       "title": "Pudgy Penguins down 14% after 712 mln token unlock: Can PENGU rebound?",
       "url": "https://ambcrypto.com/pudgy-penguins-down-14-after-712-mln-token-unlock-can-pengu-rebound/",
       "source": "Ambcrypto",
@@ -295,22 +403,10 @@
       "published_at": "Sat, 23 May 2026 20:00:55 +0000"
     },
     {
-      "title": "Bitcoin plugs leverage losses – But buyer interest in BTC remains low",
-      "url": "https://ambcrypto.com/bitcoin-plugs-leverage-losses-but-buyer-interest-in-btc-remains-low/",
-      "source": "Ambcrypto",
-      "published_at": "Sat, 23 May 2026 20:00:06 +0000"
-    },
-    {
       "title": "Key Volume Signals Are Driving XRP Momentum Amid Market Uncertainty",
       "url": "https://www.newsbtc.com/altcoin/key-volume-signals-are-driving-xrp-momentum-amid-market-uncertainty/",
       "source": "NewsBTC",
       "published_at": "Sat, 23 May 2026 19:00:46 +0000"
-    },
-    {
-      "title": "What a $125 mln Ethereum buy means for Bitmine’s Russell 3000 dreams",
-      "url": "https://ambcrypto.com/what-a-125-mln-ethereum-buy-means-for-bitmines-russell-3000-dreams/",
-      "source": "Ambcrypto",
-      "published_at": "Sat, 23 May 2026 19:00:44 +0000"
     },
     {
       "title": "Stablecoin Regulation: FDIC Announces New Proposed AML Rules For Issuers",
@@ -493,12 +589,6 @@
       "published_at": "Sat, 23 May 2026 13:37:02 +0000"
     },
     {
-      "title": "PopDEX Raises $30 Million as VCs Bet Big on Perp DEX Comeback",
-      "url": "https://beincrypto.com/crypto-vc-funding-crashes-perp-dexs-raising-big/",
-      "source": "BeinCrypto",
-      "published_at": "Sat, 23 May 2026 13:21:29 +0000"
-    },
-    {
       "title": "3 Wacky Hermes Skills You Should Try",
       "url": "https://decrypt.co/368188/3-wacky-hermes-skills-you-should-try",
       "source": "Decrypt",
@@ -541,12 +631,6 @@
       "published_at": "Sat, 23 May 2026 12:23:00 +0000"
     },
     {
-      "title": "Fenwick Agrees to Pay $54 Million to Settle FTX Customer Claims",
-      "url": "https://beincrypto.com/fenwick-west-54-million-ftx-settlement/",
-      "source": "BeinCrypto",
-      "published_at": "Sat, 23 May 2026 12:14:19 +0000"
-    },
-    {
       "title": "HYPE’s path to $100 runs through Hyperliquid becoming crypto’s on-chain Wall Street platform",
       "url": "https://cryptoslate.com/hypes-path-to-100-runs-through-hyperliquid-becoming-cryptos-on-chain-wall-street-platform/",
       "source": "CryptoSlate",
@@ -563,12 +647,6 @@
       "url": "https://www.newsbtc.com/news/bitcoin/bitcoin-will-not-bottom/",
       "source": "NewsBTC",
       "published_at": "Sat, 23 May 2026 11:30:05 +0000"
-    },
-    {
-      "title": "Another Crypto Company Has Filed For IPO, But It’s Not Ripple",
-      "url": "https://bitcoinist.com/another-ipo-but-not-from-ripple/",
-      "source": "Bitcoinist",
-      "published_at": "Sat, 23 May 2026 11:30:03 +0000"
     },
     {
       "title": "We Asked 3 AIs: Will XRP Ever Break Above $2? The Answers Were Not What We Expected",
@@ -617,12 +695,6 @@
       "url": "https://crypto.news/michael-saylor-says-2026-bitcoin-sale-not-unlikely/",
       "source": "CryptoNews",
       "published_at": "Sat, 23 May 2026 10:15:00 +0000"
-    },
-    {
-      "title": "This Bitcoin Momentum Signal Preceded Last October’s Crash — Another Downturn Incoming?",
-      "url": "https://www.newsbtc.com/news/bitcoin/bitcoin-momentum-signal-preceded-last-october-crash/",
-      "source": "NewsBTC",
-      "published_at": "Sat, 23 May 2026 10:00:04 +0000"
     },
     {
       "title": "Brazilian gang raid reveals a new crypto-crime model: turning stolen power into digital money",
@@ -1369,12 +1441,6 @@
       "published_at": "Fri, 22 May 2026 13:40:39 +0000"
     },
     {
-      "title": "US labor federation warns CLARITY Act could push crypto closer to workers’ retirement money",
-      "url": "https://cryptoslate.com/afl-cio-warns-clarity-act-could-open-retirement-plans-to-crypto/",
-      "source": "CryptoSlate",
-      "published_at": "Fri, 22 May 2026 13:30:25 +0000"
-    },
-    {
       "title": "German lawmakers block Green plan to end Bitcoin tax break",
       "url": "https://crypto.news/german-lawmakers-block-green-plan-to-end-bitcoin-tax-break/",
       "source": "BTCManager",
@@ -1639,46 +1705,10 @@
       "published_at": "Fri, 22 May 2026 09:39:55 +0000"
     },
     {
-      "title": "Polymarket UMA alert: are user funds safe after $520K loss?",
-      "url": "https://crypto.news/polymarket-hit-zachxbt-flags-520k-uma-adapter-loss/",
-      "source": "BTCManager",
-      "published_at": "Fri, 22 May 2026 09:37:16 +0000"
-    },
-    {
-      "title": "Polymarket UMA alert: are user funds safe after $520K loss?",
-      "url": "https://crypto.news/polymarket-hit-zachxbt-flags-520k-uma-adapter-loss/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 22 May 2026 09:37:16 +0000"
-    },
-    {
       "title": "Verus bridge exploiter returns $8.5M after bounty offer",
       "url": "https://cointelegraph.com/news/verus-bridge-hacker-returns-85m-eth-28m-bounty?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Fri, 22 May 2026 09:32:03 +0000"
-    },
-    {
-      "title": "Will Bitcoin price revisit $76K as bullish trendline support collapses?",
-      "url": "https://crypto.news/will-bitcoin-price-revisit-76k-as-bullish-trendline-support-collapses/",
-      "source": "BTCManager",
-      "published_at": "Fri, 22 May 2026 09:29:43 +0000"
-    },
-    {
-      "title": "Will Bitcoin price revisit $76K as bullish trendline support collapses?",
-      "url": "https://crypto.news/will-bitcoin-price-revisit-76k-as-bullish-trendline-support-collapses/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 22 May 2026 09:29:43 +0000"
-    },
-    {
-      "title": "Verus bridge attacker sends back $8.5M, keeps bounty",
-      "url": "https://crypto.news/verus-bridge-attacker-sends-back-8-5m-keeps-bounty/",
-      "source": "BTCManager",
-      "published_at": "Fri, 22 May 2026 09:00:00 +0000"
-    },
-    {
-      "title": "Verus bridge attacker sends back $8.5M, keeps bounty",
-      "url": "https://crypto.news/verus-bridge-attacker-sends-back-8-5m-keeps-bounty/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 22 May 2026 09:00:00 +0000"
     },
     {
       "title": "Near Protocol to automate its own growth and its token is skyrocketing",
@@ -1691,18 +1721,6 @@
       "url": "https://cryptopotato.com/bitcoin-pizza-day-2026-commemorating-cryptos-first-real-world-transaction/",
       "source": "CryptoPotato",
       "published_at": "Fri, 22 May 2026 08:50:30 +0000"
-    },
-    {
-      "title": "Trump Media moves over 2K BTC to crypto.com, what does it mean for Bitcoin?",
-      "url": "https://crypto.news/trump-media-moves-over-2k-btc-to-crypto-com-what-does-it-mean-for-bitcoin/",
-      "source": "BTCManager",
-      "published_at": "Fri, 22 May 2026 08:48:00 +0000"
-    },
-    {
-      "title": "Trump Media moves over 2K BTC to crypto.com, what does it mean for Bitcoin?",
-      "url": "https://crypto.news/trump-media-moves-over-2k-btc-to-crypto-com-what-does-it-mean-for-bitcoin/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 22 May 2026 08:48:00 +0000"
     },
     {
       "title": "Polymarket aims for prediction market approval in Japan by 2030",
@@ -1727,18 +1745,6 @@
       "url": "https://cryptopotato.com/ripple-network-explodes-with-thousands-of-new-xrp-wallets-bullish-signal/",
       "source": "CryptoPotato",
       "published_at": "Fri, 22 May 2026 08:01:59 +0000"
-    },
-    {
-      "title": "Hamilton ETFs files for leveraged Bitcoin income ETF in Canada",
-      "url": "https://cointelegraph.com/news/hamilton-etfs-files-for-leveraged-bitcoin-income-etf-in-canada?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Fri, 22 May 2026 07:00:00 +0000"
-    },
-    {
-      "title": "UAE-backed DDSC stablecoin processes $30M institutional transaction",
-      "url": "https://cointelegraph.com/news/uae-backed-ddsc-stablecoin-processes-30m-institutional-transaction?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Fri, 22 May 2026 07:00:00 +0000"
     },
     {
       "title": "Meet 13 AI agents that build, run, scale an entire iGaming operation",
@@ -1841,12 +1847,6 @@
       "url": "https://decrypt.co/368678/mark-cuban-sold-most-his-bitcoin",
       "source": "Decrypt",
       "published_at": "Thu, 21 May 2026 19:23:34 +0000"
-    },
-    {
-      "title": "Zcash (ZEC) Soars 27% Weekly: 3 AIs Debate Whether It Can Break Into the Top 10 in 2026",
-      "url": "https://cryptopotato.com/zcash-zec-soars-27-weekly-3-ais-debate-whether-it-can-break-into-the-top-10-in-2026/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 21 May 2026 18:14:57 +0000"
     },
     {
       "title": "Proposed ARMA Bill Aims to Enshrine Strategic Bitcoin Reserve Into Law",
