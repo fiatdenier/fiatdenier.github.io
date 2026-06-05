@@ -499,10 +499,18 @@
         <p id="updated">Checking for updates...</p>
 
         <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-            <a class="game-link" href="https://fiatdenier.com/btc-prediction/" target="_blank">⚡ PLAY SATOSHI'S MARKET</a>
+            <button class="game-link" id="lucky-roll-btn" onclick="location.href='roll.html'">🎰 PLAY LUCKY
+                ROLL</button>
+            <a class="game-link" href="https://fiatdenier.com/btc-prediction/" target="_blank">⚡ PLAY SATOSHI'S
+                MARKET</a>
         </div>
 
-        </header>
+
+        <div class="game-status-bar">
+            PROGRESSIVE FREE CREDIT JACKPOT: <span id="idx-pot" class="pot-val">210.00</span> |
+            DAILY FREE CREDIT REDEEMED: <span id="idx-daily">0</span>/100
+        </div>
+    </header>
 
     <main id="app" class="grid" style="padding: 20px;"></main>
 
@@ -778,17 +786,14 @@
                 }
             } catch (e) { console.log("Header jackpot sync failed."); }
 
-            // # UI UPDATE - SAFE GUARDS ADDED FOR REMOVED ELEMENTS
-            if (countEl) countEl.innerText = displayCount;
-            const idxPotEl = document.getElementById('idx-pot');
-            if (idxPotEl) idxPotEl.innerText = potVal.toFixed(2);
+            // # UI UPDATE
+            countEl.innerText = displayCount;
+            document.getElementById('idx-pot').innerText = potVal.toFixed(2);
 
-            if (countEl) {
-                if (displayCount >= 100) {
-                    countEl.classList.add('exhausted-glow');
-                } else {
-                    countEl.classList.remove('exhausted-glow');
-                }
+            if (displayCount >= 100) {
+                countEl.classList.add('exhausted-glow');
+            } else {
+                countEl.classList.remove('exhausted-glow');
             }
 
             try {
@@ -811,29 +816,22 @@
 
             const now = Date.now();
 
-            // # COMMENTED OUT: Domestic UI adjustments for the removed roll button
-            /*
             if (expiry && now < parseInt(expiry)) {
                 const diff = parseInt(expiry) - now;
                 const mins = Math.floor(diff / 60000);
                 const secs = Math.floor((diff % 60000) / 1000);
 
-                if (btn) {
-                    btn.style.backgroundColor = "#ADADAD";
-                    btn.style.color = "#DBDBDB";
-                    btn.style.pointerEvents = "none";
-                    btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
-                }
+                btn.style.backgroundColor = "#ADADAD";
+                btn.style.color = "#DBDBDB";
+                btn.style.pointerEvents = "none";
+                btn.innerText = `🎰 LOCKED (${mins}:${secs.toString().padStart(2, '0')})`;
                 setTimeout(syncRoll, 1000);
             } else {
-                if (btn) {
-                    btn.style.backgroundColor = "var(--btc-orange)";
-                    btn.style.color = "#fff";
-                    btn.style.pointerEvents = "auto";
-                    btn.innerText = "🎰 PLAY LUCKY ROLL";
-                }
+                btn.style.backgroundColor = "var(--btc-orange)";
+                btn.style.color = "#fff";
+                btn.style.pointerEvents = "auto";
+                btn.innerText = "🎰 PLAY LUCKY ROLL";
             }
-            */
         }
 
         window.addEventListener('load', syncRoll);
