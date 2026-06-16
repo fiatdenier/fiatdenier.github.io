@@ -1,6 +1,30 @@
 {
   "articles": [
     {
+      "title": "Japan advances digital asset financial reform bill",
+      "url": "https://coingeek.com/japan-advances-digital-asset-financial-reform-bill/",
+      "source": "CoinGeek",
+      "published_at": "Tue, 16 Jun 2026 09:00:00 +0000"
+    },
+    {
+      "title": "Kalshi’s $1B surge in 10 days puts Polymarket on notice: Who wins the prediction race?",
+      "url": "https://ambcrypto.com/kalshis-1b-surge-in-10-days-puts-polymarket-on-notice-who-wins-the-prediction-race/",
+      "source": "Ambcrypto",
+      "published_at": "Tue, 16 Jun 2026 08:45:11 +0000"
+    },
+    {
+      "title": "India’s ED files charges in $20M Coinbase spoofing case",
+      "url": "https://crypto.news/indias-ed-files-charges-in-20m-coinbase-spoofing-case/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 16 Jun 2026 08:37:01 +0000"
+    },
+    {
+      "title": "Elon Musk’s Net Worth Hits $1.3 Trillion as SpaceX Nears $3 Trillion Valuation",
+      "url": "https://news.bitcoin.com/elon-musks-net-worth-hits-1-3-trillion-as-spacex-nears-3-trillion/",
+      "source": "Bitcoin.com",
+      "published_at": "Tue, 16 Jun 2026 08:30:50 +0000"
+    },
+    {
       "title": "XRP price eyes $1.30 as whale accumulation boosts rebound",
       "url": "https://crypto.news/xrp-price-eyes-1-30-as-whale-accumulation-boosts-rebound/",
       "source": "CryptoNews",
@@ -223,7 +247,7 @@
       "published_at": "Tue, 16 Jun 2026 05:42:22 +0000"
     },
     {
-      "title": "Live markets: Bitcoin ETFs bled cash Monday while every other crypto ETF gained",
+      "title": "Live markets: SpaceX surges in pre-market trading as valuation climbs above Amazon's",
       "url": "https://www.coindesk.com/tech/2026/06/16/live-markets-bitcoin-etfs-bled-cash-monday-while-every-other-crypto-etf-gained",
       "source": "Coindesk",
       "published_at": "Tue, 16 Jun 2026 05:41:40 +0000"
@@ -433,12 +457,6 @@
       "published_at": "Mon, 15 Jun 2026 23:00:02 +0000"
     },
     {
-      "title": "VARA Pushes Dubai Crypto Firms to Track FATF Blacklists, Sharpening Risk Controls",
-      "url": "https://news.bitcoin.com/vara-pushes-dubai-crypto-firms-to-track-fatf-blacklists-sharpening-risk-controls/",
-      "source": "Bitcoin.com",
-      "published_at": "Mon, 15 Jun 2026 22:45:49 +0000"
-    },
-    {
       "title": "Michael Saylor says Bitcoin could jump from $70K to $7 million",
       "url": "https://crypto.news/michael-saylor-says-bitcoin-could-jump-from-70k-to-7-million/",
       "source": "CryptoNews",
@@ -589,6 +607,12 @@
       "published_at": "Mon, 15 Jun 2026 19:25:08 +0000"
     },
     {
+      "title": "Bitcoin Whales Complete Sell-Off as Price Bounces Back From Recent Lows",
+      "url": "https://crypto-economy.com/bitcoin-whales-complete-sell-off-as-price-bounces-back-from-recent-lows/",
+      "source": "CryptoEconomy",
+      "published_at": "Mon, 15 Jun 2026 19:21:31 +0000"
+    },
+    {
       "title": "SpaceX defies Wall Street as valuation surges past $2.3 trillion",
       "url": "https://crypto.news/spacex-defies-wall-street-as-valuation-surges-past-2-3-trillion/",
       "source": "CryptoNews",
@@ -635,12 +659,6 @@
       "url": "https://www.coindesk.com/business/2026/06/15/hyperliquid-loses-anthropic-openai-markets-as-creator-shuts-down-project",
       "source": "Coindesk",
       "published_at": "Mon, 15 Jun 2026 18:14:07 +0000"
-    },
-    {
-      "title": "Bitcoin ETFs see fifth straight week of outflows – So why is BTC rising?",
-      "url": "https://ambcrypto.com/bitcoin-etfs-see-fifth-straight-week-of-outflows-so-why-is-btc-rising/",
-      "source": "Ambcrypto",
-      "published_at": "Mon, 15 Jun 2026 18:00:02 +0000"
     },
     {
       "title": "Anthropic Faces Lawsuit Over Allegedly Misleading Claude AI Pricing",
@@ -691,6 +709,18 @@
       "published_at": "Mon, 15 Jun 2026 16:46:23 +0000"
     },
     {
+      "title": "Brian Armstrong Remains Bullish, Says BTC Likely Bottomed at $60K",
+      "url": "https://crypto-economy.com/brian-armstrong-remains-bullish-says-btc-likely-bottomed-at-60k/",
+      "source": "CryptoEconomy",
+      "published_at": "Mon, 15 Jun 2026 16:38:21 +0000"
+    },
+    {
+      "title": "Bitcoin Enters a High-Risk Zone as Demand Begins to Fade, Glassnode Says",
+      "url": "https://crypto-economy.com/bitcoin-enters-a-high-risk-zone-glassnode-says/",
+      "source": "CryptoEconomy",
+      "published_at": "Mon, 15 Jun 2026 16:31:09 +0000"
+    },
+    {
       "title": "These Bitcoin charts show how BTC price could hit $100K before October",
       "url": "https://cointelegraph.com/markets/these-bitcoin-charts-show-how-btc-price-could-hit-100k-before-october?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -707,6 +737,12 @@
       "url": "https://crypto.news/august-recess-emerges-as-new-target-for-clarity-act-passage/",
       "source": "CryptoNews",
       "published_at": "Mon, 15 Jun 2026 16:13:59 +0000"
+    },
+    {
+      "title": "Michaël van de Poppe Challenges Bitcoin Bottom Consensus, Reveals Top 5 Altcoins",
+      "url": "https://crypto-economy.com/michael-van-de-poppe-challenges-btc-consensus/",
+      "source": "CryptoEconomy",
+      "published_at": "Mon, 15 Jun 2026 16:10:27 +0000"
     },
     {
       "title": "Canadian PM Urges AI Diversification After US Anthropic Block, Decentralized AI Tokens Rally",
@@ -767,6 +803,12 @@
       "url": "https://crypto.news/kraken-launches-crypto-perpetual-futures-for-eligible-u-s-traders/",
       "source": "CryptoNews",
       "published_at": "Mon, 15 Jun 2026 14:59:33 +0000"
+    },
+    {
+      "title": "Hoskinson Breaks Silence on 1,096 BTC Used During Cardano’s Early Days",
+      "url": "https://crypto-economy.com/hoskinson-breaks-silence-on-1096-btc/",
+      "source": "CryptoEconomy",
+      "published_at": "Mon, 15 Jun 2026 14:55:49 +0000"
     },
     {
       "title": "Pi Network News and PI Price Update Today: June 15",
@@ -883,6 +925,12 @@
       "published_at": "Mon, 15 Jun 2026 13:26:20 +0000"
     },
     {
+      "title": "Why This Could Be a Defining Week for Bitcoin and Altcoins",
+      "url": "https://crypto-economy.com/defining-week-for-bitcoin-and-altcoins/",
+      "source": "CryptoEconomy",
+      "published_at": "Mon, 15 Jun 2026 13:23:53 +0000"
+    },
+    {
       "title": "CoinDesk 20 performance update: Bittensor (TAO) surges 31.9%, leading index higher",
       "url": "https://www.coindesk.com/coindesk-indices/2026/06/15/coindesk-20-performance-update-bittensor-tao-surges-31-9-leading-index-higher",
       "source": "Coindesk",
@@ -931,6 +979,12 @@
       "published_at": "Mon, 15 Jun 2026 13:00:00 +0000"
     },
     {
+      "title": "Bitcoin Difficulty Falls Sharply Amid Growing Pressure on Miners",
+      "url": "https://crypto-economy.com/bitcoin-difficulty-falls-sharply/",
+      "source": "CryptoEconomy",
+      "published_at": "Mon, 15 Jun 2026 12:53:13 +0000"
+    },
+    {
       "title": "Saylor’s Strategy doubles down with another $100M Bitcoin buy",
       "url": "https://crypto.news/saylors-strategy-doubles-down-with-another-100m-bitcoin-buy/",
       "source": "CryptoNews",
@@ -959,6 +1013,12 @@
       "url": "https://www.coindesk.com/daybook-us/2026/06/15/markets-cheer-u-s-iran-breakthrough-though-middle-east-risks-fed-remain-in-focus",
       "source": "Coindesk",
       "published_at": "Mon, 15 Jun 2026 11:58:56 +0000"
+    },
+    {
+      "title": "Bitcoin Reclaims $65K as U.S.-Iran Peace Deal Sparks Crypto Rally",
+      "url": "https://crypto-economy.com/bitcoin-reclaims-65k-us-iran-peace-deal-sparks/",
+      "source": "CryptoEconomy",
+      "published_at": "Mon, 15 Jun 2026 11:56:41 +0000"
     },
     {
       "title": "World Cup betting frenzy could lift Robinhood prediction market revenue: Bernstein",
@@ -1133,12 +1193,6 @@
       "url": "https://cryptopotato.com/hype-zec-explode-after-peace-deal-announcement-btc-taps-12-day-high-market-watch/",
       "source": "CryptoPotato",
       "published_at": "Mon, 15 Jun 2026 08:52:01 +0000"
-    },
-    {
-      "title": "Japan’s Bitbank warns users of account suspensions over Polymarket transactions",
-      "url": "https://crypto.news/japans-bitbank-warns-users-of-account-suspensions-over-polymarket-transactions/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 15 Jun 2026 08:45:08 +0000"
     },
     {
       "title": "Why Is The Ripple (XRP) Price Up Today, and What’s Next? (June 15)",
@@ -1459,10 +1513,22 @@
       "published_at": "Sat, 13 Jun 2026 10:16:08 +0000"
     },
     {
+      "title": "Bitcoin vs. SpaceX: The Liquidity Battle That Could Reshape Crypto Markets",
+      "url": "https://crypto-economy.com/bitcoin-vs-spacex-the-liquidity-battle-that-could-reshape-crypto-markets/",
+      "source": "CryptoEconomy",
+      "published_at": "Sat, 13 Jun 2026 10:00:00 +0000"
+    },
+    {
       "title": "Standard Chartered Says Crypto Winter Is Over as Bitcoin Bottomed at $59K, Keeps $100K BTC and $4K ETH Targets",
       "url": "https://thecryptobasic.com/standard-chartered-says-crypto-winter-is-over-as-bitcoin-bottomed-at-59k-keeps-100k-btc-and-4k-eth-targets",
       "source": "CryptoBasic",
       "published_at": "Sat, 13 Jun 2026 07:32:40 +0000"
+    },
+    {
+      "title": "Bitcoin Core Developers Uncover Privacy Flaw That Could Expose User IP Addresses",
+      "url": "https://crypto-economy.com/bitcoin-core-developers-uncover-privacy-flaw-that-could-expose-user-ip-addresses/",
+      "source": "CryptoEconomy",
+      "published_at": "Sat, 13 Jun 2026 00:48:50 +0000"
     },
     {
       "title": "How Crypto Firms Will Own the Octagon at Trump's White House UFC Event",
@@ -1589,12 +1655,6 @@
       "url": "https://coingeek.com/uk-fca-allows-authorized-funds-to-hold-10-in-crypto-etns/",
       "source": "CoinGeek",
       "published_at": "Fri, 12 Jun 2026 07:00:00 +0000"
-    },
-    {
-      "title": "Illegal crypto mining threatens Iran’s power grid",
-      "url": "https://coingeek.com/illegal-crypto-mining-threatens-iran-power-grid/",
-      "source": "CoinGeek",
-      "published_at": "Fri, 12 Jun 2026 05:00:00 +0000"
     },
     {
       "title": "XRP Price Could Fall to $0.36 for Next 5 Years, Analysts Predict, as Profit-To-Loss Ratio Falls to 0.38",
