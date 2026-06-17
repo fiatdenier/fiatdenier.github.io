@@ -1,6 +1,36 @@
 {
   "articles": [
     {
+      "title": "Morning Minute: Coinbase Pushes to Become 'Everything Exchange' With Stocks, Perps, and AI",
+      "url": "https://decrypt.co/371396/morning-minute-coinbase-pushes-to-become-everything-exchange-with-stocks-perps-and-ai",
+      "source": "Decrypt",
+      "published_at": "Wed, 17 Jun 2026 12:18:44 +0000"
+    },
+    {
+      "title": "Japan just moved to cut crypto tax from 55% to 20%. Why it matters globally",
+      "url": "https://crypto.news/japan-crypto-tax-cut-20/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 17 Jun 2026 12:10:00 +0000"
+    },
+    {
+      "title": "Federal Reserve Set to Hold Interest Rates in Warsh’s Debut as Chair",
+      "url": "https://beincrypto.com/fed-interest-rates-warsh-chair/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 17 Jun 2026 12:03:22 +0000"
+    },
+    {
+      "title": "Nigeria leads Ripple’s RLUSD bet: Are cross-border payments finally taking off?",
+      "url": "https://ambcrypto.com/nigeria-leads-ripples-rlusd-bet-are-cross-border-payments-finally-taking-off/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 17 Jun 2026 12:00:40 +0000"
+    },
+    {
+      "title": "Crypto Market Braces for Kevin Warsh’s First Fed Decision",
+      "url": "https://cryptopotato.com/crypto-market-braces-for-kevin-warshs-first-fed-decision/",
+      "source": "CryptoPotato",
+      "published_at": "Wed, 17 Jun 2026 11:58:38 +0000"
+    },
+    {
       "title": "Illinois Crypto Tax Draws Industry Fire After Pritzker Signs Budget Package",
       "url": "https://www.newsbtc.com/news/illinois-crypto-tax-draws-industry-fire-after-pritzker-signs-budget-package/",
       "source": "NewsBTC",
@@ -23,6 +53,12 @@
       "url": "https://cryptopotato.com/arthur-hayes-adds-more-eth-after-facing-backlash-over-hype-zec-and-wld/",
       "source": "CryptoPotato",
       "published_at": "Wed, 17 Jun 2026 11:45:07 +0000"
+    },
+    {
+      "title": "Crypto Industry Pushes Back as Pritzker Signs 0.2% Digital Asset Tax",
+      "url": "https://beincrypto.com/illinois-crypto-tax-backlash-pritzker/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 17 Jun 2026 11:41:23 +0000"
     },
     {
       "title": "Bitcoin's June downturn leaves $8.6 billion in options out of the money",
@@ -463,22 +499,10 @@
       "published_at": "Wed, 17 Jun 2026 06:59:53 +0000"
     },
     {
-      "title": "As Capital Rotates From Crypto to AI, Zoomex Traders Already Have Access to Both",
-      "url": "https://beincrypto.com/zoomex-traders-access-crypto-and-ai-markets/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 17 Jun 2026 06:59:00 +0000"
-    },
-    {
       "title": "CBDC ban until 2030 advances in Congress housing deal",
       "url": "https://crypto.news/cbdc-ban-until-2030-advances-in-congress-housing-deal/",
       "source": "CryptoNews",
       "published_at": "Wed, 17 Jun 2026 06:51:45 +0000"
-    },
-    {
-      "title": "How Perpetual Futures Actually Work: Funding Rate, Liquidation Engine & Mark Price Explained",
-      "url": "https://beincrypto.com/how-perpetual-futures-actually-work/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 17 Jun 2026 06:45:54 +0000"
     },
     {
       "title": "U.S. gaming industry pushes lawmakers to curb sports prediction markets",
@@ -901,12 +925,6 @@
       "published_at": "Tue, 16 Jun 2026 20:20:35 +0000"
     },
     {
-      "title": "IMF says stablecoins have become major cross-border payment channel in Nigeria",
-      "url": "https://ambcrypto.com/imf-says-stablecoins-have-become-major-cross-border-payment-channel-in-nigeria/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 16 Jun 2026 20:13:24 +0000"
-    },
-    {
       "title": "ChatGPT Is Still Huge, But Rival AI Chatbots Are Catching Up Fast",
       "url": "https://decrypt.co/371318/chatgpt-ai-market-share-claude-gemini-grok",
       "source": "Decrypt",
@@ -1163,12 +1181,6 @@
       "url": "https://www.coindesk.com/business/2026/06/16/coinbase-to-join-tokenized-stock-race-with-onchain-shares-dividend-payments",
       "source": "Coindesk",
       "published_at": "Tue, 16 Jun 2026 15:03:21 +0000"
-    },
-    {
-      "title": "Ripple takes stake in Flutterwave, betting on Africa’s payment boom",
-      "url": "https://crypto.news/ripple-takes-stake-in-flutterwave-betting-on-africas-payment-boom/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 16 Jun 2026 14:58:36 +0000"
     },
     {
       "title": "Important Ripple (XRP) Update: June 16",
@@ -1585,12 +1597,6 @@
       "published_at": "Mon, 15 Jun 2026 13:41:53 +0000"
     },
     {
-      "title": "Bitcoin Price Analysis: Can BTC Extend Its Rally After Reclaiming $66K?",
-      "url": "https://cryptopotato.com/bitcoin-price-analysis-can-btc-extend-its-rally-after-reclaiming-66k/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 15 Jun 2026 13:41:04 +0000"
-    },
-    {
       "title": "STRC Price Signals 63% Odds of Dividend Increase, Distress Fears Overstated: Analyst",
       "url": "https://www.ccn.com/news/crypto/strc-price-signals-63-percent-odds-dividend-increase-distress-fears-fade/",
       "source": "CCN",
@@ -1679,12 +1685,6 @@
       "url": "https://decrypt.co/371027/us-government-orders-anthropic-pull-claude-fable-mythos-ai-models",
       "source": "Decrypt",
       "published_at": "Sat, 13 Jun 2026 19:23:34 +0000"
-    },
-    {
-      "title": "Google Sues Chinese Crime Group for Allegedly Using Gemini AI for Mass Phishing Scams",
-      "url": "https://decrypt.co/371014/google-sues-chinese-crime-group-gemini-ai-phishing-scams",
-      "source": "Decrypt",
-      "published_at": "Sat, 13 Jun 2026 16:01:04 +0000"
     },
     {
       "title": "Data-Driven Analysis Pinpoints This Cycle’s Bottom Prices for Bitcoin, Ethereum, and XRP",
