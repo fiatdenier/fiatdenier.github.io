@@ -1,6 +1,30 @@
 {
   "articles": [
     {
+      "title": "UK crypto advocates take on banks over transfer blocks",
+      "url": "https://coingeek.com/uk-crypto-advocates-take-on-banks-over-transfer-blocks/",
+      "source": "CoinGeek",
+      "published_at": "Wed, 17 Jun 2026 09:00:00 +0000"
+    },
+    {
+      "title": "Dow Surges Past 52,000 Milestone Amid Iran Peace Deal Optimism and Fed Rate Decision",
+      "url": "https://blockonomi.com/dow-surges-past-52000-milestone-amid-iran-peace-deal-optimism-and-fed-rate-decision/",
+      "source": "Blockonomi",
+      "published_at": "Wed, 17 Jun 2026 08:50:41 +0000"
+    },
+    {
+      "title": "BitGo Singapore, dtcpay team up on global crypto payments",
+      "url": "https://crypto.news/bitgo-singapore-dtcpay-team-up-on-global-crypto-payments/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 17 Jun 2026 08:37:04 +0000"
+    },
+    {
+      "title": "Kalshi’s Perpetual Futures Top $5.5 Billion in Two Weeks as It Eyes Markets Beyond Crypto",
+      "url": "https://news.bitcoin.com/kalshi-perpetual-futures-5-5-billion-two-weeks/",
+      "source": "Bitcoin.com",
+      "published_at": "Wed, 17 Jun 2026 08:30:20 +0000"
+    },
+    {
       "title": "SpaceX holds 18,712 Bitcoin. Now everyone can see it move",
       "url": "https://crypto.news/spacex-bitcoin-treasury-ipo/",
       "source": "CryptoNews",
@@ -13,10 +37,22 @@
       "published_at": "Wed, 17 Jun 2026 08:24:02 +0000"
     },
     {
+      "title": "What Crypto Whales Are Buying and Selling Ahead of the June FOMC Meeting",
+      "url": "https://beincrypto.com/crypto-whales-buying-shorting-fomc-analysis/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 17 Jun 2026 08:22:57 +0000"
+    },
+    {
       "title": "Crypto PAC-backed Barry Moore wins Alabama GOP Senate runoff",
       "url": "https://crypto.news/crypto-pac-backed-barry-moore-wins-alabama-gop-senate-runoff/",
       "source": "CryptoNews",
       "published_at": "Wed, 17 Jun 2026 08:11:13 +0000"
+    },
+    {
+      "title": "Why Nasdaq and S&P 500 Are Sliding While World Rallies",
+      "url": "https://beincrypto.com/nasdaq-sp500-down-market-rotation-spacex-warsh-rate-hike/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 17 Jun 2026 08:04:50 +0000"
     },
     {
       "title": "Bitget and WIW3CH on Why Web3 Still Needs More Women in Ownership, Funding, and Leadership",
@@ -211,6 +247,12 @@
       "published_at": "Wed, 17 Jun 2026 05:58:33 GMT"
     },
     {
+      "title": "Fed’s Kevin Warsh Killed the Rate Cut: Hike Odds Now Sit at 66%",
+      "url": "https://beincrypto.com/kevin-warsh-fed-rate-hold-hike-odds-2026-crypto/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 17 Jun 2026 05:45:27 +0000"
+    },
+    {
       "title": "Illinois becomes first state to tax crypto transactions this way",
       "url": "https://crypto.news/illinois-becomes-first-state-to-tax-crypto-transactions-this-way/",
       "source": "CryptoNews",
@@ -253,7 +295,7 @@
       "published_at": "Wed, 17 Jun 2026 05:07:41 +0000"
     },
     {
-      "title": "Live markets: Markets turn their focus to the fed as oil returns to pre-war levels",
+      "title": "Live markets: Markets turn their focus to the Fed as oil returns to pre-war levels",
       "url": "https://www.coindesk.com/tech/2026/06/17/live-markets-a-bitcoin-bottom-signal-flashed-as-holders-absorbed-125-000-btc-in-june",
       "source": "Coindesk",
       "published_at": "Wed, 17 Jun 2026 05:01:03 +0000"
@@ -311,12 +353,6 @@
       "url": "https://news.bitcoin.com/tokenized-real-world-assets-31-billion-circle-usyc-blackrock/",
       "source": "Bitcoin.com",
       "published_at": "Wed, 17 Jun 2026 04:30:10 +0000"
-    },
-    {
-      "title": "Robinhood Reduces Workforce 10% While Pledging to Keep Hiring",
-      "url": "https://beincrypto.com/robinhood-layoffs-tenev-flattens-org-structure/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 17 Jun 2026 04:27:03 +0000"
     },
     {
       "title": "Kraken Launches CFTC-Regulated Perpetual Futures For US Pro Traders",
@@ -487,12 +523,6 @@
       "published_at": "Tue, 16 Jun 2026 23:00:31 +0000"
     },
     {
-      "title": "Onchain Data Locks In Satoshi’s 1.1M BTC Hoard — 3 Theories on Why It Never Moves",
-      "url": "https://news.bitcoin.com/onchain-data-locks-in-satoshis-1-1m-btc-hoard-3-theories-on-why-it-never-moves/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 16 Jun 2026 22:50:47 +0000"
-    },
-    {
       "title": "Alibaba Is Building Qwen-Robot: The Operating System for the Robot Economy",
       "url": "https://decrypt.co/371357/alibaba-qwen-robot-operating-system-robot-economy",
       "source": "Decrypt",
@@ -551,12 +581,6 @@
       "url": "https://cryptoslate.com/solstices-ryan-day-on-why-sustainable-defi-yield-depends-on-business-fundamentals-not-token-incentives/",
       "source": "CryptoSlate",
       "published_at": "Tue, 16 Jun 2026 21:30:08 +0000"
-    },
-    {
-      "title": "SBF Sold Too Early: These Exited Bets Later Turned Into Multi-Billion Winners",
-      "url": "https://beincrypto.com/sbf-ftx-estate-sold-too-early/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 16 Jun 2026 21:22:30 +0000"
     },
     {
       "title": "State Street unveils stablecoin fund as GENIUS Act reshapes reserves",
@@ -623,12 +647,6 @@
       "url": "https://ambcrypto.com/imf-says-stablecoins-have-become-major-cross-border-payment-channel-in-nigeria/",
       "source": "Ambcrypto",
       "published_at": "Tue, 16 Jun 2026 20:13:24 +0000"
-    },
-    {
-      "title": "SpaceX Stock Faces Tesla-Style Crash Fears as $3 Trillion Valuation Sparks Debate",
-      "url": "https://beincrypto.com/spacex-stock-tesla-crash-fears/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 16 Jun 2026 20:07:41 +0000"
     },
     {
       "title": "Is Tether’s MiCA setback creating a bearish Q3 setup for crypto?",
@@ -1267,12 +1285,6 @@
       "published_at": "Tue, 16 Jun 2026 10:11:18 GMT"
     },
     {
-      "title": "IMF warns Nigeria stablecoin boom is testing monetary rules",
-      "url": "https://crypto.news/imf-warns-nigeria-stablecoin-boom-is-testing-monetary-rules/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 16 Jun 2026 10:04:55 +0000"
-    },
-    {
       "title": "Peter Schiff Admits Bitcoin ‘Will Not Go To Zero’ in Debate — Calls Out Strategy’s Latest BTC Purchase",
       "url": "https://www.ccn.com/news/crypto/peter-schiff-bitcoin-not-to-zero-debate-calls-strategys-btc/",
       "source": "CCN",
@@ -1319,12 +1331,6 @@
       "url": "https://blockonomi.com/nvidia-nvda-eyes-20b-bond-offering-as-crypto-miners-embrace-ai-data-center-transition/",
       "source": "Blockonomi",
       "published_at": "Tue, 16 Jun 2026 08:21:58 +0000"
-    },
-    {
-      "title": "Michael Saylor Projects Bitcoin (BTC) Will Hit $7 Million: Here’s Why He Believes It’s “Inevitable”",
-      "url": "https://blockonomi.com/michael-saylor-projects-bitcoin-btc-will-hit-7-million-heres-why-he-believes-its-inevitable/",
-      "source": "Blockonomi",
-      "published_at": "Tue, 16 Jun 2026 08:20:57 +0000"
     },
     {
       "title": "HYPE Soars Again by Double Digits, BTC Reached $67K: Market Watch",
@@ -1631,12 +1637,6 @@
       "url": "https://coingeek.com/ai-revolution-or-de-resolution/",
       "source": "CoinGeek",
       "published_at": "Mon, 15 Jun 2026 07:00:00 +0000"
-    },
-    {
-      "title": "Vietnam aims for cashless payments to hit 30x GDP by 2030",
-      "url": "https://coingeek.com/vietnam-aims-for-cashless-payments-to-hit-30x-gdp-by-2030/",
-      "source": "CoinGeek",
-      "published_at": "Mon, 15 Jun 2026 05:00:00 +0000"
     },
     {
       "title": "Reve 2.0 Review: The Best AI Image Generator for Layout Control",
