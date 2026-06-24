@@ -1,6 +1,24 @@
 {
   "articles": [
     {
+      "title": "Sam Altman takes on Nvidia with OpenAI’s Jalapeño chip",
+      "url": "https://crypto.news/sam-altman-takes-on-nvidia-with-openais-jalapeno-chip/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 24 Jun 2026 18:42:23 +0000"
+    },
+    {
+      "title": "'Stop Buying Bitcoin': Strategy Needs More Cash Fast, Analyst Says as STRC Hits New Low",
+      "url": "https://decrypt.co/371995/stop-buying-bitcoin-strategy-needs-more-cash-fast-strc-new-low",
+      "source": "Decrypt",
+      "published_at": "Wed, 24 Jun 2026 18:40:29 +0000"
+    },
+    {
+      "title": "Standard Chartered Aave Call Puts Institutional DeFi Back On The Table",
+      "url": "https://www.newsbtc.com/news/standard-chartered-aave-call-puts-institutional-defi-back-on-the-table/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 24 Jun 2026 18:30:16 +0000"
+    },
+    {
       "title": "Europe’s crypto licensing race enters final week as MiCA deadline approaches",
       "url": "https://ambcrypto.com/europes-crypto-licensing-race-enters-final-week-as-mica-deadline-approaches/",
       "source": "Ambcrypto",
@@ -11,6 +29,12 @@
       "url": "https://news.bitcoin.com/bitcoin-hits-59018-after-a-5-drop-forcing-237m-in-long-liquidations/",
       "source": "Bitcoin.com",
       "published_at": "Wed, 24 Jun 2026 18:28:42 +0000"
+    },
+    {
+      "title": "10x Research Warns Bitcoin Could Drop to $55,000 Before Finding a Bottom",
+      "url": "https://crypto-economy.com/10x-research-warns-bitcoin-could-drop-to-55000-before-finding-a-bottom/",
+      "source": "CryptoEconomy",
+      "published_at": "Wed, 24 Jun 2026 18:25:41 +0000"
     },
     {
       "title": "Mining Profits Dry Up Across Bitcoin, DOGE, LTC, and BCH",
@@ -35,6 +59,12 @@
       "url": "https://ambcrypto.com/can-dash-price-break-its-3-week-range-despite-these-liquidity-risks/",
       "source": "Ambcrypto",
       "published_at": "Wed, 24 Jun 2026 18:00:28 +0000"
+    },
+    {
+      "title": "Deutsche Bank Flags $3,800 Gold Risk as Fed Turns Hawkish",
+      "url": "https://beincrypto.com/deutsche-bank-gold-3800-fed-hikes/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 24 Jun 2026 18:00:00 +0000"
     },
     {
       "title": "EU Central Bank President Reportedly Blocked Binance in Greece, Will France Approve?",
@@ -611,12 +641,6 @@
       "url": "https://www.newsbtc.com/news/0x-opens-swap-api-to-ai-agents-with-usdc-pay-per-request-model/",
       "source": "NewsBTC",
       "published_at": "Wed, 24 Jun 2026 12:00:11 +0000"
-    },
-    {
-      "title": "Tron (TRX) Looks Incredibly Healthy, But Nobody Is Talking About It",
-      "url": "https://beincrypto.com/tron-trx-looks-incredibly-healthy-but-nobody-is-talking-about-it/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 24 Jun 2026 12:00:00 +0000"
     },
     {
       "title": "DOJ Seizes Huione Infrastructure Linked to Billions in Crypto Laundering",
@@ -1237,22 +1261,10 @@
       "published_at": "Tue, 23 Jun 2026 22:01:12 +0000"
     },
     {
-      "title": "Spot Bitcoin And Ether ETFs Bleed $134M As Institutions De-Risk",
-      "url": "https://www.newsbtc.com/news/spot-bitcoin-and-ether-etfs-bleed-134m-as-institutions-de-risk/",
-      "source": "NewsBTC",
-      "published_at": "Tue, 23 Jun 2026 22:00:44 +0000"
-    },
-    {
       "title": "Starmer to step down: What Andy Burnham means for crypto in the UK",
       "url": "https://cointelegraph.com/features/starmer-steps-down-what-andy-burnham-means-for-crypto-in-the-uk?utm_source=rss&utm_medium=rss&utm_campaign=rss",
       "source": "Cointelegraph",
       "published_at": "Tue, 23 Jun 2026 22:00:00 GMT"
-    },
-    {
-      "title": "SOIL races to launch XRP Ledger’s first native lending app",
-      "url": "https://crypto.news/soil-races-to-launch-xrp-ledgers-first-native-lending-app/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 23 Jun 2026 21:54:28 +0000"
     },
     {
       "title": "Trump's Quantum Push Wins Praise, But Experts Warn Bitcoin Isn't Ready",
@@ -1585,12 +1597,6 @@
       "published_at": "Mon, 22 Jun 2026 19:57:54 +0000"
     },
     {
-      "title": "Bitcoin Supply Shock Incoming? OTC Reserves Plunge by 400,000 BTC Since 2022",
-      "url": "https://crypto-economy.com/bitcoin-supply-shock-incoming-otc-reserves-plunge-by-400000-btc-since-2022/",
-      "source": "CryptoEconomy",
-      "published_at": "Mon, 22 Jun 2026 19:43:49 +0000"
-    },
-    {
       "title": "Google Warns AI Consciousness Debate Could Become a Political Battleground",
       "url": "https://decrypt.co/371800/google-ai-consciousness-debate-political",
       "source": "Decrypt",
@@ -1685,12 +1691,6 @@
       "url": "https://www.ccn.com/news/crypto/keir-starmer-resignation-uk-crypto-policy/",
       "source": "CCN",
       "published_at": "Mon, 22 Jun 2026 12:37:56 +0000"
-    },
-    {
-      "title": "Bitcoin 'Resilient' After Hawkish Fed, But No 'Return of Demand': Analysts",
-      "url": "https://decrypt.co/371760/bitcoin-resilient-after-hawkish-fed-but-no-return-of-demand-analysts",
-      "source": "Decrypt",
-      "published_at": "Mon, 22 Jun 2026 12:12:25 +0000"
     },
     {
       "title": "EU to Ban Privacy Coins, Anonymous Accounts and Cap Cash at €10,000 by July 2027",
