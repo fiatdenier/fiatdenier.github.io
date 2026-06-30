@@ -1,9 +1,51 @@
 {
   "articles": [
     {
+      "title": "XRP Demand Builds On-Chain Even as Price Sinks to 19-Month Low",
+      "url": "https://beincrypto.com/xrp-onchain-demand-price-19-month-low/",
+      "source": "BeinCrypto",
+      "published_at": "Tue, 30 Jun 2026 15:20:46 +0000"
+    },
+    {
+      "title": "140 Firms Including Coinbase and Ripple Launch the New Open USD Stablecoin",
+      "url": "https://news.bitcoin.com/140-firms-including-coinbase-and-ripple-launch-the-new-open-usd-stablecoin/",
+      "source": "Bitcoin.com",
+      "published_at": "Tue, 30 Jun 2026 15:18:25 +0000"
+    },
+    {
+      "title": "MiCA Deadline: New Rules Could Force 80% of Crypto Firms Out of EU",
+      "url": "https://cryptopotato.com/mica-deadline-new-rules-could-force-80-of-crypto-firms-out-of-eu/",
+      "source": "CryptoPotato",
+      "published_at": "Tue, 30 Jun 2026 15:15:20 +0000"
+    },
+    {
+      "title": "TD Cowen Slashes Strategy Price Target, Citing Ongoing Bitcoin Weakness",
+      "url": "https://decrypt.co/372422/td-cowen-slashes-strategy-price-target-bitcoin-weakness",
+      "source": "Decrypt",
+      "published_at": "Tue, 30 Jun 2026 15:05:41 +0000"
+    },
+    {
+      "title": "Cardano’s ‘ghost chain’ label debunked? Why ADA’s 34 dApps don’t tell the full story",
+      "url": "https://ambcrypto.com/cardanos-ghost-chain-label-debunked-why-adas-34-dapps-dont-tell-the-full-story/",
+      "source": "Ambcrypto",
+      "published_at": "Tue, 30 Jun 2026 15:00:09 +0000"
+    },
+    {
+      "title": "Ethereum Options Traders Pay Up For Downside Protection As Skew Turns Cautious",
+      "url": "https://www.newsbtc.com/news/ethereum-options-traders-pay-up-for-downside-protection-as-skew-turns-cautious/",
+      "source": "NewsBTC",
+      "published_at": "Tue, 30 Jun 2026 15:00:00 +0000"
+    },
+    {
       "title": "MicroStrategy Opens Door To Bitcoin Sales Under New Capital Framework",
       "url": "https://www.newsbtc.com/news/microstrategy-opens-door-to-bitcoin-sales-under-new-capital-framework/",
       "source": "NewsBTC",
+      "published_at": "Tue, 30 Jun 2026 15:00:00 +0000"
+    },
+    {
+      "title": "MetaMask launches stablecoin Money Account with up to 4% yield",
+      "url": "https://crypto.news/metamask-launches-stablecoin-money-account-with-up-to-4-yield/",
+      "source": "CryptoNews",
       "published_at": "Tue, 30 Jun 2026 15:00:00 +0000"
     },
     {
@@ -43,16 +85,10 @@
       "published_at": "Tue, 30 Jun 2026 14:34:14 +0000"
     },
     {
-      "title": "Circle slides 8% as Stripe, Coinbase and BlackRock back rival stablecoin network",
+      "title": "Circle slides 13% as Stripe, Coinbase and BlackRock back rival stablecoin network",
       "url": "https://www.coindesk.com/business/2026/06/30/circle-slides-8-as-stripe-coinbase-and-blackrock-back-rival-stablecoin-network",
       "source": "Coindesk",
       "published_at": "Tue, 30 Jun 2026 14:32:33 +0000"
-    },
-    {
-      "title": "US starts clock to bring in ID checks for converting dollars to stablecoins but DeFi stays outside the rules",
-      "url": "https://cryptoslate.com/stablecoin-issuers-get-a-new-kyc-clock-but-defis-harder-fight-is-still-ahead/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 30 Jun 2026 14:30:01 +0000"
     },
     {
       "title": "Andreessen Joins Defense Board — With No Disclosure Rules in Place",
@@ -211,12 +247,6 @@
       "published_at": "Tue, 30 Jun 2026 13:25:52 +0000"
     },
     {
-      "title": "JPMorgan warns rushed US crypto rules could create market loopholes as Senate races toward July CLARITY Act vote",
-      "url": "https://cryptoslate.com/jpmorgan-warns-rushed-us-crypto-rules-could-create-market-loopholes-as-senate-races-toward-july-clarity-act-vote/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 30 Jun 2026 13:15:53 +0000"
-    },
-    {
       "title": "UK FCA unveils crypto rulebook: Risk-based approach starts October 2027",
       "url": "https://ambcrypto.com/uk-fca-unveils-crypto-rulebook-risk-based-approach-starts-october-2027/",
       "source": "Ambcrypto",
@@ -373,12 +403,6 @@
       "published_at": "Tue, 30 Jun 2026 12:00:45 +0000"
     },
     {
-      "title": "Ripple bets XRPL lending can give XRP a future beyond payments as price struggles",
-      "url": "https://cryptoslate.com/ripple-bets-xrpl-lending-can-give-xrp-a-future-beyond-payments-as-price-struggles/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 30 Jun 2026 12:00:03 +0000"
-    },
-    {
       "title": "Bitcoin’s USD/JPY Correlation Flips The Carry Trade Story On Its Head",
       "url": "https://www.newsbtc.com/news/bitcoin-s-usd-jpy-correlation-flips-the-carry-trade-story-on-its-head/",
       "source": "NewsBTC",
@@ -389,12 +413,6 @@
       "url": "https://crypto-economy.com/bitcoin-tries-to-break-through-60k/",
       "source": "CryptoEconomy",
       "published_at": "Tue, 30 Jun 2026 11:59:55 +0000"
-    },
-    {
-      "title": "AI-Exposed Sectors Swing From 55,000 Monthly Hires to Steady Losses",
-      "url": "https://beincrypto.com/ai-affected-sectors-job-losses/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 30 Jun 2026 11:59:39 +0000"
     },
     {
       "title": "Bitcoin’s quiet $59,000-$60,000 range is starting to look dangerous",
@@ -499,12 +517,6 @@
       "published_at": "Tue, 30 Jun 2026 10:47:31 +0000"
     },
     {
-      "title": "Will UK traders lose crypto exchange access after MiCA’s July 1 deadline?",
-      "url": "https://cryptoslate.com/will-uk-traders-lose-crypto-exchange-access-after-micas-july-1-deadline/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 30 Jun 2026 10:45:39 +0000"
-    },
-    {
       "title": "Strategy heads for 11th losing month in 12 as bitcoin weakness continues",
       "url": "https://www.coindesk.com/markets/2026/06/30/strategy-heads-for-eleventh-losing-month-in-twelve-as-bitcoin-weakness-continues",
       "source": "Coindesk",
@@ -607,12 +619,6 @@
       "published_at": "Tue, 30 Jun 2026 09:30:12 +0000"
     },
     {
-      "title": "Trump’s Bitcoin made in America push runs into a power problem the tax bill cannot fix",
-      "url": "https://cryptoslate.com/trumps-bitcoin-made-in-america-push-runs-into-a-power-problem-the-tax-bill-cannot-fix/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 30 Jun 2026 09:30:00 +0000"
-    },
-    {
       "title": "Ethereum price risks lower low as ETH struggles near $1,500",
       "url": "https://crypto.news/ethereum-price-weakens-as-8-of-last-10-monthly-candles/",
       "source": "CryptoNews",
@@ -649,12 +655,6 @@
       "published_at": "Tue, 30 Jun 2026 08:47:28 +0000"
     },
     {
-      "title": "UK Unveils Final Crypto Rulebook as FCA Cuts Stablecoin Capital Floor",
-      "url": "https://news.bitcoin.com/uk-fca-final-crypto-framework-stablecoin-capital/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 30 Jun 2026 08:30:58 +0000"
-    },
-    {
       "title": "XRPL lending protocol enters key validator voting phase",
       "url": "https://crypto.news/xrpl-lending-protocol-enters-key-validator-voting-phase/",
       "source": "CryptoNews",
@@ -671,12 +671,6 @@
       "url": "https://crypto.news/azerbaijan-advances-crypto-regulation-with-licensing-proposal/",
       "source": "CryptoNews",
       "published_at": "Tue, 30 Jun 2026 08:13:35 +0000"
-    },
-    {
-      "title": "Bitcoin’s $60,000 test is not over after Strategy’s $2.5B STRC backstop",
-      "url": "https://cryptoslate.com/bitcoins-60000-test-is-not-over-after-strategys-2-5b-strc-backstop/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 30 Jun 2026 08:08:11 +0000"
     },
     {
       "title": "Saylor’s Bitcoin model faces fire from Ripple CEO",
@@ -1009,12 +1003,6 @@
       "published_at": "Tue, 30 Jun 2026 00:02:16 +0000"
     },
     {
-      "title": "Bitmine Expands Ethereum Treasury To 5.7 Million ETH After Latest Purchase",
-      "url": "https://www.newsbtc.com/news/bitmine-expands-ethereum-treasury-to-57-million-eth-after-latest-purchase-2/",
-      "source": "NewsBTC",
-      "published_at": "Mon, 29 Jun 2026 23:20:00 +0000"
-    },
-    {
       "title": "Securitize heads to NYSE debut after investors approve SPAC merger",
       "url": "https://www.coindesk.com/business/2026/06/29/securitize-heads-to-nyse-debut-after-investors-approve-spac-merger",
       "source": "Coindesk",
@@ -1049,12 +1037,6 @@
       "url": "https://crypto.news/stellar-price-prediction-dtcc-tokenization-deal-xlm/",
       "source": "CryptoNews",
       "published_at": "Mon, 29 Jun 2026 22:19:23 +0000"
-    },
-    {
-      "title": "Unibase [UB] jumps 21% as derivatives heat up: Can bulls clear $0.11?",
-      "url": "https://ambcrypto.com/unibase-ub-jumps-21-as-derivatives-heat-up-can-bulls-clear-0-11/",
-      "source": "Ambcrypto",
-      "published_at": "Mon, 29 Jun 2026 22:00:41 +0000"
     },
     {
       "title": "Bitcoin faces critical test as bulls aim to hold $60K: Did BTC bottom?",
@@ -1135,12 +1117,6 @@
       "published_at": "Mon, 29 Jun 2026 19:29:41 +0000"
     },
     {
-      "title": "Bitcoin’s $60K breakdown sets up a volatility shock as traders load up on downside hedges",
-      "url": "https://cryptoslate.com/bitcoins-60k-breakdown-sets-up-volatility-shock-as-traders-load-up-on-downside-hedges/",
-      "source": "CryptoSlate",
-      "published_at": "Mon, 29 Jun 2026 19:15:49 +0000"
-    },
-    {
       "title": "SpaceX stock jumps as Citadel flags growing risks to AI rally",
       "url": "https://crypto.news/spacex-stock-jumps-as-citadel-flags-risks-to-ai-rally/",
       "source": "CryptoNews",
@@ -1163,12 +1139,6 @@
       "url": "https://decrypt.co/372321/bitcoin-price-fight-60k-what-the-charts-say",
       "source": "Decrypt",
       "published_at": "Mon, 29 Jun 2026 18:40:24 +0000"
-    },
-    {
-      "title": "MSTR jumps after Strategy says it may sell more Bitcoin to fund dividends and buybacks",
-      "url": "https://cryptoslate.com/mstr-jumps-after-strategy-says-it-may-sell-bitcoin-to-fund-dividends-and-buybacks/",
-      "source": "CryptoSlate",
-      "published_at": "Mon, 29 Jun 2026 18:25:49 +0000"
     },
     {
       "title": "XRP Whales Are Moving On, and Binance Is No Longer Their Top Choice",
@@ -1231,12 +1201,6 @@
       "published_at": "Mon, 29 Jun 2026 17:31:33 +0000"
     },
     {
-      "title": "What states can still do to crypto after GENIUS and CLARITY",
-      "url": "https://cryptoslate.com/what-states-can-still-do-to-crypto-after-genius-and-clarity/",
-      "source": "CryptoSlate",
-      "published_at": "Mon, 29 Jun 2026 17:30:13 +0000"
-    },
-    {
       "title": "California Strikes Deal With Anthropic to Bring Claude AI to State Agencies",
       "url": "https://decrypt.co/372301/california-strikes-deal-anthropic-bring-claude-ai-state-agencies",
       "source": "Decrypt",
@@ -1253,12 +1217,6 @@
       "url": "https://crypto.news/us-supreme-court-blocks-trump-bid-to-remove-lisa-cook/",
       "source": "CryptoNews",
       "published_at": "Mon, 29 Jun 2026 16:40:26 +0000"
-    },
-    {
-      "title": "Aave rally makes DeFi lending look more like a bank to investors",
-      "url": "https://cryptoslate.com/aave-rally-makes-defi-lending-look-more-like-a-bank-to-investors/",
-      "source": "CryptoSlate",
-      "published_at": "Mon, 29 Jun 2026 16:15:15 +0000"
     },
     {
       "title": "BNY adds USDC minting and redemption to institutional custody platform",
@@ -1343,12 +1301,6 @@
       "url": "https://cryptopotato.com/circles-usdc-becomes-first-stablecoin-supported-by-bny-mellon-for-institutional-clients/",
       "source": "CryptoPotato",
       "published_at": "Mon, 29 Jun 2026 14:48:37 +0000"
-    },
-    {
-      "title": "Tom Lee pushes Bitmine closer to owning 5% of Ethereum supply",
-      "url": "https://crypto.news/tom-lee-pushes-bitmine-closer-to-5-percent-eth-supply/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 29 Jun 2026 14:46:11 +0000"
     },
     {
       "title": "BlackRock Bitcoin Outflow Hits $446M in Coinbase Prime Transfer",
@@ -1547,12 +1499,6 @@
       "url": "https://cryptopotato.com/ethereum-whales-offload-almost-900m-worth-of-eth-is-another-crash-looming/",
       "source": "CryptoPotato",
       "published_at": "Sun, 28 Jun 2026 12:17:08 +0000"
-    },
-    {
-      "title": "Bitcoin Remains Stable at $60K Despite New Attacks Between US and Iran: Weekend Watch",
-      "url": "https://cryptopotato.com/bitcoin-remains-stable-at-60k-despite-new-attacks-between-us-and-iran-weekend-watch/",
-      "source": "CryptoPotato",
-      "published_at": "Sun, 28 Jun 2026 11:17:46 +0000"
     },
     {
       "title": "The Stablecoin Founder Map Doesn't Match the Stablecoin Volume Map",
