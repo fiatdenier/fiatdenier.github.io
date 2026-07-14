@@ -1,6 +1,48 @@
 {
   "articles": [
     {
+      "title": "Injective SDK Compromise Puts Wallet Private Keys Back In The Security Spotlight",
+      "url": "https://www.newsbtc.com/news/injective-sdk-compromise-puts-wallet-private-keys-back-in-the-security-spotlight/",
+      "source": "NewsBTC",
+      "published_at": "Tue, 14 Jul 2026 16:30:00 +0000"
+    },
+    {
+      "title": "U.S., UK move to align rules for tokenized finance across world's largest financial markets",
+      "url": "https://www.coindesk.com/policy/2026/07/14/u-s-uk-move-to-align-rules-for-tokenized-finance-across-world-s-largest-financial-markets",
+      "source": "Coindesk",
+      "published_at": "Tue, 14 Jul 2026 16:29:48 +0000"
+    },
+    {
+      "title": "UK to defer Capital Gains Tax on qualifying crypto lending and liquidity pools from 2027",
+      "url": "https://ambcrypto.com/uk-to-defer-capital-gains-tax-on-qualifying-crypto-lending-and-liquidity-pools-from-2027/",
+      "source": "Ambcrypto",
+      "published_at": "Tue, 14 Jul 2026 16:29:02 +0000"
+    },
+    {
+      "title": "‘We Do Not Want to Be in the Bailout Business’: Fed Chair Warns Crypto Is on Its Own",
+      "url": "https://news.bitcoin.com/we-do-not-want-to-be-in-the-bailout-business-fed-chair-warns-crypto-is-on-its-own/",
+      "source": "Bitcoin.com",
+      "published_at": "Tue, 14 Jul 2026 16:20:43 +0000"
+    },
+    {
+      "title": "Ripple-backed Evernorth unveils $44M CEO award before XRP debut",
+      "url": "https://crypto.news/ripple-backed-evernorth-unveils-44m-ceo-award-xrp/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 14 Jul 2026 16:09:10 +0000"
+    },
+    {
+      "title": "DeXe slips 13% – But here’s why the pullback may be temporary",
+      "url": "https://ambcrypto.com/dexe-slips-13-but-heres-why-the-pullback-may-be-temporary/",
+      "source": "Ambcrypto",
+      "published_at": "Tue, 14 Jul 2026 16:00:19 +0000"
+    },
+    {
+      "title": "Timelock Account Recovery Gives Ethereum Smart Accounts A Safer Backup Route",
+      "url": "https://www.newsbtc.com/news/timelock-account-recovery-gives-ethereum-smart-accounts-a-safer-backup-route/",
+      "source": "NewsBTC",
+      "published_at": "Tue, 14 Jul 2026 16:00:00 +0000"
+    },
+    {
       "title": "XRP’s $1 rebound faces holders trapped above $2",
       "url": "https://cryptoslate.com/xrps-1-rebound-faces-holders-trapped-above-2/",
       "source": "CryptoSlate",
@@ -613,12 +655,6 @@
       "published_at": "Tue, 14 Jul 2026 09:06:57 +0000"
     },
     {
-      "title": "Hurupay Exits Kenya as FATF Grey List Pressure Triggers Tougher Crypto Compliance Rules",
-      "url": "https://news.bitcoin.com/hurupay-exits-kenya-as-fatf-grey-list-pressure-triggers-tougher-crypto-compliance-rules/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 14 Jul 2026 09:05:01 +0000"
-    },
-    {
       "title": "Trump urges CLARITY Act passage in honor of ‘big supporter’ Lindsey Graham",
       "url": "https://ambcrypto.com/trump-urges-clarity-act-passage-in-honor-of-big-supporter-lindsey-graham/",
       "source": "Ambcrypto",
@@ -869,18 +905,6 @@
       "url": "https://cointelegraph.com/news/us-government-moves-297m-in-seized-bitcoin-ether-to-coinbase-prime?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Tue, 14 Jul 2026 03:35:51 +0000"
-    },
-    {
-      "title": "Hyperliquid loses mid-range support as short-term selling pressure builds",
-      "url": "https://ambcrypto.com/hyperliquid-loses-mid-range-support-as-short-term-selling-pressure-builds/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 14 Jul 2026 03:30:17 +0000"
-    },
-    {
-      "title": "Uniswap community votes 74% in favor of UNI burn: Will adoption drive token scarcity?",
-      "url": "https://ambcrypto.com/uniswap-community-votes-74-in-favor-of-uni-burn-will-adoption-drive-token-scarcity/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 14 Jul 2026 03:00:14 +0000"
     },
     {
       "title": "Bitcoin slips as traders lift July Fed rate hike bets ahead of Inflation report",
@@ -1231,12 +1255,6 @@
       "published_at": "Mon, 13 Jul 2026 15:22:10 +0000"
     },
     {
-      "title": "Robinhood built a blockchain for tokenized stocks. Memecoins took over",
-      "url": "https://www.coindesk.com/tech/2026/07/13/robinhood-built-a-blockchain-for-tokenized-stocks-memecoins-took-over",
-      "source": "Coindesk",
-      "published_at": "Mon, 13 Jul 2026 15:17:05 +0000"
-    },
-    {
       "title": "Bitcoin ETFs Pull In $197M and Break an Eight-Week Outflow Slide",
       "url": "https://crypto-economy.com/bitcoin-etfs-pull-in-197m/",
       "source": "CryptoEconomy",
@@ -1271,12 +1289,6 @@
       "url": "https://www.newsbtc.com/news/coinbase-smart-wallet-verification-upgrade-targets-the-multi-chain-ux-problem/",
       "source": "NewsBTC",
       "published_at": "Mon, 13 Jul 2026 14:35:00 +0000"
-    },
-    {
-      "title": "Dormant Bitcoin whale moves $188M after seven years of silence",
-      "url": "https://crypto.news/dormant-bitcoin-whale-moves-188m-after-seven-years-of-silence/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 13 Jul 2026 14:30:02 +0000"
     },
     {
       "title": "Mantle’s Move To Chainlink CCIP Shows Bridges Are Still Crypto’s Biggest Security Test",
@@ -1385,18 +1397,6 @@
       "url": "https://cryptopotato.com/bitmine-snaps-up-over-30500-eth-as-tom-lee-focuses-on-cryptos-new-success-story/",
       "source": "CryptoPotato",
       "published_at": "Mon, 13 Jul 2026 12:42:06 +0000"
-    },
-    {
-      "title": "SEC’s “Regulation Crypto” Push Signals A More Formal Rulebook May Be Coming",
-      "url": "https://www.newsbtc.com/news/sec-s-regulation-crypto-push-signals-a-more-formal-rulebook-may-be-coming/",
-      "source": "NewsBTC",
-      "published_at": "Mon, 13 Jul 2026 12:35:00 +0000"
-    },
-    {
-      "title": "CLARITY Act Window Reopens As US Crypto Regulation Returns To The Senate Agenda",
-      "url": "https://www.newsbtc.com/news/clarity-act-window-reopens-as-us-crypto-regulation-returns-to-the-senate-agenda/",
-      "source": "NewsBTC",
-      "published_at": "Mon, 13 Jul 2026 12:20:00 +0000"
     },
     {
       "title": "Saylor’s Strategy Boosts USD Reserves by $450M Without Selling BTC: Here’s How",
