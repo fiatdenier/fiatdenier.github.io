@@ -1,10 +1,58 @@
 {
   "articles": [
     {
+      "title": "Bitcoin falls to $63K with chip-sector meltdown spreading globally",
+      "url": "https://crypto-economy.com/bitcoin-falls-to-63k-with-chip-sector-meltdown/",
+      "source": "CryptoEconomy",
+      "published_at": "Fri, 17 Jul 2026 12:25:54 +0000"
+    },
+    {
+      "title": "Following Ripple’s European regulatory approval, EX DeFi enabled XRP investors to earn $15,000 daily",
+      "url": "https://crypto.news/following-ripples-european-regulatory-approval-ex-defi-enabled-all-xrp-investors-to-earn-15000-daily/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 17 Jul 2026 12:25:53 +0000"
+    },
+    {
+      "title": "FinTech Week Awards & Expo Singapore 2026 to Bring Together 1,000+ Global FinTech Leaders This September",
+      "url": "https://ambcrypto.com/fintech-week-awards-expo-singapore-2026-to-bring-together-1000-global-fintech-leaders-this-september/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 17 Jul 2026 12:25:13 +0000"
+    },
+    {
+      "title": "Ethereum Drops 4%, but Analysts Still See a Path Toward $2,245 and Beyond",
+      "url": "https://cryptopotato.com/ethereum-drops-4-but-analysts-still-see-a-path-toward-2245-and-beyond/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 17 Jul 2026 12:12:44 +0000"
+    },
+    {
+      "title": "Morning Minute: Citadel Securities Invests $400M in Crypto.com",
+      "url": "https://decrypt.co/373699/morning-minute-citadel-securities-invests-400m-in-crypto-com",
+      "source": "Decrypt",
+      "published_at": "Fri, 17 Jul 2026 12:09:14 +0000"
+    },
+    {
+      "title": "Stablecoin growth will erode bank deposits, says ECB’s Cipollone",
+      "url": "https://cointelegraph.com/news/stablecoin-growth-bank-deposits-ecbs-cipollone?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 17 Jul 2026 12:03:51 +0000"
+    },
+    {
+      "title": "Polygon’s payments push sparks POL backlash – ‘Holders have no equity’",
+      "url": "https://ambcrypto.com/polygons-payments-push-sparks-pol-backlash-holders-have-no-equity/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 17 Jul 2026 12:00:27 +0000"
+    },
+    {
       "title": "Ethereum price rejects $2,000 as CLARITY Act stalls, will $1,800 hold?",
       "url": "https://crypto.news/ethereum-price-rejects-2000-as-clarity-act-stalls/",
       "source": "CryptoNews",
       "published_at": "Fri, 17 Jul 2026 12:00:00 +0000"
+    },
+    {
+      "title": "Maestro Supports Robinhood Chain: The Fastest Trading Bot on the New L2",
+      "url": "https://cryptopotato.com/maestro-supports-robinhood-chain-the-fastest-trading-bot-on-the-new-l2/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 17 Jul 2026 11:56:08 +0000"
     },
     {
       "title": "Is there a Robinhood Chain token?",
@@ -667,12 +715,6 @@
       "published_at": "Thu, 16 Jul 2026 23:47:12 +0000"
     },
     {
-      "title": "Humanity Protocol – H falls 15% as $36M hack returns to focus",
-      "url": "https://ambcrypto.com/humanity-protocol-h-falls-15-as-36m-hack-returns-to-focus/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 16 Jul 2026 23:00:21 +0000"
-    },
-    {
       "title": "JPMorgan Sees Brighter Bitcoin Outlook as Strategy Builds Cash",
       "url": "https://blockonomi.com/jpmorgan-sees-brighter-bitcoin-outlook-as-strategy-builds-cash/",
       "source": "Blockonomi",
@@ -695,12 +737,6 @@
       "url": "https://cointelegraph.com/news/polygon-ceo-job-cuts-coinme-transition?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Thu, 16 Jul 2026 22:05:06 +0000"
-    },
-    {
-      "title": "Pi Network nosedives 12% post-rebound – Identifying the reasons",
-      "url": "https://ambcrypto.com/pi-network-nosedives-12-post-rebound-identifying-the-reasons/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 16 Jul 2026 22:00:44 +0000"
     },
     {
       "title": "Trump Media sells market-moving Truth Social posts to financial firms",
@@ -1039,12 +1075,6 @@
       "published_at": "Thu, 16 Jul 2026 13:45:09 +0000"
     },
     {
-      "title": "What is a transfer agent in tokenized securities?",
-      "url": "https://crypto.news/what-is-a-transfer-agent-in-tokenized-securities/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 16 Jul 2026 13:45:00 +0000"
-    },
-    {
       "title": "Alpaca raises $135M to fund tokenized agent-first infrastructure",
       "url": "https://cointelegraph.com/news/alpaca-raises-135m-to-fund-tokenized-agent-first-infrastructure?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1115,12 +1145,6 @@
       "url": "https://www.coindesk.com/tech/2026/07/16/galaxy-targets-institutional-stablecoin-yield-with-new-defi-vaults",
       "source": "Coindesk",
       "published_at": "Thu, 16 Jul 2026 12:00:00 +0000"
-    },
-    {
-      "title": "ARK pushes back against a16z’s ‘TradFi wants blockchain, not DeFi’ claim",
-      "url": "https://cointelegraph.com/news/ark-sentora-a16zs-tradfi-blockchain-defi-thesis?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 16 Jul 2026 11:35:30 +0000"
     },
     {
       "title": "The most popular bitcoin call option has slipped by $10,000",
@@ -1555,18 +1579,6 @@
       "published_at": "Wed, 15 Jul 2026 08:21:26 +0000"
     },
     {
-      "title": "Is Wrapped Bitcoin Flashing a Bullish Signal? Exchange Outflows Hit Six-Week High",
-      "url": "https://cryptopotato.com/is-wrapped-bitcoin-flashing-a-bullish-signal-exchange-outflows-hit-six-week-high/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 15 Jul 2026 07:50:42 +0000"
-    },
-    {
-      "title": "CT3 Announces Dedicated Storage Contracts to Expand Decentralized Storage Infrastructure",
-      "url": "https://cryptopotato.com/ct3-announces-dedicated-storage-contracts-to-expand-decentralized-storage-infrastructure/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 15 Jul 2026 07:43:56 +0000"
-    },
-    {
       "title": "SWIFT launches 24/7 blockchain for tokenized cross-border payments",
       "url": "https://coingeek.com/swift-launches-24-7-blockchain-for-tokenized-cross-border-payments/",
       "source": "CoinGeek",
@@ -1607,12 +1619,6 @@
       "url": "https://decrypt.co/373481/uk-to-defer-capital-gains-tax-on-defi-lending-liquidity-pool-deposits",
       "source": "Decrypt",
       "published_at": "Tue, 14 Jul 2026 15:00:26 +0000"
-    },
-    {
-      "title": "Solo Bitcoin Miner Scores $200K Block Reward With a Budget Rig",
-      "url": "https://crypto-economy.com/solo-bitcoin-miner-scores-200k-block-reward/",
-      "source": "CryptoEconomy",
-      "published_at": "Tue, 14 Jul 2026 14:34:03 +0000"
     },
     {
       "title": "XRP Price to $0.54? 50% Crash Warning as SBI and Solana Partnership Hits Japan",
@@ -1679,12 +1685,6 @@
       "url": "https://decrypt.co/373424/new-hampshire-bitcoin-reserve-blockchain-basic-laws-signing",
       "source": "Decrypt",
       "published_at": "Mon, 13 Jul 2026 20:57:09 +0000"
-    },
-    {
-      "title": "Claude's Personality Changes Depending on the Model—And the Language You Speak",
-      "url": "https://decrypt.co/373422/anthropic-claude-personality-changes-model-language",
-      "source": "Decrypt",
-      "published_at": "Mon, 13 Jul 2026 20:39:53 +0000"
     },
     {
       "title": "Bitcoin to $300K After September Low? 4 AI Models Assess Peter Brandt’s Major BTC Rally Call",
