@@ -1,16 +1,88 @@
 {
   "articles": [
     {
+      "title": "US Senate fears crypto bill won’t make August vote deadline",
+      "url": "https://coingeek.com/us-senate-fears-crypto-bill-wont-make-august-vote-deadline/",
+      "source": "CoinGeek",
+      "published_at": "Fri, 24 Jul 2026 07:00:00 +0000"
+    },
+    {
+      "title": "BitMEX sued for allegedly profiting from customer Bitcoin liquidations",
+      "url": "https://crypto.news/bitmex-sued-for-allegedly-profiting-from-customer-bitcoin-liquidations/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 24 Jul 2026 06:57:43 +0000"
+    },
+    {
+      "title": "Pi Network Price Falls Below $0.09 as PI’s Recovery Starts to Unravel",
+      "url": "https://cryptopotato.com/pi-network-price-falls-below-0-09-as-pis-recovery-starts-to-unravel/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 24 Jul 2026 06:51:42 +0000"
+    },
+    {
+      "title": "Bitcoin (BTC) Remains Resilient While Tech Giants Face $797B Market Wipeout",
+      "url": "https://blockonomi.com/bitcoin-btc-remains-resilient-while-tech-giants-face-797b-market-wipeout/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 24 Jul 2026 06:51:13 +0000"
+    },
+    {
+      "title": "Bitcoin giants unite with $15M plan to fight quantum threat",
+      "url": "https://crypto.news/bitcoin-giants-unite-with-15m-plan-to-fight-quantum-threat/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 24 Jul 2026 06:43:11 +0000"
+    },
+    {
+      "title": "XRP Ledger v3.2.0 Upgrade Renames rippled As xrpld In Core Server Shift",
+      "url": "https://bitcoinist.com/xrp-ledger-v3-2-0-upgrade-renames-rippled-as-xrpld-in-core-server-shift/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 24 Jul 2026 06:40:00 +0000"
+    },
+    {
+      "title": "Ripple’s RLUSD gets two boosts as transfer volume drops 25%",
+      "url": "https://www.coindesk.com/business/2026/07/24/ripple-s-rlusd-gets-two-boosts-as-transfer-volume-drops-25",
+      "source": "Coindesk",
+      "published_at": "Fri, 24 Jul 2026 06:33:37 +0000"
+    },
+    {
+      "title": "Japan’s First Spot Bitcoin ETF Could Arrive in 2028 as Rules Evolve",
+      "url": "https://news.bitcoin.com/japans-first-spot-bitcoin-etf-could-arrive-in-2028-as-rules-evolve/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 24 Jul 2026 06:30:43 +0000"
+    },
+    {
+      "title": "Valve’s Sticker Overhaul Squeezes Counter-Strike Esports Teams as Polymarket Expands Into Space",
+      "url": "https://news.bitcoin.com/valves-sticker-overhaul-squeezes-counter-strike-esports-teams-as-polymarket-expands-into-space/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 24 Jul 2026 06:30:06 +0000"
+    },
+    {
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 24 Jul 2026 06:24:36 +0000"
+    },
+    {
       "title": "Bitcoin (BTC) Slides to $64,799 as Trump’s Iran Threats Spark Market Volatility",
       "url": "https://blockonomi.com/bitcoin-btc-slides-to-64799-as-trumps-iran-threats-spark-market-volatility/",
       "source": "Blockonomi",
       "published_at": "Fri, 24 Jul 2026 06:18:18 +0000"
     },
     {
+      "title": "Ripple Just Made 2 Moves to Push RLUSD Into Institutions",
+      "url": "https://beincrypto.com/ripple-mint-notabene-rlusd-launch/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 24 Jul 2026 06:18:02 +0000"
+    },
+    {
       "title": "Major Bitcoin Players Unite With $15M Fund to Combat Quantum Computing Threats",
       "url": "https://blockonomi.com/major-bitcoin-players-unite-with-15m-fund-to-combat-quantum-computing-threats/",
       "source": "Blockonomi",
       "published_at": "Fri, 24 Jul 2026 06:17:42 +0000"
+    },
+    {
+      "title": "CrypFine Joins Coinone’s Travel Rule Network, Further Expanding Its Compliant Digital Asset Infrastructure in South Korea",
+      "url": "https://beincrypto.com/crypfine-joins-coinones-travel-rule-network/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 24 Jul 2026 06:14:36 +0000"
     },
     {
       "title": "Mirae plans to turn crypto exchange Korbit into something Korea hasn't seen before",
@@ -175,7 +247,7 @@
       "published_at": "Fri, 24 Jul 2026 03:20:00 +0000"
     },
     {
-      "title": "Dem senator calls GOP’s CLARITY ethics proposal a ‘piece of shit’: Politico",
+      "title": "Dem senator calls GOP’s CLARITY ethics proposal a ‘piece of s---’: Politico",
       "url": "https://cointelegraph.com/news/senator-gallego-says-gop-clarity-counterproposal-not-a-serious-effort?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Fri, 24 Jul 2026 03:10:24 +0000"
@@ -307,22 +379,10 @@
       "published_at": "Thu, 23 Jul 2026 22:54:39 +0000"
     },
     {
-      "title": "SEC Commissioner Hester Peirce Warns Against Crypto Vaults and Lending",
-      "url": "https://beincrypto.com/sec-crypto-vaults-securities-law/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 23 Jul 2026 22:47:24 +0000"
-    },
-    {
       "title": "XRP withdrawals surge as exchange supply tightens – Can demand keep up?",
       "url": "https://ambcrypto.com/xrp-withdrawals-surge-as-exchange-supply-tightens-can-demand-keep-up/",
       "source": "Ambcrypto",
       "published_at": "Thu, 23 Jul 2026 22:30:16 +0000"
-    },
-    {
-      "title": "Abu Dhabi’s $430B Asset Giant Makes Blockchain Leap, Coinbase Buys In",
-      "url": "https://news.bitcoin.com/abu-dhabis-430b-asset-giant-makes-blockchain-leap-coinbase-buys-in/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 23 Jul 2026 22:30:11 +0000"
     },
     {
       "title": "Japan Advances Toward a Historic Bitcoin ETF, Targeting a 2028 Debut",
@@ -335,12 +395,6 @@
       "url": "https://crypto.news/bitcoin-slips-below-65k-trump-unveils-global-tariffs/",
       "source": "CryptoNews",
       "published_at": "Thu, 23 Jul 2026 22:09:15 +0000"
-    },
-    {
-      "title": "Bitcoin Faces $69,000 Test as ETF Inflows Meet Professional Caution",
-      "url": "https://beincrypto.com/bitcoin-bear-market-rally-69k-test/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 23 Jul 2026 22:04:18 +0000"
     },
     {
       "title": "Black Forest Labs Unveils FLUX 3 AI: Ditches Stills for Video—And Robot Hands",
@@ -365,12 +419,6 @@
       "url": "https://cointelegraph.com/news/gemini-winklevoss-bitcoin-donald-trump-pac-cftc-deal?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Thu, 23 Jul 2026 21:47:39 +0000"
-    },
-    {
-      "title": "SEC’s Peirce Warns Crypto Vaults May Fall Under Securities Laws",
-      "url": "https://news.bitcoin.com/secs-peirce-warns-crypto-vaults-may-fall-under-securities-laws/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 23 Jul 2026 21:40:34 +0000"
     },
     {
       "title": "Is crypto a good investment? Why risk tolerance and dollar-cost averaging matter",
@@ -479,12 +527,6 @@
       "url": "https://www.newsbtc.com/news/marathon-s-utah-landfill-gas-pilot-shows-bitcoin-mining-s-energy-story-is/",
       "source": "NewsBTC",
       "published_at": "Thu, 23 Jul 2026 19:50:00 +0000"
-    },
-    {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 23 Jul 2026 19:45:15 +0000"
     },
     {
       "title": "Crypto industry to contribute $55B to US economy in 2026: NCA study",
@@ -1315,18 +1357,6 @@
       "published_at": "Thu, 23 Jul 2026 03:07:43 +0000"
     },
     {
-      "title": "Crypto PAC pours nearly $1M into Michigan race backing Thanedar",
-      "url": "https://crypto.news/crypto-pac-pours-nearly-1m-into-michigan-race-backing-thanedar/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 23 Jul 2026 02:52:54 +0000"
-    },
-    {
-      "title": "AFX bridge exploit drains $24.15M USDC as attacker buys 12,467 ETH",
-      "url": "https://crypto.news/afx-bridge-exploit-drains-24-15m-usdc-as-attacker-buys-12467-eth/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 23 Jul 2026 02:25:59 +0000"
-    },
-    {
       "title": "$16.3B Pension Fund Expands Bitcoin Exposure Through Strategy Investment",
       "url": "https://crypto-economy.com/16-3b-pension-fund-expands-bitcoin-exposure-through-strategy-investment/",
       "source": "CryptoEconomy",
@@ -1349,18 +1379,6 @@
       "url": "https://bitcoinist.com/pyth-usdy-price-feed-aptos-sui-defi/",
       "source": "Bitcoinist",
       "published_at": "Thu, 23 Jul 2026 00:45:00 +0000"
-    },
-    {
-      "title": "Sui Tests Confidential Transactions As Privacy Push Moves To Devnet",
-      "url": "https://bitcoinist.com/sui-confidential-transactions-devnet-privacy/",
-      "source": "Bitcoinist",
-      "published_at": "Thu, 23 Jul 2026 00:30:00 +0000"
-    },
-    {
-      "title": "Senator Lummis: Ethics, other provisions in crypto Clarity Act to be further discussed",
-      "url": "https://www.coindesk.com/policy/2026/07/22/senator-lummis-ethics-other-provisions-in-crypto-clarity-act-to-be-further-discussed",
-      "source": "Coindesk",
-      "published_at": "Wed, 22 Jul 2026 23:19:41 +0000"
     },
     {
       "title": "$141M Fundraise to $8 Daily Fees: Movement Labs Files for Bankruptcy",
@@ -1543,12 +1561,6 @@
       "published_at": "Wed, 22 Jul 2026 08:11:15 +0000"
     },
     {
-      "title": "Claude Fable 5 Solves 87-Year Math Mystery: What It Means for Bitcoin (BTC) Investors",
-      "url": "https://blockonomi.com/claude-fable-5-solves-87-year-math-mystery-what-it-means-for-bitcoin-btc-investors/",
-      "source": "Blockonomi",
-      "published_at": "Wed, 22 Jul 2026 07:47:39 +0000"
-    },
-    {
       "title": "Bitcoin’s Next Big Move Hinges on Break Above This Key Level: Bitfinex",
       "url": "https://cryptopotato.com/bitcoins-next-big-move-hinges-on-break-above-this-key-level-bitfinex/",
       "source": "CryptoPotato",
@@ -1559,12 +1571,6 @@
       "url": "https://coingeek.com/btc-price-gain-offers-relief-for-block-reward-miners-will-it-last/",
       "source": "CoinGeek",
       "published_at": "Wed, 22 Jul 2026 07:00:00 +0000"
-    },
-    {
-      "title": "Pi Network Warning: Strange Scam Activity Leaves Pioneer Wallet at Zero",
-      "url": "https://cryptopotato.com/pi-network-warning-strange-scam-activity-leaves-pioneer-wallet-at-zero/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 22 Jul 2026 06:21:13 +0000"
     },
     {
       "title": "South Korea expands state assets; Japan tightens ‘crypto’ rules",
@@ -1643,12 +1649,6 @@
       "url": "https://thecryptobasic.com/2026/07/21/686m-in-bitcoin-withdrawn-from-binance-coinbase-bybit-in-one-day-as-btc-targets-66k/",
       "source": "CryptoBasic",
       "published_at": "Tue, 21 Jul 2026 07:59:00 +0000"
-    },
-    {
-      "title": "Twetch is back! Can BSV’s social network regain its meme magic?",
-      "url": "https://coingeek.com/twetch-is-back-can-bsv-social-network-regain-its-meme-magic/",
-      "source": "CoinGeek",
-      "published_at": "Tue, 21 Jul 2026 07:00:00 +0000"
     },
     {
       "title": "Bitcoin Spot Demand Slides Toward -170K BTC: Is a Massive Bitcoin Dip Ahead?",
