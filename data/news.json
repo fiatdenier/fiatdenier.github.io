@@ -1,6 +1,36 @@
 {
   "articles": [
     {
+      "title": "A 7 year Ledger bug lets attackers rebuild a private key from five signatures in seconds",
+      "url": "https://cryptoslate.com/zilliqa-says-roughly-5-native-ledger-signatures-can-expose-a-key-rescuing-the-funds-becomes-a-race-against-attackers/",
+      "source": "CryptoSlate",
+      "published_at": "Fri, 24 Jul 2026 16:40:53 +0000"
+    },
+    {
+      "title": "Nvidia, Meta, and Microsoft Tell Washington: Don't Kill Open-Source AI",
+      "url": "https://decrypt.co/374282/nvidia-meta-microsoft-washington-dont-kill-open-source-ai",
+      "source": "Decrypt",
+      "published_at": "Fri, 24 Jul 2026 16:34:25 +0000"
+    },
+    {
+      "title": "National police union reverses course to back the CLARITY Act",
+      "url": "https://crypto.news/national-police-union-reverses-course-back-clarity-act/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 24 Jul 2026 16:33:50 +0000"
+    },
+    {
+      "title": "SEC Sets 24-Hour Trading Roundtable As Markets Move Toward Always-On Finance",
+      "url": "https://www.newsbtc.com/news/sec-sets-24-hour-trading-roundtable-as-markets-move-toward-always-on-finance/",
+      "source": "NewsBTC",
+      "published_at": "Fri, 24 Jul 2026 16:30:00 +0000"
+    },
+    {
+      "title": "Dem Senator Slams GOP’s CLARITY Ethics Proposal as ‘Not a Serious Effort’: Report",
+      "url": "https://cryptopotato.com/dem-senator-slams-gops-clarity-ethics-proposal-as-not-a-serious-effort-report/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 24 Jul 2026 16:28:52 +0000"
+    },
+    {
       "title": "Bitfinex Showcases Bitcoin‑Native Infrastructure With Ark’s First Live Implementations",
       "url": "https://crypto-economy.com/bitfinex-showcases-bitcoin-native-infrastructure-with-arks-first-live-implementations/",
       "source": "CryptoEconomy",
@@ -35,6 +65,12 @@
       "url": "https://crypto.news/coinbase-sees-bitcoin-accumulation-collide-with-q3-macro-pressure/",
       "source": "CryptoNews",
       "published_at": "Fri, 24 Jul 2026 16:10:08 +0000"
+    },
+    {
+      "title": "Crypto Exchanges Want to Be Your Broker. The Fine Print Matters",
+      "url": "https://beincrypto.com/mexc-crypto-exchange-stocks-ownership/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 24 Jul 2026 16:05:39 +0000"
     },
     {
       "title": "Internet Freedom Foundation calls India’s BitChat GitHub takedown order ‘unconstitutional’",
@@ -611,12 +647,6 @@
       "url": "https://blockonomi.com/bitcoin-etfs-lose-225m-as-seven-day-inflow-run-ends/",
       "source": "Blockonomi",
       "published_at": "Fri, 24 Jul 2026 09:48:15 +0000"
-    },
-    {
-      "title": "Should Powerful AI Have a Kill Switch? A New Bill Says Yes",
-      "url": "https://beincrypto.com/ai-kill-switch-act-shutdown-bill/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 24 Jul 2026 09:45:17 +0000"
     },
     {
       "title": "Everyone calls SpaceX a Bitcoin proxy. The math says 0.08%",
@@ -1255,12 +1285,6 @@
       "published_at": "Thu, 23 Jul 2026 18:14:25 +0000"
     },
     {
-      "title": "Tesla books $112 million crypto paper loss as digital assets fall to $674 million",
-      "url": "https://cryptoslate.com/tesla-books-112-million-crypto-paper-loss-as-digital-assets-fall-to-674-million/",
-      "source": "CryptoSlate",
-      "published_at": "Thu, 23 Jul 2026 18:10:44 +0000"
-    },
-    {
       "title": "Tassat wants to help smaller banks tap the trillion-dollar stablecoin boom before Wall Street locks them out",
       "url": "https://www.coindesk.com/business/2026/07/23/tassat-wants-to-help-smaller-banks-tap-the-trillion-dollar-stablecoin-boom-before-wall-street-lock-them-out",
       "source": "Coindesk",
@@ -1333,12 +1357,6 @@
       "published_at": "Thu, 23 Jul 2026 16:44:42 +0000"
     },
     {
-      "title": "Peter Schiff warns $100 oil could unleash a July inflation shock",
-      "url": "https://crypto.news/peter-schiff-warns-oil-unleash-july-inflation-shock/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 23 Jul 2026 16:40:03 +0000"
-    },
-    {
       "title": "T. Rowe Price Crypto ETF Filing Puts Active Multi-Asset Funds In Focus",
       "url": "https://www.newsbtc.com/news/t-rowe-price-crypto-etf-filing-puts-active-multi-asset-funds-in-focus/",
       "source": "NewsBTC",
@@ -1391,12 +1409,6 @@
       "url": "https://cryptopotato.com/ripple-price-analysis-xrps-recovery-is-a-trap-until-this-happens/",
       "source": "CryptoPotato",
       "published_at": "Thu, 23 Jul 2026 14:12:12 +0000"
-    },
-    {
-      "title": "Swiss Cantonal Bank BancaStato Adds Bitcoin And Ethereum Trading With Sygnum",
-      "url": "https://www.newsbtc.com/news/swiss-cantonal-bank-bancastato-adds-bitcoin-and-ethereum-trading-with-sygnum/",
-      "source": "NewsBTC",
-      "published_at": "Thu, 23 Jul 2026 14:00:00 +0000"
     },
     {
       "title": "Uniswap pushes deeper into tokenized assets with permissioned trading pools",
@@ -1531,12 +1543,6 @@
       "published_at": "Thu, 23 Jul 2026 04:23:39 +0000"
     },
     {
-      "title": "$141M Fundraise to $8 Daily Fees: Movement Labs Files for Bankruptcy",
-      "url": "https://cryptopotato.com/141m-fundraise-to-8-daily-fees-movement-labs-files-for-bankruptcy/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 22 Jul 2026 21:46:27 +0000"
-    },
-    {
       "title": "Coinbase Wants to Be Canada's One-Stop Shop for Stocks, Crypto and Prediction Markets",
       "url": "https://decrypt.co/374110/coinbase-canada-stocks-crypto-prediction-markets",
       "source": "Decrypt",
@@ -1643,12 +1649,6 @@
       "url": "https://decrypt.co/374015/openai-models-escaped-test-environment-hacked-hugging-face-cheat-benchmark",
       "source": "Decrypt",
       "published_at": "Tue, 21 Jul 2026 21:29:03 +0000"
-    },
-    {
-      "title": "Pavel Durov Wants to Give a Billion Telegram Users a Crypto Wallet",
-      "url": "https://decrypt.co/374001/pavel-durov-telegram-crypto-wallet-billion-users",
-      "source": "Decrypt",
-      "published_at": "Tue, 21 Jul 2026 20:20:49 +0000"
     },
     {
       "title": "$686M in Bitcoin Withdrawn From Binance, Coinbase, Bybit in One Day as BTC Targets $66K",
