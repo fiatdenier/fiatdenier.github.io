@@ -1,6 +1,54 @@
 {
   "articles": [
     {
+      "title": "Who actually runs Hyperliquid? The governance audit",
+      "url": "https://crypto.news/who-actually-runs-hyperliquid-the-governance-audit/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 27 Jul 2026 14:00:00 +0000"
+    },
+    {
+      "title": "Circle buys nearly 1,000 IBM blockchain patents",
+      "url": "https://crypto.news/circle-buys-nearly-1000-ibm-blockchain-patents/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 27 Jul 2026 13:55:16 +0000"
+    },
+    {
+      "title": "SEC warning over crypto yield vaults puts DeFi’s secret human controllers in the crosshairs",
+      "url": "https://cryptoslate.com/how-morphos-new-vault-structure-could-trigger-the-secs-crackdown-on-hidden-crypto-managers/",
+      "source": "CryptoSlate",
+      "published_at": "Mon, 27 Jul 2026 13:50:05 +0000"
+    },
+    {
+      "title": "Bitcoin Price Analysis: Only a Break Above This Level Will Confirm BTC’s Recovery",
+      "url": "https://cryptopotato.com/bitcoin-price-analysis-only-a-break-above-this-level-will-confirm-btcs-recovery/",
+      "source": "CryptoPotato",
+      "published_at": "Mon, 27 Jul 2026 13:42:04 +0000"
+    },
+    {
+      "title": "Hong Kong crypto giant HashKey merges regional exchange into one",
+      "url": "https://cointelegraph.com/news/hong-kong-crypto-giant-hashkey-merges-its-exchanges-into-one?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Mon, 27 Jul 2026 13:41:44 +0000"
+    },
+    {
+      "title": "MicroStrategy Is Asking MSTR Investors to Make One Big Trade-Off",
+      "url": "https://beincrypto.com/mstr-investors-big-trade-off/",
+      "source": "BeinCrypto",
+      "published_at": "Mon, 27 Jul 2026 13:33:51 +0000"
+    },
+    {
+      "title": "Thailand's SEC alleges Bitkub concealed cyberattack that led to $50 million hack",
+      "url": "https://www.coindesk.com/policy/2026/07/27/thailand-s-sec-alleges-bitkub-concealed-cyberattack-that-led-to-usd50-million-hack",
+      "source": "Coindesk",
+      "published_at": "Mon, 27 Jul 2026 13:32:16 +0000"
+    },
+    {
+      "title": "Rate path still divides investors: Five things to know in Bitcoin this week",
+      "url": "https://cointelegraph.com/markets/rate-path-still-divides-investors-five-things-in-bitcoin-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Mon, 27 Jul 2026 13:31:07 +0000"
+    },
+    {
       "title": "Ripple’s other ledger: What $48 million in politics buys",
       "url": "https://crypto.news/ripples-other-ledger-what-48-million-in-politics-buys/",
       "source": "CryptoNews",
@@ -35,6 +83,12 @@
       "url": "https://crypto.news/hyperliquid-multicoin-back-cftc-prediction-market-rules/",
       "source": "CryptoNews",
       "published_at": "Mon, 27 Jul 2026 13:23:52 +0000"
+    },
+    {
+      "title": "Circle Buys Nearly 1,000 IBM Patents: Will It Protect USDC?",
+      "url": "https://beincrypto.com/circle-ibm-patents-usdc-open-usd/",
+      "source": "BeinCrypto",
+      "published_at": "Mon, 27 Jul 2026 13:16:59 +0000"
     },
     {
       "title": "USDC issuer Circle to acquire nearly 1,000 IBM blockchain patents",
@@ -173,12 +227,6 @@
       "url": "https://cryptopotato.com/emcd-launches-miner-support-program-with-up-to-30m-for-miners-amid-industrys-steepest-profitability-squeeze/",
       "source": "CryptoPotato",
       "published_at": "Mon, 27 Jul 2026 12:26:05 +0000"
-    },
-    {
-      "title": "Bitcoin Reclaims $65K and ETH Touches a 2-Month Peak Near $2K After Iran-U.S. Pause Lifts Risk Appetite",
-      "url": "https://crypto-economy.com/bitcoin-reclaims-65k-and-eth-touches-peak/",
-      "source": "CryptoEconomy",
-      "published_at": "Mon, 27 Jul 2026 12:20:58 +0000"
     },
     {
       "title": "Jim Cramer Spots New NVIDIA Narrative as Chipmaker Pushes Open AI Security Alliance",
@@ -457,12 +505,6 @@
       "published_at": "Mon, 27 Jul 2026 09:15:43 +0000"
     },
     {
-      "title": "Why BitMart and BitMEX Shutdowns Have Analysts Calling a Bottom",
-      "url": "https://beincrypto.com/bitmart-bitmex-shutdowns-analysts-bottom/",
-      "source": "BeinCrypto",
-      "published_at": "Mon, 27 Jul 2026 09:14:28 +0000"
-    },
-    {
       "title": "SUI Slips to Support Near $0.72 as Traders Eye a Gaussian Channel Bounce",
       "url": "https://news.bitcoin.com/sui-price-gaussian-channel-support/",
       "source": "Bitcoin.com",
@@ -485,12 +527,6 @@
       "url": "https://coingeek.com/eu-issues-ai-transparency-guide-ahead-of-august-enforcement/",
       "source": "CoinGeek",
       "published_at": "Mon, 27 Jul 2026 09:00:00 +0000"
-    },
-    {
-      "title": "Memory Chip “Supercycle” Sends Micron and SanDisk Soaring in 2026. WEEX Opens the Trade to Everyone Through Tokenized Stocks",
-      "url": "https://beincrypto.com/weex-opens-the-trade-tokenized-stocks/",
-      "source": "BeinCrypto",
-      "published_at": "Mon, 27 Jul 2026 08:40:59 +0000"
     },
     {
       "title": "POSCO puts live trade receivables onchain with LG CNS",
@@ -772,7 +808,7 @@
       "title": "Here’s what happened in crypto today",
       "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
-      "published_at": "Sun, 26 Jul 2026 21:30:00 +0000"
+      "published_at": "Sun, 26 Jul 2026 21:40:00 +0000"
     },
     {
       "title": "Lido’s stETH Rebase misses target after a 32 ETH accounting delay – Will it recover?",
@@ -851,12 +887,6 @@
       "url": "https://cryptoslate.com/bitcoin-traders-ran-out-of-excuses-for-the-markets-flatline-and-now-a-2-5-billion-bet-is-running-out-of-time/",
       "source": "CryptoSlate",
       "published_at": "Sun, 26 Jul 2026 15:25:30 +0000"
-    },
-    {
-      "title": "How 10 cows in Brazil unlocked a tokenized path to bridge an $8 trillion global finance gap",
-      "url": "https://cryptoslate.com/how-10-cows-in-brazil-unlocked-a-path-to-bridge-an-8-trillion-global-finance-gap/",
-      "source": "CryptoSlate",
-      "published_at": "Sun, 26 Jul 2026 14:30:34 +0000"
     },
     {
       "title": "Mira Murati’s Inkling AI Model Review: Best Open-Source Model in the West",
@@ -1051,22 +1081,10 @@
       "published_at": "Sun, 26 Jul 2026 04:48:02 +0000"
     },
     {
-      "title": "Upbit expands KRW market with two major DeFi token listings",
-      "url": "https://crypto.news/upbit-expands-krw-market-with-two-major-defi-token-listings/",
-      "source": "CryptoNews",
-      "published_at": "Sun, 26 Jul 2026 04:37:52 +0000"
-    },
-    {
       "title": "Bitcoin Miner Poolin Files Bankruptcy, Seeks $52M Texas Asset Sale",
       "url": "https://cryptopotato.com/bitcoin-miner-poolin-files-bankruptcy-seeks-52m-texas-asset-sale/",
       "source": "CryptoPotato",
       "published_at": "Sun, 26 Jul 2026 04:14:08 +0000"
-    },
-    {
-      "title": "Sberbank sets Dec. 1 deadline for Russia crypto trading launch",
-      "url": "https://crypto.news/sberbank-sets-dec-1-deadline-for-russia-crypto-trading-launch/",
-      "source": "CryptoNews",
-      "published_at": "Sun, 26 Jul 2026 04:06:53 +0000"
     },
     {
       "title": "Binance ‘red teams’ its own staff every month to keep hackers out",
@@ -1171,12 +1189,6 @@
       "published_at": "Sat, 25 Jul 2026 13:16:00 +0000"
     },
     {
-      "title": "Democratizing weather derivatives through tokenization could be crypto's most important real-world use case",
-      "url": "https://www.coindesk.com/opinion/2026/07/25/democratizing-weather-derivatives-through-tokenization-could-be-crypto-s-most-important-real-world-use-case",
-      "source": "Coindesk",
-      "published_at": "Sat, 25 Jul 2026 13:00:00 +0000"
-    },
-    {
       "title": "Frax Community Weighs Morpho Market For bdUSD And frxUSD Liquidity",
       "url": "https://bitcoinist.com/frax-community-weighs-morpho-market-for-bdusd-and-frxusd-liquidity/",
       "source": "Bitcoinist",
@@ -1279,18 +1291,6 @@
       "published_at": "Sat, 25 Jul 2026 03:53:02 +0000"
     },
     {
-      "title": "US State Department Launches Freedom Tech Program Featuring Bitcoin and Privacy Tools",
-      "url": "https://crypto-economy.com/us-state-department-launches-freedom-tech-program-featuring-bitcoin-and-privacy-tools/",
-      "source": "CryptoEconomy",
-      "published_at": "Sat, 25 Jul 2026 02:52:19 +0000"
-    },
-    {
-      "title": "Jack Mallers Reveals Bitcoin Taught Him Hard Lessons After Twenty One Exit",
-      "url": "https://crypto-economy.com/jack-mallers-reveals-bitcoin-taught-him-hard-lessons-after-twenty-one-exit/",
-      "source": "CryptoEconomy",
-      "published_at": "Sat, 25 Jul 2026 00:26:32 +0000"
-    },
-    {
       "title": "BitMEX Faces Proposed Class Action Seeking Return Of 622 BTC",
       "url": "https://www.newsbtc.com/news/bitmex-faces-proposed-class-action-seeking-return-of-622-btc/",
       "source": "NewsBTC",
@@ -1345,12 +1345,6 @@
       "published_at": "Fri, 24 Jul 2026 20:40:00 +0000"
     },
     {
-      "title": "House passes bill on lawmakers using insider information for stock trading",
-      "url": "https://cointelegraph.com/news/house-bill-lawmakers-insider-information-stock-trading?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Fri, 24 Jul 2026 20:05:50 +0000"
-    },
-    {
       "title": "After Twenty One Exit, Jack Mallers Says Bitcoin Taught Him Hard Lessons",
       "url": "https://cryptopotato.com/after-twenty-one-exit-jack-mallers-says-bitcoin-taught-him-hard-lessons/",
       "source": "CryptoPotato",
@@ -1375,22 +1369,10 @@
       "published_at": "Fri, 24 Jul 2026 19:00:00 +0000"
     },
     {
-      "title": "Bitcoin Long-Term Holders Reach Highest Accumulation Level in Six Years",
-      "url": "https://crypto-economy.com/bitcoin-long-term-holders-reach-highest-accumulation-level-in-six-years/",
-      "source": "CryptoEconomy",
-      "published_at": "Fri, 24 Jul 2026 18:38:01 +0000"
-    },
-    {
       "title": "BitMEX Hit With 623 BTC Lawsuit After Announcing Shutdown",
       "url": "https://cryptopotato.com/bitmex-hit-with-623-btc-lawsuit-after-announcing-shutdown/",
       "source": "CryptoPotato",
       "published_at": "Fri, 24 Jul 2026 18:35:06 +0000"
-    },
-    {
-      "title": "Here’s Why Bitcoin Dipped Below $64K Today",
-      "url": "https://cryptopotato.com/heres-why-bitcoin-dipped-below-64k-today/",
-      "source": "CryptoPotato",
-      "published_at": "Fri, 24 Jul 2026 18:29:26 +0000"
     },
     {
       "title": "Claude Opus 5 Outscores Fable 5 on Most Benchmarks—At Half the Price",
@@ -1423,12 +1405,6 @@
       "published_at": "Fri, 24 Jul 2026 17:20:00 +0000"
     },
     {
-      "title": "Crypto advocacy groups support CLARITY passage as ethics rules face pushback",
-      "url": "https://cointelegraph.com/news/crypto-advocacy-groups-support-clarity-act-pushback-ethics-rules?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Fri, 24 Jul 2026 16:55:14 +0000"
-    },
-    {
       "title": "Nvidia, Meta, and Microsoft Tell Washington: Don't Kill Open-Source AI",
       "url": "https://decrypt.co/374282/nvidia-meta-microsoft-washington-dont-kill-open-source-ai",
       "source": "Decrypt",
@@ -1439,12 +1415,6 @@
       "url": "https://www.newsbtc.com/news/sec-sets-24-hour-trading-roundtable-as-markets-move-toward-always-on-finance/",
       "source": "NewsBTC",
       "published_at": "Fri, 24 Jul 2026 16:30:00 +0000"
-    },
-    {
-      "title": "Bitfinex Showcases Bitcoin‑Native Infrastructure With Ark’s First Live Implementations",
-      "url": "https://crypto-economy.com/bitfinex-showcases-bitcoin-native-infrastructure-with-arks-first-live-implementations/",
-      "source": "CryptoEconomy",
-      "published_at": "Fri, 24 Jul 2026 16:23:57 +0000"
     },
     {
       "title": "Strategy Overhauls Bitcoin Metrics, Debuting 'Net Bitcoin Per Share'",
@@ -1459,18 +1429,6 @@
       "published_at": "Fri, 24 Jul 2026 16:17:37 +0000"
     },
     {
-      "title": "Bitcoin Mining Pool Poolin Files for Chapter 11 and Moves to Sell $52M in West Texas Mining Sites",
-      "url": "https://crypto-economy.com/bitcoin-mining-pool-poolin-files-for-chapter-11/",
-      "source": "CryptoEconomy",
-      "published_at": "Fri, 24 Jul 2026 15:29:20 +0000"
-    },
-    {
-      "title": "Bitcoin ETFs Break Their Winning Streak With $225M in Fresh Outflows",
-      "url": "https://crypto-economy.com/bitcoin-etfs-break-their-winning-streak-with-225m-in-fresh-outflows/",
-      "source": "CryptoEconomy",
-      "published_at": "Fri, 24 Jul 2026 15:04:51 +0000"
-    },
-    {
       "title": "World Foundation Raises $52.5M to Scale Sam Altman’s ‘Proof of Human’ ID",
       "url": "https://decrypt.co/374216/world-foundation-raises-52-5m-to-scale-sam-altmans-proof-of-human-id",
       "source": "Decrypt",
@@ -1481,12 +1439,6 @@
       "url": "https://decrypt.co/374245/eu-names-justin-suns-htx-in-russia-sanctions-two-months-after-uk",
       "source": "Decrypt",
       "published_at": "Fri, 24 Jul 2026 14:21:37 +0000"
-    },
-    {
-      "title": "Bitcoin Steadies Around $65,000 While Oil Climbs to Its Highest Level Since May",
-      "url": "https://crypto-economy.com/bitcoin-steadies-around-65000-while-oil-climbs/",
-      "source": "CryptoEconomy",
-      "published_at": "Fri, 24 Jul 2026 13:20:15 +0000"
     },
     {
       "title": "Morning Minute: Bitcoin's New $15M Quantum Defense Fund",
@@ -1535,18 +1487,6 @@
       "url": "https://coingeek.com/new-macos-malware-targets-telegram-crypto-wallets-report/",
       "source": "CoinGeek",
       "published_at": "Fri, 24 Jul 2026 05:00:00 +0000"
-    },
-    {
-      "title": "Bitcoin Struggles Near $65K as Investors Shift Capital Toward the AI Boom, Analyst Says",
-      "url": "https://crypto-economy.com/bitcoin-struggles-near-65k-as-investors-shift-capital-toward-the-ai-boom-analyst-says/",
-      "source": "CryptoEconomy",
-      "published_at": "Fri, 24 Jul 2026 04:02:11 +0000"
-    },
-    {
-      "title": "Bitcoin Treasury Firm Empery Digital Makes $20M AI Data Center Bet",
-      "url": "https://crypto-economy.com/bitcoin-treasury-firm-empery-digital-makes-20m-ai-data-center-bet/",
-      "source": "CryptoEconomy",
-      "published_at": "Fri, 24 Jul 2026 01:58:17 +0000"
     },
     {
       "title": "Black Forest Labs Unveils FLUX 3 AI: Ditches Stills for Video—And Robot Hands",
