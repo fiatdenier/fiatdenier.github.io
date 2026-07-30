@@ -1,10 +1,40 @@
 {
   "articles": [
     {
+      "title": "Strategy posts $8.33B loss as Bitcoin holdings sink",
+      "url": "https://crypto.news/strategy-posts-8-33b-loss-as-bitcoin-holdings-sink/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 30 Jul 2026 21:22:13 +0000"
+    },
+    {
+      "title": "Coinbase Misses on Q2 Earnings as Crypto Trading Activity Slows",
+      "url": "https://decrypt.co/374761/coinbase-misses-q2-earnings-crypto-trading-activity-slows",
+      "source": "Decrypt",
+      "published_at": "Thu, 30 Jul 2026 21:19:12 +0000"
+    },
+    {
+      "title": "World Cup generated $20B in blockchain prediction market volume: Chainalysis",
+      "url": "https://cointelegraph.com/news/world-cup-generated-20b-prediction-market-volume-chainalysis?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Thu, 30 Jul 2026 21:04:59 +0000"
+    },
+    {
+      "title": "Can Hyperliquid’s $33.5M revenue growth outweigh institutional HYPE selling?",
+      "url": "https://ambcrypto.com/can-hyperliquids-33-5m-revenue-growth-outweigh-institutional-hype-selling/",
+      "source": "Ambcrypto",
+      "published_at": "Thu, 30 Jul 2026 21:00:08 +0000"
+    },
+    {
       "title": "Aster crypto’s 99% fee buyback has yet to lift ASTER above $0.60",
       "url": "https://ambcrypto.com/aster-cryptos-99-fee-buyback-has-yet-to-lift-aster-above-0-60/",
       "source": "Ambcrypto",
       "published_at": "Thu, 30 Jul 2026 21:00:06 +0000"
+    },
+    {
+      "title": "Coinbase Q2 Earnings Miss Drags COIN Lower as Losses Hit 3rd Quarter",
+      "url": "https://beincrypto.com/coinbase-revenue-coin-stock/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 30 Jul 2026 20:56:44 +0000"
     },
     {
       "title": "Google backs $15B Anthropic data center in Texas",
@@ -19,7 +49,7 @@
       "published_at": "Thu, 30 Jul 2026 20:47:27 +0000"
     },
     {
-      "title": "Apple Beats Earnings, but Services, China Disappoint: How Should Stock Traders Position?",
+      "title": "Apple Beats Earnings but Services, China Disappoint. How Should Stock Traders Position?",
       "url": "https://beincrypto.com/apple-earnings-services-china-appl/",
       "source": "BeinCrypto",
       "published_at": "Thu, 30 Jul 2026 20:44:34 +0000"
@@ -31,7 +61,7 @@
       "published_at": "Thu, 30 Jul 2026 20:35:09 +0000"
     },
     {
-      "title": "MicroStrategy’s $8.2B Loss Masks Expanding Bitcoin Empire",
+      "title": "MicroStrategy Earnings Flip From $10 Billion Profit to $8.2 Billion Loss in 1 Year",
       "url": "https://beincrypto.com/microstrategy-loss-q2-earnings/",
       "source": "BeinCrypto",
       "published_at": "Thu, 30 Jul 2026 20:33:35 +0000"
@@ -367,12 +397,6 @@
       "published_at": "Thu, 30 Jul 2026 15:53:16 +0000"
     },
     {
-      "title": "Japan Cuts Fiscal 2026 Growth Forecast to 0.9% on Oil and Weaker Yen",
-      "url": "https://beincrypto.com/japan-economy-oil-shock-growth-hopes-fade/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 30 Jul 2026 15:49:42 +0000"
-    },
-    {
       "title": "Tokenized gold passes DeFi stress test, but less than 2% is used as collateral",
       "url": "https://cointelegraph.com/news/tokenized-gold-defi-stress-test-collateral-adoption-redstone?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -575,6 +599,12 @@
       "url": "https://ambcrypto.com/the-clarity-act-delivers-what-the-american-crypto-ecosystem-needs-solana-policy-institute/",
       "source": "Ambcrypto",
       "published_at": "Thu, 30 Jul 2026 13:00:57 +0000"
+    },
+    {
+      "title": "Everything is becoming a perp",
+      "url": "https://www.coindesk.com/opinion/2026/07/28/everything-is-becoming-a-perp",
+      "source": "Coindesk",
+      "published_at": "Thu, 30 Jul 2026 13:00:00 +0000"
     },
     {
       "title": "Canopy and Fhenix make private the default for onchain apps",
@@ -809,12 +839,6 @@
       "url": "https://cryptopotato.com/completion-of-this-chart-pattern-could-send-btc-to-220k-says-analyst/",
       "source": "CryptoPotato",
       "published_at": "Thu, 30 Jul 2026 09:26:17 +0000"
-    },
-    {
-      "title": "U.S. seizes $2.12M crypto wallet linked to investment scam",
-      "url": "https://ambcrypto.com/u-s-seizes-2-12m-crypto-wallet-linked-to-investment-scam/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 30 Jul 2026 09:15:39 +0000"
     },
     {
       "title": "Live updates: Bitcoin holds above $64,000 as Nasdaq surges on AI trade comeback",
@@ -1141,12 +1165,6 @@
       "published_at": "Wed, 29 Jul 2026 20:46:03 +0000"
     },
     {
-      "title": "Robinhood slides 4% despite earnings beat as crypto revenue cools",
-      "url": "https://www.coindesk.com/markets/2026/07/29/robinhood-slides-4-despite-earnings-beat-as-crypto-revenue-cools",
-      "source": "Coindesk",
-      "published_at": "Wed, 29 Jul 2026 20:40:43 +0000"
-    },
-    {
       "title": "Crypto entering biggest consolidation phase in history, says ARK analyst",
       "url": "https://cointelegraph.com/news/crypto-entering-biggest-consolidation-phase-in-history-says-ark-analyst?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1157,12 +1175,6 @@
       "url": "https://crypto.news/trump-threatens-iran-as-oil-jumps-7-and-stocks-sink/",
       "source": "CryptoNews",
       "published_at": "Wed, 29 Jul 2026 20:38:54 +0000"
-    },
-    {
-      "title": "Tether USAT launches on Celo as second mainnet",
-      "url": "https://crypto.news/tether-usat-launches-on-celo-as-second-mainnet/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 29 Jul 2026 20:20:09 +0000"
     },
     {
       "title": "Tennessee county passes another ban on crypto operations",
@@ -1241,12 +1253,6 @@
       "url": "https://decrypt.co/374646/ai-book-burning-companies-destroying-millions-books-chatbots",
       "source": "Decrypt",
       "published_at": "Wed, 29 Jul 2026 16:38:25 +0000"
-    },
-    {
-      "title": "MoonPay vault enables ChatGPT and Claude users to authorize crypto transactions",
-      "url": "https://cointelegraph.com/news/moonpay-launches-ai-payment-vault-for-chatgpt-and-claude-with-crypto-transaction-support?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 29 Jul 2026 16:20:37 +0000"
     },
     {
       "title": "OpenAI's Rogue AI Hacked Four More Platforms Besides Hugging Face",
@@ -1505,12 +1511,6 @@
       "url": "https://blockonomi.com/bitcoin-price-tests-60k-as-exchange-reserves-signal-accumulation/",
       "source": "Blockonomi",
       "published_at": "Tue, 28 Jul 2026 13:12:57 +0000"
-    },
-    {
-      "title": "Morning Minute: Strategy Chooses Cash, STRC Over BTC",
-      "url": "https://decrypt.co/374535/morning-minute-strategy-chooses-cash-strc-over-btc",
-      "source": "Decrypt",
-      "published_at": "Tue, 28 Jul 2026 11:57:58 +0000"
     },
     {
       "title": "EU hits A7A5 stablecoin, HTX exchange with new economic sanctions",
