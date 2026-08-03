@@ -1,6 +1,30 @@
 {
   "articles": [
     {
+      "title": "Shiba Inu Turns 6: Here’s How Many SHIB Tokens Were Burned in July",
+      "url": "https://cryptopotato.com/shiba-inu-turns-6-heres-how-many-shib-tokens-were-burned-in-july/",
+      "source": "CryptoPotato",
+      "published_at": "Mon, 03 Aug 2026 20:20:12 +0000"
+    },
+    {
+      "title": "XRP Ledger adds Ankr nodes ahead of v3.3.0",
+      "url": "https://crypto.news/xrp-ledger-adds-ankr-nodes-ahead-of-v3-3-0/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 03 Aug 2026 20:14:08 +0000"
+    },
+    {
+      "title": "Prediction Markets Explode in July as World Cup Fueled $54B in Trades",
+      "url": "https://news.bitcoin.com/featured/prediction-markets-explode-in-july-as-world-cup-fueled-54b-in-trades/",
+      "source": "Bitcoin.com",
+      "published_at": "Mon, 03 Aug 2026 20:01:13 +0000"
+    },
+    {
+      "title": "Arthur Hayes buys 6M Ethena as more whales position: Can ENA break $0.09?",
+      "url": "https://ambcrypto.com/arthur-hayes-buys-6m-ethena-as-more-whales-position-can-ena-break-0-09/",
+      "source": "Ambcrypto",
+      "published_at": "Mon, 03 Aug 2026 20:00:16 +0000"
+    },
+    {
       "title": "ZachXBT Declines to Investigate $88M Coldcard Bitcoin Hack",
       "url": "https://crypto-economy.com/zachxbt-declines-to-investigate-88m-coldcard-bitcoin-hack/",
       "source": "CryptoEconomy",
@@ -29,6 +53,12 @@
       "url": "https://cryptoslate.com/intesa-sanpaolos-ibit-call-row-plunged-99-as-its-staked-ethereum-shares-tripled/",
       "source": "CryptoSlate",
       "published_at": "Mon, 03 Aug 2026 19:35:17 +0000"
+    },
+    {
+      "title": "Benjamin Cowen: Crypto Hasn’t Been This Cheap Since 2010, But It Might Drop Lower",
+      "url": "https://beincrypto.com/crypto-cheapest-since-2010-benjamin-cowen/",
+      "source": "BeinCrypto",
+      "published_at": "Mon, 03 Aug 2026 19:35:13 +0000"
     },
     {
       "title": "Jim Cramer and Tom Lee Share a Bullish Call That Could Shape Investors’ Next Move",
@@ -157,7 +187,7 @@
       "published_at": "Mon, 03 Aug 2026 17:43:39 +0000"
     },
     {
-      "title": "Researchers just uncovered 4,200 malicious smart contracts that successfully tricked 5,700 victims into signing away their crypto",
+      "title": "How 4,200 malicious smart contracts tricked 5,700 victims into signing away their crypto",
       "url": "https://cryptoslate.com/researchers-just-uncovered-4200-malicious-smart-contracts-that-successfully-tricked-5700-victims-into-signing-away-their-crypto/",
       "source": "CryptoSlate",
       "published_at": "Mon, 03 Aug 2026 17:35:44 +0000"
@@ -223,7 +253,7 @@
       "published_at": "Mon, 03 Aug 2026 16:33:23 +0000"
     },
     {
-      "title": "Where did Trump Media’s 5,278 BTC go? Trackers spot $165 million Bitcoin transfer leaving just 3.43 BTC",
+      "title": "Trump Media’s 5,278 BTC vanishes from trackers after $165 million wallet move",
       "url": "https://cryptoslate.com/where-did-trump-medias-5278-btc-go-trackers-spot-165-million-bitcoin-transfer-leaving-just-3-43-btc/",
       "source": "CryptoSlate",
       "published_at": "Mon, 03 Aug 2026 16:30:44 +0000"
@@ -313,7 +343,7 @@
       "published_at": "Mon, 03 Aug 2026 15:31:37 +0000"
     },
     {
-      "title": "Solana just boosted block capacity by a massive 66%, but the one bottleneck infuriating traders hasn’t budged",
+      "title": "Solana boosted block capacity 66%, but traders still hit the same wall",
       "url": "https://cryptoslate.com/solana-just-boosted-block-capacity-by-a-massive-66-but-the-one-bottleneck-infuriating-traders-hasnt-budged/",
       "source": "CryptoSlate",
       "published_at": "Mon, 03 Aug 2026 15:25:05 +0000"
@@ -391,7 +421,7 @@
       "published_at": "Mon, 03 Aug 2026 14:43:17 +0000"
     },
     {
-      "title": "How Coinbase plans to force-settle and instantly recreate institutional positions on Deribit within a 30-minute window",
+      "title": "Coinbase’s 30-minute Deribit switch will force-settle and rebuild institutional positions",
       "url": "https://cryptoslate.com/how-coinbase-plans-to-force-settle-and-instantly-recreate-institutional-positions-on-deribit-within-a-30-minute-window/",
       "source": "CryptoSlate",
       "published_at": "Mon, 03 Aug 2026 14:20:03 +0000"
@@ -419,12 +449,6 @@
       "url": "https://crypto.news/circle-shares-slide-after-morgan-stanley-slashes-price-target-to-38/",
       "source": "CryptoNews",
       "published_at": "Mon, 03 Aug 2026 14:06:49 +0000"
-    },
-    {
-      "title": "BingX Appoints Kevin Lee as Chief Strategy Officer to Accelerate its Multi-Asset, User-Centric Vision",
-      "url": "https://beincrypto.com/bingx-appoints-kevin-chief-strategy-officer/",
-      "source": "BeinCrypto",
-      "published_at": "Mon, 03 Aug 2026 14:03:41 +0000"
     },
     {
       "title": "Bitcoin ETFs bleed while Ethereum and other altcoins attract fresh inflows: Details",
@@ -481,7 +505,7 @@
       "published_at": "Mon, 03 Aug 2026 13:30:00 +0000"
     },
     {
-      "title": "Kraken is force-selling 7 delisted tokens into dead markets, warning users insufficient liquidity could result in zero proceeds.",
+      "title": "Kraken liquidates 7 delisted tokens, warns users could get $0",
       "url": "https://cryptoslate.com/kraken-is-force-selling-seven-delisted-tokens-into-dead-markets-warning-users-that-insufficient-liquidity-could-result-in-zero-proceeds/",
       "source": "CryptoSlate",
       "published_at": "Mon, 03 Aug 2026 13:30:00 +0000"
@@ -619,12 +643,6 @@
       "published_at": "Mon, 03 Aug 2026 11:40:09 +0000"
     },
     {
-      "title": "AI Agents Can Bypass Robinhood’s Stock Token Blocks, Per Coinfello",
-      "url": "https://news.bitcoin.com/crypto-news/robinhood-chain-ai-agents-stock-token-compliance-gap/",
-      "source": "Bitcoin.com",
-      "published_at": "Mon, 03 Aug 2026 11:30:57 +0000"
-    },
-    {
       "title": "Ethereum price risks $1,700 as support weakens",
       "url": "https://crypto.news/ethereum-price-risks-1700-dollars-as-support-weakens/",
       "source": "CryptoNews",
@@ -703,7 +721,7 @@
       "published_at": "Mon, 03 Aug 2026 10:29:57 +0000"
     },
     {
-      "title": "Live updates: Bitcoin rises above $63,000 as stocks surge to start August",
+      "title": "Live updates: Bitcoin flirts with $64,000 as stocks start strong in August",
       "url": "https://www.coindesk.com/business/2026/08/03/live-updates-traders-say-bitcoin-sell-off-from-usd65-000-points-to-thin-volume-not-panic-selling",
       "source": "Coindesk",
       "published_at": "Mon, 03 Aug 2026 10:29:23 +0000"
@@ -931,12 +949,6 @@
       "published_at": "Mon, 03 Aug 2026 08:10:00 +0000"
     },
     {
-      "title": "Search interest surges for Bitcoin, altcoins – Even as the crypto market bleeds",
-      "url": "https://ambcrypto.com/search-interest-surges-for-bitcoin-altcoins-even-as-the-crypto-market-bleeds/",
-      "source": "Ambcrypto",
-      "published_at": "Mon, 03 Aug 2026 08:00:56 +0000"
-    },
-    {
       "title": "The Smarter Web Company adds 11.89 Bitcoin, treasury reaches 2,712 BTC",
       "url": "https://crypto.news/the-smarter-web-company-adds-11-89-bitcoin-treasury-reaches-2712-btc/",
       "source": "CryptoNews",
@@ -1073,12 +1085,6 @@
       "url": "https://cryptopotato.com/the-huge-macro-week-is-here-will-this-data-finally-spark-a-crypto-breakout/",
       "source": "CryptoPotato",
       "published_at": "Mon, 03 Aug 2026 04:43:24 +0000"
-    },
-    {
-      "title": "BitGo CEO puts 100 BTC behind Claude challenge",
-      "url": "https://crypto.news/bitgo-ceo-puts-100-btc-behind-claude-challenge/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 03 Aug 2026 04:42:46 +0000"
     },
     {
       "title": "Coldcard’s 5-year flaw reveals hardware wallet testing gap: Kraken’s security chief",
@@ -1361,12 +1367,6 @@
       "url": "https://cryptopotato.com/bitcoin-fear-reaches-record-high-as-coldcard-exploit-shakes-confidence-in-self-custody/",
       "source": "CryptoPotato",
       "published_at": "Sat, 01 Aug 2026 14:19:50 +0000"
-    },
-    {
-      "title": "PI Surges 5% Despite Market Slump After Important Pi Network Reminder",
-      "url": "https://cryptopotato.com/pi-surges-5-despite-market-slump-after-important-pi-network-reminder/",
-      "source": "CryptoPotato",
-      "published_at": "Sat, 01 Aug 2026 10:35:34 +0000"
     },
     {
       "title": "Russia expands crypto mining ban to Moscow through 2032",
