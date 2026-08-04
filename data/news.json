@@ -1,6 +1,42 @@
 {
   "articles": [
     {
+      "title": "David Schwartz weighs in on $100M Coldcard hack",
+      "url": "https://crypto.news/david-schwartz-weighs-in-on-100m-dollars-coldcard-hack/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 04 Aug 2026 16:28:47 +0000"
+    },
+    {
+      "title": "Clarity Act sits idle over Trump ethics question as Warren asks SEC to investigate him",
+      "url": "https://www.coindesk.com/policy/2026/08/04/clarity-act-sits-idle-over-trump-ethics-question-as-warren-asks-sec-to-investigate-him",
+      "source": "Coindesk",
+      "published_at": "Tue, 04 Aug 2026 16:21:59 +0000"
+    },
+    {
+      "title": "Aptos launches Confidential APT, but price still can’t break $0.58",
+      "url": "https://ambcrypto.com/aptos-launches-confidential-apt-but-price-still-cant-break-0-58/",
+      "source": "Ambcrypto",
+      "published_at": "Tue, 04 Aug 2026 16:10:43 +0000"
+    },
+    {
+      "title": "Washington gave crypto every legal win it begged for then lost the market anyway",
+      "url": "https://cryptoslate.com/wall-street-etfs-were-hailed-as-cryptos-ultimate-savior-but-making-bitcoin-easy-to-buy-just-made-it-easy-to-dump/",
+      "source": "CryptoSlate",
+      "published_at": "Tue, 04 Aug 2026 16:10:23 +0000"
+    },
+    {
+      "title": "Dogecoin price eyes $0.076 as SpaceX stock jumps before earnings",
+      "url": "https://crypto.news/dogecoin-price-as-spacex-stock-jumps-before-earnings/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 04 Aug 2026 16:06:47 +0000"
+    },
+    {
+      "title": "Bitcoin recovers above $64K: Has the Coldcard-driven sell-off ended?",
+      "url": "https://ambcrypto.com/bitcoin-recovers-above-64k-has-the-coldcard-driven-sell-off-ended/",
+      "source": "Ambcrypto",
+      "published_at": "Tue, 04 Aug 2026 16:00:41 +0000"
+    },
+    {
       "title": "Ethereum’s EIP-8361 aims to curb ETH inflation by reducing staking rewards",
       "url": "https://ambcrypto.com/ethereums-eip-8361-aims-to-curb-eth-inflation-by-reducing-staking-rewards/",
       "source": "Ambcrypto",
@@ -17,6 +53,12 @@
       "url": "https://www.coindesk.com/business/2026/08/04/wells-fargo-to-offer-tokenized-deposits-for-24-7-corporate-payments",
       "source": "Coindesk",
       "published_at": "Tue, 04 Aug 2026 15:47:05 +0000"
+    },
+    {
+      "title": "A New Ethereum Proposal Could Halve Staking Rewards: Who Feels It First?",
+      "url": "https://beincrypto.com/justin-drake-ethereum-staking-rewards-burn/",
+      "source": "BeinCrypto",
+      "published_at": "Tue, 04 Aug 2026 15:44:47 +0000"
     },
     {
       "title": "ARK Invest buys $9.4M in Coinbase and Circle stock",
@@ -613,12 +655,6 @@
       "published_at": "Tue, 04 Aug 2026 09:15:41 +0000"
     },
     {
-      "title": "Solana Investor Appetite Drives 78% Share of Pre-IPO Tokens",
-      "url": "https://beincrypto.com/solana-investor-appetite-pre-ipo-tokens/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 04 Aug 2026 09:12:31 +0000"
-    },
-    {
       "title": "BlackRock launches tokenized funds on Ethereum and Solana – Details",
       "url": "https://ambcrypto.com/blackrock-launches-tokenized-funds-on-ethereum-and-solana-details/",
       "source": "Ambcrypto",
@@ -721,12 +757,6 @@
       "published_at": "Tue, 04 Aug 2026 07:35:04 +0000"
     },
     {
-      "title": "GRAM falls to $1.29 as Telegram disappears from Apple App Store: Fear triggers sell-off",
-      "url": "https://ambcrypto.com/gram-falls-to-1-29-as-telegram-disappears-from-apple-app-store-fear-triggers-sell-off/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 04 Aug 2026 07:30:43 +0000"
-    },
-    {
       "title": "South Korea confirms Jan. 2027 launch for long delayed crypto tax",
       "url": "https://crypto.news/south-korea-confirms-jan-2027-launch-for-long-delayed-crypto-tax/",
       "source": "CryptoNews",
@@ -743,12 +773,6 @@
       "url": "https://cryptopotato.com/1win-introduces-seamless-web3-login-and-crypto-deposits-via-trust-wallet-metamask-and-walletconnect/",
       "source": "CryptoPotato",
       "published_at": "Tue, 04 Aug 2026 07:15:26 +0000"
-    },
-    {
-      "title": "Cryptocurrency trading volume drops 70% to $15B: Is the market losing steam?",
-      "url": "https://ambcrypto.com/cryptocurrency-trading-volume-drops-70-to-15b-is-the-market-losing-steam/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 04 Aug 2026 07:15:00 +0000"
     },
     {
       "title": "Jump Capital bets on enterprise AI with new $350M Fund VIII",
@@ -979,12 +1003,6 @@
       "published_at": "Mon, 03 Aug 2026 20:43:27 +0000"
     },
     {
-      "title": "Corporate crypto accounts on HTX face a complete dead end with zero legal exit routes when EU sanctions strike on August 23",
-      "url": "https://cryptoslate.com/corporate-crypto-accounts-on-htx-face-a-complete-dead-end-with-zero-legal-exit-routes-when-eu-sanctions-strike-on-august-23/",
-      "source": "CryptoSlate",
-      "published_at": "Mon, 03 Aug 2026 20:40:45 +0000"
-    },
-    {
       "title": "What Is an Air-Gapped Bitcoin Wallet? Why the Coldcard Exploit Changes the Conversation About Offline Security",
       "url": "https://decrypt.co/374868/what-is-air-gapped-bitcoin-wallet-coldcard-exploit-security",
       "source": "Decrypt",
@@ -1153,18 +1171,6 @@
       "published_at": "Mon, 03 Aug 2026 16:13:12 +0000"
     },
     {
-      "title": "CLARITY Act delay could trigger another crypto sell-off: Bernstein",
-      "url": "https://crypto.news/clarity-act-delay-to-trigger-another-crypto-sell-off/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 03 Aug 2026 16:10:17 +0000"
-    },
-    {
-      "title": "What is restaking and how EigenLayer turns staked ETH into shared security",
-      "url": "https://crypto.news/what-is-restaking-and-how-eigenlayer-turns-staked-eth-into-shared-security/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 03 Aug 2026 15:59:57 +0000"
-    },
-    {
       "title": "Tom Lee’s Bitmine Buys More Ethereum, Adds to Stock Buyback",
       "url": "https://decrypt.co/374836/tom-lee-bitmine-buys-more-ethereum-adds-stock-buyback",
       "source": "Decrypt",
@@ -1199,12 +1205,6 @@
       "url": "https://cointelegraph.com/markets/us-hints-at-more-yen-intervention-five-things-to-know-in-bitcoin-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Mon, 03 Aug 2026 14:11:26 +0000"
-    },
-    {
-      "title": "Circle slides after Morgan Stanley downgrade, cut in price target",
-      "url": "https://www.coindesk.com/markets/2026/08/03/circle-internet-slides-after-morgan-stanley-downgrade-cut-in-price-target",
-      "source": "Coindesk",
-      "published_at": "Mon, 03 Aug 2026 13:59:50 +0000"
     },
     {
       "title": "Bitcoin’s Persistent Discount on Coinbase Premium Deepens, Extending Its Longest Negative Streak Ever",
