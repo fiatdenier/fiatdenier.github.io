@@ -1,10 +1,46 @@
 {
   "articles": [
     {
+      "title": "Mysten Labs CTO Sam Blackshear joins Anthropic",
+      "url": "https://crypto.news/mysten-labs-cto-sam-blackshear-joins-anthropic/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 06 Aug 2026 05:20:18 +0000"
+    },
+    {
+      "title": "ElizaOS token sinks 19% to record low after founder declares it ‘dead’",
+      "url": "https://cointelegraph.com/markets/elizaos-token-record-low-founder-declares-dead?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Thu, 06 Aug 2026 05:08:04 +0000"
+    },
+    {
+      "title": "GSR lifts Bitcoin weight as SOL falls over 40%",
+      "url": "https://crypto.news/gsr-lifts-bitcoin-weight-as-sol-falls-over-40/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 06 Aug 2026 05:05:01 +0000"
+    },
+    {
+      "title": "Bitcoin LTHs are finally selling – But here’s why BTC’s bottom may be near",
+      "url": "https://ambcrypto.com/bitcoin-lths-are-finally-selling-but-heres-why-btcs-bottom-may-be-near/",
+      "source": "Ambcrypto",
+      "published_at": "Thu, 06 Aug 2026 05:00:32 +0000"
+    },
+    {
       "title": "Hong Kong police expose $3.3M romance scam in fake crypto app",
       "url": "https://coingeek.com/hong-kong-police-expose-3-3m-romance-scam-in-fake-crypto-app/",
       "source": "CoinGeek",
       "published_at": "Thu, 06 Aug 2026 05:00:00 +0000"
+    },
+    {
+      "title": "Bitcoin steadies above $64,000 as traders watch $100 billion SpaceX unlock",
+      "url": "https://www.coindesk.com/markets/2026/08/06/bitcoin-steadies-above-usd64-000-as-traders-watch-usd100-billion-spacex-unlock",
+      "source": "Coindesk",
+      "published_at": "Thu, 06 Aug 2026 04:59:11 +0000"
+    },
+    {
+      "title": "PEPE Exchange Outflows Hit Nearly 2-Year High as Whales Accumulate",
+      "url": "https://beincrypto.com/pepe-exchange-outflows-november-2024/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 06 Aug 2026 04:57:35 +0000"
     },
     {
       "title": "Circle renews Coinbase USDC deal, rules out dividends",
@@ -17,6 +53,12 @@
       "url": "https://www.coindesk.com/markets/2026/08/06/xrp-whales-keep-buying-the-dip-but-ether-shows-deeper-capitulation",
       "source": "Coindesk",
       "published_at": "Thu, 06 Aug 2026 04:46:17 +0000"
+    },
+    {
+      "title": "Shopify Stock Soars 17% as Jim Cramer Slams AI Fears",
+      "url": "https://beincrypto.com/shopify-stock-cramer-ai-fears/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 06 Aug 2026 04:45:00 +0000"
     },
     {
       "title": "CASHCAT jumps 120% in a week as Robinhood Chain hits $774 million of value locked",
@@ -343,12 +385,6 @@
       "published_at": "Wed, 05 Aug 2026 20:12:01 +0000"
     },
     {
-      "title": "3 Citadel Funds Soar After Buying Situational Awareness’s Distressed AI Stocks",
-      "url": "https://beincrypto.com/citadel-funds-situational-awareness-ai-stocks/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 05 Aug 2026 20:11:06 +0000"
-    },
-    {
       "title": "Coinbase suspends six trading pairs after market review",
       "url": "https://crypto.news/coinbase-suspends-trading-pairs-after-market-review/",
       "source": "CryptoNews",
@@ -403,12 +439,6 @@
       "published_at": "Wed, 05 Aug 2026 19:13:53 +0000"
     },
     {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 05 Aug 2026 19:11:41 +0000"
-    },
-    {
       "title": "OpenAI and Anthropic's Rogue Models Hacked Real Companies. The Law Has No Answer",
       "url": "https://decrypt.co/374991/openai-anthropic-rogue-ai-models-hacked-law",
       "source": "Decrypt",
@@ -419,12 +449,6 @@
       "url": "https://crypto-economy.com/cryptoquant-says-whales-boost-bitcoin-ethereum-xrp-during-weakness/",
       "source": "CryptoEconomy",
       "published_at": "Wed, 05 Aug 2026 19:10:20 +0000"
-    },
-    {
-      "title": "Gold Breaks Out From a Downtrend That Started in January 2026, What’s Next?",
-      "url": "https://beincrypto.com/gold-price-bollinger-squeeze-breakout/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 05 Aug 2026 18:59:35 +0000"
     },
     {
       "title": "MAGNE.AI Secures $2.64M Strategic Funding for Edge AI, Agentic Payments and On-Chain Infrastructure",
@@ -671,12 +695,6 @@
       "url": "https://cointelegraph.com/markets/crypto-whales-buy-bear-market-late-stage-cryptoquant?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Wed, 05 Aug 2026 14:08:27 +0000"
-    },
-    {
-      "title": "Bitcoin’s biggest bear trap of this cycle forming? The case for BTC’s $75K breakout",
-      "url": "https://ambcrypto.com/bitcoins-biggest-bear-trap-of-this-cycle-forming-the-case-for-btcs-75k-breakout/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 05 Aug 2026 14:00:44 +0000"
     },
     {
       "title": "BlackRock’s rare ETHA reverse split is about to make trading Ethereum 70 times cheaper than Coinbase",
@@ -1177,12 +1195,6 @@
       "published_at": "Wed, 05 Aug 2026 04:49:25 +0000"
     },
     {
-      "title": "Bitcoin flat at $64,000 as stocks print records and Hormuz deal nears",
-      "url": "https://www.coindesk.com/markets/2026/08/05/bitcoin-flat-at-usd64-000-as-stocks-print-records-and-hormuz-deal-nears",
-      "source": "Coindesk",
-      "published_at": "Wed, 05 Aug 2026 04:32:16 +0000"
-    },
-    {
       "title": "Western Union launches USDPT Visa card with Rain",
       "url": "https://crypto.news/western-union-launches-usdpt-visa-card-with-rain/",
       "source": "CryptoNews",
@@ -1201,12 +1213,6 @@
       "published_at": "Wed, 05 Aug 2026 03:49:23 +0000"
     },
     {
-      "title": "Bitcoin may gain if AI bubble bursts, Hayes says",
-      "url": "https://crypto.news/bitcoin-may-gain-if-ai-bubble-bursts-hayes-says/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 05 Aug 2026 03:40:27 +0000"
-    },
-    {
       "title": "US Senators Urge SEC to Probe Trump Meme Coin Over Billions in Investor Losses",
       "url": "https://cryptopotato.com/us-senators-urge-sec-to-probe-trump-meme-coin-over-billions-in-investor-losses/",
       "source": "CryptoPotato",
@@ -1217,12 +1223,6 @@
       "url": "https://decrypt.co/374933/bitcoin-bridge-shuts-down-ai-finding-bugs-too-fast",
       "source": "Decrypt",
       "published_at": "Tue, 04 Aug 2026 22:46:03 +0000"
-    },
-    {
-      "title": "US, UK deepen stablecoin talks after GENIUS Act",
-      "url": "https://crypto.news/us-uk-deepen-stablecoin-talks-after-genius-act/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 04 Aug 2026 22:30:06 +0000"
     },
     {
       "title": "AI Enthusiast Bugs His Toddler's Sleepover and Feeds It to Claude—The Internet Bugs Back",
