@@ -1,6 +1,48 @@
 {
   "articles": [
     {
+      "title": "Philippines’ digital economy hits 2.5% of GDP: ADB",
+      "url": "https://coingeek.com/philippines-digital-economy-hits-2-5-of-gdp-adb/",
+      "source": "CoinGeek",
+      "published_at": "Mon, 10 Aug 2026 05:00:00 +0000"
+    },
+    {
+      "title": "Bitcoin Holds Near $65K as Offshore Stablecoin Demand Rebuilds Sharply",
+      "url": "https://blockonomi.com/bitcoin-holds-near-65k-as-offshore-stablecoin-demand-rebuilds-sharply/",
+      "source": "Blockonomi",
+      "published_at": "Mon, 10 Aug 2026 04:59:32 +0000"
+    },
+    {
+      "title": "Grayscale pulls 3 altcoin ETF filings in 190 seconds",
+      "url": "https://crypto.news/grayscale-pulls-3-altcoin-etf-filings-in-190-seconds/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 10 Aug 2026 04:40:48 +0000"
+    },
+    {
+      "title": "South Korea’s Regulators Accidentally Triggered a 30% Small-Cap Rally",
+      "url": "https://beincrypto.com/korea-regulators-kosdaq-small-cap-rally-leveraged-etf/",
+      "source": "BeinCrypto",
+      "published_at": "Mon, 10 Aug 2026 04:40:00 +0000"
+    },
+    {
+      "title": "Bitcoin tops $65,000 with US inflation data due this week",
+      "url": "https://www.coindesk.com/markets/2026/08/10/bitcoin-tops-usd65-000-with-us-inflation-data-due-this-week",
+      "source": "Coindesk",
+      "published_at": "Mon, 10 Aug 2026 04:39:37 +0000"
+    },
+    {
+      "title": "Australia orders Cryptolink Bitcoin ATMs offline over ‘basic reporting’ failures",
+      "url": "https://cointelegraph.com/news/australia-orders-cryptolink-bitcoin-atms-offline-over-basic-reporting-failures?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Mon, 10 Aug 2026 04:32:36 +0000"
+    },
+    {
+      "title": "Esper Warns Senate to Pass CLARITY Act for National Security",
+      "url": "https://news.bitcoin.com/regulation-and-legal/esper-warns-senate-to-pass-clarity-act-for-national-security/",
+      "source": "Bitcoin.com",
+      "published_at": "Mon, 10 Aug 2026 04:30:46 +0000"
+    },
+    {
       "title": "XRP is getting left behind in the crypto bounce even as ETFs keep attracting investor money",
       "url": "https://www.coindesk.com/markets/2026/08/10/xrp-is-getting-left-behind-in-the-crypto-bounce-even-as-etfs-keep-attracting-investor-money",
       "source": "Coindesk",
@@ -85,7 +127,7 @@
       "published_at": "Mon, 10 Aug 2026 01:20:52 +0000"
     },
     {
-      "title": "BIP-110 dies with a whimper, CLARITY vote punted: Hodler’s Digest, Aug. 9",
+      "title": "BIP-110 ends with a whimper, CLARITY vote punted: Hodler’s Digest, Aug. 9",
       "url": "https://cointelegraph.com/magazine/bip-110-dies-with-a-whimper-clarity-vote-punted-hodlers-digest-aug-9?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Mon, 10 Aug 2026 00:32:21 +0000"
@@ -119,6 +161,12 @@
       "url": "https://blockonomi.com/michael-saylor-explains-how-strategys-bitcoin-sale-was-a-market-test/",
       "source": "Blockonomi",
       "published_at": "Sun, 09 Aug 2026 23:59:28 +0000"
+    },
+    {
+      "title": "Saylor: BIP-110 Fork Holds Just 0.15% of Bitcoin’s Hashpower, Faces 25-Year Wait",
+      "url": "https://blockonomi.com/saylor-bip-110-fork-holds-just-0-15-of-bitcoins-hashpower-faces-25-year-wait/",
+      "source": "Blockonomi",
+      "published_at": "Sun, 09 Aug 2026 23:39:28 +0000"
     },
     {
       "title": "CLARITY Act Odds Sink as Senate Delay Threatens 2026 Crypto Vote",
@@ -265,12 +313,6 @@
       "published_at": "Sun, 09 Aug 2026 17:31:53 +0000"
     },
     {
-      "title": "Fed Hike Bets Crack as September Hold Odds Storm Into Lead",
-      "url": "https://news.bitcoin.com/finance/fed-hike-bets-crack-as-september-hold-odds-storm-into-lead/",
-      "source": "Bitcoin.com",
-      "published_at": "Sun, 09 Aug 2026 17:30:02 +0000"
-    },
-    {
       "title": "A $13.5 Billion Berkshire Hathaway Mystery: What Is Greg Abel Buying Beyond Alphabet?",
       "url": "https://beincrypto.com/berkshire-hathaway-mystery-stock-buys/",
       "source": "BeinCrypto",
@@ -323,12 +365,6 @@
       "url": "https://crypto.news/hype-team-unlock-sends-433025-tokens-toward-exchanges/",
       "source": "CryptoNews",
       "published_at": "Sun, 09 Aug 2026 15:35:16 +0000"
-    },
-    {
-      "title": "Crypto Made a $9.6 Billion Record, But It’s Hiding a Crucial Truth",
-      "url": "https://beincrypto.com/crypto-ma-record-value-deal-count/",
-      "source": "BeinCrypto",
-      "published_at": "Sun, 09 Aug 2026 15:17:29 +0000"
     },
     {
       "title": "Coinbase drops 5 tokens but keeps withdrawals open",
@@ -637,12 +673,6 @@
       "published_at": "Sat, 08 Aug 2026 17:31:03 +0000"
     },
     {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Sat, 08 Aug 2026 17:19:56 +0000"
-    },
-    {
       "title": "Senate Keeps Clarity Act Alive With Crypto Bill Vote Set for September",
       "url": "https://decrypt.co/375174/senate-keeps-clarity-act-alive-with-crypto-bill-vote-set-for-september",
       "source": "Decrypt",
@@ -779,18 +809,6 @@
       "url": "https://crypto.news/coinbase-ceo-says-clarity-delay-will-not-slow-crypto/",
       "source": "CryptoNews",
       "published_at": "Sat, 08 Aug 2026 09:00:18 +0000"
-    },
-    {
-      "title": "Critical BTCPay Server Vulnerability Leads to Lightning Network Node Thefts",
-      "url": "https://blockonomi.com/critical-btcpay-server-vulnerability-leads-to-lightning-network-node-thefts/",
-      "source": "Blockonomi",
-      "published_at": "Sat, 08 Aug 2026 08:48:30 +0000"
-    },
-    {
-      "title": "BitMEX Shutdown: How a Two-Year Sale Attempt Ended in Failure",
-      "url": "https://blockonomi.com/bitmex-shutdown-how-a-two-year-sale-attempt-ended-in-failure/",
-      "source": "Blockonomi",
-      "published_at": "Sat, 08 Aug 2026 08:40:45 +0000"
     },
     {
       "title": "Another Bitcoin infrastructure exploit hits, this time draining Lightning payment servers",
@@ -1225,12 +1243,6 @@
       "published_at": "Fri, 07 Aug 2026 12:37:14 +0000"
     },
     {
-      "title": "U.S. unexpectedly shed 23,000 jobs in July, putting Fed rate hikes in question",
-      "url": "https://www.coindesk.com/markets/2026/08/07/the-u-s-lost-23-000-jobs-in-july-far-shy-of-forecasts-for-a-gain-of-80-000",
-      "source": "Coindesk",
-      "published_at": "Fri, 07 Aug 2026 12:31:51 +0000"
-    },
-    {
       "title": "Russia cracks down on 9 crypto exchanges in Moscow City",
       "url": "https://cointelegraph.com/news/russia-shuts-down-crypto-exchanges-moscow-city?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1277,12 +1289,6 @@
       "url": "https://crypto.news/crypto-crime-has-moved-beyond-online-hacks-chainalysis-says/",
       "source": "CryptoNews",
       "published_at": "Fri, 07 Aug 2026 11:37:04 +0000"
-    },
-    {
-      "title": "Ethereum price clears key averages in push toward $2,000",
-      "url": "https://crypto.news/ethereum-price-clears-key-averages-in-push-toward-2000/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 07 Aug 2026 11:30:00 +0000"
     },
     {
       "title": "Binance Bitcoin volume ratio hits record as futures outweigh spot eight times over",
@@ -1529,12 +1535,6 @@
       "url": "https://coingeek.com/south-korea-advances-crypto-bill-tax-fight-continues/",
       "source": "CoinGeek",
       "published_at": "Wed, 05 Aug 2026 05:00:00 +0000"
-    },
-    {
-      "title": "World Cup 2026 drives $20B in crypto prediction bets",
-      "url": "https://coingeek.com/world-cup-2026-drives-20b-in-crypto-prediction-bets/",
-      "source": "CoinGeek",
-      "published_at": "Tue, 04 Aug 2026 11:00:00 +0000"
     },
     {
       "title": "CLARITY Act Heads to White House Review as Bob Diamond Backs 24/7 Onchain Markets",
