@@ -1,6 +1,36 @@
 {
   "articles": [
     {
+      "title": "Swiss Banking Giant UBS Doubles Down on Bitcoin ETF Exposure",
+      "url": "https://news.bitcoin.com/bitcoin-etf/swiss-banking-giant-ubs-doubles-down-on-bitcoin-etf-exposure/",
+      "source": "Bitcoin.com",
+      "published_at": "Thu, 13 Aug 2026 18:53:06 +0000"
+    },
+    {
+      "title": "Ethereum L1 drops Poseidon in post-quantum move",
+      "url": "https://crypto.news/ethereum-l1-drops-poseidon-in-post-quantum-move/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 13 Aug 2026 18:43:38 +0000"
+    },
+    {
+      "title": "Tether Claims 'Largest Inaugural Financial Audit' as KPMG Signs Off on 2025 Statements",
+      "url": "https://decrypt.co/375577/tether-inaugural-financial-audit-kpmg",
+      "source": "Decrypt",
+      "published_at": "Thu, 13 Aug 2026 18:39:11 +0000"
+    },
+    {
+      "title": "Tether Clears First Full Audit as KPMG Issues Unqualified Opinion on 2025 Statements",
+      "url": "https://cryptopotato.com/tether-clears-first-full-audit-as-kpmg-issues-unqualified-opinion-on-2025-statements/",
+      "source": "CryptoPotato",
+      "published_at": "Thu, 13 Aug 2026 18:31:21 +0000"
+    },
+    {
+      "title": "Solana treasury company shutters its SOL accelerator as a $27 million quarterly reversal forces deep cuts",
+      "url": "https://cryptoslate.com/solana-treasury-company-shutters-its-sol-accelerator-as-a-27-million-quarterly-reversal-forces-deep-cuts/",
+      "source": "CryptoSlate",
+      "published_at": "Thu, 13 Aug 2026 18:30:18 +0000"
+    },
+    {
       "title": "Tether says it completed long-promised 'Big Four' audit of finances behind $180 billion USDT stablecoin",
       "url": "https://www.coindesk.com/business/2026/08/13/tether-says-it-completed-long-promised-big-four-audit-of-finances-behind-usd180-billion-usdt-stablecoin",
       "source": "Coindesk",
@@ -11,6 +41,12 @@
       "url": "https://decrypt.co/375568/white-house-private-firms-hack-cybercriminals",
       "source": "Decrypt",
       "published_at": "Thu, 13 Aug 2026 18:26:04 +0000"
+    },
+    {
+      "title": "Tether USDT Gets Largest Audit in History, But One Key Number Has Fallen 40%",
+      "url": "https://beincrypto.com/tether-kpmg-first-clean-audit-reserve-cushion-shrinks/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 13 Aug 2026 18:23:32 +0000"
     },
     {
       "title": "Bitcoin Mining Stocks Rise as Industry Chases AI Infrastructure",
@@ -595,12 +631,6 @@
       "published_at": "Thu, 13 Aug 2026 10:50:24 +0000"
     },
     {
-      "title": "Solana Looks Calm at $77, But On-Chain Signals Say Otherwise",
-      "url": "https://beincrypto.com/solana-price-77-sell-signal-onchain-analysis/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 13 Aug 2026 10:48:40 +0000"
-    },
-    {
       "title": "Metaplanet launches BitBonds with ¥200M private sale",
       "url": "https://crypto.news/metaplanet-launches-bitbonds-with-200m-private-sale/",
       "source": "CryptoNews",
@@ -727,7 +757,7 @@
       "published_at": "Thu, 13 Aug 2026 09:22:29 +0000"
     },
     {
-      "title": "Live updates: Bitcoin stuck near $63,500 even as Fed rate hike expectations dwindle",
+      "title": "Live updates: Bitcoin slips back even as Fed rate hike expectations dwindle",
       "url": "https://www.coindesk.com/tech/2026/08/13/live-markets-u-s-inflation-is-stickier-than-july-s-mild-cpi-suggests",
       "source": "Coindesk",
       "published_at": "Thu, 13 Aug 2026 09:18:19 +0000"
@@ -773,12 +803,6 @@
       "url": "https://crypto.news/hyperliquid-opens-low-latency-data-access-under-1k/",
       "source": "CryptoNews",
       "published_at": "Thu, 13 Aug 2026 08:41:30 +0000"
-    },
-    {
-      "title": "A Maryland Man Won $50,000 Twice in a Year, and It Came Down to Persistence",
-      "url": "https://news.bitcoin.com/featured/a-maryland-man-won-50000-twice-in-a-year-and-it-came-down-to-persistence-49201/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 13 Aug 2026 08:30:39 +0000"
     },
     {
       "title": "Why XRP’s $435M Open Interest may be warning and not bullish conviction",
@@ -911,12 +935,6 @@
       "url": "https://crypto.news/erebor-bank-crypto-banking-valuation-silvergate/",
       "source": "CryptoNews",
       "published_at": "Thu, 13 Aug 2026 06:32:03 +0000"
-    },
-    {
-      "title": "Arthur Hayes says a $60 billion Fed cap is Bitcoin’s next liquidity trigger and needed for a price surge",
-      "url": "https://cryptoslate.com/arthur-hayes-says-a-60-billion-fed-cap-is-bitcoins-next-liquidity-trigger-and-needed-for-a-price-surge/",
-      "source": "CryptoSlate",
-      "published_at": "Thu, 13 Aug 2026 06:24:44 +0000"
     },
     {
       "title": "Bitcoin (BTC) Price Falters Near $63,500 Despite In-Line CPI Data",
@@ -1163,12 +1181,6 @@
       "url": "https://decrypt.co/375490/spacexai-grok-bot-do-job-needs-access-accounts",
       "source": "Decrypt",
       "published_at": "Wed, 12 Aug 2026 19:31:04 +0000"
-    },
-    {
-      "title": "Coldcard flaw exposed $116M self-custody risk: Gray",
-      "url": "https://crypto.news/coldcard-flaw-exposed-116m-self-custody-risk-gray/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 12 Aug 2026 19:08:33 +0000"
     },
     {
       "title": "Goldman Sachs' $2.25B NEOS Deal Hands It Ready-Made Bitcoin Income ETF Business",
@@ -1645,12 +1657,6 @@
       "published_at": "Tue, 11 Aug 2026 17:26:54 +0000"
     },
     {
-      "title": "Internet Computer (ICP) Rebounds 10% Weekly: What’s Happening and What’s Next?",
-      "url": "https://cryptopotato.com/internet-computer-icp-rebounds-10-weekly-whats-happening-and-whats-next/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 11 Aug 2026 17:06:57 +0000"
-    },
-    {
       "title": "Ravencoin Crashes 20% as Critical Exploit Threatens to Rollback Network",
       "url": "https://decrypt.co/375330/ravencoin-crashes-critical-exploit-threatens-rollback",
       "source": "Decrypt",
@@ -1679,12 +1685,6 @@
       "url": "https://crypto-economy.com/bitcoin-miner-riot-secures-20-year-deal/",
       "source": "CryptoEconomy",
       "published_at": "Tue, 11 Aug 2026 15:35:15 +0000"
-    },
-    {
-      "title": "OpenAI's Only Dedicated Ethicist Has Left With No Replacement: FT",
-      "url": "https://decrypt.co/375315/openais-only-dedicated-ethicist-has-left-with-no-replacement-ft",
-      "source": "Decrypt",
-      "published_at": "Tue, 11 Aug 2026 15:05:35 +0000"
     },
     {
       "title": "Hedge Fund Bitcoin Shorts Shrink 50% as Large CME Traders Turn Net Long: Is $100K Next?",
