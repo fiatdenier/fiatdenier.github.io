@@ -1,10 +1,52 @@
 {
   "articles": [
     {
+      "title": "SEC Delays Tokenization Exemption Again as CLARITY Act Stalls",
+      "url": "https://news.bitcoin.com/regulation-and-legal/sec-tokenization-exemption-delay-clarity-act/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 14 Aug 2026 09:30:01 +0000"
+    },
+    {
+      "title": "MSCI Proposes New Screening Test for Bitcoin Treasury Stocks",
+      "url": "https://blockonomi.com/msci-proposes-new-screening-test-for-bitcoin-treasury-stocks/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 14 Aug 2026 09:14:10 +0000"
+    },
+    {
+      "title": "Bitcoin’s stall around $63,000 exposes how weak its buyers have become amid record high S&P 500",
+      "url": "https://cryptoslate.com/bitcoins-stall-around-63000-exposes-how-weak-its-buyers-have-become-amid-record-high-sp-500/",
+      "source": "CryptoSlate",
+      "published_at": "Fri, 14 Aug 2026 09:10:45 +0000"
+    },
+    {
+      "title": "South Korean lawmaker warns 22% crypto tax could drive capital overseas",
+      "url": "https://crypto.news/south-korean-lawmaker-warns-22-crypto-tax-could-drive-capital-overseas/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 14 Aug 2026 09:02:19 +0000"
+    },
+    {
+      "title": "Hyperliquid – HYPE holds near $57 as whale unloads 1.95M tokens",
+      "url": "https://ambcrypto.com/hyperliquid-hype-holds-near-57-as-whale-unloads-1-95m-tokens/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 14 Aug 2026 09:00:06 +0000"
+    },
+    {
       "title": "Australia orders Cryptolink’s 96 crypto ATMs to shut down",
       "url": "https://coingeek.com/australia-orders-cryptolinks-96-crypto-atms-to-shut-down/",
       "source": "CoinGeek",
       "published_at": "Fri, 14 Aug 2026 09:00:00 +0000"
+    },
+    {
+      "title": "Polymarket Faces Baltimore Lawsuit and Lost JPMorgan Banking Relationship",
+      "url": "https://beincrypto.com/baltimore-sues-kalshi-polymarket-sports-betting/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 14 Aug 2026 08:55:54 +0000"
+    },
+    {
+      "title": "JPMorgan cut Polymarket banking ties over regulatory concerns: Report",
+      "url": "https://cointelegraph.com/news/jpmorgan-debanked-polymarket-regulatory-concerns-report?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 14 Aug 2026 08:53:42 +0000"
     },
     {
       "title": "Live updates: Bitcoin slips below $63,000 as oil, yields climb",
@@ -23,6 +65,12 @@
       "url": "https://crypto.news/htx-and-fca-seek-settlement-in-uk-crypto-marketing-lawsuit/",
       "source": "CryptoNews",
       "published_at": "Fri, 14 Aug 2026 08:47:30 +0000"
+    },
+    {
+      "title": "Ethereum Makes Major Cryptography Pivot to Prepare for Quantum Era",
+      "url": "https://beincrypto.com/ethereum-foundation-drops-poseidon-hash-quantum-era/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 14 Aug 2026 08:38:55 +0000"
     },
     {
       "title": "Plume, Shinhan test KRW tokenized fund in offshore PoC",
@@ -355,22 +403,10 @@
       "published_at": "Fri, 14 Aug 2026 04:19:14 +0000"
     },
     {
-      "title": "Kospi Back in Bull Market on Chip Rally: Can Sandisk Keep It Going?",
-      "url": "https://beincrypto.com/kospi-bull-market-sandisk-outlook/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 14 Aug 2026 04:14:40 +0000"
-    },
-    {
       "title": "Trump Takes ‘Major Step’ Toward Shutting Down Crypto Scammers",
       "url": "https://news.bitcoin.com/regulation-and-legal/trump-takes-major-step-toward-shutting-down-crypto-scammers/",
       "source": "Bitcoin.com",
       "published_at": "Fri, 14 Aug 2026 04:05:59 +0000"
-    },
-    {
-      "title": "Two Bitcoin Treasury Firms and a Uranium Company Face MSCI Index Removal",
-      "url": "https://beincrypto.com/msci-strategy-metaplanet-index-removal/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 14 Aug 2026 04:03:32 +0000"
     },
     {
       "title": "South Korea tightens crypto rules as $367M in stablecoins move offshore",
@@ -481,12 +517,6 @@
       "published_at": "Thu, 13 Aug 2026 23:30:31 +0000"
     },
     {
-      "title": "XRP Price Shift Reworks Evernorth Shares Before Its Nasdaq Debut",
-      "url": "https://news.bitcoin.com/featured/xrp-price-shift-reworks-evernorth-shares-before-its-nasdaq-debut/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 13 Aug 2026 23:30:09 +0000"
-    },
-    {
       "title": "Multicoin exits the $1.65 billion Solana treasury company it helped launch eight months ago",
       "url": "https://cryptoslate.com/multicoin-exits-the-1-65-billion-solana-treasury-company-it-helped-launch-eight-months-ago/",
       "source": "CryptoSlate",
@@ -589,7 +619,7 @@
       "published_at": "Thu, 13 Aug 2026 20:43:12 +0000"
     },
     {
-      "title": "DATA Foundation (ex-Story Protocol) keeps insider tokens locked past deadline with no new unlock date",
+      "title": "DATA Foundation locks insider tokens past deadline with no new unlock date",
       "url": "https://cryptoslate.com/data-foundation-ex-story-protocol-keeps-insider-tokens-locked-past-deadline-with-no-new-unlock-date/",
       "source": "CryptoSlate",
       "published_at": "Thu, 13 Aug 2026 20:40:39 +0000"
@@ -727,12 +757,6 @@
       "published_at": "Thu, 13 Aug 2026 17:36:09 +0000"
     },
     {
-      "title": "BitGo made $4.3 billion in revenue last quarter, but direct costs swallowed 99.8% of it",
-      "url": "https://cryptoslate.com/bitgo-made-4-3-billion-in-revenue-last-quarter-but-direct-costs-swallowed-99-8-of-it/",
-      "source": "CryptoSlate",
-      "published_at": "Thu, 13 Aug 2026 17:30:24 +0000"
-    },
-    {
       "title": "Robinhood Chain nears $1B TVL as Uniswap drives liquidity: Standard Chartered",
       "url": "https://cointelegraph.com/news/robinhood-chain-uniswap-liquidity-uni-burns?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -797,12 +821,6 @@
       "url": "https://decrypt.co/375560/hawaii-to-ban-cash-deposits-at-crypto-atms-from-october",
       "source": "Decrypt",
       "published_at": "Thu, 13 Aug 2026 16:05:39 +0000"
-    },
-    {
-      "title": "COIN stock holds $145 as New York probes Coinbase prediction-market ads",
-      "url": "https://ambcrypto.com/coin-stock-holds-145-as-new-york-probes-coinbase-prediction-market-ads/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 13 Aug 2026 16:02:10 +0000"
     },
     {
       "title": "Public Bitcoin miners cut hashrate 13.4% as AI infrastructure revenue grows",
@@ -1033,12 +1051,6 @@
       "published_at": "Thu, 13 Aug 2026 11:35:53 +0000"
     },
     {
-      "title": "Binance bStocks tops $610M, overtakes xStocks within two months",
-      "url": "https://crypto.news/binance-bstocks-tops-610m-overtakes-xstocks-within-two-months/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 13 Aug 2026 11:09:20 +0000"
-    },
-    {
       "title": "Bitcoin holds steady near $64,000 as monero, hyperliquid outperform",
       "url": "https://www.coindesk.com/markets/2026/08/13/bitcoin-holds-steady-near-usd64-000-as-monero-hyperliquid-outperform",
       "source": "Coindesk",
@@ -1195,12 +1207,6 @@
       "published_at": "Thu, 13 Aug 2026 07:00:00 +0000"
     },
     {
-      "title": "Goldman Sachs Acquires NEOS Investments in $2.2B Bitcoin ETF Expansion",
-      "url": "https://blockonomi.com/goldman-sachs-acquires-neos-investments-in-2-2b-bitcoin-etf-expansion/",
-      "source": "Blockonomi",
-      "published_at": "Thu, 13 Aug 2026 06:58:09 +0000"
-    },
-    {
       "title": "Important Pi Network News and PI Token Price Update: August 13",
       "url": "https://cryptopotato.com/important-pi-network-news-and-pi-token-price-update-august-13/",
       "source": "CryptoPotato",
@@ -1289,12 +1295,6 @@
       "url": "https://decrypt.co/375479/ai-generated-pattern-hides-you-surveillance-cameras-flock",
       "source": "Decrypt",
       "published_at": "Wed, 12 Aug 2026 21:31:15 +0000"
-    },
-    {
-      "title": "Hawaii crypto ATM ban to take effect on Oct. 1",
-      "url": "https://cointelegraph.com/news/hawaii-crypto-atm-ban-october-enforcement?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 12 Aug 2026 21:21:17 +0000"
     },
     {
       "title": "x402 Volume Plunges 93% YTD as Agentic AI Economy Hype Fades",
