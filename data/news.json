@@ -1,6 +1,30 @@
 {
   "articles": [
     {
+      "title": "Ethereum user loses 1,010 ETH in Tornado Cash phishing attack",
+      "url": "https://crypto.news/ethereum-user-loses-1010-eth-to-phishing/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 20 Aug 2026 12:18:15 +0000"
+    },
+    {
+      "title": "Bitcoin blasts past $72,000 as Trump, Treasury buybacks wipe out $3.1B in shorts",
+      "url": "https://cryptoslate.com/bitcoin-blasts-past-72000-as-trump-treasury-buybacks-wipe-out-3-1b-in-shorts/",
+      "source": "CryptoSlate",
+      "published_at": "Thu, 20 Aug 2026 12:15:07 +0000"
+    },
+    {
+      "title": "Glassnode: Bitcoin Rebounds Are Local Rallies, Not a Trend Reversal Yet",
+      "url": "https://blockonomi.com/glassnode-bitcoin-rebounds-are-local-rallies-not-a-trend-reversal-yet/",
+      "source": "Blockonomi",
+      "published_at": "Thu, 20 Aug 2026 12:13:36 +0000"
+    },
+    {
+      "title": "Optimism-funded team's deciding vote shifts $49 million in OP tokens away from users",
+      "url": "https://www.coindesk.com/web3/2026/08/20/optimism-funded-team-s-deciding-vote-shifts-usd49-million-in-op-tokens-away-from-users",
+      "source": "Coindesk",
+      "published_at": "Thu, 20 Aug 2026 12:00:25 +0000"
+    },
+    {
       "title": "Metaplanet Moves 2,100 BTC Into US Expansion Through Superplanet Deal",
       "url": "https://www.newsbtc.com/news/metaplanet-moves-2100-btc-into-us-expansion-through-superplanet-deal/",
       "source": "NewsBTC",
@@ -11,6 +35,18 @@
       "url": "https://crypto.news/webull-crypto-revenue-reaches-2-25m/",
       "source": "CryptoNews",
       "published_at": "Thu, 20 Aug 2026 11:56:18 +0000"
+    },
+    {
+      "title": "Court Opens Door for Crypto Users to Sue Binance Over Stolen Funds",
+      "url": "https://beincrypto.com/crypto-users-sue-binance-stolen-funds/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 20 Aug 2026 11:55:41 +0000"
+    },
+    {
+      "title": "Fidelity Digital Assets Names 6 Risks to Crypto’s AI Agent Thesis",
+      "url": "https://beincrypto.com/fidelity-grayscale-ai-blockchain-agent-risk/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 20 Aug 2026 11:54:49 +0000"
     },
     {
       "title": "Why did Bitcoin price surge 11% above $71,000?",
@@ -35,6 +71,12 @@
       "url": "https://www.coindesk.com/markets/2026/08/20/ripple-linked-xrp-jumps-15-as-data-shows-banker-hours-onchain-pattern",
       "source": "Coindesk",
       "published_at": "Thu, 20 Aug 2026 11:35:47 +0000"
+    },
+    {
+      "title": "OrdinalsBot, Bitcoin’s First Inscription Service, Is Shutting Down After 3 Years",
+      "url": "https://beincrypto.com/ordinalsbot-winds-down-sells-assets/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 20 Aug 2026 11:34:53 +0000"
     },
     {
       "title": "Fed liquidity promises, dollar weakness could determine bitcoin's next move",
@@ -331,12 +373,6 @@
       "published_at": "Thu, 20 Aug 2026 08:28:29 +0000"
     },
     {
-      "title": "Crypto Fear and Greed Index Flips From Fear to Greed Overnight",
-      "url": "https://beincrypto.com/crypto-fear-greed-index-flips-greed/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 20 Aug 2026 08:12:52 +0000"
-    },
-    {
       "title": "Crypto Markets Add Over $200B Daily as Bitcoin (BTC) Surges Past $70K: Market Watch",
       "url": "https://cryptopotato.com/crypto-markets-add-over-200b-daily-as-bitcoin-btc-surges-past-70k-market-watch/",
       "source": "CryptoPotato",
@@ -385,12 +421,6 @@
       "published_at": "Thu, 20 Aug 2026 07:34:05 +0000"
     },
     {
-      "title": "Bitcoin Tops $70,000 Amid a Short Squeeze, but 3 Metrics Hold the Real Signal",
-      "url": "https://beincrypto.com/bitcoin-70000-short-squeeze-spot-demand/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 20 Aug 2026 07:33:42 +0000"
-    },
-    {
       "title": "Solana, XRP prices jump 10% – Which altcoin has more upside left?",
       "url": "https://ambcrypto.com/solana-xrp-prices-jump-10-which-altcoin-has-more-upside-left/",
       "source": "Ambcrypto",
@@ -407,12 +437,6 @@
       "url": "https://crypto.news/coinbase-chooses-abu-dhabi-as-global-hub-for-tokenized-securities/",
       "source": "CryptoNews",
       "published_at": "Thu, 20 Aug 2026 07:20:05 +0000"
-    },
-    {
-      "title": "Michael Selig Calls Compute the Most Important Commodity as CFTC Seeks Comment",
-      "url": "https://beincrypto.com/cftc-compute-derivatives-comment-request/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 20 Aug 2026 07:18:27 +0000"
     },
     {
       "title": "Ethereum surges 18% as volume jumps 402% – But THESE 2 risks could halt ETH",
@@ -463,7 +487,7 @@
       "published_at": "Thu, 20 Aug 2026 06:30:52 +0000"
     },
     {
-      "title": "Live updates: Bitcoin jumps above $72,000, ETF inflows of $700 million were largest in months",
+      "title": "Live updates: Bitcoin rises to $72,000; ETF inflows of $700 million were largest in months",
       "url": "https://www.coindesk.com/tech/2026/08/20/live-updates-bitcoin-etfs-draw-usd517-million-ether-pulls-usd189-million-in-biggest-inflows-in-months",
       "source": "Coindesk",
       "published_at": "Thu, 20 Aug 2026 06:21:17 +0000"
@@ -775,12 +799,6 @@
       "published_at": "Wed, 19 Aug 2026 19:45:33 +0000"
     },
     {
-      "title": "Bitcoin holders face potential exchange freezes as new chain rollout tests replay safety and market stability",
-      "url": "https://cryptoslate.com/bitcoin-holders-face-potential-exchange-freezes-as-new-chain-rollout-tests-replay-safety-and-market-stability/",
-      "source": "CryptoSlate",
-      "published_at": "Wed, 19 Aug 2026 19:45:09 +0000"
-    },
-    {
       "title": "HYPE Skyrockets Past $70 as Trump Reveals CFTC Push for Hyperliquid’s US Entry",
       "url": "https://cryptopotato.com/hype-skyrockets-past-70-as-trump-reveals-cftc-push-for-hyperliquids-us-entry/",
       "source": "CryptoPotato",
@@ -817,7 +835,7 @@
       "published_at": "Wed, 19 Aug 2026 18:43:48 +0000"
     },
     {
-      "title": "Why Did the Bitcoin Price Suddenly Spike Toward $70K?",
+      "title": "Why Did the Bitcoin Price Suddenly Spike Toward $73K?",
       "url": "https://cryptopotato.com/why-did-the-bitcoin-price-suddenly-spike-toward-70k/",
       "source": "CryptoPotato",
       "published_at": "Wed, 19 Aug 2026 18:36:46 +0000"
@@ -1123,12 +1141,6 @@
       "published_at": "Wed, 19 Aug 2026 12:51:37 +0000"
     },
     {
-      "title": "Bitcoin is flashing 8 of 12 capitulation signals, but bottom's not yet in, says VanEck",
-      "url": "https://www.coindesk.com/markets/2026/08/19/bitcoin-is-flashing-8-of-12-capitulation-signals-but-its-not-a-bottom-yet",
-      "source": "Coindesk",
-      "published_at": "Wed, 19 Aug 2026 12:45:35 +0000"
-    },
-    {
       "title": "Ethereum price rises but stalls below $2,000, breakout or bull trap?",
       "url": "https://crypto.news/ethereum-price-rises-but-stalls-below-2000-breakout/",
       "source": "CryptoNews",
@@ -1237,12 +1249,6 @@
       "published_at": "Wed, 19 Aug 2026 10:25:00 +0000"
     },
     {
-      "title": "Nexo Australia launches regulated crypto-backed Credit Lines",
-      "url": "https://crypto.news/nexo-australia-launches-regulated-crypto-backed-credit-lines/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 19 Aug 2026 10:21:41 +0000"
-    },
-    {
       "title": "Important Ripple News and XRP Price Update: August 19",
       "url": "https://cryptopotato.com/important-ripple-news-and-xrp-price-update-august-19/",
       "source": "CryptoPotato",
@@ -1307,12 +1313,6 @@
       "url": "https://blockonomi.com/metaplanet-deploys-2100-btc-in-strategic-nasdaq-acquisition-to-expand-us-presence/",
       "source": "Blockonomi",
       "published_at": "Wed, 19 Aug 2026 07:45:39 +0000"
-    },
-    {
-      "title": "Bitcoin and Ethereum First: A Beginner’s Guide to Smart Crypto Investing",
-      "url": "https://blockonomi.com/bitcoin-and-ethereum-first-a-beginners-guide-to-smart-crypto-investing/",
-      "source": "Blockonomi",
-      "published_at": "Wed, 19 Aug 2026 07:45:01 +0000"
     },
     {
       "title": "Crypto Genesys Goes Live on 1win in Limited Platform Release",
