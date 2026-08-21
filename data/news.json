@@ -1,6 +1,48 @@
 {
   "articles": [
     {
+      "title": "Ethereum’s 18% day exposed a hidden risk: half of Aave’s debt sits in 9% of positions",
+      "url": "https://crypto.news/ethereum-aave-defi-liquidation-risk/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 21 Aug 2026 07:56:24 +0000"
+    },
+    {
+      "title": "Bitcoin ETFs draw $608M as Ether ETFs see largest inflow since October",
+      "url": "https://cointelegraph.com/markets/bitcoin-etfs-ether-etfs-largest-inflow-october?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 21 Aug 2026 07:50:01 +0000"
+    },
+    {
+      "title": "Bitcoin Mining Giants Invest $5.1B in AI Infrastructure as Returns Struggle to Keep Pace",
+      "url": "https://blockonomi.com/bitcoin-mining-giants-invest-5-1b-in-ai-infrastructure-as-returns-struggle-to-keep-pace/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 21 Aug 2026 07:44:05 +0000"
+    },
+    {
+      "title": "Ripple joins Clearpool, Cicada to launch institutional RLUSD credit fund",
+      "url": "https://crypto.news/ripple-joins-clearpool-cicada-to-launch-institutional-rlusd-credit-fund/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 21 Aug 2026 07:37:52 +0000"
+    },
+    {
+      "title": "XRP Blasts to $1.30: Here’s Who Is Fueling Ripple’s Price Rally",
+      "url": "https://cryptopotato.com/xrp-blasts-to-1-30-heres-who-is-fueling-ripples-price-rally/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 21 Aug 2026 07:37:00 +0000"
+    },
+    {
+      "title": "Binance Unveils Agent OS: AI-Powered Cryptocurrency Trading Platform",
+      "url": "https://blockonomi.com/binance-unveils-agent-os-ai-powered-cryptocurrency-trading-platform/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 21 Aug 2026 07:30:48 +0000"
+    },
+    {
+      "title": "Crypto Investments Surpass Stocks in Brazil, New Survey Finds",
+      "url": "https://news.bitcoin.com/crypto-news/crypto-investments-surpass-stocks-in-brazil-new-survey-finds/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 21 Aug 2026 07:30:19 +0000"
+    },
+    {
       "title": "CFTC Chairman Selig Unveils Backup Plan as Clarity Act Faces Senate Uncertainty",
       "url": "https://blockonomi.com/cftc-chairman-selig-unveils-backup-plan-as-clarity-act-faces-senate-uncertainty/",
       "source": "Blockonomi",
@@ -23,6 +65,12 @@
       "url": "https://crypto.news/strategy-bitcoin-treasury-returns-to-profit/",
       "source": "CryptoNews",
       "published_at": "Fri, 21 Aug 2026 07:16:06 +0000"
+    },
+    {
+      "title": "Japan’s Inflation Print Just Made a September BOJ Hike Harder to Avoid",
+      "url": "https://beincrypto.com/japan-inflation-yen-boj-rate-hike/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 21 Aug 2026 07:13:52 +0000"
     },
     {
       "title": "Finassets Crypto Payment Gateway Launches USDC Payment Support on Solana",
@@ -73,7 +121,7 @@
       "published_at": "Fri, 21 Aug 2026 06:54:40 +0000"
     },
     {
-      "title": "Live updates: Bitcoin, ether ETFs pull in $800 million as inflows surge for a second day",
+      "title": "Live updates: BTC tops $76,000; bitcoin, ether ETFs pull in $800 million",
       "url": "https://www.coindesk.com/tech/2026/08/21/live-updates-bitcoin-ether-etfs-pull-in-usd800-million-as-inflows-surge-for-a-second-day",
       "source": "Coindesk",
       "published_at": "Fri, 21 Aug 2026 06:43:24 +0000"
@@ -469,12 +517,6 @@
       "published_at": "Thu, 20 Aug 2026 22:45:48 +0000"
     },
     {
-      "title": "Treasury Secretary Bessent Says Buybacks Can Exceed $4B: Bullish for Bitcoin?",
-      "url": "https://beincrypto.com/bessent-treasury-buyback-bitcoin-rally/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 20 Aug 2026 22:41:36 +0000"
-    },
-    {
       "title": "Tensions Flare as CME, Kalshi Execs Clash Over Prediction Markets in DC",
       "url": "https://decrypt.co/376158/tensions-flare-cme-kalshi-clash-prediction-markets-dc",
       "source": "Decrypt",
@@ -593,12 +635,6 @@
       "url": "https://crypto.news/bitcoins-73k-push-may-hinge-on-etf-demand-analysts/",
       "source": "CryptoNews",
       "published_at": "Thu, 20 Aug 2026 19:50:35 +0000"
-    },
-    {
-      "title": "Bitcoin, Ether ETFs Pull In $706 Million as Crypto Demand Surges",
-      "url": "https://news.bitcoin.com/bitcoin-etf/bitcoin-ether-etfs-pull-in-706-million-as-crypto-demand-surges/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 20 Aug 2026 19:30:48 +0000"
     },
     {
       "title": "XRP surges 10%: UE Crypto offers cloud mining plans with daily returns exceeding $10,000",
@@ -775,7 +811,7 @@
       "published_at": "Thu, 20 Aug 2026 16:27:19 +0000"
     },
     {
-      "title": "Treasury buybacks could set up Bitcoin’s next move toward $180,000, says strategist",
+      "title": "Treasury buybacks could set up bitcoin’s next move toward $180,000, says strategist",
       "url": "https://www.coindesk.com/markets/2026/08/20/treasury-buybacks-could-set-up-bitcoin-s-next-move-toward-usd180-000",
       "source": "Coindesk",
       "published_at": "Thu, 20 Aug 2026 16:17:32 +0000"
@@ -985,12 +1021,6 @@
       "published_at": "Thu, 20 Aug 2026 12:44:24 +0000"
     },
     {
-      "title": "Bitcoin Price Surges Past $71,000 As Treasury Bond Buyback Sparks Short Squeeze",
-      "url": "https://blockonomi.com/bitcoin-price-surges-past-71000-as-treasury-bond-buyback-sparks-short-squeeze/",
-      "source": "Blockonomi",
-      "published_at": "Thu, 20 Aug 2026 12:36:49 +0000"
-    },
-    {
       "title": "Cybersecurity firm unveils crypto phishing campaign targeting 885,000 phone numbers",
       "url": "https://cointelegraph.com/news/cybersecurity-unveils-crypto-phishing-885000-phone-numbers?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1007,12 +1037,6 @@
       "url": "https://crypto.news/ethereum-user-loses-1010-eth-to-phishing/",
       "source": "CryptoNews",
       "published_at": "Thu, 20 Aug 2026 12:18:15 +0000"
-    },
-    {
-      "title": "Glassnode: Bitcoin Rebounds Are Local Rallies, Not a Trend Reversal Yet",
-      "url": "https://blockonomi.com/glassnode-bitcoin-rebounds-are-local-rallies-not-a-trend-reversal-yet/",
-      "source": "Blockonomi",
-      "published_at": "Thu, 20 Aug 2026 12:13:36 +0000"
     },
     {
       "title": "Optimism-funded team's deciding vote shifts $49 million in OP tokens away from users",
@@ -1147,12 +1171,6 @@
       "published_at": "Thu, 20 Aug 2026 09:40:25 +0000"
     },
     {
-      "title": "Ripple stock position revealed in SEC fund filing",
-      "url": "https://crypto.news/ripple-stock-position-revealed-in-sec-fund-filing/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 20 Aug 2026 09:35:47 +0000"
-    },
-    {
       "title": "Banking Regulator Races to Finalize GENIUS Act Stablecoin Rules",
       "url": "https://decrypt.co/376048/banking-regulator-occ-genius-act-stablecoin-rules-november",
       "source": "Decrypt",
@@ -1187,12 +1205,6 @@
       "url": "https://cryptopotato.com/what-sent-bitcoin-flying-above-71000-5-factors-behind-the-surge/",
       "source": "CryptoPotato",
       "published_at": "Thu, 20 Aug 2026 08:50:35 +0000"
-    },
-    {
-      "title": "HTX denies role in Kraken-linked poisoning transfers",
-      "url": "https://crypto.news/htx-denies-role-in-kraken-linked-poisoning-transfers/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 20 Aug 2026 08:49:04 +0000"
     },
     {
       "title": "Crypto Markets Add Over $200B Daily as Bitcoin (BTC) Surges Past $70K: Market Watch",
@@ -1459,12 +1471,6 @@
       "published_at": "Wed, 19 Aug 2026 16:00:03 +0000"
     },
     {
-      "title": "US commodities regulator imposes 5-year trading ban on ex-Alameda, FTX execs",
-      "url": "https://cointelegraph.com/news/us-cftc-trading-ban-alameda-ftx-executives?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 19 Aug 2026 15:50:58 +0000"
-    },
-    {
       "title": "Over $1B in Liquidations as Bitcoin Surges to 2-Month High Above $69K",
       "url": "https://cryptopotato.com/over-1b-in-liquidations-as-bitcoin-surges-to-2-month-high-above-67k/",
       "source": "CryptoPotato",
@@ -1655,12 +1661,6 @@
       "url": "https://decrypt.co/375899/arguing-twitter-x-more-posts-hate-algorithm-ragebait",
       "source": "Decrypt",
       "published_at": "Tue, 18 Aug 2026 21:20:04 +0000"
-    },
-    {
-      "title": "Bitcoin Now One Step Away from Exiting Bear Market: Bitfinex Alpha",
-      "url": "https://cryptopotato.com/bitcoin-now-one-step-away-from-exiting-bear-market-bitfinex-alpha/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 18 Aug 2026 20:10:38 +0000"
     },
     {
       "title": "SEC Proposes Crypto Fundraising Exemptions in Abrupt About-Face",
