@@ -1,6 +1,42 @@
 {
   "articles": [
     {
+      "title": "Bitcoin miners spend $5.1B chasing AI revenue",
+      "url": "https://crypto.news/bitcoin-miners-spend-5-1b-chasing-ai-revenue/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 21 Aug 2026 05:56:40 +0000"
+    },
+    {
+      "title": "MANTRA token plunges 18% to record low as blockchain halts after exploit",
+      "url": "https://www.coindesk.com/tech/2026/08/21/mantra-token-plunges-18-to-record-low-as-blockchain-halts-after-exploit",
+      "source": "Coindesk",
+      "published_at": "Fri, 21 Aug 2026 05:52:27 +0000"
+    },
+    {
+      "title": "South Korean lawmakers seek expanded FIU powers over unregistered crypto firms",
+      "url": "https://cointelegraph.com/news/south-korea-fiu-unregistered-crypto-firms-bill?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 21 Aug 2026 05:47:16 +0000"
+    },
+    {
+      "title": "Two ETH Whales Offload $63 Million as Selling Pressure Builds",
+      "url": "https://news.bitcoin.com/crypto-news/eth-whales-dump-63-million-7-siblings-sell-off/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 21 Aug 2026 05:35:41 +0000"
+    },
+    {
+      "title": "President Trump crypto profits called inappropriate by 63%: poll",
+      "url": "https://crypto.news/trump-crypto-profits-called-inappropriate/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 21 Aug 2026 05:35:11 +0000"
+    },
+    {
+      "title": "CZ Wants Countries to Tokenize Assets, But There’s A Catch",
+      "url": "https://beincrypto.com/cz-countries-tokenized-stocks-fragmented-liquidity/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 21 Aug 2026 05:31:06 +0000"
+    },
+    {
       "title": "Ripple backs an RLUSD credit fund amid XRP's best week in months",
       "url": "https://www.coindesk.com/markets/2026/08/21/ripple-backs-an-rlusd-credit-fund-amid-xrp-s-best-week-in-months",
       "source": "Coindesk",
@@ -47,6 +83,12 @@
       "url": "https://ambcrypto.com/dogecoin-up-10-after-volume-spikes-by-3-5x-are-og-memecoins-back/",
       "source": "Ambcrypto",
       "published_at": "Fri, 21 Aug 2026 05:00:06 +0000"
+    },
+    {
+      "title": "Hyperliquid Briefly Flips Dogecoin In Market Cap As HYPE Rally Extends",
+      "url": "https://bitcoinist.com/hyperliquid-briefly-flips-dogecoin-in-market-cap-as-hype-rally-extends/",
+      "source": "Bitcoinist",
+      "published_at": "Fri, 21 Aug 2026 05:00:00 +0000"
     },
     {
       "title": "Austria sanctions Bitpanda, first penalty under MiCA",
@@ -457,12 +499,6 @@
       "published_at": "Thu, 20 Aug 2026 19:27:36 +0000"
     },
     {
-      "title": "Binance Employees Detained in UAE Despite $2 Billion Emirati Backing",
-      "url": "https://beincrypto.com/binance-employees-detained-uae-ties/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 20 Aug 2026 19:18:59 +0000"
-    },
-    {
       "title": "Bitcoin Is Pumping But Prediction Market Traders Aren't Convinced",
       "url": "https://decrypt.co/376103/bitcoin-price-pumping-prediction-next-move",
       "source": "Decrypt",
@@ -563,12 +599,6 @@
       "url": "https://decrypt.co/376120/xrp-price-best-week-since-2024-election-pump",
       "source": "Decrypt",
       "published_at": "Thu, 20 Aug 2026 17:46:08 +0000"
-    },
-    {
-      "title": "Bitcoin Hits $72,850 as Traders Lose $650M in Shorts",
-      "url": "https://news.bitcoin.com/market-updates/bitcoin-hits-72850-as-traders-lose-650m-in-shorts/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 20 Aug 2026 17:45:02 +0000"
     },
     {
       "title": "US debt tops $40T stoking debate on what it means for Bitcoin",
@@ -1153,18 +1183,6 @@
       "published_at": "Thu, 20 Aug 2026 07:20:05 +0000"
     },
     {
-      "title": "ASIC shuts down 3,106 crypto scams as AI fraud surges in Australia",
-      "url": "https://crypto.news/asic-shuts-down-3106-crypto-scams-as-ai-fraud-surges-in-australia/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 20 Aug 2026 07:07:36 +0000"
-    },
-    {
-      "title": "Grayscale updates Zcash ETF filing as DCG unit weighs $110M ZEC buy",
-      "url": "https://crypto.news/grayscale-updates-zcash-etf-filing-as-dcg-unit-weighs-110m-zec-buy/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 20 Aug 2026 06:51:15 +0000"
-    },
-    {
       "title": "Bitcoin (BTC) Soars Past $69K as Treasury Bond Buyback Program Fuels Crypto and Stock Rally",
       "url": "https://blockonomi.com/bitcoin-btc-soars-past-69k-as-treasury-bond-buyback-program-fuels-crypto-and-stock-rally/",
       "source": "Blockonomi",
@@ -1411,12 +1429,6 @@
       "published_at": "Wed, 19 Aug 2026 16:30:12 +0000"
     },
     {
-      "title": "Bitcoin surges above $68,000, liquidating $1.4 billion shorts as Treasury buybacks boost risk appetite",
-      "url": "https://www.coindesk.com/markets/2026/08/19/bitcoin-surges-above-usd68-000-liquidating-usd1-4-billion-shorts-as-treasury-buybacks-boost-risk-appetite",
-      "source": "Coindesk",
-      "published_at": "Wed, 19 Aug 2026 16:18:04 +0000"
-    },
-    {
       "title": "Bitcoin Surges Toward $70K as $1.14 Billion in Crypto Shorts Get Rekt in an Hour",
       "url": "https://decrypt.co/375955/bitcoin-surges-70k-billion-crypto-shorts-rekt-hour",
       "source": "Decrypt",
@@ -1439,12 +1451,6 @@
       "url": "https://cointelegraph.com/news/us-cftc-trading-ban-alameda-ftx-executives?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Wed, 19 Aug 2026 15:50:58 +0000"
-    },
-    {
-      "title": "Bitcoin price hits 11-week high as US Treasury doubles debt buyback size",
-      "url": "https://cointelegraph.com/markets/bitcoin-price-hits-11-week-high-as-us-treasury-doubles-debt-buyback-size?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 19 Aug 2026 15:44:09 +0000"
     },
     {
       "title": "Over $1B in Liquidations as Bitcoin Surges to 2-Month High Above $69K",
@@ -1703,12 +1709,6 @@
       "url": "https://thecryptobasic.com/2026/08/17/xrp-to-take-over-ethereum-bitcoin-and-dominate-amid-wave-4-completion/",
       "source": "CryptoBasic",
       "published_at": "Mon, 17 Aug 2026 15:52:15 +0000"
-    },
-    {
-      "title": "Arthur Hayes Says Yen-Quake Could Put Bitcoin Back In Liquidity Spotlight",
-      "url": "https://bitcoinist.com/arthur-hayes-says-yen-quake-could-put-bitcoin-back-in-liquidity-spotlight/",
-      "source": "Bitcoinist",
-      "published_at": "Wed, 12 Aug 2026 11:30:00 +0000"
     },
     {
       "title": "Bitwise Dumps XRP ETF to Invest $12M in Bitcoin and Ethereum ETFs",
