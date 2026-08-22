@@ -1,6 +1,60 @@
 {
   "articles": [
     {
+      "title": "Wyckoff distribution: the century-old method traders still use on Bitcoin",
+      "url": "https://crypto.news/wyckoff-distribution-bitcoin-trading/",
+      "source": "CryptoNews",
+      "published_at": "Sat, 22 Aug 2026 05:41:37 +0000"
+    },
+    {
+      "title": "What is MACD? How to read crypto’s most popular momentum indicator",
+      "url": "https://crypto.news/what-is-macd-crypto-momentum-indicator/",
+      "source": "CryptoNews",
+      "published_at": "Sat, 22 Aug 2026 05:41:21 +0000"
+    },
+    {
+      "title": "What is RSI? The overbought/oversold indicator explained",
+      "url": "https://crypto.news/what-is-rsi-the-overbought-oversold-indicator-explained/",
+      "source": "CryptoNews",
+      "published_at": "Sat, 22 Aug 2026 05:41:01 +0000"
+    },
+    {
+      "title": "CME vs Kalshi: the prediction market fight that just went personal at the CFTC",
+      "url": "https://crypto.news/cme-vs-kalshi-prediction-market-cftc-fight-regulation/",
+      "source": "CryptoNews",
+      "published_at": "Sat, 22 Aug 2026 05:40:20 +0000"
+    },
+    {
+      "title": "XRP erased its death cross. That does not mean what most headlines are claiming.",
+      "url": "https://crypto.news/xrp-death-cross-erasure-borrowed-momentum-golden-cross/",
+      "source": "CryptoNews",
+      "published_at": "Sat, 22 Aug 2026 05:39:36 +0000"
+    },
+    {
+      "title": "Zcash jumps 48% to over $800 as Grayscale spot ETF push adds to ‘next bitcoin’ buzz",
+      "url": "https://www.coindesk.com/markets/2026/08/22/zcash-tops-usd800-for-first-time-since-2016",
+      "source": "Coindesk",
+      "published_at": "Sat, 22 Aug 2026 05:37:43 +0000"
+    },
+    {
+      "title": "63% of Americans say Trump crossed the line on crypto. The CLARITY Act ethics clause is why that number matters.",
+      "url": "https://crypto.news/trump-poll-clarity-act-ethics-clause/",
+      "source": "CryptoNews",
+      "published_at": "Sat, 22 Aug 2026 05:37:26 +0000"
+    },
+    {
+      "title": "Binance just gave AI bots a trading license. The safeguards are thinner than they look.",
+      "url": "https://crypto.news/binance-agent-os-ai-trading-safeguards/",
+      "source": "CryptoNews",
+      "published_at": "Sat, 22 Aug 2026 05:34:18 +0000"
+    },
+    {
+      "title": "Ethereum’s 26% surge fuels run to $2.5K after whales dump 1.7M ETH — $3K next?",
+      "url": "https://ambcrypto.com/ethereums-26-surge-fuels-run-to-2-5k-after-whales-dump-1-7m-eth-3k-next/",
+      "source": "Ambcrypto",
+      "published_at": "Sat, 22 Aug 2026 05:30:53 +0000"
+    },
+    {
       "title": "Arbitrum Activates ArbOS 61 Elara With Optional Orbit Compliance Filters",
       "url": "https://bitcoinist.com/arbitrum-arbos-61-elara-orbit-compliance-filters/",
       "source": "Bitcoinist",
@@ -667,12 +721,6 @@
       "published_at": "Fri, 21 Aug 2026 15:15:00 +0000"
     },
     {
-      "title": "FLR crypto breaks key resistance as volume surges—Can it reach $0.0083?",
-      "url": "https://ambcrypto.com/flr-crypto-breaks-key-resistance-as-volume-surges-can-it-reach-0-0083/",
-      "source": "Ambcrypto",
-      "published_at": "Fri, 21 Aug 2026 15:08:37 +0000"
-    },
-    {
       "title": "Besu security vulnerabilities fixed in version 26.7.1",
       "url": "https://crypto.news/besu-security-vulnerabilities-fixed-in-version-26-7-1/",
       "source": "CryptoNews",
@@ -1087,18 +1135,6 @@
       "published_at": "Fri, 21 Aug 2026 06:30:00 +0000"
     },
     {
-      "title": "Pi Network’s credibility gap: real infrastructure, unverified partnerships, and the $0.09 question",
-      "url": "https://crypto.news/pi-network-credibility-gap-real-infrastructure-unverified-partnerships/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 06:05:13 +0000"
-    },
-    {
-      "title": "Bitcoin miners spend $5.1B chasing AI revenue",
-      "url": "https://crypto.news/bitcoin-miners-spend-5-1b-chasing-ai-revenue/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 05:56:40 +0000"
-    },
-    {
       "title": "MANTRA token plunges 18% to record low as blockchain halts after exploit",
       "url": "https://www.coindesk.com/tech/2026/08/21/mantra-token-plunges-18-to-record-low-as-blockchain-halts-after-exploit",
       "source": "Coindesk",
@@ -1117,28 +1153,10 @@
       "published_at": "Fri, 21 Aug 2026 05:45:00 +0000"
     },
     {
-      "title": "President Trump crypto profits called inappropriate by 63%: poll",
-      "url": "https://crypto.news/trump-crypto-profits-called-inappropriate/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 05:35:11 +0000"
-    },
-    {
       "title": "Ripple backs an RLUSD credit fund amid XRP's best week in months",
       "url": "https://www.coindesk.com/markets/2026/08/21/ripple-backs-an-rlusd-credit-fund-amid-xrp-s-best-week-in-months",
       "source": "Coindesk",
       "published_at": "Fri, 21 Aug 2026 05:29:48 +0000"
-    },
-    {
-      "title": "The $3 billion short squeeze: anatomy of crypto’s biggest liquidation event since 2021",
-      "url": "https://crypto.news/3-billion-short-squeeze-anatomy-crypto-biggest-liquidation-2021-2/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 05:25:26 +0000"
-    },
-    {
-      "title": "Capital.com plans UAE spot crypto launch after license",
-      "url": "https://crypto.news/capital-com-plans-uae-spot-crypto-launch/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 05:19:50 +0000"
     },
     {
       "title": "Bitcoin Rockets Past $75K as Analyst Declares the Bull Market Has Begun",
@@ -1151,12 +1169,6 @@
       "url": "https://cointelegraph.com/markets/mantra-token-record-low-blockchain-halt?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Fri, 21 Aug 2026 05:04:52 +0000"
-    },
-    {
-      "title": "MANTRA price falls 10% as network halts transactions",
-      "url": "https://crypto.news/mantra-price-falls-as-network-halts-transactions/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 05:00:13 +0000"
     },
     {
       "title": "Hyperliquid Briefly Flips Dogecoin In Market Cap As HYPE Rally Extends",
@@ -1175,12 +1187,6 @@
       "url": "https://www.coindesk.com/markets/2026/08/21/bitcoin-ether-and-solana-climb-as-another-usd1-billion-shorts-get-wiped-out",
       "source": "Coindesk",
       "published_at": "Fri, 21 Aug 2026 04:56:30 +0000"
-    },
-    {
-      "title": "Binance founder CZ says ‘tokenize everything’ to attract investors",
-      "url": "https://crypto.news/cz-says-tokenize-everything-to-attract-investors/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 04:48:20 +0000"
     },
     {
       "title": "Capital.com plans UAE spot crypto services after affiliate wins licence",
@@ -1457,12 +1463,6 @@
       "url": "https://www.coindesk.com/markets/2026/08/20/ripple-linked-xrp-jumps-15-as-data-shows-banker-hours-onchain-pattern",
       "source": "Coindesk",
       "published_at": "Thu, 20 Aug 2026 11:35:47 +0000"
-    },
-    {
-      "title": "Fed liquidity promises, dollar weakness could determine bitcoin's next move",
-      "url": "https://www.coindesk.com/daybook-us/2026/08/20/fed-liquidity-promises-dollar-weakness-could-determine-bitcoin-s-next-move",
-      "source": "Coindesk",
-      "published_at": "Thu, 20 Aug 2026 11:31:10 +0000"
     },
     {
       "title": "Flock's New AI Police Tool Can Track Drivers Without a Name or License Plate",
