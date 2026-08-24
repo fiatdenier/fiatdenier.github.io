@@ -1,6 +1,72 @@
 {
   "articles": [
     {
+      "title": "Hey, Robinhood!!",
+      "url": "https://coingeek.com/hey-robinhood/",
+      "source": "CoinGeek",
+      "published_at": "Mon, 24 Aug 2026 07:00:00 +0000"
+    },
+    {
+      "title": "XRP’s 50% weekly surge: the biggest rally since the SEC settlement and what is driving it",
+      "url": "https://crypto.news/xrp-50-percent-weekly-surge-sec-settlement-rally/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 24 Aug 2026 06:59:49 +0000"
+    },
+    {
+      "title": "The Sandbox’s $49 billion phantom mint: how a bridge exploit created unbacked SAND tokens",
+      "url": "https://crypto.news/sandbox-bridge-exploit-49-billion-phantom-sand-mint/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 24 Aug 2026 06:58:56 +0000"
+    },
+    {
+      "title": "Pakistan opens VASP licensing as new crypto rules take effect",
+      "url": "https://crypto.news/pakistan-opens-vasp-licensing-as-new-crypto-rules-take-effect/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 24 Aug 2026 06:58:22 +0000"
+    },
+    {
+      "title": "Trump’s CLARITY Act push: what the White House crypto summit means for regulation",
+      "url": "https://crypto.news/trump-clarity-act-white-house-crypto-summit-regulation-2/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 24 Aug 2026 06:58:01 +0000"
+    },
+    {
+      "title": "Bitcoin’s fiscal fear trade: why BTC is rallying on America’s debt crisis",
+      "url": "https://crypto.news/bitcoin-fiscal-fear-trade-btc-rally-us-debt-crisis/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 24 Aug 2026 06:57:12 +0000"
+    },
+    {
+      "title": "Ether is crushing bitcoin and the 'golden cross' says it may not be done yet",
+      "url": "https://www.coindesk.com/markets/2026/08/24/ether-is-crushing-bitcoin-and-the-golden-cross-says-it-may-not-be-done-yet",
+      "source": "Coindesk",
+      "published_at": "Mon, 24 Aug 2026 06:50:58 +0000"
+    },
+    {
+      "title": "Strive CEO says Bitcoin’s next cycle could be its strongest ever",
+      "url": "https://crypto.news/strive-ceo-says-bitcoins-next-cycle-could-be-its-strongest-ever/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 24 Aug 2026 06:44:48 +0000"
+    },
+    {
+      "title": "Fasset hits $1B valuation after $68M SBI round",
+      "url": "https://crypto.news/fasset-hits-1b-valuation-after-68m-sbi-round/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 24 Aug 2026 06:41:54 +0000"
+    },
+    {
+      "title": "Tron Inc. Treasury Tops 711 Million TRX as Stock Jumps 7.49%",
+      "url": "https://beincrypto.com/tron-stock-surges-400m-accounts/",
+      "source": "BeinCrypto",
+      "published_at": "Mon, 24 Aug 2026 06:34:47 +0000"
+    },
+    {
+      "title": "Besu Patches 5 Node Vulnerabilities: What Operators Must Know",
+      "url": "https://news.bitcoin.com/security/besu-patches-5-node-vulnerabilities-what-operators-must-know/",
+      "source": "Bitcoin.com",
+      "published_at": "Mon, 24 Aug 2026 06:30:42 +0000"
+    },
+    {
       "title": "Ethereum lending app Term Finance loses $8.5 million after attacker buys voting power",
       "url": "https://www.coindesk.com/markets/2026/08/24/ethereum-lending-app-term-finance-loses-usd8-5-million-after-attacker-buys-voting-power",
       "source": "Coindesk",
@@ -235,12 +301,6 @@
       "published_at": "Mon, 24 Aug 2026 00:39:14 +0000"
     },
     {
-      "title": "Prominent Bitcoin Miner Bets on Ethereum, Predicts ETH Will Beat BTC This Cycle",
-      "url": "https://beincrypto.com/prominent-bitcoin-miner-predicts-ethereum-will-beat-btc-this-cycle/",
-      "source": "BeinCrypto",
-      "published_at": "Mon, 24 Aug 2026 00:32:21 +0000"
-    },
-    {
       "title": "We are so back! Bitcoin’s 23% rally on US debt policy: Hodler’s Digest",
       "url": "https://cointelegraph.com/magazine/we-are-back-bitcoins-23-rally-on-us-debt-policy-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -311,12 +371,6 @@
       "url": "https://cryptopotato.com/three-crypto-investing-mistakes-could-be-hiding-a-much-bigger-opportunity/",
       "source": "CryptoPotato",
       "published_at": "Sun, 23 Aug 2026 20:25:25 +0000"
-    },
-    {
-      "title": "Ripple CEO Says Crypto Rules Near Finish After White House Meeting",
-      "url": "https://news.bitcoin.com/regulation-and-legal/ripple-ceo-says-crypto-rules-near-finish-after-white-house-meeting/",
-      "source": "Bitcoin.com",
-      "published_at": "Sun, 23 Aug 2026 20:24:29 +0000"
     },
     {
       "title": "Bitcoin and Ethereum ETFs just had their biggest week of 2026 as crypto exploded higher",
@@ -1063,22 +1117,10 @@
       "published_at": "Fri, 21 Aug 2026 20:00:47 +0000"
     },
     {
-      "title": "Kraken may be testing a compliant HIP-3 DEX on Hyperliquid",
-      "url": "https://crypto.news/kraken-may-be-testing-compliant-hip-3-dex-hyperliquid/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 19:49:44 +0000"
-    },
-    {
       "title": "SEC Reg Crypto Proposal Starts 60-Day Federal Register Comment Clock",
       "url": "https://www.newsbtc.com/news/sec-reg-crypto-proposal-federal-register-comment-clock/",
       "source": "NewsBTC",
       "published_at": "Fri, 21 Aug 2026 19:45:00 +0000"
-    },
-    {
-      "title": "Uniswap tokenized stock volume on Robinhood Chain hits $1B",
-      "url": "https://crypto.news/uniswap-tokenized-stock-volume-robinhood-chain-hits-1b/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 19:26:13 +0000"
     },
     {
       "title": "Onchain, in court: What happened in crypto legal news this week",
@@ -1091,12 +1133,6 @@
       "url": "https://cointelegraph.com/markets/bitcoin-seeks-support-near-77k-btc-gold-100-day-highs?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Fri, 21 Aug 2026 19:10:47 +0000"
-    },
-    {
-      "title": "AVAX One CEO says $35.1M quarterly loss masks growth in its staking and treasury business",
-      "url": "https://crypto.news/avax-one-says-quarterly-loss-masks-growth-in-treasury/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 19:01:13 +0000"
     },
     {
       "title": "Hashdex Liquidates DEFI As First US Spot Bitcoin ETF Closure Arrives",
@@ -1135,12 +1171,6 @@
       "published_at": "Fri, 21 Aug 2026 18:06:56 +0000"
     },
     {
-      "title": "Trump pushes for the CLARITY Act; XRP price surges, with holders earning up to $10,000 daily",
-      "url": "https://crypto.news/trump-pushes-for-the-clarity-act-xrp-price-surges-with-holders-earning-up-to-10000-daily/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 17:55:00 +0000"
-    },
-    {
       "title": "Canary Files Fourth Staked TRX ETF Amendment With 1.10% Fee",
       "url": "https://www.newsbtc.com/news/canary-staked-trx-etf-amendment-fee/",
       "source": "NewsBTC",
@@ -1153,28 +1183,10 @@
       "published_at": "Fri, 21 Aug 2026 17:28:55 +0000"
     },
     {
-      "title": "Bitcoin rally could hold as spot buying outpaces leverage: Bitfinex analysts",
-      "url": "https://crypto.news/bitcoin-rally-could-hold-spot-buying-outpaces-leverage/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 17:28:53 +0000"
-    },
-    {
-      "title": "ZK proving must move beyond GPUs as AI tightens compute supply, Cysic CEO says",
-      "url": "https://crypto.news/zk-proving-move-beyond-gpus-ai-tightens-compute-supply/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 16:52:35 +0000"
-    },
-    {
       "title": "Ripple (XRP) Hits $1.42 After Breaking Crucial Resistance Zone: Is the ATH Now Back in Sight?",
       "url": "https://cryptopotato.com/ripple-xrp-hits-1-42-after-breaking-crucial-resistance-zone-is-the-ath-now-back-in-sight/",
       "source": "CryptoPotato",
       "published_at": "Fri, 21 Aug 2026 16:50:18 +0000"
-    },
-    {
-      "title": "XRP spot ETF daily net inflows reach $13.2371 million: XRP holders can earn up to $10,000 per day",
-      "url": "https://crypto.news/xrp-spot-etf-daily-net-inflows-reach-13-2371-million-xrp-holders-can-earn-up-to-10000-per-day/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 21 Aug 2026 16:49:02 +0000"
     },
     {
       "title": "BTCS Repays $8.2M Aave Debt As Ethereum Balance Sheet Strategy Shifts",
@@ -1349,12 +1361,6 @@
       "url": "https://www.coindesk.com/policy/2026/08/21/nomura-backed-laser-digital-wins-japan-s-first-crypto-approval-in-four-years",
       "source": "Coindesk",
       "published_at": "Fri, 21 Aug 2026 10:38:47 +0000"
-    },
-    {
-      "title": "Bitcoin tops $77,000 as best week since 2023 pulls altcoins along for the ride",
-      "url": "https://www.coindesk.com/markets/2026/08/21/bitcoin-tops-usd77-000-as-best-week-since-2023-pulls-altcoins-along-for-the-ride",
-      "source": "Coindesk",
-      "published_at": "Fri, 21 Aug 2026 10:15:36 +0000"
     },
     {
       "title": "Coldcard strengthens seed generation with firmware update",
@@ -1697,12 +1703,6 @@
       "url": "https://coingeek.com/digicon-2026-explores-human-machine-collaboration-beyond-ai-hype/",
       "source": "CoinGeek",
       "published_at": "Wed, 19 Aug 2026 07:00:00 +0000"
-    },
-    {
-      "title": "Fiji’s Bank of South Pacific brings e-wallet to broader audience",
-      "url": "https://coingeek.com/fiji-bank-of-south-pacific-brings-e-wallet-to-broader-audience/",
-      "source": "CoinGeek",
-      "published_at": "Wed, 19 Aug 2026 05:00:00 +0000"
     },
     {
       "title": "XRP to “Take Over” Ethereum, Bitcoin and Dominate Amid Wave 4 Completion",
