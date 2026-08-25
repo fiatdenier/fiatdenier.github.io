@@ -1,6 +1,48 @@
 {
   "articles": [
     {
+      "title": "U.S. widens Iran crackdown to encompass crypto, gold, shipping and technology",
+      "url": "https://www.coindesk.com/policy/2026/08/25/u-s-widens-iran-crackdown-to-encompass-crypto-gold-shipping-and-technology",
+      "source": "Coindesk",
+      "published_at": "Tue, 25 Aug 2026 08:47:18 +0000"
+    },
+    {
+      "title": "Galaxy puts Coldcard hack losses at 1,789 BTC, with 87% unmoved",
+      "url": "https://cointelegraph.com/news/coldcard-hack-galaxy-btc-lost-87-unmoved?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Tue, 25 Aug 2026 08:46:47 +0000"
+    },
+    {
+      "title": "Metaplanet moves 1,000 BTC to Coinbase Prime",
+      "url": "https://crypto.news/metaplanet-moves-1000-btc-to-coinbase-prime/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 25 Aug 2026 08:40:20 +0000"
+    },
+    {
+      "title": "The Real Reason XRP Is Stuck: Analyst Blames Massive Trading Walls on Coinbase",
+      "url": "https://cryptopotato.com/the-real-reason-xrp-is-stuck-analyst-blames-massive-trading-walls-on-coinbase/",
+      "source": "CryptoPotato",
+      "published_at": "Tue, 25 Aug 2026 08:35:59 +0000"
+    },
+    {
+      "title": "Stablecoin card spending could reach $50B annually by 2028: RedotPay",
+      "url": "https://crypto.news/stablecoin-card-spending-could-reach-50b-annually-by-2028-redotpay/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 25 Aug 2026 08:35:26 +0000"
+    },
+    {
+      "title": "Strategy sells $2.01B in MSTR shares as Bitcoin crosses $80K – Why?",
+      "url": "https://ambcrypto.com/strategy-sells-2-01b-in-mstr-shares-as-bitcoin-crosses-80k-why/",
+      "source": "Ambcrypto",
+      "published_at": "Tue, 25 Aug 2026 08:30:10 +0000"
+    },
+    {
+      "title": "Tether’s $120 million Uruguay mining failure now shadows its next Bitcoin bet in Brazil",
+      "url": "https://cryptoslate.com/tethers-120-million-uruguay-mining-failure-now-shadows-its-next-bitcoin-bet-in-brazil/",
+      "source": "CryptoSlate",
+      "published_at": "Tue, 25 Aug 2026 08:30:08 +0000"
+    },
+    {
       "title": "Fortune Protocol integrates Polymarket liquidity into Fortune Markets",
       "url": "https://crypto.news/fortune-protocol-integrates-polymarket-liquidity-into-fortune-markets/",
       "source": "CryptoNews",
@@ -17,6 +59,12 @@
       "url": "https://bitcoinist.com/cardano-cip-0197-targets-quantum-proof-wallet-protection/",
       "source": "Bitcoinist",
       "published_at": "Tue, 25 Aug 2026 08:15:00 +0000"
+    },
+    {
+      "title": "Meta Targets Early September for Hatch, Its Consumer AI Agent",
+      "url": "https://beincrypto.com/meta-hatch-ai-agent-launch-monetize/",
+      "source": "BeinCrypto",
+      "published_at": "Tue, 25 Aug 2026 08:11:40 +0000"
     },
     {
       "title": "Ethereum developers propose quantum-safe staking upgrade",
@@ -49,7 +97,7 @@
       "published_at": "Tue, 25 Aug 2026 07:43:04 +0000"
     },
     {
-      "title": "Live updates: Bitcoin ETFs draw a seventh straight day of inflows as the rally holds above $80,000",
+      "title": "Live updates: Bitcoin ETFs draw a sixth straight day of inflows as the rally holds above $80,000",
       "url": "https://www.coindesk.com/business/2026/08/25/live-updates-bitcoin-etfs-draw-a-seventh-straight-day-of-inflows-as-the-rally-holds-above-usd80-000",
       "source": "Coindesk",
       "published_at": "Tue, 25 Aug 2026 07:40:11 +0000"
@@ -475,12 +523,6 @@
       "published_at": "Tue, 25 Aug 2026 02:30:17 +0000"
     },
     {
-      "title": "Banxa Wants to Make Stablecoin Payments Invisible",
-      "url": "https://beincrypto.com/banxa-stablecoin-payments-checkout-problem/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 25 Aug 2026 02:14:10 +0000"
-    },
-    {
       "title": "Bitwise XRP ETF Trading Volume Tops $200M Across Three Sessions",
       "url": "https://news.bitcoin.com/market-updates/bitwise-xrp-etf-trading-volume-tops-200m-across-three-sessions/",
       "source": "Bitcoin.com",
@@ -775,12 +817,6 @@
       "published_at": "Mon, 24 Aug 2026 18:13:58 +0000"
     },
     {
-      "title": "Zilliqa points to hardware wallet flaw discarding entropy to expose crypto keys, enabling 683M ZIL theft",
-      "url": "https://cryptoslate.com/zilliqa-points-to-hardware-wallet-flaw-discarding-entropy-to-expose-crypto-keys-enabling-683m-zil-theft/",
-      "source": "CryptoSlate",
-      "published_at": "Mon, 24 Aug 2026 18:10:16 +0000"
-    },
-    {
       "title": "Zcash Hits Eight-Year High as Futures Bets Nearly Double",
       "url": "https://decrypt.co/376372/zcash-eight-year-high-price-futures-bets",
       "source": "Decrypt",
@@ -917,12 +953,6 @@
       "url": "https://crypto.news/stablecoin-payment-local-currency-settlement-roadblock/",
       "source": "CryptoNews",
       "published_at": "Mon, 24 Aug 2026 15:11:38 +0000"
-    },
-    {
-      "title": "Whales, burns help Uniswap break $4 – But bears fight back at $4.60",
-      "url": "https://ambcrypto.com/whales-burns-help-uniswap-break-4-but-bears-fight-back-at-4-60/",
-      "source": "Ambcrypto",
-      "published_at": "Mon, 24 Aug 2026 15:00:05 +0000"
     },
     {
       "title": "Bitcoin Price Analysis: BTC Surges Toward $80K Again – Can It Break Through This Time?",
@@ -1147,12 +1177,6 @@
       "published_at": "Mon, 24 Aug 2026 11:15:00 +0000"
     },
     {
-      "title": "Germany extends MiCA lead as six more banks secure crypto licenses",
-      "url": "https://crypto.news/germany-extends-mica-lead-as-six-more-banks-secure-crypto-licenses/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 24 Aug 2026 11:02:54 +0000"
-    },
-    {
       "title": "Gemini strikes Apex deal to widen prediction markets reach",
       "url": "https://www.coindesk.com/business/2026/08/24/gemini-strikes-apex-deal-to-widen-prediction-markets-reach",
       "source": "Coindesk",
@@ -1175,12 +1199,6 @@
       "url": "https://cointelegraph.com/news/germany-mica-lead-licensing-update-6-banks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Mon, 24 Aug 2026 10:41:34 +0000"
-    },
-    {
-      "title": "Bernstein keeps $140 Circle target even if CLARITY Act fails",
-      "url": "https://crypto.news/bernstein-keeps-140-circle-target-even-if-clarity-act-fails/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 24 Aug 2026 10:32:52 +0000"
     },
     {
       "title": "Zcash (ZEC) Explodes Past $800, Bitcoin (BTC) Reclaims $77K: Market Watch",
@@ -1259,12 +1277,6 @@
       "url": "https://www.coindesk.com/markets/2026/08/24/ether-is-crushing-bitcoin-and-the-golden-cross-says-it-may-not-be-done-yet",
       "source": "Coindesk",
       "published_at": "Mon, 24 Aug 2026 06:50:58 +0000"
-    },
-    {
-      "title": "Ethereum lending app Term Finance loses $8.5 million after attacker buys voting power",
-      "url": "https://www.coindesk.com/markets/2026/08/24/ethereum-lending-app-term-finance-loses-usd8-5-million-after-attacker-buys-voting-power",
-      "source": "Coindesk",
-      "published_at": "Mon, 24 Aug 2026 06:27:33 +0000"
     },
     {
       "title": "Banks, regulators join quantum-resistant crypto transfer pilot",
@@ -1435,12 +1447,6 @@
       "published_at": "Sat, 22 Aug 2026 15:31:04 +0000"
     },
     {
-      "title": "Ripple CEO Speaks Out After White House and CFTC Meetings: Here’s What He Said",
-      "url": "https://cryptopotato.com/ripple-ceo-speaks-out-after-white-house-and-cftc-meetings-heres-what-he-said/",
-      "source": "CryptoPotato",
-      "published_at": "Sat, 22 Aug 2026 14:43:40 +0000"
-    },
-    {
       "title": "A Third of the Post-ChatGPT Web Is AI-Written, Pew Finds",
       "url": "https://decrypt.co/376271/chatgpt-web-ai-written-pew",
       "source": "Decrypt",
@@ -1499,12 +1505,6 @@
       "url": "https://crypto-economy.com/jim-cramer-turns-bullish-on-bitcoin-after-recent-sell-call/",
       "source": "CryptoEconomy",
       "published_at": "Fri, 21 Aug 2026 21:01:27 +0000"
-    },
-    {
-      "title": "Bitget CEO sees Bitcoin near current levels at year-end, doubts US will buy BTC",
-      "url": "https://cointelegraph.com/markets/bitget-ceo-sees-bitcoin-near-current-levels-at-year-end-doubts-us-will-buy-btc?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Fri, 21 Aug 2026 20:26:16 +0000"
     },
     {
       "title": "Wall Street and Washington Fuel Bitcoin Rally: Here's What's Going On",
