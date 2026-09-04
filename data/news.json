@@ -1,10 +1,58 @@
 {
   "articles": [
     {
+      "title": "From Bitcoin to oil, perpetual contracts are breaking into American financial markets",
+      "url": "https://cryptoslate.com/from-bitcoin-to-oil-perpetual-contracts-are-breaking-into-american-financial-markets/",
+      "source": "CryptoSlate",
+      "published_at": "Fri, 04 Sep 2026 11:00:32 +0000"
+    },
+    {
+      "title": "CLARITY Act’s September 15 vote faces delay – ‘Can Democrats work with Republicans?’",
+      "url": "https://ambcrypto.com/clarity-acts-september-15-vote-faces-delay-can-democrats-work-with-republicans/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 04 Sep 2026 11:00:10 +0000"
+    },
+    {
+      "title": "Bitcoin (BTC) Breaks $81K Barrier as Fed Sentiment Shifts and ETF Demand Surges",
+      "url": "https://blockonomi.com/bitcoin-btc-breaks-81k-barrier-as-fed-sentiment-shifts-and-etf-demand-surges/",
+      "source": "Blockonomi",
+      "published_at": "Fri, 04 Sep 2026 10:47:30 +0000"
+    },
+    {
+      "title": "South Korea targets 2027 launch for tokenized securities market",
+      "url": "https://crypto.news/south-korea-targets-2027-launch-for-tokenized-securities-market/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 04 Sep 2026 10:42:36 +0000"
+    },
+    {
+      "title": "South Korean regulators introduce tokenized securities roadmap",
+      "url": "https://cointelegraph.com/news/south-korean-regulators-tokenized-securities-roadmap?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 04 Sep 2026 10:42:10 +0000"
+    },
+    {
+      "title": "Zcash jumps 20% to landmark $1,000 level as short sellers lose $34 million",
+      "url": "https://www.coindesk.com/markets/2026/09/04/zcash-jumps-20-to-landmark-usd1-000-level-as-short-sellers-lose-usd34-million",
+      "source": "Coindesk",
+      "published_at": "Fri, 04 Sep 2026 10:40:14 +0000"
+    },
+    {
+      "title": "Trezor Breach Is Much Bigger Than Initially Thought: Another 67,000 Customers Exposed",
+      "url": "https://cryptopotato.com/trezor-breach-is-much-bigger-than-initially-thought-another-67000-customers-exposed/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 04 Sep 2026 10:36:20 +0000"
+    },
+    {
       "title": "Bitcoin Is Trading Like Gold Again, Bitwise Says the Last Time Was 2020",
       "url": "https://news.bitcoin.com/crypto-news/bitcoin-gold-correlation-six-year-high-bitwise-hougan/",
       "source": "Bitcoin.com",
       "published_at": "Fri, 04 Sep 2026 10:30:47 +0000"
+    },
+    {
+      "title": "Your Exchange Is Selling ‘Fake Bitcoins,' Says the Bitcoin Knots Developer",
+      "url": "https://beincrypto.com/bitcoin-hard-fork-dashjr-fake-bitcoins/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 04 Sep 2026 10:28:04 +0000"
     },
     {
       "title": "FinCEN Ties $12.7B to Crypto Scams Run From Asian Compounds",
@@ -47,6 +95,12 @@
       "url": "https://blockonomi.com/el-salvador-bitcoin-purchases-came-from-private-donations-imf-confirms/",
       "source": "Blockonomi",
       "published_at": "Fri, 04 Sep 2026 09:57:08 +0000"
+    },
+    {
+      "title": "Bitcoin clears $81,000 as privacy coins lead a broad crypto rally",
+      "url": "https://www.coindesk.com/markets/2026/09/04/bitcoin-clears-usd81-000-as-privacy-coins-lead-a-broad-crypto-rally",
+      "source": "Coindesk",
+      "published_at": "Fri, 04 Sep 2026 09:57:01 +0000"
     },
     {
       "title": "Garrett Jin’s ZEC Short Bleeds Over $18M as Zcash Explodes Past $1,000",
@@ -571,12 +625,6 @@
       "published_at": "Fri, 04 Sep 2026 03:00:00 +0000"
     },
     {
-      "title": "Adobe Names Anil Chakravarthy CEO But AI Fears Are Impacting the Stock",
-      "url": "https://beincrypto.com/adobe-anil-chakravarthy-new-ceo/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 04 Sep 2026 03:00:00 +0000"
-    },
-    {
       "title": "Monad’s mainnet upgrade makes storing data together 98% cheaper",
       "url": "https://cryptoslate.com/monads-mainnet-upgrade-makes-storing-data-together-98-cheaper/",
       "source": "CryptoSlate",
@@ -835,12 +883,6 @@
       "published_at": "Thu, 03 Sep 2026 19:08:14 +0000"
     },
     {
-      "title": "What Solana’s failed fee vote reveals about Anatoly Yakovenko’s power",
-      "url": "https://cryptoslate.com/what-solanas-failed-fee-vote-reveals-about-anatoly-yakovenkos-power/",
-      "source": "CryptoSlate",
-      "published_at": "Thu, 03 Sep 2026 19:00:32 +0000"
-    },
-    {
       "title": "Artificial Inu jumps 20% amid NVDA stock pairing surge – What’s next for AI?",
       "url": "https://ambcrypto.com/artificial-inu-jumps-20-amid-nvda-stock-pairing-surge-whats-next-for-ai/",
       "source": "Ambcrypto",
@@ -911,12 +953,6 @@
       "url": "https://decrypt.co/377284/bitcoin-etfs-rebound-ethereum-xrp-end-streaks",
       "source": "Decrypt",
       "published_at": "Thu, 03 Sep 2026 18:15:07 +0000"
-    },
-    {
-      "title": "Tokenized equity addresses hit record 1.9M: Will this fuel Bitcoin’s September run?",
-      "url": "https://ambcrypto.com/tokenized-equity-addresses-hit-record-1-9m-will-this-fuel-bitcoins-september-run/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 03 Sep 2026 18:00:56 +0000"
     },
     {
       "title": "Polymarket adds 20x perps for crypto, stocks and gold",
@@ -1111,12 +1147,6 @@
       "published_at": "Thu, 03 Sep 2026 13:30:00 +0000"
     },
     {
-      "title": "XRP spot ETF records $170M in inflows over 11 consecutive days, UE Crypto continues to gain attention by creating $2,000 in daily income for XRP holders",
-      "url": "https://crypto.news/xrp-spot-etf-records-170m-in-inflows-over-11-consecutive-days-ue-crypto-continues-to-gain-attention-by-creating-2000-in-daily-income-for-xrp-holders/",
-      "source": "CryptoNews",
-      "published_at": "Thu, 03 Sep 2026 13:09:59 +0000"
-    },
-    {
       "title": "VARA, Securitize sign MoU for tokenization innovation in Dubai",
       "url": "https://cointelegraph.com/news/vara-securitize-mou-tokenization-dubai?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1235,12 +1265,6 @@
       "url": "https://decrypt.co/377245/ukraine-busts-kyiv-crypto-drainer-ring-moving-up-to-1m-monthly",
       "source": "Decrypt",
       "published_at": "Thu, 03 Sep 2026 09:53:41 +0000"
-    },
-    {
-      "title": "Bitcoin (BTC) Price: Rises Above $77,500 as Trump Weighs Ending Iran War",
-      "url": "https://blockonomi.com/bitcoin-btc-price-rises-above-77500-as-trump-weighs-ending-iran-war/",
-      "source": "Blockonomi",
-      "published_at": "Thu, 03 Sep 2026 09:46:49 +0000"
     },
     {
       "title": "Coldcard hacker swaps stolen Bitcoin for ETH via THORChain",
@@ -1387,12 +1411,6 @@
       "published_at": "Wed, 02 Sep 2026 21:27:15 +0000"
     },
     {
-      "title": "DOJ says Hamas crypto seizures reached $560,000 as FBI took over fundraising sites",
-      "url": "https://www.coindesk.com/business/2026/09/02/doj-says-hamas-crypto-seizures-reached-usd560-000-as-fbi-took-over-fundraising-sites",
-      "source": "Coindesk",
-      "published_at": "Wed, 02 Sep 2026 21:24:26 +0000"
-    },
-    {
       "title": "CryptoQuant Signals Bitcoin Reversal as Large Buyers Absorb Retail Selling",
       "url": "https://crypto-economy.com/cryptoquant-signals-bitcoin-reversal-as-large-buyers-absorb-retail-selling/",
       "source": "CryptoEconomy",
@@ -1421,12 +1439,6 @@
       "url": "https://decrypt.co/377225/pentagon-ai-official-sold-millions-perplexity-stock",
       "source": "Decrypt",
       "published_at": "Wed, 02 Sep 2026 20:46:04 +0000"
-    },
-    {
-      "title": "Kraken parent Payward delays IPO to second quarter of 2027 at earliest",
-      "url": "https://www.coindesk.com/business/2026/09/02/kraken-parent-payward-pushes-ipo-back-to-mid-2027-at-earliest",
-      "source": "Coindesk",
-      "published_at": "Wed, 02 Sep 2026 20:08:34 +0000"
     },
     {
       "title": "Goldman Sachs, BofA Among 21 Banks Planning Joint Dollar Stablecoin Launch",
@@ -1517,12 +1529,6 @@
       "url": "https://decrypt.co/377171/tether-sued-freeze-42-4-million-usdt",
       "source": "Decrypt",
       "published_at": "Wed, 02 Sep 2026 15:42:13 +0000"
-    },
-    {
-      "title": "G20 members tout ‘clear pathways’ for digital asset innovation",
-      "url": "https://cointelegraph.com/news/g20-members-clear-pathways-digital-asset-innovation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 02 Sep 2026 15:34:06 +0000"
     },
     {
       "title": "Norway Moves to Regulate 'Pervert Glasses,' Weighs Facial Recognition Ban",
@@ -1643,12 +1649,6 @@
       "url": "https://decrypt.co/377149/sec-proposes-first-transfer-agent-overhaul-in-40-years-citing-tokenization",
       "source": "Decrypt",
       "published_at": "Wed, 02 Sep 2026 10:25:02 +0000"
-    },
-    {
-      "title": "Selling at the Wrong Time: Here’s How an Unlucky Crypto Trader Missed a $3 Million Profit",
-      "url": "https://cryptopotato.com/selling-at-the-wrong-time-heres-how-an-unlucky-crypto-trader-missed-a-3-million-profit/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 02 Sep 2026 10:07:49 +0000"
     },
     {
       "title": "Tom Lee Calls Bitcoin Rally ‘First Leg Up’ Toward $150K as Kevin Cramer Sees CLARITY Act Passing by November",
