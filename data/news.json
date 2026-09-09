@@ -1,6 +1,36 @@
 {
   "articles": [
     {
+      "title": "Cut off From Global Finance, Iran Turns to Bitcoin and Tether",
+      "url": "https://news.bitcoin.com/featured/cut-off-from-global-finance-iran-turns-to-bitcoin-and-tether/",
+      "source": "Bitcoin.com",
+      "published_at": "Wed, 09 Sep 2026 21:47:21 +0000"
+    },
+    {
+      "title": "NEAR crypto jumps 11% as Intents volume crosses $27B",
+      "url": "https://ambcrypto.com/near-crypto-jumps-11-as-intents-volume-crosses-27b/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 09 Sep 2026 21:30:23 +0000"
+    },
+    {
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 09 Sep 2026 21:30:00 +0000"
+    },
+    {
+      "title": "Trezor Reports Another Security Incident: What Users Should Know",
+      "url": "https://beincrypto.com/trezor-email-provider-breach-phishing/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 09 Sep 2026 21:11:06 +0000"
+    },
+    {
+      "title": "CLARITY Act: Ripple CLO urges Senate to hear crypto holders",
+      "url": "https://crypto.news/clarity-act-ripple-clo-urge-senate-hear-crypto-holders/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 21:00:17 +0000"
+    },
+    {
       "title": "Trump Gives Timeline for Oil Prices to Fall, Brent Pushes to May Highs",
       "url": "https://beincrypto.com/trump-oil-prices-midterms-brent-crude/",
       "source": "BeinCrypto",
@@ -25,10 +55,22 @@
       "published_at": "Wed, 09 Sep 2026 20:30:53 +0000"
     },
     {
+      "title": "Mastercard launches Agent Connect for AI shopping",
+      "url": "https://crypto.news/mastercard-launches-agent-connect-for-ai-shopping/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 20:27:12 +0000"
+    },
+    {
       "title": "Jump’s Hyperliquid Footprint Explodes as Trading Volume Nears $150 Billion",
       "url": "https://cryptopotato.com/jumps-hyperliquid-footprint-explodes-as-trading-volume-nears-150-billion/",
       "source": "CryptoPotato",
       "published_at": "Wed, 09 Sep 2026 20:20:35 +0000"
+    },
+    {
+      "title": "World opens Solana prediction market to 1M users",
+      "url": "https://crypto.news/world-opens-solana-prediction-market-to-1m-users/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 20:15:17 +0000"
     },
     {
       "title": "DoubleZero adds Kalshi election market data ahead of US midterms",
@@ -41,6 +83,12 @@
       "url": "https://ambcrypto.com/pons-crypto-commands-82-of-robinhood-launchpad-activity-heres-what-it-means/",
       "source": "Ambcrypto",
       "published_at": "Wed, 09 Sep 2026 20:00:29 +0000"
+    },
+    {
+      "title": "Bitcoin price risks $70K if $78K neckline breaks",
+      "url": "https://crypto.news/bitcoin-price-risks-70k-if-78k-neckline-breaks/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 19:58:50 +0000"
     },
     {
       "title": "Anthropic Researcher Resigned Because AI Could Kill Us All. Can It Really?",
@@ -61,6 +109,12 @@
       "published_at": "Wed, 09 Sep 2026 19:31:36 +0000"
     },
     {
+      "title": "Changelly review 2026: fees, limits, KYC and exchange rates",
+      "url": "https://crypto.news/changelly-review-2026-fees-limits-kyc-exchange-rates/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 19:14:25 +0000"
+    },
+    {
       "title": "MicroStrategy Says It Has the One Thing JPMorgan Lacks",
       "url": "https://beincrypto.com/microstrategy-jpmorgan-permanent-capital-balance-sheet/",
       "source": "BeinCrypto",
@@ -71,6 +125,24 @@
       "url": "https://decrypt.co/377810/crypto-banks-clarity-act-lobbying-senators",
       "source": "Decrypt",
       "published_at": "Wed, 09 Sep 2026 18:56:58 +0000"
+    },
+    {
+      "title": "XRP fell 27% while RLUSD crossed $2.3 billion and nobody blinked",
+      "url": "https://crypto.news/xrp-rlusd-disconnect-price-down-network-up-2/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 18:56:39 +0000"
+    },
+    {
+      "title": "Circle put USDC on Chelsea’s shirt and the FCA did not blink",
+      "url": "https://crypto.news/circle-usdc-chelsea-shirt-fca-regulatory-gap/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 18:54:48 +0000"
+    },
+    {
+      "title": "Pi Network ships Protocol 27 on a network with 14 million users and zero DeFi",
+      "url": "https://crypto.news/pi-network-protocol-27-zero-defi-14-million-users-3/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 18:53:19 +0000"
     },
     {
       "title": "Consensys to split into MetaMask and institutional blockchain company",
@@ -109,16 +181,34 @@
       "published_at": "Wed, 09 Sep 2026 18:30:07 +0000"
     },
     {
+      "title": "Arbitrum watchdog seeks permanent ban for three grant abuse cases",
+      "url": "https://crypto.news/arbitrum-watchdog-seeks-permanent-ban-for-three-cases/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 18:23:39 +0000"
+    },
+    {
       "title": "Ethereum Classic rallies as altcoin rotation returns – What’s next for ETC?",
       "url": "https://ambcrypto.com/ethereum-classic-rallies-as-altcoin-rotation-returns-whats-next-for-etc/",
       "source": "Ambcrypto",
       "published_at": "Wed, 09 Sep 2026 18:00:28 +0000"
     },
     {
+      "title": "DoubleZero co-founder says faster Kalshi data remains open to all traders",
+      "url": "https://crypto.news/doublezero-says-faster-kalshi-remains-open-all-traders/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 17:58:39 +0000"
+    },
+    {
       "title": "Apple Unveils Redesigned Siri AI and A20 Pro Chip as CEO John Ternus Makes Debut",
       "url": "https://decrypt.co/377807/apple-redesigned-siri-ai-a20-pro-chip",
       "source": "Decrypt",
       "published_at": "Wed, 09 Sep 2026 17:50:14 +0000"
+    },
+    {
+      "title": "Kalshi has filed to launch gold and silver perps",
+      "url": "https://crypto.news/kalshi-has-filed-to-launch-gold-and-silver-perps/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 17:35:00 +0000"
     },
     {
       "title": "Bitcoin Price Steadies at $78K Despite $6B Treasury Action",
@@ -181,6 +271,12 @@
       "published_at": "Wed, 09 Sep 2026 16:40:50 +0000"
     },
     {
+      "title": "Bitcoin collateral, not trading volume, will signal real bank adoption: fintech veteran",
+      "url": "https://crypto.news/bitcoin-collateral-will-signal-real-bank-adoption/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 16:37:09 +0000"
+    },
+    {
       "title": "U.S. Bank tests proprietary stablecoin in cross-border Stellar transaction",
       "url": "https://cointelegraph.com/news/us-bank-launches-usbdc-stablecoin-with-live-cross-border-payment?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -215,6 +311,12 @@
       "url": "https://www.coindesk.com/markets/2026/09/09/robinhood-s-ceo-vlad-tenev-defends-stock-tokens-in-escalating-fight-with-amc-ceo",
       "source": "Coindesk",
       "published_at": "Wed, 09 Sep 2026 16:11:07 +0000"
+    },
+    {
+      "title": "RedStone prices $170M FalconX credit vault on 3 chains",
+      "url": "https://crypto.news/redstone-prices-170m-falconx-credit-vault-on-3-chains/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 16:07:04 +0000"
     },
     {
       "title": "Ethereum’s institutional staking boom is growing, but Lido’s share is shrinking",
@@ -253,6 +355,12 @@
       "published_at": "Wed, 09 Sep 2026 15:51:25 +0000"
     },
     {
+      "title": "Compound opens USDC market with up to 87% LTV",
+      "url": "https://crypto.news/compound-opens-usdc-market-with-up-to-87-ltv/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 15:49:08 +0000"
+    },
+    {
       "title": "Hunter Biden's LAPTOP Meme Coin Crashes 99% on Debut",
       "url": "https://decrypt.co/377783/hunter-biden-laptop-meme-coin-crashes",
       "source": "Decrypt",
@@ -287,6 +395,12 @@
       "url": "https://www.coindesk.com/business/2026/09/09/consensys-to-split-metamask-into-its-own-firm-while-staying-silent-on-ipo",
       "source": "Coindesk",
       "published_at": "Wed, 09 Sep 2026 15:24:01 +0000"
+    },
+    {
+      "title": "Hyperliquid policy group cites 2 flaws in CME lawsuit",
+      "url": "https://crypto.news/hyperliquid-policy-group-cites-2-flaws-in-cme-lawsuit/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 15:22:17 +0000"
     },
     {
       "title": "Tether, Fasanara launch $400M private credit fund targeting $3B",
@@ -367,6 +481,12 @@
       "published_at": "Wed, 09 Sep 2026 14:46:10 +0000"
     },
     {
+      "title": "Coinbase expands Morpho-powered USDC lending to Brazil",
+      "url": "https://crypto.news/coinbase-expands-morpho-powered-usdc-lending-to-brazil/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 14:41:50 +0000"
+    },
+    {
       "title": "German Finance Ministry Drafts 25% Tax on Crypto Gains From 2027",
       "url": "https://decrypt.co/377764/german-finance-ministry-drafts-25-tax-on-crypto-gains-from-2027",
       "source": "Decrypt",
@@ -383,6 +503,12 @@
       "url": "https://news.bitcoin.com/crypto-news/blockstream-hackers-demand-10-bounty-threaten-15-holder-loss/",
       "source": "Bitcoin.com",
       "published_at": "Wed, 09 Sep 2026 14:20:45 +0000"
+    },
+    {
+      "title": "The CLARITY Act Senate vote is scheduled for September 15, and XRP is heading into its most critical week",
+      "url": "https://crypto.news/the-clarity-act-senate-vote-is-scheduled-for-september-15-and-xrp-is-heading-into-its-most-critical-week/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 14:20:00 +0000"
     },
     {
       "title": "Bitcoin Price Analysis: BTC Stalls Near $80K Ahead of a Potential Volatility Storm",
@@ -415,9 +541,9 @@
       "published_at": "Wed, 09 Sep 2026 14:00:00 +0000"
     },
     {
-      "title": "DCENT Unveils New Brand Identity Eight Years After Its Launch, Expanding Beyond Digital Asset Storage",
-      "url": "https://beincrypto.com/dcent-rebrand-enterprise-crypto-wallets/",
-      "source": "BeinCrypto",
+      "title": "Hyperliquid price stalls below $90 as MACD turns bearish",
+      "url": "https://crypto.news/hyperliquid-price-stalls-below-as-macd-turns-bearish/",
+      "source": "CryptoNews",
       "published_at": "Wed, 09 Sep 2026 14:00:00 +0000"
     },
     {
@@ -425,6 +551,12 @@
       "url": "https://www.coindesk.com/business/2026/09/09/hunter-biden-s-laptop-memecoin-debuts-at-usd1-6-billion-market-cap",
       "source": "Coindesk",
       "published_at": "Wed, 09 Sep 2026 13:57:57 +0000"
+    },
+    {
+      "title": "Is your business losing money between payment and conversion?",
+      "url": "https://crypto.news/is-your-business-losing-money-between-payment-and-conversion/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 13:55:50 +0000"
     },
     {
       "title": "German finance ministry proposes 25% crypto tax starting 2028: Report",
@@ -475,6 +607,12 @@
       "published_at": "Wed, 09 Sep 2026 13:00:00 +0000"
     },
     {
+      "title": "Ethereum price breakout hinges on a close above $2,535",
+      "url": "https://crypto.news/ethereum-price-breakout-hinges-on-a-close-above-2535/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 13:00:00 +0000"
+    },
+    {
       "title": "Jack Dorsey’s Block Targets Trust Bank Charter To Expand Bitcoin And Stablecoin Custody",
       "url": "https://crypto-economy.com/jack-dorseys-block-targets-trust-bank-charter/",
       "source": "CryptoEconomy",
@@ -485,12 +623,6 @@
       "url": "https://cryptoslate.com/nearly-a-fifth-of-all-bitcoin-mining-power-is-sitting-completely-dark-and-turning-it-back-on-could-trigger-a-brutal-margin-trap/",
       "source": "CryptoSlate",
       "published_at": "Wed, 09 Sep 2026 12:50:57 +0000"
-    },
-    {
-      "title": "Bitcoin Price Roars Back From $77,603 as Bulls Eye $80,000",
-      "url": "https://news.bitcoin.com/market-updates/bitcoin-price-roars-back-from-77603-as-bulls-eye-80000/",
-      "source": "Bitcoin.com",
-      "published_at": "Wed, 09 Sep 2026 12:45:32 +0000"
     },
     {
       "title": "Italy’s central bank orders sanctions screening for crypto transfers",
@@ -526,6 +658,18 @@
       "title": "Crypto lobbying orgs ask court to suspend Illinois tax as legal case continues",
       "url": "https://www.coindesk.com/policy/2026/09/09/crypto-lobbying-orgs-ask-court-to-suspend-illinois-tax-as-legal-case-continues",
       "source": "Coindesk",
+      "published_at": "Wed, 09 Sep 2026 12:00:00 +0000"
+    },
+    {
+      "title": "Bitcoin price tests $78K as bearish divergence grows",
+      "url": "https://crypto.news/bitcoin-price-tests-78k-as-bearish-divergence-grows/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 12:00:00 +0000"
+    },
+    {
+      "title": "Corn launches private members club for digital asset holders after Bitcoin L2 pivot",
+      "url": "https://crypto.news/corn-launch-private-members-club-digital-asset-holders/",
+      "source": "CryptoNews",
       "published_at": "Wed, 09 Sep 2026 12:00:00 +0000"
     },
     {
@@ -655,6 +799,12 @@
       "published_at": "Wed, 09 Sep 2026 09:45:50 +0000"
     },
     {
+      "title": "Germany targets tax free crypto gains with new 25% levy",
+      "url": "https://crypto.news/germany-targets-tax-free-crypto-gains-with-new-25-levy/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 09:45:46 +0000"
+    },
+    {
       "title": "Mexico Seizes 300 Crypto Mining Rigs Wired Into a Hydroelectric Dam",
       "url": "https://decrypt.co/377748/mexico-seizes-300-crypto-mining-rigs-wired-into-a-hydroelectric-dam",
       "source": "Decrypt",
@@ -673,6 +823,12 @@
       "published_at": "Wed, 09 Sep 2026 09:15:10 +0000"
     },
     {
+      "title": "FBI traces Bitcoin to alleged darknet opioid ring",
+      "url": "https://crypto.news/fbi-traces-bitcoin-to-alleged-darknet-opioid-ring/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 09:01:13 +0000"
+    },
+    {
       "title": "Visa’s stablecoin settlements cross $20B – What’s driving the 15x growth?",
       "url": "https://ambcrypto.com/visas-stablecoin-settlements-cross-20b-whats-driving-the-15x-growth/",
       "source": "Ambcrypto",
@@ -683,6 +839,24 @@
       "url": "https://coingeek.com/digital-wallet-use-rises-as-do-scams-and-money-laundering/",
       "source": "CoinGeek",
       "published_at": "Wed, 09 Sep 2026 09:00:00 +0000"
+    },
+    {
+      "title": "India targets Weex, Blofin, WOO X and 12 other crypto platforms",
+      "url": "https://crypto.news/india-targets-weex-blofin-woo-x-and-12-other-crypto-platforms/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 08:58:26 +0000"
+    },
+    {
+      "title": "BitMart appoints A&M to review assets and withdrawals",
+      "url": "https://crypto.news/bitmart-explores-restart-after-halting-trading/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 08:41:49 +0000"
+    },
+    {
+      "title": "XRP ETFs enter $11.4M Schwab collateral pool",
+      "url": "https://crypto.news/xrp-etfs-enter-11-4m-schwab-collateral-pool/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 08:28:41 +0000"
     },
     {
       "title": "Jack Dorsey's Block Applies for Bank Charter to Custody Bitcoin",
@@ -697,16 +871,34 @@
       "published_at": "Wed, 09 Sep 2026 08:17:54 +0000"
     },
     {
-      "title": "Tokenization grows 2,500% since May 2025: Will this fuel crypto’s 2024-style rally?",
-      "url": "https://ambcrypto.com/tokenization-grows-2500-since-may-2025-will-this-fuel-cryptos-2024-style-rally/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 09 Sep 2026 08:00:02 +0000"
+      "title": "Cardano founder weighs OpenAI’s math breakthrough",
+      "url": "https://crypto.news/cardano-founder-weighs-openai-math-breakthrough/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 08:11:49 +0000"
+    },
+    {
+      "title": "Tether CEO unveils decentralized P2P search engine",
+      "url": "https://crypto.news/tether-ceo-unveils-decentralized-p2p-search-engine/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 08:00:00 +0000"
+    },
+    {
+      "title": "Bitcoin price holds near $79K as cycle drawdowns narrow",
+      "url": "https://crypto.news/bitcoin-price-holds-near-79k-as-cycle-drawdowns-narrow/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 07:56:30 +0000"
     },
     {
       "title": "Ripple’s XRP Rebounds Swiftly, Bitcoin (BTC) Reclaims $79K: Market Watch",
       "url": "https://cryptopotato.com/ripples-xrp-rebounds-swiftly-bitcoin-btc-reclaims-79k-market-watch/",
       "source": "CryptoPotato",
       "published_at": "Wed, 09 Sep 2026 07:44:32 +0000"
+    },
+    {
+      "title": "UAE retailers begin accepting DDSC stablecoin payments in new pilot",
+      "url": "https://crypto.news/uae-retailers-begin-accepting-ddsc-stablecoin-payments-in-new-pilot/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 07:42:16 +0000"
     },
     {
       "title": "22-Year-Old Mastermind Admits to $245M Bitcoin Heist Involving Luxury Cars and Nightclub Sprees",
@@ -745,10 +937,34 @@
       "published_at": "Wed, 09 Sep 2026 07:07:55 +0000"
     },
     {
+      "title": "Polkadot community votes on DOT backed native stablecoin dotUSD",
+      "url": "https://crypto.news/polkadot-community-votes-on-dot-backed-native-stablecoin-dotusd/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 07:07:31 +0000"
+    },
+    {
+      "title": "Upbit drops HEMI after exploit, lists CP and USELESS",
+      "url": "https://crypto.news/upbit-drops-hemi-after-exploit-lists-cp-and-useless/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 07:01:08 +0000"
+    },
+    {
       "title": "CLARITY to wait for lame duck but crypto’s on the midterm ballot",
       "url": "https://coingeek.com/clarity-to-wait-for-lame-duck-but-crypto-on-the-midterm-ballot/",
       "source": "CoinGeek",
       "published_at": "Wed, 09 Sep 2026 07:00:00 +0000"
+    },
+    {
+      "title": "Tether freezes $39.3M USDT linked to Xinbi Guarantee",
+      "url": "https://crypto.news/tether-freezes-39-3m-usdt-linked-to-xinbi-guarantee/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 06:55:18 +0000"
+    },
+    {
+      "title": "CleanSpark produces 593 BTC and sells 821 in August",
+      "url": "https://crypto.news/cleanspark-produces-593-btc-and-sells-821-in-august/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 06:41:59 +0000"
     },
     {
       "title": "Bitcoin (BTC) Battles to Hold $78K as Middle East Tensions Send Oil Prices Soaring",
@@ -757,16 +973,58 @@
       "published_at": "Wed, 09 Sep 2026 06:41:08 +0000"
     },
     {
+      "title": "ARK asks SEC to approve tokenized share class for $562M venture fund",
+      "url": "https://crypto.news/ark-asks-sec-to-approve-tokenized-share-class-for-562m-venture-fund/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 06:36:47 +0000"
+    },
+    {
+      "title": "Hunter Biden defends LAPTOP memecoin as Kraken deletes promotional post",
+      "url": "https://crypto.news/hunter-biden-defends-laptop-memecoin-as-kraken-deletes-promotional-post/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 06:29:45 +0000"
+    },
+    {
       "title": "AI could kill us, Anthropic researcher says after resigning",
       "url": "https://www.coindesk.com/markets/2026/09/09/anthropic-researcher-quits-with-a-warning-on-ai-that-echoes-the-terminator-script",
       "source": "Coindesk",
       "published_at": "Wed, 09 Sep 2026 06:20:38 +0000"
     },
     {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 09 Sep 2026 05:51:21 +0000"
+      "title": "Iran turns to crypto for export payments amid sanctions: FT",
+      "url": "https://crypto.news/iran-turns-to-crypto-for-export-payments/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 06:13:49 +0000"
+    },
+    {
+      "title": "Gemini wins full Singapore crypto payment license",
+      "url": "https://crypto.news/gemini-wins-full-singapore-crypto-payment-license/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 06:04:35 +0000"
+    },
+    {
+      "title": "Jack Dorsey’s Block files OCC application for Bitcoin and stablecoin custody bank",
+      "url": "https://crypto.news/jack-dorseys-block-files-occ-application-for-bitcoin-and-stablecoin-custody-bank/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 05:58:02 +0000"
+    },
+    {
+      "title": "Canary Capital launches first staked TRON ETF in the US",
+      "url": "https://crypto.news/canary-capital-launches-first-staked-tron-etf-in-the-us/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 05:48:24 +0000"
+    },
+    {
+      "title": "Strive adds $109M in Bitcoin through SATA funding",
+      "url": "https://crypto.news/strive-adds-109m-in-bitcoin-through-sata-funding/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 05:44:14 +0000"
+    },
+    {
+      "title": "DeFi Development targets more SOL with $11M raise",
+      "url": "https://crypto.news/defi-development-targets-more-sol-with-11m-raise/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 05:38:06 +0000"
     },
     {
       "title": "Gemini receives Singapore payment license for crypto services",
@@ -775,10 +1033,22 @@
       "published_at": "Wed, 09 Sep 2026 05:27:12 +0000"
     },
     {
+      "title": "Circle buys Tazapay in $400M all-stock deal",
+      "url": "https://crypto.news/circle-buys-tazapay-in-400m-all-stock-deal/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 05:23:51 +0000"
+    },
+    {
       "title": "Hunter Biden defends LAPTOP ahead of Wednesday launch, calls TRUMP a ‘grift’",
       "url": "https://www.coindesk.com/markets/2026/09/09/hunter-biden-defends-laptop-ahead-of-wednesday-launch-calls-trump-a-grift",
       "source": "Coindesk",
       "published_at": "Wed, 09 Sep 2026 05:22:57 +0000"
+    },
+    {
+      "title": "Bybit launches 24/7 FX perpetuals with 100x leverage",
+      "url": "https://crypto.news/bybit-launches-24-7-fx-perpetuals-with-100x-leverage/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 05:07:22 +0000"
     },
     {
       "title": "Bitcoin’s Historic Capitulation Zone Is Near $38.4K: But Something Is Changing",
@@ -793,10 +1063,28 @@
       "published_at": "Wed, 09 Sep 2026 05:00:00 +0000"
     },
     {
+      "title": "Plattsburgh weighs 12-month crypto mining ban",
+      "url": "https://crypto.news/plattsburgh-weighs-12-month-crypto-mining-ban/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 04:57:17 +0000"
+    },
+    {
+      "title": "Malone Lam admits role in $245M crypto crime ring",
+      "url": "https://crypto.news/malone-lam-admits-role-in-245m-crypto-crime-ring/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 04:46:20 +0000"
+    },
+    {
       "title": "Moonshot’s Kimi rattled markets. U.S. agencies now say it was trained on American models",
       "url": "https://www.coindesk.com/tech/2026/09/09/moonshot-s-kimi-rattled-markets-u-s-agencies-now-say-it-was-trained-on-american-models",
       "source": "Coindesk",
       "published_at": "Wed, 09 Sep 2026 04:40:54 +0000"
+    },
+    {
+      "title": "Strategy pauses Bitcoin buys, doubles buyback plan",
+      "url": "https://crypto.news/strategy-pauses-bitcoin-buys-doubles-buyback-plan/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 09 Sep 2026 04:36:06 +0000"
     },
     {
       "title": "Bitcoin recovers toward $79,000 as Zcash records a $500 million ETF haul",
@@ -823,10 +1111,22 @@
       "published_at": "Wed, 09 Sep 2026 00:22:44 +0000"
     },
     {
+      "title": "Circle adds prepaid fees to CCTP Fast Transfer",
+      "url": "https://crypto.news/circle-adds-prepaid-fees-to-cctp-fast-transfer/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 08 Sep 2026 22:10:27 +0000"
+    },
+    {
       "title": "Bitcoin Calms Below $80K as Fed Hike Odds Climb: Bitfinex Alpha",
       "url": "https://cryptopotato.com/bitcoin-calms-below-80k-as-fed-hike-odds-climb-bitfinex-alpha/",
       "source": "CryptoPotato",
       "published_at": "Tue, 08 Sep 2026 22:09:44 +0000"
+    },
+    {
+      "title": "BitMine buys 28,086 ETH amid Tom Lee’s bullish outlook",
+      "url": "https://crypto.news/bitmine-buys-28086-eth-amid-tom-lees-bullish-outlook/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 08 Sep 2026 22:00:49 +0000"
     },
     {
       "title": "OpenAI Says It Solved a $1M Math Problem. A Rival Mathematician Says He Did It First",
