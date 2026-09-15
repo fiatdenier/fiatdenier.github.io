@@ -1,6 +1,36 @@
 {
   "articles": [
     {
+      "title": "Bitcoin Price Drops Below $76K Ahead of Fed Rate Decision",
+      "url": "https://news.bitcoin.com/market-updates/bitcoin-price-drops-below-76k-ahead-of-fed-rate-decision/",
+      "source": "Bitcoin.com",
+      "published_at": "Tue, 15 Sep 2026 16:56:36 +0000"
+    },
+    {
+      "title": "Anthropic is Profitable — If You Ignore the Cost of Building Claude",
+      "url": "https://beincrypto.com/anthropic-profit-claim-training-costs/",
+      "source": "BeinCrypto",
+      "published_at": "Tue, 15 Sep 2026 16:42:02 +0000"
+    },
+    {
+      "title": "MEV bot front-runs $7.8M rsETH exploit on Ethereum",
+      "url": "https://crypto.news/mev-bot-front-runs-7-8m-rseth-exploit-on-ethereum/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 15 Sep 2026 16:36:24 +0000"
+    },
+    {
+      "title": "Crypto's Long-Sought 'De Minimis' Tax Break Gets a House Markup This Week",
+      "url": "https://decrypt.co/378260/house-crypto-tax-bill-de-minimis-captail-gains",
+      "source": "Decrypt",
+      "published_at": "Tue, 15 Sep 2026 16:34:35 +0000"
+    },
+    {
+      "title": "DeFi governance gap allows one wallet to request 98% of Ampleforth treasury’s USDC balance",
+      "url": "https://cryptoslate.com/defi-governance-gap-allows-one-wallet-to-request-98-of-ampleforth-treasurys-usdc-balance/",
+      "source": "CryptoSlate",
+      "published_at": "Tue, 15 Sep 2026 16:30:02 +0000"
+    },
+    {
       "title": "Preparing for a Post-CLARITY Crash? Whale Opens Massive BTC, ETH, and ZEC Shorts",
       "url": "https://cryptopotato.com/preparing-for-a-post-clarity-crash-whale-opens-massive-btc-eth-and-zec-shorts/",
       "source": "CryptoPotato",
@@ -11,6 +41,12 @@
       "url": "https://crypto.news/arbitrum-price-jumps-8-8-percent-as-0-155-test-looms/",
       "source": "CryptoNews",
       "published_at": "Tue, 15 Sep 2026 16:07:30 +0000"
+    },
+    {
+      "title": "Long-Term Bitcoin Holders Just Stopped Selling After a 260,000 BTC Dump",
+      "url": "https://beincrypto.com/bitcoin-long-term-holders-stop-selling/",
+      "source": "BeinCrypto",
+      "published_at": "Tue, 15 Sep 2026 16:03:37 +0000"
     },
     {
       "title": "Bitcoin ETFs Snap Four-Day Slide With $160 Million Inflow",
@@ -583,12 +619,6 @@
       "published_at": "Tue, 15 Sep 2026 09:30:31 +0000"
     },
     {
-      "title": "XRP Rallies 9.8% on CLARITY Hopes; Prediction Markets Aren’t Buying It",
-      "url": "https://news.bitcoin.com/crypto-news/xrp-price-clarity-act-vote-leverage/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 15 Sep 2026 09:30:05 +0000"
-    },
-    {
       "title": "Four events in five days and the market has priced one of them",
       "url": "https://crypto.news/four-events-in-five-days-and-the-market-has-priced-one-of-them/",
       "source": "CryptoNews",
@@ -691,12 +721,6 @@
       "published_at": "Tue, 15 Sep 2026 07:48:14 +0000"
     },
     {
-      "title": "Proposed stablecoin rules might guarantee your dollar while making you wait a week to spend it",
-      "url": "https://cryptoslate.com/proposed-stablecoin-rules-might-guarantee-your-dollar-while-making-you-wait-a-week-to-spend-it/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 15 Sep 2026 07:30:58 +0000"
-    },
-    {
       "title": "Strive Stock Surges 100% in One Month Amid Aggressive Bitcoin Accumulation",
       "url": "https://blockonomi.com/strive-stock-surges-100-in-one-month-amid-aggressive-bitcoin-accumulation/",
       "source": "Blockonomi",
@@ -781,22 +805,10 @@
       "published_at": "Tue, 15 Sep 2026 06:21:58 +0000"
     },
     {
-      "title": "AMC CEO Called Stock Tokens Fake Equity. Now Robinhood Is Responding",
-      "url": "https://beincrypto.com/robinhood-stock-tokens-voting-amc/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 15 Sep 2026 06:20:00 +0000"
-    },
-    {
       "title": "Bitcoin (BTC) Surges Past $79K Amid Iran Peace Signals and Crypto Bill Progress",
       "url": "https://blockonomi.com/bitcoin-btc-surges-past-79k-amid-iran-peace-signals-and-crypto-bill-progress/",
       "source": "Blockonomi",
       "published_at": "Tue, 15 Sep 2026 06:19:37 +0000"
-    },
-    {
-      "title": "XRP and XLM Explode 8% as the CLARITY Act Nears Crucial Vote",
-      "url": "https://beincrypto.com/xrp-xlm-explode-8-percent-clarity-act-nears-crucial-vote/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 15 Sep 2026 06:07:23 +0000"
     },
     {
       "title": "Ethereum and Base abandon joint account abstraction standard",
@@ -1177,12 +1189,6 @@
       "published_at": "Mon, 14 Sep 2026 15:33:32 +0000"
     },
     {
-      "title": "Strive buys 469 Bitcoin, lifting treasury to 25,000 BTC",
-      "url": "https://crypto.news/strive-buys-469-bitcoin-lifting-treasury-to-25000-btc/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 14 Sep 2026 15:32:21 +0000"
-    },
-    {
       "title": "Why Trump Backed Tougher Ethics Rules in Clarity Act, and Why the Crypto Industry Thinks It Can Pass",
       "url": "https://decrypt.co/378125/clarity-act-crypto-ethics-trump-key-vote",
       "source": "Decrypt",
@@ -1559,12 +1565,6 @@
       "url": "https://www.newsbtc.com/news/mexc-stock-futures-trading-volume-rises-130-in-august-as-trading-activity-broadens-across-u-s-and-korean-emory-and-semiconductor-sectors/",
       "source": "NewsBTC",
       "published_at": "Fri, 11 Sep 2026 10:11:20 +0000"
-    },
-    {
-      "title": "Albuquerque Bans Bitcoin ATMs, Giving Operators 45 Days to Remove Them",
-      "url": "https://decrypt.co/377939/albuquerque-bans-bitcoin-atms-giving-operators-45-days-to-remove-them",
-      "source": "Decrypt",
-      "published_at": "Fri, 11 Sep 2026 10:10:41 +0000"
     },
     {
       "title": "TRON Expands MetaMask Connectivity Across B.AI, SUN.io, JustLend DAO and BitTorrent",
