@@ -1,6 +1,60 @@
 {
   "articles": [
     {
+      "title": "KREMLIN malware uses Ethereum to update attack servers",
+      "url": "https://crypto.news/kremlin-malware-uses-ethereum-to-update-attack-servers/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 16 Sep 2026 12:26:23 +0000"
+    },
+    {
+      "title": "Bitcoin Stays Stuck as Traders Wait for the Fed’s Next Move",
+      "url": "https://cryptopotato.com/bitcoin-stays-stuck-as-traders-wait-for-the-feds-next-move/",
+      "source": "CryptoPotato",
+      "published_at": "Wed, 16 Sep 2026 12:24:29 +0000"
+    },
+    {
+      "title": "Circle Launches Arc Mainnet With 100+ Institutional and Crypto Partners",
+      "url": "https://cryptopotato.com/circle-launches-arc-mainnet-with-100-institutional-and-crypto-partners/",
+      "source": "CryptoPotato",
+      "published_at": "Wed, 16 Sep 2026 12:18:44 +0000"
+    },
+    {
+      "title": "Morning Minute: Clarity Act Vote Falls Short as Democrats All Vote ‘No’",
+      "url": "https://decrypt.co/378352/morning-minute-clarity-act-vote-falls-short-as-democrats-all-vote-no",
+      "source": "Decrypt",
+      "published_at": "Wed, 16 Sep 2026 12:17:50 +0000"
+    },
+    {
+      "title": "Bitcoin absorbs initial pre-Fed sell-off, leaving $70K as a critical test for Warsh’s Fed decision",
+      "url": "https://cryptoslate.com/bitcoin-absorbs-initial-pre-fed-sell-off-leaving-70k-as-key-structural-test-for-warshs-decision/",
+      "source": "CryptoSlate",
+      "published_at": "Wed, 16 Sep 2026 12:15:50 +0000"
+    },
+    {
+      "title": "Bitcoin Hovers at $76K as Analysts Argue the Fed Matters More Than Clarity Act",
+      "url": "https://decrypt.co/378351/bitcoin-hovers-at-76k-as-analysts-argue-the-fed-matters-more-than-clarity-act",
+      "source": "Decrypt",
+      "published_at": "Wed, 16 Sep 2026 12:12:21 +0000"
+    },
+    {
+      "title": "Can ETH whales’ $100M buy counter Ethereum’s 709K Binance inflows?",
+      "url": "https://ambcrypto.com/can-eth-whales-100m-buy-counter-ethereums-709k-binance-inflows/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 16 Sep 2026 12:00:58 +0000"
+    },
+    {
+      "title": "Bitcoin Core 32 enters final testing with faster validation, fee changes and security fixes",
+      "url": "https://www.coindesk.com/tech/2026/09/16/bitcoin-core-32-enters-final-testing-with-faster-validation-fee-changes-and-security-fixes",
+      "source": "Coindesk",
+      "published_at": "Wed, 16 Sep 2026 12:00:41 +0000"
+    },
+    {
+      "title": "Bitcoin price targets $72.5K as Aroon favors sellers",
+      "url": "https://crypto.news/bitcoin-price-targets-72-5k-as-aroon-favors-sellers/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 16 Sep 2026 12:00:00 +0000"
+    },
+    {
       "title": "DSA’s Adrian Wall Leads Institutional Infrastructure Discussion at The Digital Chamber’s Convergence Forum",
       "url": "https://news.bitcoin.com/press-releases/dsas-adrian-wall-leads-institutional-infrastructure-discussion-at-the-digital-chambers-convergence-forum/",
       "source": "Bitcoin.com",
@@ -23,6 +77,12 @@
       "url": "https://blockonomi.com/citi-maintains-optimistic-global-equity-outlook-despite-looming-fed-rate-increase/",
       "source": "Blockonomi",
       "published_at": "Wed, 16 Sep 2026 11:46:38 +0000"
+    },
+    {
+      "title": "Cathie Wood Calls the $1.75 Trillion SpaceX IPO a Bargain: Here's Why",
+      "url": "https://beincrypto.com/cathie-wood-spacex-ipo-starship-bargain/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 16 Sep 2026 11:44:02 +0000"
     },
     {
       "title": "Circle launches Arc mainnet with USDC as native gas token",
@@ -547,12 +607,6 @@
       "published_at": "Wed, 16 Sep 2026 06:24:38 +0000"
     },
     {
-      "title": "Bitcoin, Ethereum ETFs Bleed $592 Million as Clarity Act Fails in Senate",
-      "url": "https://beincrypto.com/bitcoin-ethereum-etf-outflows-september-2026/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 16 Sep 2026 06:24:13 +0000"
-    },
-    {
       "title": "Bitcoin, Ether longs lose $380M after Senate vote",
       "url": "https://crypto.news/bitcoin-ether-longs-lose-380m-after-senate-vote/",
       "source": "CryptoNews",
@@ -715,12 +769,6 @@
       "published_at": "Tue, 15 Sep 2026 23:00:41 +0000"
     },
     {
-      "title": "Tether, Binance and a $1.5 billion Iran oil network converge in new US forfeiture case",
-      "url": "https://cryptoslate.com/tether-binance-and-a-1-5-billion-iran-oil-network-converge-in-new-us-forfeiture-case/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 15 Sep 2026 23:00:36 +0000"
-    },
-    {
       "title": "XRP Ledger Batch V1.1 Nears Activation After Security Rebuild",
       "url": "https://cryptopotato.com/xrp-ledger-batch-v1-1-nears-activation-after-security-rebuild/",
       "source": "CryptoPotato",
@@ -773,12 +821,6 @@
       "url": "https://crypto.news/bitbox-adds-lightning-wallet-without-new-backup-phrase/",
       "source": "CryptoNews",
       "published_at": "Tue, 15 Sep 2026 20:48:24 +0000"
-    },
-    {
-      "title": "CLARITY Act stalls after Senate rejects key vote 49–50",
-      "url": "https://ambcrypto.com/clarity-act-stalls-after-senate-rejects-key-vote-49-50/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 15 Sep 2026 20:47:05 +0000"
     },
     {
       "title": "Crypto stocks slide after CLARITY Act fails to advance in Senate",
@@ -1135,12 +1177,6 @@
       "published_at": "Tue, 15 Sep 2026 12:09:29 +0000"
     },
     {
-      "title": "To ensure permanent economic innovation, we must pass the Clarity Act now",
-      "url": "https://www.coindesk.com/opinion/2026/09/15/to-ensure-permanent-economic-innovation-we-must-pass-the-clarity-act-now",
-      "source": "Coindesk",
-      "published_at": "Tue, 15 Sep 2026 12:00:06 +0000"
-    },
-    {
       "title": "Bitcoin price faces $75,500 test below 50-week EMA",
       "url": "https://crypto.news/bitcoin-price-faces-75500-test-below-50-week-ema/",
       "source": "CryptoNews",
@@ -1267,12 +1303,6 @@
       "published_at": "Tue, 15 Sep 2026 09:23:56 +0000"
     },
     {
-      "title": "NYSE-Listed Broadridge Brings Crypto Platform to U.S. Wealth Firms",
-      "url": "https://crypto.news/nyse-listed-broadridge-brings-crypto-platform-to-u-s-wealth-firms/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 15 Sep 2026 09:16:48 +0000"
-    },
-    {
       "title": "Strive's Bitcoin Stash Hits an Even 25,000 BTC After $36.6 Million Buy",
       "url": "https://decrypt.co/378190/strive-bitcoin-25000-btc-after-buy",
       "source": "Decrypt",
@@ -1283,12 +1313,6 @@
       "url": "https://coingeek.com/final-clarity-draft-pleases-no-one-so-does-that-make-it-good/",
       "source": "CoinGeek",
       "published_at": "Tue, 15 Sep 2026 09:00:00 +0000"
-    },
-    {
-      "title": "Aave TVL jumps 13.7% to $27.4B as loans hit $11.7B",
-      "url": "https://crypto.news/aave-tvl-jumps-13-7-to-27-4b-as-loans-hit-11-7b/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 15 Sep 2026 08:48:13 +0000"
     },
     {
       "title": "US seeks $61M in USDT allegedly tied to sanctioned Iranian oil sales",
@@ -1507,22 +1531,10 @@
       "published_at": "Mon, 14 Sep 2026 13:28:11 +0000"
     },
     {
-      "title": "Strategy Stays on the Sidelines Again but Strive Buys More Bitcoin",
-      "url": "https://cryptopotato.com/strategy-stays-on-the-sidelines-again-but-strive-buys-more-bitcoin/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 14 Sep 2026 12:24:19 +0000"
-    },
-    {
       "title": "Bitcoin ETFs End Three-Week Inflow Streak With $462M Weekly Outflows",
       "url": "https://crypto-economy.com/bitcoin-etfs-end-three-week-inflow-streak/",
       "source": "CryptoEconomy",
       "published_at": "Mon, 14 Sep 2026 12:16:20 +0000"
-    },
-    {
-      "title": "BetFury Launches $100,000 Fury Cruise: All Aboard With an Opportunity To Become a VIP",
-      "url": "https://cryptopotato.com/betfury-launches-100000-fury-cruise-all-aboard-with-an-opportunity-to-become-a-vip/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 14 Sep 2026 12:15:16 +0000"
     },
     {
       "title": "India Begins Tokenizing Its $620 Billion Corporate Bond Market",
@@ -1583,24 +1595,6 @@
       "url": "https://insidebitcoins.com/news/citadel-securities-sec-equity-event-contracts",
       "source": "InsideBitcoin",
       "published_at": "Sun, 13 Sep 2026 02:20:15 +0000"
-    },
-    {
-      "title": "Revolut Leaks Passports, Bitcoin Transaction Histories to Fake Government Request",
-      "url": "https://decrypt.co/378114/revolut-passports-bitcoin-activity-data-breach",
-      "source": "Decrypt",
-      "published_at": "Sat, 12 Sep 2026 17:01:04 +0000"
-    },
-    {
-      "title": "GPT-6 Astra Users Say OpenAI's Newest Model Got Dumber. It Happened Before, Too",
-      "url": "https://decrypt.co/378101/gpt-6-astra-openai-model-dumber-nerfed",
-      "source": "Decrypt",
-      "published_at": "Sat, 12 Sep 2026 16:01:04 +0000"
-    },
-    {
-      "title": "Crypto Billionaires Hand Reform UK $97M in Record Donations",
-      "url": "https://decrypt.co/378107/crypto-billionaires-hand-reform-uk-97m-in-record-donations",
-      "source": "Decrypt",
-      "published_at": "Sat, 12 Sep 2026 15:51:15 +0000"
     },
     {
       "title": "Ethena Brings USDe and sUSDe to TRON, Expanding Digital Dollar Access Across Its Stablecoin Ecosystem",
