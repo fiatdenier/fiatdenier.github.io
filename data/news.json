@@ -1,6 +1,42 @@
 {
   "articles": [
     {
+      "title": "Bitcoin ETFs Take Nearly $1B in a Day as Average Holder Returns to Profit",
+      "url": "https://decrypt.co/378921/bitcoin-etfs-take-nearly-1b-in-a-day-as-average-holder-returns-to-profit",
+      "source": "Decrypt",
+      "published_at": "Tue, 22 Sep 2026 14:59:37 +0000"
+    },
+    {
+      "title": "Kalshi seeks CFTC approval for event contract margin trading",
+      "url": "https://crypto.news/kalshi-seeks-cftc-approval-contract-margin-trading/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 22 Sep 2026 14:53:42 +0000"
+    },
+    {
+      "title": "Coinbase targets stock futures but CFTC standstill blocks launch",
+      "url": "https://cryptoslate.com/coinbase-targets-stock-futures-but-cftc-standstill-blocks-launch/",
+      "source": "CryptoSlate",
+      "published_at": "Tue, 22 Sep 2026 14:50:59 +0000"
+    },
+    {
+      "title": "SoFi moves $25 billion card program to SoFiUSD settlement on Mastercard",
+      "url": "https://crypto.news/sofi-moves-25-billion-card-program-to-sofiusd-settlement-on-mastercard/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 22 Sep 2026 14:42:43 +0000"
+    },
+    {
+      "title": "European central banks push to expand stablecoin yield ban to crypto lending and staking",
+      "url": "https://www.coindesk.com/policy/2026/09/22/european-central-banks-push-to-expand-stablecoin-yield-ban-to-crypto-lending-and-staking",
+      "source": "Coindesk",
+      "published_at": "Tue, 22 Sep 2026 14:32:59 +0000"
+    },
+    {
+      "title": "Bitcoin Holder’s $4,500 Stash Turns Into a $51.6M Fortune",
+      "url": "https://news.bitcoin.com/featured/bitcoin-holders-4500-stash-turns-into-a-51-6m-fortune-37856/",
+      "source": "Bitcoin.com",
+      "published_at": "Tue, 22 Sep 2026 14:31:55 +0000"
+    },
+    {
       "title": "Massive ETF capital exits threaten Bitcoin’s fragile $86,000 price surge",
       "url": "https://cryptoslate.com/massive-etf-capital-exits-threaten-bitcoins-fragile-86000-price-surge/",
       "source": "CryptoSlate",
@@ -739,12 +775,6 @@
       "published_at": "Tue, 22 Sep 2026 04:33:11 +0000"
     },
     {
-      "title": "Monks Erased an Archimedes Manuscript, and Science May Have Lost Centuries",
-      "url": "https://news.bitcoin.com/featured/monks-erased-an-archimedes-manuscript-and-science-may-have-lost-centuries-49201/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 22 Sep 2026 04:30:58 +0000"
-    },
-    {
       "title": "ShredPay Joins Jack Henry Network To Bring Stablecoin Infrastructure To Banks",
       "url": "https://www.newsbtc.com/news/shredpay-joins-jack-henry-network-to-bring-stablecoin-infrastructure-to-banks/",
       "source": "NewsBTC",
@@ -779,12 +809,6 @@
       "url": "https://ambcrypto.com/bittensors-13-price-rally-fuels-breakout-but-can-tao-hold-276/",
       "source": "Ambcrypto",
       "published_at": "Tue, 22 Sep 2026 04:00:55 +0000"
-    },
-    {
-      "title": "Circle launches Bitcoin-backed USDC borrowing, leaving liquidation risk with Morpho protocol",
-      "url": "https://cryptoslate.com/circle-now-lets-institutions-borrow-usdc-against-bitcoin-but-morpho-still-sets-the-rules/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 22 Sep 2026 03:40:51 +0000"
     },
     {
       "title": "Coinbase Opens IPO Allocations To US Retail Traders Starting With Oura",
@@ -1333,12 +1357,6 @@
       "published_at": "Mon, 21 Sep 2026 11:27:00 +0000"
     },
     {
-      "title": "ECB deploys Pontes platform to settle wholesale tokenized assets in central-bank money",
-      "url": "https://www.coindesk.com/business/2026/09/21/ecb-deploys-pontes-platform-to-settle-wholesale-tokenized-assets-in-central-bank-money",
-      "source": "Coindesk",
-      "published_at": "Mon, 21 Sep 2026 11:18:55 +0000"
-    },
-    {
       "title": "Starknet’s Cairo Toolchain Releases v2.19.5 Update",
       "url": "https://bitcoinist.com/starknets-cairo-toolchain-releases-v2195-update/",
       "source": "Bitcoinist",
@@ -1427,18 +1445,6 @@
       "url": "https://bitcoinist.com/kamino-names-yieldstreet-co-founder-michael-weisz-ceo-for-us-expansion/",
       "source": "Bitcoinist",
       "published_at": "Mon, 21 Sep 2026 09:30:00 +0000"
-    },
-    {
-      "title": "Binance Wallet opens $4.8M pPOLY Pre-Access event",
-      "url": "https://crypto.news/binance-wallet-opens-4-8m-ppoly-pre-access-event/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 21 Sep 2026 09:21:15 +0000"
-    },
-    {
-      "title": "Evernorth adds $30M boost ahead of Nasdaq vote",
-      "url": "https://crypto.news/evernorth-adds-30m-boost-ahead-of-nasdaq-vote/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 21 Sep 2026 09:06:39 +0000"
     },
     {
       "title": "Digital assets’ promise faces growing regulatory setbacks",
@@ -1715,12 +1721,6 @@
       "url": "https://decrypt.co/378582/openai-models-ai-jailbreak-instructions-obeying",
       "source": "Decrypt",
       "published_at": "Thu, 17 Sep 2026 22:31:03 +0000"
-    },
-    {
-      "title": "Security Experts Want the US and China to Promise Never to Let AI Control Nukes",
-      "url": "https://decrypt.co/378575/us-china-never-let-ai-control-nukes",
-      "source": "Decrypt",
-      "published_at": "Thu, 17 Sep 2026 21:46:03 +0000"
     },
     {
       "title": "JPMorgan Says Bitcoin Could Gain More Than Gold if ETF Hedging Eases",
