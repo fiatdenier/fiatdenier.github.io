@@ -1,10 +1,52 @@
 {
   "articles": [
     {
+      "title": "Electrum patches Lightning flaw, but old Bitcoin backups break",
+      "url": "https://cryptoslate.com/electrum-patches-lightning-flaw-but-old-bitcoin-backups-break/",
+      "source": "CryptoSlate",
+      "published_at": "Fri, 02 Oct 2026 05:30:01 +0000"
+    },
+    {
+      "title": "U.S. sanctions A7 Network after $17B in transfers",
+      "url": "https://crypto.news/u-s-sanctions-a7-network-after-17b-in-transfers/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 02 Oct 2026 05:19:07 +0000"
+    },
+    {
+      "title": "South Korea advances tokenized securities rules ahead of 2027 rollout",
+      "url": "https://cointelegraph.com/news/south-korea-tokenized-securities-rules-2027?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 02 Oct 2026 05:08:32 +0000"
+    },
+    {
+      "title": "Zano exploiter created 36.9M unauthorized ZANO before blockchain rollback",
+      "url": "https://cointelegraph.com/news/zano-exploiter-created-369m-unauthorized-zano-before-blockchain-rollback?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Fri, 02 Oct 2026 05:02:23 +0000"
+    },
+    {
+      "title": "XRP’s $1.54 breakout test meets Ripple’s 1B token unlock – Can demand absorb supply?",
+      "url": "https://ambcrypto.com/xrps-1-54-breakout-test-meets-ripples-1b-token-unlock-can-demand-absorb-supply/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 02 Oct 2026 05:00:50 +0000"
+    },
+    {
+      "title": "DigiCon 2026 gathers over 2,000 industry leaders to drive the future of digital collaboration",
+      "url": "https://coingeek.com/digicon-2026-gathers-over-2000-industry-leaders-to-drive-the-future-of-digital-collaboration/",
+      "source": "CoinGeek",
+      "published_at": "Fri, 02 Oct 2026 05:00:00 +0000"
+    },
+    {
       "title": "El Salvador gets $138M after IMF waives Bitcoin rule breach",
       "url": "https://crypto.news/el-salvador-gets-138m-after-imf-waives-bitcoin-rule-breach/",
       "source": "CryptoNews",
       "published_at": "Fri, 02 Oct 2026 04:57:51 +0000"
+    },
+    {
+      "title": "69% of Retail Polymarket Traders Finish in the Red, Galaxy Finds",
+      "url": "https://beincrypto.com/polymarket-retail-traders-losses-galaxy-study/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 02 Oct 2026 04:52:27 +0000"
     },
     {
       "title": "QNT gets 50x OKX futures after 178% weekly rally",
@@ -301,18 +343,6 @@
       "published_at": "Thu, 01 Oct 2026 20:20:04 +0000"
     },
     {
-      "title": "Elon Musk is Back In Washington Despite How DOGE Ended",
-      "url": "https://beincrypto.com/musk-project-meridian-pentagon-doge/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 01 Oct 2026 20:11:24 +0000"
-    },
-    {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 01 Oct 2026 20:07:25 +0000"
-    },
-    {
       "title": "Circle urges MiCA changes as only 3 of top 30 stablecoins comply",
       "url": "https://crypto.news/circle-urges-mica-changes-as-only-3-stablecoins-comply/",
       "source": "CryptoNews",
@@ -479,12 +509,6 @@
       "url": "https://crypto.news/bitcoin-october-outlook-hinges-on-82k-support/",
       "source": "CryptoNews",
       "published_at": "Thu, 01 Oct 2026 16:05:10 +0000"
-    },
-    {
-      "title": "Open USD bets Stripe’s $1.9 trillion network can break USDT and USDC’s grip",
-      "url": "https://cryptoslate.com/open-usd-bets-stripes-1-9-trillion-network-can-break-usdt-and-usdcs-grip/",
-      "source": "CryptoSlate",
-      "published_at": "Thu, 01 Oct 2026 16:00:14 +0000"
     },
     {
       "title": "Bitcoin fights for local uptrend as US bond yields drop from new 24-year highs",
@@ -967,12 +991,6 @@
       "published_at": "Thu, 01 Oct 2026 07:06:30 +0000"
     },
     {
-      "title": "Chainlink price prediction: Is flip of weekly market structure the first sign of recovery?",
-      "url": "https://ambcrypto.com/chainlink-price-prediction-is-flip-of-weekly-market-structure-the-first-sign-of-recovery/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 01 Oct 2026 07:00:18 +0000"
-    },
-    {
       "title": "Bitget loses $388M after DPRK hack; was Coinbase hacked too?",
       "url": "https://coingeek.com/bitget-loses-388m-after-dprk-hack-was-coinbase-hacked-too/",
       "source": "CoinGeek",
@@ -1339,12 +1357,6 @@
       "published_at": "Wed, 30 Sep 2026 18:49:06 +0000"
     },
     {
-      "title": "DogeOS opens public testnet with DOGE fees and EVM smart contracts",
-      "url": "https://crypto.news/dogeos-opens-public-testnet-with-doge-fees/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 30 Sep 2026 18:47:00 +0000"
-    },
-    {
       "title": "CFTC Sends White House New Rules to Cement Its Grip on Prediction Markets",
       "url": "https://decrypt.co/379750/cftc-sends-white-house-new-rules-to-cement-its-grip-on-prediction-markets",
       "source": "Decrypt",
@@ -1367,12 +1379,6 @@
       "url": "https://crypto-economy.com/bitcoin-holds-firm-after-soft-pce-data/",
       "source": "CryptoEconomy",
       "published_at": "Wed, 30 Sep 2026 17:20:47 +0000"
-    },
-    {
-      "title": "Brazil’s Petrobras uses Cardano to track sustainable aviation fuel, renewable diesel",
-      "url": "https://cointelegraph.com/news/brazils-petrobras-uses-cardano-to-track-sustainable-aviation-fuel-renewable-diesel?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 30 Sep 2026 17:17:54 +0000"
     },
     {
       "title": "Crypto industry gave $8 million to Clarity Act lobbyists who didn't close the deal",
@@ -1733,12 +1739,6 @@
       "url": "https://coingeek.com/is-piwalletsv-the-cold-storage-solution-bsv-users-need/",
       "source": "CoinGeek",
       "published_at": "Tue, 29 Sep 2026 07:00:00 +0000"
-    },
-    {
-      "title": "ASEAN’s borderless digital economy faces trust problem",
-      "url": "https://coingeek.com/asean-borderless-digital-economy-faces-trust-problem/",
-      "source": "CoinGeek",
-      "published_at": "Tue, 29 Sep 2026 05:00:00 +0000"
     },
     {
       "title": "SEC’s ‘Crypto Mom’ Hester Peirce Resigns, Effective Oct. 2",
