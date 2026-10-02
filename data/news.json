@@ -1,6 +1,24 @@
 {
   "articles": [
     {
+      "title": "FlashLoopAdapter exploit drains $305K from Aave linked Safe wallets",
+      "url": "https://crypto.news/flashloopadapter-exploit-drains-305k-from-aave-linked-safe-wallets/",
+      "source": "CryptoNews",
+      "published_at": "Fri, 02 Oct 2026 05:59:41 +0000"
+    },
+    {
+      "title": "Your Stocks Could Feel the Fed's Rate Hike Next, Jim Cramer Warns",
+      "url": "https://beincrypto.com/jim-cramer-interest-rates-stock-market-fear/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 02 Oct 2026 05:45:45 +0000"
+    },
+    {
+      "title": "50,000 Europeans Reportedly Collide With EU Central Banks Over Stablecoins",
+      "url": "https://news.bitcoin.com/stablecoins/50000-europeans-reportedly-collide-with-eu-central-banks-over-stablecoins/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 02 Oct 2026 05:30:28 +0000"
+    },
+    {
       "title": "Electrum patches Lightning flaw, but old Bitcoin backups break",
       "url": "https://cryptoslate.com/electrum-patches-lightning-flaw-but-old-bitcoin-backups-break/",
       "source": "CryptoSlate",
@@ -67,16 +85,10 @@
       "published_at": "Fri, 02 Oct 2026 04:30:25 +0000"
     },
     {
-      "title": "Core Lightning warns attackers are targeting unpatched Bitcoin nodes",
+      "title": "Core Lightning warns attackers are targeting unpatched nodes",
       "url": "https://cointelegraph.com/news/core-lightning-urges-upgrade-amid-reports-attackers-targeting-unpatched-nodes?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Fri, 02 Oct 2026 04:18:43 +0000"
-    },
-    {
-      "title": "XRP Outflows Spike Above 320M, Echoing August Rally Setup",
-      "url": "https://cryptopotato.com/xrp-outflows-spike-above-320m-echoing-august-rally-setup/",
-      "source": "CryptoPotato",
-      "published_at": "Fri, 02 Oct 2026 04:13:39 +0000"
     },
     {
       "title": "PropAMMs lower Solana trade costs, and public pool returns crash",
@@ -139,7 +151,7 @@
       "published_at": "Fri, 02 Oct 2026 02:09:20 +0000"
     },
     {
-      "title": "NEAR Intents says its identified the hacker, gives 48-hour ultimatum",
+      "title": "NEAR Intents says it’s identified the hacker, gives 48-hour ultimatum",
       "url": "https://cointelegraph.com/news/near-intents-says-its-identified-the-hacker-gives-48-hour-ultimatum?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Fri, 02 Oct 2026 02:02:13 +0000"
@@ -229,12 +241,6 @@
       "published_at": "Thu, 01 Oct 2026 22:30:19 +0000"
     },
     {
-      "title": "Report: Binance Under EU Review Over Continued Operations After MiCA Miss",
-      "url": "https://cryptopotato.com/report-binance-under-eu-review-over-continued-operations-after-mica-miss/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 22:22:27 +0000"
-    },
-    {
       "title": "Frank Cappelleri: Bitcoin Chart Mirrors Setup Before Last Cycle’s 400% Rally",
       "url": "https://crypto-economy.com/frank-cappelleri-bitcoin-chart-mirrors-setup-before-last-cycles-400-rally/",
       "source": "CryptoEconomy",
@@ -245,12 +251,6 @@
       "url": "https://beincrypto.com/sec-crypto-custody-proposal-bitcoin/",
       "source": "BeinCrypto",
       "published_at": "Thu, 01 Oct 2026 22:04:36 +0000"
-    },
-    {
-      "title": "China and Russia Just Tightened Fuel Supplies: Will Bitcoin Pay in October?",
-      "url": "https://beincrypto.com/china-russia-fuel-exports-bitcoin-fed/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 01 Oct 2026 21:54:09 +0000"
     },
     {
       "title": "New York, Wyoming Crypto Deal Targets 6-Month Licensing Fast Track",
@@ -275,12 +275,6 @@
       "url": "https://ambcrypto.com/dogecoin-price-stalls-below-0-10-as-dogeos-opens-defi-testnet/",
       "source": "Ambcrypto",
       "published_at": "Thu, 01 Oct 2026 21:30:07 +0000"
-    },
-    {
-      "title": "Metamask Pulls Validators as Meager ETH Theft Sounds Big Alarm",
-      "url": "https://news.bitcoin.com/security/metamask-pulls-validators-meager-eth-theft-sounds-big-alarm/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 01 Oct 2026 21:10:59 +0000"
     },
     {
       "title": "Evernorth clears shareholder vote ahead of Nasdaq debut with 473M XRP treasury",
@@ -311,12 +305,6 @@
       "url": "https://decrypt.co/379899/sec-proposes-rules-advisers-funds-hold-crypto",
       "source": "Decrypt",
       "published_at": "Thu, 01 Oct 2026 20:46:03 +0000"
-    },
-    {
-      "title": "Cardano (ADA) Ends September With Massive Gains: But Major Bearish Signals Are Flashing",
-      "url": "https://cryptopotato.com/cardano-ada-ends-september-with-massive-gains-but-major-bearish-signals-are-flashing/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 20:38:13 +0000"
     },
     {
       "title": "Reddit Is Killing RSS Feeds and Public API Access to Fight AI Scrapers",
@@ -365,12 +353,6 @@
       "url": "https://decrypt.co/379868/meta-muse-ai-agent-read-messages-without-permission",
       "source": "Decrypt",
       "published_at": "Thu, 01 Oct 2026 19:16:03 +0000"
-    },
-    {
-      "title": "Crypto May Be Better Off Without CLARITY Act, Says Bitwise CIO: ‘Too Big to Crush’",
-      "url": "https://cryptopotato.com/crypto-may-be-better-off-without-clarity-act-says-bitwise-cio-too-big-to-crush/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 19:04:36 +0000"
     },
     {
       "title": "Bitcoin ETFs are $5 billion away from a new flow record after a brutal 11-month reset",
@@ -445,12 +427,6 @@
       "published_at": "Thu, 01 Oct 2026 17:49:42 +0000"
     },
     {
-      "title": "Quant (QNT) Could Explode to $2,000: Analyst Reveals the Critical Factor",
-      "url": "https://cryptopotato.com/quant-qnt-could-explode-to-2000-analyst-reveals-the-critical-factor/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 17:44:24 +0000"
-    },
-    {
       "title": "It's the Start of Uptober. Will Bitcoin Live Up to It?",
       "url": "https://decrypt.co/379833/uptober-will-bitcoin-live-up-to-it",
       "source": "Decrypt",
@@ -469,22 +445,10 @@
       "published_at": "Thu, 01 Oct 2026 17:00:01 +0000"
     },
     {
-      "title": "XRP Is Coming to Nasdaq: Evernorth Clears Key Vote With 473M Treasury",
-      "url": "https://cryptopotato.com/xrp-is-coming-to-nasdaq-evernorth-clears-key-vote-with-473m-treasury/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 16:59:04 +0000"
-    },
-    {
       "title": "5 ways SHR Miner makes passive cryptocurrency wealth accumulation easier",
       "url": "https://crypto.news/shr-miner-passive-crypto-income-cloud-mining/",
       "source": "CryptoNews",
       "published_at": "Thu, 01 Oct 2026 16:51:12 +0000"
-    },
-    {
-      "title": "Why Bitcoin Is Starting Q4 on Stronger Footing Than Traditional Markets",
-      "url": "https://cryptopotato.com/why-bitcoin-is-starting-q4-on-stronger-footing-than-traditional-markets/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 16:35:35 +0000"
     },
     {
       "title": "NEAR price outlook: Can $4.69 support absorb the Intents selloff?",
@@ -553,12 +517,6 @@
       "published_at": "Thu, 01 Oct 2026 15:32:25 +0000"
     },
     {
-      "title": "Altcoin Trading Volume Hits 4x Bitcoin as One Trader Says He’s Out",
-      "url": "https://cryptopotato.com/altcoin-trading-volume-hits-4x-bitcoin-as-one-trader-says-hes-out/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 15:23:42 +0000"
-    },
-    {
       "title": "XRP price tests $1.48 support as Evernorth’s 473M XRP deal advances",
       "url": "https://crypto.news/xrp-price-tests-1-48-support-evernorths-473m-xrp-deal/",
       "source": "CryptoNews",
@@ -595,12 +553,6 @@
       "published_at": "Thu, 01 Oct 2026 14:18:14 +0000"
     },
     {
-      "title": "The Meme Coin Most Likely to Explode in October, According to 3 AIs",
-      "url": "https://cryptopotato.com/the-meme-coin-most-likely-to-explode-in-october-according-to-3-ais/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 14:10:48 +0000"
-    },
-    {
       "title": "Ghana crypto market hits $21B, fifth in sub-Saharan Africa",
       "url": "https://crypto.news/ghana-crypto-market-hits-21b/",
       "source": "CryptoNews",
@@ -611,12 +563,6 @@
       "url": "https://cointelegraph.com/news/bitget-hack-q3-industry-losses-1-26-billion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Thu, 01 Oct 2026 13:35:47 +0000"
-    },
-    {
-      "title": "Bitcoin Price Analysis: Is BTC’s Consolidation the Calm Before the Storm?",
-      "url": "https://cryptopotato.com/bitcoin-price-analysis-is-btcs-consolidation-the-calm-before-the-storm/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 13:35:06 +0000"
     },
     {
       "title": "Bitcoin (BTC) Price Forecast Jumps to $113,000 as Citigroup Upgrades Target Following Record Quarter",
@@ -659,12 +605,6 @@
       "url": "https://crypto-economy.com/bitcoin-opens-q4-in-82k-85k-range/",
       "source": "CryptoEconomy",
       "published_at": "Thu, 01 Oct 2026 12:37:19 +0000"
-    },
-    {
-      "title": "Bitcoin Chart Echoes Cycle That Delivered 400% Gains: Analyst",
-      "url": "https://cryptopotato.com/bitcoin-chart-echoes-cycle-that-delivered-400-gains-analyst/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 12:31:24 +0000"
     },
     {
       "title": "Morning Minute: Crypto Gives Up on Congress and Goes After Senators",
@@ -749,18 +689,6 @@
       "url": "https://crypto.news/why-is-midnight-price-up-as-privacy-demand-grows/",
       "source": "CryptoNews",
       "published_at": "Thu, 01 Oct 2026 11:17:25 +0000"
-    },
-    {
-      "title": "MetaMask Confirms Security Incident and Begins Validator Exits to Protect Client Assets",
-      "url": "https://cryptopotato.com/metamask-confirms-security-incident-and-begins-validator-exits-to-protect-client-assets/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 11:05:44 +0000"
-    },
-    {
-      "title": "Travala’s Crypto Loyalty Program Passes 170,000 Members, Sets Long-Term Goal of 30% of AVA Supply Locked",
-      "url": "https://cryptopotato.com/travalas-crypto-loyalty-program-passes-170000-members-sets-long-term-goal-of-30-of-ava-supply-locked/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 11:04:06 +0000"
     },
     {
       "title": "Citi Raises Bitcoin Price Target to $113K, but What Changed?",
@@ -859,12 +787,6 @@
       "published_at": "Thu, 01 Oct 2026 09:53:36 +0000"
     },
     {
-      "title": "Historical Trap Ahead? This Early November Event Could Derail Bitcoin’s Rally",
-      "url": "https://cryptopotato.com/historical-trap-ahead-this-early-november-event-could-derail-bitcoins-rally/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 09:52:28 +0000"
-    },
-    {
       "title": "Why is Stacks price up 20% as Muneeb Ali becomes CEO?",
       "url": "https://crypto.news/why-is-stacks-price-up-as-muneeb-ali-becomes-ceo/",
       "source": "CryptoNews",
@@ -893,12 +815,6 @@
       "url": "https://blockonomi.com/bitcoin-btc-price-btc-holds-near-84000-as-traders-watch-85500-resistance/",
       "source": "Blockonomi",
       "published_at": "Thu, 01 Oct 2026 09:22:12 +0000"
-    },
-    {
-      "title": "NIGHT Explodes 26% While BTC Cools After Wild PCE Swing: Market Watch",
-      "url": "https://cryptopotato.com/night-explodes-26-while-btc-cools-after-wild-pce-swing-market-watch/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 09:19:05 +0000"
     },
     {
       "title": "Coins.ph users can’t add money from banks after BSP order",
@@ -941,12 +857,6 @@
       "url": "https://crypto.news/what-changes-for-bitbank-after-sbi-completes-its-takeover/",
       "source": "CryptoNews",
       "published_at": "Thu, 01 Oct 2026 08:47:32 +0000"
-    },
-    {
-      "title": "Bitcoin Enters Its Most Bullish Month After Massive Q3: Uptober or Redtober Next?",
-      "url": "https://cryptopotato.com/bitcoin-enters-its-most-bullish-month-after-massive-q3-uptober-or-redtober-next/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 08:45:56 +0000"
     },
     {
       "title": "MetaMask is exiting validators. Where does the staked ETH go next?",
@@ -1009,12 +919,6 @@
       "published_at": "Thu, 01 Oct 2026 06:41:24 +0000"
     },
     {
-      "title": "Pi Network Makes a Mysterious Stablecoin Move: Could Rewards Be Coming to Pioneers?",
-      "url": "https://cryptopotato.com/pi-network-makes-a-mysterious-stablecoin-move-could-rewards-be-coming-to-pioneers/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 06:39:04 +0000"
-    },
-    {
       "title": "Lloyds uses USDC to settle $750,000 with Visa in under an hour",
       "url": "https://crypto.news/lloyds-uses-usdc-to-settle-750000-with-visa-in-under-an-hour/",
       "source": "CryptoNews",
@@ -1043,12 +947,6 @@
       "url": "https://cointelegraph.com/news/msci-strategy-metaplanet-index-rule-bpi?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Thu, 01 Oct 2026 06:05:51 +0000"
-    },
-    {
-      "title": "Solana (SOL) Breakout Incoming: How High Can the Price Go?",
-      "url": "https://cryptopotato.com/solana-sol-breakout-incoming-how-high-can-the-price-go/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 06:04:03 +0000"
     },
     {
       "title": "Ethereum price outlook as Joseph Lubin linked wallet moves 133,298 ETH",
@@ -1127,12 +1025,6 @@
       "url": "https://crypto.news/bitcoin-to-1-million-by-2030-arthur-hayes-ai-risks/",
       "source": "CryptoNews",
       "published_at": "Thu, 01 Oct 2026 04:13:38 +0000"
-    },
-    {
-      "title": "XRP in October: Will Ripple’s Streak Continue After 3 Consecutive Green Months?",
-      "url": "https://cryptopotato.com/xrp-in-october-will-ripples-streak-continue-after-3-consecutive-green-months/",
-      "source": "CryptoPotato",
-      "published_at": "Thu, 01 Oct 2026 04:12:06 +0000"
     },
     {
       "title": "Goldman Sachs shifts second Fed hike forecast to December",
@@ -1231,12 +1123,6 @@
       "published_at": "Wed, 30 Sep 2026 22:21:53 +0000"
     },
     {
-      "title": "Robinhood to Launch Crypto Perpetual Futures in the US",
-      "url": "https://cryptopotato.com/robinhood-to-launch-crypto-perpetual-futures-in-the-us/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 22:13:06 +0000"
-    },
-    {
       "title": "Orderly Network Surpasses $100 Billion In Cumulative Trading Volume",
       "url": "https://www.newsbtc.com/news/defi/orderly-network-surpasses-100-billion-in-cumulative-trading-volume/",
       "source": "NewsBTC",
@@ -1273,12 +1159,6 @@
       "published_at": "Wed, 30 Sep 2026 20:31:04 +0000"
     },
     {
-      "title": "Bitcoin Bull Market Shows Signs of Cooling: CryptoQuant",
-      "url": "https://cryptopotato.com/bitcoin-bull-market-shows-signs-of-cooling-cryptoquant/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 20:29:53 +0000"
-    },
-    {
       "title": "Japan Telecom Giant KDDI Integrates Crypto Wallet Into au PAY Mobile App",
       "url": "https://www.newsbtc.com/all/japan-telecom-giant-kddi-integrates-crypto-wallet-into-au-pay-mobile-a/",
       "source": "NewsBTC",
@@ -1291,12 +1171,6 @@
       "published_at": "Wed, 30 Sep 2026 19:46:04 +0000"
     },
     {
-      "title": "Bitcoin’s Biggest Holders Ramp Up Buying While Retail Traders Remain Flat",
-      "url": "https://cryptopotato.com/bitcoins-biggest-holders-ramp-up-buying-while-retail-traders-remain-flat/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 19:39:34 +0000"
-    },
-    {
       "title": "Bitcoin needs stronger spot demand after 42.5% Q3 rally, Bitfinex says",
       "url": "https://crypto.news/bitcoin-needs-stronger-spot-demand-after-42-5-q3-rally/",
       "source": "CryptoNews",
@@ -1307,12 +1181,6 @@
       "url": "https://crypto-economy.com/el-salvador-rejects-stablecoin-pivot/",
       "source": "CryptoEconomy",
       "published_at": "Wed, 30 Sep 2026 19:21:30 +0000"
-    },
-    {
-      "title": "Bitcoin Fell After Four US Midterms: Could 2026 Break the Pattern?",
-      "url": "https://cryptopotato.com/bitcoin-fell-after-four-us-midterms-could-2026-break-the-pattern/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 19:19:23 +0000"
     },
     {
       "title": "US Government's New AI Chatbot Has a Weird Minecraft Secret",
@@ -1331,12 +1199,6 @@
       "url": "https://cointelegraph.com/news/stand-with-crypto-coinbase-senate-picks-us-midterms?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Wed, 30 Sep 2026 19:11:23 +0000"
-    },
-    {
-      "title": "XRP rebounds past $1.50 as Evernorth merger vote reportedly passes",
-      "url": "https://crypto.news/xrp-rebounds-past-1-50-as-evernorth-merger-vote/",
-      "source": "CryptoNews",
-      "published_at": "Wed, 30 Sep 2026 19:02:13 +0000"
     },
     {
       "title": "Base completes Cobalt upgrade, adds new tools for tokenized assets",
@@ -1363,12 +1225,6 @@
       "published_at": "Wed, 30 Sep 2026 18:39:21 +0000"
     },
     {
-      "title": "Zcash (ZEC) Gains 1,000% and Still Has Room to Grow, Grayscale Research Says",
-      "url": "https://cryptopotato.com/zcash-zec-gains-1000-and-still-has-room-to-grow-grayscale-research-says/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 18:37:32 +0000"
-    },
-    {
       "title": "Bitcoin ETFs Extend Win Streak to 9 Days, Matching August Rally",
       "url": "https://decrypt.co/379731/bitcoin-etf-9-day-streak-august-rally",
       "source": "Decrypt",
@@ -1385,12 +1241,6 @@
       "url": "https://www.coindesk.com/news-analysis/2026/09/30/crypto-industry-gave-usd8-million-to-clarity-act-lobbyists-who-didn-t-close-the-deal",
       "source": "Coindesk",
       "published_at": "Wed, 30 Sep 2026 17:16:31 +0000"
-    },
-    {
-      "title": "Stolen Bitget Funds Converted to BTC via CoW, Chainflip: Report",
-      "url": "https://cryptopotato.com/stolen-bitget-funds-converted-to-btc-via-cow-chainflip-report/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 17:03:48 +0000"
     },
     {
       "title": "Introducing The Information Exchange on Solana, Powered by Decrypt and MYR",
@@ -1447,34 +1297,10 @@
       "published_at": "Wed, 30 Sep 2026 14:04:19 +0000"
     },
     {
-      "title": "Ripple Price Analysis: XRP Maintains Bullish Structure After Defending Key Support",
-      "url": "https://cryptopotato.com/ripple-price-analysis-xrp-maintains-bullish-structure-after-defending-key-support/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 13:39:44 +0000"
-    },
-    {
-      "title": "Bitcoin Price Tops $85K as US Core PCE Rises 0.2% MoM, Cooler Than Expected",
-      "url": "https://cryptopotato.com/bitcoin-price-tops-85k-as-us-core-pce-rises-0-2-mom-cooler-than-expected/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 13:36:12 +0000"
-    },
-    {
       "title": "XRP Open Interest Posts Strongest Growth Since August 2025 as Price Surges 70%",
       "url": "https://www.ccn.com/news/crypto/xrp-price-70-percent-binance-open-interest-growth/",
       "source": "CCN",
       "published_at": "Wed, 30 Sep 2026 13:32:15 +0000"
-    },
-    {
-      "title": "Ethereum Price Prediction: $3K Is Still in Play, But ETH Must Clear This Key Hurdle First",
-      "url": "https://cryptopotato.com/ethereum-price-prediction-3k-is-still-in-play-but-eth-must-clear-this-key-hurdle-first/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 13:13:59 +0000"
-    },
-    {
-      "title": "Sui (SUI) Could Be Headed for a 230% Price Explosion: Here’s Why",
-      "url": "https://cryptopotato.com/sui-sui-could-be-headed-for-a-230-price-explosion-heres-why/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 13:10:48 +0000"
     },
     {
       "title": "Citi Challenges Crypto Payment Rails as Token Services Expand to Japan and UAE Across Seven Markets",
@@ -1493,18 +1319,6 @@
       "url": "https://crypto-economy.com/bitcoin-holds-83k-as-lighter-drops/",
       "source": "CryptoEconomy",
       "published_at": "Wed, 30 Sep 2026 12:40:05 +0000"
-    },
-    {
-      "title": "Arthur Hayes Predicts Ethereum Will Reach $10K by Year-End",
-      "url": "https://cryptopotato.com/arthur-hayes-predicts-ethereum-will-reach-10k-by-year-end/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 12:21:02 +0000"
-    },
-    {
-      "title": "Bitcoin in New Zealand: Regulation, Tax, and What Investors Need to Know",
-      "url": "https://cryptopotato.com/bitcoin-in-new-zealand-regulation-tax-and-what-investors-need-to-know/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 11:58:06 +0000"
     },
     {
       "title": "Morning Minute: Robinhood Adds Perps, Weekend Stocks, and AI Traders",
@@ -1567,12 +1381,6 @@
       "published_at": "Wed, 30 Sep 2026 11:00:00 +0000"
     },
     {
-      "title": "NEAR Hits a 21-Month Peak Following This Strong Catalyst: Key Predictions Ahead",
-      "url": "https://cryptopotato.com/near-hits-a-21-month-peak-following-this-strong-catalyst-key-predictions-ahead/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 10:54:46 +0000"
-    },
-    {
       "title": "Viral ‘Kanye West’ $3.9M Ethereum Wallet Claim as Tom Lee Predicts $5,000 This Year",
       "url": "https://www.ccn.com/news/crypto/viral-kanye-west-ethereum-wallet-claim-tom-lee-5000/",
       "source": "CCN",
@@ -1609,22 +1417,10 @@
       "published_at": "Wed, 30 Sep 2026 10:18:34 +0000"
     },
     {
-      "title": "These Altcoins Pump With Double Digits as Bitcoin (BTC) Consolidation Continues: Market Watch",
-      "url": "https://cryptopotato.com/these-altcoins-pump-with-double-digits-as-bitcoin-btc-consolidation-continues-market-watch/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 10:15:17 +0000"
-    },
-    {
       "title": "Bitcoin Miner Riot Platforms Pays Off Coinbase Loan, Frees 5,821 BTC Collateral",
       "url": "https://blockonomi.com/bitcoin-miner-riot-platforms-pays-off-coinbase-loan-frees-5821-btc-collateral/",
       "source": "Blockonomi",
       "published_at": "Wed, 30 Sep 2026 10:12:01 +0000"
-    },
-    {
-      "title": "BetFury Offers Futures With an x1000 Multiplier and Slippage-Free Crypto Trading",
-      "url": "https://cryptopotato.com/betfury-offers-futures-with-an-x1000-multiplier-and-slippage-free-crypto-trading/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 09:51:38 +0000"
     },
     {
       "title": "Bitcoin (BTC) Price: Falls to $82,775 as US Consumers Expect Higher Rates",
@@ -1649,18 +1445,6 @@
       "url": "https://coingeek.com/el-salvador-picks-usdc-over-usdt-for-stablecoin-remittances/",
       "source": "CoinGeek",
       "published_at": "Wed, 30 Sep 2026 09:00:00 +0000"
-    },
-    {
-      "title": "Bitcoin $215K Scenario Emerges as BTC Reclaims Key Market Levels",
-      "url": "https://cryptopotato.com/bitcoin-215k-scenario-emerges-as-btc-reclaims-key-market-levels/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 08:43:59 +0000"
-    },
-    {
-      "title": "Major Ripple (XRP) Partnership Targeting Brazil’s $22 Trillion Financial Market Infrastructure",
-      "url": "https://cryptopotato.com/major-ripple-xrp-partnership-targeting-brazils-22-trillion-financial-market-infrastructure/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 30 Sep 2026 07:22:56 +0000"
     },
     {
       "title": "How to crack down on crypto fraud: An interview with Token Recovery",
