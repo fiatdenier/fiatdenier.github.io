@@ -1,6 +1,42 @@
 {
   "articles": [
     {
+      "title": "Kalshi Ends Federal Court Losing Streak With Partial Win Over Illinois",
+      "url": "https://news.bitcoin.com/igaming/kalshi-ends-federal-court-losing-streak-partial-win-over-illinois/",
+      "source": "Bitcoin.com",
+      "published_at": "Tue, 06 Oct 2026 22:20:45 +0000"
+    },
+    {
+      "title": "Circle Welcomes DJ Khaled to 'Team USDC' and Crypto Twitter Is Furious",
+      "url": "https://decrypt.co/380240/circle-dj-khaled-team-usdc-crypto-twitter-furious",
+      "source": "Decrypt",
+      "published_at": "Tue, 06 Oct 2026 22:16:03 +0000"
+    },
+    {
+      "title": "CFTC Wants Clearer Rules for Leveraged Crypto Trading in Major US Regulatory Push",
+      "url": "https://cryptopotato.com/cftc-wants-clearer-rules-for-leveraged-crypto-trading-in-major-us-regulatory-push/",
+      "source": "CryptoPotato",
+      "published_at": "Tue, 06 Oct 2026 22:11:16 +0000"
+    },
+    {
+      "title": "Bitcoin rally delivers $4.1 billion tax windfall for Strategy",
+      "url": "https://cryptoslate.com/bitcoin-rally-delivers-4-1-billion-tax-windfall-for-strategy/",
+      "source": "CryptoSlate",
+      "published_at": "Tue, 06 Oct 2026 22:10:18 +0000"
+    },
+    {
+      "title": "Someone Scraped 5.6 Billion TikTok Videos and Put the Data on Hugging Face for Free",
+      "url": "https://decrypt.co/380229/someone-scraped-5-billion-tiktok-videos-posted-data-hugging-face",
+      "source": "Decrypt",
+      "published_at": "Tue, 06 Oct 2026 22:00:19 +0000"
+    },
+    {
+      "title": "Bitcoin Price Lags as S&P 500 and Nasdaq Hit Record High",
+      "url": "https://beincrypto.com/bitcoin-falls-sp-500-record-high/",
+      "source": "BeinCrypto",
+      "published_at": "Tue, 06 Oct 2026 21:53:05 +0000"
+    },
+    {
       "title": "Conduit Sues Tether Over a $2.76M USDT Wallet Frozen for a Year",
       "url": "https://news.bitcoin.com/regulation-and-legal/conduit-sues-tether-2-76m-usdt-wallet-frozen/",
       "source": "Bitcoin.com",
@@ -347,12 +383,6 @@
       "url": "https://cryptopotato.com/ripple-price-analysis-is-xrp-consolidation-almost-over-as-the-range-tightens/",
       "source": "CryptoPotato",
       "published_at": "Tue, 06 Oct 2026 16:18:54 +0000"
-    },
-    {
-      "title": "JPMorgan Lends Its Expertise to Solana’s Atomic Settlement Program",
-      "url": "https://news.bitcoin.com/blockchain/jpmorgan-lends-expertise-solana-atomic-settlement-program/",
-      "source": "Bitcoin.com",
-      "published_at": "Tue, 06 Oct 2026 16:05:54 +0000"
     },
     {
       "title": "Ethereum price eyes $2,800 as analysts await range breakout",
@@ -841,12 +871,6 @@
       "published_at": "Tue, 06 Oct 2026 09:43:18 +0000"
     },
     {
-      "title": "Can Bitcoin's 47% Rebound Hold? What Binance Research's Data Shows",
-      "url": "https://beincrypto.com/bitcoin-rebound-retest-lows-binance-research/",
-      "source": "BeinCrypto",
-      "published_at": "Tue, 06 Oct 2026 09:38:48 +0000"
-    },
-    {
       "title": "Bitcoin price keeps failing at $87K, what is stopping it?",
       "url": "https://crypto.news/bitcoin-price-keeps-failing-at-87k/",
       "source": "CryptoNews",
@@ -917,12 +941,6 @@
       "url": "https://coingeek.com/tokenization-issuance-was-phase-1-utility-is-phase-2/",
       "source": "CoinGeek",
       "published_at": "Tue, 06 Oct 2026 09:00:00 +0000"
-    },
-    {
-      "title": "China’s crypto ban Is failing to stop a $176 billion P2P economy",
-      "url": "https://cryptoslate.com/chinas-crypto-ban-is-failing-to-stop-a-176-billion-p2p-economy/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 06 Oct 2026 08:50:31 +0000"
     },
     {
       "title": "Parataxis Ethereum drops Korea merger over delisting risk",
@@ -1507,12 +1525,6 @@
       "published_at": "Sun, 04 Oct 2026 20:01:34 +0000"
     },
     {
-      "title": "Bitcoin and Ethereum ETF Weekly Flows: The Good, the Bad, and the Concerning",
-      "url": "https://cryptopotato.com/bitcoin-and-ethereum-etf-weekly-flows-the-good-the-bad-and-the-concerning/",
-      "source": "CryptoPotato",
-      "published_at": "Sun, 04 Oct 2026 17:52:34 +0000"
-    },
-    {
       "title": "Trump Taps Jay Clayton, the SEC Chair Who Sued Ripple, to Lead AI Push",
       "url": "https://decrypt.co/380019/trump-jay-clayton-sec-ripple-ai-push-super-intelligence",
       "source": "Decrypt",
@@ -1561,22 +1573,10 @@
       "published_at": "Sat, 03 Oct 2026 15:01:03 +0000"
     },
     {
-      "title": "The Pope Has Thoughts on AI Art—And They're Not Flattering",
-      "url": "https://decrypt.co/379983/pope-leo-human-art-ai-creation",
-      "source": "Decrypt",
-      "published_at": "Sat, 03 Oct 2026 13:01:04 +0000"
-    },
-    {
       "title": "SEC proposes crypto custody rules as its commission shrinks to two",
       "url": "https://insidebitcoins.com/news/sec-custody-rules-two-commissioners",
       "source": "InsideBitcoin",
       "published_at": "Sat, 03 Oct 2026 01:00:22 +0000"
-    },
-    {
-      "title": "California Subpoenas OpenAI Over AI Models That Hacked Their Way Out of a Test",
-      "url": "https://decrypt.co/379998/california-subpoena-openai-ai-models-hack",
-      "source": "Decrypt",
-      "published_at": "Fri, 02 Oct 2026 21:16:04 +0000"
     },
     {
       "title": "Bitcoin Faces Another Uptober Test One Year After October’s Brutal Crash",
