@@ -5,8 +5,24 @@
         <link>https://yourwebsite.com/</link>
         <description>The latest aggregated news from your curated sources.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 08 Oct 2026 03:00:06 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 08 Oct 2026 04:00:00 GMT</lastBuildDate>
         
+        <item>
+            <title>Cardano Foundation spins out digital identity firm Veridian</title>
+            <link>https://crypto.news/cardano-foundation-spin-digital-identity-firm-veridian/</link>
+            <description>Source: CryptoNews</description>
+            <pubDate>Thu, 08 Oct 2026 04:00:00 +0000</pubDate>
+            <guid isPermaLink="true">https://crypto.news/cardano-foundation-spin-digital-identity-firm-veridian/</guid>
+        </item>
+    
+        <item>
+            <title>XRP Lands on Paxos, the Crypto Engine Behind PayPal, Venmo, and Schwab</title>
+            <link>https://news.bitcoin.com/featured/xrp-lands-on-paxos-the-crypto-engine-behind-paypal-venmo-and-schwab/</link>
+            <description>Source: Bitcoin.com</description>
+            <pubDate>Thu, 08 Oct 2026 03:30:36 +0000</pubDate>
+            <guid isPermaLink="true">https://news.bitcoin.com/featured/xrp-lands-on-paxos-the-crypto-engine-behind-paypal-venmo-and-schwab/</guid>
+        </item>
+    
         <item>
             <title>Optimism drops 12% – Why falling on-chain activity puts OP at risk</title>
             <link>https://ambcrypto.com/optimism-drops-12-why-falling-on-chain-activity-puts-op-at-risk/</link>
@@ -557,14 +573,6 @@
             <description>Source: Ambcrypto</description>
             <pubDate>Wed, 07 Oct 2026 19:00:13 +0000</pubDate>
             <guid isPermaLink="true">https://ambcrypto.com/okx-partners-with-circle-and-ripple-what-does-okb-gain/</guid>
-        </item>
-    
-        <item>
-            <title>Pudgy Penguins Team to Shutter Ethereum Layer 2 Network Abstract</title>
-            <link>https://news.bitcoin.com/blockchain/pudgy-penguins-team-shutter-ethereum-layer-2-network-abstract/</link>
-            <description>Source: Bitcoin.com</description>
-            <pubDate>Wed, 07 Oct 2026 19:00:03 +0000</pubDate>
-            <guid isPermaLink="true">https://news.bitcoin.com/blockchain/pudgy-penguins-team-shutter-ethereum-layer-2-network-abstract/</guid>
         </item>
     
         <item>
@@ -1824,14 +1832,6 @@
         </item>
     
         <item>
-            <title>Pi Network price slides under $0.09: Can a double bottom spark a rally?</title>
-            <link>https://crypto.news/pi-network-price-slides-can-double-bottom-spark-rally/</link>
-            <description>Source: CryptoNews</description>
-            <pubDate>Tue, 06 Oct 2026 16:43:06 +0000</pubDate>
-            <guid isPermaLink="true">https://crypto.news/pi-network-price-slides-can-double-bottom-spark-rally/</guid>
-        </item>
-    
-        <item>
             <title>Bitcoin Falls Asleep, But Privacy Coins Zcash and Monero Are Waking Up</title>
             <link>https://decrypt.co/380172/bitcoin-asleep-privacy-coins-zcash-monero-waking-up</link>
             <description>Source: Decrypt</description>
@@ -2525,14 +2525,6 @@
             <description>Source: InsideBitcoin</description>
             <pubDate>Fri, 18 Sep 2026 03:50:35 +0000</pubDate>
             <guid isPermaLink="true">https://insidebitcoins.com/news/cftc-no-action-passive-software-providers</guid>
-        </item>
-    
-        <item>
-            <title>Circle’s Arc Mainnet Runs on USDC Gas, Not the ARC Token</title>
-            <link>https://insidebitcoins.com/news/circle-arc-mainnet-usdc-gas</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Thu, 17 Sep 2026 03:30:27 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/circle-arc-mainnet-usdc-gas</guid>
         </item>
     
     </channel>

@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "title": "Cardano Foundation spins out digital identity firm Veridian",
+      "url": "https://crypto.news/cardano-foundation-spin-digital-identity-firm-veridian/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 08 Oct 2026 04:00:00 +0000"
+    },
+    {
+      "title": "XRP Lands on Paxos, the Crypto Engine Behind PayPal, Venmo, and Schwab",
+      "url": "https://news.bitcoin.com/featured/xrp-lands-on-paxos-the-crypto-engine-behind-paypal-venmo-and-schwab/",
+      "source": "Bitcoin.com",
+      "published_at": "Thu, 08 Oct 2026 03:30:36 +0000"
+    },
+    {
       "title": "Optimism drops 12% – Why falling on-chain activity puts OP at risk",
       "url": "https://ambcrypto.com/optimism-drops-12-why-falling-on-chain-activity-puts-op-at-risk/",
       "source": "Ambcrypto",
@@ -413,12 +425,6 @@
       "url": "https://ambcrypto.com/okx-partners-with-circle-and-ripple-what-does-okb-gain/",
       "source": "Ambcrypto",
       "published_at": "Wed, 07 Oct 2026 19:00:13 +0000"
-    },
-    {
-      "title": "Pudgy Penguins Team to Shutter Ethereum Layer 2 Network Abstract",
-      "url": "https://news.bitcoin.com/blockchain/pudgy-penguins-team-shutter-ethereum-layer-2-network-abstract/",
-      "source": "Bitcoin.com",
-      "published_at": "Wed, 07 Oct 2026 19:00:03 +0000"
     },
     {
       "title": "Cardano Brings Compliance Rules On-Chain With CIP-0113 Launch",
@@ -1363,12 +1369,6 @@
       "published_at": "Tue, 06 Oct 2026 16:50:26 +0000"
     },
     {
-      "title": "Pi Network price slides under $0.09: Can a double bottom spark a rally?",
-      "url": "https://crypto.news/pi-network-price-slides-can-double-bottom-spark-rally/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 06 Oct 2026 16:43:06 +0000"
-    },
-    {
       "title": "Bitcoin Falls Asleep, But Privacy Coins Zcash and Monero Are Waking Up",
       "url": "https://decrypt.co/380172/bitcoin-asleep-privacy-coins-zcash-monero-waking-up",
       "source": "Decrypt",
@@ -1889,12 +1889,6 @@
       "url": "https://insidebitcoins.com/news/cftc-no-action-passive-software-providers",
       "source": "InsideBitcoin",
       "published_at": "Fri, 18 Sep 2026 03:50:35 +0000"
-    },
-    {
-      "title": "Circle’s Arc Mainnet Runs on USDC Gas, Not the ARC Token",
-      "url": "https://insidebitcoins.com/news/circle-arc-mainnet-usdc-gas",
-      "source": "InsideBitcoin",
-      "published_at": "Thu, 17 Sep 2026 03:30:27 +0000"
     }
   ]
 }
