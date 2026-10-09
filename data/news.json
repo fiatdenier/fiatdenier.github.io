@@ -1,6 +1,42 @@
 {
   "articles": [
     {
+      "title": "Dark web drug market operator sentenced to 40 years, forfeits $101 million in bitcoin",
+      "url": "https://www.coindesk.com/policy/2026/10/09/dark-web-drug-market-operator-forfeits-1-230-bitcoin-and-faces-40-years-in-prison",
+      "source": "Coindesk",
+      "published_at": "Fri, 09 Oct 2026 09:20:16 +0000"
+    },
+    {
+      "title": "MARA transfers $81.1 million in bitcoin to Galaxy Digital as strategy pivots to AI",
+      "url": "https://www.coindesk.com/markets/2026/10/09/mara-transfers-usd81-1-million-in-bitcoin-to-galaxy-digital-as-strategy-pivots-to-ai",
+      "source": "Coindesk",
+      "published_at": "Fri, 09 Oct 2026 09:08:09 +0000"
+    },
+    {
+      "title": "Sam Altman-backed bitcoin insurer Meanwhile secures $37.5 million in Bain Capital Crypto-led round",
+      "url": "https://www.coindesk.com/business/2026/10/09/sam-altman-backed-bitcoin-insurer-meanwhile-secures-usd37-5-million-in-bain-capital-crypto-led-round",
+      "source": "Coindesk",
+      "published_at": "Fri, 09 Oct 2026 09:06:00 +0000"
+    },
+    {
+      "title": "$17B in crypto scams – Why Chainalysis and ACAMS are joining forces",
+      "url": "https://ambcrypto.com/17b-in-crypto-scams-why-chainalysis-and-acams-are-joining-forces/",
+      "source": "Ambcrypto",
+      "published_at": "Fri, 09 Oct 2026 09:00:01 +0000"
+    },
+    {
+      "title": "XT Exchange at Eight: Experienced Users Are Raising the Standard for Service",
+      "url": "https://beincrypto.com/xt-exchange-eight-experienced-users-raising-service-standard/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 09 Oct 2026 09:00:00 +0000"
+    },
+    {
+      "title": "FinCEN drops crypto rules as China stablecoins surge 43x",
+      "url": "https://coingeek.com/fincen-drops-crypto-rules-as-china-stablecoins-surge-43x/",
+      "source": "CoinGeek",
+      "published_at": "Fri, 09 Oct 2026 09:00:00 +0000"
+    },
+    {
       "title": "SIM-Swap Fraudster Who Spent Stolen Crypto on Gold Grills and Dubai Trips Jailed",
       "url": "https://decrypt.co/380554/sim-swap-fraudster-who-spent-stolen-crypto-on-gold-grills-and-dubai-trips-jailed",
       "source": "Decrypt",
@@ -379,12 +415,6 @@
       "published_at": "Fri, 09 Oct 2026 02:00:05 +0000"
     },
     {
-      "title": "KBW's Michaud Explains What to Expect from a Pressured Q3 Bank Earnings Season",
-      "url": "https://beincrypto.com/tom-michaud-pressured-q3-bank-earnings/",
-      "source": "BeinCrypto",
-      "published_at": "Fri, 09 Oct 2026 01:47:26 +0000"
-    },
-    {
       "title": "82 Million Galaxy Devices Will Support USDC Transfers This October",
       "url": "https://news.bitcoin.com/featured/82-million-galaxy-devices-will-support-usdc-transfers-this-october/",
       "source": "Bitcoin.com",
@@ -659,12 +689,6 @@
       "url": "https://crypto.news/acams-and-chainalysis-expand-crypto-crime-training/",
       "source": "CryptoNews",
       "published_at": "Thu, 08 Oct 2026 19:06:21 +0000"
-    },
-    {
-      "title": "Solana’s new wallets are up 124%, but can SOL survive thinning liquidity?",
-      "url": "https://ambcrypto.com/solanas-new-wallets-are-up-124-but-can-sol-survive-thinning-liquidity/",
-      "source": "Ambcrypto",
-      "published_at": "Thu, 08 Oct 2026 19:00:58 +0000"
     },
     {
       "title": "Polygon Opens Its Money Stack To TRON’s $94 Billion USDT Market",
@@ -1087,12 +1111,6 @@
       "published_at": "Thu, 08 Oct 2026 10:32:52 +0000"
     },
     {
-      "title": "Bitcoin slips below $83,000 as Ethereum researcher's 'bunker mode' call divides crypto",
-      "url": "https://www.coindesk.com/markets/2026/10/08/bitcoin-slips-below-usd83-000-as-ethereum-researcher-s-bunker-mode-call-divides-crypto",
-      "source": "Coindesk",
-      "published_at": "Thu, 08 Oct 2026 10:30:41 +0000"
-    },
-    {
       "title": "ESMA gives crypto firms 3 months to drop some stablecoins",
       "url": "https://crypto.news/esma-gives-crypto-firms-3-months-to-drop-stablecoins/",
       "source": "CryptoNews",
@@ -1147,12 +1165,6 @@
       "published_at": "Thu, 08 Oct 2026 09:34:48 +0000"
     },
     {
-      "title": "Standard Chartered to expand institutional crypto and RWA custody to Singapore",
-      "url": "https://www.coindesk.com/business/2026/10/08/standard-chartered-singapore-dives-into-crypto-stablecoins-and-tokenized-assets-custody",
-      "source": "Coindesk",
-      "published_at": "Thu, 08 Oct 2026 09:32:13 +0000"
-    },
-    {
       "title": "$110B Gone From Crypto Markets in 36 Hours as Bitcoin Dives Below $83K: Market Watch",
       "url": "https://cryptopotato.com/110b-gone-from-crypto-markets-in-36-hours-as-bitcoin-dives-below-83k-market-watch/",
       "source": "CryptoPotato",
@@ -1163,12 +1175,6 @@
       "url": "https://crypto.news/standard-chartered-plans-institutional-crypto-custody-service-in-singapore/",
       "source": "CryptoNews",
       "published_at": "Thu, 08 Oct 2026 09:26:45 +0000"
-    },
-    {
-      "title": "Greece prepares to levy 10% capital gains tax on cryptocurrency",
-      "url": "https://www.coindesk.com/policy/2026/10/08/greece-prepares-to-levy-10-capital-gains-tax-on-cryptocurrency",
-      "source": "Coindesk",
-      "published_at": "Thu, 08 Oct 2026 09:17:18 +0000"
     },
     {
       "title": "Bitcoin, Ethereum and XRP flash buy signals, will prices rebound?",
@@ -1715,12 +1721,6 @@
       "url": "https://coingeek.com/tokenization-issuance-was-phase-1-utility-is-phase-2/",
       "source": "CoinGeek",
       "published_at": "Tue, 06 Oct 2026 09:00:00 +0000"
-    },
-    {
-      "title": "ElectrumSVP hits stable release; Electrum not a dead end",
-      "url": "https://coingeek.com/electrumsvp-hits-stable-release-electrum-not-a-dead-end/",
-      "source": "CoinGeek",
-      "published_at": "Tue, 06 Oct 2026 07:00:00 +0000"
     },
     {
       "title": "Illinois Agrees to Six-Month Delay of Contested Crypto Tax Pending Court Approval",
