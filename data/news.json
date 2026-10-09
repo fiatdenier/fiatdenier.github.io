@@ -1,6 +1,36 @@
 {
   "articles": [
     {
+      "title": "New York AG secures up to $35 million and lifetime crypto ban from Celsius’ Alex Mashinsky",
+      "url": "https://www.coindesk.com/policy/2026/10/09/new-york-ag-secures-up-to-usd35-million-and-lifetime-crypto-ban-from-celsius-alex-mashinsky",
+      "source": "Coindesk",
+      "published_at": "Fri, 09 Oct 2026 14:55:23 +0000"
+    },
+    {
+      "title": "Bitcoin Crashes, Strategy’s BTC Stash Hits Record High, CPI Looms: Weekly Crypto Recap",
+      "url": "https://cryptopotato.com/bitcoin-crashes-strategys-btc-stash-hits-record-high-cpi-looms-weekly-crypto-recap/",
+      "source": "CryptoPotato",
+      "published_at": "Fri, 09 Oct 2026 14:49:41 +0000"
+    },
+    {
+      "title": "Ledger investigates potential wallet tampering after reports of $86 million in crypto stolen",
+      "url": "https://www.coindesk.com/business/2026/10/09/ledger-investigates-potential-wallet-tampering-after-reports-of-usd86-million-in-crypto-stolen",
+      "source": "Coindesk",
+      "published_at": "Fri, 09 Oct 2026 14:47:27 +0000"
+    },
+    {
+      "title": "Locked liquidity did not stop this $14 million crypto pool drain",
+      "url": "https://cryptoslate.com/79thvaults-14-million-pool-drain-shows-why-locked-liquidity-can-fail/",
+      "source": "CryptoSlate",
+      "published_at": "Fri, 09 Oct 2026 14:40:46 +0000"
+    },
+    {
+      "title": "Ledger Investigating Reports of Drained Crypto Wallets as Estimated Losses Hit $86M",
+      "url": "https://news.bitcoin.com/security/ledger-investigating-86m-drained-crypto-hardware-wallets/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 09 Oct 2026 14:35:59 +0000"
+    },
+    {
       "title": "OpenAI and Anthropic Rehearse an AI Disaster: Will It Hit Your Bank?",
       "url": "https://beincrypto.com/openai-anthropic-rehearse-ai-disaster-scenario/",
       "source": "BeinCrypto",
@@ -23,6 +53,12 @@
       "url": "https://crypto.news/sports-prediction-markets-reach-the-supreme-courts-doorstep/",
       "source": "CryptoNews",
       "published_at": "Fri, 09 Oct 2026 14:00:46 +0000"
+    },
+    {
+      "title": "Stove Finance and Uniswap Labs Collaborate to Expand Onchain Access to Global Equities",
+      "url": "https://news.bitcoin.com/press-releases/stove-finance-and-uniswap-labs-collaborate-to-expand-onchain-access-to-global-equities/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 09 Oct 2026 14:00:42 +0000"
     },
     {
       "title": "Crypto Price Analysis Oct-09: ETH, XRP, ADA, BNB, and HYPE",
@@ -595,12 +631,6 @@
       "published_at": "Fri, 09 Oct 2026 05:31:08 +0000"
     },
     {
-      "title": "Kyrgyzstan Shuts Stablecoin USDKG, Burns 50M Tokens After UK Sanctions",
-      "url": "https://news.bitcoin.com/regulation-and-legal/kyrgyzstan-shuts-stablecoin-usdkg-burns-50m-tokens-after-uk-sanctions/",
-      "source": "Bitcoin.com",
-      "published_at": "Fri, 09 Oct 2026 05:30:46 +0000"
-    },
-    {
       "title": "Trump administration outlines quantum, AI initiatives in $6B science push",
       "url": "https://cointelegraph.com/news/trump-administration-quantum-computing-ai-6-billion-science-push?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -635,12 +665,6 @@
       "url": "https://coingeek.com/46-in-apac-eye-stablecoins-as-eu-rewards-debate-grows/",
       "source": "CoinGeek",
       "published_at": "Fri, 09 Oct 2026 05:00:00 +0000"
-    },
-    {
-      "title": "Hyperliquid Behind the Scenes: How to Build a Perpetual DEX",
-      "url": "https://news.bitcoin.com/regulation-and-legal/hyperliquid-behind-the-scenes-how-to-build-a-perpetual-dex/",
-      "source": "Bitcoin.com",
-      "published_at": "Fri, 09 Oct 2026 04:40:14 +0000"
     },
     {
       "title": "Standard Chartered Singapore enters institutional crypto custody market – What’s next?",
@@ -695,12 +719,6 @@
       "url": "https://cointelegraph.com/news/thailand-finalizes-rules-paving-way-for-bitcoin-ether-etfs?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Fri, 09 Oct 2026 03:08:51 +0000"
-    },
-    {
-      "title": "AI may be keeping Bitcoin’s biggest macro headwind alive after the Fed stops hiking",
-      "url": "https://cryptoslate.com/ai-may-be-keeping-bitcoins-biggest-macro-headwind-alive-after-the-fed-stops-hiking/",
-      "source": "CryptoSlate",
-      "published_at": "Fri, 09 Oct 2026 03:00:33 +0000"
     },
     {
       "title": "Can NEAR crypto overtake Stellar again? THESE metrics suggest it could",
@@ -1153,22 +1171,10 @@
       "published_at": "Thu, 08 Oct 2026 14:39:48 +0000"
     },
     {
-      "title": "Cardano Foundation spins out Veridian, tokenizes its shares on new standard",
-      "url": "https://www.coindesk.com/business/2026/10/08/cardano-foundation-spins-out-veridian-tokenizes-its-shares-on-new-standard",
-      "source": "Coindesk",
-      "published_at": "Thu, 08 Oct 2026 14:24:24 +0000"
-    },
-    {
       "title": "Glassnode Reveals Bitcoin New Money Inflows Near $5B With BTC Rally Stalling",
       "url": "https://crypto-economy.com/glassnode-reveals-bitcoin-new-money-inflows-near-5b-with-btc-rally-stalling/",
       "source": "CryptoEconomy",
       "published_at": "Thu, 08 Oct 2026 14:10:16 +0000"
-    },
-    {
-      "title": "Over 6 million bitcoin sit behind exposed public keys as AI warnings mount",
-      "url": "https://www.coindesk.com/markets/2026/10/08/over-6-million-bitcoin-sit-behind-exposed-public-keys-as-ai-warnings-mount",
-      "source": "Coindesk",
-      "published_at": "Thu, 08 Oct 2026 14:03:20 +0000"
     },
     {
       "title": "Solana Network Growth Jumps 124%: Here’s Why It Could Matter for SOL",
@@ -1679,12 +1685,6 @@
       "url": "https://blockonomi.com/real-visions-raoul-pal-weaker-dollar-could-trigger-extended-crypto-rally-as-ai-stock-momentum-pauses/",
       "source": "Blockonomi",
       "published_at": "Wed, 07 Oct 2026 07:54:43 +0000"
-    },
-    {
-      "title": "24,000 BTC Just Left Exchanges: Is Bitcoin’s (BTC) Supply Crunch Heating Up?",
-      "url": "https://cryptopotato.com/24000-btc-just-left-exchanges-is-bitcoins-btc-supply-crunch-heating-up/",
-      "source": "CryptoPotato",
-      "published_at": "Wed, 07 Oct 2026 07:38:03 +0000"
     },
     {
       "title": "U.S. Government Moves $103M in BTC and BNB to Coinbase Prime, Drawing Scrutiny",
