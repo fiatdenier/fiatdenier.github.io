@@ -5,8 +5,16 @@
         <link>https://yourwebsite.com/</link>
         <description>The latest aggregated news from your curated sources.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 10 Oct 2026 11:27:46 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 10 Oct 2026 11:31:15 GMT</lastBuildDate>
         
+        <item>
+            <title>Claude AI Sent Police a Fake Murder Tip</title>
+            <link>https://beincrypto.com/claude-ai-fake-murder-tip-police/</link>
+            <description>Source: BeinCrypto</description>
+            <pubDate>Sat, 10 Oct 2026 11:31:15 +0000</pubDate>
+            <guid isPermaLink="true">https://beincrypto.com/claude-ai-fake-murder-tip-police/</guid>
+        </item>
+    
         <item>
             <title>China plans national blockchain network in digital push</title>
             <link>https://crypto.news/china-plans-national-blockchain-network-digital-push/</link>
@@ -341,14 +349,6 @@
             <description>Source: Bitcoin.com</description>
             <pubDate>Sat, 10 Oct 2026 03:30:07 +0000</pubDate>
             <guid isPermaLink="true">https://news.bitcoin.com/regulation-and-legal/credit-unions-could-face-26-new-stablecoin-reporting-fields/</guid>
-        </item>
-    
-        <item>
-            <title>CFTC moves to fold event contracts into swaps rules as legal fight rages</title>
-            <link>https://insidebitcoins.com/news/cftc-event-contracts-swaps-rule</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Sat, 10 Oct 2026 03:20:17 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/cftc-event-contracts-swaps-rule</guid>
         </item>
     
         <item>
@@ -893,14 +893,6 @@
             <description>Source: Coindesk</description>
             <pubDate>Fri, 09 Oct 2026 14:55:23 +0000</pubDate>
             <guid isPermaLink="true">https://www.coindesk.com/policy/2026/10/09/new-york-ag-secures-up-to-usd35-million-and-lifetime-crypto-ban-from-celsius-alex-mashinsky</guid>
-        </item>
-    
-        <item>
-            <title>XRP ETF Buyers Are 13% Underwater, Yet Inflows Keep Coming</title>
-            <link>https://beincrypto.com/xrp-price-etf-buyers-analysis/</link>
-            <description>Source: BeinCrypto</description>
-            <pubDate>Fri, 09 Oct 2026 14:50:04 +0000</pubDate>
-            <guid isPermaLink="true">https://beincrypto.com/xrp-price-etf-buyers-analysis/</guid>
         </item>
     
         <item>
@@ -1493,14 +1485,6 @@
             <description>Source: Coindesk</description>
             <pubDate>Fri, 09 Oct 2026 03:27:38 +0000</pubDate>
             <guid isPermaLink="true">https://www.coindesk.com/markets/2026/10/09/bitcoin-rebounds-to-usd82-000-as-trump-rules-out-iran-strikes</guid>
-        </item>
-    
-        <item>
-            <title>ESMA Gives EU Crypto Platforms Three Months to Wind Down Non-MiCA Stablecoins</title>
-            <link>https://insidebitcoins.com/news/esma-crypto-platforms-3-months-unauthorized-stablecoins</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Fri, 09 Oct 2026 03:15:14 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/esma-crypto-platforms-3-months-unauthorized-stablecoins</guid>
         </item>
     
         <item>
@@ -2112,14 +2096,6 @@
         </item>
     
         <item>
-            <title>FinCEN Kills $10,000 Private-Wallet Crypto Reporting Rule After Six Years in Limbo</title>
-            <link>https://insidebitcoins.com/news/fincen-withdraws-10000-crypto-wallet-reporting-rule</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Thu, 08 Oct 2026 02:35:17 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/fincen-withdraws-10000-crypto-wallet-reporting-rule</guid>
-        </item>
-    
-        <item>
             <title>OpenAI Says a Secret AI Model Cracked Hundreds of Open Math Problems in One Prompt—Mathematicians Want Receipts</title>
             <link>https://decrypt.co/380366/openai-secret-ai-model-cracked-hundreds-math-problems-one-prompt</link>
             <description>Source: Decrypt</description>
@@ -2296,14 +2272,6 @@
         </item>
     
         <item>
-            <title>CFTC plan leaves room for self-custody and on-chain trading as it tightens crypto exchange rules</title>
-            <link>https://insidebitcoins.com/news/cftc-ctx-cam-self-custody-carve-out</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Wed, 07 Oct 2026 02:15:16 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/cftc-ctx-cam-self-custody-carve-out</guid>
-        </item>
-    
-        <item>
             <title>Strive Stock Discloses $500M SATA Buyback After Buying 2,000 Bitcoin</title>
             <link>https://blockonomi.com/strive-stock-discloses-500m-sata-buyback-after-buying-2000-bitcoin/</link>
             <description>Source: Blockonomi</description>
@@ -2328,51 +2296,11 @@
         </item>
     
         <item>
-            <title>Illinois Agrees to Six-Month Delay of Contested Crypto Tax Pending Court Approval</title>
-            <link>https://insidebitcoins.com/news/illinois-agrees-to-six-month-delay-of-contested-crypto-tax-pending-court-approval</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Tue, 06 Oct 2026 01:50:30 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/illinois-agrees-to-six-month-delay-of-contested-crypto-tax-pending-court-approval</guid>
-        </item>
-    
-        <item>
-            <title>Average Bitcoin ETF Investor Back in Profit for First Time Since January</title>
-            <link>https://insidebitcoins.com/news/bitcoin-etf-average-holder-back-in-profit</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Mon, 05 Oct 2026 01:16:06 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/bitcoin-etf-average-holder-back-in-profit</guid>
-        </item>
-    
-        <item>
-            <title>Bitget CEO says she is ‘not very optimistic’ about recovering $388M stolen in breach</title>
-            <link>https://insidebitcoins.com/news/bitget-ceo-recovery-388m-hack</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Sun, 04 Oct 2026 01:05:36 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/bitget-ceo-recovery-388m-hack</guid>
-        </item>
-    
-        <item>
-            <title>SEC proposes crypto custody rules as its commission shrinks to two</title>
-            <link>https://insidebitcoins.com/news/sec-custody-rules-two-commissioners</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Sat, 03 Oct 2026 01:00:22 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/sec-custody-rules-two-commissioners</guid>
-        </item>
-    
-        <item>
             <title>Citi Raises Strategy Price Target to $240 as Higher Bitcoin Forecast Lifts MSTR Outlook</title>
             <link>https://thecryptobasic.com/2026/10/02/citi-raises-strategy-price-target-to-240-as-higher-bitcoin-forecast-lifts-mstr-outlook/</link>
             <description>Source: CryptoBasic</description>
             <pubDate>Fri, 02 Oct 2026 09:14:56 +0000</pubDate>
             <guid isPermaLink="true">https://thecryptobasic.com/2026/10/02/citi-raises-strategy-price-target-to-240-as-higher-bitcoin-forecast-lifts-mstr-outlook/</guid>
-        </item>
-    
-        <item>
-            <title>Treasury and IRS flag crypto ETF tax strategies, but stop short of a ban</title>
-            <link>https://insidebitcoins.com/news/irs-crypto-etf-notice-2026-62</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Fri, 02 Oct 2026 00:30:19 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/irs-crypto-etf-notice-2026-62</guid>
         </item>
     
         <item>
@@ -2384,59 +2312,11 @@
         </item>
     
         <item>
-            <title>UK Crypto Firms Face Bank-Style Licensing or Exit by October 2027</title>
-            <link>https://insidebitcoins.com/news/uk-fca-crypto-license-2027</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Thu, 01 Oct 2026 04:20:26 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/uk-fca-crypto-license-2027</guid>
-        </item>
-    
-        <item>
-            <title>Citi and Coinbase automate stablecoin-to-fiat conversion for institutional clients</title>
-            <link>https://insidebitcoins.com/news/citi-and-coinbase-automate-stablecoin-to-fiat-conversion-for-institutional-clients</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Wed, 30 Sep 2026 04:10:15 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/citi-and-coinbase-automate-stablecoin-to-fiat-conversion-for-institutional-clients</guid>
-        </item>
-    
-        <item>
-            <title>SEC’s ‘Crypto Mom’ Hester Peirce Resigns, Effective Oct. 2</title>
-            <link>https://insidebitcoins.com/news/secs-crypto-mom-hester-peirce-resigns-effective-oct-2</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Tue, 29 Sep 2026 03:41:11 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/secs-crypto-mom-hester-peirce-resigns-effective-oct-2</guid>
-        </item>
-    
-        <item>
-            <title>THORChain Refuses to Block Bitget Hacker Wallets After $387.5M Hack</title>
-            <link>https://insidebitcoins.com/news/thorchain-refuses-block-bitget-hacker-wallets</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Mon, 28 Sep 2026 15:25:29 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/thorchain-refuses-block-bitget-hacker-wallets</guid>
-        </item>
-    
-        <item>
-            <title>What the cryptographic world computer actually means for Ethereum</title>
-            <link>https://insidebitcoins.com/news/cryptographic-world-computer-ethereum</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Mon, 28 Sep 2026 11:16:33 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/cryptographic-world-computer-ethereum</guid>
-        </item>
-    
-        <item>
             <title>Bitcoin Is Getting Stronger as Monthly RSI Rebounds From Deep 2026 Lows</title>
             <link>https://thecryptobasic.com/2026/09/25/bitcoin-is-getting-stronger-as-monthly-rsi-rebounds-from-deep-2026-lows/</link>
             <description>Source: CryptoBasic</description>
             <pubDate>Fri, 25 Sep 2026 11:30:45 +0000</pubDate>
             <guid isPermaLink="true">https://thecryptobasic.com/2026/09/25/bitcoin-is-getting-stronger-as-monthly-rsi-rebounds-from-deep-2026-lows/</guid>
-        </item>
-    
-        <item>
-            <title>CFTC reviews Kalshi after $5B in near-identical ether perp trades</title>
-            <link>https://insidebitcoins.com/news/cftc-reviews-kalshi-ether-perp-trades</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Fri, 25 Sep 2026 02:05:28 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/cftc-reviews-kalshi-ether-perp-trades</guid>
         </item>
     
         <item>
@@ -2448,27 +2328,11 @@
         </item>
     
         <item>
-            <title>Binance Buys $100 Million Circle Stake in Five-Year USDC Deal</title>
-            <link>https://insidebitcoins.com/news/binance-buys-100-million-circle-stake-usdc-deal</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Thu, 24 Sep 2026 01:40:31 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/binance-buys-100-million-circle-stake-usdc-deal</guid>
-        </item>
-    
-        <item>
             <title>Tesla Made $100 Million From Bitcoin Without Adding a Single BTC</title>
             <link>https://thecryptobasic.com/2026/09/23/tesla-made-100-million-from-bitcoin-without-adding-a-single-btc/</link>
             <description>Source: CryptoBasic</description>
             <pubDate>Wed, 23 Sep 2026 05:29:13 +0000</pubDate>
             <guid isPermaLink="true">https://thecryptobasic.com/2026/09/23/tesla-made-100-million-from-bitcoin-without-adding-a-single-btc/</guid>
-        </item>
-    
-        <item>
-            <title>Strategy Funds Its Latest Bitcoin Buy With Cash, Not New Shares</title>
-            <link>https://insidebitcoins.com/news/strategy-buys-950-btc-cash-reserve-not-stock</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Wed, 23 Sep 2026 01:15:25 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/strategy-buys-950-btc-cash-reserve-not-stock</guid>
         </item>
     
         <item>
@@ -2501,38 +2365,6 @@
             <description>Source: CryptoBasic</description>
             <pubDate>Tue, 22 Sep 2026 07:45:46 +0000</pubDate>
             <guid isPermaLink="true">https://thecryptobasic.com/2026/09/22/600-bitcoin-bought-at-around-7-moved-after-14-2-years/</guid>
-        </item>
-    
-        <item>
-            <title>OCC Conditionally Approves National Trust Bank Charter for Crypto Firm Bastion</title>
-            <link>https://insidebitcoins.com/news/occ-approves-bastion-trust-bank-charter</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Tue, 22 Sep 2026 01:00:16 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/occ-approves-bastion-trust-bank-charter</guid>
-        </item>
-    
-        <item>
-            <title>HMASK Price Prediction – Best Crypto to Buy Now</title>
-            <link>https://insidebitcoins.com/news/hmask-price-prediction-best-crypto-to-buy-now</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Mon, 21 Sep 2026 22:19:01 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/hmask-price-prediction-best-crypto-to-buy-now</guid>
-        </item>
-    
-        <item>
-            <title>Goldman and Citizens Analysts Name Coinbase, Robinhood and Circle as Early Winners of SEC Tokenized-Stock Push</title>
-            <link>https://insidebitcoins.com/news/sec-tokenized-stocks-coinbase-robinhood-circle-winners</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Mon, 21 Sep 2026 00:45:12 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/sec-tokenized-stocks-coinbase-robinhood-circle-winners</guid>
-        </item>
-    
-        <item>
-            <title>US Treasury says Iran ran Strait of Hormuz tanker tolls through sanctioned bitcoin exchange</title>
-            <link>https://insidebitcoins.com/news/us-treasury-sanctions-bitbank-hormuz-tolls</link>
-            <description>Source: InsideBitcoin</description>
-            <pubDate>Sun, 20 Sep 2026 00:20:10 +0000</pubDate>
-            <guid isPermaLink="true">https://insidebitcoins.com/news/us-treasury-sanctions-bitbank-hormuz-tolls</guid>
         </item>
     
     </channel>
