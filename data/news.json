@@ -1,6 +1,12 @@
 {
   "articles": [
     {
+      "title": "NEAR falls 12% after $2.64M whale liquidation – Will $4.50 hold or break?",
+      "url": "https://ambcrypto.com/near-falls-12-after-2-64m-whale-liquidation-will-4-50-hold-or-break/",
+      "source": "Ambcrypto",
+      "published_at": "Wed, 14 Oct 2026 03:00:25 +0000"
+    },
+    {
       "title": "XRPL Commons Selects 13 Startups for Payments, AI, and DeFi Push",
       "url": "https://news.bitcoin.com/featured/xrpl-commons-selects-13-startups-for-payments-ai-and-defi-push/",
       "source": "Bitcoin.com",
@@ -575,12 +581,6 @@
       "url": "https://cointelegraph.com/news/anthropic-ai-worms-autonomously-spread-devices-virus?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Tue, 13 Oct 2026 13:55:09 +0000"
-    },
-    {
-      "title": "Binance Pool closes November 10 – What happens to Bitcoin miners?",
-      "url": "https://ambcrypto.com/binance-pool-closes-november-10-what-happens-to-bitcoin-miners/",
-      "source": "Ambcrypto",
-      "published_at": "Tue, 13 Oct 2026 13:45:41 +0000"
     },
     {
       "title": "Ledger suspends retail sales in Germany as wallet implant probe continues",
@@ -1525,6 +1525,12 @@
       "published_at": "Fri, 09 Oct 2026 10:17:04 +0000"
     },
     {
+      "title": "Bitcoin Update: Bitcoin Drops 7%, U.S. Holdings Fall by 17,468 BTC, Short-Term Holders Send 45.6K BTC to Exchanges",
+      "url": "https://thecryptobasic.com/2026/10/09/bitcoin-update-bitcoin-drops-7-u-s-government-holdings-fall-by-17468-btc-short-term-holders-send-45-6k-btc-to-exchanges/",
+      "source": "CryptoBasic",
+      "published_at": "Fri, 09 Oct 2026 09:25:26 +0000"
+    },
+    {
       "title": "FinCEN drops crypto rules as China stablecoins surge 43x",
       "url": "https://coingeek.com/fincen-drops-crypto-rules-as-china-stablecoins-surge-43x/",
       "source": "CoinGeek",
@@ -1747,10 +1753,22 @@
       "published_at": "Sat, 03 Oct 2026 01:00:22 +0000"
     },
     {
+      "title": "Citi Raises Strategy Price Target to $240 as Higher Bitcoin Forecast Lifts MSTR Outlook",
+      "url": "https://thecryptobasic.com/2026/10/02/citi-raises-strategy-price-target-to-240-as-higher-bitcoin-forecast-lifts-mstr-outlook/",
+      "source": "CryptoBasic",
+      "published_at": "Fri, 02 Oct 2026 09:14:56 +0000"
+    },
+    {
       "title": "Treasury and IRS flag crypto ETF tax strategies, but stop short of a ban",
       "url": "https://insidebitcoins.com/news/irs-crypto-etf-notice-2026-62",
       "source": "InsideBitcoin",
       "published_at": "Fri, 02 Oct 2026 00:30:19 +0000"
+    },
+    {
+      "title": "Bitcoin Needs About $29,000 More to Reach Citi Bank New 12-Month Target",
+      "url": "https://thecryptobasic.com/2026/10/01/bitcoin-needs-about-29000-more-to-reach-citi-bank-new-12-month-target/",
+      "source": "CryptoBasic",
+      "published_at": "Thu, 01 Oct 2026 15:38:12 +0000"
     },
     {
       "title": "UK Crypto Firms Face Bank-Style Licensing or Exit by October 2027",
@@ -1783,16 +1801,34 @@
       "published_at": "Mon, 28 Sep 2026 11:16:33 +0000"
     },
     {
+      "title": "Bitcoin Is Getting Stronger as Monthly RSI Rebounds From Deep 2026 Lows",
+      "url": "https://thecryptobasic.com/2026/09/25/bitcoin-is-getting-stronger-as-monthly-rsi-rebounds-from-deep-2026-lows/",
+      "source": "CryptoBasic",
+      "published_at": "Fri, 25 Sep 2026 11:30:45 +0000"
+    },
+    {
       "title": "CFTC reviews Kalshi after $5B in near-identical ether perp trades",
       "url": "https://insidebitcoins.com/news/cftc-reviews-kalshi-ether-perp-trades",
       "source": "InsideBitcoin",
       "published_at": "Fri, 25 Sep 2026 02:05:28 +0000"
     },
     {
+      "title": "Bitcoin Slips Below $84K as $79K Weekly SMA Come Into Focus",
+      "url": "https://thecryptobasic.com/2026/09/24/bitcoin-slips-below-84k-as-79k-weekly-sma-come-into-focus/",
+      "source": "CryptoBasic",
+      "published_at": "Thu, 24 Sep 2026 09:48:16 +0000"
+    },
+    {
       "title": "Binance Buys $100 Million Circle Stake in Five-Year USDC Deal",
       "url": "https://insidebitcoins.com/news/binance-buys-100-million-circle-stake-usdc-deal",
       "source": "InsideBitcoin",
       "published_at": "Thu, 24 Sep 2026 01:40:31 +0000"
+    },
+    {
+      "title": "Tesla Made $100 Million From Bitcoin Without Adding a Single BTC",
+      "url": "https://thecryptobasic.com/2026/09/23/tesla-made-100-million-from-bitcoin-without-adding-a-single-btc/",
+      "source": "CryptoBasic",
+      "published_at": "Wed, 23 Sep 2026 05:29:13 +0000"
     }
   ]
 }
