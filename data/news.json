@@ -1,10 +1,64 @@
 {
   "articles": [
     {
+      "title": "South Korea Names Gopax Operator In Cyberattack Wave Affecting 16 Firms",
+      "url": "https://bitcoinist.com/south-korea-gopax-streami-cyberattack-16-firms/",
+      "source": "Bitcoinist",
+      "published_at": "Sun, 18 Oct 2026 13:30:00 +0000"
+    },
+    {
+      "title": "Cysic halts bridge after hacker creates 10 million CYS",
+      "url": "https://crypto.news/cysic-bridge-exploit-10-million-cys-minted/",
+      "source": "CryptoNews",
+      "published_at": "Sun, 18 Oct 2026 13:10:32 +0000"
+    },
+    {
+      "title": "Banks Hold a Lever Over Stablecoin Adoption, BIS Economists Say",
+      "url": "https://decrypt.co/381253/banks-hold-a-lever-over-stablecoin-adoption-bis-economists-say",
+      "source": "Decrypt",
+      "published_at": "Sun, 18 Oct 2026 13:01:04 +0000"
+    },
+    {
+      "title": "Trump waives new Russia tariffs as October 18 oil deadline arrives",
+      "url": "https://cryptoslate.com/trump-waives-new-russia-tariffs-as-october-18-oil-deadline-arrives/",
+      "source": "CryptoSlate",
+      "published_at": "Sun, 18 Oct 2026 13:00:30 +0000"
+    },
+    {
+      "title": "NEAR’s AI fueled rally slows after 283% surge – 3 warning signs put buyers on alert",
+      "url": "https://ambcrypto.com/nears-ai-fueled-rally-slows-after-283-surge-3-warning-signs-put-buyers-on-alert/",
+      "source": "Ambcrypto",
+      "published_at": "Sun, 18 Oct 2026 13:00:26 +0000"
+    },
+    {
+      "title": "Beyond the Casino – Week In Review",
+      "url": "https://news.bitcoin.com/opinion-and-analysis/beyond-the-casino-week-in-review/",
+      "source": "Bitcoin.com",
+      "published_at": "Sun, 18 Oct 2026 13:00:25 +0000"
+    },
+    {
       "title": "XRP ETFs End 13-Week Inflow Run With $1.84 Million In Withdrawals",
       "url": "https://www.newsbtc.com/altcoin-news/xrp-etfs-end-13-week-inflow-streak/",
       "source": "NewsBTC",
       "published_at": "Sun, 18 Oct 2026 13:00:00 +0000"
+    },
+    {
+      "title": "Bitcoin’s $100,000 year-end hope divides analysts as inflation clouds outlook",
+      "url": "https://www.coindesk.com/markets/2026/10/18/bitcoin-s-usd100-000-year-end-hope-divides-analysts-as-inflation-clouds-outlook",
+      "source": "Coindesk",
+      "published_at": "Sun, 18 Oct 2026 13:00:00 +0000"
+    },
+    {
+      "title": "Crypto audits give investors false sense of security as Q3 hacks cost $1.18 billion, Hacken says",
+      "url": "https://www.coindesk.com/tech/2026/10/18/crypto-audits-give-investors-false-sense-of-security-as-q3-hacks-cost-usd1-18-billion-hacken-says",
+      "source": "Coindesk",
+      "published_at": "Sun, 18 Oct 2026 13:00:00 +0000"
+    },
+    {
+      "title": "Michael Saylor Reveals Why Wall Street Prefers Cash to Bitcoin",
+      "url": "https://beincrypto.com/michael-saylor-bitcoin-strc-dollars/",
+      "source": "BeinCrypto",
+      "published_at": "Sun, 18 Oct 2026 12:47:58 +0000"
     },
     {
       "title": "BIS: Bank rate hikes cut stablecoin growth by 3 points",
@@ -397,12 +451,6 @@
       "published_at": "Sat, 17 Oct 2026 20:43:00 +0000"
     },
     {
-      "title": "Bitcoin Price at $81,500 Leaves Bulls and Bears at a Standoff",
-      "url": "https://news.bitcoin.com/market-updates/bitcoin-price-at-81500-leaves-bulls-and-bears-at-a-standoff/",
-      "source": "Bitcoin.com",
-      "published_at": "Sat, 17 Oct 2026 20:30:22 +0000"
-    },
-    {
       "title": "Shield Swap partners with Flowdesk for confidential institutional trading",
       "url": "https://crypto.news/shield-swap-flowdesk-confidential-institution-trading/",
       "source": "CryptoNews",
@@ -457,12 +505,6 @@
       "published_at": "Sat, 17 Oct 2026 19:00:25 +0000"
     },
     {
-      "title": "Pirate Chain Exploit Creates 39.8 Million Unauthorized Tokens In Major Security Breach",
-      "url": "https://bitcoinist.com/pirate-chain-exploit-creates-39-8-million-unauthorized-tokens-in-major/",
-      "source": "Bitcoinist",
-      "published_at": "Sat, 17 Oct 2026 18:43:00 +0000"
-    },
-    {
       "title": "Crypto Giants Feature In $210 Million Political Donations Report As Regulatory Scrutiny Grows",
       "url": "https://www.newsbtc.com/regulation/crypto-giants-feature-in-210-million-political-donations-report-as-reg/",
       "source": "NewsBTC",
@@ -491,12 +533,6 @@
       "url": "https://decrypt.co/381238/crypto-super-pac-fairshake-pours-millions-more-into-defeating-sherrod-brown",
       "source": "Decrypt",
       "published_at": "Sat, 17 Oct 2026 17:01:03 +0000"
-    },
-    {
-      "title": "Shiba Inu flashes mixed signals, but which way will its price really go?",
-      "url": "https://ambcrypto.com/shiba-inu-flashes-mixed-signals-but-which-way-will-its-price-really-go/",
-      "source": "Ambcrypto",
-      "published_at": "Sat, 17 Oct 2026 17:00:58 +0000"
     },
     {
       "title": "Ethereum sets October 26 for Hoodi’s 200 million gas test",
@@ -613,12 +649,6 @@
       "published_at": "Sat, 17 Oct 2026 12:06:26 +0000"
     },
     {
-      "title": "Eclair patches a browser attack that could send commands to your Lightning node",
-      "url": "https://cryptoslate.com/eclair-blocks-browser-requests-that-could-let-a-webpage-control-a-bitcoin-lightning-node/",
-      "source": "CryptoSlate",
-      "published_at": "Sat, 17 Oct 2026 12:00:20 +0000"
-    },
-    {
       "title": "Banks could slow stablecoin growth by paying savers more, BIS paper finds",
       "url": "https://www.coindesk.com/business/2026/10/14/banks-could-slow-stablecoin-growth-by-paying-savers-more-bis-paper-finds",
       "source": "Coindesk",
@@ -629,12 +659,6 @@
       "url": "https://cryptopotato.com/2-banking-giants-make-major-crypto-moves-as-schwab-and-deutsche-bank-expand-into-digital-assets/",
       "source": "CryptoPotato",
       "published_at": "Sat, 17 Oct 2026 11:25:46 +0000"
-    },
-    {
-      "title": "Gold Price Slides on Hot Inflation, but Schiff Says It’s a Gift",
-      "url": "https://beincrypto.com/gold-price-hot-inflation-peter-schiff/",
-      "source": "BeinCrypto",
-      "published_at": "Sat, 17 Oct 2026 11:13:21 +0000"
     },
     {
       "title": "OKX CEO Star Xu Says Bitcoin Nearly Died Several Times but Came Back Stronger",
@@ -1285,12 +1309,6 @@
       "published_at": "Fri, 16 Oct 2026 07:31:35 +0000"
     },
     {
-      "title": "NEAR price rallies toward $6: Can it reach $10?",
-      "url": "https://crypto.news/can-near-price-reach-10/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 16 Oct 2026 07:18:10 +0000"
-    },
-    {
       "title": "Russia’s A7A5 stablecoin network says it’s totally gone legit",
       "url": "https://coingeek.com/russia-a7a5-stablecoin-network-says-its-totally-gone-legit/",
       "source": "CoinGeek",
@@ -1519,12 +1537,6 @@
       "published_at": "Thu, 15 Oct 2026 15:10:44 +0000"
     },
     {
-      "title": "Crypto for Advisors: Wall Street is done waiting on Congress for crypto rules",
-      "url": "https://www.coindesk.com/coindesk-indices/2026/10/15/crypto-for-advisors-wall-street-is-done-waiting-on-congress-for-crypto-rules",
-      "source": "Coindesk",
-      "published_at": "Thu, 15 Oct 2026 15:00:00 +0000"
-    },
-    {
       "title": "Ethereum, Altcoins See 'Outsized Drawdowns' Due to Macro Pressures",
       "url": "https://decrypt.co/381034/ethereum-altcoins-see-outsized-drawdowns-due-to-macro-pressures",
       "source": "Decrypt",
@@ -1559,12 +1571,6 @@
       "url": "https://decrypt.co/381015/zcash-tanks-double-digits-after-meteoric-rise-sees-leverage-build-up",
       "source": "Decrypt",
       "published_at": "Thu, 15 Oct 2026 12:42:30 +0000"
-    },
-    {
-      "title": "How Brooklyn prosecutors and the FBI took down a massive crypto fraud network targeting Russian speakers",
-      "url": "https://www.coindesk.com/business/2026/10/15/how-brooklyn-prosecutors-and-the-fbi-took-down-a-massive-crypto-fraud-network-targeting-russian-speakers",
-      "source": "Coindesk",
-      "published_at": "Thu, 15 Oct 2026 12:35:24 +0000"
     },
     {
       "title": "Bitcoin Tests $80K as Global Selloff Wipes $100B From Crypto",
@@ -1691,12 +1697,6 @@
       "url": "https://decrypt.co/380974/solana-alpenglow-upgrade-date",
       "source": "Decrypt",
       "published_at": "Wed, 14 Oct 2026 19:16:04 +0000"
-    },
-    {
-      "title": "Standard Chartered Opens Bitcoin and Ethereum Trading to Wealthy UAE Clients",
-      "url": "https://decrypt.co/380967/standard-chartered-bitcoin-ethereum-trading",
-      "source": "Decrypt",
-      "published_at": "Wed, 14 Oct 2026 17:46:05 +0000"
     },
     {
       "title": "Binance shuts BTC mining pool, Zcash miners living the dream",
