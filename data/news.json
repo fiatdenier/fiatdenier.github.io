@@ -1,6 +1,66 @@
 {
   "articles": [
     {
+      "title": "Claude Traces NIST Cryptography Seeds To An Old Random-Number Generator",
+      "url": "https://bitcoinist.com/claude-traces-nist-cryptography-seeds-to-an-old-random-number-generator-2/",
+      "source": "Bitcoinist",
+      "published_at": "Mon, 19 Oct 2026 13:30:00 +0000"
+    },
+    {
+      "title": "Dormant 2013 Bitcoin Wallet Transfers 34 Million in BTC",
+      "url": "https://crypto-economy.com/dormant-2013-bitcoin-wallet-transfers-34-million-in-btc/",
+      "source": "CryptoEconomy",
+      "published_at": "Mon, 19 Oct 2026 13:25:19 +0000"
+    },
+    {
+      "title": "Hyperliquid Policy Center seeks five changes to SEC crypto rules",
+      "url": "https://crypto.news/hyperliquid-sec-crypto-regulation-proposals/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 19 Oct 2026 13:25:00 +0000"
+    },
+    {
+      "title": "Ethereum’s faster proofs face Vitalik’s next test: a hard cost limit",
+      "url": "https://cryptoslate.com/vitaliks-zkevm-cost-demand-puts-ethereums-gas-pricing-under-a-second-test/",
+      "source": "CryptoSlate",
+      "published_at": "Mon, 19 Oct 2026 13:20:55 +0000"
+    },
+    {
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Mon, 19 Oct 2026 13:19:50 +0000"
+    },
+    {
+      "title": "XRPL Cleanup Fix Gains Validator Support While Lending Amendment Waits",
+      "url": "https://bitcoinist.com/xrpl-cleanup-fix-gains-validator-support-while-lending-amendment-waits/",
+      "source": "Bitcoinist",
+      "published_at": "Mon, 19 Oct 2026 13:15:00 +0000"
+    },
+    {
+      "title": "Public companies object to OKX-ICE’s tokenized stock plan",
+      "url": "https://cointelegraph.com/news/public-companies-object-okx-ice-tokenized-stock?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Mon, 19 Oct 2026 13:13:53 +0000"
+    },
+    {
+      "title": "MARA Ships $83 Million in Bitcoin to Exchanges as Its Stock Sinks 45%",
+      "url": "https://news.bitcoin.com/mining/mara-bitcoin-1000-btc-exchanges-shares-sink/",
+      "source": "Bitcoin.com",
+      "published_at": "Mon, 19 Oct 2026 13:05:15 +0000"
+    },
+    {
+      "title": "Strategy Buys $22M in Bitcoin, Buys Back $193M of STRC",
+      "url": "https://decrypt.co/381302/strategy-buys-22m-in-bitcoin-buys-back-193m-of-strc",
+      "source": "Decrypt",
+      "published_at": "Mon, 19 Oct 2026 13:04:48 +0000"
+    },
+    {
+      "title": "Strive Bitcoin holdings top 36,800 BTC after another $100M purchase",
+      "url": "https://crypto.news/strive-buys-1223-bitcoin-holdings-reach-36818-btc/",
+      "source": "CryptoNews",
+      "published_at": "Mon, 19 Oct 2026 13:00:12 +0000"
+    },
+    {
       "title": "Latvia Changes Crypto Tax Treatment And Opens A 2027 Declaration Window",
       "url": "https://www.newsbtc.com/regulation/latvia-changes-crypto-tax-treatment-and-opens-a-2027-declaration-window/",
       "source": "NewsBTC",
@@ -583,12 +643,6 @@
       "published_at": "Mon, 19 Oct 2026 05:55:44 +0000"
     },
     {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Mon, 19 Oct 2026 05:48:07 +0000"
-    },
-    {
       "title": "Mt. Gox delays creditor repayments by another year to October 2027",
       "url": "https://crypto.news/mt-gox-delays-creditor-repayments-by-another-year-to-october-2027/",
       "source": "CryptoNews",
@@ -671,12 +725,6 @@
       "url": "https://ambcrypto.com/sui-has-rewards-buybacks-and-a-new-ceo-whats-still-missing-is/",
       "source": "Ambcrypto",
       "published_at": "Mon, 19 Oct 2026 03:00:30 +0000"
-    },
-    {
-      "title": "Lagarde Advances Digital Euro to Defend EU Financial Autonomy",
-      "url": "https://news.bitcoin.com/crypto-news/lagarde-advances-digital-euro-to-defend-eu-financial-autonomy/",
-      "source": "Bitcoin.com",
-      "published_at": "Mon, 19 Oct 2026 02:30:48 +0000"
     },
     {
       "title": "MSCI Rules Could Drop Strategy and Metaplanet From Its Indexes From Nov. 30",
@@ -793,12 +841,6 @@
       "published_at": "Sun, 18 Oct 2026 18:50:49 +0000"
     },
     {
-      "title": "Zcash Shielded Pools Draw Fresh Scrutiny After Stolen Crypto Transfers",
-      "url": "https://bitcoinist.com/zcash-shielded-pools-stolen-crypto-forensics/",
-      "source": "Bitcoinist",
-      "published_at": "Sun, 18 Oct 2026 18:30:00 +0000"
-    },
-    {
       "title": "The White House's crypto chief departs: State of Crypto",
       "url": "https://www.coindesk.com/policy/2026/10/18/the-white-house-s-crypto-chief-departs-state-of-crypto",
       "source": "Coindesk",
@@ -821,12 +863,6 @@
       "url": "https://www.newsbtc.com/crypto-news/tokenized-stocks-defi-262-million-across-chains/",
       "source": "NewsBTC",
       "published_at": "Sun, 18 Oct 2026 18:00:00 +0000"
-    },
-    {
-      "title": "Cross River Bank Adds Ripple’s RLUSD To Its Payment Infrastructure",
-      "url": "https://bitcoinist.com/cross-river-bank-ripple-rlusd-payments-integration/",
-      "source": "Bitcoinist",
-      "published_at": "Sun, 18 Oct 2026 17:30:00 +0000"
     },
     {
       "title": "Crypto doesn’t need your party to win, just its candidates",
@@ -905,12 +941,6 @@
       "url": "https://blockonomi.com/bitcoin-recovery-stays-uneven-as-spot-demand-weakens-and-exchange-reserves-rise/",
       "source": "Blockonomi",
       "published_at": "Sun, 18 Oct 2026 15:50:03 +0000"
-    },
-    {
-      "title": "JUST Completes 5th JST Buyback & Burn: Over 170M Tokens (~$23.53M) Burned Ahead of Major Deflationary Upgrade",
-      "url": "https://cryptoslate.com/just-completes-5th-jst-buyback-burn-over-170m-tokens-23-53m-burned-ahead-of-major-deflationary-upgrade/",
-      "source": "CryptoSlate",
-      "published_at": "Sun, 18 Oct 2026 15:45:05 +0000"
     },
     {
       "title": "Ledger CEO clashes with ex-Mt. Gox boss over $90M wallet thefts",
@@ -1291,18 +1321,6 @@
       "published_at": "Sat, 17 Oct 2026 07:19:18 +0000"
     },
     {
-      "title": "Crypto VC funding: DATA draws $30m as Fission lands $10m Series A",
-      "url": "https://crypto.news/crypto-vc-funding-data-fission-october-16-2026/",
-      "source": "CryptoNews",
-      "published_at": "Sat, 17 Oct 2026 06:33:28 +0000"
-    },
-    {
-      "title": "Bitcoin slips below $80k, Ledger tightens sales, MSCI changes rules | Weekly recap",
-      "url": "https://crypto.news/weekly-crypto-recap-bitcoin-ledger-msci-oct-17-2026/",
-      "source": "CryptoNews",
-      "published_at": "Sat, 17 Oct 2026 06:19:17 +0000"
-    },
-    {
       "title": "Bitcoin Under Pressure as Trump Reportedly Prepares to Strike Iran Within 24 Hours",
       "url": "https://cryptopotato.com/bitcoin-under-pressure-as-trump-reportedly-prepares-to-strike-iran-within-24-hours/",
       "source": "CryptoPotato",
@@ -1507,12 +1525,6 @@
       "published_at": "Fri, 16 Oct 2026 10:16:06 +0000"
     },
     {
-      "title": "Bitcoin may seek 20-month trend line reclaim before new record highs: CryptoQuant",
-      "url": "https://cointelegraph.com/markets/bitcoin-seeks-20-month-trend-line-reclaim-before-new-record-highs-cryptoquant?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Fri, 16 Oct 2026 09:22:13 +0000"
-    },
-    {
       "title": "What Is a Hardware Wallet? Crypto Cold Storage Explained",
       "url": "https://decrypt.co/resources/what-is-a-hardware-wallet-crypto-cold-storage-explained",
       "source": "Decrypt",
@@ -1627,12 +1639,6 @@
       "published_at": "Thu, 15 Oct 2026 15:49:13 +0000"
     },
     {
-      "title": "Matt Hougan: Bitcoin Wins Regardless of AI Boom or Bubble Burst",
-      "url": "https://crypto-economy.com/matt-hougan-bitcoin-wins-regardless-of-ai-boom-or-bubble-burst/",
-      "source": "CryptoEconomy",
-      "published_at": "Thu, 15 Oct 2026 15:47:47 +0000"
-    },
-    {
       "title": "Bitcoin Whipsaws as Crypto Liquidations Near $1 Billion",
       "url": "https://decrypt.co/381044/bitcoin-whipsaws-crypto-liquidations-near-1-billion",
       "source": "Decrypt",
@@ -1667,12 +1673,6 @@
       "url": "https://coingeek.com/philippines-coins-ph-denies-offshore-gaming-claims/",
       "source": "CoinGeek",
       "published_at": "Thu, 15 Oct 2026 13:00:00 +0000"
-    },
-    {
-      "title": "Zcash Tanks Double Digits After 'Meteoric Rise' Sees Leverage Build Up",
-      "url": "https://decrypt.co/381015/zcash-tanks-double-digits-after-meteoric-rise-sees-leverage-build-up",
-      "source": "Decrypt",
-      "published_at": "Thu, 15 Oct 2026 12:42:30 +0000"
     },
     {
       "title": "Bank of America’s $1.2B Money Laundering Fine Raises Questions Over Warren’s Crypto Crackdown",
