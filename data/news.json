@@ -1,6 +1,42 @@
 {
   "articles": [
     {
+      "title": "China seeks to seize 61,800 BTC tied to $5.7 billion fraud scheme",
+      "url": "https://www.coindesk.com/markets/2026/10/22/china-seeks-to-seize-61-800-btc-tied-to-usd5-7-billion-fraud-scheme",
+      "source": "Coindesk",
+      "published_at": "Thu, 22 Oct 2026 06:24:10 +0000"
+    },
+    {
+      "title": "Binance founder CZ warns crypto users over critical PHP security flaws",
+      "url": "https://crypto.news/binance-founder-cz-warns-crypto-users-over-critical-php-security-flaws/",
+      "source": "CryptoNews",
+      "published_at": "Thu, 22 Oct 2026 06:22:09 +0000"
+    },
+    {
+      "title": "CZ Warns Crypto Users as Critical PHP Vulnerabilities Put Websites at Risk",
+      "url": "https://cryptopotato.com/cz-warns-crypto-users-as-critical-php-vulnerabilities-put-websites-at-risk/",
+      "source": "CryptoPotato",
+      "published_at": "Thu, 22 Oct 2026 06:21:42 +0000"
+    },
+    {
+      "title": "How did PYTH’s price fall for bears’ trap after latest surge?",
+      "url": "https://ambcrypto.com/how-did-pyths-price-fall-for-bears-trap-after-latest-surge/",
+      "source": "Ambcrypto",
+      "published_at": "Thu, 22 Oct 2026 06:00:33 +0000"
+    },
+    {
+      "title": "OpenAI’s Coding Agents Did Something the Company Still Can’t Explain",
+      "url": "https://beincrypto.com/openai-ipo-agents-weakened-safety-monitoring/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 22 Oct 2026 05:57:46 +0000"
+    },
+    {
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Thu, 22 Oct 2026 05:56:18 +0000"
+    },
+    {
       "title": "Chainlink reports $15B in CCIP migrations as LINK price nears $12",
       "url": "https://crypto.news/chainlink-q3-review-ccip-migrations-link-price/",
       "source": "CryptoNews",
@@ -313,12 +349,6 @@
       "published_at": "Wed, 21 Oct 2026 21:02:00 +0000"
     },
     {
-      "title": "Grayscale Opens 10 Crypto ETFs to Investors, But There's a Catch",
-      "url": "https://beincrypto.com/grayscale-opens-10-crypto-etfs-in-kind-investing/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 21 Oct 2026 21:01:42 +0000"
-    },
-    {
       "title": "Useless Coin targets $0.21 – Can bulls overcome rising liquidation risks?",
       "url": "https://ambcrypto.com/useless-coin-targets-0-21-can-bulls-overcome-rising-liquidation-risks/",
       "source": "Ambcrypto",
@@ -385,12 +415,6 @@
       "published_at": "Wed, 21 Oct 2026 20:14:55 +0000"
     },
     {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 21 Oct 2026 20:10:47 +0000"
-    },
-    {
       "title": "SEC’s $75 million crypto fundraising plan faces bank backlash and threats of legal action",
       "url": "https://cryptoslate.com/secs-75-million-crypto-fundraising-plan-faces-bank-backlash-and-threats-of-legal-action/",
       "source": "CryptoSlate",
@@ -455,12 +479,6 @@
       "url": "https://decrypt.co/381543/elon-musk-spacex-tesla-merger-ai-empire",
       "source": "Decrypt",
       "published_at": "Wed, 21 Oct 2026 18:16:03 +0000"
-    },
-    {
-      "title": "Ethereum staking hits record highs – So why are yields falling?",
-      "url": "https://ambcrypto.com/ethereum-staking-hits-record-highs-so-why-are-yields-falling/",
-      "source": "Ambcrypto",
-      "published_at": "Wed, 21 Oct 2026 18:00:26 +0000"
     },
     {
       "title": "Cardano Foundation urges EU against expanding MiCA rules to DeFi and staking",
@@ -1279,22 +1297,10 @@
       "published_at": "Tue, 20 Oct 2026 19:15:44 +0000"
     },
     {
-      "title": "Zodl Vault plans beta access in groups of 100 for Zcash holders",
-      "url": "https://crypto.news/zodl-vault-zcash-macos-beta-waitlist/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 20 Oct 2026 19:04:47 +0000"
-    },
-    {
       "title": "Bitcoin ETFs Post Their Best Day in Nearly a Month as BlackRock Does All the Buying",
       "url": "https://decrypt.co/381444/bitcoin-etfs-best-day-nearly-month-blackrock-does-most-buying",
       "source": "Decrypt",
       "published_at": "Tue, 20 Oct 2026 18:31:04 +0000"
-    },
-    {
-      "title": "OKX-ICE co-chair Andrew Cuomo calls corporate objections a ‘natural response’ to tokenized stock plans",
-      "url": "https://www.coindesk.com/business/2026/10/20/okx-ice-s-andrew-cuomo-calls-issuer-objections-a-natural-response-to-tokenized-stock-plans",
-      "source": "Coindesk",
-      "published_at": "Tue, 20 Oct 2026 18:26:29 +0000"
     },
     {
       "title": "PENGU Dumps 20% in 2 Weeks, But Analyst Predicts a Massive Rebound",
@@ -1547,12 +1553,6 @@
       "url": "https://coingeek.com/who-verifies-the-verifier-the-new-trust-problem-in-digital-identity/",
       "source": "CoinGeek",
       "published_at": "Tue, 20 Oct 2026 05:00:00 +0000"
-    },
-    {
-      "title": "XRP Ledger Bug Fixes Set for Friday Activation as DeFi Lending Awaits Approval",
-      "url": "https://cryptopotato.com/xrp-ledger-bug-fixes-set-for-friday-activation-as-defi-lending-awaits-approval/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 20 Oct 2026 04:02:30 +0000"
     },
     {
       "title": "Revolut wins Gibraltar DLT licence via new subsidiary to power global crypto push",
