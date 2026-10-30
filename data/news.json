@@ -1,6 +1,24 @@
 {
   "articles": [
     {
+      "title": "Bitcoin Is Beating the S&P 500, so Why Is $85,000 Still Out of Reach?",
+      "url": "https://beincrypto.com/bitcoin-outperforms-sp500-below-85000/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 30 Oct 2026 00:45:19 +0000"
+    },
+    {
+      "title": "Inside the $5.8B Binance Hack: What’s Confirmed and What Isn’t",
+      "url": "https://news.bitcoin.com/security/inside-the-5-8b-binance-hack-whats-confirmed-and-what-isnt/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 30 Oct 2026 00:41:03 +0000"
+    },
+    {
+      "title": "Silicon Valley shifts AI funding to crypto using an Ethereum ICO blueprint",
+      "url": "https://cryptoslate.com/silicon-valley-shifts-ai-funding-to-crypto-using-an-ethereum-ico-blueprint/",
+      "source": "CryptoSlate",
+      "published_at": "Fri, 30 Oct 2026 00:40:53 +0000"
+    },
+    {
       "title": "Binance hack drained wallets backing customer assets, reserve data shows",
       "url": "https://www.coindesk.com/business/2026/10/30/binance-hack-drained-wallets-backing-customer-assets-reserve-data-shows",
       "source": "Coindesk",
@@ -409,12 +427,6 @@
       "published_at": "Thu, 29 Oct 2026 17:54:57 +0000"
     },
     {
-      "title": "Bitcoin Price Briefly Nears $82K, but Bears Warn of a Drop Toward $76K",
-      "url": "https://news.bitcoin.com/market-updates/bitcoin-price-82k-bears-warn-drop-toward-76k/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 29 Oct 2026 17:46:51 +0000"
-    },
-    {
       "title": "Crypto Spends $176 Million on Midterms, But Only 13% of Voters See It as a Priority",
       "url": "https://decrypt.co/382179/crypto-spends-176-million-midterms-only-13-percent-voters-priority",
       "source": "Decrypt",
@@ -509,12 +521,6 @@
       "url": "https://decrypt.co/382161/4m-bitcoin-bought-above-85k-could-cap-recovery-glassnode",
       "source": "Decrypt",
       "published_at": "Thu, 29 Oct 2026 16:32:47 +0000"
-    },
-    {
-      "title": "Circle wants SEC to erase a costly Wall Street rule holding stablecoins back",
-      "url": "https://cryptoslate.com/circle-wants-sec-to-erase-a-costly-wall-street-rule-holding-stablecoins-back/",
-      "source": "CryptoSlate",
-      "published_at": "Thu, 29 Oct 2026 16:30:28 +0000"
     },
     {
       "title": "Nasdaq-listed Canton Strategic Holdings plans tokenized stock trading from Nov. 2",
@@ -731,12 +737,6 @@
       "url": "https://beincrypto.com/north-korea-crypto-cashout-mainstream-exchanges/",
       "source": "BeinCrypto",
       "published_at": "Thu, 29 Oct 2026 13:27:48 +0000"
-    },
-    {
-      "title": "Bitrue Gives New Futures Traders A 100 USDT Voucher In Halloween Campaign",
-      "url": "https://beincrypto.com/bitrue-gives-new-futures-traders-100-usdt/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 29 Oct 2026 13:26:45 +0000"
     },
     {
       "title": "U.S. spot XRP ETF inflows exceed $1.8 billion, XRP holders can earn up to $10,000 daily",
@@ -973,7 +973,7 @@
       "published_at": "Thu, 29 Oct 2026 10:44:48 +0000"
     },
     {
-      "title": "Live updates: Binance confirms security breach, cryptos fall",
+      "title": "Live updates: Binance confirms security breach, says 'will cover all hacking losses'",
       "url": "https://www.coindesk.com/business/2026/10/29/live-updates-bitcoin-clings-to-usd80-000-as-strategy-s-cushion-thins-before-earnings",
       "source": "Coindesk",
       "published_at": "Thu, 29 Oct 2026 10:41:39 +0000"
@@ -1381,6 +1381,12 @@
       "published_at": "Wed, 28 Oct 2026 16:15:02 +0000"
     },
     {
+      "title": "XRP Outperforms Bitcoin and Major Stocks Over 10 Years but Numbers Are Easy to Misread",
+      "url": "https://thecryptobasic.com/2026/10/28/xrp-outperforms-bitcoin-and-major-stocks-over-10-years-but-numbers-are-easy-to-misread/",
+      "source": "CryptoBasic",
+      "published_at": "Wed, 28 Oct 2026 15:29:30 +0000"
+    },
+    {
       "title": "Fed Rate Decision: What Markets and Bitcoin Traders Can Expect",
       "url": "https://decrypt.co/382044/fed-rate-decision-what-markets-bitcoin-traders-expect",
       "source": "Decrypt",
@@ -1651,6 +1657,18 @@
       "published_at": "Mon, 26 Oct 2026 20:01:03 +0000"
     },
     {
+      "title": "Bitcoin Faces Another Drop as $80M in Buy Orders Cluster at $78K–$79K",
+      "url": "https://thecryptobasic.com/2026/10/26/bitcoin-faces-another-drop-as-80m-in-buy-orders-cluster-at-78k-79k/",
+      "source": "CryptoBasic",
+      "published_at": "Mon, 26 Oct 2026 13:29:55 +0000"
+    },
+    {
+      "title": "Bitcoin Records Three Consecutive Red Weekly Candles for First Time Since May",
+      "url": "https://thecryptobasic.com/2026/10/26/bitcoin-records-three-consecutive-red-weekly-candles-for-first-time-since-may/",
+      "source": "CryptoBasic",
+      "published_at": "Mon, 26 Oct 2026 10:38:54 +0000"
+    },
+    {
       "title": "Foundation Warns Passport Bitcoin Wallet Users After Cloudflare API Key Breach",
       "url": "https://blockonomi.com/foundation-warns-passport-bitcoin-wallet-users-after-cloudflare-api-key-breach/",
       "source": "Blockonomi",
@@ -1735,10 +1753,22 @@
       "published_at": "Sat, 17 Oct 2026 02:10:16 +0000"
     },
     {
+      "title": "Bitcoin Trails Its Typical October Path by Nearly 10 Percentage Points as Mid-Month Weakness Takes Hold",
+      "url": "https://thecryptobasic.com/2026/10/16/bitcoin-trails-its-typical-october-path-by-nearly-10-percentage-points-as-mid-month-weakness-takes-hold/",
+      "source": "CryptoBasic",
+      "published_at": "Fri, 16 Oct 2026 07:58:07 +0000"
+    },
+    {
       "title": "Gasoline Drove Over Half the Hot September CPI Print That Sent Bitcoin to $81,300",
       "url": "https://insidebitcoins.com/news/gasoline-drove-over-half-the-hot-september-cpi-print-that-sent-bitcoin-to-81300",
       "source": "InsideBitcoin",
       "published_at": "Fri, 16 Oct 2026 01:35:11 +0000"
+    },
+    {
+      "title": "60,000 BTC Added as Bitcoin’s Largest Holders Appear Willing to Retain More BTC Into the Recovery",
+      "url": "https://thecryptobasic.com/2026/10/15/60000-btc-added-as-bitcoins-largest-holders-appear-willing-to-retain-more-btc-into-the-recovery/",
+      "source": "CryptoBasic",
+      "published_at": "Thu, 15 Oct 2026 08:42:16 +0000"
     },
     {
       "title": "Why Standard Chartered Is Keeping Crypto Inside the Bank",
@@ -1769,6 +1799,12 @@
       "url": "https://insidebitcoins.com/news/cftc-event-contracts-swaps-rule",
       "source": "InsideBitcoin",
       "published_at": "Sat, 10 Oct 2026 03:20:17 +0000"
+    },
+    {
+      "title": "Bitcoin Update: Bitcoin Drops 7%, U.S. Holdings Fall by 17,468 BTC, Short-Term Holders Send 45.6K BTC to Exchanges",
+      "url": "https://thecryptobasic.com/2026/10/09/bitcoin-update-bitcoin-drops-7-u-s-government-holdings-fall-by-17468-btc-short-term-holders-send-45-6k-btc-to-exchanges/",
+      "source": "CryptoBasic",
+      "published_at": "Fri, 09 Oct 2026 09:25:26 +0000"
     },
     {
       "title": "ESMA Gives EU Crypto Platforms Three Months to Wind Down Non-MiCA Stablecoins",
