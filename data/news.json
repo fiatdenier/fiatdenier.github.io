@@ -1,6 +1,24 @@
 {
   "articles": [
     {
+      "title": "Binance Releases First $6.3B Hack Findings, Reports No Key Leak Evidence",
+      "url": "https://news.bitcoin.com/security/binance-releases-first-6-3b-hack-findings-reports-no-key-leak-evidence/",
+      "source": "Bitcoin.com",
+      "published_at": "Fri, 30 Oct 2026 03:08:24 +0000"
+    },
+    {
+      "title": "Polymarket and Kalshi Get a Rival as DraftKings CEO Sees ‘Extraordinary’ Upside",
+      "url": "https://beincrypto.com/draftkings-prediction-markets-polymarket-kalshi-rival/",
+      "source": "BeinCrypto",
+      "published_at": "Fri, 30 Oct 2026 03:01:00 +0000"
+    },
+    {
+      "title": "Stellar Unveils Thruput With Multi-Million-Transaction Execution Benchmarks",
+      "url": "https://www.newsbtc.com/news/stellar-unveils-thruput-with-multi-million-transaction-execution-benchmarks/",
+      "source": "NewsBTC",
+      "published_at": "Fri, 30 Oct 2026 03:00:00 +0000"
+    },
+    {
       "title": "KOSPI Falls Far Harder Than Nikkei as AI Earnings Scare Hits Chipmakers",
       "url": "https://beincrypto.com/kospi-falls-harder-than-nikkei/",
       "source": "BeinCrypto",
@@ -235,7 +253,7 @@
       "published_at": "Thu, 29 Oct 2026 21:36:24 +0000"
     },
     {
-      "title": "Binance Hack: $2 Billion Drained, Circle and Tether Freeze, Crypto Markets React",
+      "title": "Binance Hack: $6.3 Billion Impacted, Circle and Tether Freeze, Crypto Markets React",
       "url": "https://beincrypto.com/binance-hack-circle-tether-freeze-hot-wallets/",
       "source": "BeinCrypto",
       "published_at": "Thu, 29 Oct 2026 21:35:52 +0000"
@@ -259,7 +277,7 @@
       "published_at": "Thu, 29 Oct 2026 21:25:22 +0000"
     },
     {
-      "title": "Live updates: Binance says $3B in crypto frozen in connection to hack",
+      "title": "Live updates: Binance says $6.3B hack involved compromised engineer’s laptop",
       "url": "https://cointelegraph.com/news/binance-linked-wallet-faces-possible-exploit-blockchain-researcher-warns?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Thu, 29 Oct 2026 21:24:36 +0000"
@@ -329,12 +347,6 @@
       "url": "https://crypto.news/circle-sec-stablecoin-cash-treatment-zero-haircut/",
       "source": "CryptoNews",
       "published_at": "Thu, 29 Oct 2026 20:35:34 +0000"
-    },
-    {
-      "title": "Polymarket Halts Trading Over Exploit That Stole Estimated $2.7M From Users",
-      "url": "https://news.bitcoin.com/security/polymarket-halts-trading-exploit-stole-estimated-2-7m-users/",
-      "source": "Bitcoin.com",
-      "published_at": "Thu, 29 Oct 2026 20:22:33 +0000"
     },
     {
       "title": "Polymarket Trading Disrupted After Users Report $2.6M in Losses",
@@ -451,12 +463,6 @@
       "published_at": "Thu, 29 Oct 2026 18:37:54 +0000"
     },
     {
-      "title": "Polymarket Halts Trading as Users Report $1.4 Million Drained",
-      "url": "https://beincrypto.com/polymarket-halts-trading-users-drained/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 29 Oct 2026 18:35:18 +0000"
-    },
-    {
       "title": "Polygon adds Solana support for stablecoin payments and bank payouts",
       "url": "https://ambcrypto.com/polygon-adds-solana-support-for-stablecoin-payments-and-bank-payouts/",
       "source": "Ambcrypto",
@@ -527,12 +533,6 @@
       "url": "https://www.coindesk.com/business/2026/10/29/stanley-druckenmiller-s-first-x-post-backs-hyperliquid-venture-after-usd23-million-indirect-investment",
       "source": "Coindesk",
       "published_at": "Thu, 29 Oct 2026 17:04:19 +0000"
-    },
-    {
-      "title": "Securitize Plans Stellar Integration as Tokenized Asset Platforms Expand",
-      "url": "https://www.newsbtc.com/news/securitize-plans-stellar-integration-as-tokenized-asset-platforms-expand/",
-      "source": "NewsBTC",
-      "published_at": "Thu, 29 Oct 2026 17:00:00 +0000"
     },
     {
       "title": "Solana’s Lily Liu says ‘unblocked’ as Polygon adds payments",
@@ -1811,12 +1811,6 @@
       "url": "https://thecryptobasic.com/2026/10/09/bitcoin-update-bitcoin-drops-7-u-s-government-holdings-fall-by-17468-btc-short-term-holders-send-45-6k-btc-to-exchanges/",
       "source": "CryptoBasic",
       "published_at": "Fri, 09 Oct 2026 09:25:26 +0000"
-    },
-    {
-      "title": "ESMA Gives EU Crypto Platforms Three Months to Wind Down Non-MiCA Stablecoins",
-      "url": "https://insidebitcoins.com/news/esma-crypto-platforms-3-months-unauthorized-stablecoins",
-      "source": "InsideBitcoin",
-      "published_at": "Fri, 09 Oct 2026 03:15:14 +0000"
     }
   ]
 }
