@@ -1,10 +1,64 @@
 {
   "articles": [
     {
+      "title": "Bitcoin breaks $80K as crypto shorts lose $378M in one hour",
+      "url": "https://crypto.news/bitcoin-80k-378m-short-liquidations-etf-outflows/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 04 Nov 2026 15:54:08 +0000"
+    },
+    {
+      "title": "Evernorth’s XRP funding plan could raise $18 million less at lower share price",
+      "url": "https://cryptoslate.com/evernorths-xrp-funding-clears-a-hurdle-as-weaker-shares-reduce-what-it-could-raise/",
+      "source": "CryptoSlate",
+      "published_at": "Wed, 04 Nov 2026 15:50:35 +0000"
+    },
+    {
+      "title": "$380M in Shorts Liquidated in an Hour as Bitcoin (BTC) Skyrockets to $81K",
+      "url": "https://cryptopotato.com/380m-in-shorts-liqudated-in-an-hour-as-bitcoin-btc-skyrockets-to-81k/",
+      "source": "CryptoPotato",
+      "published_at": "Wed, 04 Nov 2026 15:35:19 +0000"
+    },
+    {
+      "title": "CLARITY Act faces a new Congress as Democrats win both chambers",
+      "url": "https://crypto.news/clarity-act-democrats-congress-crypto-rules/",
+      "source": "CryptoNews",
+      "published_at": "Wed, 04 Nov 2026 15:34:16 +0000"
+    },
+    {
+      "title": "Credit Mutuel Arkea Cyberattack: $133M Traced to Crypto Exchanges",
+      "url": "https://news.bitcoin.com/security/credit-mutuel-arkea-cyberattack-133m-traced-crypto-exchanges/",
+      "source": "Bitcoin.com",
+      "published_at": "Wed, 04 Nov 2026 15:30:45 +0000"
+    },
+    {
+      "title": "Crédit Mutuel Arkéa Confirms Cyberattack After ZachXBT Ties It to $133M Crypto Theft",
+      "url": "https://decrypt.co/382486/zachxbt-names-french-bank-credit-mutuel-arkea-as-alleged-victim-of-133m-crypto-theft",
+      "source": "Decrypt",
+      "published_at": "Wed, 04 Nov 2026 15:30:31 +0000"
+    },
+    {
+      "title": "5 Reasons Why the US Stock Market Is Up After Midterm Election Results",
+      "url": "https://beincrypto.com/why-us-stock-market-is-up-after-midterm-elections-2026/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 04 Nov 2026 15:29:58 +0000"
+    },
+    {
+      "title": "Bitcoin hits $80.5K as US stocks rally on midterm election results",
+      "url": "https://cointelegraph.com/markets/bitcoin-price-us-stocks-rally-midterm-election-result?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 04 Nov 2026 15:29:23 +0000"
+    },
+    {
       "title": "Coinbase says customers unaffected by $6.34B Binance hack",
       "url": "https://crypto.news/coinbase-binance-hack-customers-cold-storage/",
       "source": "CryptoNews",
       "published_at": "Wed, 04 Nov 2026 15:18:55 +0000"
+    },
+    {
+      "title": "After the Binance Hack, Coinbase Reveals How It Protects $377 Billion in Crypto",
+      "url": "https://beincrypto.com/coinbase-security-measures-after-binance-hack/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 04 Nov 2026 15:15:42 +0000"
     },
     {
       "title": "Canton Coin Rises After SEC Classifies It as a Digital Commodity",
@@ -325,34 +379,16 @@
       "published_at": "Wed, 04 Nov 2026 11:29:00 +0000"
     },
     {
-      "title": "Bitrue Launches Flexible Staking Offer For New Users On XRP, BTC And USDT",
-      "url": "https://beincrypto.com/bitrue-launches-flexible-staking-offer-xrp-btc-usdt/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 04 Nov 2026 11:25:42 +0000"
-    },
-    {
       "title": "1win Team Secure Direct Qualification for Major Stage 2 After Moscow Cyber Games 2026 Victory",
       "url": "https://ambcrypto.com/1win-team-secure-direct-qualification-for-major-stage-2-after-moscow-cyber-games-2026-victory/",
       "source": "Ambcrypto",
       "published_at": "Wed, 04 Nov 2026 11:25:07 +0000"
     },
     {
-      "title": "ZachXBT Names French Bank Crédit Mutuel Arkéa as Alleged Victim of $133M Crypto Theft",
-      "url": "https://decrypt.co/382486/zachxbt-names-french-bank-credit-mutuel-arkea-as-alleged-victim-of-133m-crypto-theft",
-      "source": "Decrypt",
-      "published_at": "Wed, 04 Nov 2026 11:20:31 +0000"
-    },
-    {
       "title": "Binance hack may be ‘temporary setback’ for crypto, Grayscale’s Pandl says",
       "url": "https://cointelegraph.com/markets/crypto-market-recovery-grayscale-binance-hack-temporary-setback?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Wed, 04 Nov 2026 11:11:57 +0000"
-    },
-    {
-      "title": "Gate Launches Taiwan Stock Trading, Initially Supporting Popular Stocks Listed on Taiwan Stock Exchange Including TSMC and MediaTek",
-      "url": "https://beincrypto.com/gate-launches-taiwan-stock-trading/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 04 Nov 2026 11:10:57 +0000"
     },
     {
       "title": "Binance reports $11 billion withdrawn in 46 hours as Zhao says few funds went to rivals",
@@ -727,12 +763,6 @@
       "published_at": "Wed, 04 Nov 2026 06:00:00 +0000"
     },
     {
-      "title": "Bitcoin Price Dips Under $76K Then Recovers as Blue Wave Hits Washington",
-      "url": "https://news.bitcoin.com/crypto-news/bitcoin-price-dips-under-76k-democrats-midterms/",
-      "source": "Bitcoin.com",
-      "published_at": "Wed, 04 Nov 2026 05:55:31 +0000"
-    },
-    {
       "title": "Ethereum dev targets 2028 for quantum resistance, a year early",
       "url": "https://cointelegraph.com/news/ethereum-post-quantum-transition-2028-target?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -887,12 +917,6 @@
       "url": "https://decrypt.co/382476/openai-ai-data-centers-rebrand-protect-power-grid",
       "source": "Decrypt",
       "published_at": "Tue, 03 Nov 2026 23:48:32 +0000"
-    },
-    {
-      "title": "Coinbase XRP looked cheap on Nov. 2 despite identical market value",
-      "url": "https://cryptoslate.com/coinbase-xrp-looked-cheap-on-nov-2-despite-identical-market-value/",
-      "source": "CryptoSlate",
-      "published_at": "Tue, 03 Nov 2026 23:40:07 +0000"
     },
     {
       "title": "What voters said about their views on crypto",
@@ -1237,12 +1261,6 @@
       "published_at": "Tue, 03 Nov 2026 13:53:07 +0000"
     },
     {
-      "title": "South Korea demands stronger crypto safeguards following Binance hack",
-      "url": "https://crypto.news/south-korea-demands-stronger-crypto-safeguards-following-binance-hack/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 03 Nov 2026 13:52:55 +0000"
-    },
-    {
       "title": "Ethereum Supply on Exchanges Hits a Decade Low: Is ETH Preparing for a Major Move?",
       "url": "https://cryptopotato.com/ethereum-supply-on-exchanges-hits-a-decade-low-is-eth-preparing-for-a-major-move/",
       "source": "CryptoPotato",
@@ -1265,12 +1283,6 @@
       "url": "https://decrypt.co/382410/morning-minute-tom-lee-calls-the-binance-hack-bullish-for-ethereum",
       "source": "Decrypt",
       "published_at": "Tue, 03 Nov 2026 13:11:47 +0000"
-    },
-    {
-      "title": "Bitget opens Anthropic pre-IPO subscriptions with fees of up to 12%",
-      "url": "https://crypto.news/bitget-anthropic-pre-ipo-rant-token-subscriptions/",
-      "source": "CryptoNews",
-      "published_at": "Tue, 03 Nov 2026 12:36:46 +0000"
     },
     {
       "title": "NEAR token sinks 7% as proposal to cut annual token issuance passes",
@@ -1403,12 +1415,6 @@
       "url": "https://insidebitcoins.com/news/binance-hack-fbi-tradertraitor-tether-circle-freeze",
       "source": "InsideBitcoin",
       "published_at": "Tue, 03 Nov 2026 07:50:16 +0000"
-    },
-    {
-      "title": "BlackRock’s IBIT sees biggest Bitcoin ETF outflows since June",
-      "url": "https://cointelegraph.com/markets/blackrocks-ibit-biggest-bitcoin-etf-outflow-june?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 03 Nov 2026 07:49:51 +0000"
     },
     {
       "title": "Analyst Explains What a Democratic Midterm Sweep Means for Crypto",
@@ -1577,12 +1583,6 @@
       "url": "https://cryptopotato.com/bitcoin-price-analysis-is-the-september-rally-structure-in-danger-as-btc-hangs-by-a-thread/",
       "source": "CryptoPotato",
       "published_at": "Mon, 02 Nov 2026 16:06:43 +0000"
-    },
-    {
-      "title": "Ethereum (ETH) Whales Buy Like ‘Crazy:’ Price Rally Incoming?",
-      "url": "https://cryptopotato.com/ethereum-eth-whales-buy-like-crazy-price-rally-incoming/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 02 Nov 2026 15:21:15 +0000"
     },
     {
       "title": "How T7X Is Building the Infrastructure for a New Era of Capital Markets",
