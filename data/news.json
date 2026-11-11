@@ -1,6 +1,54 @@
 {
   "articles": [
     {
+      "title": "Live news: CoreWeave jumps 14% as earnings fuel rebound across battered AI stocks",
+      "url": "https://www.coindesk.com/tech/2026/11/11/live-news-coreweave-jumps-14-as-earnings-fuel-rebound-across-battered-ai-stocks",
+      "source": "Coindesk",
+      "published_at": "Wed, 11 Nov 2026 12:21:24 +0000"
+    },
+    {
+      "title": "Bitcoin barely flinches at hot CPI as ETF selling slows",
+      "url": "https://www.coindesk.com/daybook-us/2026/11/11/bitcoin-barely-flinches-at-hot-cpi-as-etf-selling-slows",
+      "source": "Coindesk",
+      "published_at": "Wed, 11 Nov 2026 12:19:30 +0000"
+    },
+    {
+      "title": "Nvidia Sheds $430B in Two Days as Jensen Huang Faces Calls to Resign",
+      "url": "https://decrypt.co/382991/nvidia-sheds-430b-in-two-days-as-jensen-huang-faces-calls-to-resign",
+      "source": "Decrypt",
+      "published_at": "Wed, 11 Nov 2026 12:15:46 +0000"
+    },
+    {
+      "title": "Arca Opens to Everyone, Paying People for the AI Sessions They’d Otherwise Throw Away",
+      "url": "https://www.newsbtc.com/news/arca-opens-to-everyone-paying-people-for-the-ai-sessions-theyd-otherwise-throw-away/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 11 Nov 2026 12:09:13 +0000"
+    },
+    {
+      "title": "Exodus Reports $8.3M Quarterly Loss as Wallet Platform Expands Payments Business",
+      "url": "https://www.newsbtc.com/business/exodus-q3-2026-loss-wallet-payments-expansion/",
+      "source": "NewsBTC",
+      "published_at": "Wed, 11 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "title": "Arca Opens to Everyone, Paying People for the AI Sessions They'd Otherwise Throw Away",
+      "url": "https://beincrypto.com/arca-opens-everyone-paying-people-for-ai-sessions/",
+      "source": "BeinCrypto",
+      "published_at": "Wed, 11 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "title": "Websites may need to rethink design as AI agents become buyers",
+      "url": "https://coingeek.com/websites-may-need-to-rethink-design-as-ai-agents-become-buyers/",
+      "source": "CoinGeek",
+      "published_at": "Wed, 11 Nov 2026 12:00:00 +0000"
+    },
+    {
+      "title": "Barclays boosts BlackRock Bitcoin ETF stake 48% as banks expand holdings",
+      "url": "https://cointelegraph.com/news/barclays-blackrock-ibit-boost-key-q3-filings?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Wed, 11 Nov 2026 11:56:23 +0000"
+    },
+    {
       "title": "ECB warns digital euro may not launch in 2029 as EU talks continue",
       "url": "https://crypto.news/ecb-digital-euro-launch-delay-beyond-2029/",
       "source": "BTCManager",
@@ -721,12 +769,6 @@
       "published_at": "Wed, 11 Nov 2026 04:42:30 +0000"
     },
     {
-      "title": "US Gas Falls Below $4 for First Time Since July. Why Is Diesel Still Above $6?",
-      "url": "https://beincrypto.com/diesel-prices-lag-gas-below-4/",
-      "source": "BeinCrypto",
-      "published_at": "Wed, 11 Nov 2026 04:30:49 +0000"
-    },
-    {
       "title": "Missouri Turns Federal Gambling Law on Novig as Polymarket Sues State AG",
       "url": "https://news.bitcoin.com/igaming/missouri-turns-federal-gambling-law-novig-polymarket-sues-state-ag/",
       "source": "Bitcoin.com",
@@ -755,12 +797,6 @@
       "url": "https://ambcrypto.com/what-trump-medias-410m-q3-profits-reveal-about-its-bitcoin-exposure/",
       "source": "Ambcrypto",
       "published_at": "Wed, 11 Nov 2026 04:00:24 +0000"
-    },
-    {
-      "title": "EU Seeks Experts to Help Set Tokenisation Standards as Financial Markets Move Onchain",
-      "url": "https://www.newsbtc.com/news/blockchain/eu-tokenisation-standards-group-esma-nominations/",
-      "source": "NewsBTC",
-      "published_at": "Wed, 11 Nov 2026 04:00:00 +0000"
     },
     {
       "title": "CFIX secures VARA in-principle approval, advancing CFI Financial Group’s virtual assets strategy",
@@ -799,22 +835,10 @@
       "published_at": "Wed, 11 Nov 2026 03:00:36 +0000"
     },
     {
-      "title": "Coinbase, Kalshi and Other Firms Back CFTC in Fight Over Stock Perpetuals",
-      "url": "https://www.newsbtc.com/regulation/coinbase-kalshi-cftc-single-stock-perpetuals-lawsuit/",
-      "source": "NewsBTC",
-      "published_at": "Wed, 11 Nov 2026 03:00:00 +0000"
-    },
-    {
       "title": "Solana derivatives volume explodes 65% amid shrinking spot trading activity",
       "url": "https://cryptoslate.com/solana-perp-volume-explodes-65-amid-shrinking-spot-activity/",
       "source": "CryptoSlate",
       "published_at": "Wed, 11 Nov 2026 02:10:48 +0000"
-    },
-    {
-      "title": "Hyperscale Data Exits Bitcoin Treasury, Redirects Funds to AI Infrastructure",
-      "url": "https://crypto-economy.com/hyperscale-data-exits-bitcoin-treasury-redirects-funds-to-ai-infrastructure/",
-      "source": "CryptoEconomy",
-      "published_at": "Wed, 11 Nov 2026 01:50:46 +0000"
     },
     {
       "title": "LNbits rushes emergency patch after reported Bitcoin wallet thefts",
@@ -827,12 +851,6 @@
       "url": "https://ambcrypto.com/philippines-sec-confirms-data-breach-as-bir-investigates-340k-record-leak-claims/",
       "source": "Ambcrypto",
       "published_at": "Wed, 11 Nov 2026 01:00:52 +0000"
-    },
-    {
-      "title": "Bitcoin Demand Plunges 284,000 BTC as $6.6B Exits USDT Market Cap",
-      "url": "https://crypto-economy.com/bitcoin-demand-plunges-284000-btc-as-6-6b-exits-usdt-market-cap/",
-      "source": "CryptoEconomy",
-      "published_at": "Wed, 11 Nov 2026 00:43:04 +0000"
     },
     {
       "title": "Bitcoin devs merge 3 new BIPs, and transaction fees could plummet",
@@ -869,12 +887,6 @@
       "url": "https://cryptopotato.com/initia-halts-blockchain-after-615k-leaves-bridged-asset-escrows/",
       "source": "CryptoPotato",
       "published_at": "Tue, 10 Nov 2026 22:40:55 +0000"
-    },
-    {
-      "title": "Trump Media Expands Bitcoin Holdings to 15,649 BTC Despite Market Slump",
-      "url": "https://crypto-economy.com/trump-media-expands-bitcoin-holdings-to-15649-btc-despite-market-slump/",
-      "source": "CryptoEconomy",
-      "published_at": "Tue, 10 Nov 2026 22:23:49 +0000"
     },
     {
       "title": "MARA dumps Bitcoin to erase a $750M collateral risk",
@@ -1019,12 +1031,6 @@
       "url": "https://decrypt.co/382962/grayscale-bets-1-million-on-zcash-as-privacy-coin-tumbles",
       "source": "Decrypt",
       "published_at": "Tue, 10 Nov 2026 19:16:02 +0000"
-    },
-    {
-      "title": "Bitcoin Miner Bitdeer Hits Record Revenue Despite $125.5 Million Loss",
-      "url": "https://crypto-economy.com/bitcoin-miner-bitdeer-hits-record-revenue-despite-125-5-million-loss/",
-      "source": "CryptoEconomy",
-      "published_at": "Tue, 10 Nov 2026 19:08:06 +0000"
     },
     {
       "title": "Binance Warns About a Major Threat: Here’s the Best Protection",
@@ -1447,12 +1453,6 @@
       "published_at": "Tue, 10 Nov 2026 12:21:51 +0000"
     },
     {
-      "title": "Pi Network Rebounds From Record Low as Bitcoin Struggles Near $74K",
-      "url": "https://crypto-economy.com/pi-network-rebounds-from-record-low/",
-      "source": "CryptoEconomy",
-      "published_at": "Tue, 10 Nov 2026 12:18:54 +0000"
-    },
-    {
       "title": "Bitcoin breaks with stocks, declines as ETF outflows mount, MARA reduces holdings",
       "url": "https://www.coindesk.com/daybook-us/2026/11/10/bitcoin-breaks-with-stocks-declines-as-etf-outflows-mount-mara-sells-holdings",
       "source": "Coindesk",
@@ -1693,12 +1693,6 @@
       "published_at": "Tue, 10 Nov 2026 09:14:30 +0000"
     },
     {
-      "title": "BitGo Q3 profit nearly doubles on crypto gains as revenue falls 51%",
-      "url": "https://cointelegraph.com/news/bitgo-q3-2026-earnings-crypto-treasury-gains?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Tue, 10 Nov 2026 09:05:16 +0000"
-    },
-    {
       "title": "Cardano (ADA) vs. Solana (SOL): 3 AIs Analyze Which Will Perform Better in Q4?",
       "url": "https://cryptopotato.com/cardano-ada-vs-solana-sol-3-ais-analyze-which-will-perform-better-in-q4/",
       "source": "CryptoPotato",
@@ -1771,12 +1765,6 @@
       "published_at": "Tue, 10 Nov 2026 00:35:19 +0000"
     },
     {
-      "title": "Strive Adds Another 29 BTC, Pushing Bitcoin Holdings Above 43,150",
-      "url": "https://crypto-economy.com/strive-adds-another-29-btc-pushing-bitcoin-holdings-above-43150/",
-      "source": "CryptoEconomy",
-      "published_at": "Tue, 10 Nov 2026 00:18:22 +0000"
-    },
-    {
       "title": "Securitize pushes into $6 trillion asset-backed finance market with River One acquisition",
       "url": "https://www.coindesk.com/business/2026/11/09/securitize-pushes-into-usd6-trillion-asset-backed-finance-market-with-river-one-acquisition",
       "source": "Coindesk",
@@ -1837,12 +1825,6 @@
       "published_at": "Mon, 09 Nov 2026 19:02:52 +0000"
     },
     {
-      "title": "Peter Schiff Says Saylor’s STRC Is ‘Dead’ Despite 12% Yield",
-      "url": "https://crypto-economy.com/peter-schiff-says-saylors-strc-is-dead-despite-12-yield/",
-      "source": "CryptoEconomy",
-      "published_at": "Mon, 09 Nov 2026 18:37:06 +0000"
-    },
-    {
       "title": "Nvidia's $350 Billion Scare: What Happens If Jensen Huang Leaves?",
       "url": "https://decrypt.co/382838/nvidias-350-billion-scare-what-happens-if-jensen-huang-leaves",
       "source": "Decrypt",
@@ -1885,12 +1867,6 @@
       "published_at": "Mon, 09 Nov 2026 16:44:31 +0000"
     },
     {
-      "title": "A Bitcoin block just neared a 2015 transaction record, but paid only $180 in fees",
-      "url": "https://www.coindesk.com/tech/2026/11/09/a-bitcoin-block-just-neared-a-2015-transaction-record-but-paid-only-usd180-in-fees",
-      "source": "Coindesk",
-      "published_at": "Mon, 09 Nov 2026 16:19:45 +0000"
-    },
-    {
       "title": "NYSE Taps Avalanche to Settle Its Planned Tokenized Stock Platform",
       "url": "https://decrypt.co/382833/nyse-avalanche-settle-tokenized-stock-platform",
       "source": "Decrypt",
@@ -1901,12 +1877,6 @@
       "url": "https://cryptopotato.com/bitmine-just-bought-another-9500-eth-as-tom-lee-backs-buterins-ethereum-vision/",
       "source": "CryptoPotato",
       "published_at": "Mon, 09 Nov 2026 15:36:01 +0000"
-    },
-    {
-      "title": "Google’s AI chip push adds more pressure on Nvidia",
-      "url": "https://www.coindesk.com/markets/2026/11/09/google-s-ai-chip-push-adds-more-pressure-on-nvidia",
-      "source": "Coindesk",
-      "published_at": "Mon, 09 Nov 2026 15:20:05 +0000"
     },
     {
       "title": "Polymarket Fees Now Up to 36% Higher Than Kalshi After New Tiered Taker Fee Rollout",
@@ -1945,12 +1915,6 @@
       "published_at": "Mon, 09 Nov 2026 13:06:59 +0000"
     },
     {
-      "title": "Bitcoin Struggles Under Pressure Ahead Of Crucial Inflation And Earnings Data",
-      "url": "https://crypto-economy.com/bitcoin-pressure-ahead-inflation-earnings-data/",
-      "source": "CryptoEconomy",
-      "published_at": "Mon, 09 Nov 2026 13:05:25 +0000"
-    },
-    {
       "title": "Microsoft-Backed Space and Time Launches Platform to Let AI Agents Verify Private Data",
       "url": "https://decrypt.co/382697/microsoft-backed-space-and-time-launches-platform-to-let-ai-agents-verify-private-data",
       "source": "Decrypt",
@@ -1961,24 +1925,6 @@
       "url": "https://www.ccn.com/news/crypto/bitcoin-us-heating-bills-finlands-free-heat-btc-mining-2028-halving/",
       "source": "CCN",
       "published_at": "Mon, 09 Nov 2026 12:31:47 +0000"
-    },
-    {
-      "title": "Threshold Network Begins tBTC Bridge Restart After Nine-Day Security Pause",
-      "url": "https://crypto-economy.com/threshold-network-begins-tbtc-bridge-restart/",
-      "source": "CryptoEconomy",
-      "published_at": "Mon, 09 Nov 2026 12:31:32 +0000"
-    },
-    {
-      "title": "Bitcoin Drops Below $74K as Crypto Market Sheds $80B",
-      "url": "https://crypto-economy.com/bitcoin-drops-below-74k-as-sheds-80b/",
-      "source": "CryptoEconomy",
-      "published_at": "Mon, 09 Nov 2026 12:03:05 +0000"
-    },
-    {
-      "title": "AI makes data ownership more important to prove",
-      "url": "https://coingeek.com/ai-makes-data-ownership-more-important-to-prove/",
-      "source": "CoinGeek",
-      "published_at": "Mon, 09 Nov 2026 12:00:00 +0000"
     },
     {
       "title": "Coinbase Joins Circle, Ripple With Final OCC Approval for Federal Trust Bank Charter",
@@ -2029,22 +1975,10 @@
       "published_at": "Sat, 07 Nov 2026 16:01:02 +0000"
     },
     {
-      "title": "Sony Axing Game Discs Will Have Outsized Impact on Low-Income Gamers, Experts Say",
-      "url": "https://decrypt.co/382714/sony-axing-game-discs-will-have-outsized-impact-on-low-income-gamers-experts-say",
-      "source": "Decrypt",
-      "published_at": "Sat, 07 Nov 2026 14:01:02 +0000"
-    },
-    {
       "title": "FinCEN and the Fed drop the $250 crypto Travel Rule that would have swept small transfers into reporting",
       "url": "https://insidebitcoins.com/news/fincen-fed-withdraw-crypto-travel-rule-250-threshold",
       "source": "InsideBitcoin",
       "published_at": "Sat, 07 Nov 2026 01:35:18 +0000"
-    },
-    {
-      "title": "Murad Says SPX6900 Holders Are Acting Like Early Bitcoin Winners With Extreme Buy-and-Hold Conviction",
-      "url": "https://thecryptobasic.com/2026/11/06/murad-says-spx6900-holders-are-acting-like-early-bitcoin-winners-with-extreme-buy-and-hold-conviction/",
-      "source": "CryptoBasic",
-      "published_at": "Fri, 06 Nov 2026 10:35:27 +0000"
     },
     {
       "title": "Hyperliquid Strategies files with the CFTC to become a futures commission merchant",
@@ -2059,12 +1993,6 @@
       "published_at": "Thu, 05 Nov 2026 00:50:57 +0000"
     },
     {
-      "title": "Bitcoin Price Prediction 12 Months After 2026 U.S. Midterms: What History Suggests",
-      "url": "https://thecryptobasic.com/2026/11/04/bitcoin-price-prediction-12-months-after-2026-u-s-midterms-what-history-suggests/",
-      "source": "CryptoBasic",
-      "published_at": "Wed, 04 Nov 2026 07:43:29 +0000"
-    },
-    {
       "title": "CFTC clears Equity Perps: perpetual futures on individual US stocks",
       "url": "https://insidebitcoins.com/news/cftc-equity-perps-us-stocks-reg-40-3",
       "source": "InsideBitcoin",
@@ -2075,12 +2003,6 @@
       "url": "https://insidebitcoins.com/news/binance-hack-fbi-tradertraitor-tether-circle-freeze",
       "source": "InsideBitcoin",
       "published_at": "Tue, 03 Nov 2026 07:50:16 +0000"
-    },
-    {
-      "title": "Bitcoin Holds Up Better Than Gold Despite $6.3B Binance Hack and $643M ETF Outflow",
-      "url": "https://thecryptobasic.com/2026/11/02/bitcoin-holds-up-better-than-gold-despite-6-3b-binance-hack-and-643m-etf-outflow/",
-      "source": "CryptoBasic",
-      "published_at": "Mon, 02 Nov 2026 09:31:36 +0000"
     },
     {
       "title": "NYSE Owner ICE Lines Up First Big Test of the CFTC’s Path to U.S. Perps",
@@ -2113,12 +2035,6 @@
       "published_at": "Thu, 29 Oct 2026 02:06:03 +0000"
     },
     {
-      "title": "XRP Outperforms Bitcoin and Major Stocks Over 10 Years but Numbers Are Easy to Misread",
-      "url": "https://thecryptobasic.com/2026/10/28/xrp-outperforms-bitcoin-and-major-stocks-over-10-years-but-numbers-are-easy-to-misread/",
-      "source": "CryptoBasic",
-      "published_at": "Wed, 28 Oct 2026 15:29:30 +0000"
-    },
-    {
       "title": "Kraken Parent Payward Plans First CFTC-Regulated Perpetuals on Hyperliquid",
       "url": "https://insidebitcoins.com/news/payward-first-cftc-regulated-hip-3-deployer",
       "source": "InsideBitcoin",
@@ -2129,18 +2045,6 @@
       "url": "https://insidebitcoins.com/news/sec-cboe-bzx-3x-bitcoin-ether-etfs-listing",
       "source": "InsideBitcoin",
       "published_at": "Tue, 27 Oct 2026 01:40:16 +0000"
-    },
-    {
-      "title": "Bitcoin Faces Another Drop as $80M in Buy Orders Cluster at $78K–$79K",
-      "url": "https://thecryptobasic.com/2026/10/26/bitcoin-faces-another-drop-as-80m-in-buy-orders-cluster-at-78k-79k/",
-      "source": "CryptoBasic",
-      "published_at": "Mon, 26 Oct 2026 13:29:55 +0000"
-    },
-    {
-      "title": "Bitcoin Records Three Consecutive Red Weekly Candles for First Time Since May",
-      "url": "https://thecryptobasic.com/2026/10/26/bitcoin-records-three-consecutive-red-weekly-candles-for-first-time-since-may/",
-      "source": "CryptoBasic",
-      "published_at": "Mon, 26 Oct 2026 10:38:54 +0000"
     },
     {
       "title": "Bitcoin Core fast-tracks security fixes as 44% of sampled nodes run unsupported versions",
