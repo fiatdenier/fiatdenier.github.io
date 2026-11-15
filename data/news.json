@@ -1,6 +1,42 @@
 {
   "articles": [
     {
+      "title": "Bitcoin Price Slides Below $62K as Tom Lee Flags Market Risks",
+      "url": "https://blockonomi.com/bitcoin-price-slides-below-62k-as-tom-lee-flags-market-risks/",
+      "source": "Blockonomi",
+      "published_at": "Sun, 15 Nov 2026 09:52:21 +0000"
+    },
+    {
+      "title": "Blockstream And Thales Launch Bitcoin Custody System",
+      "url": "https://bitcoinist.com/blockstream-and-thales-launch-bitcoin-custody-system/",
+      "source": "Bitcoinist",
+      "published_at": "Sun, 15 Nov 2026 09:40:40 +0000"
+    },
+    {
+      "title": "Thailand arrests two Chinese nationals over alleged $92M crypto scam",
+      "url": "https://crypto.news/thailand-arrests-two-chinese-nationals-over-scam/",
+      "source": "BTCManager",
+      "published_at": "Sun, 15 Nov 2026 09:39:53 +0000"
+    },
+    {
+      "title": "Thailand arrests two Chinese nationals over alleged $92M crypto scam",
+      "url": "https://crypto.news/thailand-arrests-two-chinese-nationals-over-scam/",
+      "source": "CryptoNews",
+      "published_at": "Sun, 15 Nov 2026 09:39:53 +0000"
+    },
+    {
+      "title": "Miner Weekly: These Miners Cut Hashrate 50% as AI Revenue Doubles",
+      "url": "https://news.bitcoin.com/mining/miner-weekly-these-miners-cut-hashrate-50-as-ai-revenue-doubles/",
+      "source": "Bitcoin.com",
+      "published_at": "Sun, 15 Nov 2026 09:30:22 +0000"
+    },
+    {
+      "title": "Bitcoin’s Fall to $62,000 Sparks Market Manipulation Claims",
+      "url": "https://beincrypto.com/bitcoin-62000-crash-manipulation-claims/",
+      "source": "BeinCrypto",
+      "published_at": "Sun, 15 Nov 2026 09:24:29 +0000"
+    },
+    {
       "title": "XRP price hits two-year low below $1: Is $0.85 next?",
       "url": "https://crypto.news/xrp-price-below-1-etf-outflows-whale-activity/",
       "source": "BTCManager",
@@ -11,6 +47,12 @@
       "url": "https://crypto.news/xrp-price-below-1-etf-outflows-whale-activity/",
       "source": "CryptoNews",
       "published_at": "Sun, 15 Nov 2026 09:15:35 +0000"
+    },
+    {
+      "title": "Are Whales Selling Bitcoin For The Anthropic IPO? The SpaceX Playbook Hints A Bottom Is Near",
+      "url": "https://bitcoinist.com/are-whales-selling-bitcoin-for-the-anthropic-ipo/",
+      "source": "Bitcoinist",
+      "published_at": "Sun, 15 Nov 2026 09:14:44 +0000"
     },
     {
       "title": "3 Key Events in the Coming Week That Could Move AI Stocks and Crypto",
@@ -313,12 +355,6 @@
       "published_at": "Sat, 14 Nov 2026 19:47:28 +0000"
     },
     {
-      "title": "Unocoin Admits $200K Crypto Loss, Warns of Customer Data Breach",
-      "url": "https://news.bitcoin.com/featured/unocoin-admits-200k-crypto-loss-warns-of-customer-data-breach/",
-      "source": "Bitcoin.com",
-      "published_at": "Sat, 14 Nov 2026 19:24:37 +0000"
-    },
-    {
       "title": "JPMorgan Lifts Strategy Stake 36% and Holds $540M in BlackRock’s Bitcoin ETF",
       "url": "https://cryptopotato.com/jpmorgan-lifts-strategy-stake-36-and-holds-540m-in-blackrocks-bitcoin-etf/",
       "source": "CryptoPotato",
@@ -475,12 +511,6 @@
       "published_at": "Sat, 14 Nov 2026 11:56:54 +0000"
     },
     {
-      "title": "Jane Street Nearly Doubled Its Bitcoin ETF Book In Q3: What The Filing Really Shows",
-      "url": "https://bitcoinist.com/jane-street-nearly-doubled-its-bitcoin-etf-book-in-q3-what-the-filing-really-shows/",
-      "source": "Bitcoinist",
-      "published_at": "Sat, 14 Nov 2026 11:30:01 +0000"
-    },
-    {
       "title": "Bitcoin could fall below $16.5K, Peter Schiff warns Strategy",
       "url": "https://crypto.news/bitcoin-peter-schiff-16500-strategy-warning/",
       "source": "BTCManager",
@@ -539,12 +569,6 @@
       "url": "https://beincrypto.com/ai-agents-pay-for-news-media-content/",
       "source": "BeinCrypto",
       "published_at": "Sat, 14 Nov 2026 10:00:00 +0000"
-    },
-    {
-      "title": "Bitcoin Dips To $68,000 As Anthropic IPO Pulls Cash, But History Points To A Buying Window",
-      "url": "https://bitcoinist.com/bitcoin-dips-to-68000-as-anthropic-ipo-pulls-cash-but-history-points-to-a-buying-window/",
-      "source": "Bitcoinist",
-      "published_at": "Sat, 14 Nov 2026 09:54:44 +0000"
     },
     {
       "title": "Coinbase India withdrawals remain down 5 days into bank outage",
@@ -731,12 +755,6 @@
       "url": "https://insidebitcoins.com/news/rumble-sells-two-thirds-bitcoin-ai-cloud",
       "source": "InsideBitcoin",
       "published_at": "Sat, 14 Nov 2026 03:55:45 +0000"
-    },
-    {
-      "title": "Crypto Market’s Nearly 6% Slide Costs Bulls $1 Billion in a Day",
-      "url": "https://beincrypto.com/bitcoin-below-68000-crypto-liquidations-bulls/",
-      "source": "BeinCrypto",
-      "published_at": "Sat, 14 Nov 2026 03:35:48 +0000"
     },
     {
       "title": "Strategy Says Bitcoin Can Upgrade to Fight Future Quantum Threats",
@@ -1537,18 +1555,6 @@
       "published_at": "Fri, 13 Nov 2026 08:23:25 +0000"
     },
     {
-      "title": "Bitcoin treasury firm Metaplanet stock falls over 4% amid buybacks, MSCI exit",
-      "url": "https://crypto.news/bitcoin-metaplanet-stock-falls-4-percent-msci-exit/",
-      "source": "BTCManager",
-      "published_at": "Fri, 13 Nov 2026 08:21:02 +0000"
-    },
-    {
-      "title": "Bitcoin treasury firm Metaplanet stock falls over 4% amid buybacks, MSCI exit",
-      "url": "https://crypto.news/bitcoin-metaplanet-stock-falls-4-percent-msci-exit/",
-      "source": "CryptoNews",
-      "published_at": "Fri, 13 Nov 2026 08:21:02 +0000"
-    },
-    {
       "title": "Chainlink and Moody’s Complete Testnet Pilot for Cross-Chain Credit Ratings",
       "url": "https://www.newsbtc.com/news/chainlink/chainlink-moodys-testnet-pilot-cross-chain-credit-ratings/",
       "source": "NewsBTC",
@@ -1991,12 +1997,6 @@
       "url": "https://decrypt.co/383070/new-ai-music-model-already-better-than-suno-ace-review",
       "source": "Decrypt",
       "published_at": "Wed, 11 Nov 2026 20:16:02 +0000"
-    },
-    {
-      "title": "Strategy (MSTR) Stock Braces for MSCI Index Verdict Tonight",
-      "url": "https://blockonomi.com/strategy-mstr-stock-braces-for-msci-index-verdict-tonight/",
-      "source": "Blockonomi",
-      "published_at": "Wed, 11 Nov 2026 18:29:39 +0000"
     },
     {
       "title": "CoinGlass Says “Not Kidding” as Huge Bitcoin Bid Walls Stack Below Current Price",
