@@ -1,6 +1,30 @@
 {
   "articles": [
     {
+      "title": "World Bank Taps Circle and Citi to Test Stablecoins for Development Payments",
+      "url": "https://decrypt.co/383485/world-bank-circle-citi-test-stablecoins-development-payments",
+      "source": "Decrypt",
+      "published_at": "Tue, 17 Nov 2026 20:56:03 +0000"
+    },
+    {
+      "title": "Bitcoin Investors Are Capitulating—That’s Historically Been a Bottom Signal",
+      "url": "https://decrypt.co/383466/bitcoin-investors-capitulating-historical-bottom-signal",
+      "source": "Decrypt",
+      "published_at": "Tue, 17 Nov 2026 20:36:03 +0000"
+    },
+    {
+      "title": "Coinbase brings Morpho-backed loans to all 50 US states",
+      "url": "https://crypto.news/coinbase-borrow-new-york-morpho-loans/",
+      "source": "BTCManager",
+      "published_at": "Tue, 17 Nov 2026 20:30:00 +0000"
+    },
+    {
+      "title": "Coinbase brings Morpho-backed loans to all 50 US states",
+      "url": "https://crypto.news/coinbase-borrow-new-york-morpho-loans/",
+      "source": "CryptoNews",
+      "published_at": "Tue, 17 Nov 2026 20:30:00 +0000"
+    },
+    {
       "title": "Eastern Europe crypto flows fall 7.9% as Ukraine draws $12B in stablecoins",
       "url": "https://cointelegraph.com/news/eastern-europe-crypto-activity-decline-chainalysis?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -79,12 +103,6 @@
       "published_at": "Tue, 17 Nov 2026 19:26:02 +0000"
     },
     {
-      "title": "He Knew (And Abused) Which Cryptos Robinhood Would List; Now He’s Facing Up to 20 Years in Prison",
-      "url": "https://cryptopotato.com/he-knew-and-abused-which-cryptos-robinhood-would-list-now-hes-facing-up-to-20-years-in-prison/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 19:25:11 +0000"
-    },
-    {
       "title": "Predictions platform Kalshi complies with order to halt Trump mention contracts",
       "url": "https://www.coindesk.com/policy/2026/11/17/predictions-platform-kalshi-complies-with-order-to-halt-trump-mention-contracts",
       "source": "Coindesk",
@@ -155,12 +173,6 @@
       "url": "https://news.bitcoin.com/market-updates/bitcoin-price-drop-below-60k-wintermute-warns-why/",
       "source": "Bitcoin.com",
       "published_at": "Tue, 17 Nov 2026 18:05:44 +0000"
-    },
-    {
-      "title": "These 4 Tokens Will Pump Before the AI Bubble Ends: Arthur Hayes",
-      "url": "https://cryptopotato.com/these-4-tokens-will-pump-before-the-ai-bubble-ends-arthur-hayes/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 18:05:20 +0000"
     },
     {
       "title": "Will Gold Prices Rise After the Fed's Expected December Rate Hike?",
@@ -325,12 +337,6 @@
       "published_at": "Tue, 17 Nov 2026 16:27:31 +0000"
     },
     {
-      "title": "Important Pi Network News and PI Price Update: November 17",
-      "url": "https://cryptopotato.com/important-pi-network-news-and-pi-price-update-november-17/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 16:25:14 +0000"
-    },
-    {
       "title": "BlackRock single-handedly ends Bitcoin ETFs’ $1.9 billion exodus as seven rivals keep bleeding",
       "url": "https://cryptoslate.com/blackrock-single-handedly-ends-bitcoin-etfs-1-9-billion-exodus-as-seven-rivals-keep-bleeding/",
       "source": "CryptoSlate",
@@ -415,12 +421,6 @@
       "published_at": "Tue, 17 Nov 2026 15:30:27 +0000"
     },
     {
-      "title": "Almost 50,000 BTC in 2 Weeks: More Pain Ahead for the Bulls?",
-      "url": "https://cryptopotato.com/almost-50000-btc-in-2-weeks-more-pain-ahead-for-the-bulls/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 15:25:10 +0000"
-    },
-    {
       "title": "Altcoins lose over 50% in 27-token chart as traders call a bottom",
       "url": "https://crypto.news/altcoins-drawdown-27-tokens-etf-outflows/",
       "source": "BTCManager",
@@ -455,18 +455,6 @@
       "url": "https://cryptoslate.com/hyperliquids-3-4-billion-hype-burn-machine-faces-new-test-as-usdc-reserves-shrink/",
       "source": "CryptoSlate",
       "published_at": "Tue, 17 Nov 2026 15:10:21 +0000"
-    },
-    {
-      "title": "PrimeXBT Launches Anthropic Pre-IPO Crypto Futures, Bringing New Trading Opportunities in AI",
-      "url": "https://cryptopotato.com/primexbt-launches-anthropic-pre-ipo-crypto-futures-bringing-new-trading-opportunities-in-ai/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 15:05:48 +0000"
-    },
-    {
-      "title": "Former SEC Chair Warns When the AI Boom Will Cause a Recession",
-      "url": "https://cryptopotato.com/former-sec-chair-warns-when-the-ai-boom-will-cause-a-recession/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 15:02:26 +0000"
     },
     {
       "title": "Judge Acquits Brothers in $25 Million Ethereum MEV Case After Finding No Proven Wire Fraud",
@@ -517,22 +505,10 @@
       "published_at": "Tue, 17 Nov 2026 14:11:23 +0000"
     },
     {
-      "title": "Xsolla ZK Introduces a Gas Token Designed to Let Digital Items Move Between Games and Players",
-      "url": "https://cryptopotato.com/xsolla-zk-introduces-a-gas-token-designed-to-let-digital-items-move-between-games-and-players/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 14:10:23 +0000"
-    },
-    {
       "title": "Bitcoin Faces $65K Rejection and Holds Tight Near $64,000",
       "url": "https://crypto-economy.com/bitcoin-faces-65k-rejection-and-holds-tight/",
       "source": "CryptoEconomy",
       "published_at": "Tue, 17 Nov 2026 14:05:43 +0000"
-    },
-    {
-      "title": "ETH Risks Another Drop to $1.71K as This Pattern Signals Trouble (Ethereum Price Analysis)",
-      "url": "https://cryptopotato.com/ethereum-price-prediction-eth-risks-another-drop-to-1-71k-as-this-pattern-signals-trouble/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 14:03:54 +0000"
     },
     {
       "title": "Bron Wallet review 2026: Features, security, fees, and limitations",
@@ -605,18 +581,6 @@
       "url": "https://crypto.news/bitcoin-price-outlook-as-us-adp-jobs-data-rises-to-23750/",
       "source": "CryptoNews",
       "published_at": "Tue, 17 Nov 2026 13:47:50 +0000"
-    },
-    {
-      "title": "Ripple Price Prediction: XRP Struggles Below $1 as Bears Eye Another Drop to $0.89",
-      "url": "https://cryptopotato.com/ripple-price-prediction-xrp-struggles-below-1-as-bears-eye-another-drop-to-0-89/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 13:46:08 +0000"
-    },
-    {
-      "title": "Fed Rate Hike Odds Hit 90%: What Could Happen to Bitcoin and Crypto in December?",
-      "url": "https://cryptopotato.com/fed-rate-hike-odds-hit-90-what-could-happen-to-bitcoin-and-crypto-in-december/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 13:35:59 +0000"
     },
     {
       "title": "Goldman Sachs boosts Bitcoin ETF holdings to $1.28B as Ether exposure surges",
@@ -733,12 +697,6 @@
       "published_at": "Tue, 17 Nov 2026 12:24:20 +0000"
     },
     {
-      "title": "Evernorth Writes Down Ripple Holdings: What Does This Mean for XRP’s Price?",
-      "url": "https://cryptopotato.com/evernorth-writes-down-ripple-holdings-what-does-this-mean-for-xrps-price/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 12:20:43 +0000"
-    },
-    {
       "title": "Crypto's 'casino-chips' are disappearing, adding to pain from spot ETF outflows",
       "url": "https://www.coindesk.com/daybook-us/2026/11/17/crypto-s-casino-chips-are-disappearing-adding-to-pain-from-spot-etf-outflows",
       "source": "Coindesk",
@@ -811,12 +769,6 @@
       "published_at": "Tue, 17 Nov 2026 11:36:07 +0000"
     },
     {
-      "title": "Bitcoin (BTC) Rejected at $65K, Internet Computer (ICP) Soars 11%: Market Watch",
-      "url": "https://cryptopotato.com/bitcoin-btc-rejected-at-65k-internet-computer-icp-soars-11-market-watch/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 11:30:58 +0000"
-    },
-    {
       "title": "Solana Foundation takes majority stake in crypto data provider CoinGecko",
       "url": "https://www.coindesk.com/business/2026/11/17/solana-foundation-takes-majority-stake-in-crypto-data-provider-coingecko",
       "source": "Coindesk",
@@ -875,12 +827,6 @@
       "url": "https://beincrypto.com/lbank-takes-brand-beyond-trading/",
       "source": "BeinCrypto",
       "published_at": "Tue, 17 Nov 2026 11:17:11 +0000"
-    },
-    {
-      "title": "The Bitcoin Bull Run That Never Was: Wintermute Issues Stark Warning",
-      "url": "https://cryptopotato.com/the-bitcoin-bull-run-that-never-was-wintermute-issues-stark-warning/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 11:15:21 +0000"
     },
     {
       "title": "Bitcoin realized loss metric beats June high as open interest eyes 2-year low",
@@ -1105,12 +1051,6 @@
       "published_at": "Tue, 17 Nov 2026 09:16:05 +0000"
     },
     {
-      "title": "Bitcoin (BTC) at a Crossroads: Further Collapse or Major Rebound Incoming?",
-      "url": "https://cryptopotato.com/bitcoin-btc-at-a-crossroads-further-collapse-or-major-rebound-incoming/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 09:15:36 +0000"
-    },
-    {
       "title": "Goldman Sachs reports $1.22B in Ether ETFs as ETHA share count jumps",
       "url": "https://cointelegraph.com/news/goldman-sachs-reports-122b-ether-etfs-etha-shares-jumps?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1189,12 +1129,6 @@
       "published_at": "Tue, 17 Nov 2026 07:53:05 +0000"
     },
     {
-      "title": "Backpack Secures Major US Exchange Approval, Native Token Soars 20%",
-      "url": "https://cryptopotato.com/backpack-secures-major-us-exchange-approval-native-token-soars-20/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 07:49:57 +0000"
-    },
-    {
       "title": "Wall Street Stocks Enter Solana DeFi As Jupiter Unveils New Lending Market",
       "url": "https://bitcoinist.com/wall-street-stocks-enter-solana-defi-as-jupiter-unveils-new-lending-market/",
       "source": "Bitcoinist",
@@ -1217,12 +1151,6 @@
       "url": "https://crypto.news/evernorth-writes-down-pre-listing-xrp-holdings-by-60-to-342-million/",
       "source": "CryptoNews",
       "published_at": "Tue, 17 Nov 2026 07:35:27 +0000"
-    },
-    {
-      "title": "Trezor Shipping Partner Breach Exposes Data on 27,000 Orders",
-      "url": "https://cryptopotato.com/trezor-shipping-partner-breach-exposes-data-on-27000-orders/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 07:16:20 +0000"
     },
     {
       "title": "Optimizely supply chain attack targets crypto wallets across 186 websites",
@@ -1357,18 +1285,6 @@
       "published_at": "Tue, 17 Nov 2026 05:37:23 +0000"
     },
     {
-      "title": "Is Your Money at Risk? Banking Glitch Hits Chase, Wells Fargo and BofA",
-      "url": "https://cryptopotato.com/is-your-money-at-risk-banking-glitch-hits-chase-wells-fargo-and-bofa/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 05:19:48 +0000"
-    },
-    {
-      "title": "Nvidia Drops 4% as Board Reportedly Shuts Door on Jensen Huang Return as CEO",
-      "url": "https://cryptopotato.com/nvidia-drops-4-as-board-reportedly-shuts-door-on-jensen-huang-return-as-ceo/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 05:03:07 +0000"
-    },
-    {
       "title": "Ripple-backed Evernorth has written down its pre-listing XRP holdings by 60%",
       "url": "https://www.coindesk.com/markets/2026/11/17/ripple-backed-evernorth-has-written-down-its-pre-listing-xrp-holdings-by-60",
       "source": "Coindesk",
@@ -1381,12 +1297,6 @@
       "published_at": "Tue, 17 Nov 2026 05:00:04 +0000"
     },
     {
-      "title": "Anthropic IPO: 3 Hidden Risks Investors Should Know Before Buying",
-      "url": "https://cryptopotato.com/anthropic-ipo-3-hidden-risks-investors-should-know-before-buying/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 04:50:52 +0000"
-    },
-    {
       "title": "Aave V4 deposits hit a record $1.75B – Now traders are watching THIS range",
       "url": "https://ambcrypto.com/aave-v4-deposits-hit-a-record-1-75b-now-traders-are-watching-this-range/",
       "source": "Ambcrypto",
@@ -1397,12 +1307,6 @@
       "url": "https://cointelegraph.com/news/trezor-customer-data-exposed-in-3rd-partner-breach-this-year?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Tue, 17 Nov 2026 03:46:22 +0000"
-    },
-    {
-      "title": "Why EIP-8037 Is the ‘Least Bad’ Path to Scaling Ethereum Execution: Vitalik Buterin",
-      "url": "https://cryptopotato.com/why-eip-8037-is-the-least-bad-path-to-scaling-ethereum-execution-vitalik-buterin/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 03:15:29 +0000"
     },
     {
       "title": "Why is smart money adding bullish Ethereum exposure as ETH ETFs bleed?",
@@ -1433,12 +1337,6 @@
       "url": "https://cointelegraph.com/news/nvidia-shares-fall-4-as-board-reportedly-rules-out-huang-return?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Mon, 16 Nov 2026 23:50:41 +0000"
-    },
-    {
-      "title": "Amber Group Breaks Silence on Explosive Fund Misappropriation Allegations",
-      "url": "https://cryptopotato.com/amber-group-breaks-silence-on-explosive-fund-misappropriation-allegations/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 23:45:32 +0000"
     },
     {
       "title": "Custodia Bank loses Supreme Court bid for direct Fed payment access",
@@ -1483,22 +1381,10 @@
       "published_at": "Mon, 16 Nov 2026 21:46:03 +0000"
     },
     {
-      "title": "Bitcoin Heading for $40K? Deribit Traders Sound the Alarm With $60K Put Bets",
-      "url": "https://cryptopotato.com/bitcoin-heading-for-40k-deribit-traders-sound-the-alarm-with-60k-put-bets/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 21:25:28 +0000"
-    },
-    {
       "title": "Hackers Redirected Bitcoin Miner Rewards via AI Attack, Luxor CEO Says",
       "url": "https://decrypt.co/383392/hackers-redirected-bitcoin-miner-rewards-ai-attack-luxor",
       "source": "Decrypt",
       "published_at": "Mon, 16 Nov 2026 21:16:03 +0000"
-    },
-    {
-      "title": "CZ Says Bitcoin Crash Is a Mystery, but OKX Founder Accuses Him of Evading Responsibility",
-      "url": "https://cryptopotato.com/cz-says-bitcoin-crash-is-a-mystery-but-okx-founder-accuses-him-of-evading-responsibility/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 20:56:36 +0000"
     },
     {
       "title": "ARTEX AI tool breaches networks in under 3 hours, FBI warns",
@@ -1591,24 +1477,6 @@
       "published_at": "Mon, 16 Nov 2026 19:36:03 +0000"
     },
     {
-      "title": "TRON to overtake JD.com? Justin Sun points to 500-person team",
-      "url": "https://crypto.news/tron-justin-sun-jd-market-cap-buybacks-burns/",
-      "source": "BTCManager",
-      "published_at": "Mon, 16 Nov 2026 19:30:00 +0000"
-    },
-    {
-      "title": "TRON to overtake JD.com? Justin Sun points to 500-person team",
-      "url": "https://crypto.news/tron-justin-sun-jd-market-cap-buybacks-burns/",
-      "source": "CryptoNews",
-      "published_at": "Mon, 16 Nov 2026 19:30:00 +0000"
-    },
-    {
-      "title": "Popular Altcoin Suddenly Crashes 32%, CEO Promises Investigation",
-      "url": "https://cryptopotato.com/popular-altcoin-suddenly-crashes-32-ceo-promises-investigation/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 19:12:56 +0000"
-    },
-    {
       "title": "Trump Backs Jensen Huang’s Return to Nvidia as Sam Altman Says 'Heroes Have Flaws'",
       "url": "https://decrypt.co/383351/trump-elon-musk-sam-altman-jensen-huang-nvidia",
       "source": "Decrypt",
@@ -1637,12 +1505,6 @@
       "url": "https://decrypt.co/383334/nvidia-stock-rebound-in-sight-if-bulls-can-clear-hurdle",
       "source": "Decrypt",
       "published_at": "Mon, 16 Nov 2026 18:06:03 +0000"
-    },
-    {
-      "title": "Forget NVIDIA: The Real Market Fallout Could Be Hiding in These 5 Stocks",
-      "url": "https://cryptopotato.com/forget-nvidia-the-real-market-fallout-could-be-hiding-in-these-5-stocks/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 18:05:38 +0000"
     },
     {
       "title": "Bitfinex: Bitcoin tests July base after 12.6% weekly drop",
@@ -1681,12 +1543,6 @@
       "published_at": "Mon, 16 Nov 2026 16:41:42 +0000"
     },
     {
-      "title": "Why Crypto Investors Should Consider a Private Email Account",
-      "url": "https://cryptopotato.com/why-crypto-investors-should-consider-a-private-email-account/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 16:38:52 +0000"
-    },
-    {
       "title": "Bitcoin price fails to hold $65K as US stocks drop further on AI nerves",
       "url": "https://cointelegraph.com/markets/bitcoin-price-fails-to-hold-65k-us-stocks-drop-on-ai-nerves?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
@@ -1723,12 +1579,6 @@
       "published_at": "Mon, 16 Nov 2026 15:28:06 +0000"
     },
     {
-      "title": "Ethereum (ETH) Crashed 26% in a Month: Can Whales Stop the Free Fall?",
-      "url": "https://cryptopotato.com/ethereum-eth-crashed-26-in-a-month-can-whales-stop-the-free-fall/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 15:15:29 +0000"
-    },
-    {
       "title": "'Nobody Knows Who's in Charge': Boris Johnson Stands by Bitcoin Skepticism at Breakpoint",
       "url": "https://decrypt.co/383307/nobody-knows-whos-in-charge-boris-johnson-stands-by-bitcoin-skepticism-at-breakpoint",
       "source": "Decrypt",
@@ -1739,12 +1589,6 @@
       "url": "https://cointelegraph.com/news/zelle-solana-zelleusd-stablecoin-international-payments?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
       "source": "Cointelegraph",
       "published_at": "Mon, 16 Nov 2026 14:55:46 +0000"
-    },
-    {
-      "title": "Strive Announces a Modest Bitcoin Purchase as Total Holdings Reach 43,404 BTC",
-      "url": "https://cryptopotato.com/strive-announces-a-modest-bitcoin-purchase-as-total-holdings-reach-43404-btc/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 14:39:54 +0000"
     },
     {
       "title": "CZ Says Binance Didn’t Sell Crypto, Reveals Personal Buying Amid Market Slump",
@@ -1763,18 +1607,6 @@
       "url": "https://crypto-economy.com/luxor-to-reimburse-bitcoin-miners-after-hijack/",
       "source": "CryptoEconomy",
       "published_at": "Mon, 16 Nov 2026 14:14:06 +0000"
-    },
-    {
-      "title": "3 Important Bitcoin Price Predictions, One of Them is Scary",
-      "url": "https://cryptopotato.com/3-important-bitcoin-price-predictions-one-of-them-is-scary/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 13:48:14 +0000"
-    },
-    {
-      "title": "Strategy Makes Another BTC Purchase But $10 Billion Unrealized Loss Looms",
-      "url": "https://cryptopotato.com/strategy-makes-another-btc-purchase-but-10-billion-unrealized-loss-looms/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 13:30:21 +0000"
     },
     {
       "title": "Bitcoin Buying Opportunity Ahead? Alphractal Signals Major Market Entry Window",
@@ -1807,24 +1639,6 @@
       "published_at": "Mon, 16 Nov 2026 12:37:15 +0000"
     },
     {
-      "title": "Bitcoin Price Analysis: Is the Worst Over, or Is BTC Heading for $58K?",
-      "url": "https://cryptopotato.com/bitcoin-price-analysis-is-the-worst-over-or-is-btc-heading-for-58k/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 12:20:32 +0000"
-    },
-    {
-      "title": "Singapore, Germany Test Privacy-Focused Technology for Cross-Border Payments",
-      "url": "https://cryptopotato.com/singapore-germany-test-privacy-focused-technology-for-cross-border-payments/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 12:10:56 +0000"
-    },
-    {
-      "title": "Harvard Holds $144M in Bitcoin and Boosts Gold Position to $442 Million",
-      "url": "https://cryptopotato.com/harvard-holds-144m-in-bitcoin-and-boosts-gold-position-to-442-million/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 12:04:09 +0000"
-    },
-    {
       "title": "The CBDC that changes finance may be the one consumers never see",
       "url": "https://coingeek.com/the-cbdc-that-changes-finance-may-be-the-one-consumers-never-see/",
       "source": "CoinGeek",
@@ -1841,24 +1655,6 @@
       "url": "https://www.ccn.com/news/crypto/gta-6-free-download-trap-targets-crypto-wallets-days-before-launch/",
       "source": "CCN",
       "published_at": "Mon, 16 Nov 2026 11:32:15 +0000"
-    },
-    {
-      "title": "Ripple (XRP) Price Predictions for This Week: November 16",
-      "url": "https://cryptopotato.com/ripple-xrp-price-predictions-for-this-week-november-16/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 11:30:09 +0000"
-    },
-    {
-      "title": "Cardano (ADA) Price Predictions for This Week",
-      "url": "https://cryptopotato.com/cardano-ada-price-predictions-for-this-week-13/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 11:27:14 +0000"
-    },
-    {
-      "title": "Bitcoin Recovers From $62K as Analyst Highlights 3 Key Risks",
-      "url": "https://cryptopotato.com/bitcoin-recovers-from-62k-as-analyst-highlights-3-key-risks/",
-      "source": "CryptoPotato",
-      "published_at": "Mon, 16 Nov 2026 10:53:17 +0000"
     },
     {
       "title": "Binance’s CZ Denies Selling Crypto, Blames ETF Outflows and Rate Fears",
@@ -1967,18 +1763,6 @@
       "url": "https://decrypt.co/383270/openai-anthropic-google-ai-giants-lawsuit-development-freeze",
       "source": "Decrypt",
       "published_at": "Sat, 14 Nov 2026 17:01:02 +0000"
-    },
-    {
-      "title": "What Is Canton Network? The Privacy Blockchain Built for Wall Street",
-      "url": "https://decrypt.co/resources/what-is-canton-network-the-privacy-blockchain-built-for-wall-street",
-      "source": "Decrypt",
-      "published_at": "Sat, 14 Nov 2026 16:01:02 +0000"
-    },
-    {
-      "title": "OpenAI Launches ChatGPT Wallet to Let AI Agents Shop—Without Crypto",
-      "url": "https://decrypt.co/383278/openai-chatgpt-wallet-ai-agents-shop-without-crypto",
-      "source": "Decrypt",
-      "published_at": "Sat, 14 Nov 2026 14:01:02 +0000"
     },
     {
       "title": "Bitcoin Max Pain Has Marked Past Turning Points, Analyst Says",
