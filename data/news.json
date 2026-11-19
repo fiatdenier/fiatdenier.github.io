@@ -1,6 +1,42 @@
 {
   "articles": [
     {
+      "title": "S&P Global Maintains Lowest Stability Score for Tether’s USDT",
+      "url": "https://news.bitcoin.com/stablecoins/sp-global-maintains-lowest-stability-score-for-tethers-usdt/",
+      "source": "Bitcoin.com",
+      "published_at": "Thu, 19 Nov 2026 13:55:54 +0000"
+    },
+    {
+      "title": "Bitcoin’s Next Major Move Tied to GTA VI? Traders Spot a Bizarre Pattern",
+      "url": "https://cryptopotato.com/bitcoins-next-major-move-tied-to-gta-vi-traders-spot-a-bizarre-pattern/",
+      "source": "CryptoPotato",
+      "published_at": "Thu, 19 Nov 2026 13:52:48 +0000"
+    },
+    {
+      "title": "Here’s what happened in crypto today",
+      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Thu, 19 Nov 2026 13:48:14 +0000"
+    },
+    {
+      "title": "Quantum Upgrade Could Be 'Particularly Challenging' for Blockchains: IOSCO",
+      "url": "https://decrypt.co/383613/quantum-upgrade-could-be-particularly-challenging-for-blockchains-iosco",
+      "source": "Decrypt",
+      "published_at": "Thu, 19 Nov 2026 13:47:00 +0000"
+    },
+    {
+      "title": "Has Bitcoin Hit Bottom? Analyst Reveals Five Reasons BTC Remains Weak",
+      "url": "https://blockonomi.com/has-bitcoin-hit-bottom-analyst-reveals-five-reasons-btc-remains-weak/",
+      "source": "Blockonomi",
+      "published_at": "Thu, 19 Nov 2026 13:42:34 +0000"
+    },
+    {
+      "title": "Ethereum’s new DeFi security tool raises questions over censorship",
+      "url": "https://cointelegraph.com/magazine/ethereums-new-defi-security-tool-raises-questions-over-censorship?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "Cointelegraph",
+      "published_at": "Thu, 19 Nov 2026 13:30:00 +0000"
+    },
+    {
       "title": "Bitcoin flashes a signal seen at four previous market bottoms as $62,000 comes under pressure",
       "url": "https://cryptoslate.com/bitcoin-flashes-a-signal-seen-at-four-previous-market-bottoms-as-62000-comes-under-pressure/",
       "source": "CryptoSlate",
@@ -31,70 +67,10 @@
       "published_at": "Thu, 19 Nov 2026 13:11:31 +0000"
     },
     {
-      "title": "pentest-i4750-counts copy",
-      "url": "https://beincrypto.com/pentest-i4750-counts-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:06:24 +0000"
-    },
-    {
-      "title": "pentest-i4750-opt_int copy",
-      "url": "https://beincrypto.com/pentest-i4750-opt_int-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:06:07 +0000"
-    },
-    {
-      "title": "pentest-i4750-opt_bic copy",
-      "url": "https://beincrypto.com/pentest-i4750-opt_bic-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:05:50 +0000"
-    },
-    {
-      "title": "pentest-i4750-opt_tok copy",
-      "url": "https://beincrypto.com/pentest-i4750-opt_tok-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:05:31 +0000"
-    },
-    {
       "title": "Morning Minute: Google’s Newest AI Model Tops Benchmarks Ahead of Anthropic IPO",
       "url": "https://decrypt.co/383609/morning-minute-googles-newest-ai-model-tops-benchmarks-ahead-of-anthropic-ipo",
       "source": "Decrypt",
       "published_at": "Thu, 19 Nov 2026 13:05:28 +0000"
-    },
-    {
-      "title": "pentest-i4750-opt_key copy",
-      "url": "https://beincrypto.com/pentest-i4750-opt_key-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:05:13 +0000"
-    },
-    {
-      "title": "pentest-i4750-opt_auth copy",
-      "url": "https://beincrypto.com/pentest-i4750-opt_auth-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:04:55 +0000"
-    },
-    {
-      "title": "pentest-i4750-opt_aws copy",
-      "url": "https://beincrypto.com/pentest-i4750-opt_aws-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:04:37 +0000"
-    },
-    {
-      "title": "pentest-i4750-opt_smtp copy",
-      "url": "https://beincrypto.com/pentest-i4750-opt_smtp-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:04:19 +0000"
-    },
-    {
-      "title": "pentest-i4750-opt_mail copy",
-      "url": "https://beincrypto.com/pentest-i4750-opt_mail-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:04:01 +0000"
-    },
-    {
-      "title": "pentest-i4750-smoke copy",
-      "url": "https://beincrypto.com/pentest-i4750-smoke-copy/",
-      "source": "BeinCrypto",
-      "published_at": "Thu, 19 Nov 2026 13:03:09 +0000"
     },
     {
       "title": "Binance Wins $6.5B Freezing Order Over Hack That Can Be Served via the Blockchain",
@@ -199,6 +175,18 @@
       "published_at": "Thu, 19 Nov 2026 12:08:06 +0000"
     },
     {
+      "title": "Nike is Riding the GTA 6 Hype. Will Its Stock Price See Any Relief?",
+      "url": "https://beincrypto.com/nike-stock-travis-scott-gta-6-sneakers/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 12:05:27 +0000"
+    },
+    {
+      "title": "Bitunix Scores 100 in Every Category in CER.live Security Review, Earns Top AAA Rating",
+      "url": "https://beincrypto.com/bitunix-aaa-security-rating-perfect-cer-live-scores/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 12:00:24 +0000"
+    },
+    {
       "title": "Hedera price extends 7-week slide as HBAR bears maintain control below $0.0645",
       "url": "https://ambcrypto.com/hedera-price-extends-7-week-slide-as-bears-maintain-control-below-0-0645/",
       "source": "Ambcrypto",
@@ -253,6 +241,12 @@
       "published_at": "Thu, 19 Nov 2026 11:27:46 +0000"
     },
     {
+      "title": "TSMC Stock Falls 5% on China Chip Pause: What Is at Risk?",
+      "url": "https://beincrypto.com/tsmc-stock-real-casualty-new-us-chip-rule/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 11:27:21 +0000"
+    },
+    {
       "title": "Pump.fun allegedly offered influencer $100K a month to leave Fomo and promote more tokens",
       "url": "https://crypto.news/pump-fun-alleged-100k-monthly-influencer-deal/",
       "source": "BTCManager",
@@ -293,6 +287,12 @@
       "url": "https://www.coindesk.com/tech/2026/11/19/banks-and-blockchains-lag-on-quantum-defense-as-encryption-risks-loom-watchdog-warns",
       "source": "Coindesk",
       "published_at": "Thu, 19 Nov 2026 10:55:29 +0000"
+    },
+    {
+      "title": "CoreWeave’s Co-Founder Just Made a $30 Million Bet. It Isn’t on the Stock.",
+      "url": "https://beincrypto.com/coreweave-bonds-venturo-stock-sales/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 10:53:46 +0000"
     },
     {
       "title": "Top 5 presales to look out for in November 2026",
@@ -391,6 +391,12 @@
       "published_at": "Thu, 19 Nov 2026 10:22:12 +0000"
     },
     {
+      "title": "Ripple CEO Says Crypto Could Rally Once Anthropic’s IPO Is Done",
+      "url": "https://beincrypto.com/ripple-ceo-garlinghouse-crypto-rebound-anthropic-ipo/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 10:09:43 +0000"
+    },
+    {
       "title": "Tokenized Anthropic stock set to debut on Solana through Backpack Securities on IPO day",
       "url": "https://crypto.news/tokenized-anthropic-stock-solana-backpack-securities/",
       "source": "BTCManager",
@@ -463,6 +469,12 @@
       "published_at": "Thu, 19 Nov 2026 09:40:29 +0000"
     },
     {
+      "title": "How Much Is a Variational Airdrop Point Worth After the $1.5 Billion Raise?",
+      "url": "https://beincrypto.com/variational-airdrop-point-worth-after-raise/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 09:24:49 +0000"
+    },
+    {
       "title": "My Wallet Introduces 1:1 Cross-Chain Stablecoin Swaps After Being Listed First on WalletConnect",
       "url": "https://cryptopotato.com/my-wallet-introduces-11-cross-chain-stablecoin-swaps-after-being-listed-first-on-walletconnect/",
       "source": "CryptoPotato",
@@ -479,6 +491,12 @@
       "url": "https://crypto.news/pearl-price-rally-fp8-upgrade-ai-mining-demand/",
       "source": "CryptoNews",
       "published_at": "Thu, 19 Nov 2026 09:11:04 +0000"
+    },
+    {
+      "title": "My Wallet Introduces 1:1 Cross-Chain Stablecoin Swaps After Being Listed First on WalletConnect",
+      "url": "https://beincrypto.com/my-wallet-introduces-1-1-cross-chain-stablecoin-swaps/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 09:10:58 +0000"
     },
     {
       "title": "One USDe balance, two jobs: earning rewards and backing leveraged trades",
@@ -625,6 +643,12 @@
       "published_at": "Thu, 19 Nov 2026 07:50:39 +0000"
     },
     {
+      "title": "Why Is Alibaba Stock Crashing Before Earnings?",
+      "url": "https://beincrypto.com/why-is-alibaba-stock-crashing/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 07:37:37 +0000"
+    },
+    {
       "title": "Anthropic Hits $1.5 Trillion Valuation: What It Means for IPO Investors Today?",
       "url": "https://cryptopotato.com/anthropic-hits-1-5-trillion-valuation-what-it-means-for-ipo-investors-today/",
       "source": "CryptoPotato",
@@ -659,6 +683,12 @@
       "url": "https://crypto.news/kraken-parent-payward-acquires-tribe-capital/",
       "source": "CryptoNews",
       "published_at": "Thu, 19 Nov 2026 07:19:58 +0000"
+    },
+    {
+      "title": "Bitrue Adds Balanced and Aggressive Grid Strategies to Bitrue AI",
+      "url": "https://beincrypto.com/bitrue-balance-aggressive-grid-strategies-ai/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 07:15:08 +0000"
     },
     {
       "title": "Dogecoin down by 44%, hits 2026’s lowest price — More downside ahead?",
@@ -739,16 +769,16 @@
       "published_at": "Thu, 19 Nov 2026 06:00:00 +0000"
     },
     {
-      "title": "Here’s what happened in crypto today",
-      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Thu, 19 Nov 2026 06:00:00 +0000"
-    },
-    {
       "title": "AI giants face lawsuits and protests as China bets big",
       "url": "https://coingeek.com/ai-giants-face-lawsuits-and-protests-as-china-bets-big/",
       "source": "CoinGeek",
       "published_at": "Thu, 19 Nov 2026 06:00:00 +0000"
+    },
+    {
+      "title": "US Pending Home Sales Hit a Record Low. Why That Could Help Bitcoin and Stocks",
+      "url": "https://beincrypto.com/pending-home-sales-record-low-bitcoin/",
+      "source": "BeinCrypto",
+      "published_at": "Thu, 19 Nov 2026 05:56:58 +0000"
     },
     {
       "title": "Bitcoin price erases its summer rally gains, how much further could BTC fall?",
@@ -917,12 +947,6 @@
       "url": "https://crypto-economy.com/blackrocks-ibit-accounts-for-87-of-bitcoin-etf-outflows/",
       "source": "CryptoEconomy",
       "published_at": "Wed, 18 Nov 2026 23:02:45 +0000"
-    },
-    {
-      "title": "German Judge Offers to Drop Movie2K Charges in Exchange for $2.5B in Bitcoin",
-      "url": "https://news.bitcoin.com/regulation-and-legal/german-judge-offers-drop-movie2k-charges-2-5-billion-bitcoin/",
-      "source": "Bitcoin.com",
-      "published_at": "Wed, 18 Nov 2026 22:45:48 +0000"
     },
     {
       "title": "Payward, the owner of crypto exchange Kraken, is buying its CEO’s venture capital business, Tribe",
@@ -1627,12 +1651,6 @@
       "published_at": "Wed, 18 Nov 2026 10:00:00 +0000"
     },
     {
-      "title": "World Bank partners with Circle, Citi to explore stablecoins for payments",
-      "url": "https://cointelegraph.com/news/world-bank-circle-citi-explore-stablecoins-payments?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "source": "Cointelegraph",
-      "published_at": "Wed, 18 Nov 2026 09:17:18 +0000"
-    },
-    {
       "title": "Aave App Launches on TRON, Bringing USDT Deposits to Mobile Users on Android and iOS",
       "url": "https://www.newsbtc.com/news/aave-app-launches-on-tron-bringing-usdt-deposits-to-mobile-users-on-android-and-ios/",
       "source": "NewsBTC",
@@ -1861,12 +1879,6 @@
       "published_at": "Tue, 17 Nov 2026 15:30:37 +0000"
     },
     {
-      "title": "Almost 50,000 BTC in 2 Weeks: More Pain Ahead for the Bulls?",
-      "url": "https://cryptopotato.com/almost-50000-btc-in-2-weeks-more-pain-ahead-for-the-bulls/",
-      "source": "CryptoPotato",
-      "published_at": "Tue, 17 Nov 2026 15:25:10 +0000"
-    },
-    {
       "title": "Will Bitcoin Swallow XRP’s Use Case? Tim Draper Makes Microsoft Comparison",
       "url": "https://www.ccn.com/news/crypto/bitcoin-swallow-xrps-case-tim-draper-microsoft-comparison/",
       "source": "CCN",
@@ -1919,12 +1931,6 @@
       "url": "https://decrypt.co/383411/nvidia-board-not-considering-jensen-huangs-return-report",
       "source": "Decrypt",
       "published_at": "Tue, 17 Nov 2026 09:54:32 +0000"
-    },
-    {
-      "title": "Judge Acquits MIT Brothers in $25M Ethereum MEV Case, Ending Prosecution",
-      "url": "https://decrypt.co/383408/judge-acquits-mit-brothers-in-25m-ethereum-mev-case-ending-prosecution",
-      "source": "Decrypt",
-      "published_at": "Tue, 17 Nov 2026 09:27:29 +0000"
     },
     {
       "title": "Ex-Ripple CTO Pushes Back on $1,000 XRP Price Call As Holders Question His Sales",
@@ -2033,12 +2039,6 @@
       "url": "https://insidebitcoins.com/news/louisiana-tro-kalshi-doj-cftc-arkansas",
       "source": "InsideBitcoin",
       "published_at": "Sun, 15 Nov 2026 04:11:04 +0000"
-    },
-    {
-      "title": "Bitcoin Max Pain Has Marked Past Turning Points, Analyst Says",
-      "url": "https://blockonomi.com/bitcoin-max-pain-has-marked-past-turning-points-analyst-says/",
-      "source": "Blockonomi",
-      "published_at": "Sat, 14 Nov 2026 13:03:28 +0000"
     },
     {
       "title": "Rumble Sells Two-Thirds of Its Bitcoin as AI Cloud Unit Drives First Profitable Quarter",
